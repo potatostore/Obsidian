@@ -5,4 +5,4 @@ It contain many features(and also strength).
 first. Inheritance
 	It was made to prvent reusing same codes.
 	first, make parents class and descendent class
-	second, 
+	second,
