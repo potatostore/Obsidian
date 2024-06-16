@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C++.md",
+                "file": "Language/Java Script.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Language/C++.md",
+                "file": "Language/Java Script.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Language/C++.md",
+                "file": "Language/Java Script.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Language/C++.md"
+                "file": "Language/Java Script.md"
               }
             }
           }
@@ -149,6 +149,7 @@
   "active": "d5c1cd44ece842e9",
   "lastOpenFiles": [
     "Language/C++.md",
+    "Language/Java Script.md",
     "Untitled.md",
     "Language.md",
     "Language",
