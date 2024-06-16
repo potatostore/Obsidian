@@ -11,8 +11,12 @@
             "id": "fdcc04d3c017253d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Language/test file2.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "Language/test file2.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "Language/test file2.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -107,7 +113,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "Language/test file2.md"
+          }
         }
       }
     ],
@@ -123,8 +131,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3880f09f91ce7d3d",
+  "active": "fdcc04d3c017253d",
   "lastOpenFiles": [
+    "Language/test file2.md",
     "Untitled.md",
     "Language/SQL.md",
     "Language/Spring with java.md",
