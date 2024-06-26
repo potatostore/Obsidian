@@ -4,3 +4,4 @@ cpu
 gpu
 ram
 ssd
+쿨러
