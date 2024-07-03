@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "eef30b39795839f4",
+    "id": "466f3804e36b6d13",
     "type": "split",
     "children": [
       {
-        "id": "fb7298cde40804c4",
+        "id": "82b6a2c6a21accaa",
         "type": "tabs",
         "children": [
           {
-            "id": "4dc2abcd0b9d15fa",
+            "id": "7a5397eecf68f9f6",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -21,11 +21,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fb67c019024bbfb7",
+    "id": "48969a2d7d61ad63",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "077bb42b17fdc80e",
+        "id": "3c6ea58ddca5cbff",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -35,7 +35,7 @@
         }
       },
       {
-        "id": "2e14b658c9bdf37f",
+        "id": "d26f6306a228ba9d",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -50,7 +50,7 @@
         }
       },
       {
-        "id": "6aeca5c46e952ca2",
+        "id": "bc6434e3e8777c57",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -61,7 +61,7 @@
         }
       },
       {
-        "id": "a2bbde74a17e872e",
+        "id": "8c7db603a383e2b5",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -72,11 +72,11 @@
     "currentTab": 0
   },
   "right": {
-    "id": "ca722814619639a8",
+    "id": "65e3f20fdd8a3087",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "806d562addb5a05b",
+        "id": "a53dcf7f7929074b",
         "type": "leaf",
         "state": {
           "type": "backlink",
@@ -92,7 +92,7 @@
         }
       },
       {
-        "id": "b10f8f064e60af5b",
+        "id": "eef7ae035777ba29",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
@@ -103,7 +103,7 @@
         }
       },
       {
-        "id": "25bb8ad70e0e3a08",
+        "id": "9e9987864c6073cc",
         "type": "leaf",
         "state": {
           "type": "outline",
@@ -123,6 +123,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4dc2abcd0b9d15fa",
-  "lastOpenFiles": []
+  "active": "7a5397eecf68f9f6",
+  "lastOpenFiles": [
+    "new file.md",
+    "Untitled.md",
+    "Language/SQL.md",
+    "Language/Spring with java.md",
+    "Language/Java Script.md",
+    "Language/C++.md",
+    "Language"
+  ]
 }
