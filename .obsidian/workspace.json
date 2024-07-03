@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/note.md",
+                "file": "new file.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Language/note.md",
+                "file": "new file.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Language/note.md",
+                "file": "new file.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Language/note.md"
+                "file": "new file.md"
               }
             }
           }
@@ -148,16 +148,16 @@
   },
   "active": "d5c1cd44ece842e9",
   "lastOpenFiles": [
-    "Language/SQL.md",
-    "Language/test file2.md",
     "Language/note.md",
+    "new file.md",
+    "Language/test file2.md",
+    "Language/SQL.md",
     "Language/Spring with java.md",
     "Untitled.md",
     "Language/Java Script.md",
     "Language/C++.md",
     "Language.md",
     "Language",
-    "Untitled 1.md",
     "Untitled/Untitled.md",
     "Untitled/백링크.md"
   ]
