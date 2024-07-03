@@ -11,8 +11,12 @@
             "id": "4dc2abcd0b9d15fa",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "whiskey.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "whiskey.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "whiskey.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -107,7 +113,9 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "whiskey.md"
+          }
         }
       }
     ],
@@ -124,5 +132,12 @@
     }
   },
   "active": "4dc2abcd0b9d15fa",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "whiskey.md",
+    "Language/SQL.md",
+    "Language/Spring with java.md",
+    "Language/Java Script.md",
+    "Language/C++.md",
+    "Language"
+  ]
 }
