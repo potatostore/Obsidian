@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
+                "file": "Computer.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "메모.md",
+                "file": "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -143,10 +144,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4dc2abcd0b9d15fa",
+  "active": "dd7013f0a1b2a8c5",
   "lastOpenFiles": [
-    "Computer.md",
     "메모.md",
+    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
+    "Books",
+    "Computer.md",
     "whiskey on the rock.md",
     "Language/SQL.md",
     "Language/Spring with java.md",
