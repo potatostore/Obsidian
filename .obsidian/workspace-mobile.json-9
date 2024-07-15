@@ -1,48 +1,35 @@
 {
   "main": {
-    "id": "eef30b39795839f4",
+    "id": "df0af8675f09f2b0",
     "type": "split",
     "children": [
       {
-        "id": "fb7298cde40804c4",
+        "id": "66eab6665b5b7680",
         "type": "tabs",
         "children": [
           {
-            "id": "4dc2abcd0b9d15fa",
+            "id": "fdcc04d3c017253d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dd7013f0a1b2a8c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "메모.md",
+                "file": "Language/note.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "fb67c019024bbfb7",
+    "id": "b280cb9b889854ac",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "077bb42b17fdc80e",
+        "id": "3880f09f91ce7d3d",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -52,7 +39,7 @@
         }
       },
       {
-        "id": "2e14b658c9bdf37f",
+        "id": "28bfc527b7f01554",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -67,7 +54,7 @@
         }
       },
       {
-        "id": "6aeca5c46e952ca2",
+        "id": "7e152bbbf21e486f",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -78,7 +65,7 @@
         }
       },
       {
-        "id": "a2bbde74a17e872e",
+        "id": "ede5169484fa4018",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -89,16 +76,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "ca722814619639a8",
+    "id": "e0502e0c0cc05593",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "806d562addb5a05b",
+        "id": "e425e24d11f6f8a1",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "메모.md",
+            "file": "Language/note.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,24 +97,24 @@
         }
       },
       {
-        "id": "b10f8f064e60af5b",
+        "id": "3894bf30042083a6",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "메모.md",
+            "file": "Language/note.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
         }
       },
       {
-        "id": "25bb8ad70e0e3a08",
+        "id": "6ea90e7f7d1c4c08",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "메모.md"
+            "file": "Language/note.md"
           }
         }
       }
@@ -144,11 +131,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd7013f0a1b2a8c5",
+  "active": "fdcc04d3c017253d",
   "lastOpenFiles": [
-    "Computer.md",
-    "메모.md",
-    "whiskey on the rock.md",
+    "Language/test file2.md",
+    "Language/note.md",
+    "Untitled.md",
     "Language/SQL.md",
     "Language/Spring with java.md",
     "Language/Java Script.md",
