@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Language/Rust.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a616419b5f754521",
