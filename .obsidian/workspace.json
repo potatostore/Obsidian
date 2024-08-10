@@ -8,31 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d5c1cd44ece842e9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Language/SQL.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6ac31ce15b60506b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "apah.md",
+                "file": "Language/Rust.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "apah.md",
+                "file": "Language/Rust.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "apah.md",
+                "file": "Language/Rust.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "apah.md"
+                "file": "Language/Rust.md"
               }
             }
           }
@@ -162,6 +149,8 @@
   "active": "6ac31ce15b60506b",
   "lastOpenFiles": [
     "check file/tprtm.md",
+    "Language/Rust.md",
+    "apah.md",
     "Language/SQL.md",
     "check file",
     "Language/Spring with java.md",
