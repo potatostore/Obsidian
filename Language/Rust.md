@@ -9,7 +9,7 @@
 | 32-bit  | `i32`   | `u32`    |
 | 64-bit  | `i64`   | `u64`    |
 | 128-bit | `i128`  | `u128`   |
-| arch    | `isize` | `usize`  |
+| arch    | `isize` | `usize`  
 
 
 ```rust title='Types Ex'
@@ -61,10 +61,10 @@ fn main(){
 - 보통 index는 container내에 특정 원소의 위치를 쉽게 파악하기 위해 지정한다.
 	vector와 같은 container내에 다양한 원소,객체가 저장되어 있을텐데, 그 중 원하는 원소를 불러오는건 쉽지가 않다. 이를 위해 index라는 개념을 사용하는데 rust같은 경우 index를 usize로 설정하는 이유가 나온다. 예를 들어 회사원들의 정보(이름, 주민등록번호 등등)가 들어있는 container에서 과장급 이상의 모든 회사원에게 index를 설정하려고 한다. 과장급 이상의 회사원이 회사마다 다르며, 얼마나 클지 상상이 안되기 때문에 usize를 통해 설정을 하는 것이다.
 
-[[char]]
+## char
 
 ? : 왜 최대 4bytes를 갖을 수 있는 char에서 int를 casting하면 u8만 가능할 까?
     u32까지 가능해야 하는거 아님?
 
-[[Type infference]]
+## Type infference
 
