@@ -411,7 +411,7 @@
           "activeTextColour": "--text-muted"
         },
         "header": {
-          "backgroundColour": "#08F34E0D",
+          "backgroundColour": "#FFFFFF00",
           "title": {
             "textColour": "--code-comment"
           },
