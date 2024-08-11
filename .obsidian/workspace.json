@@ -11,8 +11,12 @@
             "id": "e2a5207589debd75",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Language/Rust.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a616419b5f754521",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Language/Rust.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Language/Rust.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Language/Rust.md"
+              }
             }
           }
         ]
@@ -138,12 +147,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "e2a5207589debd75",
   "lastOpenFiles": [
-    "apah.md",
-    "Computer.md",
-    "Language/Rust.md",
     "check file/tprtm.md",
+    "Language/Rust.md",
+    "apah.md",
     "Language/SQL.md",
     "check file",
     "Language/Spring with java.md",
