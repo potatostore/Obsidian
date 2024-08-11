@@ -70,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "a616419b5f754521",
@@ -147,7 +148,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "251dc6a6831c72e2",
   "lastOpenFiles": [
     "usize/isize.md",
     "Language/Rust.md",
