@@ -1,6 +1,6 @@
 1. Types
 	1. integer : 2진수의 자리수에 따른 크기 분류 (isize, usize는 컴퓨터 비트타입에 따른 크기, 32-bit window같은 경우 isize = 32bit)
-	2. char : unicode체제를 따르는 문자형, 255번까지 존재하는 unicode특성상 u8의 size를 갖는다. 
+	2. char : unicode체제를 따르는 문자형, 4bytes size를 갖는다.
 
 | Length  | Signed  | Unsigned |
 | ------- | ------- | -------- |
