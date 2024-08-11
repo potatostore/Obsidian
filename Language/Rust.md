@@ -1,17 +1,19 @@
-#Types 
-	1. integer : 2진수의 자리수에 따른 크기 분류 (isize, usize는 컴퓨터 비트타입에 따른 크기, 32-bit window같은 경우 isize = 32bit)
-	2. char : unicode체제를 따르는 문자형, 4bytes size를 갖는다.
+# Types
+## Types
 
-| Length  | Signed  | Unsigned |
-| ------- | ------- | -------- |
-| 8-bit   | `i8`    | `u8`     |
-| 16-bit  | `i16`   | `u16`    |
-| 32-bit  | `i32`   | `u32`    |
-| 64-bit  | `i64`   | `u64`    |
-| 128-bit | `i128`  | `u128`   |
-| arch    | `isize` | `usize`  
+1. integer : 2진수의 자리수에 따른 크기 분류 (isize, usize는 컴퓨터 비트타입에 따른 크기, 32-bit window같은 경우 isize = 32bit)
+2. char : unicode체제를 따르는 문자형, 4bytes size를 갖는다.
+3. float : 
 
-
+|         |         |          |         |     |
+| ------- | :-----: | :------: | ------- | --- |
+| Length  | Signed  | Unsigned | float   |     |
+| 8-bit   |  `i8`   |   `u8`   |         |     |
+| 16-bit  |  `i16`  |  `u16`   |         |     |
+| 32-bit  | `i32`   |  `u32`   | `f32`   |     |
+| 64-bit  |  `i64`  |  `u64`   | `f64` k |     |
+| 128-bit | `i128`  |  `u128`  |         |     |
+| arch    | `isize` | `usize`  |         |     |
 ```rust title='Types Ex'
 fn main(){
 	let a = 100; //i8 size integer
@@ -22,7 +24,6 @@ fn main(){
 	println!("{}{}{}{}", a, space, first_letter, cat_face);
 }
 ```
-
 
 ```rust title='if you want show int to char [error]'
 fn main(){
@@ -51,9 +52,12 @@ fn main(){
 
 - unicode에서 100에 해당하는 문자는 'd'이므로 'd'가 정상적으로 출력되는 모습을 볼 수 있다.
 
-## usize/isize : 어느 메모리로든 유동적으로 변경이 가능하며 32-bit computer에서는 u32/i32가 최대이다. 만약 size가 usize인 127이 있으면 u8과 동일한 사이즈로 간주된다.
+## usize/isize
+
+어느 메모리로든 유동적으로 변경이 가능하며 32-bit computer에서는 u32/i32가 최대이다. 만약 size가 usize인 127이 있으면 u8과 동일한 사이즈로 간주된다.
 
 ## usize를 indexing으로 사용하는 이유
+
 1. index can't be negative(minus value)
 2. it should be big, because sometimes you need to index many things.
 3. 32-bit computers can't use u64 so usize unavitable.
@@ -66,5 +70,22 @@ fn main(){
 ? : 왜 최대 4bytes를 갖을 수 있는 char에서 int를 casting하면 u8만 가능할 까?
     u32까지 가능해야 하는거 아님?
 
-## Type infference
+## Type inference
 
+Type을 말해주지 않아도 자동으로 결정하는 것. 
+
+```rust title=j'Type inference'
+fn main(){
+
+	let a = 100; //Type inference decide 'a' to i32
+	let a: u8 = 100; // you decide type to u8
+	let a = 100u8; // also decide type
+	let a = 100_u8 // more readability
+	let a = 100_100_100_i32 // more readability2
+	let number = 0_________u8 // '_' didn't change the num
+}
+```
+
+- type을 결정해줘야 하는 경우
+	1. 매우 복잡한 것을 하거나, 컴파일러가 변수에 대한 type을 인식하지 못할 경우
+	2. 다른 type으로 설정하고 싶은 경우
