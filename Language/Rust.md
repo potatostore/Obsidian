@@ -51,6 +51,8 @@ fn main(){
 
 - unicode에서 100에 해당하는 문자는 'd'이므로 'd'가 정상적으로 출력되는 모습을 볼 수 있다.
 
+[usize/isize] : 어느 메모리로든 유동적으로 변경이 가능하며 32-bit computer에서는 u32/i32가 최대이다. 만약 size가 usize인 127이 있으면 u8과 동일한 사이즈로 간주된다.
+
 [usize를 indexing으로 사용하는 이유] 
 1. index can't be negative(minus value)
 2. it should be big, because sometimes you need to index many things.
