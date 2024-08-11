@@ -3,7 +3,7 @@
 
 1. integer : 2진수의 자리수에 따른 크기 분류 (isize, usize는 컴퓨터 비트타입에 따른 크기, 32-bit window같은 경우 isize = 32bit)
 2. char : unicode체제를 따르는 문자형, 4bytes size를 갖는다.
-3. float : 
+3. float : f32, f64 type을 갖는 소수
 
 |         |         |          |         |     |
 | ------- | :-----: | :------: | ------- | --- |
