@@ -3,7 +3,7 @@
   "style": "gradient",
   "showInInternalEmbed": false,
   "internalEmbedHeight": null,
-  "showInPreviewEmbed": false,
+  "showInPreviewEmbed": true,
   "previewEmbedHeight": null,
   "frontmatterField": null,
   "bannerDragModifier": "none",
@@ -12,7 +12,7 @@
   "iconVerticalAlignment": "center",
   "iconVerticalTransform": null,
   "useTwemoji": true,
-  "showPreviewInLocalModal": true,
+  "showPreviewInLocalModal": false,
   "localSuggestionsLimit": null,
   "bannersFolder": null,
   "allowMobileDrag": false
