@@ -3,6 +3,7 @@
 ```cpp
 // 1 10 5 8 7 6 4 3 2 9
 #include <iostream>
+#include <vector>
 
 using namespace std;
 vector <int> v = {1,10,5,8,7,6,4,3,2,9};
