@@ -1,6 +1,3 @@
 ---
 
 ---
----
-cssClasses: cards
-banner
