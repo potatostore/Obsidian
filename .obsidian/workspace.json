@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/2. Bubble Sort.md",
+                "file": "Algorithm/1. Selection Sort.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/2. Bubble Sort.md",
+                "file": "Algorithm/1. Selection Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/2. Bubble Sort.md",
+                "file": "Algorithm/1. Selection Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/2. Bubble Sort.md"
+                "file": "Algorithm/1. Selection Sort.md"
               }
             }
           }
@@ -148,12 +148,12 @@
   },
   "active": "df65e293efc682b8",
   "lastOpenFiles": [
+    "Language/Rust.md",
     "Algorithm/1. Selection Sort.md",
+    "Algorithm/2. Bubble Sort.md",
     "Algorithm/3. Insertion Sort.md",
     "Untitled.canvas",
-    "Algorithm/2. Bubble Sort.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
-    "Language/Rust.md",
     "Language/Spring with java.md",
     "Language/SQL.md",
     "Type infference.md",
