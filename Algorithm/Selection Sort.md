@@ -15,9 +15,10 @@ int main(void){
 	for(int i=0;i<v.size();++i){
 		for(int j=i;j<v.size();++j){
 			if(v[j] < min){
-				minIndex = 
+				minIndex = j;
 			}
 		}
+		swap(v[i], v[j]);
 	}
 }
 
