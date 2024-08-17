@@ -1,5 +1,5 @@
 {
-  "lastOpenLanguageTab": "cpp",
+  "lastOpenLanguageTab": "rust",
   "timeout": 10000,
   "allowInput": true,
   "wslMode": false,
@@ -65,7 +65,7 @@
   "cppRunner": "cling",
   "cppFileExtension": "cpp",
   "cppInject": "",
-  "cppArgs": "CLion",
+  "cppArgs": "",
   "cppUseMain": false,
   "clingPath": "/opt/homebrew/bin/cling",
   "clingArgs": "",
