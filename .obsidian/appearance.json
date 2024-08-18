@@ -1,6 +1,7 @@
 {
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
-    "Minimal Theme cards"
+    "Minimal Theme cards",
+    "hide-title-behind-banner"
   ]
 }
