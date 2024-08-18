@@ -2,7 +2,7 @@
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
     "Minimal Theme cards",
-    "hide-title-behind-banner",
-    "delete_horizen"
+    "delete_horizen",
+    "hide-title-behind-banner"
   ]
 }
