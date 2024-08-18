@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0e0a6c7c41208292",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/4. Quick Sort.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md",
+                "file": "Algorithm/4. Quick Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md",
+                "file": "Algorithm/4. Quick Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md"
+                "file": "Algorithm/4. Quick Sort.md"
               }
             }
           }
@@ -146,8 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "df65e293efc682b8",
+  "active": "0e0a6c7c41208292",
   "lastOpenFiles": [
+    "Algorithm/3. Insertion Sort.md",
+    "Algorithm/4. Quick Sort.md",
     "Books/*Books Dataview*.md",
     "library-book-bookshelf-read.jpg",
     "---.md",
@@ -159,7 +174,6 @@
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/1. Selection Sort.md",
     "Language/Rust.md",
-    "Algorithm/3. Insertion Sort.md",
     "Language/Spring with java.md",
     "Language/SQL.md",
     "Type infference.md",
