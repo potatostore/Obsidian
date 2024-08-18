@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/*Books Dataviews.md",
-                "mode": "preview",
+                "file": "Books/*Books Dataview*.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/*Books Dataviews.md",
+                "file": "Books/*Books Dataview*.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/*Books Dataviews.md",
+                "file": "Books/*Books Dataview*.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/*Books Dataviews.md"
+                "file": "Books/*Books Dataview*.md"
               }
             }
           }
@@ -148,12 +148,12 @@
   },
   "active": "df65e293efc682b8",
   "lastOpenFiles": [
+    "library-book-bookshelf-read.jpg",
     "Books/*Data views - Books*.md",
-    "Books/*Books Dataviews.md",
+    "Books/*Books Dataview*.md",
     "delete_horizen.css",
     "delete_horizen.rtf",
     "Untitled.canvas",
-    "library-book-bookshelf-read.jpg",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/1. Selection Sort.md",
