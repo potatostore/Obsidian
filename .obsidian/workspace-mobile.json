@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md",
+                "file": "Algorithm/4. Quick Sort.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Algorithm/3. Insertion Sort.md",
+            "file": "Algorithm/4. Quick Sort.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Algorithm/3. Insertion Sort.md",
+            "file": "Algorithm/4. Quick Sort.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Algorithm/3. Insertion Sort.md"
+            "file": "Algorithm/4. Quick Sort.md"
           }
         }
       }
@@ -135,9 +135,9 @@
   "lastOpenFiles": [
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/1. Selection Sort.md",
+    "Algorithm/3. Insertion Sort.md",
     "Algorithm/4. Quick Sort.md",
     "Books/*Books Dataview*.md",
-    "Algorithm/3. Insertion Sort.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm",
     "Language/Rust.md",
