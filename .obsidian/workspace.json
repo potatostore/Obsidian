@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "*Books Dataview*.md",
-                "mode": "source",
+                "file": "Books/*Books Dataview*.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "*Books Dataview*.md",
+                "file": "Books/*Books Dataview*.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "*Books Dataview*.md",
+                "file": "Books/*Books Dataview*.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "*Books Dataview*.md"
+                "file": "Books/*Books Dataview*.md"
               }
             }
           }
@@ -146,12 +146,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "df65e293efc682b8",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
-    "---.md",
-    "*Books Dataview*.md",
-    "Books/*Books Dataview*.md",
     "library-book-bookshelf-read.jpg",
+    "---.md",
+    "Books/*Books Dataview*.md",
+    "Books/*Books Dataview*.md",
     "Books/*Data views - Books*.md",
     "delete_horizen.css",
     "delete_horizen.rtf",
