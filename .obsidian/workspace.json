@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "*Data views*.md",
-                "mode": "preview",
+                "file": "*Books Dataview*.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "*Data views*.md",
+                "file": "*Books Dataview*.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "*Data views*.md",
+                "file": "*Books Dataview*.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "*Data views*.md"
+                "file": "*Books Dataview*.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "df65e293efc682b8",
   "lastOpenFiles": [
+    "---.md",
+    "*Books Dataview*.md",
     "Books/*Books Dataview*.md",
-    "*Data views*.md",
     "library-book-bookshelf-read.jpg",
     "Books/*Data views - Books*.md",
     "delete_horizen.css",
