@@ -1,4 +1,9 @@
-/* 특정 노트에서 제목 숨기기 */
-.banner-title {
+/* 배너 뒤의 제목만 숨기기 */
+.markdown-preview-view .markdown-title {
+    display: none;
+}
+
+/* 배너와 중복되는 텍스트 숨기기 */
+.banner-title-wrapper {
     display: none;
 }
