@@ -237,3 +237,7 @@ https://github.com/sponsors/kepano
 
   .cards-cols-8 {
     --cards-columns: repeat(8, minmax(0, 1fr)); } }
+  
+  .banner-title {
+    display: none;
+  }
