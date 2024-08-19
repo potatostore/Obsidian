@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Language/C++.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Language/C++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Language/C++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md"
+                "file": "Language/C++.md"
               }
             }
           }
@@ -161,8 +161,8 @@
   },
   "active": "0e0a6c7c41208292",
   "lastOpenFiles": [
-    "Untitled.md",
     "Algorithm/4. Quick Sort.md",
+    "Untitled.md",
     "Algorithm/3. Insertion Sort.md",
     "Books/*Books Dataview*.md",
     "library-book-bookshelf-read.jpg",
