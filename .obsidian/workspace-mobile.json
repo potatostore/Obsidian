@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fb7298cde40804c4",
+        "id": "dd6fc1f5f01dfaf5",
         "type": "tabs",
         "children": [
           {
-            "id": "dd7013f0a1b2a8c5",
+            "id": "fb0b1da51cfc9bec",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -131,13 +131,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dd7013f0a1b2a8c5",
+  "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "Books/*Books Dataview*.md",
     "Algorithm/4. Quick Sort.md",
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/1. Selection Sort.md",
     "Algorithm/3. Insertion Sort.md",
-    "Books/*Books Dataview*.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm",
     "Language/Rust.md",
