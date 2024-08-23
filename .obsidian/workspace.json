@@ -37,26 +37,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/5. Mergy Sort.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f60da0ad62fc21e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "6. Heap Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -122,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6. Heap Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6. Heap Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6. Heap Sort.md"
+                "file": "Algorithm/6. Heap Sort.md"
               }
             }
           }
@@ -183,11 +171,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f60da0ad62fc21e0",
+  "active": "417a583a613dc4f0",
   "lastOpenFiles": [
-    "스크린샷 2024-08-23 오후 10.53.53.png",
     "Algorithm/5. Mergy Sort.md",
-    "6. Heap Sort.md",
+    "스크린샷 2024-08-23 오후 10.53.53.png",
+    "Algorithm/6. Heap Sort.md",
     "Algorithm/4. Quick Sort.md",
     "Language/C++.md",
     "Algorithm/3. Insertion Sort.md",
