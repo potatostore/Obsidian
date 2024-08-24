@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#include",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/3. Insertion Sort.md"
+                "file": "Algorithm/6. Heap Sort.md"
               }
             }
           }
@@ -159,26 +159,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "0e0a6c7c41208292",
   "lastOpenFiles": [
+    "Algorithm/5. Mergy Sort.md",
+    "Algorithm/1. Selection Sort.md",
+    "Algorithm/3. Insertion Sort.md",
+    "Algorithm/4. Quick Sort.md",
     "Pictures",
     "Books/*Books Dataview*.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm/6. Heap Sort.md",
     "Pictures/library-book-bookshelf-read.jpg",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
-    "Algorithm/5. Mergy Sort.md",
     "스크린샷 2024-08-23 오후 10.53.53.png",
-    "Algorithm/4. Quick Sort.md",
     "Language/C++.md",
-    "Algorithm/3. Insertion Sort.md",
     "---.md",
     "Books/*Data views - Books*.md",
     "delete_horizen.css",
     "delete_horizen.rtf",
     "Untitled.canvas",
     "Algorithm/2. Bubble Sort.md",
-    "Algorithm/1. Selection Sort.md",
     "Language/Rust.md",
     "Language/Spring with java.md",
     "Language/SQL.md",
