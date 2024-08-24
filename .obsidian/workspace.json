@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Algorithm/3. Insertion Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md",
+                "file": "Algorithm/3. Insertion Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/4. Quick Sort.md"
+                "file": "Algorithm/3. Insertion Sort.md"
               }
             }
           }
@@ -159,13 +159,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0e0a6c7c41208292",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
+    "Pictures",
     "Books/*Books Dataview*.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm/6. Heap Sort.md",
-    "library-book-bookshelf-read.jpg",
-    "스크린샷 2024-08-23 오후 11.05.14.png",
+    "Pictures/library-book-bookshelf-read.jpg",
+    "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Algorithm/5. Mergy Sort.md",
     "스크린샷 2024-08-23 오후 10.53.53.png",
     "Algorithm/4. Quick Sort.md",
