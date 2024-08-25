@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/15. DP(Dynamic Programming).md",
+                "file": "Project/Web Server(c++).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/15. DP(Dynamic Programming).md",
+                "file": "Project/Web Server(c++).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/15. DP(Dynamic Programming).md",
+                "file": "Project/Web Server(c++).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/15. DP(Dynamic Programming).md"
+                "file": "Project/Web Server(c++).md"
               }
             }
           }
@@ -148,9 +148,12 @@
   },
   "active": "129cda7d177d8de7",
   "lastOpenFiles": [
+    "Language/C++.md",
+    "Project/Web Server(c++).md",
+    "Project",
+    "Algorithm/15. DP(Dynamic Programming).md",
     "Algorithm/13. Kruskal Algorithm.md",
     "Untitled.md",
-    "Algorithm/15. DP(Dynamic Programming).md",
     "Algorithm/14. Binary Tree.md",
     "Algorithm/12. Union-Find.md",
     "Algorithm/11. DFS(Depth FIrst Search).md",
@@ -169,7 +172,6 @@
     "Pictures/library-book-bookshelf-read.jpg",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "스크린샷 2024-08-23 오후 10.53.53.png",
-    "Language/C++.md",
     "---.md",
     "Books/*Data views - Books*.md",
     "delete_horizen.css",
@@ -180,7 +182,6 @@
     "Language/Spring with java.md",
     "Language/SQL.md",
     "Type infference.md",
-    "usize/isize.md",
     "Algorithm",
     "usize",
     "check file",
