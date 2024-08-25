@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#리소스",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
