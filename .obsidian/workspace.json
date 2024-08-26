@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/9. Queue.md",
+                "file": "Algorithm/10. BFS(Breath First Search).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/9. Queue.md",
+                "file": "Algorithm/10. BFS(Breath First Search).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/9. Queue.md",
+                "file": "Algorithm/10. BFS(Breath First Search).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/9. Queue.md"
+                "file": "Algorithm/10. BFS(Breath First Search).md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "129cda7d177d8de7",
   "lastOpenFiles": [
-    "Algorithm/8. Stack.md",
     "Algorithm/9. Queue.md",
+    "Algorithm/8. Stack.md",
     "Algorithm/3. Insertion Sort.md",
     "Algorithm/6. Heap Sort.md",
     "Algorithm/5. Mergy Sort.md",
