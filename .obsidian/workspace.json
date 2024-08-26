@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/10. BFS(Breath First Search).md",
+                "file": "Books/*Books Dataview*.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/10. BFS(Breath First Search).md",
+                "file": "Books/*Books Dataview*.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/10. BFS(Breath First Search).md",
+                "file": "Books/*Books Dataview*.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/10. BFS(Breath First Search).md"
+                "file": "Books/*Books Dataview*.md"
               }
             }
           }
@@ -148,10 +148,12 @@
   },
   "active": "129cda7d177d8de7",
   "lastOpenFiles": [
+    "Algorithm/2. Bubble Sort.md",
+    "Algorithm/6. Heap Sort.md",
+    "Algorithm/10. BFS(Breath First Search).md",
     "Algorithm/9. Queue.md",
     "Algorithm/8. Stack.md",
     "Algorithm/3. Insertion Sort.md",
-    "Algorithm/6. Heap Sort.md",
     "Algorithm/5. Mergy Sort.md",
     "Algorithm/4. Quick Sort.md",
     "Project/Web Server(c++).md",
@@ -163,7 +165,6 @@
     "Algorithm/14. Binary Tree.md",
     "Algorithm/12. Union-Find.md",
     "Algorithm/11. DFS(Depth FIrst Search).md",
-    "Algorithm/10. BFS(Breath First Search).md",
     "Algorithm/7. Counting Sort.md",
     "Algorithm/1. Selection Sort.md",
     "Pictures",
@@ -177,7 +178,6 @@
     "delete_horizen.css",
     "delete_horizen.rtf",
     "Untitled.canvas",
-    "Algorithm/2. Bubble Sort.md",
     "Language/Rust.md",
     "Language/Spring with java.md",
     "Language/SQL.md",
