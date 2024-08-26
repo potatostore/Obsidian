@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/6. Heap Sort.md",
+                "file": "Algorithm/8. Stack.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/6. Heap Sort.md",
+                "file": "Algorithm/8. Stack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/6. Heap Sort.md",
+                "file": "Algorithm/8. Stack.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/6. Heap Sort.md"
+                "file": "Algorithm/8. Stack.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "129cda7d177d8de7",
   "lastOpenFiles": [
+    "Algorithm/6. Heap Sort.md",
     "Algorithm/5. Mergy Sort.md",
     "Algorithm/4. Quick Sort.md",
     "Project/Web Server(c++).md",
@@ -163,7 +164,6 @@
     "Algorithm/9. Queue.md",
     "Algorithm/8. Stack.md",
     "Algorithm/7. Counting Sort.md",
-    "Algorithm/6. Heap Sort.md",
     "Algorithm/1. Selection Sort.md",
     "Algorithm/3. Insertion Sort.md",
     "Pictures",
