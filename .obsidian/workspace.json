@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Web Server(c++).md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,13 +65,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "a616419b5f754521",
@@ -87,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Project/Web Server(c++).md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Project/Web Server(c++).md",
+                "file": "Algorithm/6. Heap Sort.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Project/Web Server(c++).md"
+                "file": "Algorithm/6. Heap Sort.md"
               }
             }
           }
@@ -150,8 +148,10 @@
   },
   "active": "129cda7d177d8de7",
   "lastOpenFiles": [
-    "Language/C++.md",
+    "Algorithm/5. Mergy Sort.md",
+    "Algorithm/4. Quick Sort.md",
     "Project/Web Server(c++).md",
+    "Language/C++.md",
     "Project",
     "Algorithm/15. DP(Dynamic Programming).md",
     "Algorithm/13. Kruskal Algorithm.md",
@@ -164,10 +164,8 @@
     "Algorithm/8. Stack.md",
     "Algorithm/7. Counting Sort.md",
     "Algorithm/6. Heap Sort.md",
-    "Algorithm/5. Mergy Sort.md",
     "Algorithm/1. Selection Sort.md",
     "Algorithm/3. Insertion Sort.md",
-    "Algorithm/4. Quick Sort.md",
     "Pictures",
     "Books/*Books Dataview*.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
