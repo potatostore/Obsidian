@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/14. Binary Tree.md",
+                "file": "Books/동물농장 - 조지 오웰.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/14. Binary Tree.md",
+                "file": "Books/동물농장 - 조지 오웰.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/14. Binary Tree.md",
+                "file": "Books/동물농장 - 조지 오웰.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/14. Binary Tree.md"
+                "file": "Books/동물농장 - 조지 오웰.md"
               }
             }
           }
@@ -162,6 +162,7 @@
   },
   "active": "45c712e94fc764ac",
   "lastOpenFiles": [
+    "Algorithm/14. Binary Tree.md",
     "Books/동물농장 - 조지 오웰.md",
     "Algorithm/8. Stack.md",
     "Algorithm/9. Queue.md",
@@ -169,7 +170,6 @@
     "Algorithm/11. DFS(Depth FIrst Search).md",
     "Algorithm/13. Kruskal Algorithm.md",
     "Algorithm/12. Union-Find.md",
-    "Algorithm/14. Binary Tree.md",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Algorithm/0. Prologue.md",
     "Data Structure",
