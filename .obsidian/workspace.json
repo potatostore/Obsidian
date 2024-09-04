@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "f84a74bf5954d793",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books/데미안 -.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/동물농장 - 조지 오웰.md",
+                "file": "Books/데미안 -.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/동물농장 - 조지 오웰.md",
+                "file": "Books/데미안 -.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/동물농장 - 조지 오웰.md"
+                "file": "Books/데미안 -.md"
               }
             }
           }
@@ -160,10 +172,11 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "45c712e94fc764ac",
+  "active": "f84a74bf5954d793",
   "lastOpenFiles": [
-    "Algorithm/14. Binary Tree.md",
     "Books/동물농장 - 조지 오웰.md",
+    "Books/데미안 -.md",
+    "Algorithm/14. Binary Tree.md",
     "Algorithm/8. Stack.md",
     "Algorithm/9. Queue.md",
     "Algorithm/10. BFS(Breath First Search).md",
