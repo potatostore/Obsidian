@@ -123,6 +123,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-book-search-plugin:Create new book note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -133,6 +134,7 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "Books/데미안 -.md",
     "Algorithm/4. Quick Sort.md",
     "Algorithm/3. Insertion Sort.md",
     "Algorithm/2. Bubble Sort.md",
