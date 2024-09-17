@@ -8,43 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "129cda7d177d8de7",
+            "id": "59a8cc73e0dac688",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/10. BFS(Breath First Search).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "45c712e94fc764ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books/동물농장 - 조지 오웰.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f84a74bf5954d793",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books/데미안 - 헤르만 헤세.md",
+                "file": "Data Structure/Array.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/데미안 - 헤르만 헤세.md",
+                "file": "Data Structure/Array.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/데미안 - 헤르만 헤세.md",
+                "file": "Data Structure/Array.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/데미안 - 헤르만 헤세.md"
+                "file": "Data Structure/Array.md"
               }
             }
           }
@@ -172,10 +147,19 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "f84a74bf5954d793",
+  "active": "59a8cc73e0dac688",
   "lastOpenFiles": [
-    "Books/동물농장 - 조지 오웰.md",
+    "Data Structure/-Prologue-.md",
+    "Data Structure/Array.md",
+    "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
+    "Algorithm/1. Selection Sort.md",
+    "Untitled",
+    "Algorithm/2. Bubble Sort.md",
+    "Algorithm/4. Quick Sort.md",
+    "Algorithm/5. Mergy Sort.md",
+    "Algorithm/0. Prologue.md",
     "Books/데미안 - 헤르만 헤세.md",
+    "Books/동물농장 - 조지 오웰.md",
     "Algorithm/14. Binary Tree.md",
     "Algorithm/8. Stack.md",
     "Algorithm/9. Queue.md",
@@ -183,21 +167,15 @@
     "Algorithm/11. DFS(Depth FIrst Search).md",
     "Algorithm/13. Kruskal Algorithm.md",
     "Algorithm/12. Union-Find.md",
-    "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
-    "Algorithm/0. Prologue.md",
     "Data Structure",
     "Books/*Books Dataview*.md",
-    "Algorithm/2. Bubble Sort.md",
     "Algorithm/6. Heap Sort.md",
     "Algorithm/3. Insertion Sort.md",
-    "Algorithm/5. Mergy Sort.md",
-    "Algorithm/4. Quick Sort.md",
     "Project/Web Server(c++).md",
     "Language/C++.md",
     "Project",
     "Algorithm/15. DP(Dynamic Programming).md",
     "Algorithm/7. Counting Sort.md",
-    "Algorithm/1. Selection Sort.md",
     "Pictures",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Pictures/library-book-bookshelf-read.jpg",
@@ -207,8 +185,6 @@
     "delete_horizen.css",
     "delete_horizen.rtf",
     "Untitled.canvas",
-    "Language/Rust.md",
-    "Language/Spring with java.md",
     "Algorithm",
     "usize",
     "check file",
