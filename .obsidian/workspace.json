@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Structure/Cache memory.md",
+                "file": "Computer Structure/Virtual Memory.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "10a4f2d6e640b90f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Computer Structure/Register.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Structure/Cache memory.md",
+                "file": "Computer Structure/Register.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Structure/Cache memory.md",
+                "file": "Computer Structure/Register.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Structure/Cache memory.md"
+                "file": "Computer Structure/Register.md"
               }
             }
           }
@@ -160,11 +172,12 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "c662b67b25ed141a",
+  "active": "10a4f2d6e640b90f",
   "lastOpenFiles": [
     "Computer Structure/Virtual Memory.md",
-    "Data Structure/Array.md",
+    "Computer Structure/Register.md",
     "Computer Structure/Cache memory.md",
+    "Data Structure/Array.md",
     "Computer Structure",
     "Data Structure/Stack.md",
     "Data Structure/-Prologue-.md",
@@ -191,7 +204,6 @@
     "Language/C++.md",
     "Project",
     "Algorithm/15. DP(Dynamic Programming).md",
-    "Algorithm/7. Counting Sort.md",
     "Pictures",
     "Pictures/library-book-bookshelf-read.jpg",
     "스크린샷 2024-08-23 오후 10.53.53.png",
