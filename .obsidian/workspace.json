@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Structure/Array.md",
+                "file": "Computer Structure/Cache memory.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Structure/Array.md",
+                "file": "Computer Structure/Cache memory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Structure/Array.md",
+                "file": "Computer Structure/Cache memory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Structure/Array.md"
+                "file": "Computer Structure/Cache memory.md"
               }
             }
           }
@@ -162,12 +162,14 @@
   },
   "active": "c662b67b25ed141a",
   "lastOpenFiles": [
-    "Data Structure/Stack.md",
+    "Computer Structure/Virtual Memory.md",
     "Data Structure/Array.md",
+    "Computer Structure/Cache memory.md",
+    "Computer Structure",
+    "Data Structure/Stack.md",
     "Data Structure/-Prologue-.md",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Algorithm/1. Selection Sort.md",
-    "Untitled",
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/4. Quick Sort.md",
     "Algorithm/5. Mergy Sort.md",
@@ -191,10 +193,8 @@
     "Algorithm/15. DP(Dynamic Programming).md",
     "Algorithm/7. Counting Sort.md",
     "Pictures",
-    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Pictures/library-book-bookshelf-read.jpg",
     "스크린샷 2024-08-23 오후 10.53.53.png",
-    "---.md",
     "delete_horizen.css",
     "delete_horizen.rtf",
     "Untitled.canvas",
