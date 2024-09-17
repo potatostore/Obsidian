@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/데미안 -.md",
+                "file": "Books/데미안 - 헤르만 헤세.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/데미안 -.md",
+                "file": "Books/데미안 - 헤르만 헤세.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/데미안 -.md",
+                "file": "Books/데미안 - 헤르만 헤세.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/데미안 -.md"
+                "file": "Books/데미안 - 헤르만 헤세.md"
               }
             }
           }
@@ -175,7 +175,7 @@
   "active": "f84a74bf5954d793",
   "lastOpenFiles": [
     "Books/동물농장 - 조지 오웰.md",
-    "Books/데미안 -.md",
+    "Books/데미안 - 헤르만 헤세.md",
     "Algorithm/14. Binary Tree.md",
     "Algorithm/8. Stack.md",
     "Algorithm/9. Queue.md",
