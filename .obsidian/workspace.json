@@ -174,8 +174,9 @@
   },
   "active": "10a4f2d6e640b90f",
   "lastOpenFiles": [
-    "Computer Structure/Virtual Memory.md",
+    "Books/*Books Dataview*.md",
     "Computer Structure/Register.md",
+    "Computer Structure/Virtual Memory.md",
     "Computer Structure/Cache memory.md",
     "Data Structure/Array.md",
     "Computer Structure",
@@ -197,7 +198,6 @@
     "Algorithm/13. Kruskal Algorithm.md",
     "Algorithm/12. Union-Find.md",
     "Data Structure",
-    "Books/*Books Dataview*.md",
     "Algorithm/6. Heap Sort.md",
     "Algorithm/3. Insertion Sort.md",
     "Project/Web Server(c++).md",
