@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Structure/Register.md",
+                "file": "Computer Structure/Virtual Memory.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Structure/Register.md",
+                "file": "Computer Structure/Virtual Memory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Structure/Register.md",
+                "file": "Computer Structure/Virtual Memory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Structure/Register.md"
+                "file": "Computer Structure/Virtual Memory.md"
               }
             }
           }
@@ -174,10 +174,10 @@
   },
   "active": "10a4f2d6e640b90f",
   "lastOpenFiles": [
-    "Books/*Books Dataview*.md",
-    "Computer Structure/Register.md",
-    "Computer Structure/Virtual Memory.md",
     "Computer Structure/Cache memory.md",
+    "Computer Structure/Register.md",
+    "Books/*Books Dataview*.md",
+    "Computer Structure/Virtual Memory.md",
     "Data Structure/Array.md",
     "Computer Structure",
     "Data Structure/Stack.md",
