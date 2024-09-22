@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Clean Code.md",
+                "file": "Project/Flappy Clone(Unity).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/Clean Code.md",
+                "file": "Project/Flappy Clone(Unity).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books/Clean Code.md",
+                "file": "Project/Flappy Clone(Unity).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/Clean Code.md"
+                "file": "Project/Flappy Clone(Unity).md"
               }
             }
           }
@@ -149,11 +149,14 @@
   },
   "active": "1bba1844a30aaa86",
   "lastOpenFiles": [
+    "IDE/Unity Engine(CS).md",
+    "Project/Flappy Clone(Unity).md",
+    "Books/Clean Code.md",
+    "IDE",
     "Language/Rust.md",
     "Algorithm/1. Selection Sort.md",
     "Algorithm/2. Bubble Sort.md",
     "Algorithm/0. Prologue.md",
-    "Books/Clean Code.md",
     "Computer Structure/Virtual Memory.md",
     "Computer Structure/Cache memory.md",
     "Computer Structure/Register.md",
@@ -176,8 +179,6 @@
     "Algorithm/12. Union-Find.md",
     "Data Structure",
     "Algorithm/6. Heap Sort.md",
-    "Algorithm/3. Insertion Sort.md",
-    "Project/Web Server(c++).md",
     "Project",
     "Pictures",
     "Pictures/library-book-bookshelf-read.jpg",
@@ -187,7 +188,6 @@
     "Untitled.canvas",
     "Algorithm",
     "usize",
-    "check file",
-    "Language"
+    "check file"
   ]
 }
