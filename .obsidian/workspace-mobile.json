@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/Rust.md",
+                "file": "Books/Clean Code.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Language/Rust.md",
+            "file": "Books/Clean Code.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Language/Rust.md",
+            "file": "Books/Clean Code.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Language/Rust.md"
+            "file": "Books/Clean Code.md"
           }
         }
       }
@@ -134,6 +134,7 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "Language/Rust.md",
     "Project/Flappy Clone(Unity).md",
     "IDE/Unity Engine(CS).md",
     "IDE",
@@ -155,7 +156,6 @@
     "Books/*Books Dataview*.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Algorithm",
-    "Language/Rust.md",
     "메모.md",
     "Books",
     "Computer.md",
