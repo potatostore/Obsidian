@@ -59,7 +59,7 @@ private:
 - [x] class : 명사/명사구
 - [x] method(function) : 동사/동사구 -> get,set,is를 적극 사용하여 접근자, 변경자, 조건자 생성
 
-## <span style="color:rgb(0, 176, 80)">function</span> 
+## <span style="color:rgb(0, 176, 80)">Function</span> 
 
 - 내용을 최대한 짧고 간결하게 작성하기
 - 한 가지만 잘하는 함수를 제공하기
