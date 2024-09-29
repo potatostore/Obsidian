@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
+                "file": "Algorithm/Backtracking/Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
+                "file": "Algorithm/Backtracking/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
+                "file": "Algorithm/Backtracking/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Divide and Conquer Algorithm/Binary Search.md"
+                "file": "Algorithm/Backtracking/Untitled.md"
               }
             }
           }
@@ -149,9 +149,16 @@
   },
   "active": "dc5c19610c9af184",
   "lastOpenFiles": [
+    "Algorithm/Backtracking/Subset Sum Problem.md",
+    "Algorithm/Backtracking/Untitled.md",
+    "Algorithm/Greedy Algorithm/Greedy Knapsack Problem.md",
+    "Algorithm/Backtracking",
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm.md",
+    "Algorithm/Greedy Algorithm/Dijkstra’s Algorithm.md",
+    "Algorithm/Greedy Algorithm/Huffman Coding.md",
+    "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
     "Algorithm/Greedy Algorithm",
     "Algorithm/Greedy Algorithms.md",
-    "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
     "Algorithm/Divide and Conquer Algorithm/Strassen’s Matrix Multiplication.md",
     "Algorithm/Divide and Conquer Algorithm/Quick Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
@@ -167,7 +174,6 @@
     "Algorithm/Dynamic Programming Algorithm",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm.md",
     "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
     "Algorithm/Graph Algorithm/Traversal Algorithm/Bellman-Ford Algorithm.md",
     "Computer Structure/Cache memory.md",
@@ -177,15 +183,9 @@
     "Algorithm/Graph Algorithm/Minnimum",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Linear Search.md",
     "Algorithm/Search and Sort Algorithm",
     "Untitled",
     "Algorithm/Search Algorithm/Untitled.canvas",
-    "Algorithm/Graph Algorithm",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
     "스크린샷 2024-08-23 오후 10.53.53.png",
