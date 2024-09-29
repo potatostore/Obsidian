@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "eb07a488dbcb39eb",
+        "id": "0fa933a3c4a7b37a",
         "type": "tabs",
         "children": [
           {
-            "id": "dc5c19610c9af184",
+            "id": "e7a8e95e33a46f4f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Backtracking/Untitled.md",
+                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Backtracking/Untitled.md",
+                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Backtracking/Untitled.md",
+                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Backtracking/Untitled.md"
+                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md"
               }
             }
           }
@@ -147,12 +147,18 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "dc5c19610c9af184",
+  "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Backtracking/Subset Sum Problem.md",
-    "Algorithm/Backtracking/Untitled.md",
+    "Algorithm/Branch and Bound Algorithm/Travelling Salesman Problem.md",
+    "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
+    "Algorithm/Branch and Bound Algorithm",
+    "Algorithm/Untitled.canvas",
+    "Algorithm/Backtracking Algorithm/Maze Solving.md",
+    "Algorithm/Backtracking Algorithm/Hamiltonian Path Problem.md",
+    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
+    "Algorithm/Backtracking Algorithm/Subset Sum Problem.md",
     "Algorithm/Greedy Algorithm/Greedy Knapsack Problem.md",
-    "Algorithm/Backtracking",
+    "Algorithm/Backtracking Algorithm",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm.md",
     "Algorithm/Greedy Algorithm/Dijkstra’s Algorithm.md",
     "Algorithm/Greedy Algorithm/Huffman Coding.md",
@@ -175,16 +181,11 @@
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
     "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/Bellman-Ford Algorithm.md",
-    "Computer Structure/Cache memory.md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search).md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Minnimum",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
     "Algorithm/Search and Sort Algorithm",
-    "Untitled",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
