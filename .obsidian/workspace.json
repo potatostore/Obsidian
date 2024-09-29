@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
+                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
+                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
+                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md"
+                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md"
               }
             }
           }
@@ -149,8 +149,22 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Branch and Bound Algorithm/Travelling Salesman Problem.md",
+    "Algorithm/Machine Learning Algorithm/Decision Trees.md",
+    "Algorithm/Machine Learning Algorithm/Random Forests.md",
+    "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
+    "Algorithm/Machine Learning Algorithm/Linear Regression.md",
+    "Algorithm/12. Union-Find.md",
+    "Algorithm/14. Binary Tree.md",
+    "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
+    "Algorithm/13. Kruskal Algorithm.md",
+    "Algorithm/Machine Learning Algorithm",
+    "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
+    "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
+    "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
     "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
+    "Algorithm/String Algorithms",
+    "Algorithm/Branch and Bound Algorithm/String Algorithms.md",
+    "Algorithm/Branch and Bound Algorithm/Travelling Salesman Problem.md",
     "Algorithm/Branch and Bound Algorithm",
     "Algorithm/Untitled.canvas",
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
@@ -167,25 +181,11 @@
     "Algorithm/Greedy Algorithms.md",
     "Algorithm/Divide and Conquer Algorithm/Strassen’s Matrix Multiplication.md",
     "Algorithm/Divide and Conquer Algorithm/Quick Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
-    "Algorithm/Divide and Conquer Algorithm/Merge Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
-    "Algorithm/Dynamic Programming Algorithm/Coin Change Problem.md",
     "Algorithm/Divide and Conquer Algorithm",
-    "Algorithm/Dynamic Programming Algorithm/Longest Common Subsequence.md",
-    "Algorithm/Dynamic Programming Algorithm/Knapsack Problem.md",
-    "Algorithm/Dynamic Programming Algorithm/Fibonacci Sequence.md",
-    "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
     "Algorithm/Dynamic Programming Algorithm",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Minnimum",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm",
-    "Algorithm/Graph Algorithm/Traversal Algorithm",
-    "Algorithm/Search and Sort Algorithm",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
