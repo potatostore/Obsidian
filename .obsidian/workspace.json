@@ -11,8 +11,12 @@
             "id": "e8c49d3aea840d5c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/DFS(Depth FIrst Search).md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -60,21 +64,8 @@
               "type": "bookmarks",
               "state": {}
             }
-          },
-          {
-            "id": "bc8513ccc9a155fb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Algorithm/DFS(Depth FIrst Search).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "Algorithm/DFS(Depth FIrst Search).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md"
+                "file": "Algorithm/DFS(Depth FIrst Search).md"
               }
             }
           }
@@ -156,19 +147,27 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "bc8513ccc9a155fb",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
-    "Algorithm/Search and Sort Algorithm/Heap Sort.md",
+    "Algorithm/BFS(Breath First Search).md",
+    "Algorithm/DFS(Depth FIrst Search).md",
+    "Algorithm/Sort Algorithm/Shell Sort.md",
+    "Untitled",
+    "Algorithm/Search Algorithm/Untitled.canvas",
+    "Algorithm/Untitled",
+    "Algorithm/Search Algorithm",
+    "Algorithm/Sort Algorithm/Radix Sort.md",
     "Untitled.md",
-    "Algorithm/Search and Sort Algorithm/Mergy Sort.md",
-    "Algorithm/Search and Sort Algorithm/Quick Sort.md",
-    "Algorithm/Search and Sort Algorithm/Selection Sort.md",
-    "Algorithm/Search and Sort Algorithm/Insertion Sort.md",
-    "Algorithm/Search and Sort Algorithm/Counting Sort.md",
-    "Algorithm/Search and Sort Algorithm/Bubble Sort.md",
+    "Algorithm/Sort Algorithm/Heap Sort.md",
+    "Algorithm/Sort Algorithm/Mergy Sort.md",
+    "Algorithm/Sort Algorithm/Quick Sort.md",
+    "Algorithm/Sort Algorithm/Selection Sort.md",
+    "Algorithm/Sort Algorithm/Insertion Sort.md",
+    "Algorithm/Sort Algorithm/Counting Sort.md",
+    "Algorithm/Sort Algorithm/Bubble Sort.md",
     "Project/Flappy Clone(Unity).md",
     "Algorithm/0. Prologue.md",
-    "Algorithm/Search and Sort Algorithm",
+    "Algorithm/Sort Algorithm",
     "IDE/Unity Engine(CS).md",
     "Books/Clean Code.md",
     "IDE",
@@ -184,19 +183,12 @@
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Books/데미안 - 헤르만 헤세.md",
     "Books/동물농장 - 조지 오웰.md",
-    "Algorithm/14. Binary Tree.md",
-    "Algorithm/8. Stack.md",
-    "Algorithm/9. Queue.md",
-    "Algorithm/10. BFS(Breath First Search).md",
     "Data Structure",
     "Project",
     "Pictures",
     "Pictures/library-book-bookshelf-read.jpg",
     "스크린샷 2024-08-23 오후 10.53.53.png",
     "delete_horizen.css",
-    "delete_horizen.rtf",
-    "Untitled.canvas",
-    "Algorithm",
-    "usize"
+    "Untitled.canvas"
   ]
 }
