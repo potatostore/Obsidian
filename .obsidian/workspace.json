@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Machine Learning Algorithm/Random Forests.md"
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md"
               }
             }
           }
@@ -149,43 +149,43 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Machine Learning Algorithm/Decision Trees.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
+    "Algorithm/Union-Find.md",
+    "Algorithm/Game Theory/Alpha-Beta Pruning.md",
+    "Algorithm/Game Theory/Minimax Algorith.md",
+    "Algorithm/Geometric Algorithms/Line Segment Intersection.md",
+    "Algorithm/Game Theory",
+    "Algorithm/Geometric Algorithms/Convex Hull Problem.md",
+    "Algorithm/Cryptographic Algorithms/Diffie-Hellman Key Exchange.md",
+    "Algorithm/Geometric Algorithms",
+    "Algorithm/Cryptographic Algorithms/SHA-256 Hashing Algorithm.md",
+    "Algorithm/Cryptographic Algorithms/Advanced Encryption Standard.md",
+    "Algorithm/Cryptographic Algorithms/RSA Algorithm.md",
+    "Algorithm/Mathematical Algorithm/Fast Fourier Transform(FFF) Algorithm.md",
+    "Algorithm/Cryptographic Algorithms",
+    "Algorithm/Mathematical Algorithm/Prime Factorization Algorithm.md",
+    "Algorithm/Mathematical Algorithm/Exponentiation by Squaring Algorithm.md",
+    "Algorithm/Mathematical Algorithm/Euclidean Algorithm.md",
+    "Algorithm/Machine Learning Algorithm/K-means Clustering.md",
+    "Algorithm/Mathematical Algorithm",
+    "Algorithm/Mathematical Algorithm.md",
+    "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
     "Algorithm/Machine Learning Algorithm/Random Forests.md",
+    "Algorithm/Machine Learning Algorithm/Decision Trees.md",
     "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
     "Algorithm/Machine Learning Algorithm/Linear Regression.md",
-    "Algorithm/12. Union-Find.md",
     "Algorithm/14. Binary Tree.md",
     "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
     "Algorithm/13. Kruskal Algorithm.md",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
-    "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
-    "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
-    "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
     "Algorithm/String Algorithms",
-    "Algorithm/Branch and Bound Algorithm/String Algorithms.md",
-    "Algorithm/Branch and Bound Algorithm/Travelling Salesman Problem.md",
     "Algorithm/Branch and Bound Algorithm",
     "Algorithm/Untitled.canvas",
-    "Algorithm/Backtracking Algorithm/Maze Solving.md",
-    "Algorithm/Backtracking Algorithm/Hamiltonian Path Problem.md",
-    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
-    "Algorithm/Backtracking Algorithm/Subset Sum Problem.md",
-    "Algorithm/Greedy Algorithm/Greedy Knapsack Problem.md",
     "Algorithm/Backtracking Algorithm",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm.md",
-    "Algorithm/Greedy Algorithm/Dijkstra’s Algorithm.md",
-    "Algorithm/Greedy Algorithm/Huffman Coding.md",
-    "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
     "Algorithm/Greedy Algorithm",
-    "Algorithm/Greedy Algorithms.md",
-    "Algorithm/Divide and Conquer Algorithm/Strassen’s Matrix Multiplication.md",
-    "Algorithm/Divide and Conquer Algorithm/Quick Sort.md",
     "Algorithm/Divide and Conquer Algorithm",
-    "Algorithm/Dynamic Programming Algorithm",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
-    "Algorithm/Graph Algorithm/Minnimum",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
