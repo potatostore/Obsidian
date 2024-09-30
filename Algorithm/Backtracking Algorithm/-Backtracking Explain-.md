@@ -27,3 +27,6 @@
 4. **제약 충족 문제(Constraint Satisfaction Problems)**: 특정 조건을 만족하는 해를 찾는 경우.
 5. **최적화 문제(Optimization Problems)**: 주어진 문제에서 최적의 해를 찾는 경우.
 
+# 시간복잡도
+
+백트래킹의 정의를 이해하면 자연스럽게 
