@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
+                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "A Algori",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
+                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
+                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md"
+                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md"
               }
             }
           }
@@ -149,6 +149,9 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
+    "Algorithm/Backtracking Algorithm/Maze Solving.md",
+    "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Union-Find.md",
@@ -176,10 +179,7 @@
     "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
     "Algorithm/Machine Learning Algorithm/Linear Regression.md",
     "Algorithm/14. Binary Tree.md",
-    "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
-    "Algorithm/13. Kruskal Algorithm.md",
     "Algorithm/Machine Learning Algorithm",
-    "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
     "Algorithm/String Algorithms",
     "Algorithm/Branch and Bound Algorithm",
     "Algorithm/Untitled.canvas",
