@@ -18,8 +18,16 @@
 #include <iostream>
 using namespace std;
 
+//return index
 int binarySearch(vector<int>& arr, int target){
-	
+	int left = 0;
+	int right = arr.size()-1;
+	while(right < left){
+		if(arr[(left+right) / 2] == target) return (left+right)/2;
+		else if(arr[left+right / 2] < target) left = (left+right)/2;
+		else right = (left+right)/2;
+	}
+	return -1;
 }
 
 int main(void){
@@ -29,5 +37,6 @@ int main(void){
 	int n;
 	cin >> n;
 	cout << binarySearch(arr, n);
+	return 0;
 }
 ```
