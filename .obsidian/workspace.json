@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/Maze Solving.md"
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md"
               }
             }
           }
@@ -149,8 +149,8 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
     "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
