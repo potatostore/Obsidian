@@ -13,4 +13,13 @@
 1. 순차적 비교 : 데이터 집합을 처음부터 끝까지 비교하여 원하는 값을 찾는 방식이다. 비정렬된 데이터에서 많이 사용하며, [[Linear Search]]가 이에 해당된다
 2. [[Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search|Binary Search]] : 정렬된 데이터 집합에서 중간 값을 선택하여 탐색 범위를 절반씩 줄여나가는 방식이다
 3. [[Jump Search]] : 정렬된 데이터집합을 일정구간 건너뛰면서 특정 값을 찾는 방식이다
-4. [[Interpolation Search]] : 
+4. [[Interpolation Search]] : 보간 탐색이라고 불리며, 정렬된 데이터 내에서 특정 값의 위치를 추정하여 그 근처에서 탐색을 시작하는 방식이다
+
+
+# 사용유형
+- 데이터베이스 검색 : [[Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search|Binary Search]], [[hash table]]
+- 문자열 매칭 및 검색
+- 경로 탐색 및 최단 경로 문제
+- 사전순 탐색 및 검색
+- 파일 시스템 및 운영체제
+- 최적화 문제 
