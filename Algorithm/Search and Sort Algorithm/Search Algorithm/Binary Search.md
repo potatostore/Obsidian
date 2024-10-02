@@ -18,12 +18,16 @@
 #include <iostream>
 using namespace std;
 
-int binarySearch(vector<int>& arr){
+int binarySearch(vector<int>& arr, int target){
 	
 }
 
 int main(void){
-	vector<int> arr = {40,30,50,20,10};
-	
+	vector<int> arr = {40,30,50,20,10};//정렬되지 않은 배열
+	sort(arr.begin(), arr.end());//정렬시키기
+
+	int n;
+	cin >> n;
+	cout << binarySearch(arr, n);
 }
 ```
