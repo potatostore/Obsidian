@@ -14,7 +14,7 @@
 - 선형 자료구조에서만 사용 가능하다.
 - 중간 값이 존재하여 해집합의 크기를 반으로 줄일 수 있는 경우에 적합하다.
 
-```c++ title='Ex'
+```c++ title='Ex : 반복문을 통해 이진 탐색 후 index 반환하기'
 #include <iostream>
 using namespace std;
 
