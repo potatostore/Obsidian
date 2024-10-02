@@ -9,4 +9,46 @@
 # 시간복잡도
 
 - 문제의 크기에 따라 달라지지만, 보통 O(n^k)와 같이 지수시간이다.
-- 
+
+# 조건
+
+- 별다른 조건 없이 어느 상황에서나 쓸 수 있다는 것이 큰 특징이다.
+
+```c++ title='Ex : 문자열에서 특정 패턴 찾기'
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+bool bruteForce(string text, string pattern){
+	int textlength = text.length();
+	int patternlength = pattern.length();
+
+	for(int i = 0; i < n - m; i++){
+		int j;
+
+		for(j = 0; j < m; j++){
+			if(text[i+j] != pattern[j]) break;
+		}
+
+		if(j == m) return true;
+	}
+	return false;
+}
+```
+
+
+이처럼 완전 탐색은 반복문을 이중으로 겹쳐놓은 형태가 많기에 시간복잡도가 자연스럽게 기하급수적으로 상승하는 편이다.
+
+
+완전탐색은 패턴문제나 모든 부분집합 탐색 문제 처럼 특정조건에 부합하는 해를 찾는 문제가 아닌 정확한 해를 찾는 경우에 쓰면 좋은 탐색 알고리즘이다.
+
+# 장단점
+- 장점 : 
+	- 단순, 직관적
+	- 최적해 보장
+	- 모든 문제에 적용 가능
+- 단점 :
+	- 크기에 비례해 기하급수적으로 증가하는 시간복잡도
+	- 비효율적
+
+입력의 크기가 작거나, 다른 방안이 떠오르지 않으면 시도할 알고리즘이다.

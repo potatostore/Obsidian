@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md"
+                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md"
               }
             }
           }
@@ -149,8 +149,8 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
