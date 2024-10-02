@@ -22,9 +22,9 @@ using namespace std;
 int binarySearch(vector<int>& arr, int target){
 	int left = 0;
 	int right = arr.size()-1;
-	while(right < left){
+	while(right >= left){
 		if(arr[(left+right) / 2] == target) return (left+right)/2;
-		else if(arr[left+right / 2] < target) left = (left+right)/2;
+		else if(arr[left+right / 2] < target) left = (left+right)/2 + 1;
 		else right = (left+right)/2;
 	}
 	return -1;
