@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+                "file": "Data Structure/Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+                "file": "Data Structure/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+                "file": "Data Structure/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md"
+                "file": "Data Structure/Untitled.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Data Structure/Hash Table.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+    "Data Structure/Untitled.md",
+    "Data Structure/Hash Table.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
@@ -178,7 +179,6 @@
     "Algorithm/Mathematical Algorithm.md",
     "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
     "Algorithm/Machine Learning Algorithm/Random Forests.md",
-    "Algorithm/Machine Learning Algorithm/Decision Trees.md",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/String Algorithms",
     "Algorithm/Branch and Bound Algorithm",
