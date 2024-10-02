@@ -21,3 +21,5 @@
 
 - [[Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search|Binary Search]] 와 동일하게 O(log n)이다.
 
+
+abcdefg

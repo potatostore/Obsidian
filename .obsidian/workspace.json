@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "acacdb678089f374",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "test note.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "test note.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "test note.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md"
+                "file": "test note.md"
               }
             }
           }
@@ -147,10 +160,12 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "e7a8e95e33a46f4f",
+  "active": "acacdb678089f374",
   "lastOpenFiles": [
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
+    "test note.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
@@ -175,9 +190,7 @@
     "Algorithm/Cryptographic Algorithms/SHA-256 Hashing Algorithm.md",
     "Algorithm/Cryptographic Algorithms/Advanced Encryption Standard.md",
     "Algorithm/Cryptographic Algorithms/RSA Algorithm.md",
-    "Algorithm/Mathematical Algorithm/Fast Fourier Transform(FFF) Algorithm.md",
     "Algorithm/Cryptographic Algorithms",
-    "Algorithm/Mathematical Algorithm/Prime Factorization Algorithm.md",
     "Algorithm/Mathematical Algorithm",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/String Algorithms",
