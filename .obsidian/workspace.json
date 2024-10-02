@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
+                "file": "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
+                "file": "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
+                "file": "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md"
+                "file": "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md"
               }
             }
           }
@@ -150,12 +150,16 @@
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
     "Data Structure/Binary Search Tree(BST).md",
     "Data Structure/Hash Table.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
     "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
@@ -174,11 +178,7 @@
     "Algorithm/Cryptographic Algorithms",
     "Algorithm/Mathematical Algorithm/Prime Factorization Algorithm.md",
     "Algorithm/Mathematical Algorithm/Exponentiation by Squaring Algorithm.md",
-    "Algorithm/Mathematical Algorithm/Euclidean Algorithm.md",
-    "Algorithm/Machine Learning Algorithm/K-means Clustering.md",
     "Algorithm/Mathematical Algorithm",
-    "Algorithm/Mathematical Algorithm.md",
-    "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/String Algorithms",
     "Algorithm/Branch and Bound Algorithm",
