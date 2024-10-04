@@ -23,3 +23,53 @@
 
 # 예시
 
+arr[] = [10,22,35,40,45,50,80,82,85,90,100]에서 85를 찾는다고 가정을 하자.
+
+1. 배열의 크기(n = 11)에 가장 가까운 피보나치 수를 찾는다.
+2. F(k) = 13, 이때 배열의 크기보다 큰 가장 가까운 피보나치 수를 찾아야 한다.
+3. index = min(offset + F(k-2), n-1)을 통해 인덱스를 구한다.
+	* 초기 offset = -1, index = min(-1+5, 10) = 4
+4. arr[4] = 45는 target = 85보다 작으므로 offset = 4, F(k-1) = F(k), F(k-2) = F(k-1)로 설정한다.
+	- F(k) = 13이였으므로 F(k) = 8, F(k-1) = 5가 된다.(F(k-2) = 3)
+5. 반복
+
+
+이를 코드로 구현해보면
+
+```c++ title='FibonacciSearch Ex'
+#include <iostream>
+using namespace std;
+#define t 10; //testcase
+
+//Fibonacci Search
+bool fibonacciSearch(int arr[], int target){
+	int arrsize = sizeof(arr) / 4;
+	int offset = -1;
+	int fstfib = 0, sndfib = 1, thdfib = fstfib + sndfib;
+
+	//배열의 크기보다 크면서 가장 가까운 피보나치 수 찾기
+	while(arrsize > thdfib){
+		fstfib = sndfib;
+		sndfib = thdfib;
+		thdfib = fstfib + sndfib;
+	}
+
+	while(thdfib != 0){
+		int index = min(offset + fstfib, arrsize);
+		if(arr[index] == target) return true;
+		else if(arr[index] < target)
+	}
+}
+
+int main(void){
+	int arr[t];
+	int target;
+	
+	for(int i=0;i<t;i++) cin >> arr[i];
+	cin >> target;
+
+	cout << "Is target in array? : " << fibonacciSearch(arr, target);
+
+	return 0;
+}
+```
