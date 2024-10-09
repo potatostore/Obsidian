@@ -19,7 +19,7 @@
 # 사용유형
 - 데이터베이스 검색 : [[Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search|Binary Search]], [[Hash Table]]을 사용하여 검색 성능 최적화
 - 문자열 매칭 및 검색 : [[Knuth-Morris-Pratt]]와 같은 문자열 탐색 알고리즘이 해당
-- 경로 탐색 및 최단 경로 문제 : 그래프 내에서 특정 노드 값을 찾기 위해 사용, [[BFS(Breath First Search)]], [[DFS(Depth FIrst Search)]]가 이에 해당
+- 경로 탐색 및 최단 경로 문제 : 그래프 내에서 특정 노드 값을 찾기 위해 사용, [[Algorithm/Graph Algorithm/Traversal Algorithm/BFS(Breath First Search)]], [[Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search)]]가 이에 해당
 - 사전순 탐색 및 검색 : [[Binary Search Tree(BST)]]를 이용하여 정렬된 데이터 내에서 특정 노드를 빠르게 찾기
 - 파일 시스템 및 운영체제 : 운영체제 내 파일탐색기가 특정 파일을 찾기 위해 사용
 - 최적화 문제 : 유전 알고리즘 등 탐색이 요구되는 문제에서 사용 가능
