@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md"
+                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md"
               }
             }
           }
@@ -149,9 +149,14 @@
   },
   "active": "e7a8e95e33a46f4f",
   "lastOpenFiles": [
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Linear Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
+    "Algorithm/Game Theory/-Game Theory Algorithm-.md",
+    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
+    "Algorithm/Game Theory/Alpha-Beta Pruning.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md-2",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md-2",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Linear Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/DFS(Depth FIrst Search).md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
@@ -164,19 +169,16 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
     "Data Structure/Binary Search Tree(BST).md",
     "Data Structure/Hash Table.md",
-    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
     "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
     "Algorithm/Union-Find.md",
-    "Algorithm/Game Theory/Alpha-Beta Pruning.md",
     "Algorithm/Game Theory/Minimax Algorith.md",
     "Algorithm/Geometric Algorithms/Line Segment Intersection.md",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms/Convex Hull Problem.md",
     "Algorithm/Cryptographic Algorithms/Diffie-Hellman Key Exchange.md",
     "Algorithm/Geometric Algorithms",
-    "Algorithm/Cryptographic Algorithms/SHA-256 Hashing Algorithm.md",
     "Algorithm/Cryptographic Algorithms",
     "Algorithm/Mathematical Algorithm",
     "Algorithm/Machine Learning Algorithm",
@@ -184,8 +186,6 @@
     "Algorithm/Branch and Bound Algorithm",
     "Algorithm/Untitled.canvas",
     "Algorithm/Backtracking Algorithm",
-    "Algorithm/Greedy Algorithm",
-    "Algorithm/Divide and Conquer Algorithm",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
