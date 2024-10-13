@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "cc76de6f1c31a106",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
+                "file": "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
+                "file": "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md"
+                "file": "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md"
               }
             }
           }
@@ -147,11 +160,11 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "e7a8e95e33a46f4f",
+  "active": "cc76de6f1c31a106",
   "lastOpenFiles": [
-    "Algorithm/Game Theory/-Game Theory Algorithm-.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
-    "Algorithm/Game Theory/Alpha-Beta Pruning.md",
+    "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md",
+    "Algorithm/Game Theory Algorithm/Alpha-Beta Pruning.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md-2",
@@ -173,9 +186,9 @@
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
     "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
     "Algorithm/Union-Find.md",
-    "Algorithm/Game Theory/Minimax Algorith.md",
+    "Algorithm/Game Theory Algorithm/Minimax Algorith.md",
     "Algorithm/Geometric Algorithms/Line Segment Intersection.md",
-    "Algorithm/Game Theory",
+    "Algorithm/Game Theory Algorithm",
     "Algorithm/Geometric Algorithms/Convex Hull Problem.md",
     "Algorithm/Cryptographic Algorithms/Diffie-Hellman Key Exchange.md",
     "Algorithm/Geometric Algorithms",
