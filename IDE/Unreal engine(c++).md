@@ -16,6 +16,7 @@
 - 메인 툴바(Main Toolbar)
 - 메뉴 바(Menu Bar)
 - 콘텐츠 브라우저(Contents Browser)
+- 기즈모
 
 
 
