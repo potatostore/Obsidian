@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "-Calendar-/2024/October/2024-10-31.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "2024-10-31"
             }
           }
         ],
@@ -92,7 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 256.5
   },
   "right": {
     "id": "a616419b5f754521",
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "-Calendar-/2024/October/2024-10-31.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for C C++"
+              "title": "Backlinks for 2024-10-31"
             }
           },
           {
@@ -127,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "-Calendar-/2024/October/2024-10-31.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from C C++"
+              "title": "Outgoing links from 2024-10-31"
             }
           },
           {
@@ -159,13 +159,23 @@
               "icon": "lucide-list",
               "title": "Outline of C C++"
             }
+          },
+          {
+            "id": "61f26235579a7650",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,12 +190,22 @@
   },
   "active": "7f27b2aad05b6606",
   "lastOpenFiles": [
+    "-Calendar-/2024/October/2024-10-29.md",
+    "-2024-W44.md",
+    "-2024-w44.md",
+    "-Calendar-/2024/October/2024-10-31.md",
+    "-Calendar-/2024/October/2024-10-23.md",
+    "Computer Structure/Register.md",
+    "-Calendar-/2024/October/2024-10-30.md",
+    "Language/C C++.md",
+    "-Calendar-/2024/October",
+    "-Calendar-/2024",
+    "-Calendar-",
     "CS.md",
     "Project/Web Server(c++).md",
     "Project/Flappy Clone(Unity).md",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
-    "Language/C C++.md",
     "IDE/Unreal engine(c++).md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Books/데미안 - 헤르만 헤세.md",
@@ -202,23 +222,13 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
-    "Data Structure/Binary Search Tree(BST).md",
-    "Data Structure/Hash Table.md",
-    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A* Algorithm.md",
-    "Algorithm/Backtracking Algorithm/Maze Solving.md",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
     "Algorithm/Cryptographic Algorithms",
     "Algorithm/Mathematical Algorithm",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/String Algorithms",
-    "Algorithm/Branch and Bound Algorithm",
     "Algorithm/Untitled.canvas",
-    "Algorithm/Backtracking Algorithm",
-    "Algorithm/Greedy Algorithm",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "스크린샷 2024-08-23 오후 10.53.53.png",
     "Untitled.canvas"
