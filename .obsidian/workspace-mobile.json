@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2024/October/2024-10-31.md",
+                "file": "-Calendar-/2024/October/2024-10-30.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-10-31"
+              "title": "2024-10-30"
             }
           }
         ]
@@ -133,6 +133,16 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
+      },
+      {
+        "id": "149aed4aba85939e",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {},
+          "icon": "calendar-with-checkmark",
+          "title": "Calendar"
+        }
       }
     ],
     "currentTab": 0
@@ -150,9 +160,10 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "-Calendar-/2024/October/2024-10-29.md",
     "-Calendar-/2024/October/2024-10-30.md",
-    "CS.md",
     "-Calendar-/2024/October/2024-10-31.md",
+    "CS.md",
     "-Calendar-/2024/October",
     "-Calendar-/2024",
     "-Calendar-",
@@ -180,7 +191,6 @@
     "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm",
