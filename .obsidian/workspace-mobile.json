@@ -150,6 +150,11 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "-Calendar-/2024/October/2024-10-30.md",
+    "-Calendar-/2024/October/2024-10-31.md",
+    "-Calendar-/2024/October",
+    "-Calendar-/2024",
+    "-Calendar-",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
     "Language/C C++.md",
     "IDE/Unreal engine(c++).md",
@@ -176,15 +181,10 @@
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search).md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm",
     "Algorithm/Graph Algorithm",
-    "Algorithm/Greedy Algorithm",
-    "Algorithm/Backtracking Algorithm",
-    "Algorithm/Divide and Conquer Algorithm",
-    "Algorithm/String Algorithms"
+    "Algorithm/Greedy Algorithm"
   ]
 }
