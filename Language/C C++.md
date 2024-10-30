@@ -21,7 +21,8 @@
 		- S/W : 크게 두 개의 층이 존재하는데, User, Kernel층이 존재함
 			- User : 개인이 컨트롤할 수 있는 영역으로 process, debugger, file등이 존재함.
 				- Debbuger : 다른 process에 접근할 수 있는 유일한 process로 이를 통해 해킹과 같은 
-				- Process : 
+				- Process : 특정 기능을 수행하기 위해 메모리 등의 컴퓨터 자원을 할당 받아 독립적으로 실행되는 단위
+				- Thread : Process내에서 특정 기능을 수행하기 위한 실행 단위
 			- kernel : S/W 조작을 위해 장치에 신호를 주거나 받는 영역.
 		- 1개의 os가 여러 process를 조작함 -> multi-tasking
 		- 1개의 process가 여러 thread를 조작함 -> multi-thread
