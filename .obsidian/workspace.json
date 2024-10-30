@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "-Calendar-/2024/October/2024-10-31.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "2024-10-31"
             }
           }
         ]
@@ -175,6 +175,7 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
+    "-Calendar-/2024/11",
     "-Calendar-/2024/October/2024-10-30.md",
     "-Calendar-/2024/October/2024-10-31.md",
     "Language/C C++.md",
@@ -206,7 +207,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
     "Algorithm/Cryptographic Algorithms",
