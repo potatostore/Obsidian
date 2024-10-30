@@ -25,7 +25,7 @@
 				- Thread : Process내에서 특정 기능을 수행하기 위한 실행 단위
 			- kernel : S/W 조작을 위해 장치에 신호를 주거나 받는 영역.
 		- 1개의 os가 여러 process를 조작함 -> multi-tasking
-		- 1개의 process가 여러 thread를 조작함 -> multi-thread
+		- 1개의 process가 여러 thread를 조작함 -> multi-threading
 
 <span style="color:rgb(0, 176, 80)">High level</span>  <span style="color:rgb(255, 0, 0)">User</span>   Process, Thread, Debugger
 
@@ -48,4 +48,7 @@ file을 작성하기 위해 정보나 규칙을 정해놓는데, 이를 Protocol
 	1. thread는 유저층이고, core는 하드웨어층인데, core를 어떻게 thread가 간접적으로 밑에서 도와줄까?
 
 
-1. 
+1. 이것은 우리가 직관적으로 봤을 때 코어 바로 밑에 쓰레드가 존재하여 도와주는 것처럼 보이지만, 실상은 다음과 같다.
+	1. 입력, 출력 등 컴퓨터가 연산해야하는 행위가 발생한다.
+	2. 하드웨어층에서 하드웨어 인터럽트를 통해 커널로 신호를 보낸다.
+	3. 커널층에 존재하는 ==스케줄러(scheduler)==가 요청을 받고, 
