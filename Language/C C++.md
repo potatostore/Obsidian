@@ -44,7 +44,7 @@ file을 작성하기 위해 정보나 규칙을 정해놓는데, 이를 Protocol
 
 그리고 이 Protocol에 맞추어 일일이 작성하는 것을 지양하고자 getchar(), putchar()와 같은 I/O함수들이 탄생했다고 볼 수 있다.
 
-- Buffer : file에 쌓이는 메모리의 일종으로, 
+- Buffer : Memory의 일종으로 데이터를 일시적으로 저장하는 공간으로 생각하면 쉽다. buffer은 user층에 해당하는데 이는 프로세스, file등 모든 user층이 일시적으로 갖을 수 있다. 특히 file의 경우 read/write buffer을 주로 갖게 되는데, 이때 read buffer의 속도보다 write buffer의 속도가 더 커 출력이 매끈하게 이루어지지 않을 경우를 ==Buffering==이라고 한다.
 
 - 궁금증
 	1. thread는 유저층이고, core는 하드웨어층인데, core를 어떻게 thread가 간접적으로 밑에서 도와줄까?
