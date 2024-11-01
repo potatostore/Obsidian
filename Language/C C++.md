@@ -51,7 +51,7 @@ Buffer의 개념에 대해 짚고 넘어간 이유는 c언어의 getchar(), scan
 - Read Buffer가 쌓이는 과정
 	1. H/W에 하드웨어 인터럽트 발생
 	2. kernel층의 console이 이벤트 신호를 받아 console을 추상화한 file에 신호를 넘김
-	3. file은 이를 read buffer에 쌓음
+	3. file은 이를 read buffer에 쌓음 (user층 프로세스가 데이터를 읽을 준비가 되었을 때까지   보관)
 
 - 궁금증
 	1. thread는 유저층이고, core는 하드웨어층인데, core를 어떻게 thread가 간접적으로 밑에서 도와줄까?
