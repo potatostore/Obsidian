@@ -44,6 +44,8 @@ file을 작성하기 위해 정보나 규칙을 정해놓는데, 이를 Protocol
 
 그리고 이 Protocol에 맞추어 일일이 작성하는 것을 지양하고자 getchar(), putchar()와 같은 I/O함수들이 탄생했다고 볼 수 있다.
 
+- Buffer : file에 쌓이는 메모리의 일종으로, 
+
 - 궁금증
 	1. thread는 유저층이고, core는 하드웨어층인데, core를 어떻게 thread가 간접적으로 밑에서 도와줄까?
 
