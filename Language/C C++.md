@@ -44,7 +44,14 @@ file을 작성하기 위해 정보나 규칙을 정해놓는데, 이를 Protocol
 
 그리고 이 Protocol에 맞추어 일일이 작성하는 것을 지양하고자 getchar(), putchar()와 같은 I/O함수들이 탄생했다고 볼 수 있다.
 
-- Buffer : Memory의 일종으로 데이터를 일시적으로 저장하는 공간으로 생각하면 쉽다. buffer은 user층에 해당하는데 이는 프로세스, file등 모든 user층이 일시적으로 갖을 수 있다. 특히 file의 경우 read/write buffer을 주로 갖게 되는데, 이때 read buffer의 속도보다 write buffer의 속도가 더 커 출력이 매끈하게 이루어지지 않을 경우를 ==Buffering==이라고 한다.
+- Buffer : Memory의 일종으로 데이터를 일시적으로 저장하는 공간으로 생각하면 쉽다. buffer은 user층, kernel층 모두에 해당하는데 이는 프로세스, file, os등 모든 user, kernel층이 일시적으로 갖을 수 있다. 각각의 역할에 따라 buffer의 쓰임새가 다른데, 만약 데이터 송수신이 발생했을 때, 수신속도보다 송신속도가 빠를경우, 송신이 일시적으로 매끄럽게 이루어지지 않아 데이터가 마치 끊기는 듯한 현상이 발생하는데, 이를 ==Buffering==이라고 한다.
+
+Buffer의 개념에 대해 짚고 넘어간 이유는 c언어의 getchar(), scanf(), gets()등의 input fucntion들은 키보드를 통한 하드웨어 인터럽트가 발생을 하면, 이 데이터들이 file의 read buffer에 일시적으로 쌓이게 되는데, 이때문에 c언어의 I/O을 ==Buffered I/O==라고 한다.
+
+- Read Buffer가 쌓이는 과정
+	1. H/W에 하드웨어 인터럽트 발생
+	2. kernel층의 console이 이벤트 신호를 받아 console을 추상화한 file에 신호를 넘김
+	3. file은 이를 read buffer에 쌓음
 
 - 궁금증
 	1. thread는 유저층이고, core는 하드웨어층인데, core를 어떻게 thread가 간접적으로 밑에서 도와줄까?
