@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "C C++"
             }
+          },
+          {
+            "id": "5ba9f01532307265",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.5"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,7 +186,7 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "b723c9eb5f5da05f",
+  "active": "5ba9f01532307265",
   "lastOpenFiles": [
     "CS.md",
     "-Calendar-/2024/11th/2024-11-01.md",
