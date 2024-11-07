@@ -11,14 +11,10 @@
             "id": "fb0b1da51cfc9bec",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "-Calendar-/2024/October/2024-10-31.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2024-10-31"
+              "title": "New tab"
             }
           }
         ]
@@ -160,9 +156,14 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "-Calendar-/2024/October/2024-10-31.md",
+    "-Calendar-/2024/10th/2024-10-30.md",
+    "-Calendar-/2024/10th/2024-10-31.md",
+    "-Calendar-/2024/10th",
+    "-Calendar-/2024/11th/2024-11-01.md",
+    "-Calendar-/2024/11th",
     "-Calendar-/2024/October/2024-10-30.md",
     "-Calendar-/2024/October/2024-10-29.md",
-    "-Calendar-/2024/October/2024-10-31.md",
     "CS.md",
     "-Calendar-/2024/October",
     "-Calendar-/2024",
@@ -187,14 +188,9 @@
     "Algorithm/Machine Learning Algorithm/K-means Clustering.md",
     "Algorithm/Machine Learning Algorithm/Linear Regression.md",
     "Algorithm/Machine Learning Algorithm/Random Forests.md",
-    "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
-    "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
     "Algorithm/Machine Learning Algorithm",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
-    "Algorithm/Graph Algorithm/Shortest Path Algorithm",
-    "Algorithm/Graph Algorithm",
-    "Algorithm/Greedy Algorithm"
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm"
   ]
 }
