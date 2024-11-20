@@ -40,18 +40,18 @@
 		- 1개의 os가 여러 process를 조작함 -> multi-tasking
 		- 1개의 process가 여러 thread를 조작함 -> multi-threading
 
-<span style="color:rgb(0, 176, 80)">High level</span>  <span style="color:rgb(255, 0, 0)">User</span>   Process, Thread, Debugger
+<span style="color:rgb(0, 176, 80)">High level</span>  <span style="color:rgb(255, 0, 0)">User</span>   Process, Thread, Debugger, File
 
 --- 
-		   <span style="color:rgb(255, 0, 0)">Kernel</span>    Driver, Os, 
+		   <span style="color:rgb(255, 0, 0)">Kernel</span>    Driver, Os, I/O
 
 --- 
 <span style="color:rgb(0, 176, 80)">Low level </span>  <span style="color:rgb(255, 0, 0)">H/W</span>   Device, monitor etc...
 
 
-I/O는 기본적으로 장치로부터 입력을 받거나, 장치에 전기신호를 통해 출력을 하는 형태이다. 따라서 H/W에 직접적으로 간여할 수 있는 Kernel S/W에 I/O가 해당된다고 볼 수 있다. 
+I/O는 기본적으로 장치로부터 입력을 받거나, 장치에 전기신호를 통해 출력을 하는 형태이다. 따라서 H/W에 직접적으로 간여할 수 있는 Kernel 층에 I/O가 해당된다고 볼 수 있다. 
 
-또한 H/W에 신호를 주고 받을 수 있는 Kernel과는 달리 User는 Kernel에 직접적으로 신호를 줄 수 없다. 따라서 file을 통해 kernel에 접근하게 되는데, 이때 우리가 User층에서 출력문을 실행하면, file이 변경되어 모니터로 확인이 되기에 I/O가 마치 User층에서 실행되는 것처럼 보이기에 혼동된다고 볼 수 있다. 
+또한 H/W에 신호를 주고 받을 수 있는 Kernel과는 달리 User는 Kernel에 직접적으로 신호를 줄 수 없다. 따라서 모든 장치(Devices)가 추상화된 file을 통해 kernel에 접근하게 되는데, 이때 우리가 User층에서 출력문을 실행하면, file이 변경되어 모니터로 확인이 되기에 I/O가 마치 User층에서 실행되는 것처럼 보이기에 혼동된다고 볼 수 있다. 
 
 file을 작성하기 위해 정보나 규칙을 정해놓는데, 이를 Protocol이라고 한다.
 
