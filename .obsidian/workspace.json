@@ -73,12 +73,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 256.5
+    "width": 200.5
   },
   "right": {
     "id": "a616419b5f754521",
@@ -174,10 +173,11 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
-    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
+    "1. 전처리기.md",
     "Language/C C++.md",
+    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "-Calendar-/2024/11th/2024-11-04.md",
     "-Calendar-/2024/11th/2024-11-05.md",
     "CS.md",
@@ -209,7 +209,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
     "Algorithm/Game Theory Algorithm",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
-    "test note.md",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
     "Algorithm/Cryptographic Algorithms",
