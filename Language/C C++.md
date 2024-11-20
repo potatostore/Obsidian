@@ -141,4 +141,12 @@ auto add(T1 a, T2 b) -> decltype(a+b){return a+b;}
 
 - static
 
-- 
+- 멤버 이니셜라이저 리스트 : const, static과 같이 생성과 동시에 초기화 해야하는 변수들을 다룰때 유용함.
+```c++
+class example{
+private:
+	const int value;
+public: 
+	example(int value)
+};
+```
