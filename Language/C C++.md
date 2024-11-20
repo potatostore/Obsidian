@@ -141,12 +141,50 @@ auto add(T1 a, T2 b) -> decltype(a+b){return a+b;}
 
 - static
 
-- 멤버 이니셜라이저 리스트 : const, static과 같이 생성과 동시에 초기화 해야하는 변수들을 다룰때 유용하다. 생성자를 선언하면서 멤버변수의 초기화가 이루어지는데, 이때 생성자 본문에서 초기화가 이루어지는 것이 아닌
+- 멤버 이니셜라이저 리스트 : const, static과 같이 생성과 동시에 초기화 해야하는 변수들을 다룰때 유용하다. 생성자를 선언하면서 멤버변수의 초기화가 이루어지는데, 이때 생성자 본문에서 초기화가 이루어지는 것이 아닌 멤버 변수 선언과 동시에 초기화가 이루어진다.
+
 ```c++
 class example{
 private:
 	const int value;
 public: 
-	example(int value)
+	example(int n) : value(n){}
 };
 ```
+
+위와 같이 멤버 이니셜라이저를 사용하게 되면
+
+```c++
+const int value = n;
+```
+
+와 동일한 문장으로 처리된다. 이는 곧 const와 같이 생성과 초기화가 동시에 이루어져야 할 때 유용하기도 하지만,
+
+```c++
+//normal
+int n;
+n = 10;
+
+---------
+//member initializer
+int n = 10;
+```
+
+불필요한 재할당이 필요가 없어져서 성능면으로도 우수하다.
+
+가장 큰 단점으로 this연산자를 사용할 수 없다는 것인데,
+
+```c++
+class example{
+private:
+	const int value;
+public:
+	example(int value) this->value(value){} // error!
+}
+```
+
+와 같은 코드를 구현할 수 없다는 것이다.
+
+이를 해결하기 위해선 c++20부터 지원하는 lambda capture style을 사용하면 되는데, 이는 람다캡쳐스타일에서 자세히 알아보겠다.
+
+- labda capture style
