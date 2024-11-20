@@ -188,3 +188,4 @@ public:
 이를 해결하기 위해선 c++20부터 지원하는 lambda capture style을 사용하면 되는데, 이는 람다캡쳐스타일에서 자세히 알아보겠다.
 
 - labda capture style
+- static
