@@ -95,3 +95,21 @@ Buffer의 개념에 대해 짚고 넘어간 이유는 c언어의 getchar(), scan
   따라서 직접 buffer에서 필요한 만큼의 입력데이터를 받아올 수 있는 fgets(), gets_s()와 같은 함수를 쓰는 것이 바람직하다
 
 - output : printf()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+c++
+- 후행 반환형
+- static
+- 
