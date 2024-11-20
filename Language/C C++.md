@@ -110,6 +110,7 @@ Buffer의 개념에 대해 짚고 넘어간 이유는 c언어의 getchar(), scan
 
 
 c++
-- 후행 반환형
+- 후행반환형
 - static
+
 - 

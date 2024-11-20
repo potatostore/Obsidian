@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "A Algori",
+                "query": "read buffer",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -173,11 +174,12 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "b723c9eb5f5da05f",
+  "active": "c3723e064a5e5ac3",
   "lastOpenFiles": [
+    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
+    "Language/C C++.md",
     "-Calendar-/2024/11th/2024-11-04.md",
     "-Calendar-/2024/11th/2024-11-05.md",
-    "Language/C C++.md",
     "CS.md",
     "-Calendar-/2024/11th/2024-11-01.md",
     "-Calendar-/2024/10th/2024-10-31.md",
@@ -201,7 +203,6 @@
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
     "IDE/Unreal engine(c++).md",
-    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Books/데미안 - 헤르만 헤세.md",
     "[.md",
     "Algorithm/Game Theory Algorithm/-Game Theory Algorithm Explain-.md",
