@@ -126,7 +126,29 @@ c++
 <span style="color:rgb(255, 0, 0)">??vector와 같은 동적 메모리 할당을 자연스럽게 요구하는 변수들을 매개변수로 사용할 때 굳이 포인터를 사용하지 않고 참조자를 통해 쉽게 변동이 가능한데, 굳이 동적메모리 할당을 할 때 포인터를 통해 이루어져야 할까?</span>
 
 - 후행반환형
-	- 함수 혹은 메서드의 반환형을 auto로 지정하거나 
+	- 함수 혹은 메서드의 반환형을 명확시 하거나, 반환형이 여러방향으로 존재할 경우 오버로딩을 피하기 위해 사용된다. 코드를 예제로 이해해보자.
+
+```c++
+int add(int a, int b){return a+b;}
+double add(double a, int b){return a+b;}
+double add(int a, double b){return a+b;}
+double add(double a, double b){return a+b;}
+```
+
+이런식으로 코드를 짤 때, 반환형이 여러 개이거나, 매개변수의 자료형이 여러가지 존재할 경우, 오버로딩을 피할 수 없다. 하지만 후행반환형을 사용하게 되면
+
+```c++
+auto add(auto a, auto b) -> decltype(a+b){return a+b;}
+```
+
+이런식으로 사용이 된다. 보통 위와 같이 매개변수의 자료형이 다양할 경우, auto를 사용하는 것보단
+
+```c++
+template <typename T1, typename T2>
+auto add(T1 a, T2 b) -> decltype(a+b){return a+b;}
+```
+
+로 template 함수를 통해 
 - static
 
 - 
