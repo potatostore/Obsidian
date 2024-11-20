@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "-Calendar-/2024/11th/2024-11-04.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "2024-11-04"
             }
           }
         ]
@@ -175,10 +175,12 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
+    "-Calendar-/2024/11th/2024-11-05.md",
+    "-Calendar-/2024/11th/2024-11-04.md",
+    "Language/C C++.md",
     "CS.md",
     "-Calendar-/2024/11th/2024-11-01.md",
     "-Calendar-/2024/10th/2024-10-31.md",
-    "Language/C C++.md",
     "-Calendar-/2024/October/2024-10-31.md",
     "-Calendar-/2024/October",
     "Language/Java Script.md",
@@ -207,8 +209,6 @@
     "Algorithm/Game Theory Algorithm",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
     "test note.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
     "Algorithm/Cryptographic Algorithms",
