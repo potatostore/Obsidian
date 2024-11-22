@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "C C++"
             }
+          },
+          {
+            "id": "0878a2010f20e75c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.7"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,7 +186,7 @@
       "obsidian-book-search-plugin:Create new book note": false
     }
   },
-  "active": "b723c9eb5f5da05f",
+  "active": "0878a2010f20e75c",
   "lastOpenFiles": [
     "Computer Structure/Cache memory.md",
     "Computer Structure/Register.md",
