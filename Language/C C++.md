@@ -137,9 +137,7 @@ template <typename T1, typename T2>
 auto add(T1 a, T2 b) -> decltype(a+b){return a+b;}
 ```
 
-로 template 함수를 통해 
-
-- static
+로 template 함수를 통해 구현할 수 있다.
 
 - 멤버 이니셜라이저 리스트 : const, static과 같이 생성과 동시에 초기화 해야하는 변수들을 다룰때 유용하다. 생성자를 선언하면서 멤버변수의 초기화가 이루어지는데, 이때 생성자 본문에서 초기화가 이루어지는 것이 아닌 멤버 변수 선언과 동시에 초기화가 이루어진다.
 
