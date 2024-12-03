@@ -187,3 +187,6 @@ public:
 
 - labda capture style
 - static
+- 
+- 
+- ![[스크린샷 2024-12-02 22.21.33.png]]

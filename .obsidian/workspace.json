@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2024/11th/2024-11-25.md",
+                "file": "Language/C C++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-11-25"
+              "title": "C C++"
             }
           }
         ],
@@ -190,8 +190,9 @@
   },
   "active": "0878a2010f20e75c",
   "lastOpenFiles": [
-    "-Calendar-/2024/11th/2024-11-19.md",
+    "스크린샷 2024-12-02 22.21.33.png",
     "-Calendar-/2024/11th/2024-11-25.md",
+    "-Calendar-/2024/11th/2024-11-19.md",
     "-Calendar-/2024/11th/2024-11-18.md",
     "Language/C C++.md",
     "Computer Structure/Cache memory.md",
@@ -222,7 +223,6 @@
     "-Calendar-/2024/10th",
     "-Calendar-/2024",
     "-Calendar-",
-    "IDE/Unreal engine(c++).md",
     "Algorithm/Game Theory Algorithm",
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
