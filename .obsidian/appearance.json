@@ -1,8 +1,10 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "AnuPpuccin",
   "enabledCssSnippets": [
     "Minimal Theme cards",
     "delete_horizen",
     "hide-title-behind-banner"
-  ]
+  ],
+  "accentColor": "#3f3e41",
+  "theme": "obsidian"
 }
