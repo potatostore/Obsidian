@@ -18,14 +18,12 @@ graph BT
 		A2 --조합--> A3["ComplexCalculator"]
 		A2 --조합--> B3["LogCalculator"]
 		A2 --조합--> C3["Trigonometry"]
-		A2 --조합--> D3["SimpleCalculator"]
-		A2 --조합--> E3["CalculusCalculator"]
+		A2 --조합--> D3["CalculusCalculator"]
 
 		A3 --조합--> A4["TotalCalculator"]
 		B3 --조합--> A4["TotalCalculator"]
 		C3 --조합--> A4["TotalCalculator"]
 		D3 --조합--> A4["TotalCalculator"]
-		E3 --조합--> A4["TotalCalculator"]
 
 		A4 --조합--> A5["TotalCalculator"]
 
@@ -33,7 +31,7 @@ graph BT
 		
 ```
 
-# Class
+# Class Info
 
 - 추후 유지보수를 위해 클래스를 다양하게 나눔
 - 추가로 클래스 각각이 긴 코드로 인해 헤더파일도 나누어서 작업 -> 추후 유지보수 용이
@@ -55,4 +53,34 @@ graph BT
 -----
 
 - ## ComplexCalculator
-	- 
+	- 복소수계산을 지원하는 클래스
+	- 실수와 허수를 나누고, 이를 각각 더하기 위해 STL complex 컨테이너 사용
+
+- ## LogCalculator
+	- 로그함수를 지원하는 클래스
+	- 자연상수, 일반로그, 상수로그 세 가지로 나누어서 계산하도록 만듦
+	- 추후에 DrawingGraph기능 지원을 위해 가독성을 높임
+
+- ## Trigonometry
+	- 삼각함수 지원 클래스
+	- taylor expansion을 사용하여 근사값을 유추하고, 1e-9이내의 오차값이 발생할경우, 계산을 멈추고 근사값을 출력
+	- 추후에 DrawingGraph기능 지원을 위한 가독성 향상
+
+- ## CalculusCalculator
+	- 미적분 지원 클래스
+	- DrawingGraph와 어떤식으로 연결해야할지 모르겠어서 미구현
+	- 미분, 적분은 구현했지만, 부정적분등 아직 처리하지 못한 부분은 추후 DrawingGraph클래스를 구현하며 구현
+
+-----
+
+- ## TotalCalculator
+	- 모든 클래스를 병합하고, 하나의 클래스에 기능을 넣기 위해 만든 클래스
+	- 분류하지 못하는 계산기능등을 추가할 계획
+	- main함수(Calculator.cpp)로 기능을 모으기 위함
+
+-----
+
+- ## Calculator.cpp
+	- main함수
+	- 입력 및 출력을 관리하기 위함
+
