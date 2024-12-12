@@ -13,7 +13,11 @@
 
 ```mermaid
 graph BT
-		A["BigInteger"] --조합--> B["ComplexCalculator"]
-		A["BigInteger"] --조합--> C["LogCalculator"]
-		A["BigInteger"] --조합--> D["Trigonometry"]
+		A1["BigInteger"] --조합--> A2["ComplexCalculator"]
+		A1["BigInteger"] --조합--> B2["LogCalculator"]
+		A1["BigInteger"] --조합--> C2["Trigonometry"]
+		A1["BigInteger"] --조합--> D2["SimpleCalculator"]
+		A1["BigInteger"] --조합--> E2["CalculusCalculator"]
+
+		A2 --조합--> 
 ```
