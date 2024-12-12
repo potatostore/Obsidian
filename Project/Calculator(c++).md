@@ -26,5 +26,33 @@ graph BT
 		C3 --조합--> A4["TotalCalculator"]
 		D3 --조합--> A4["TotalCalculator"]
 		E3 --조합--> A4["TotalCalculator"]
+
+		A4 --조합--> A5["TotalCalculator"]
+
+		A5 --조합--> A6["Calculator.cpp(main)"]
+		
 ```
 
+# Class
+
+- 추후 유지보수를 위해 클래스를 다양하게 나눔
+- 추가로 클래스 각각이 긴 코드로 인해 헤더파일도 나누어서 작업 -> 추후 유지보수 용이
+
+---
+
+- ## BigInteger
+	- long long int로 표현 불가능한 정수형을 표현하기 위해 만든 java의 BigInteger와 동일한 효과
+	- 음수처리, 선행0처리 등 다양한 기능 통해 사용자의 입력이 다르더라도 일관된 정수형을 출력하게 도움
+	- SimpleCalculator - sqrt, square, factorial등의 메서드 지원이 목표
+
+-----
+
+- ## SimpleCalculator
+	- BigInteger을 상속이 아닌 조합을 통해 기능을 받음(결합도가 높아지는 것을 방지하기 위함 + 다중 상속 방지 --> 단일상속 유지)
+	- 간단한 사칙연산을 지원
+	- sqrt, square, factorial 등 ComplexCalculator, LogCalculator등의 기능지원을 위해 필요한 수학함수들을 직접 제작
+
+-----
+
+- ## ComplexCalculator
+	- 
