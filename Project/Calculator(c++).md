@@ -13,11 +13,18 @@
 
 ```mermaid
 graph BT
-		A1["BigInteger"] --조합--> A2["ComplexCalculator"]
-		A1["BigInteger"] --조합--> B2["LogCalculator"]
-		A1["BigInteger"] --조합--> C2["Trigonometry"]
-		A1["BigInteger"] --조합--> D2["SimpleCalculator"]
-		A1["BigInteger"] --조합--> E2["CalculusCalculator"]
+		A1["BigInteger"] --조합--> A2["SimpleCalculator"]
+		
+		A2 --조합--> A3["ComplexCalculator"]
+		A2 --조합--> B3["LogCalculator"]
+		A2 --조합--> C3["Trigonometry"]
+		A2 --조합--> D3["SimpleCalculator"]
+		A2 --조합--> E3["CalculusCalculator"]
 
-		A2 --조합--> 
+		A3 --조합--> A4["TotalCalculator"]
+		B3 --조합--> A4["TotalCalculator"]
+		C3 --조합--> A4["TotalCalculator"]
+		D3 --조합--> A4["TotalCalculator"]
+		E3 --조합--> A4["TotalCalculator"]
 ```
+
