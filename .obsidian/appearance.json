@@ -3,7 +3,8 @@
   "enabledCssSnippets": [
     "Minimal Theme cards",
     "delete_horizen",
-    "hide-title-behind-banner"
+    "hide-title-behind-banner",
+    "mermaid"
   ],
   "accentColor": "#3f3e41",
   "theme": "obsidian"
