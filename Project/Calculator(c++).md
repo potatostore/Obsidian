@@ -11,3 +11,7 @@
 - 공학계산기인 만큼 다양한 수학을 지원할 수 있도록 클래스 나누기(로그함수, 이산수학 등등 다양한 클래스로 쪼개 유지보수를 편하게 하기)
 - main함수 설계 후 추후에 DrawingGraph등의 클래스에 상속하여 기능 다양성을 살리기
 
+```mermaid
+graph BT
+	["BigInteger"]--->["Trigonometry"]["LogCalculator"]["ComplexCalculator"]
+```
