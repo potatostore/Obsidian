@@ -13,5 +13,7 @@
 
 ```mermaid
 graph BT
-	["BigInteger"]--->["Trigonometry"]["LogCalculator"]["ComplexCalculator"]
+		A["BigInteger"] --조합--> B["ComplexCalculator"]
+		A["BigInteger"] --조합--> C["LogCalculator"]
+		A["BigInteger"] --조합--> D["Trigonometry"]
 ```
