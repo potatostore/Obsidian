@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
-                "mode": "source",
+                "file": "Project/Calculator(c++).md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "Calculator(c++)"
             }
           }
         ]
@@ -95,7 +95,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "CS.md",
+            "file": "Project/Calculator(c++).md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -149,6 +149,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
@@ -160,6 +162,8 @@
   },
   "active": "fb0b1da51cfc9bec",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "Language/C C++.md",
     "-Calendar-/2024/October/2024-10-31.md",
     "-Calendar-/2024/10th/2024-10-30.md",
     "-Calendar-/2024/10th/2024-10-31.md",
@@ -173,7 +177,6 @@
     "-Calendar-/2024",
     "-Calendar-",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
-    "Language/C C++.md",
     "IDE/Unreal engine(c++).md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
     "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
@@ -191,7 +194,6 @@
     "Algorithm/Machine Learning Algorithm/Decision Trees.md",
     "Algorithm/Machine Learning Algorithm/K-means Clustering.md",
     "Algorithm/Machine Learning Algorithm/Linear Regression.md",
-    "Algorithm/Machine Learning Algorithm/Random Forests.md",
     "Algorithm/Machine Learning Algorithm",
     "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm",
     "Algorithm/Graph Algorithm/Traversal Algorithm",
