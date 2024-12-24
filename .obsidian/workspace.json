@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "Project/Calculator(c++).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "Calculator(c++)"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#인터넷",
+                "query": "read buffer",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 200.5
   },
   "right": {
     "id": "a616419b5f754521",
@@ -87,6 +87,64 @@
         "id": "de9cf6bb38fbb1cc",
         "type": "tabs",
         "children": [
+          {
+            "id": "8ba99811058a4105",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "-Calendar-/2024/October/2024-10-30.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2024-10-30"
+            }
+          },
+          {
+            "id": "5df65e0c6c45fb91",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "-Calendar-/2024/October/2024-10-30.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2024-10-30"
+            }
+          },
+          {
+            "id": "1b20f94ab1214c46",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "154bcd5172849db2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Language/C C++.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of C C++"
+            }
+          },
           {
             "id": "61f26235579a7650",
             "type": "leaf",
@@ -155,14 +213,16 @@
               "title": "Outline of C C++"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 326
+    "width": 211
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -170,15 +230,16 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-book-search-plugin:Create new book note": false,
-      "obsidian-git:Open Git source control": false
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
-    "-Calendar-/2024/12th",
-    "-Calendar-/2024/Untitled.md",
+    "Project/Calculator(c++).md",
     "Language/C C++.md",
+    "Untitled.canvas",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
+    "스크린샷 2024-12-02 22.21.33.png",
     "-Calendar-/2024/11th/2024-11-25.md",
     "-Calendar-/2024/11th/2024-11-19.md",
     "-Calendar-/2024/11th/2024-11-18.md",
@@ -216,7 +277,6 @@
     "Algorithm/Mathematical Algorithm",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas",
-    "스크린샷 2024-08-23 오후 10.53.53.png",
-    "Untitled.canvas"
+    "스크린샷 2024-08-23 오후 10.53.53.png"
   ]
 }
