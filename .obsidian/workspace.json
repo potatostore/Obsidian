@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Dynamic Programming Algorithm/Fibonacci Sequence.md",
+                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fibonacci Sequence"
+              "title": "Merge Sort"
             }
           }
         ]
@@ -154,64 +154,6 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
-          },
-          {
-            "id": "44a2c7fc94191175",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Language/C C++.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for C C++"
-            }
-          },
-          {
-            "id": "225ed9159eff71eb",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Language/C C++.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from C C++"
-            }
-          },
-          {
-            "id": "53e570cf51cc3d1f",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
-            "id": "2b9834c7dec1ff9b",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Language/C C++.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of C C++"
-            }
           }
         ],
         "currentTab": 4
@@ -235,6 +177,18 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
+    "-Calendar-/2024/12th/2024-12-30.md",
+    "-Calendar-/2024/11th/2024-11-01.md",
+    "Algorithm/Dynamic Programming Algorithm/Fibonacci Sequence.md",
+    "-Calendar-/2024/12th",
     "Algorithm/Dynamic Programming Algorithm/Knapsack Problem.md",
     "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
     "Algorithm/Dynamic Programming Algorithm/Coin Change Problem.md",
@@ -251,21 +205,10 @@
     "Algorithm/Backtracking Algorithm/Maze Solving.md",
     "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
     "Untitled.canvas",
-    "Project/Calculator(c++).md",
-    "Language/C C++.md",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "스크린샷 2024-12-02 22.21.33.png",
-    "-Calendar-/2024/11th/2024-11-25.md",
-    "-Calendar-/2024/11th/2024-11-19.md",
-    "-Calendar-/2024/11th/2024-11-18.md",
-    "Computer Structure/Cache memory.md",
-    "Computer Structure/Register.md",
-    "Computer Structure/Virtual Memory.md",
-    "Project/Flappy Clone(Unity).md",
-    "Project/Web Server(c++).md",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
-    "1. 전처리기.md",
     "-Calendar-/2024/October",
     "-Calendar-/2024/11th",
     "-Calendar-/2024/10th",
@@ -275,7 +218,6 @@
     "Algorithm/Game Theory",
     "Algorithm/Geometric Algorithms",
     "Algorithm/Cryptographic Algorithms",
-    "Algorithm/Mathematical Algorithm",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "스크린샷 2024-08-23 오후 10.53.53.png"
