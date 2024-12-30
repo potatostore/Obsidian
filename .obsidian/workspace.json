@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Calculator(c++).md",
+                "file": "Algorithm/Dynamic Programming Algorithm/Fibonacci Sequence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Calculator(c++)"
+              "title": "Fibonacci Sequence"
             }
           }
         ]
@@ -160,7 +160,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 211
+    "width": 282
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,9 +177,24 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
+    "Algorithm/Dynamic Programming Algorithm/Knapsack Problem.md",
+    "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
+    "Algorithm/Dynamic Programming Algorithm/Coin Change Problem.md",
+    "Algorithm/Divide and Conquer Algorithm/Binary Search.md",
+    "Algorithm/Cryptographic Algorithms/Advanced Encryption Standard.md",
+    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
+    "Algorithm/Union-Find.md",
+    "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
+    "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
+    "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
+    "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
+    "Algorithm/Backtracking Algorithm/Subset Sum Problem.md",
+    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
+    "Algorithm/Backtracking Algorithm/Maze Solving.md",
+    "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
+    "Untitled.canvas",
     "Project/Calculator(c++).md",
     "Language/C C++.md",
-    "Untitled.canvas",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "스크린샷 2024-12-02 22.21.33.png",
     "-Calendar-/2024/11th/2024-11-25.md",
@@ -193,22 +208,8 @@
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
     "1. 전처리기.md",
-    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
-    "-Calendar-/2024/11th/2024-11-04.md",
-    "-Calendar-/2024/11th/2024-11-05.md",
-    "CS.md",
-    "-Calendar-/2024/11th/2024-11-01.md",
-    "-Calendar-/2024/10th/2024-10-31.md",
-    "-Calendar-/2024/October/2024-10-31.md",
     "-Calendar-/2024/October",
-    "Language/Java Script.md",
-    "Language/Rust.md",
     "-Calendar-/2024/11th",
-    "-Calendar-/2024/10th/2024-10-30.md",
-    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
-    "-Calendar-/2024/October/2024-10-29.md",
-    "-2024-W44.md",
-    "-2024-w44.md",
     "-Calendar-/2024/10th",
     "-Calendar-/2024",
     "-Calendar-",
