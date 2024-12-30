@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
+                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Selection Sort"
+              "title": "Shell Sort"
             }
           }
         ]
@@ -177,13 +177,13 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
     "-Calendar-/2024/12th/2024-12-30.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
