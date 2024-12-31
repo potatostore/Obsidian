@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "Computer Structure/Heap memory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "Heap memory"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "2. 자료형",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -176,10 +175,11 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
-    "1. 전처리기.md",
     "Language/C C++.md",
+    "Computer Structure/Heap memory.md",
+    "1. 전처리기.md",
     "-Calendar-/2024/12th/2024-12-31.md",
     "-Calendar-/2024/12th/2024-12-30.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
@@ -204,7 +204,6 @@
     "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
     "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
     "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
-    "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
     "Untitled.canvas",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "스크린샷 2024-12-02 22.21.33.png",
