@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Structure/Heap memory.md",
+                "file": "Computer Structure/OS(operate system).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Heap memory"
+              "title": "OS(operate system)"
             }
           }
         ]
@@ -178,6 +178,7 @@
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
     "Language/C C++.md",
+    "Computer Structure/OS(operate system).md",
     "Computer Structure/Heap memory.md",
     "1. 전처리기.md",
     "-Calendar-/2024/12th/2024-12-31.md",
@@ -203,7 +204,6 @@
     "Algorithm/Union-Find.md",
     "Algorithm/String Algorithms/Rabin-Karp Hashing.md",
     "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
-    "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
     "Untitled.canvas",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "스크린샷 2024-12-02 22.21.33.png",
