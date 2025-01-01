@@ -93,9 +93,9 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "-Calendar-/2024/October/2024-10-30.md",
+                "file": "Data Structure/-Prologue-.md",
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2024-10-30"
+              "title": "Backlinks for -Prologue-"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "-Calendar-/2024/October/2024-10-30.md",
+                "file": "Data Structure/-Prologue-.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2024-10-30"
+              "title": "Outgoing links from -Prologue-"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Language/C C++.md"
+                "file": "Data Structure/-Prologue-.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of C C++"
+              "title": "Outline of -Prologue-"
             }
           },
           {
@@ -154,9 +154,19 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "6f1e8dfdc9237f33",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -172,10 +182,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-book-search-plugin:Create new book note": false,
-      "mermaid-tools:Open Mermaid Toolbar": false
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b723c9eb5f5da05f",
+  "active": "6f1e8dfdc9237f33",
   "lastOpenFiles": [
     "Books/The Goals(1,2).md",
     "Books/Obtimized C++.md",
