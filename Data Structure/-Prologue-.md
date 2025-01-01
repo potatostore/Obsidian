@@ -31,7 +31,7 @@ int, char, float, double이 이에 해당하며, 언어별로 존재하는 자�
 
 ## Common Data Structure Operations
 
-| Data Structure                                                                            | Time Complexity |             |             |             |             |             |             |             | Space Complexity |
+| Data Structure                                                                            | Time Complexity | <           | <           | <           | <           |             |             |             | Space Complexity |
 | ----------------------------------------------------------------------------------------- | --------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ---------------- |
 |                                                                                           | Average         |             |             |             | Worst       |             |             |             | Worst            |
 |                                                                                           | Access          | Search      | Insertion   | Deletion    | Access      | Search      | Insertion   | Deletion    |                  |
@@ -49,3 +49,4 @@ int, char, float, double이 이에 해당하며, 언어별로 존재하는 자�
 | [Splay Tree](https://en.wikipedia.org/wiki/Splay_tree)                                    | `N/A`           | `Θ(log(n))` | `Θ(log(n))` | `Θ(log(n))` | `N/A`       | `O(log(n))` | `O(log(n))` | `O(log(n))` | `O(n)`           |
 | [AVL Tree](http://en.wikipedia.org/wiki/AVL_tree)                                         | `Θ(log(n))`     | `Θ(log(n))` | `Θ(log(n))` | `Θ(log(n))` | `O(log(n))` | `O(log(n))` | `O(log(n))` | `O(log(n))` | `O(n)`           |
 | [KD Tree](http://en.wikipedia.org/wiki/K-d_tree)                                          | `Θ(log(n))`     | `Θ(log(n))` | `Θ(log(n))` | `Θ(log(n))` | `O(n)`      | `O(n)`      | `O(n)`      | `O(n)`      | `O(n)`           |
+|                                                                                           |                 |             |             |             |             |             |             |             |                  |
