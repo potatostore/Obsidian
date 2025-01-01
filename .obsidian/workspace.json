@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Structure/-Prologue-.md",
+                "file": "Data Structure/Array.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "-Prologue-"
+              "title": "Array"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Structure/-Prologue-.md",
+                "file": "Data Structure/Array.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for -Prologue-"
+              "title": "Backlinks for Array"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Structure/-Prologue-.md",
+                "file": "Data Structure/Array.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from -Prologue-"
+              "title": "Outgoing links from Array"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Structure/-Prologue-.md"
+                "file": "Data Structure/Array.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of -Prologue-"
+              "title": "Outline of Array"
             }
           },
           {
@@ -188,34 +188,35 @@
   },
   "active": "b723c9eb5f5da05f",
   "lastOpenFiles": [
-    "Data Structure/Array.md",
     "Data Structure/-Prologue-.md",
+    "Data Structure/KD Tree.md",
+    "Data Structure/AVL Tree.md",
+    "Data Structure/Splay Tree.md",
+    "Data Structure/Red-Black Tree.md",
+    "Data Structure/B-Tree.md",
+    "Data Structure/Array.md",
+    "Data Structure/Cartesian Tree.md",
+    "Data Structure/Skip List.md",
+    "Data Structure/Doublely-Linked List.md",
+    "Data Structure/Singly-Linked List.md",
+    "Untitled.md",
+    "determination.md",
+    "1. 전처리기.md",
+    "Data Structure/Queue.md",
     "Data Structure/Binary Search Tree(BST).md",
+    "Data Structure/Hash Table.md",
+    "Data Structure/Lists",
     "Books/The Goals(1,2).md",
     "Books/Obtimized C++.md",
     "Books/Clean Architecture.md",
     "Books/웹소설.md",
     "Books/Clean Code.md",
     "Computer Structure/OS(operate system).md",
-    "determination.md",
     "-Calendar-/2025/1st/2025-01-01.md",
     "-Calendar-/2024/12th/2024-12-31.md",
     "-Calendar-/2024/12th/2024-12-30.md",
     "-Calendar-/2025/1st",
     "-Calendar-/2025",
-    "-Calendar-/2024/12th/2025-01-01.md",
-    "Language/C C++.md",
-    "Computer Structure/Heap memory.md",
-    "1. 전처리기.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
     "-Calendar-/2024/12th",
     "Untitled.canvas",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
@@ -228,7 +229,6 @@
     "-Calendar-/2024",
     "-Calendar-",
     "Algorithm/Game Theory Algorithm",
-    "Algorithm/Game Theory",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas",
     "스크린샷 2024-08-23 오후 10.53.53.png"
