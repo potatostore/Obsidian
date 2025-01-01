@@ -15,19 +15,8 @@
 ---
 #### 시간복잡도
 
-|                  |           | [[Array]] |
-| ---------------- | --------- | --------- |
-| best             | Access    | `Θ(1)`    |
-|                  | Search    | `Θ(n)`    |
-|                  | Insertion | `Θ(n)`    |
-|                  | Deletion  | `Θ(n)`    |
-|                  |           |           |
-| worst            | Access    | `O(1)`    |
-|                  | Search    | `O(n)`    |
-|                  | Insertion | `O(n)`    |
-|                  | Deletion  | `O(n)`    |
-|                  |           |           |
-| space complexity | worst     | `O(n)`    |
+
+
 
 #### 추가사항
 ---
