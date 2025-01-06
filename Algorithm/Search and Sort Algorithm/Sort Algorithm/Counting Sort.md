@@ -12,7 +12,7 @@ counting sort는 여태 배운 정렬 알고리즘과 다른 매커니즘으로 
 
 ---
 
-```c++
+```c++ title='Counting Sort - vector'
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -60,3 +60,38 @@ int main() {
 
 ---
 
+counting sort알고리즘의 문제점은 최솟값과 최대값이 벌어질 수록 많은 메모리를 잡아먹는다는 것이다.
+
+이와 비슷한 알고리즘 문제를 풀어본 적이 있어서 해결책을 바로 떠올릴 수 있었는데 바로 hashmap을 사용하는 것이다.
+
+hashmap을 사용하게 되면 대부분의 경우에서 vector를 사용했을때 보다 메모리, 시간복잡도 면에서 이익을 취할 수 있다.
+
+우선 예시를 보고 비교해보자
+
+---
+
+```c++ title='Counting Sort - hashmap'
+#include <iostream>
+#include <hashmap>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+vector<int> countingSort(vector<int> arr){
+	unordered_map<int, int> countMap;
+	vector<int> result;
+
+	
+}
+
+int main(void){
+	vector<int> arr = {2,5,8,10,1,3,5,7,9};
+
+	vector<int> result = countingSort(arr);
+	for(auto i : arr){
+		cout << i << endl;
+	}
+
+	return 0;
+}
+```
