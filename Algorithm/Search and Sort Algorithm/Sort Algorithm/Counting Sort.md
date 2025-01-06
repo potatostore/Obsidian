@@ -64,7 +64,7 @@ counting sort알고리즘의 문제점은 최솟값과 최대값이 벌어질 �
 
 이와 비슷한 알고리즘 문제를 풀어본 적이 있어서 해결책을 바로 떠올릴 수 있었는데 바로 hashmap을 사용하는 것이다.
 
-hashmap을 사용하게 되면 대부분의 경우에서 vector를 사용했을때 보다 메모리, 시간복잡도 면에서 이익을 취할 수 있다.
+hashmap을 사용하게 되면 대부분의 경우에서 vector를 사용했을때 보다 시간복잡도 면에서 이익을 취할 수 있다.
 
 우선 예시를 보고 비교해보자
 
@@ -72,15 +72,27 @@ hashmap을 사용하게 되면 대부분의 경우에서 vector를 사용했을�
 
 ```c++ title='Counting Sort - hashmap'
 #include <iostream>
-#include <hashmap>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
 vector<int> countingSort(vector<int> arr){
-	unordered_map<int, int> countMap;
 	vector<int> result;
 
+	int minval = *min_element(arr.begin(), arr.end());
+	int maxval = *max_element(arr.begin(), arr.end());
+	int range = maxval - minval + 1;
+
+	int hashmap[range];
+	memset(hashmap, 0, range);
+
+	for(auto i : arr){
+		hashmap[i + minval]++;
+	}
+
+	for(int i=0;i<arr.size();++i){
+		
+	}
 	
 }
 
