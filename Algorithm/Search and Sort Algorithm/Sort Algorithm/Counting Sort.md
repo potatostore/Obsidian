@@ -12,7 +12,6 @@ counting sort는 여태 배운 정렬 알고리즘과 다른 매커니즘으로 
 
 ---
 
-
 ```c++
 #include <iostream>
 #include <vector>
@@ -20,8 +19,9 @@ counting sort는 여태 배운 정렬 알고리즘과 다른 매커니즘으로 
 using namespace std;
 
 // Counting Sort 구현
-void countingSort(vector<int>& arr) {
-    if (arr.empty()) return;
+vector<int> countingSort(vector<int>& arr) {
+	vector<int> result;
+    if (arr.empty()) return result;
 
     // 배열의 최댓값, 최솟값 찾기
     int minVal = *min_element(arr.begin(), arr.end());
@@ -49,20 +49,14 @@ void countingSort(vector<int>& arr) {
 int main() {
     vector<int> arr = {4, 2, 2, 8, 3, 3, 1};
 
-    cout << "정렬 전: ";
-    for (int num : arr) {
-        cout << num << " ";
+    vector<int> result = countingSotr(arr);
+    for(auto i : result){
+	    cout << i << endl;
     }
-    cout << endl;
-
-    countingSort(arr);
-
-    cout << "정렬 후: ";
-    for (int num : arr) {
-        cout << num << " ";
-    }
-    cout << endl;
 
     return 0;
 }
 ```
+
+---
+
