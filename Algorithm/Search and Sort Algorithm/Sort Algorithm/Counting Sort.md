@@ -93,7 +93,8 @@ vector<int> countingSort(vector<int> arr){
 	for(int i=0;i<arr.size();++i){
 		
 	}
-	
+
+	return result;
 }
 
 int main(void){
@@ -107,3 +108,20 @@ int main(void){
 	return 0;
 }
 ```
+
+
+위와 같이 key : value형식을 갖게되면 기존 배열형식보다 훨씩 단축된 시간복잡도를 갖고 알고리즘을 수행할 수 있을 것이다. 
+
+그러면 반대로 배열형식이 위와 같은 hashmap형식보다 이점을 갖는 경우가 뭘까?
+
+---
+
+우선 counting sort는 3부분으로 나누어서 시간복잡도가 계산이 된다.
+
+1. 빈도 계산
+2. 키 정렬
+3. 결과 배열 작성
+
+배열 방식의 경우 
+
+1. 
