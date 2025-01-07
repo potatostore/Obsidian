@@ -207,6 +207,14 @@ int main(void){
 ---
 ## 반복문
 
+for, while, do-while문이 존재하고, 제어문으로 break, continue가 있는데, continue는 가급적 사용하지 않는 것이 좋다.
+
+---
+
+## 배열
+
+
+
 
 
 # C++
