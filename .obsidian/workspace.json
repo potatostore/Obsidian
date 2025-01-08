@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c2844e5fd34d6018",
+        "id": "79dfd7db284ca850",
         "type": "tabs",
         "children": [
           {
-            "id": "b723c9eb5f5da05f",
+            "id": "7c37e04b410117b1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "conflict-files-obsidian-git"
             }
           }
         ]
@@ -182,8 +186,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "7c37e04b410117b1",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
     "Project/Web Server(c++).md",
     "Project/Flappy Clone(Unity).md",
     "Project/Calculator(c++, spring boot).md",
@@ -217,7 +222,6 @@
     "Data Structure/Binary Search Tree(BST).md",
     "Data Structure/Array.md",
     "Data Structure/AVL Tree.md",
-    "Data Structure/-Prologue-.md",
     "Data Structure",
     "Computer Structure",
     "Books",
