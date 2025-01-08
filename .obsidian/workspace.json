@@ -1,0 +1,231 @@
+{
+  "main": {
+    "id": "6f89798aa12d3298",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2844e5fd34d6018",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b723c9eb5f5da05f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "214d65e0f2fc7046",
+    "type": "split",
+    "children": [
+      {
+        "id": "5472cc93141a3b97",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98284c89d43ad2aa",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c3723e064a5e5ac3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "127d8b0d1741fc26",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200.5
+  },
+  "right": {
+    "id": "a616419b5f754521",
+    "type": "split",
+    "children": [
+      {
+        "id": "de9cf6bb38fbb1cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8ba99811058a4105",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "-Calendar-/2025/1st/2025-01-01.md",
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2025-01-01"
+            }
+          },
+          {
+            "id": "5df65e0c6c45fb91",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "-Calendar-/2025/1st/2025-01-01.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2025-01-01"
+            }
+          },
+          {
+            "id": "1b20f94ab1214c46",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "154bcd5172849db2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "-Calendar-/2025/1st/2025-01-01.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-01-01"
+            }
+          },
+          {
+            "id": "61f26235579a7650",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "6f1e8dfdc9237f33",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 282
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "b723c9eb5f5da05f",
+  "lastOpenFiles": [
+    "Computer Structure/Virtual Memory.md",
+    "Obsidian",
+    "Data Structure/Array.md",
+    "Data Structure/AVL Tree.md",
+    "-Calendar-/2025/1st/2025-01-08.md",
+    "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
+    "Pictures/스크린샷 2024-12-02 22.21.33.png",
+    "Pictures/library-book-bookshelf-read.jpg",
+    "Language/C C++.md",
+    "Data Structure/B-Tree.md",
+    "Data Structure/Binary Search Tree(BST).md",
+    "Data Structure/Cartesian Tree.md",
+    "-Calendar-/2025/1st/2025-01-07.md",
+    "-Calendar-/2024/12th/2024-12-30.md",
+    "-Calendar-/2024/12th/2024-12-31.md",
+    "-Calendar-/2025/1st/2025-01-01.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
+    "-Calendar-/2025/1st/2025-01-06.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+    "-Calendar-/2025/1st/2024-12-30.md",
+    "-Calendar-/2025/1st/2025-01-05.md",
+    "Frameworks",
+    "Data Structure/Lists",
+    "-Calendar-/2025/1st",
+    "-Calendar-/2025",
+    "-Calendar-/2024/12th",
+    "Untitled.canvas",
+    "스크린샷 2024-12-02 22.21.33.png",
+    "-Calendar-/2024/October",
+    "-Calendar-/2024/11th",
+    "-Calendar-/2024/10th",
+    "-Calendar-/2024",
+    "Algorithm/Untitled.canvas",
+    "Algorithm/Search Algorithm/Untitled.canvas",
+    "스크린샷 2024-08-23 오후 10.53.53.png"
+  ]
+}
