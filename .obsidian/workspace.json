@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "79dfd7db284ca850",
+        "id": "49aa79b007e24009",
         "type": "tabs",
         "children": [
           {
-            "id": "7c37e04b410117b1",
+            "id": "7b0bca70dee8d844",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "New tab"
             }
           }
         ]
@@ -186,7 +182,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7c37e04b410117b1",
+  "active": "7b0bca70dee8d844",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Project/Web Server(c++).md",
