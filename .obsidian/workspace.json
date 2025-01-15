@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
+                "file": "Language/C C++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "개발자가 되기 위해 꼭 알아야 하는 IT 용어"
+              "title": "C C++"
             }
           }
         ]
@@ -188,6 +188,7 @@
   },
   "active": "7b0bca70dee8d844",
   "lastOpenFiles": [
+    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Books/웹소설.md",
     "Books/처음부터 제대로 배우는 스프링 부트.md",
     "Language/C C++.md",
@@ -222,7 +223,6 @@
     "Data Structure/Skip List.md",
     "Data Structure/KD Tree.md",
     "Data Structure/Singly-Linked List.md",
-    "Data Structure/Red-Black Tree.md",
     "Data Structure",
     "Computer Science",
     "Books",
