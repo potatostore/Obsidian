@@ -319,7 +319,11 @@ endian은 다양한 종류가 존재하지만, 그 중 포인터와 관련된 en
 100 -> 0x64 -> 00 00 00 64
 ```
 
-와 같이 4칸에 나뉘
+와 같이 4칸에 나뉘는데 이를 4byte(4칸)에 저장하는 방식이 따로 있다.
+
+- little endian:
+- big endian:
+- middle endian: 
 
 
 #### ASLR
