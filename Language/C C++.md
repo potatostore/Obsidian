@@ -303,7 +303,11 @@ c/c++과 같은 절차지향언어는 함수를 사용할 때 꼭 메인함수 �
 
 #### byte order : big-endian, little-endian
 
-byte order라는 것은 10진수의 상수를 16진수로 치환하고, 이를 메모리에 저장하는 것을 byte order이라고 한다. 
+byte order에 대해 알기 위해 endian이 무엇인지부터 정의를 해야한다.
+
+- endian : 컴퓨터 메모리와 같이 1차원 공간에 여러개의 연속된 대상을 나열하는 방법
+
+즉 
 - ASLR
 # C++
 
