@@ -408,6 +408,14 @@ int main(void){
 pointer변수 메모리 내부에는 x변수의 주소값이 들어가 있다. 
 ptr이 가르키는 곳을 따라가면 x의 값이 저장되어 있다.
 
+#### 메모리
+
+- stack(1MB) : 스코프 내부 코드
+- heap(32-bit기준 1.7GB) : 자유 영역 
+- PE image
+	- text : code
+	- data : RW(읽기, 쓰기 전용 파일) -> 전역변수, R -> 문자열 상수
+
 # C++
 
 - c와의 차이점
