@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
+                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bubble Sort"
+              "title": "Merge Sort"
             }
           }
         ]
@@ -188,6 +188,15 @@
   },
   "active": "db4a5f7f67333ba6",
   "lastOpenFiles": [
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Language/C C++.md",
     "Computer Structure/Virtual Memory.md",
@@ -212,18 +221,9 @@
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
     "Pictures",
-    "Language/Spring with java.md",
-    "Language/SQL.md",
-    "Language/Rust.md",
-    "Language/Html & Css.md",
     "Language",
-    "IDE/Unreal engine(c++).md",
     "IDE",
-    "Frameworks/Spring boot - java.md",
     "Frameworks",
-    "Data Structure/Stack.md",
-    "Data Structure/Splay Tree.md",
-    "Data Structure/Skip List.md",
     "Data Structure",
     "Computer Structure",
     "-Calendar-/2025/1st",
