@@ -25,12 +25,14 @@
             "id": "9f246753ed505695",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pictures/library-book-bookshelf-read.jpg"
+                "file": "Language/C C++.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "library-book-bookshelf-read"
+              "icon": "lucide-file",
+              "title": "C C++"
             }
           }
         ],
@@ -201,12 +203,17 @@
   },
   "active": "9f246753ed505695",
   "lastOpenFiles": [
+    "Language/Html & Css.md",
+    "Language/C C++.md",
+    "Language/Java Script.md",
+    "Language/Rust.md",
+    "Language/Spring with java.md",
+    "Language/SQL.md",
+    "Pictures/library-book-bookshelf-read.jpg",
     "Project/Flappy Clone(Unity).md",
     "Project/Calculator(c++, spring boot).md",
-    "Pictures/library-book-bookshelf-read.jpg",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
-    "Language/C C++.md",
     "-Calendar-/2025/1st/2025-01-21.md",
     "-Calendar-/2025/1st/2025-01-18.md",
     "conflict-files-obsidian-git.md",
@@ -225,13 +232,8 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Computer Structure/Virtual Memory.md",
     "Computer Science/memory/Virtual Memory.md",
-    "Computer Science/memory/Ram.md",
-    "Computer Science/memory/Register.md",
-    "Computer Science/memory/Cache memory.md",
-    "Computer Science/OS(operate system).md",
     "Computer Science/memory",
     "Computer Science",
-    "-Calendar-/2025/1st/2025-01-11.md",
     "Project",
     "Pictures",
     "Language",
