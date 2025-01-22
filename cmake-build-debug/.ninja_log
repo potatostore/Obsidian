@@ -1,0 +1,4 @@
+# ninja log v6
+1	202	7592347775739088	build.ninja	35edc442a85ce87
+3	406	7576674263156090	CMakeFiles/testfile.dir/main.cpp.obj	a7bb957cb4f773ee
+407	473	7576674267190460	testfile.exe	1ba847388bd3b1b0
