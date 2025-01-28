@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/1st/2025-01-28.md",
+                "file": "Language/C C++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-01-28"
+              "title": "C C++"
             }
           }
         ]
@@ -188,11 +188,14 @@
   },
   "active": "7b0bca70dee8d844",
   "lastOpenFiles": [
-    "-Calendar-/2025/1st/2025-01-07.md",
+    "Language/JAVA.md",
+    "Frameworks/Spring boot - java.md",
+    "Language/Spring(java).md",
+    "Language/C C++.md",
     "-Calendar-/2025/1st/2025-01-28.md",
+    "-Calendar-/2025/1st/2025-01-07.md",
     "-Calendar-/2025/1st/2025-01-21.md",
     "-Calendar-/2025/1st/2025-01-18.md",
-    "Language/C C++.md",
     "Computer Science/memory/heap.md",
     "Computer Science/memory/stack.md",
     "-Calendar-/2025/1st/2025-01-17.md",
@@ -212,14 +215,11 @@
     "conflict-files-obsidian-git.md",
     "Project/Web Server(c++).md",
     "Project/Flappy Clone(Unity).md",
-    "Project/Calculator(c++, spring boot).md",
     "Project",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
     "Pictures",
-    "Language/Spring with java.md",
-    "Language/SQL.md",
     "Language",
     "IDE",
     "Frameworks",
