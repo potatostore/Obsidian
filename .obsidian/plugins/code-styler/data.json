@@ -312,7 +312,7 @@
         "title": {
           "textFont": "",
           "textBold": false,
-          "textItalic": false
+          "textItalic": true
         },
         "languageTag": {
           "display": "none",
@@ -321,7 +321,7 @@
           "textItalic": false
         },
         "languageIcon": {
-          "display": "always",
+          "display": "none",
           "displayColour": true
         },
         "externalReference": {
@@ -351,7 +351,7 @@
         "gradientHighlightsColourStop": "70%",
         "languageBorderColour": false,
         "languageBorderWidth": 5,
-        "iconSize": 30
+        "iconSize": 28
       }
     },
     "colours": {
@@ -366,7 +366,7 @@
           "activeTextColour": "--text-muted"
         },
         "header": {
-          "backgroundColour": "#08F34E0D",
+          "backgroundColour": "--code-background",
           "title": {
             "textColour": "--code-comment"
           },
@@ -385,9 +385,7 @@
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
           "defaultColour": "--text-highlight-bg",
-          "alternativeHighlights": {
-            "err": "#DC23238C"
-          }
+          "alternativeHighlights": {}
         },
         "inline": {
           "backgroundColour": "--code-background",
@@ -411,7 +409,7 @@
           "activeTextColour": "--text-muted"
         },
         "header": {
-          "backgroundColour": "#FFFFFF00",
+          "backgroundColour": "--code-background",
           "title": {
             "textColour": "--code-comment"
           },
@@ -430,9 +428,7 @@
           "activeCodeblockLineColour": "--color-base-30",
           "activeEditorLineColour": "--color-base-20",
           "defaultColour": "--text-highlight-bg",
-          "alternativeHighlights": {
-            "err": "#DC23238C"
-          }
+          "alternativeHighlights": {}
         },
         "inline": {
           "backgroundColour": "--code-background",
