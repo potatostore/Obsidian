@@ -34,8 +34,13 @@
 - 같은 문자열 상수에 대한 포인터는 같은 주소값을 갖는다.
 
 ```c
+const char *str1 = "Hello World";
+const char *str2 = "Hello World";
 
+//&str1 == &str2
 ```
+
+<span style="color:rgb(255, 0, 0)">컴파일러</span>가 정적 메모리를 할당할 때 같은 문자열 상수로 초기화된 변수에 대해 메모리를 2번 소비할 필요가 없다고 판단하여 같은 메모리 주소를 갖게 한다.
 
 ---
 ## 3. I/O
