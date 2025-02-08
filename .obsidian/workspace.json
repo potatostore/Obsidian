@@ -22,15 +22,15 @@
             }
           },
           {
-            "id": "9f246753ed505695",
+            "id": "6de0b42e8c28a0f6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "release-notes",
               "state": {
-                "file": "Pictures/스크린샷 2024-08-23 오후 11.05.14.png"
+                "currentVersion": "1.8.4"
               },
-              "icon": "lucide-image",
-              "title": "스크린샷 2024-08-23 오후 11.05.14"
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.4"
             }
           }
         ],
@@ -53,7 +53,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -199,10 +200,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f246753ed505695",
+  "active": "6de0b42e8c28a0f6",
   "lastOpenFiles": [
-    "Pictures/library-book-bookshelf-read.jpg",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
+    "Pictures/library-book-bookshelf-read.jpg",
     "Project/Calculator(c++, spring boot).md",
     "conflict-files-obsidian-git.md",
     "Language/JAVA.md",
