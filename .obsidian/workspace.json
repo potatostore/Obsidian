@@ -34,21 +34,9 @@
               "icon": "lucide-file",
               "title": "C C++"
             }
-          },
-          {
-            "id": "bc4eb8f9ceb91491",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.4"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.4"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "r-value",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -215,7 +202,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bc4eb8f9ceb91491",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Language/C C++.md",
