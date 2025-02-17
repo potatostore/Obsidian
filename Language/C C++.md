@@ -646,7 +646,7 @@ public:
 
 이를 해결하기 위해선 c++20부터 지원하는 lambda capture style을 사용하면 되는데, 이는 람다캡쳐스타일에서 자세히 알아보겠다.
 
-## 3. Namespace, function
+## 3. Namespace, Function
 
 - default parameter : 함수 매개변수를 선언과 동시에 초기화하여 실수인자를 넘겨주지 않아도 자동으로 변수값이 초기화된다. 우측부터 순차적으로 이루어져야 하며, 우측 매개변수의 초기화 없이 좌측 매개변수만 초기화를 하면 컴파일 오류가 발생한다.
 ```c++
@@ -654,7 +654,60 @@ int sum(int, int = 10); // o
 int sum(int = 10, int) // x
 -> sum(10)을 선언할 경우 좌측 int변수에 값이 대입되어 우측 매개변수 값이 초기화 되지 않아 컴파일 오류
 ```
-*Google Coding Style Guide에서 사용을 지양함 -> 코드의 원본을 식별하기 어렵기 때문*
+*Google Coding Style Guide에서 사용을 지양함 -> 코드의 원본을 식별하기 어렵기 때문(모호성 발생)*
+
+c는 다형성이 존재하지 않지만, c++는 다형성을 지향하는 언어이다. 이를 보여주는 대표적인 문법이 바로 *override*이다.
+
+- override : 재정의, c++의 다형성을 보여줌
+- overloading : 다중정의, 호출자(coller) 면에서 혼란을 야기한다.
+
+```c++
+int sum(int, int);
+int sum(double, double); //overloading
+
+int sum(int a, int b){
+	return a+b;
+}
+
+int sum(int a, int b){
+	int temp = a+b;
+	return temp;
+} // override
+```
+
+c++는 앞서 언급한 것처럼 다형성을 중요시하는 언어다. 이는 같은 변수, 함수라도 다양한 방식으로 정의될 수 있다는 의미이다. 어떻게 가능한 걸까?
+
+바로 *Name Mangling*떄문이다.
+
+- Name Mangling : 함수 이름을 선언하면 compiler가 본명으로 바꾸는 방식, 즉 같은 변수명,함수명처럼 보여도 컴파일 후 다른 어셈블리코드로 변환된다는 뜻이다. 이를 통해 다중정의, 재정의 등 c++의 다형성을 추구할 수 있는 것이다.
+
+<span style="color:rgb(255, 247, 0)">다형성이라는 이점을 보유한 c++은 다형성을 과도하게 추구하면 모호성이 발생하여 오히려 다형성을 추구하지 않는 것보다 못한 코드가 발생할 수 있다. 따라서 c++은 다형성을 추구하며 모호성을 탈피하는 것이 중요한 과제라고 볼 수 있다.</span>
+
+그렇기에 다양한 문법을 통해 모호성을 탈피하는 방식을 내세웠는데, 함수 템플릿, namespace가 대표적이다.
+
+- Function template : 
+- Namespace : 변수명, 함수명의 중복을 피하기 위해 소속 생성
+	- 범위지정연산자(::) : 현재 함수의 소속(namespace)를 지정해주는 연산자이다.
+	- using : 특정 소속의 변수를 위 범위지정연산자 없이 호출할 수 있도록 설정한다. 중복이름의 소속이 공존할 수 있으므로 사용을 지양한다.
+
+```c++
+using namespace std; // std namespace의 using선언
+
+int main(void){
+	int a;
+	std::cin >> a; //범위지정연산자를 통해 std namespace내부의 cin operator사용
+	cout << ::a; // 무소속 변수 a라도 앞에 범위지정연산자를 통해 소속이 없음을 드러내야 한다. 또한 앞선 using 선언을 통해 std namespace를 범위지정연산자를 통해 소속구별을 하지 않아도 된다.
+}
+```
+
+- inline function : c와 동일
+
+
+
+
+
+
+
 
 
 
