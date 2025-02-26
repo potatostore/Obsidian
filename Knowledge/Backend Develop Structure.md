@@ -1,9 +1,8 @@
-초창기 웹 개발에서 진화된 업무로서 구조는 controller, service, repository 있다.
+초창기 웹 개발에서 진화된 업무로서 구조는 controller(요청분기), service(요청처리), repository(데이터 처리)있다.
 
 ``` mermaid
 graph LR
-	A1["USER"] --> A2["controller"] --> A3["service"] --> A4["repository"] 
-	--> A5[("DB")]
+	A1["USER"] --> A2["Controller"] <--> A3["Service"] <--> A4["Repository"] <--> A5[("DB")]
 ```
 
 이러한 개발구조를 무조건 따르는 것은 아니지만, 대부분의 업계에선 가이드라인으로 세운다.
@@ -21,12 +20,21 @@ backend는 model1에서 model2로 진화되었는데, model2를 *MVC model*이�
 flowchart LR
 	A1["User"] --> B2["controller"]
 	subgraph MVC model
-	B2 --> C3["View"]
-	B2 <--> A4["Model"] -.- C3
+	B2 --> A4["View"]
+	B2 <--> A3["Model"] -.- A4
 	end
-	C3 --> A1
-	A4 <--> A5[("DB")]
+	A4 --> A1
+	A3 <--> A5[("DB")]
 	
 ```
+``` mermaid
+graph LR
+	A1["Controller"] <--> A2["Service"]
+	subgraph Model
+	A2 <--> A3["Repository"]
+	end
+```
 
+
+위 model2(MVC model)은 요청분석을 통해 분기처리 후 데이터 처리 및 결과값을 생성하여 사용자가 요청한 json, xml등의 파일로 응답해주는 형식이다. 요청과 결과처리가 분리 되어 결과값 출력 및 테스트가 가능한 구조이다.
 
