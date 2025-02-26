@@ -18,11 +18,14 @@ backend는 model1에서 model2로 진화되었는데, model2를 *MVC model*이�
 *MVC model*은 virtual machine을 사용하는 Java,C#과 같은 컴파일러 언어에서 사용이 되다가 점차 php,asp,jsp와 같은 스크립트 언어에서도 채택되어 사용되었다.
 
 ``` mermaid
-graph LR
-	A1["User"] --> A2["controller"] <--> A3["model"] --> A4[("DB")]
-	A2 --> A5
-	A4 --> A3
-	A3 -.-> A5["View"] --> A1
+flowchart LR
+	A1["User"] --> B2["controller"]
+	subgraph MVC model
+	B2 --> C3["View"]
+	B2 <--> A4["Model"] -.- C3
+	end
+	C3 --> A1
+	A4 <--> A5[("DB")]
 	
 ```
 
