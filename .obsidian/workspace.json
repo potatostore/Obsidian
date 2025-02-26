@@ -39,12 +39,14 @@
             "id": "dc2a6f9f00305b87",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.7"
+                "file": "Knowledge/Backend Develop Structure.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.7"
+              "icon": "lucide-file",
+              "title": "Backend Develop Structure"
             }
           }
         ],
@@ -216,6 +218,8 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
+    "Knowledge/Backend Develop Structure.md",
+    "Knowledge",
     "Project/Calculator(c++, spring boot).md",
     "Language/C C++.md",
     "conflict-files-obsidian-git.md",
@@ -253,7 +257,6 @@
     "Frameworks",
     "Data Structure",
     "Computer Structure",
-    "-Calendar-/2025/1st",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/library-book-bookshelf-read.jpg",
