@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "C C++"
             }
+          },
+          {
+            "id": "dc2a6f9f00305b87",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -202,7 +214,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1900d8bd6138b972",
+  "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
     "Project/Calculator(c++, spring boot).md",
     "Language/C C++.md",
