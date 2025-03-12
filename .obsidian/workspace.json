@@ -48,21 +48,9 @@
               "icon": "lucide-file",
               "title": "2025-03-11"
             }
-          },
-          {
-            "id": "0c434adfffd46faa",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -228,7 +216,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0c434adfffd46faa",
+  "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
     "Books/Clean Architecture.md",
     "-Calendar-/2025/3rd/2025-03-11.md",
