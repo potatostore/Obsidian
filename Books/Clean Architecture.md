@@ -166,7 +166,10 @@ double distance(struct Point* p1, struct Point p2){
 }
 ```
 
-위와 같이 선언과 구현을 분리시켜 놓으면 결국 point.h
+point.h를 사용하는 측에서 struct Point의 멤버에 접근을 할 수가 없다.
+
+1. "Point.h"에 struct Point는 존재만 알려줄 뿐, 멤버변수에 대한 선언문이 존재하지 않는다.
+2. 
 
 
 
