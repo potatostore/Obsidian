@@ -166,6 +166,8 @@ double distance(struct Point* p1, struct Point p2){
 }
 ```
 
+위와 같이 선언과 구현을 분리시켜 놓으면 결국 point.h
+
 
 
 ## 6. 함수형 프로그래밍
