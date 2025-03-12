@@ -169,7 +169,18 @@ double distance(struct Point* p1, struct Point p2){
 point.h를 사용하는 측에서 struct Point의 멤버에 접근을 할 수가 없다.
 
 1. "Point.h"에 struct Point는 존재만 알려줄 뿐, 멤버변수에 대한 선언문이 존재하지 않는다.
-2. 
+2. 클라이언트 코드에서 struct Point에 대한 정의를 해도 해당 구조체에 직접접근(p.x / p.y)를 하는 것이 아닌 간접접근을 통해 접근을 함.
+
+즉 절차지향 언어에서 객체지향 언어의 private와 동일한 효과를 보이는 코드를 작성할 수 있다는 뜻이다.
+
+이를 c++의 캡슐화를 통해 코드를 작성해보면
+
+```
+```
+
+#### 상속
+
+                                               
 
 
 
