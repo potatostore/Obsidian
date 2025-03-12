@@ -113,7 +113,59 @@ Clean Architecture이란 Clean Code로 만들어진 벽돌은 무지성으로 �
 추후에 데이크스트라는 테스트 또한 동일하게 코드가 정답임을 나타내 줄 수는 없지만, 코드가 틀렸다는 것을 보여주는 것이라고 주장했다.
 
 이는 테스트주도개발을 통해 참임을 증명하지 말고, 거짓이 없음을 증명하는 것을 시도해야 한다는 뜻이다.
+
+*구조적 프로그래밍 : 기존의 goto문을 지양하고, 반복/제어문을 통해 제약을 걸어 제어흐름의 직접적인 제어에 대한 규칙을 부여하는 것*
+
 ## 5. 객체 지향 프로그래밍
+
+객체 지향을 설명하라고 하면 많은 이들이 객체지향의 특징을 생각해낸다.
+
+객체 지향하면 바로 떠오를 정도로 기억되는 4가지의 기능이 있다.(책에서는 3가지만 소개)
+
+1. 캡슐화
+2. 상속
+3. 다형성
+4. 추상화(책에서 소개 x)
+
+과연 우리는 위 4가지의 특징이 객체지향을 설명해준다는 것을 증명할 수 있을까?
+
+#### 캡슐화
+
+캡슐화는 private, public 연산자를 통해 외부에서 멤버 변수, 메서드에 접근하지 못하도록 막거나, 개방하는 것을 뜻한다. 즉 클래스 외부에서 생성된 객체를 통해 priavte선언된 멤버변수에 접근을 못한다는 것이다.
+
+여기서 핵심은 private 연산자가 아닌 외부에 생성된 객체에 멤버변수가 접근하지 못하도록 만들면 캡슐화가 이루어졌다고 말할 수 있다.
+
+다음 c코드를 살펴보자
+
+```c title='Point.h'
+struct Point;
+struct Point* makePoint(double x, double y);
+double distance(struct Point* p1, struct Point* p2);
+```
+
+```c title='main.c'
+#include "Point.h"
+#inlcude <stdlib.h>
+#include <stdio.h>
+
+struct Point{
+	double x,y;
+}
+
+struct Point* makePoint(double x, double y){
+	struct Point* p = malloc(sizeof(struct Point));
+	p->x = x;
+	p->y = y;
+	return p;
+}
+
+double distance(struct Point* p1, struct Point p2){
+	double dx = p1->x - p2->x;
+	double dy = p1->y - p2->y;
+	return sqrt(dx*dx + dy*dy);
+}
+```
+
 
 
 ## 6. 함수형 프로그래밍
