@@ -175,12 +175,40 @@ point.h를 사용하는 측에서 struct Point의 멤버에 접근을 할 수가
 
 이를 c++의 캡슐화를 통해 코드를 작성해보면
 
-```
+```cpp title='point.h'
+class Point{
+public :
+	Point(double x, double y);
+	double distance(const Point& p) const;
+
+private : 
+	double x;
+	double y;
+}
 ```
 
+```c++ title='point.cc'
+#include "point.h"
+#include <math.h>
+
+Point::Point(double x, double y) : x(x), y(y)
+{}
+
+double Point::distancde(coinst Point& p) const{
+	double dx = x - p.x;
+	double dy = y - p.y;
+	return sqrt(dx*dx - dy*dy);
+}
+```
+
+위와 같이 클래스 내부에 private, public을 넣어 캡슐화를 간편히 하였지만, 클래스에 생성자를 넣어 놓으므로서 멤버변수가 존재한다는 사실을 클라이언트 입장에서 확인할 수 있다.
+
+즉 객체 지향 언어가 절차 지향 언어보다 캡슐화가 안되어 있다는 것을 확인할 수 있다.
+
+물론 protected등
 #### 상속
 
-                                               
+
 
 
 
