@@ -34,21 +34,9 @@
               "icon": "lucide-file",
               "title": "C C++"
             }
-          },
-          {
-            "id": "a69b71d57f63cb07",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.9"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -80,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "디폴트",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -101,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -214,7 +203,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a69b71d57f63cb07",
+  "active": "c3723e064a5e5ac3",
   "lastOpenFiles": [
     "Language/C C++.md",
     "animal class.md",
