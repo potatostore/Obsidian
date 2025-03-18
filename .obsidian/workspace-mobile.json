@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Clean Architecture.md",
+                "file": "University/금융공학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clean Architecture"
+              "title": "금융공학"
             }
           }
         ],
@@ -179,6 +179,7 @@
   },
   "active": "e99830fa92721d80",
   "lastOpenFiles": [
+    "Books/Clean Architecture.md",
     "University/금융공학.md",
     "Language/C C++.md",
     "Language/JAVA.md",
@@ -210,7 +211,6 @@
     "Frameworks/Spring boot - java.md",
     "Frameworks",
     "Project/Calculator(c++, spring boot).md",
-    "-Calendar-/2025/1st/2025-01-06.md",
     "-Calendar-/2025",
     "-Calendar-/2025/1st",
     "-Calendar-/2024/12th",
