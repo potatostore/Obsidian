@@ -8,35 +8,49 @@
         "type": "tabs",
         "children": [
           {
-            "id": "db4a5f7f67333ba6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Merge Sort"
-            }
-          },
-          {
             "id": "6de0b42e8c28a0f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-20.md",
+                "file": "Project/Calculator(c++, spring boot).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20"
+              "title": "Calculator(c++, spring boot)"
+            }
+          },
+          {
+            "id": "1900d8bd6138b972",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Language/C C++.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "C C++"
+            }
+          },
+          {
+            "id": "dc2a6f9f00305b87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/2-1/컴퓨터실험2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "컴퓨터실험2"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -202,40 +216,40 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6de0b42e8c28a0f6",
+  "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-19.md",
-    "-Calendar-/2025/3rd/2025-03-20.md",
-    "Knowledge/Backend Develop Structure.md",
     "University/2-1/TODO.md",
+    "-Calendar-/2025/3rd/2025-03-20.md",
+    "-Calendar-/2025/3rd/2025-03-19.md",
     "TODO.md",
-    "conflict-files-obsidian-git.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
-    "Language/C C++.md",
     "-Calendar-/2025/3rd/2025-03-18.md",
-    "animal class.md",
-    "University/2-1/컴퓨터실험2.md",
-    "University/2-1/컴퓨터구조.md",
+    "Books/Clean Architecture.md",
+    "University/2-1/금융공학.md",
+    "University/2-1/논리회로설계.md",
     "University/2-1/컴퓨터 자료구조.md",
     "University/2-1/선형대수학.md",
     "University/2-1/빅데이터.md",
     "University/2-1/빅데이터 처리.md",
-    "University/2-1/논리회로설계.md",
-    "University/2-1/금융공학.md",
     "University/2-1",
-    "University",
-    "Knowledge",
-    "-Calendar-/2025/3rd/2025-03-05.md",
+    "University/2-1/컴퓨터구조.md",
+    "University/2-1/컴퓨터실험2.md",
     "-Calendar-/2025/3rd/2025-03-12.md",
     "-Calendar-/2025/3rd/2025-03-11.md",
+    "Books/Clean Code.md",
+    "-Calendar-/2025/3rd/2025-03-05.md",
     "-Calendar-/2025/3rd/2025-03-06.md",
-    "-Calendar-/2025/3rd/2025-03-04.md",
     "-Calendar-/2025/3rd/2025-03-03.md",
+    "Books/웹소설.md",
+    "-Calendar-/2025/3rd/2025-03-04.md",
+    "Language/C C++.md",
     "-Calendar-/2025/3rd",
+    "Knowledge/Backend Develop Structure.md",
+    "University",
+    "Knowledge",
+    "Project/Calculator(c++, spring boot).md",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
-    "Project/Calculator(c++, spring boot).md",
-    "Language/JAVA.md",
     "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Computer Science/memory",
     "Computer Science",
