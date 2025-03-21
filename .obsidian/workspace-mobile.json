@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-20.md",
+                "file": "-Calendar-/2025/3rd/2025-03-22.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20"
+              "title": "2025-03-22"
             }
           }
         ]
@@ -164,9 +164,10 @@
   },
   "active": "959c169424ffc75d",
   "lastOpenFiles": [
+    "-Calendar-/2025/3rd/2025-03-20.md",
+    "-Calendar-/2025/3rd/2025-03-22.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "TODO.md",
-    "-Calendar-/2025/3rd/2025-03-20.md",
     "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
     "University/2-1/컴퓨터실험2.md",
@@ -192,7 +193,6 @@
     "University/컴실 2.md",
     "University",
     "-Calendar-/2025/3rd/2025-03-03.md",
-    "-Calendar-/2025/3rd/2025-03-04.md",
     "-Calendar-/2025/3rd",
     "Computer Science/memory",
     "Computer Science",
