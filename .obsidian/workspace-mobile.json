@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-22.md",
+                "file": "-Calendar-/2025/3rd/2025-03-20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-22"
+              "title": "2025-03-20"
             }
           }
         ]
@@ -164,8 +164,8 @@
   },
   "active": "959c169424ffc75d",
   "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-20.md",
     "-Calendar-/2025/3rd/2025-03-22.md",
+    "-Calendar-/2025/3rd/2025-03-20.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "TODO.md",
     "University/2-1/TODO.md",
