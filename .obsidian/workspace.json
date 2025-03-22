@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/컴퓨터구조.md",
+                "file": "University/2-1/금융공학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컴퓨터구조"
+              "title": "금융공학"
             }
           }
         ],
@@ -218,6 +218,8 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
+    "University/2-1/컴퓨터구조.md",
+    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "-Calendar-/2025/3rd/2025-03-22.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
     "University/2-1/컴퓨터실험2.md",
@@ -234,7 +236,6 @@
     "University/2-1/빅데이터.md",
     "University/2-1/빅데이터 처리.md",
     "University/2-1",
-    "University/2-1/컴퓨터구조.md",
     "-Calendar-/2025/3rd/2025-03-12.md",
     "-Calendar-/2025/3rd/2025-03-11.md",
     "Books/Clean Code.md",
@@ -245,7 +246,6 @@
     "-Calendar-/2025/3rd/2025-03-04.md",
     "Language/C C++.md",
     "-Calendar-/2025/3rd",
-    "Knowledge/Backend Develop Structure.md",
     "University",
     "Knowledge",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
