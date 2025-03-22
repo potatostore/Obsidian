@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-22.md",
+                "file": "University/2-1/컴퓨터구조.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-22"
+              "title": "컴퓨터구조"
             }
           }
         ],
@@ -218,8 +218,8 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-20.md",
     "-Calendar-/2025/3rd/2025-03-22.md",
+    "-Calendar-/2025/3rd/2025-03-20.md",
     "University/2-1/컴퓨터실험2.md",
     "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
