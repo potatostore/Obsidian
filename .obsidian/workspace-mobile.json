@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "dd6fc1f5f01dfaf5",
+        "id": "b063fd335baa6ddf",
         "type": "tabs",
         "children": [
           {
-            "id": "fb0b1da51cfc9bec",
+            "id": "959c169424ffc75d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
+                "file": "-Calendar-/2025/3rd/2025-03-20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clean Code(클린 코드) - 로버트 C 마틴"
-            }
-          },
-          {
-            "id": "074e27167dbc8280",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TODO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "TODO"
+              "title": "2025-03-20"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -177,10 +162,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "074e27167dbc8280",
+  "active": "959c169424ffc75d",
   "lastOpenFiles": [
+    "-Calendar-/2025/3rd/2025-03-22.md",
+    "-Calendar-/2025/3rd/2025-03-20.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "TODO.md",
+    "University/2-1/TODO.md",
+    "-Calendar-/2025/3rd/2025-03-19.md",
     "University/2-1/컴퓨터실험2.md",
     "-Calendar-/2025/3rd/2025-03-18.md",
     "Language/C C++.md",
@@ -204,11 +193,7 @@
     "University/컴실 2.md",
     "University",
     "-Calendar-/2025/3rd/2025-03-03.md",
-    "-Calendar-/2025/3rd/2025-03-04.md",
     "-Calendar-/2025/3rd",
-    "-Calendar-/2025/1st/2025-01-28.md",
-    "-Calendar-/2025/1st/2025-01-17.md",
-    "Computer Science/memory/heap.md",
     "Computer Science/memory",
     "Computer Science",
     "Frameworks",
