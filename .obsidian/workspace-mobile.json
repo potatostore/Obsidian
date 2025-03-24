@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-20.md",
+                "file": "University/2-1/금융공학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20"
+              "title": "금융공학"
             }
           }
         ]
@@ -164,8 +164,14 @@
   },
   "active": "959c169424ffc75d",
   "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-22.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
+    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
+    "-Calendar-/2025/3rd/2025-03-25.md",
+    "-Calendar-/2025/3rd/2025-03-23.md",
+    "-Calendar-/2025/3rd/2025-03-21.md",
+    "-Calendar-/2025/3rd/2025-03-26.md",
+    "-Calendar-/2025/3rd/2025-03-24.md",
+    "-Calendar-/2025/3rd/2025-03-22.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "TODO.md",
     "University/2-1/TODO.md",
@@ -185,14 +191,8 @@
     "University/2-1/금융공학.md",
     "University/2-1/논리회로설계.md",
     "University/2-1",
-    "-Calendar-/2025/3rd/2025-03-11.md",
-    "Books/Clean Architecture.md",
-    "Language/JAVA.md",
-    "Knowledge/Backend Develop Structure.md",
     "Knowledge",
-    "University/컴실 2.md",
     "University",
-    "-Calendar-/2025/3rd/2025-03-03.md",
     "-Calendar-/2025/3rd",
     "Computer Science/memory",
     "Computer Science",
