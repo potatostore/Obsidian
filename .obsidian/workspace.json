@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/TODO.md",
+                "file": "University/2-1/금융공학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "금융공학"
             }
           }
         ],
@@ -107,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200.5
+    "width": 200
   },
   "right": {
     "id": "a616419b5f754521",
@@ -200,7 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282
+    "width": 303
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -218,33 +218,33 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-24.md",
-    "-Calendar-/2025/3rd/2025-03-25.md",
-    "-Calendar-/2025/3rd/2025-03-26.md",
-    "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-23.md",
-    "-Calendar-/2025/3rd/2025-03-22.md",
-    "conflict-files-obsidian-git.md",
-    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
+    "-Calendar-/2025/3rd/2025-03-26.md",
+    "-Calendar-/2025/3rd/2025-03-25.md",
+    "-Calendar-/2025/3rd/2025-03-24.md",
     "-Calendar-/2025/3rd/2025-03-21.md",
+    "-Calendar-/2025/3rd/2025-03-22.md",
+    "University/2-1/금융공학.md",
+    "University/2-1/컴퓨터구조.md",
+    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
     "University/2-1/컴퓨터실험2.md",
+    "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
     "TODO.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "-Calendar-/2025/3rd/2025-03-18.md",
     "Books/Clean Architecture.md",
-    "University/2-1/금융공학.md",
     "University/2-1/논리회로설계.md",
     "University/2-1/컴퓨터 자료구조.md",
     "University/2-1/선형대수학.md",
     "University/2-1/빅데이터.md",
     "University/2-1/빅데이터 처리.md",
     "University/2-1",
-    "University/2-1/컴퓨터구조.md",
     "-Calendar-/2025/3rd/2025-03-12.md",
     "-Calendar-/2025/3rd/2025-03-11.md",
     "Books/Clean Code.md",
+    "-Calendar-/2025/3rd/2025-03-05.md",
     "-Calendar-/2025/3rd",
     "University",
     "Knowledge",
