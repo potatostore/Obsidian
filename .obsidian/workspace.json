@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/TODO.md",
+                "file": "University/2-1/금융공학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "금융공학"
             }
           }
         ],
@@ -218,6 +218,7 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
+    "University/2-1/TODO.md",
     "University/2-1/금융공학.md",
     "-Calendar-/2025/3rd/2025-03-23.md",
     "-Calendar-/2025/3rd/2025-03-26.md",
@@ -229,7 +230,6 @@
     "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
     "University/2-1/컴퓨터실험2.md",
-    "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
     "TODO.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
