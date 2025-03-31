@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/금융공학.md",
+                "file": "University/2-1/TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "금융공학"
+              "title": "TODO"
             }
           }
         ],
@@ -107,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "a616419b5f754521",
@@ -219,13 +218,13 @@
   },
   "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
+    "University/2-1/금융공학.md",
     "-Calendar-/2025/3rd/2025-03-23.md",
     "-Calendar-/2025/3rd/2025-03-26.md",
     "-Calendar-/2025/3rd/2025-03-25.md",
     "-Calendar-/2025/3rd/2025-03-24.md",
     "-Calendar-/2025/3rd/2025-03-21.md",
     "-Calendar-/2025/3rd/2025-03-22.md",
-    "University/2-1/금융공학.md",
     "University/2-1/컴퓨터구조.md",
     "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
