@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/4th/2025-04-02.md",
+                "file": "Language/C C++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-04-02"
+              "title": "C C++"
+            }
+          },
+          {
+            "id": "dc2a6f9f00305b87",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "University/2-1/금융공학.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "금융공학"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200.5
+    "width": 200
   },
   "right": {
     "id": "a616419b5f754521",
@@ -186,7 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282
+    "width": 303
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,36 +216,36 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1900d8bd6138b972",
+  "active": "dc2a6f9f00305b87",
   "lastOpenFiles": [
-    "Language/C C++.md",
     "-Calendar-/2025/4th/2025-04-02.md",
     "-Calendar-/2025/4th",
-    "-Calendar-/2025/4th.md",
-    "-Calendar-/2025/3rd/2025-04-02.md",
-    "-Calendar-/2025/3rd/2025-04-01.md",
     "University/2-1/TODO.md",
-    "University/2-1/선형대수학.md",
-    "University/2-1/빅데이터 처리.md",
-    "University/2-1/빅데이터.md",
-    "University/2-1/논리회로설계.md",
-    "University/2-1/컴퓨터실험2.md",
-    "-Calendar-/2025/3rd/2025-03-24.md",
-    "-Calendar-/2025/3rd/2025-03-25.md",
-    "-Calendar-/2025/3rd/2025-03-26.md",
+    "University/2-1/금융공학.md",
     "-Calendar-/2025/3rd/2025-03-23.md",
-    "-Calendar-/2025/3rd/2025-03-22.md",
-    "conflict-files-obsidian-git.md",
-    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
+    "-Calendar-/2025/3rd/2025-03-26.md",
+    "-Calendar-/2025/3rd/2025-03-25.md",
+    "-Calendar-/2025/3rd/2025-03-24.md",
     "-Calendar-/2025/3rd/2025-03-21.md",
+    "-Calendar-/2025/3rd/2025-03-22.md",
+    "University/2-1/컴퓨터구조.md",
+    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "-Calendar-/2025/3rd/2025-03-20.md",
+    "University/2-1/컴퓨터실험2.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
     "TODO.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "-Calendar-/2025/3rd/2025-03-18.md",
     "Books/Clean Architecture.md",
-    "University/2-1/금융공학.md",
+    "University/2-1/논리회로설계.md",
+    "University/2-1/컴퓨터 자료구조.md",
+    "University/2-1/선형대수학.md",
+    "University/2-1/빅데이터.md",
+    "University/2-1/빅데이터 처리.md",
     "University/2-1",
+    "-Calendar-/2025/3rd/2025-03-12.md",
+    "-Calendar-/2025/3rd/2025-03-11.md",
+    "Books/Clean Code.md",
     "-Calendar-/2025/3rd",
     "University",
     "Knowledge",
