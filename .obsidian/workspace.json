@@ -22,20 +22,21 @@
             }
           },
           {
-            "id": "2f508d8dc22eac65",
+            "id": "8f99feb7bd8e8850",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/금융공학.md",
+                "file": "University/2-1/논리회로설계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "금융공학"
+              "title": "논리회로설계"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -201,12 +202,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "88cae67d298a905c",
+  "active": "8f99feb7bd8e8850",
   "lastOpenFiles": [
+    "University/2-1/선형대수학.md",
+    "University/2-1/금융공학.md",
     "Images/Pasted image 20250404211654.png",
     "Images",
-    "University/2-1/금융공학.md",
-    "University/2-1/선형대수학.md",
     "University/2-1/논리회로설계.md",
     "-Calendar-/2025/4th/2025-04-05.md",
     "conflict-files-obsidian-git.md",
