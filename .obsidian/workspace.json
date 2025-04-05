@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "dc2a6f9f00305b87",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/Pasted image 20250404211654.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250404211654"
-            }
-          },
-          {
             "id": "88cae67d298a905c",
             "type": "leaf",
             "state": {
@@ -213,12 +201,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "88cae67d298a905c",
   "lastOpenFiles": [
+    "Images/Pasted image 20250404211654.png",
     "Images",
     "University/2-1/금융공학.md",
     "University/2-1/선형대수학.md",
-    "Images/Pasted image 20250404211654.png",
     "University/2-1/논리회로설계.md",
     "-Calendar-/2025/4th/2025-04-05.md",
     "conflict-files-obsidian-git.md",
@@ -254,7 +242,6 @@
     "Computer Science",
     "Project",
     "Pictures",
-    "Language",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/library-book-bookshelf-read.jpg",
