@@ -1,28 +1,14 @@
 {
   "main": {
-    "id": "fb20bafc8bfd750f",
+    "id": "5b75ba883a7b3fb6",
     "type": "split",
     "children": [
       {
-        "id": "6e43a732b1e540e7",
+        "id": "e5858b2c1eab252d",
         "type": "tabs",
         "children": [
           {
-            "id": "4ac9b7918d97e1a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "-Calendar-/2025/3rd/2025-03-18.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-03-18"
-            }
-          },
-          {
-            "id": "0978bbce8d8a5525",
+            "id": "20fe8c579dbd92e0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,18 +21,17 @@
               "title": "선형대수학"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "6a25c80120efa52d",
+    "id": "57fc1b6efe593190",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "949e87b600bf09e5",
+        "id": "4f23ab52c40f2e5c",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -59,7 +44,7 @@
         }
       },
       {
-        "id": "738d60f313e599ad",
+        "id": "1f6168e6b1c3d2f2",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -76,7 +61,7 @@
         }
       },
       {
-        "id": "23f14c05da2913d9",
+        "id": "0acad357ece473c1",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -91,7 +76,7 @@
         }
       },
       {
-        "id": "33667e2e945b5d45",
+        "id": "3eccb4ce8e30c131",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -104,16 +89,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "94fe635f67859e29",
+    "id": "f4f074ecf8f2e67f",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "200be538bf38472d",
+        "id": "aac8f5768c3808c6",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "-Calendar-/2025/3rd/2025-03-18.md",
+            "file": "University/2-1/선형대수학.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -127,11 +112,12 @@
         }
       },
       {
-        "id": "82c6e86094c52146",
+        "id": "39433c84e773566d",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "University/2-1/선형대수학.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -140,11 +126,12 @@
         }
       },
       {
-        "id": "8714c72525dee60a",
+        "id": "4f3bd1b6b483e252",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
+            "file": "University/2-1/선형대수학.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -154,7 +141,7 @@
         }
       },
       {
-        "id": "a434ac31f5b97c6c",
+        "id": "cf75e36884f1f0dd",
         "type": "leaf",
         "state": {
           "type": "calendar",
@@ -164,8 +151,7 @@
         }
       }
     ],
-    "currentTab": 3,
-    "pinned": true
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,24 +167,6 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0978bbce8d8a5525",
-  "lastOpenFiles": [
-    "-Calendar-/2025/3rd/2025-03-18.md",
-    "University/2-1/선형대수학.md",
-    "University/2-1/금융공학.md",
-    "University/2-1/논리회로설계.md",
-    "-Calendar-/2025/3rd/2025-03-31.md",
-    "-Calendar-/2025/3rd/2025-03-21.md",
-    "-Calendar-/2025/3rd/2025-03-23.md",
-    "University/2-1/TODO.md",
-    "-Calendar-/2025/3rd/2025-03-22.md",
-    "-Calendar-/2025/3rd/2025-03-20.md",
-    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
-    "-Calendar-/2025/3rd/2025-03-19.md",
-    "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
-    "-Calendar-/2025/3rd/2025-03-24.md",
-    "-Calendar-/2025/3rd/2025-03-26.md",
-    "-Calendar-/2025/3rd/2025-03-25.md",
-    "-Calendar-/2025/3rd/2025-03-12.md"
-  ]
+  "active": "20fe8c579dbd92e0",
+  "lastOpenFiles": []
 }
