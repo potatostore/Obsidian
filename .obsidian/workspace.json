@@ -25,14 +25,12 @@
             "id": "1900d8bd6138b972",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "University/2-1/컴퓨터 자료구조.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20250419214702.png"
               },
-              "icon": "lucide-file",
-              "title": "컴퓨터 자료구조"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250419214702"
             }
           }
         ],
@@ -204,12 +202,15 @@
   },
   "active": "1900d8bd6138b972",
   "lastOpenFiles": [
+    "University/2-1/컴퓨터 자료구조.md",
+    "Pasted image 20250405215130.png",
+    "Pasted image 20250405215344.png",
     "Pasted image 20250419182930.png",
+    "Pasted image 20250419214702.png",
+    "Pasted image 20250419214702 1.png",
+    "Pasted image 20250419214706.png",
     "Pasted image 20250419182926 1.png",
     "Pasted image 20250419182926.png",
-    "Pasted image 20250405215344.png",
-    "Pasted image 20250405215130.png",
-    "University/2-1/컴퓨터 자료구조.md",
     "University/2-1/선형대수학.md",
     "University/2-1/논리회로설계.md",
     "University/2-1/빅데이터 처리.md",
@@ -242,13 +243,10 @@
     "University",
     "Knowledge",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
-    "Pictures/library-book-bookshelf-read.jpg",
-    "Pictures/스크린샷 2024-12-02 22.21.33.png",
     "Computer Science/memory",
     "Computer Science",
     "Project",
     "Pictures",
-    "Obsidian-a62e34464366e245dd69ed8792cc9517ee52a968/Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Untitled.canvas",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas"
