@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/TODO.md",
+                "file": "University/2-1/컴퓨터구조.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "컴퓨터구조"
             }
           }
         ]
@@ -164,6 +164,10 @@
   },
   "active": "959c169424ffc75d",
   "lastOpenFiles": [
+    "University/2-1/선형대수학.md",
+    "Pasted image 20250405215130.png",
+    "Pasted image 20250405215344.png",
+    "University/2-1/TODO.md",
     "University/2-1/금융공학.md",
     "Project/Unreal Engine(2D).md",
     "-Calendar-/2025/4th/2025-04-02.md",
@@ -181,7 +185,6 @@
     "-Calendar-/2025/3rd/2025-03-22.md",
     "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "TODO.md",
-    "University/2-1/TODO.md",
     "-Calendar-/2025/3rd/2025-03-19.md",
     "University/2-1/컴퓨터실험2.md",
     "-Calendar-/2025/3rd/2025-03-18.md",
@@ -192,7 +195,6 @@
     "-Calendar-/2025/3rd/2025-03-06.md",
     "University/2-1/빅데이터 처리.md",
     "University/2-1/컴퓨터구조.md",
-    "University/2-1/선형대수학.md",
     "University/2-1",
     "Knowledge",
     "University",
