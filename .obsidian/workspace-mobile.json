@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/컴퓨터구조.md",
+                "file": "University/2-1/컴퓨터실험2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컴퓨터구조"
+              "title": "컴퓨터실험2"
             }
           }
         ]
@@ -169,6 +169,11 @@
   },
   "active": "20fe8c579dbd92e0",
   "lastOpenFiles": [
+    "University/2-1/컴퓨터구조.md",
+    "Pasted image 20250419214702.png",
+    "Pasted image 20250419182930.png",
+    "-Calendar-/2025/4th/2025-04-21.md",
+    "-Calendar-/2025/4th/2025-04-22.md",
     "University/2-1/컴퓨터 자료구조.md",
     "컴퓨터구조.md",
     "-Calendar-/2025/4th/2025-04-19.md",
