@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "컴퓨터실험2"
             }
+          },
+          {
+            "id": "becda528d6aafd5f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -188,7 +201,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22f02db8f0bb3ea3",
+  "active": "becda528d6aafd5f",
   "lastOpenFiles": [
     "University/2-1/컴퓨터구조.md",
     "University/2-1/컴퓨터실험2.md",
