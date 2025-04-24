@@ -25,12 +25,14 @@
             "id": "becda528d6aafd5f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "University/2-1/컴퓨터 자료구조.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "icon": "lucide-file",
+              "title": "컴퓨터 자료구조"
             }
           }
         ],
@@ -203,6 +205,9 @@
   },
   "active": "becda528d6aafd5f",
   "lastOpenFiles": [
+    "컴퓨터구조.md",
+    "-Calendar-/2025/4th/2025-04-19.md",
+    "-Calendar-/2025/3rd/2025-03-31.md",
     "University/2-1/컴퓨터구조.md",
     "University/2-1/컴퓨터실험2.md",
     "-Calendar-/2025/4th/2025-04-22.md",
@@ -237,9 +242,6 @@
     "-Calendar-/2025/3rd/2025-03-25.md",
     "-Calendar-/2025/3rd/2025-03-26.md",
     "-Calendar-/2025/3rd/2025-03-23.md",
-    "-Calendar-/2025/3rd/2025-03-22.md",
-    "conflict-files-obsidian-git.md",
-    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "University/2-1",
     "-Calendar-/2025/3rd",
     "University",
