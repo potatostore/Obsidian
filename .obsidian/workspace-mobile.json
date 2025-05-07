@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "5b75ba883a7b3fb6",
+    "id": "eef30b39795839f4",
     "type": "split",
     "children": [
       {
-        "id": "e5858b2c1eab252d",
+        "id": "b063fd335baa6ddf",
         "type": "tabs",
         "children": [
           {
-            "id": "20fe8c579dbd92e0",
+            "id": "959c169424ffc75d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/컴퓨터실험2.md",
+                "file": "University/2-1/논리회로설계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컴퓨터실험2"
+              "title": "논리회로설계"
             }
           }
         ]
@@ -27,11 +27,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "57fc1b6efe593190",
+    "id": "fb67c019024bbfb7",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "4f23ab52c40f2e5c",
+        "id": "077bb42b17fdc80e",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +44,7 @@
         }
       },
       {
-        "id": "1f6168e6b1c3d2f2",
+        "id": "2e14b658c9bdf37f",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,22 +61,20 @@
         }
       },
       {
-        "id": "0acad357ece473c1",
+        "id": "6aeca5c46e952ca2",
         "type": "leaf",
         "state": {
           "type": "tag",
           "state": {
             "sortOrder": "frequency",
-            "useHierarchy": true,
-            "showSearch": false,
-            "searchQuery": ""
+            "useHierarchy": true
           },
           "icon": "lucide-tags",
           "title": "Tags"
         }
       },
       {
-        "id": "3eccb4ce8e30c131",
+        "id": "a2bbde74a17e872e",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -89,16 +87,16 @@
     "currentTab": 0
   },
   "right": {
-    "id": "f4f074ecf8f2e67f",
+    "id": "ca722814619639a8",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "aac8f5768c3808c6",
+        "id": "806d562addb5a05b",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "-Calendar-/2025/4th/2025-04-19.md",
+            "file": "Project/Calculator(c++).md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -112,12 +110,12 @@
         }
       },
       {
-        "id": "39433c84e773566d",
+        "id": "b10f8f064e60af5b",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "University/2-1/선형대수학.md",
+            "file": "CS.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -126,22 +124,19 @@
         }
       },
       {
-        "id": "4f3bd1b6b483e252",
+        "id": "25bb8ad70e0e3a08",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "University/2-1/선형대수학.md",
-            "followCursor": false,
-            "showSearch": false,
-            "searchQuery": ""
+            "file": "CS.md"
           },
           "icon": "lucide-list",
           "title": "Outline"
         }
       },
       {
-        "id": "cf75e36884f1f0dd",
+        "id": "149aed4aba85939e",
         "type": "leaf",
         "state": {
           "type": "calendar",
@@ -151,32 +146,65 @@
         }
       }
     ],
-    "currentTab": 3
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "obsidian-book-search-plugin:Create new book note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-book-search-plugin:Create new book note": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "20fe8c579dbd92e0",
+  "active": "959c169424ffc75d",
   "lastOpenFiles": [
     "University/2-1/컴퓨터구조.md",
-    "Pasted image 20250419214702.png",
-    "Pasted image 20250419182930.png",
-    "-Calendar-/2025/4th/2025-04-21.md",
-    "-Calendar-/2025/4th/2025-04-22.md",
-    "University/2-1/컴퓨터 자료구조.md",
     "컴퓨터구조.md",
     "-Calendar-/2025/4th/2025-04-19.md",
-    "University/2-1/선형대수학.md"
+    "-Calendar-/2025/3rd/2025-03-31.md",
+    "-Calendar-/2025/4th/2025-04-21.md",
+    "Pasted image 20250419182930.png",
+    "-Calendar-/2025/4th/2025-04-22.md",
+    "Pasted image 20250419214702.png",
+    "University/2-1/선형대수학.md",
+    "Pasted image 20250405215130.png",
+    "Pasted image 20250405215344.png",
+    "University/2-1/TODO.md",
+    "University/2-1/금융공학.md",
+    "Project/Unreal Engine(2D).md",
+    "-Calendar-/2025/4th/2025-04-02.md",
+    "-Calendar-/2025/4th/2025-04-05.md",
+    "-Calendar-/2025/4th",
+    "Images/Pasted image 20250404211654.png",
+    "Images",
+    "-Calendar-/2025/3rd/2025-03-20.md",
+    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
+    "-Calendar-/2025/3rd/2025-03-25.md",
+    "-Calendar-/2025/3rd/2025-03-23.md",
+    "-Calendar-/2025/3rd/2025-03-21.md",
+    "-Calendar-/2025/3rd/2025-03-26.md",
+    "-Calendar-/2025/3rd/2025-03-24.md",
+    "-Calendar-/2025/3rd/2025-03-22.md",
+    "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
+    "TODO.md",
+    "-Calendar-/2025/3rd/2025-03-19.md",
+    "University/2-1/컴퓨터실험2.md",
+    "-Calendar-/2025/3rd/2025-03-18.md",
+    "Language/C C++.md",
+    "University/2-1",
+    "Knowledge",
+    "University",
+    "-Calendar-/2025/3rd",
+    "Computer Science/memory",
+    "Computer Science",
+    "Frameworks",
+    "-Calendar-/2025",
+    "Untitled.canvas"
   ]
 }
