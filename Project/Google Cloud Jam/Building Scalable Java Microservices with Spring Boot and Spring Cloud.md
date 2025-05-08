@@ -11,6 +11,6 @@ At first, we'll work on demo application or compute engine virtual machine insta
 
 Later, For deploying refiguration and repackage application, we'll work app engine and google kubernetes engine.
 
-During the lab, For storage datas, we'll use Cloud SQL.
+During the lab, For storage datas, we'll use Cloud SQL which can comprehense your data contorl avility and set data auto manager.
 
 
