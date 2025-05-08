@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Unreal Engine(HD-2D).md",
+                "file": "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unreal Engine(HD-2D)"
+              "title": "Building Scalable Java Microservices with Spring Boot and Spring Cloud"
             }
           }
         ],
@@ -205,13 +205,15 @@
   },
   "active": "becda528d6aafd5f",
   "lastOpenFiles": [
+    "Project/Calculator(c++, spring boot).md",
+    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+    "Project/Unreal Engine(HD-2D).md",
+    "Project/Google Cloud Jam",
     "Images/Pasted image 20250405215130.png",
     "Images/Pasted image 20250404211654.png",
     "IDE/Unreal engine(c++).md",
-    "Project/Calculator(c++, spring boot).md",
     "Project/Web Server(c++).md",
     "Project/Flappy Clone(Unity).md",
-    "Project/Unreal Engine(HD-2D).md",
     "University/2-1/컴퓨터구조 1.md",
     "University/2-1/컴퓨터 자료구조.md",
     "-Calendar-/2025/4th/2025-04-19.md",
@@ -249,7 +251,6 @@
     "Computer Science/memory",
     "Computer Science",
     "Project",
-    "Pictures",
     "Untitled.canvas",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas"
