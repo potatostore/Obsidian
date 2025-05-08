@@ -15,6 +15,9 @@ During the lab, For storage datas, we'll use Cloud SQL which can comprehense you
 
 ---
 
+# 0. Dictionary
+
+- Pub/Sub : 
 # 1. Spring boot
 
 Spring boot is Spring Framework designed to simplify the bootstrapping and development of stand-alone. 
