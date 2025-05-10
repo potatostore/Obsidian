@@ -41,3 +41,12 @@ Google Cloud Shell is a virtual machine that is loaded with development tools. I
 2. Use Apache Maven to launch Java applications in Cloud Shell.
     
 3. Use `curl` and the Cloud Shell web preview to test connectivity to web applications running locally in Cloud Shell.
+
+Google Cloud Lab에서 사용자 인증을 통해 접근을 해서 미리 짜여진 demo application의 frotend, backend를 console명령어로 가져와 Cloud Shell에서 돌려보는 작업을 함.
+
+Cloud shell이 무엇인지 감이 잘 안 잡혔는데, 무엇인지 어느 정도 이해하게 됨.
+
+
+# 3. Connecting to Cloud SQL
+
+위 콘솔을 통해 frontend, backend demo app을 가져오는 것을 성공했다면, 이를 Cloud DB와 연결하는 방식 또한 설명
