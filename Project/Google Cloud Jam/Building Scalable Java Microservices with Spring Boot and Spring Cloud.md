@@ -26,4 +26,11 @@ It provide quick-start and Spring flatform third-party library.
 
 https://github.com/GoogleCloudPlatform/spring-cloud-gcp
 
-# 2. 
+# 2. Bootstrapping Frontend and Backend
+
+Google provides how to build demo application for using Google cloud service(App Engine, Compute Engine...)
+
+#### Cloud Shell
+ It means Providing command line access to the virtual machine instance in terminal window that opens in the GCP console. It is small compute virtual machine that running on linux operate system.
+
+
