@@ -52,3 +52,5 @@ Cloud shell이 무엇인지 감이 잘 안 잡혔는데, 무엇인지 어느 정
 위 콘솔을 통해 frontend, backend demo app을 가져오는 것을 성공했다면, 이를 Cloud DB와 연결하는 방식 또한 설명
 
 cloud SQL은 MySQL등을 일컫는 말이며, DB server을 자체적으로 만들면 위에서 언급한 바와 같이 어플리케이션의 복제 및 의존성 관리에 큰 문제는 발생하지는 않지만, 비용이나 개발의 어려움이 작용하여 Cloud SQL을 통해 Cloud service를 지향하게 됨. 
+
+따라서 여기서는 위 demo application과 이을 external DB를 
