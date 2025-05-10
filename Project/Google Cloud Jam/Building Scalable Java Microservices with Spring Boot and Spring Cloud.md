@@ -65,3 +65,18 @@ console을 통해 Cloud SQL을 생성할 때 순서는 다음과 같다.
 3. Create a Cloud SQL instance
 4. Create a database in the Cloud SQL instance
 5. Connect to Cloud SQL and create the schema
+
+*Cloud SQL using MySQL in Cloud Shell - checking DB instance by console*
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| messages           |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.19 sec)
+
+위와 같은 방식으로 Cloud SQL을 통해 DB instance를 생성하는데, Cloud Shell은 다양한 services를 실행시켜줄 수 있는 OS가 존재하는 VM으로 Cloud SQL의 일종인 MySQL을 Cloud Shell에서 사용함으로서 GCP에서 제공하는 Cloud services를 직접적으로 사용할 수 있는 것이다.
