@@ -60,7 +60,8 @@ cloud SQL은 MySQL등을 일컫는 말이며, DB server을 자체적으로 만�
 
 console을 통해 Cloud SQL을 생성할 때 순서는 다음과 같다.
 
-1. Enable Cloud SQL Administration API
-2. Create a Cloud SQL instance
-3. Create a database in the Cloud SQL instance
-4. Connect to Cloud SQL and create the schema
+1. Fetch the application source files
+2. Enable Cloud SQL Administration API
+3. Create a Cloud SQL instance
+4. Create a database in the Cloud SQL instance
+5. Connect to Cloud SQL and create the schema
