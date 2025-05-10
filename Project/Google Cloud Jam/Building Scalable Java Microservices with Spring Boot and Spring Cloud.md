@@ -57,3 +57,10 @@ cloud SQL은 MySQL등을 일컫는 말이며, DB server을 자체적으로 만�
 - Use Spring to add Cloud SQL support to your application.
 - Configure an application profile for Cloud SQL.
 - Verify that an application is using Cloud SQL.
+
+console을 통해 Cloud SQL을 생성할 때 순서는 다음과 같다.
+
+1. Enable Cloud SQL Administration API
+2. Create a Cloud SQL instance
+3. Create a database in the Cloud SQL instance
+4. Connect to Cloud SQL and create the schema
