@@ -33,4 +33,5 @@ Google provides how to build demo application for using Google cloud service(App
 #### Cloud Shell
  It means Providing command line access to the virtual machine instance in terminal window that opens in the GCP console. It is small compute virtual machine that running on linux operate system.
 
+기존의 서비스를 자신의 서버나 데이터베이스에 이식을 하는 행위는 의존성을 개발자 본인이 책임지기에 복제에 큰 문제가 발생하지 않음. 하지만 Cloud serviecs를 사용하는 경우 이러한 문제를 본인이 책임지는 것이 아닌 서비스 제공자가 관리하기 때문에 
 
