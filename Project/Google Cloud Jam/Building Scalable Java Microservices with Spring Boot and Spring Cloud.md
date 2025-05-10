@@ -82,3 +82,5 @@ mysql> show databases;
 5 rows in set (0.19 sec)
 
 위와 같은 방식으로 Cloud SQL을 통해 DB instance를 생성하는데, Cloud Shell은 다양한 services를 실행시켜줄 수 있는 OS가 존재하는 VM으로 Cloud SQL의 일종인 MySQL을 Cloud Shell에서 사용함으로서 GCP에서 제공하는 Cloud services를 직접적으로 사용할 수 있는 것이다.
+
+#
