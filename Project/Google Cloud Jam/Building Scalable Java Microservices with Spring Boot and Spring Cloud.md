@@ -65,6 +65,8 @@ console을 통해 Cloud SQL을 생성할 때 순서는 다음과 같다.
 3. Create a Cloud SQL instance
 4. Create a database in the Cloud SQL instance
 5. Connect to Cloud SQL and create the schema
+6. Add the Spring Cloud GCP Cloud SQL starter
+7. 
 
 *Cloud SQL using MySQL in Cloud Shell - checking DB instance by console*
 mysql> show databases;
