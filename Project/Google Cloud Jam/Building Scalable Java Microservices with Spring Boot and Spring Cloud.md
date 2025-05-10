@@ -36,11 +36,9 @@ Google Cloud Shell is a virtual machine that is loaded with development tools. I
 기존의 서비스를 자신의 서버나 데이터베이스에 이식을 하는 행위는 의존성을 개발자 본인이 책임지기에 복제에 큰 문제가 발생하지 않음(개발에 어려움은 있지만 책임의 문제가 크게 발생하지 않는다는 의미). 하지만 Cloud serviecs를 사용하는 경우 이러한 문제를 본인이 책임지는 것이 아닌 서비스 제공자가 관리하기 때문에 책임의 문제를 클라우드 서비스를 통해 해결하는 방법을 알려줌.
 (fully managed services를 강조)
 
-1. Configure Cloud Shell to run a multi-part Java application locally.
-    
-2. Use Apache Maven to launch Java applications in Cloud Shell.
-    
-3. Use `curl` and the Cloud Shell web preview to test connectivity to web applications running locally in Cloud Shell.
+- Configure Cloud Shell to run a multi-part Java application locally.
+- Use Apache Maven to launch Java applications in Cloud Shell.
+- Use `curl` and the Cloud Shell web preview to test connectivity to web applications running locally in Cloud Shell.
 
 Google Cloud Lab에서 사용자 인증을 통해 접근을 해서 미리 짜여진 demo application의 frotend, backend를 console명령어로 가져와 Cloud Shell에서 돌려보는 작업을 함.
 
@@ -53,4 +51,9 @@ Cloud shell이 무엇인지 감이 잘 안 잡혔는데, 무엇인지 어느 정
 
 cloud SQL은 MySQL등을 일컫는 말이며, DB server을 자체적으로 만들면 위에서 언급한 바와 같이 어플리케이션의 복제 및 의존성 관리에 큰 문제는 발생하지는 않지만, 비용이나 개발의 어려움이 작용하여 Cloud SQL을 통해 Cloud service를 지향하게 됨. 
 
-따라서 여기서는 위 demo application과 이을 external DB를 
+따라서 여기서는 위 demo application과 이을 external DB를 만들기 위해 Cloud SQL을 배운다. 
+
+- Create a Cloud SQL instance, database, and table.
+- Use Spring to add Cloud SQL support to your application.
+- Configure an application profile for Cloud SQL.
+- Verify that an application is using Cloud SQL.
