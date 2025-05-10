@@ -87,3 +87,6 @@ mysql> show databases;
 
 의존성 다루기
 
+Java application ------implement authentication-------> Google Cloud service(Cloud SQL)
+
+Trace SDK : 
