@@ -102,4 +102,10 @@ Trace SDK :
 # 5. Pub/Sub
 
 #### Pub/Sub
-Massaging service managing send and receive message in independent app
+Messaging service managing send and receive message in independent app. It means Pub/Sub shows message between independent apps like massager chat app. Showing messages is required when you find error or system logs
+
+- Enable Pub/Sub and create a Pub/Sub topic
+- Use Spring to add Pub/Sub support to your application
+- Modify an application to publish Pub/Sub messages
+- Create a Pub/Sub subscription
+- Modify an application to process messages from a Pub/Sub subscription
