@@ -90,3 +90,11 @@ mysql> show databases;
 Java application ------implement authentication-------> Google Cloud service(Cloud SQL)
 
 Trace SDK : 
+
+일반적으로 다중 의존성에 의해 오류가 발생할 경우 어떠한 부분이 문제인지 한번에 찾는 것이 힘들다. 이를 위해 GCP에서는 Cloud Trace를 통해 오류를 보다 쉽고, 빠르게 console창에 오류를 보여주기에 Cloud Trace를 설계하고, 이를 적용하는 방법을 배운다.
+
+- Enable Cloud Trace API
+- Use Spring to add Cloud Trace to your application
+- Configure customized trace settings in an application
+- Inspect the trace output
+
