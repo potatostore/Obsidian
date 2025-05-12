@@ -48,21 +48,9 @@
               "icon": "lucide-file",
               "title": "Building Scalable Java Microservices with Spring Boot and Spring Cloud"
             }
-          },
-          {
-            "id": "8fe3d46f249459c7",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -228,7 +216,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8fe3d46f249459c7",
+  "active": "f4551e8e8107d6b9",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
