@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+                "file": "University/2-1/빅데이터.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Building Scalable Java Microservices with Spring Boot and Spring Cloud"
+              "title": "빅데이터"
             }
           }
         ],
@@ -204,8 +204,8 @@
   },
   "active": "43c422baf8ac2def",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+    "conflict-files-obsidian-git.md",
     "University/2-1/빅데이터.md",
     "University/2-1/논리회로설계.md",
     "University/2-1/선형대수학.md",
