@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/TODO.md",
+                "file": "University/2-1/빅데이터.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "빅데이터"
             }
           }
         ],
@@ -205,12 +205,12 @@
   },
   "active": "becda528d6aafd5f",
   "lastOpenFiles": [
+    "University/2-1/TODO.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
-    "University/2-1/TODO.md",
     "빅데이터.md",
     "University/2-1/컴퓨터실험2.md",
     "University/2-1/빅데이터.md",
