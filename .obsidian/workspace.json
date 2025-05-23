@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/논리회로설계.md",
+                "file": "University/2-1/선형대수학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "논리회로설계"
+              "title": "선형대수학"
             }
           }
         ],
@@ -205,6 +205,7 @@
   },
   "active": "becda528d6aafd5f",
   "lastOpenFiles": [
+    "University/2-1/논리회로설계.md",
     "University/2-1/빅데이터 처리.md",
     "University/2-1/빅데이터.md",
     "University/2-1/선형대수학.md",
@@ -234,7 +235,6 @@
     "-Calendar-/2025/4th/2025-04-22.md",
     "-Calendar-/2025/4th/2025-04-21.md",
     "Images/Pasted image 20250419214702.png",
-    "Pasted image 20250419214702.md",
     "Images/Pasted image 20250405215344.png",
     "Images/Pasted image 20250419182930.png",
     "Pasted image 20250419214702 1.png",
