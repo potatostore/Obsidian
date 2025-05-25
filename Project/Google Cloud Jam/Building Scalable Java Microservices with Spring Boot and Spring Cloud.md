@@ -107,7 +107,7 @@ Messaging service managing send and receive message in independent app. It means
 - Modify an application to process messages from a Pub/Sub subscription
 
 #### Integrating Pub/Sub
-Pub/Sub을 통해 SQL server에 자동으로 메시지를 보내는 cloud service를 설정. 
+Pub/Sub을 통해 SQL server에 자동으로 메시지를 보내는 cloud serpvice를 설정. 
 
 
 # 6. Uploading and Storing Files
