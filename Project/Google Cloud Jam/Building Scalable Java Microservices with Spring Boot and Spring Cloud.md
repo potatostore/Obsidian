@@ -107,3 +107,10 @@ Messaging service managing send and receive message in independent app. It means
 - Modify an application to process messages from a Pub/Sub subscription
 
 #### Integrating Pub/Sub
+Pub/Sub을 통해 SQL server에 자동으로 메시지를 보내는 cloud service를 설정. 
+
+
+# 6. Uploading and Storing Files
+
+#### Google Cloud Storage
+많은 양의 정보를 관리 없이 보관할 수 있는 저장공간. 가장 큰 장점은 Google cloud service를 사용하는 다양한 프로그램과 큰 과정 없이 연동할 수 있다는 점. 또한 다른 SQL(MySQL, BigQuery)과 연동시 간편하게 import할 수 있다는 점에서 큰 이점을 가져온다. (low-price, fast, global)
