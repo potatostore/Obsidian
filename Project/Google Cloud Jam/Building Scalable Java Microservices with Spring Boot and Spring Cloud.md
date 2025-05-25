@@ -105,3 +105,5 @@ Messaging service managing send and receive message in independent app. It means
 - Modify an application to publish Pub/Sub messages
 - Create a Pub/Sub subscription
 - Modify an application to process messages from a Pub/Sub subscription
+
+#### Integrating Pub/Sub

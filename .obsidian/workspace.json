@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/논리회로설계.md",
+                "file": "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "논리회로설계"
+              "title": "Building Scalable Java Microservices with Spring Boot and Spring Cloud"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "패리티",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -203,14 +202,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "43c422baf8ac2def",
   "lastOpenFiles": [
+    "University/2-1/논리회로설계.md",
     "University/2-1/선형대수학.md",
     "University/2-1/빅데이터.md",
     "Images/Pasted image 20250524130643.png",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
     "conflict-files-obsidian-git.md",
-    "University/2-1/논리회로설계.md",
     "University/2-1/컴퓨터구조 1.md",
     "Project/Unreal Engine(HD-2D).md",
     "Project/Google Cloud Jam",
