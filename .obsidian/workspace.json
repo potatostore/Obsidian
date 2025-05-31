@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "null space",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -188,7 +189,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22f02db8f0bb3ea3",
+  "active": "c3723e064a5e5ac3",
   "lastOpenFiles": [
     "Images/Pasted image 20250524130643.png",
     "Pasted image 20250524130603.png",
