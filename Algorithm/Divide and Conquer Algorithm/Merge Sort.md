@@ -1,0 +1,1 @@
+[[Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort|Merge Sort]]
