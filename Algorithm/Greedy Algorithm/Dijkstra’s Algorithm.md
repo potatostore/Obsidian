@@ -1,1 +1,0 @@
-[[Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm|Dijkstra’s Algorithm]]
