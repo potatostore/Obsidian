@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cos",
+                "query": "rref",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
