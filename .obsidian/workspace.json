@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rref",
+                "query": "투영",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -203,7 +204,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "c3723e064a5e5ac3",
   "lastOpenFiles": [
     "University/2-1/컴퓨터구조.md",
     "University/2-1/선형대수학.md",
