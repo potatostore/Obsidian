@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "eef30b39795839f4",
+    "id": "e7fd17d88d6db4fa",
     "type": "split",
     "children": [
       {
-        "id": "b063fd335baa6ddf",
+        "id": "8920f496c5bd94cd",
         "type": "tabs",
         "children": [
           {
-            "id": "959c169424ffc75d",
+            "id": "b317722b6efcb225",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/논리회로설계.md",
+                "file": "University/2-1/선형대수학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "논리회로설계"
+              "title": "선형대수학"
             }
           }
         ]
@@ -27,11 +27,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fb67c019024bbfb7",
+    "id": "2f4e4cca14394ea9",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "077bb42b17fdc80e",
+        "id": "6edfb4b7c7f67cb6",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +44,7 @@
         }
       },
       {
-        "id": "2e14b658c9bdf37f",
+        "id": "b361c320af794081",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,20 +61,22 @@
         }
       },
       {
-        "id": "6aeca5c46e952ca2",
+        "id": "ab7a84c16e5e60f0",
         "type": "leaf",
         "state": {
           "type": "tag",
           "state": {
             "sortOrder": "frequency",
-            "useHierarchy": true
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-tags",
           "title": "Tags"
         }
       },
       {
-        "id": "a2bbde74a17e872e",
+        "id": "a60efaac424184d0",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -87,16 +89,15 @@
     "currentTab": 0
   },
   "right": {
-    "id": "ca722814619639a8",
+    "id": "7489a7a920441c00",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "806d562addb5a05b",
+        "id": "8f1b29f01ec73bfa",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Project/Calculator(c++).md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,12 +111,11 @@
         }
       },
       {
-        "id": "b10f8f064e60af5b",
+        "id": "7f89317d17161f68",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "CS.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -124,19 +124,21 @@
         }
       },
       {
-        "id": "25bb8ad70e0e3a08",
+        "id": "40fba48389cda5bc",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "CS.md"
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-list",
           "title": "Outline"
         }
       },
       {
-        "id": "149aed4aba85939e",
+        "id": "bf1298f0d18866de",
         "type": "leaf",
         "state": {
           "type": "calendar",
@@ -150,61 +152,61 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
-      "obsidian-book-search-plugin:Create new book note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "959c169424ffc75d",
+  "active": "b317722b6efcb225",
   "lastOpenFiles": [
-    "University/2-1/컴퓨터구조.md",
-    "컴퓨터구조.md",
-    "-Calendar-/2025/4th/2025-04-19.md",
-    "-Calendar-/2025/3rd/2025-03-31.md",
-    "-Calendar-/2025/4th/2025-04-21.md",
-    "Pasted image 20250419182930.png",
-    "-Calendar-/2025/4th/2025-04-22.md",
-    "Pasted image 20250419214702.png",
-    "University/2-1/선형대수학.md",
-    "Pasted image 20250405215130.png",
-    "Pasted image 20250405215344.png",
-    "University/2-1/TODO.md",
-    "University/2-1/금융공학.md",
-    "Project/Unreal Engine(2D).md",
-    "-Calendar-/2025/4th/2025-04-02.md",
-    "-Calendar-/2025/4th/2025-04-05.md",
-    "-Calendar-/2025/4th",
-    "Images/Pasted image 20250404211654.png",
-    "Images",
-    "-Calendar-/2025/3rd/2025-03-20.md",
-    "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
-    "-Calendar-/2025/3rd/2025-03-25.md",
-    "-Calendar-/2025/3rd/2025-03-23.md",
-    "-Calendar-/2025/3rd/2025-03-21.md",
-    "-Calendar-/2025/3rd/2025-03-26.md",
-    "-Calendar-/2025/3rd/2025-03-24.md",
-    "-Calendar-/2025/3rd/2025-03-22.md",
-    "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
-    "TODO.md",
-    "-Calendar-/2025/3rd/2025-03-19.md",
-    "University/2-1/컴퓨터실험2.md",
-    "-Calendar-/2025/3rd/2025-03-18.md",
-    "Language/C C++.md",
-    "University/2-1",
-    "Knowledge",
-    "University",
-    "-Calendar-/2025/3rd",
+    "Computer Science/memory/Cache memory.md",
+    "Computer Science/memory/Ram.md",
+    "Computer Science/memory/heap.md",
+    "Computer Science/memory/Register.md",
+    "Computer Science/memory/stack.md",
+    "Computer Science/memory/Virtual Memory.md",
+    "Computer Science/OS(operate system).md",
     "Computer Science/memory",
     "Computer Science",
+    "IDE/Unreal engine(c++).md",
+    "IDE",
+    "Images/Pasted image 20250419214702.png",
+    "Images/Pasted image 20250524130643.png",
+    "Images/Pasted image 20250419182930.png",
+    "Images/Pasted image 20250405215344.png",
+    "Images/Pasted image 20250404211654.png",
+    "Images/Pasted image 20250405215130.png",
+    "Images",
+    "Frameworks/Spring boot - java.md",
     "Frameworks",
-    "-Calendar-/2025",
-    "Untitled.canvas"
+    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+    "Project/Unreal Engine(HD-2D).md",
+    "Project/Calculator(c++, spring boot).md",
+    "Project/Web Server(c++).md",
+    "Project/Google Cloud Jam",
+    "Project",
+    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
+    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Kruskal’s Algorithm.md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search).md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/Bellman-Ford Algorithm.md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/BFS(Breath First Search).md",
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/Dijkstra’s Algorithm.md",
+    "Algorithm/Graph Algorithm/Shortest Path Algorithm/A Star Algorithm.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Linear Search.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/DFS(Depth FIrst Search).md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md-2",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md-2",
+    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm"
   ]
 }
