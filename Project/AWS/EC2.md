@@ -9,6 +9,9 @@ Amazon Elastic Compute Cloud(EC2)
 - 온디맨드 확장 가능성
 - 고가용성 & 내결함성
 
+#### 확장 가능성
+- auto scaling
+
 # AWS EC2
 
 #### 인스턴스 생성
