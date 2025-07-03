@@ -52,3 +52,4 @@ Amazon Elastic Compute Cloud(EC2)
 1. 사용가능성 유지(현재 시스템 유지) -> fail된 VM instance를 대체하여 생성
 2. 확장 -> 트래픽 증가 등의 원인으로 VM instance의 리소스 사용량이 증가시 추가 생성
 가용영역 내 subnet은 복제x, 단일
+
