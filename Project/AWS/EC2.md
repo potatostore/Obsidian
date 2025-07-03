@@ -9,14 +9,7 @@ Amazon Elastic Compute Cloud(EC2)
 - 온디맨드 확장 가능성
 - 고가용성 & 내결함성
 
-#### 확장 가능성
-- auto scaling
-- amazon cloud Watch -> auto Scaling Group
-1. 사용가능성 유지(현재 시스템 유지) -> fail된 VM instance를 대체하여 생성
-2. 확장 -> 트래픽 증가 등의 원인으로 VM instance의 리소스 사용량이 증가시 추가 생성
-가용영역 내 subnet은 복제x, 단일
-
-# AWS EC2
+# AWS EC2 생성하기
 
 #### 인스턴스 생성
 - Amazon Linux > AMI 설정(프리 티어 사용 가능) : AMI를 통해 인스턴스(VM)의 OS를 설정
@@ -51,3 +44,11 @@ Amazon Elastic Compute Cloud(EC2)
 	- EC2 > 인스턴스 > 작업 > 보안 > IAM 역할 수정
 	- 계정에 역할을 부여하는 것이 아닌 AWS 서비스로 IAM 역할을 부여하는 것 (알아서 분류 해줌)
 
+# EC2 handling
+
+#### 확장 가능성
+- auto scaling
+- amazon cloud Watch -> auto Scaling Group
+1. 사용가능성 유지(현재 시스템 유지) -> fail된 VM instance를 대체하여 생성
+2. 확장 -> 트래픽 증가 등의 원인으로 VM instance의 리소스 사용량이 증가시 추가 생성
+가용영역 내 subnet은 복제x, 단일
