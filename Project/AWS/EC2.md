@@ -54,4 +54,4 @@ Amazon Elastic Compute Cloud(EC2)
 가용영역 내 subnet은 복제x, 단일
 
 - ELB(Elastic Load Balancing) : 사용자가 서버에 접속을 하다가 위 과정처럼 instance가 fail이 날 경우 사용자가 접속하고 있는 instance를 다른 instance로 옮겨줌(latency x)
-- 
+	- 대상 등록에서 동적으로 하기 위해 선택x
