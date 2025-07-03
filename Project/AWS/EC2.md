@@ -11,3 +11,5 @@ bucket
 access key
 
 s3 역할 부여를 통해 인스턴스에서 접근 권한을 부여
+
+인스턴스를 생성하게 되면 virtual machine에 자동으로 IP가 붙음 -> (IPv4 /  IPv6 설정)

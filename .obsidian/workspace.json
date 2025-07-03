@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/Legion.md",
+                "file": "Project/AWS/EC2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Legion"
+              "title": "EC2"
             }
           }
         ],
@@ -218,9 +218,10 @@
   },
   "active": "69becb23a552f957",
   "lastOpenFiles": [
+    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
+    "Project/AWS/Legion.md",
     "Project/AWS/EC2.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
@@ -236,7 +237,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
-    "Project/AWS/Legion.md",
     "Project/AWS/IAM.md",
     "University/2-1/금융공학.md",
     "Untitled.md",
