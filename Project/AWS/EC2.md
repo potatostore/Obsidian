@@ -50,7 +50,7 @@ Amazon Elastic Compute Cloud(EC2)
 - auto scaling
 - amazon cloud Watch -> auto Scaling Group
 1. 사용가능성 유지(현재 시스템 유지) -> fail된 VM instance를 대체하여 생성
-2. 확장 -> 트래픽 증가 등의 원인으로 VM instance의 리소스 사용량이 증가시 추가 생성
+2. 확장 -> 트래픽 증가 등의 원인으로 VM instance의 리소스 사용량이 증가 시 추가 생성
 가용영역 내 subnet은 복제x, 단일
 
 - ELB(Elastic Load Balancing) : 사용자가 서버에 접속을 하다가 위 과정처럼 instance가 fail이 날 경우 사용자가 접속하고 있는 instance를 다른 instance로 옮겨줌(latency x)
