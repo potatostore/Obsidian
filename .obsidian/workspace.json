@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Iaas",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -216,10 +216,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "69becb23a552f957",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Project/AWS/IAM.md",
     "Project/AWS/EC2.md",
+    "Untitled.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
     "Project/AWS/Legion.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
@@ -238,7 +239,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
-    "Project/AWS/IAM.md",
     "University/2-1/금융공학.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
