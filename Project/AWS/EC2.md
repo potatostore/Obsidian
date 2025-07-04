@@ -69,4 +69,5 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	*mac(media access controler) : IP주소 처럼 하드웨어에 할당된 고유 식별 주소
 	Ethernet : LAN의 네트워크 통신 규격으로, 네트워크 간의 통신 규칙, 기준
 	802.1x : mac를 식별하고, 확인하여 해당 신호를 들이거나 거부*
-	3. Network layer : 
+	3. Network layer : IP를 통해 통신이 이루어지는 단계
+	4. Transport layer : 3번의 통신을 통해 
