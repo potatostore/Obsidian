@@ -75,7 +75,8 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	UDP : 비연결형 프로토콜로 데이터를 전송할 때, 통신 주체들끼리의 논리적인 경로가 없는 비연결형 프로토콜로 목적지는 존재하지만 경로가 불확실하여 통신을 상대측에서 받았는지 확인할 수 없다. 빠르지만 신뢰성이 낮다.*
 	5. Session layer : 
 	*위 transport layer에서 TCP는 전달자 역할이지만, session layer에서는 통신 연결 중간에 조율을 통해 원활한 통신을 이룰 수 있도록 조율자 역할을 함*
-	6. Presentation layer
-	*SSL : 릴레이 서버
-	SSH : *
-	7. Application layer
+	6. Presentation layer : 
+	*SSL : 
+	SSH : 
+	릴레이 서버 : *
+	7. Application layer : 
