@@ -65,6 +65,8 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	1. Physical layer : 물리적인 단계로, port를 통해 전자적 신호로 2진법으로 바꾸어 송수신
 	*switch : 서버에 전자적 신호를 받고, 이를 다른 서버로 보낼 때 물리적 신호로 바꿈
 	RJ45 Port : 이더넷 케이블을 연결하는 데 사용되는 표준 8핀 커넥터*
-	2. Data Link layer : 
+	2. Data Link layer : 근거리 네트워크 통신(LAN)을 다루는 단계
 	*mac(media access controler) : IP주소 처럼 하드웨어에 할당된 고유 식별 주소
-	Ethernet : *
+	Ethernet : LAN의 네트워크 통신 규격으로, 네트워크 간의 통신 규칙, 기준
+	802.1x : mac를 식별하고, 확인하여 해당 신호를 들이거나 거부*
+	3. Network layer : 
