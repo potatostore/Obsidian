@@ -70,4 +70,5 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	Ethernet : LAN의 네트워크 통신 규격으로, 네트워크 간의 통신 규칙, 기준
 	802.1x : mac를 식별하고, 확인하여 해당 신호를 들이거나 거부*
 	3. Network layer : IP를 통해 통신이 이루어지는 단계
-	4. Transport layer : 3번의 통신을 통해 
+	4. Transport layer : IP를 통해 데이터를 통신하는 단계
+	*TCP/IP : *
