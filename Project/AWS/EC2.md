@@ -60,3 +60,9 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 
 # VPC(Virtual Private Cloud)
 
+
+
+
+
+
+# OSI
