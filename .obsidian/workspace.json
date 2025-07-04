@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/IAM.md",
+                "file": "Project/AWS/EC2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IAM"
+              "title": "EC2"
             }
           }
         ],
@@ -218,8 +218,8 @@
   },
   "active": "69becb23a552f957",
   "lastOpenFiles": [
-    "Project/AWS/EC2.md",
     "Project/AWS/IAM.md",
+    "Project/AWS/EC2.md",
     "Untitled.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
     "Project/AWS/Legion.md",
