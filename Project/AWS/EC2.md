@@ -63,7 +63,6 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 #### OSI(Open Systems Interfaces)
 - 네트워크를 나누는 L7
 	1. Physical layer : 물리적인 단계로, port를 통해 전자적 신호로 2진법으로 바꾸어 송수신
-	*switch : 서버에 전자적 신호를 받고, 이를 다른 서버로 보낼 때 정해진 신호로 바꿈
-	RJ45 Port : *
-	
+	*switch : 서버에 전자적 신호를 받고, 이를 다른 서버로 보낼 때 물리적 신호로 바꿈
+	RJ45 Port : 이더넷 케이블을 연결하는 데 사용되는 표준 8핀 커넥터*
 	2. 
