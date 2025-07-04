@@ -57,3 +57,6 @@ Amazon Elastic Compute Cloud(EC2)
 	- 대상 등록에서 동적으로 하기 위해 선택x
 
 automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
+
+# VPC(Virtual Private Cloud)
+
