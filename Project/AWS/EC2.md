@@ -66,5 +66,5 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	*switch : 서버에 전자적 신호를 받고, 이를 다른 서버로 보낼 때 물리적 신호로 바꿈
 	RJ45 Port : 이더넷 케이블을 연결하는 데 사용되는 표준 8핀 커넥터*
 	2. Data Link layer : 
-	*mac(media access controler) : IP주소 처럼 하드웨어에 할당된 식별 주소
+	*mac(media access controler) : IP주소 처럼 하드웨어에 할당된 고유 식별 주소
 	Ethernet : *
