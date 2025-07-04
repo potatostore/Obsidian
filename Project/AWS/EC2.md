@@ -60,9 +60,6 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 
 # VPC(Virtual Private Cloud)
 
-
-
-
-
-
-# OSI
+#### OSI(Open Systems Interfaces)
+- 네트워크를 나누는 L7
+	1. Physical layer
