@@ -73,4 +73,6 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	4. Transport layer : IP를 통해 데이터를 통신하는 단계
 	*TCP/IP : 3-Way handshaking을 통해 전송하려는 데이터가 제대로 된 IP에 전송되었는지 연결형 프로토콜을 통해 확인한다. 신뢰성은 높지만 느리다.
 	UDP : 비연결형 프로토콜로 데이터를 전송할 때, 통신 주체들끼리의 논리적인 경로가 없는 비연결형 프로토콜로 목적지는 존재하지만 경로가 불확실하여 통신을 상대측에서 받았는지 확인할 수 없다. 빠르지만 신뢰성이 낮다.*
-	5. 
+	5. Session layer
+	6. Presentation layer
+	7. Application layer
