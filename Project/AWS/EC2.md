@@ -80,3 +80,8 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 	SSH : 
 	릴레이 서버 : *
 	7. Application layer : 
+
+
+#### VPN(Virtual Private Network)
+
+- 가상 사설망으로 공공 네트워크를 통해 마치 개인 네트워크처럼 안전하게 통신하는 기술이다. IP address 마스킹, 데이터 암호화를 통해 공공 네트워크를 사용하여도 개인 정보가 보호되게 만든다.
