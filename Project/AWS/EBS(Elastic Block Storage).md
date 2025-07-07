@@ -34,3 +34,4 @@ Run: 'sudo nano /etc/fstab' then add '/dev/xvdf /data ext4 defaults,nofail 0 2' 
 3. Mount the new EBS volume to the instance in us-east-1b
 4. Change to the /data mount point and view the data
 
+sudo lsblk -e7
