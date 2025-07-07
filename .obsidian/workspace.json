@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/VPC(Virtual Private Cloud).md",
+                "file": "Project/AWS/custom-vpc.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VPC(Virtual Private Cloud)"
+              "title": "custom-vpc"
             }
           }
         ],
@@ -232,8 +232,9 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
-    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
+    "Project/AWS/custom-vpc.md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/Untitled.md",
     "University/2-2",
     "Project/AWS/IAM.md",
@@ -265,7 +266,6 @@
     "Images/Pasted image 20250405215344.png",
     "Images/Pasted image 20250405215130.png",
     "Images/Pasted image 20250404211654.png",
-    "University/2-1/선형대수학.md",
     "University/2-1",
     "Project/Google Cloud Jam",
     "Computer Science/memory",
