@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/EBS.md",
+                "file": "Project/AWS/EBS(Elastic Block Storage).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EBS"
+              "title": "EBS(Elastic Block Storage)"
             }
           }
         ],
@@ -233,7 +233,7 @@
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
     "Project/AWS/S3.md",
-    "Project/AWS/EBS.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/custom-vpc.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
