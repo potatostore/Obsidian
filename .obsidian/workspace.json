@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/S3.md",
+                "file": "Project/AWS/amazon-ebs-volumes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "S3"
+              "title": "amazon-ebs-volumes"
             }
           }
         ],
@@ -232,8 +232,9 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
-    "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/S3.md",
+    "Project/AWS/amazon-ebs-volumes.md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/custom-vpc.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/Untitled.md",
@@ -258,7 +259,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/DFS(Depth FIrst Search).md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
