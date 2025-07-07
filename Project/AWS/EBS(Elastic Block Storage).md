@@ -38,3 +38,5 @@ Run: 'sudo nano /etc/fstab' then add '/dev/xvdf /data ext4 defaults,nofail 0 2' 
 - 인스턴스의 양을 제공
 
 sudo lsblk -e7
+
+snap shot : 모든 legion에서 생성
