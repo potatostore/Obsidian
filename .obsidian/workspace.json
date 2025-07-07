@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -218,10 +218,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cce9cae9703d7d96",
+  "active": "dd220a897d88722d",
   "lastOpenFiles": [
-    "Project/AWS/volume 해결 방안.md",
     "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/volume 해결 방안.md",
     "Project/AWS/S3.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/custom-vpc.md",
