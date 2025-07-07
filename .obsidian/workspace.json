@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/amazon-ebs-volumes.md",
+                "file": "Project/AWS/EBS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "amazon-ebs-volumes"
+              "title": "EBS"
             }
           }
         ],
@@ -233,7 +233,7 @@
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
     "Project/AWS/S3.md",
-    "Project/AWS/amazon-ebs-volumes.md",
+    "Project/AWS/EBS.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/custom-vpc.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
