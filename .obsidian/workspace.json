@@ -219,6 +219,7 @@
   },
   "active": "dd220a897d88722d",
   "lastOpenFiles": [
+    "Project/AWS/working-with-efs.md",
     "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/custom-vpc.md",
     "Project/AWS/volume 해결 방안.md",
@@ -245,7 +246,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/DFS(Depth FIrst Search).md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Brute-Force Search.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
