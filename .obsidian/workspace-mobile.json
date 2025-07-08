@@ -141,8 +141,8 @@
         "state": {
           "type": "calendar",
           "state": {},
-          "icon": "calendar-with-checkmark",
-          "title": "Calendar"
+          "icon": "lucide-file",
+          "title": "Plugin no longer active"
         }
       }
     ],
@@ -150,16 +150,16 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
-      "obsidian-book-search-plugin:Create new book note": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "959c169424ffc75d",
