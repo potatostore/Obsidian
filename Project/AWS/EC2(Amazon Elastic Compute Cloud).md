@@ -83,4 +83,13 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 
 따라서 aws에서는 위 단점들을 해결하기 위해 2가지의 대표적인 방식을 제공하는데, 
 1. AWS multi-attach : 최대 16개의 인스턴스를 연결 가능
-2. Amazon EFS
+2. Amazon EFS : 파일시스템에 여러 인스턴스가 mount
+
+가 존재한다.
+
+하지만 1번은 동시 쓰기 시에 conflict로 인한 오류가 발생하여 데이터 손실의 위험이 매우 크다.
+
+따라서 Amazon EFS로 여러 인스턴스에서 접근가능 하도록 만들어 준다.
+
+#### Amazon EFS(Elastic File System)
+
