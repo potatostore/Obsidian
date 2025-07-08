@@ -220,10 +220,10 @@
   "active": "dd220a897d88722d",
   "lastOpenFiles": [
     "Project/AWS/custom-vpc.md",
-    "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/volume 해결 방안.md",
-    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/S3.md",
     "Project/Untitled.md",
     "University/2-2",
