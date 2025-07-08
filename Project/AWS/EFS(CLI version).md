@@ -4,17 +4,23 @@
 ## Launch instances in multiple AZs
 1. Create a security group
 aws ec2 create-security-group --group-name StorageLabs --description "Temporary SG for the Storage Service Labs"
+
 2. Add a rule for SSH inbound to the security group
 aws ec2 authorize-security-group-ingress --group-name StorageLabs --protocol tcp --port 22 --cidr 0.0.0.0/0
+
 3. Launch instance in US-EAST-1A
-aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1a --security-group-ids <SECURITY-GROUP-ID>
+aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1a --security-group-ids _SECURITY-GROUP-ID_
+
 4. Launch instance in US-EAST-1B
 aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1b --security-group-ids <SECURITY-GROUP-ID>
 
 ## Create an EFS File System
+
 1. Add a rule to the security group to allow the NFS protocol from group members
 
-```aws ec2 authorize-security-group-ingress --group-id <SECURITY-GROUP-ID> --protocol tcp --port 2049 --source-group <SECURITY-GROUP-ID>```
+```
+aws ec2 authorize-security-group-ingress --group-id <SECURITY-GROUP-ID> --protocol tcp --port 2049 --source-group <SECURITY-GROUP-ID>
+```
 
 2. Create an EFS file system through the console, and add the StorageLabs security group to the mount targets for each AZ
 
