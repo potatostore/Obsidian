@@ -14,7 +14,7 @@ sudo lsblk -e7
 
 ## Create a filesystem and mount the volume
 1. Create a filesystem on the EBS volume
-sudo mkfs -t ext4 /dev/xvdf
+sudo mkfs -t ext4 /dev/xvdf 
 2. Create a mount point for the EBS volume
 sudo mkdir /data
 3. Mount the EBS volume to the mount point
