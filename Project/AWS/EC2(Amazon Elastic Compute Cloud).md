@@ -93,3 +93,8 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 
 #### Amazon EFS(Elastic File System)
 
+1. VPC 호스트 이름 확인하기 -> 비활성화 경우 설정에서 활성화 해주기
+2. 해당 인스턴스에 접근하여 다음과 같은 명령어 다운
+```Amazon CLI
+
+```
