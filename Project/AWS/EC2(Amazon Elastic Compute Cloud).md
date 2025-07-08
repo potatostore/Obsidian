@@ -93,8 +93,21 @@ automatic-scaling(scale-up) : cloudwatch | intance 개수로 확인
 
 #### Amazon EFS(Elastic File System)
 
-1. VPC 호스트 이름 확인하기 -> 비활성화 경우 설정에서 활성화 해주기
-2. 해당 인스턴스에 접근하여 다음과 같은 명령어 다운
-```Amazon CLI
+_조건_
+1. 두 인스턴스의 보안그룹이 같아야함.(port : 2049(NFS) 인바운드 규칙 포함)
+2. 파일시스템의 보안그룹에 두 인스턴스의 동일한 보안그룹 설정
 
+_시작_
+1. VPC 호스트 이름 확인하기 -> 비활성화 경우 설정에서 활성화 해주기
+2. 두 인스턴스에 EFS 마운트
 ```
+$ sudo mkdir /shared_data  -> 공유할 파일인 shared_data생성
+$ sudo yum install -y amazon-efs-utils  -> efs 설정을 위한 세팅
+$ sudo mount -t efs "EFS ID":/ /shared_data  -> shared_data에 EFS 마운트
+$ echo "hello" | sudo tee /shared_data/test.txt  -> text file에 내용 저장
+
+다른 인스턴스에 위 1~3 진행 후
+$ cat /shared_data/test.txt -> file에 저장된 내용 확인
+```
+
+위 과정을 통해 txt파일에 저장된 정보를 확인가능
