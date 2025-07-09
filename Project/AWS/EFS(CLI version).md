@@ -46,3 +46,5 @@ sudo yum -y install nfs-utils
 sudo mount -t efs -o tls fs-0ac64e961bdc0e0a4.efs.ap-northeast-1.amazonaws.com:/ ~/efs-mount-point
 
 보안 그룹을 설정하여 EFS를 mount하게 되면 해당 보안그룹을 지정한 인스턴스끼리만 통신이 가능하고, mount가능하게 만듬
+
+보안 그룹 소스에 해당 보안그룹이 존재하면, 인바운드 규칙으로 보안그룹에 해당하는 인스턴스만 접근 가능하다는 뜻이다.
