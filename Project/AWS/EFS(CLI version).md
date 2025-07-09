@@ -2,7 +2,7 @@
 # Working with EFS
 
 ## Launch instances in multiple AZs
-1. Create a security group
+1. Create a security group -> security group ID create(input in 3)
 aws ec2 create-security-group --group-name StorageLabs --description "Temporary SG for the Storage Service Labs"
 
 2. Add a rule for SSH inbound to the security group
