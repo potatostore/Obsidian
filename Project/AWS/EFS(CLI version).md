@@ -16,6 +16,7 @@ aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro 
 
 ## Create an EFS File System
 
+[sg-03ac1f717036b320f]
 1. Add a rule to the security group to allow the NFS protocol from group members
 
 ```
