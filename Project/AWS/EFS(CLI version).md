@@ -8,9 +8,11 @@ aws ec2 create-security-group --group-name StorageLabs --description "Temporary 
 2. Add a rule for SSH inbound to the security group
 aws ec2 authorize-security-group-ingress --group-name StorageLabs --protocol tcp --port 22 --cidr 0.0.0.0/0
 
-3. create AMI
+3. Set security inbound rule : port 2049 (NFS)
 
-4. Launch instance in US-EAST-1A
+4. create AMI
+
+5. Launch instance in US-EAST-1A
 aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1a --security-group-ids _SECURITY-GROUP-ID_
 
 4. Launch instance in US-EAST-1B
