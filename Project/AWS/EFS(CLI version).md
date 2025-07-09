@@ -42,4 +42,4 @@ sudo umount ~/efs-mount-point
 1. Install EFS utils
 sudo yum install -y amazon-efs-utils
 2. Mount using the EFS mount helper
-sudo mount -t efs -o tls <EFS-DNS-NAME>:/ ~/efs-mount-point
+sudo mount -t efs -o tls _EFS-DNS-NAME_:/ ~/efs-mount-point
