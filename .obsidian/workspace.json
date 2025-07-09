@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/S3(Simple Storage Service).md",
+                "file": "Project/AWS/RDS(Relational Database Service).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "S3(Simple Storage Service)"
+              "title": "RDS(Relational Database Service)"
             }
           }
         ],
@@ -205,13 +205,14 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
+    "Project/AWS/S3(Simple Storage Service).md",
+    "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/EFS(CLI version).md",
     "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/VPC-custom.md",
     "Project/AWS/volume 해결 방안.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Project/AWS/S3(Simple Storage Service).md",
     "Project/Untitled.md",
     "University/2-2",
     "Project/AWS/IAM.md",
@@ -231,7 +232,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/DFS(Depth FIrst Search).md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
