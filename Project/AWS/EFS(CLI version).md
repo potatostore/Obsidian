@@ -43,4 +43,4 @@ sudo yum -y install nfs-utils
 1. Install EFS utils
 sudo yum install -y amazon-efs-utils
 2. Mount using the EFS mount helper
-sudo mount -t efs -o tls _EFS-DNS-NAME_:/ ~/efs-mount-point
+sudo mount -t efs -o tls fs-080bf7fc21663ca7c.efs.ap-northeast-2.amazonaws.com:/ ~/efs-mount-point
