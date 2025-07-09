@@ -44,3 +44,5 @@ sudo yum -y install nfs-utils
 sudo yum install -y amazon-efs-utils
 2. Mount using the EFS mount helper
 sudo mount -t efs -o tls fs-080bf7fc21663ca7c.efs.ap-northeast-2.amazonaws.com:/ ~/efs-mount-point
+
+보안 그룹을 설정하여 EFS를 mount하게 되면 해당 보안그룹을 지정한 인스턴스끼리만 통신이 가능하고, mount가능하게 만듬
