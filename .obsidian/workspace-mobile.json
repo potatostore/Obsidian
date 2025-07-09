@@ -11,10 +11,14 @@
             "id": "64e386f16a4fe08f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Project/AWS/EBS(Elastic Block Storage).md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "EBS(Elastic Block Storage)"
             }
           }
         ]
