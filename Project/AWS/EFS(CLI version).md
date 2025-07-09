@@ -8,15 +8,13 @@ aws ec2 create-security-group --group-name StorageLabs --description "Temporary 
 2. Add a rule for SSH inbound to the security group
 aws ec2 authorize-security-group-ingress --group-name StorageLabs --protocol tcp --port 22 --cidr 0.0.0.0/0
 
-3. Set security inbound rule : port 2049 (NFS)
-
 4. create AMI
 
 5. Launch instance in US-EAST-1A
-aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1a --security-group-ids _SECURITY-GROUP-ID_
+aws ec2 run-instances --image-id ami-0c434c3e049e75803 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-2a --security-group-ids sg-05a4ec1d963fff04f
 
 4. Launch instance in US-EAST-1B
-aws ec2 run-instances --image-id ami-0440d3b780d96b29d --instance-type t2.micro --placement AvailabilityZone=us-east-1b --security-group-ids _SECURITY-GROUP-ID_
+aws ec2 run-instances --image-id ami-0c434c3e049e75803 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-2c --security-group-ids sg-05a4ec1d963fff04f
 
 ## Create an EFS File System
 
