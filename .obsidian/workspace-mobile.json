@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/EBS(Elastic Block Storage)1.md",
+                "file": "Project/AWS/EBS(Elastic Block Storage).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EBS(Elastic Block Storage)1"
+              "title": "EBS(Elastic Block Storage)"
             }
           }
         ]
@@ -196,7 +196,7 @@
     "Project/AWS/S3.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/IAM.md",
-    "Project/AWS/EBS(Elastic Block Storage)1.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/Unreal Engine(HD-2D).md",
     "Project/Calculator(c++, spring boot).md",
