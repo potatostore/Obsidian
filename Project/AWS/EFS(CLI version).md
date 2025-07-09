@@ -21,7 +21,7 @@ aws ec2 run-instances --image-id ami-0c434c3e049e75803 --instance-type t2.micro 
 1. Add a rule to the security group to allow the NFS protocol from group members
 
 ```
-aws ec2 authorize-security-group-ingress --group-id _SECURITY-GROUP-ID_ --protocol tcp --port 2049 --source-group _SECURITY-GROUP-ID_
+aws ec2 authorize-security-group-ingress --group-id sg-05a4ec1d963fff04f --protocol tcp --port 2049 --source-group sg-05a4ec1d963fff04f
 ```
 
 2. Create an EFS file system through the console, and add the StorageLabs security group to the mount targets for each AZ
