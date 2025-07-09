@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "eef30b39795839f4",
+    "id": "88ea4256e62e64e3",
     "type": "split",
     "children": [
       {
-        "id": "b063fd335baa6ddf",
+        "id": "ebea0aa2d2f58f5b",
         "type": "tabs",
         "children": [
           {
-            "id": "959c169424ffc75d",
+            "id": "64e386f16a4fe08f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/2-1/논리회로설계.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "논리회로설계"
+              "title": "New tab"
             }
           }
         ]
@@ -27,11 +23,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "fb67c019024bbfb7",
+    "id": "ac9d8df996b4254e",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "077bb42b17fdc80e",
+        "id": "3d034e6f9c41c97c",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +40,7 @@
         }
       },
       {
-        "id": "2e14b658c9bdf37f",
+        "id": "b09ff35fd2ef3401",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,20 +57,22 @@
         }
       },
       {
-        "id": "6aeca5c46e952ca2",
+        "id": "7b7811229a09a068",
         "type": "leaf",
         "state": {
           "type": "tag",
           "state": {
             "sortOrder": "frequency",
-            "useHierarchy": true
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-tags",
           "title": "Tags"
         }
       },
       {
-        "id": "a2bbde74a17e872e",
+        "id": "3436146f07c40fcc",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -87,16 +85,15 @@
     "currentTab": 0
   },
   "right": {
-    "id": "ca722814619639a8",
+    "id": "b8b130b118902cec",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "806d562addb5a05b",
+        "id": "ac5c9f1312381da9",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Project/Calculator(c++).md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -110,12 +107,11 @@
         }
       },
       {
-        "id": "b10f8f064e60af5b",
+        "id": "4195795a3286579c",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "CS.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -124,25 +120,27 @@
         }
       },
       {
-        "id": "25bb8ad70e0e3a08",
+        "id": "f43032db261e12bf",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "CS.md"
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
           },
           "icon": "lucide-list",
           "title": "Outline"
         }
       },
       {
-        "id": "149aed4aba85939e",
+        "id": "0f85a387d2622589",
         "type": "leaf",
         "state": {
           "type": "calendar",
           "state": {},
-          "icon": "lucide-file",
-          "title": "Plugin no longer active"
+          "icon": "calendar-with-checkmark",
+          "title": "Calendar"
         }
       }
     ],
@@ -150,62 +148,61 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-book-search-plugin:Create new book note": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "959c169424ffc75d",
+  "active": "64e386f16a4fe08f",
   "lastOpenFiles": [
-    "Project/AWS/S3.md",
-    "Project/AWS/RDS(Relational Database Service).md",
-    "Project/AWS/S3(Simple Storage Service).md",
-    "/Project/AWS/S3(Simple Storage Service).md",
-    "/Project/AWS/RDS(Relational Database Service).md",
-    "/Project/AWS/EFS(CLI version).md",
-    "/Project/AWS",
-    "/Project",
-    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
-    "Project/Google Cloud Jam",
-    "Project/Untitled.md",
+    "Computer Science/memory/Cache memory.md",
+    "Computer Science/memory/Ram.md",
+    "Computer Science/memory/heap.md",
+    "Computer Science/memory/Register.md",
+    "Computer Science/memory/stack.md",
+    "Computer Science/memory/Virtual Memory.md",
+    "Computer Science/OS(operate system).md",
+    "Computer Science/memory",
+    "Computer Science",
+    "IDE/Unreal engine(c++).md",
+    "IDE",
+    "Images/Pasted image 20250419214702.png",
     "Images/Pasted image 20250524130643.png",
+    "Images/Pasted image 20250419182930.png",
+    "Images/Pasted image 20250405215344.png",
+    "Images/Pasted image 20250404211654.png",
+    "Images/Pasted image 20250405215130.png",
+    "Images",
+    "Frameworks/Spring boot - java.md",
+    "Frameworks",
+    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
     "Project/AWS/volume 해결 방안.md",
+    "Project/AWS/S3(Simple Storage Service).md",
     "Project/AWS/VPC-custom.md",
     "Project/AWS/EFS(CLI version).md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/Legion.md",
+    "Project/AWS/S3.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/IAM.md",
     "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/RDS(Relational Database Service).md",
+    "Project/Unreal Engine(HD-2D).md",
+    "Project/Calculator(c++, spring boot).md",
+    "Project/Web Server(c++).md",
+    "Project/Untitled.md",
+    "Project/Google Cloud Jam",
     "Project/AWS",
-    "University/2-1/컴퓨터구조.md",
-    "컴퓨터구조.md",
-    "-Calendar-/2025/4th/2025-04-19.md",
-    "-Calendar-/2025/3rd/2025-03-31.md",
-    "-Calendar-/2025/4th/2025-04-21.md",
-    "Pasted image 20250419182930.png",
-    "-Calendar-/2025/4th/2025-04-22.md",
-    "Pasted image 20250419214702.png",
-    "University/2-1/선형대수학.md",
-    "Pasted image 20250405215130.png",
-    "Pasted image 20250405215344.png",
-    "University/2-1/TODO.md",
-    "University/2-1/금융공학.md",
-    "Project/Unreal Engine(2D).md",
-    "-Calendar-/2025/4th",
-    "Images/Pasted image 20250404211654.png",
-    "Images",
-    "University/2-1",
-    "Knowledge",
-    "University",
-    "-Calendar-/2025/3rd",
-    "Untitled.canvas"
+    "Project",
+    "Algorithm/Graph Algorithm/Minimum Spanning Tree Algorithm/Prim’s Algorithm.md",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/-Search Algorithm Explain-.md-2",
+    "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md-2"
   ]
 }
