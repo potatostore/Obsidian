@@ -203,8 +203,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cce9cae9703d7d96",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
+    "Project/AWS/S3.md",
     "Project/AWS/S3(Simple Storage Service).md",
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/EFS(CLI version).md",
@@ -231,7 +232,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Linear Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Jump Search.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Fibonacci Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/Interpolation Search.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
