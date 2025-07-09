@@ -38,8 +38,8 @@ sudo yum -y install nfs-utils
 4. Create a file on the file system
 5. Add a file system policy to enforce encryption in-transit
 6. Unmount (make sure to change directory out of efs-mount-point first)
-sudo umount ~/efs-mount-point
-4. Mount again using the EFS client (what happens?)
+	sudo umount ~/efs-mount-point
+7. Mount again using the EFS client (what happens?)
 
 ## Mount using the EFS utils (perform steps on both instances)
 1. Install EFS utils
