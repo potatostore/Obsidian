@@ -11,10 +11,10 @@ aws ec2 authorize-security-group-ingress --group-name SG --protocol tcp --port 2
 4. create AMI
 
 5. Launch instance in US-EAST-1A
-aws ec2 run-instances --image-id ami-0c434c3e049e75803 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-2a --security-group-ids sg-05a4ec1d963fff04f
+aws ec2 run-instances --image-id ami-09fdbc3c5aeb77c77 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-1a --security-group-ids sg-052d5c46dc6bdaaf9
 
 4. Launch instance in US-EAST-1B
-aws ec2 run-instances --image-id ami-0c434c3e049e75803 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-2c --security-group-ids sg-05a4ec1d963fff04f
+aws ec2 run-instances --image-id ami-09fdbc3c5aeb77c77 --instance-type t2.micro --placement AvailabilityZone=ap-northeast-1b --security-group-ids sg-052d5c46dc6bdaaf9
 
 ## Create an EFS File System
 
