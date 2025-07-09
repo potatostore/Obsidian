@@ -3,3 +3,8 @@
 - block storage
 - Objet Storage
 
+#### Bucket
+- object container
+
+
+

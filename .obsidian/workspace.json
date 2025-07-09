@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/EFS(CLI version).md",
+                "file": "Project/AWS/S3(Simple Storage Service).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EFS(CLI version)"
+              "title": "S3(Simple Storage Service)"
             }
           }
         ],
@@ -205,13 +205,13 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
-    "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/EFS(CLI version).md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/VPC-custom.md",
     "Project/AWS/volume 해결 방안.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Project/AWS/S3.md",
+    "Project/AWS/S3(Simple Storage Service).md",
     "Project/Untitled.md",
     "University/2-2",
     "Project/AWS/IAM.md",
