@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/password.md",
+                "file": "Computer Science/API(App Programming Interface).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "password"
+              "title": "API(App Programming Interface)"
             }
           }
         ],
@@ -205,8 +205,10 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
-    "Project/AWS/IAM.md",
+    "Computer Science/DB(DataBase).md",
+    "Computer Science/API(App Programming Interface).md",
     "Project/AWS/password.md",
+    "Project/AWS/IAM.md",
     "Frameworks/Spring boot - java.md",
     "Language/JAVA.md",
     "Project/AWS/Create-DynamoDB.md",
@@ -230,8 +232,6 @@
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Bubble Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Counting Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
