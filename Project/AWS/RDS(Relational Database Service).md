@@ -18,5 +18,3 @@
 
 - 수평 확장성
 
-
-# DynamoDB(NoSQL)
