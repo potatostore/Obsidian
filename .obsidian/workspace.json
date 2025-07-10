@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/Create-DynamoDB.md",
+                "file": "Project/AWS/password.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Create-DynamoDB"
+              "title": "password"
             }
           }
         ],
@@ -205,12 +205,15 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
+    "Project/AWS/IAM.md",
+    "Project/AWS/password.md",
+    "Frameworks/Spring boot - java.md",
+    "Language/JAVA.md",
+    "Project/AWS/Create-DynamoDB.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/DynamoDB.md",
-    "Project/AWS/IAM.md",
     "Project/AWS/S3(Simple Storage Service).md",
     "Project/AWS/RDS(Relational Database Service).md",
-    "Project/AWS/Create-DynamoDB.md",
     "Project/AWS/Create-EBS(Elastic Block Storage).md",
     "Project/AWS/Create-EFS(CLI version).md",
     "Project/AWS/Create-VPC-custom.md",
@@ -229,9 +232,6 @@
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Selection Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Shell Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Radix Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",
