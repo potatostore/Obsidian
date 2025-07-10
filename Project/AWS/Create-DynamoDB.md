@@ -12,7 +12,7 @@
 3. Run the following command to load the entries from the file
 
 ```bash
-aws dynamodb batch-write-item --request-items file://batch-write.json
+aws dynamodb batch-write-item --request-items file://orders.json
 ```
 
 4. Use the "Explore items" view under "Tables" to view the items in the table
