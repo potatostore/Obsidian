@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/EBS(Elastic Block Storage).md",
+                "file": "Project/AWS/VPC(Virtual Private Cloud).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "EBS(Elastic Block Storage)"
+              "title": "VPC(Virtual Private Cloud)"
             }
           }
         ],
@@ -205,19 +205,19 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
-    "Project/AWS/Create-EBS(Elastic Block Storage).md",
-    "Project/AWS/EBS(Elastic Block Storage).md",
-    "Project/AWS/Create-DynamoDB.md",
-    "Project/AWS/Create-VPC-custom.md",
-    "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Project/AWS/S3(Simple Storage Service).md",
-    "Project/AWS/Legion.md",
-    "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/DynamoDB.md",
+    "Project/AWS/IAM.md",
+    "Project/AWS/S3(Simple Storage Service).md",
+    "Project/AWS/RDS(Relational Database Service).md",
+    "Project/AWS/Create-DynamoDB.md",
+    "Project/AWS/Create-EBS(Elastic Block Storage).md",
+    "Project/AWS/Create-EFS(CLI version).md",
+    "Project/AWS/Create-VPC-custom.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
+    "Project/AWS/Legion.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/EC2-volume 해결 방안.md",
-    "Project/AWS/IAM.md",
-    "Project/AWS/Create-EFS(CLI version).md",
     "Project/AWS/S3.md",
     "Project/AWS/EBS(Elastic Block Storage)1.md",
     "Project/Untitled.md",
