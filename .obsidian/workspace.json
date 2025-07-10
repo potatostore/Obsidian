@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/Create-VPC-custom.md",
+                "file": "Project/AWS/EBS(Elastic Block Storage).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Create-VPC-custom"
+              "title": "EBS(Elastic Block Storage)"
             }
           }
         ],
@@ -205,9 +205,12 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
+    "Project/AWS/Create-EBS(Elastic Block Storage).md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/Create-DynamoDB.md",
+    "Project/AWS/Create-VPC-custom.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
     "Project/AWS/S3(Simple Storage Service).md",
-    "Project/AWS/Create-VPC-custom.md",
     "Project/AWS/Legion.md",
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/DynamoDB.md",
@@ -215,8 +218,6 @@
     "Project/AWS/EC2-volume 해결 방안.md",
     "Project/AWS/IAM.md",
     "Project/AWS/Create-EFS(CLI version).md",
-    "Project/AWS/Create-DynamoDB.md",
-    "Project/AWS/Create-EBS(Elastic Block Storage).md",
     "Project/AWS/S3.md",
     "Project/AWS/EBS(Elastic Block Storage)1.md",
     "Project/Untitled.md",
@@ -231,7 +232,6 @@
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Quick Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Merge Sort.md",
     "Algorithm/Search and Sort Algorithm/Sort Algorithm/Insertion Sort.md",
-    "Algorithm/Search and Sort Algorithm/Sort Algorithm/Heap Sort.md",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
     "Images/Pasted image 20250419182930.png",

@@ -33,10 +33,3 @@ Run: 'sudo nano /etc/fstab' then add '/dev/xvdf /data ext4 defaults,nofail 0 2' 
 2. Create a new EBS volume from the snapshot in us-east-1b
 3. Mount the new EBS volume to the instance in us-east-1b
 4. Change to the /data mount point and view the data
-
-#### volume
-- 인스턴스의 양을 제공
-
-sudo lsblk -e7
-
-snap shot : 모든 legion에서 생성
