@@ -23,9 +23,9 @@ aws dynamodb batch-write-item --request-items file://orders.json
 
 ```bash
 aws dynamodb scan \
-    --table-name myorders \
-    --filter-expression "category = :cat" \
-    --expression-attribute-values '{":cat":{"S":"Electronics"}}'
+    --table-name orders \
+    --filter-expression "items = :cat" \
+    --expression-attribute-values '{":cat":{"S":"양념치킨"}}'
 ```
 
 - --filter-expression "category = :cat" : specifies the condition to filter items where the category attribute equals a value we define
@@ -48,9 +48,9 @@ aws dynamodb scan \
 
 ```bash
 aws dynamodb query \
-    --table-name myorders \
-    --key-condition-expression "clientid = :clientid" \
-    --expression-attribute-values '{":clientid":{"S":"client01@example.com"}}'
+    --table-name orders \
+    --key-condition-expression "order_id = :order_id" \
+    --expression-attribute-values '{":order_id":{"S":"zxouiawkjer@example"}}'
 ```
 - --key-condition-expression "clientid = :clientid" : specifies the condition for the query to find items where the clientid matches the specified value
 - --expression-attribute-values '{":clientid":{"S":"client01@example.com"}}' : defines the value for :clientid used in the key condition expression
