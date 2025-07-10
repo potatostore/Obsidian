@@ -14,3 +14,6 @@
 # Amazon RDS
 
 
+#### Amazon RDS Read Replica
+
+- 수평 확장성
