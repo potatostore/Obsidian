@@ -28,8 +28,8 @@ aws dynamodb scan \
     --expression-attribute-values '{":cat":{"S":"Electronics"}}'
 ```
 
-```--filter-expression "category = :cat"``` specifies the condition to filter items where the category attribute equals a value we define
-```--expression-attribute-values '{":cat":{"S":"Electronics"}}'``` defines the value for :cat used in the filter expression, in this case, "Electronics"
+- --filter-expression "category = :cat" : specifies the condition to filter items where the category attribute equals a value we define
+- --expression-attribute-values '{":cat":{"S":"Electronics"}}' :  defines the value for :cat used in the filter expression, in this case, "Electronics"
 
 2. This example shows how to scan the myorders table for items where the quantity (qty) is greater than 2
 
@@ -39,8 +39,8 @@ aws dynamodb scan \
     --filter-expression "qty > :q" \
     --expression-attribute-values '{":q":{"N":"2"}}'
 ```
-```--filter-expression "qty > :q"``` specifies the condition to filter items where the qty attribute is greater than a value we define
-```--expression-attribute-values '{":q":{"N":"2"}}'``` defines the value for :q used in the filter expression, in this case, a quantity of 2
+- --filter-expression "qty > :q" : specifies the condition to filter items where the qty attribute is greater than a value we define
+- --expression-attribute-values '{":q":{"N":"2"}}' : defines the value for :q used in the filter expression, in this case, a quantity of 2
 
 # 4. Use Query APIs to find data
 
@@ -52,8 +52,8 @@ aws dynamodb query \
     --key-condition-expression "clientid = :clientid" \
     --expression-attribute-values '{":clientid":{"S":"client01@example.com"}}'
 ```
-```--key-condition-expression "clientid = :clientid"``` specifies the condition for the query to find items where the clientid matches the specified value
-```--expression-attribute-values '{":clientid":{"S":"client01@example.com"}}'``` defines the value for :clientid used in the key condition expression
+- --key-condition-expression "clientid = :clientid" : specifies the condition for the query to find items where the clientid matches the specified value
+- --expression-attribute-values '{":clientid":{"S":"client01@example.com"}}' : defines the value for :clientid used in the key condition expression
 
 2. If you want to find orders from a specific client within a certain date range, you can use the sort key (created) along with the partition key (clientid) in your query
 
@@ -64,5 +64,8 @@ aws dynamodb query \
     --expression-attribute-values '{":clientid":{"S":"client01@example.com"}, ":date1":{"S":"2023-01-01T00:00Z"}, ":date2":{"S":"2023-01-31T23:59Z"}}'
 ```
 
-```--key-condition-expression "clientid = :clientid AND created BETWEEN :date1 AND :date2"``` specifies the condition for the query to find items where the clientid matches the specified value and the created date falls within the specified range
-```--expression-attribute-values '{":clientid":{"S":"client01@example.com"}, ":date1":{"S":"2023-01-01T00:00Z"}, ":date2":{"S":"2023-01-31T23:59Z"}}'``` defines the values for :clientid, :date1, and :date2 used in the key condition expression
+- --key-condition-expression "clientid = :clientid AND created BETWEEN :date1 AND :date2" :
+specifies the condition for the query to find items where the clientid matches the specified value and the created date falls within the specified range
+
+- --expression-attribute-values '{":clientid":{"S":"client01@example.com"}, ":date1"
+{"S":"2023-01-01T00:00Z"}, ":date2":{"S":"2023-01-31T23:59Z"}}' : defines the values for :clientid, :date1, and :date2 used in the key condition expression
