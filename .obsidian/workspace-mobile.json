@@ -188,6 +188,9 @@
     "/Project/AWS/DynamoDB.md",
     "/Project/AWS/Create-EBS(Elastic Block Storage).md",
     "/Project/AWS/Create-DynamoDB.md",
+    "Project/AWS/EBS(Elastic Block Storage)1.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
+    "/Project/AWS/EBS(Elastic Block Storage).md",
     "/Project/AWS",
     "/Project",
     "Computer Science/memory/Cache memory.md",
@@ -208,5 +211,22 @@
     "Frameworks",
     "Project/Google Cloud Jam",
     "Project/AWS"
+    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+    "Project/AWS/volume 해결 방안.md",
+    "Project/AWS/S3(Simple Storage Service).md",
+    "Project/AWS/VPC-custom.md",
+    "Project/AWS/EFS(CLI version).md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+    "Project/AWS/Legion.md",
+    "Project/AWS/S3.md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
+    "Project/AWS/IAM.md",
+    "Project/AWS/RDS(Relational Database Service).md",
+    "Project/Unreal Engine(HD-2D).md",
+    "Project/Calculator(c++, spring boot).md",
+    "Project/Web Server(c++).md",
+    "Project/Google Cloud Jam",
+    "Project/AWS",
+    "Project"
   ]
 }
