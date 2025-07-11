@@ -1,12 +1,10 @@
 # Job
 
 - ETL 파이프라인이 자동으로 실행되는 단위
-
-
 #### ETL
 - Extract : 데이터 추출
 - Tranfer : 데이터 변환
-
+- Load : 데이터 적재
 
 # Data Catalog
 
@@ -16,6 +14,7 @@
 
 #### metadata
 - 소스타입, 데이터포멧, 컬럼정보를 담고있는 데이터
+
 # Table 생성방법
 
 1. crawlers
@@ -28,3 +27,8 @@
 
 # Crawlers
 
+#### Classifier
+- custom classifier : 사용자가 직접 식별자를 생성하여 데이터를 가져오는 방식
+- built-in classifier : 내장된 식별자로 데이터를 가져오는 방식
+
+만약 두 classifier가 동시에 데이터를 크롤링 해올때, 먼저 온 결과물을 채택
