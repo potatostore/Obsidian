@@ -16,3 +16,14 @@
 
 #### metadata
 - 소스타입, 데이터포멧, 컬럼정보를 담고있는 데이터
+# Table 생성방법
+
+1. crawlers
+2. 수동생성(콘솔,API를 통해 직접 생성)
+3. AWS SDK 
+4. Hive Metastore 마이그레이션
+5. CloudFormation 등 laC 도구 사용
+
+1번이 가장 많이 사용됨.
+
+
