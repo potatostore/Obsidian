@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/IAM.md",
+                "file": "Project/AWS/Glue.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IAM"
+              "title": "Glue"
             }
           }
         ],
@@ -205,17 +205,17 @@
   },
   "active": "cce9cae9703d7d96",
   "lastOpenFiles": [
+    "Project/AWS/DynamoDB.md",
+    "Project/AWS/IAM.md",
     "Project/AWS/Glue.md",
     "Project/Git.md",
     "Computer Science/API(App Programming Interface).md",
     "Computer Science/DB(DataBase).md",
     "Project/AWS/password.md",
-    "Project/AWS/IAM.md",
     "Frameworks/Spring boot - java.md",
     "Language/JAVA.md",
     "Project/AWS/Create-DynamoDB.md",
     "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Project/AWS/DynamoDB.md",
     "Project/AWS/S3(Simple Storage Service).md",
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/Create-EBS(Elastic Block Storage).md",
