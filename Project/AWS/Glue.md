@@ -54,5 +54,11 @@
 
 크롤러의 역할은 데이터를 읽고, 메타데이터를 생성해서, 쓰기를 해야 한다. 위 동작을 하기 위해서는 크롤러에 권한을 부여해야 하는데, 이는 IAM Role을 통해 부여하게 된다.
 
+#### built-int classifier
+
+#### custom classifier
+
+
+
 # JDBC
 
