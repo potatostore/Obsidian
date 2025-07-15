@@ -56,6 +56,8 @@
 
 #### built-int classifier
 
+- default 생성자처럼 기존에 존재하는 classifier로 특수한 데이터셋을 분석하는데에는 부적합하지만, 정형화되어있는 csv같은 파일을 돌리기에 적합하다.
+
 #### custom classifier
 
 
