@@ -1,4 +1,6 @@
+https://github.com/niceguy61/aws_study_glue_athena?tab=readme-ov-file
 데이터를 읽고, 분류하여, 저장하는 서비스로 순서는 다음과 같다.
+asdf
 
 1. 데이터를 crawler를 통해 읽어온다.
 2. 테이블 및 파티션을 생성한다.
