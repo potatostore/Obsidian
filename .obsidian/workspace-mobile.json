@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "0caf977e91074972",
+    "id": "a77829e686b3844b",
     "type": "split",
     "children": [
       {
-        "id": "39f43d70af721b55",
+        "id": "ff485495e4edf58d",
         "type": "tabs",
         "children": [
           {
-            "id": "afb543081fe3fa1a",
+            "id": "b7406d3e18772749",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project/AWS/EC2-volume 해결 방안.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "EC2-volume 해결 방안"
+              "title": "New tab"
             }
           }
         ]
@@ -27,11 +23,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "ed0f50e57ee111bf",
+    "id": "9763aeafa2630c8a",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "201cf0bc63802cd1",
+        "id": "f3c73919be7fd699",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +40,7 @@
         }
       },
       {
-        "id": "8c50dd668667de0d",
+        "id": "6822e90c5205afc7",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,7 +57,7 @@
         }
       },
       {
-        "id": "810d7aa1a8decf92",
+        "id": "07429775a98a379b",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -76,7 +72,7 @@
         }
       },
       {
-        "id": "eeedc0e1b595abb3",
+        "id": "b254200a07e32dc9",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -89,11 +85,11 @@
     "currentTab": 0
   },
   "right": {
-    "id": "6cd2d2f7e870728f",
+    "id": "5862301a8f118bd4",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "34176ed04c3a4dd6",
+        "id": "0220144165ffbc73",
         "type": "leaf",
         "state": {
           "type": "backlink",
@@ -111,7 +107,7 @@
         }
       },
       {
-        "id": "d46c34a500a5ef6a",
+        "id": "a4add4be29694b46",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
@@ -124,7 +120,7 @@
         }
       },
       {
-        "id": "ff10348ac69053d4",
+        "id": "ba9abe8370415068",
         "type": "leaf",
         "state": {
           "type": "outline",
@@ -138,7 +134,7 @@
         }
       },
       {
-        "id": "c3c821c6963c28c5",
+        "id": "a148136181b0b3d6",
         "type": "leaf",
         "state": {
           "type": "calendar",
@@ -164,12 +160,6 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "afb543081fe3fa1a",
-  "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
-    "Project/AWS/EC2-volume 해결 방안.md",
-    "/Project/AWS/Glue.md",
-    "/Project/AWS",
-    "/Project"
-  ]
+  "active": "b7406d3e18772749",
+  "lastOpenFiles": []
 }
