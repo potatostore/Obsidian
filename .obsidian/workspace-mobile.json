@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "46a5dd9482949269",
+        "id": "ea246952c3a70798",
         "type": "tabs",
         "children": [
           {
-            "id": "53d68150081f945b",
+            "id": "b88f2db3cc4c9d76",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -160,6 +160,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "53d68150081f945b",
-  "lastOpenFiles": []
+  "active": "b88f2db3cc4c9d76",
+  "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "/Project/AWS/Glue.md",
+    "/Project/AWS",
+    "/Project"
+  ]
 }
