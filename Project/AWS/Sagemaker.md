@@ -1,6 +1,8 @@
 
 AI 작업을 위한 툴, machine learning을 위한 jupyter부터 Rstudio, code Editor등 다양한 AI Editor application을 실행하고 다룰 수 있다.
 
+EFS를 통해 데이터를 저장하고, 불러오기에 비용이 매우 비쌈
+
 sagemaker를 통해 어플리케이션에 접근하여 s3의 데이터를 다루기 위해서는 도메인설정이 필요하다.
 # 도메인
 
