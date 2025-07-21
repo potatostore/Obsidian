@@ -25,20 +25,37 @@ s3버킷과 연결을 할때, s3버킷의 이름에 "sagemaker"가 없을 경우
 
 # Jupyter(script)
 
-```
+```python title='setting aws learning machine model with jupyter computer'
 !pip install -U transformers
-
+---
 import torch
 import transformers
 import sagemaker
 from sagemaker.huggingface import HuggingFace
 from sagemaker import get_execution_role
-
+---
 role=get_execution_role() # role에 arn주소 attach
-
+---
 sagemaker_session=sagemaker.Session()
-
+---
 from sagemaker.huggingface import HuggingFace
-
-
+---
+huggingface_estimator=HuggingFace(
+    entry_point='script.py',
+    source_dir=',/',
+    role=role,
+    instance_count=1,
+    instance_type='ml.t3.2xlarge',
+    transformers_version='4.6',
+    pytorch_version='1.8',
+    output_path='s3://new-sagemaker-bucketawrg34/output/*',
+    py_version='py36',
+    hyperparameters={
+        'apochs':2,           # model을 검토하는 횟수
+        'train_batch_size':4, # 데이터를 읽어오는 양
+        'valid_batch_size':2, # 
+        'learning_rate':1e-05 # 데이터의 가중치 의미
+    },
+    enable_sagemaker_matrix=True
+)
 ```
