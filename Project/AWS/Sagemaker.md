@@ -62,8 +62,56 @@ huggingface_estimator=HuggingFace(
 
 ```python title='script.py'
 #info about training architecture, training data
+import torch
+import numpy as np
+from torch.utils.data import DataLoader, Dataset
+from transformers import DistilBertTokenizer, DistilBertModel #Google LLM
+from tqdm import tqdm
+import argparse 
+import os
+import pandas as pd
 
+s3_path = 's3://new-sagemaker-bucketawrg34/train_data/newsCorpora.csv'
+df = pd.read_csv(s3_path, sep='\t', names=['ID',
+                                           'TITLE',
+                                           'URL',
+                                           'PUBLISHER',
+                                           'CATEGORY',
+                                           'STORY',
+                                           'HOSTNAME',
+                                           'TIMESTAMP'])
+
+df = df[['TITLE', 'CATEGORY']]
+
+my_dict = {
+    'e': 'Entertainment',
+    'b': 'Business',
+    't': 'Technology',
+    'm': 'Health'
+}
+
+def update_cat(x):
+    return my_dic[x]
+
+df['CATEGORY'] = df['CATEGORY'].apply(lambda x : update_cat(x))
+
+print(df)
+
+#Machine Learning -> Fraction(단위구분)
+df = df.sample(frac=0.05, random_state=1)
+df = df.reset_index(drop=True)
 ```
+
+
+# Encoding
+
+머신러닝에서 인코딩은 사람의 언어를 기계가 학습하거나 이해할 수 있는 형태로 바꾸는 작업을 뜻한다.
+
+#### 종류
+- Label Encoding : 고유 카테고리에 0부터 번호를 붙여 맵핑
+- One-Hot-Encoding : 각 카테고리에 해당하는 열을 만들어 0/1로 매핑
+- Target Encoding :
+- Binary Encoding :
 
 
 
