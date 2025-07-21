@@ -25,3 +25,22 @@ s3버킷과 연결을 할때, s3버킷의 이름에 "sagemaker"가 없을 경우
 
 # Jupyter(script)
 
+```
+!pip install -U transformers
+
+import torch
+import transformers
+import sagemaker
+from sagemaker.huggingface import HuggingFace
+from sagemaker import get_execution_role
+
+role=get_execution_role() # role에 arn주소 attach
+
+sagemaker_session=sagemaker.Session()
+
+from sagemaker.huggingface import HuggingFace
+
+huggingface_estimator=HuggingFace(
+    
+)
+```
