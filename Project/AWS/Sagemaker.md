@@ -40,7 +40,5 @@ sagemaker_session=sagemaker.Session()
 
 from sagemaker.huggingface import HuggingFace
 
-huggingface_estimator=HuggingFace(
-    
-)
+
 ```
