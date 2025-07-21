@@ -53,7 +53,7 @@ huggingface_estimator=HuggingFace(
     hyperparameters={
         'apochs':2,           # model을 검토하는 횟수
         'train_batch_size':4, # 데이터를 읽어오는 양
-        'valid_batch_size':2, # 
+        'valid_batch_size':2, # 유효한 머신 개수
         'learning_rate':1e-05 # 데이터의 가중치 의미
     },
     enable_sagemaker_matrix=True
