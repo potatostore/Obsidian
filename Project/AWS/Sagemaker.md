@@ -59,3 +59,6 @@ huggingface_estimator=HuggingFace(
     enable_sagemaker_matrix=True
 )
 ```
+
+```python title='script.py'
+```
