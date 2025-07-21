@@ -41,7 +41,7 @@ sagemaker_session=sagemaker.Session()
 from sagemaker.huggingface import HuggingFace
 ---
 huggingface_estimator=HuggingFace(
-    entry_point='script.py',
+    entry_point='script.py',  
     source_dir=',/',
     role=role,
     instance_count=1,
@@ -61,6 +61,8 @@ huggingface_estimator=HuggingFace(
 ```
 
 ```python title='script.py'
+#info about training architecture, training data
+
 ```
 
 
