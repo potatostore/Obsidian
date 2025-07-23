@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cce9cae9703d7d96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project/AWS/Sagemaker.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Sagemaker"
-            }
-          },
-          {
             "id": "b3acfa5185ff1e12",
             "type": "leaf",
             "state": {
@@ -179,14 +165,33 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "05681a5437c24403",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "c07766d06ffd56ff",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,10 +207,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cce9cae9703d7d96",
+  "active": "c07766d06ffd56ff",
   "lastOpenFiles": [
-    "Project/AWS/Transformer.md",
+    "Untitled.canvas",
     "Project/AWS/Sagemaker.md",
+    "Project/AWS/Transformer.md",
     "창업계획서.hwp",
     "Project/AWS/창업계획서.hwp",
     "Project/Unreal Engine(HD-2D).md",
@@ -231,7 +237,6 @@
     "Project/AWS/Legion.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/EC2-volume 해결 방안.md",
-    "Project/AWS/S3.md",
     "University/2-2",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
@@ -250,7 +255,6 @@
     "Pasted image 20250405215130.png",
     "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
     "Pictures/library-book-bookshelf-read.jpg",
-    "Untitled.canvas",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas"
   ]
