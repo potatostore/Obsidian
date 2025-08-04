@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "창업계획서 참고자료.md",
+                "file": "Project/Unreal Engine(HD-2D).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "창업계획서 참고자료"
+              "title": "Unreal Engine(HD-2D)"
             }
           },
           {
@@ -219,8 +219,9 @@
   },
   "active": "e0797bdb99f5ea4f",
   "lastOpenFiles": [
-    "Project/AWS/Sagemaker.md",
     "창업계획서 참고자료.md",
+    "Project/Untitled.md",
+    "Project/AWS/Sagemaker.md",
     "Project/AWS/Transformer.md",
     "창업계획서.hwp",
     "Project/AWS/창업계획서.hwp",
@@ -246,7 +247,6 @@
     "Project/AWS/EBS(Elastic Block Storage).md",
     "Project/AWS/Legion.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
-    "Project/AWS/EC2-volume 해결 방안.md",
     "University/2-2",
     "Images/Pasted image 20250524130643.png",
     "Project/AWS",
