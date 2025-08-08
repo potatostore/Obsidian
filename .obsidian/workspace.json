@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#8-2",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -217,7 +218,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e0797bdb99f5ea4f",
+  "active": "c3723e064a5e5ac3",
   "lastOpenFiles": [
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
     "Project/Unreal Engine(HD-2D).md",
