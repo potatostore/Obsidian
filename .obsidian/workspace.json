@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "창업계획서 참고자료.md",
+                "file": "Project/scenario.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "창업계획서 참고자료"
+              "title": "scenario"
             }
           },
           {
@@ -220,11 +220,11 @@
   "active": "e0797bdb99f5ea4f",
   "lastOpenFiles": [
     "Project/Unreal Engine(HD-2D).md",
+    "창업계획서 참고자료.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/Git.md",
     "Project/AWS/Transformer.md",
-    "창업계획서 참고자료.md",
-    "Project/Untitled.md",
+    "Project/scenario.md",
     "Project/AWS/Sagemaker.md",
     "창업계획서.hwp",
     "Project/AWS/창업계획서.hwp",
