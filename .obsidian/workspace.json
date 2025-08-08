@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/scenario.md",
+                "file": "Project/scenario(게임 속 바바리안으로 살아남기).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "scenario"
+              "title": "scenario(게임 속 바바리안으로 살아남기)"
             }
           },
           {
@@ -224,7 +224,7 @@
     "Project/Calculator(c++, spring boot).md",
     "Project/Git.md",
     "Project/AWS/Transformer.md",
-    "Project/scenario.md",
+    "Project/scenario(게임 속 바바리안으로 살아남기).md",
     "Project/AWS/Sagemaker.md",
     "창업계획서.hwp",
     "Project/AWS/창업계획서.hwp",
