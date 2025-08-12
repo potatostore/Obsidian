@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "##",
+                "query": "tag:#인터넷",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -189,8 +188,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "22f02db8f0bb3ea3",
   "lastOpenFiles": [
+    "Books/Obtimized C++.md",
+    "Books/Clean Code.md",
+    "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
+    "창업계획서 참고자료.md",
+    "Books/Clean Architecture.md",
     "Books/컴퓨터구조론(3판)(양장본 HardCover) - 김종현.md",
     "Books/웹소설.md",
     "Books/동물농장 - 조지 오웰.md",
@@ -204,7 +208,6 @@
     "University/2-2/윈도우즈프로그래밍.md",
     "University/2-1/선형대수학.md",
     "Algorithm.md",
-    "창업계획서 참고자료.md",
     "University/2-2",
     "University/2-1/빅데이터.md",
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
@@ -214,10 +217,6 @@
     "Project/AWS/Transformer.md",
     "Project/AWS/Sagemaker.md",
     "Project/AWS/S3(Simple Storage Service).md",
-    "Project/AWS/RDS(Relational Database Service).md",
-    "Project/AWS/Legion.md",
-    "Project/AWS/IAM.md",
-    "Project/AWS/Glue.md",
     "Project/AWS",
     "Images/Pasted image 20250524130643.png",
     "Pasted image 20250524130603.png",
