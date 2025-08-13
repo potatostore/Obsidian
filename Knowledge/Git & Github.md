@@ -45,11 +45,51 @@ staging area에 존재하는 파일들을 이제 repository라고 하는 git에 
 
 이처럼 staging과 commit을 통해 repository에 파일을 기록하는 것을 버전 생성이라고 하고, 이는 [[EC2(Amazon Elastic Compute Cloud)]]에 snapshot과 동일한 작업을 진행한다.
 
+#### Git Add
+
+```git
+git add . //작업폴더 내 모든 파일을 staging
+git add "file" //작업폴더 내 특정 파일을 staging
+```
+
+#### Git commit
+
+```git
+git commit -m "message" //message와 함께 staging된 버전을 repository에 저장
+```
+
+- commit시에는 현재 버전을 알려주는 commit ID와 함께 repository에 저장된다.
+
 #### 추가 사항
 1. staging할 때, 여러 파일들을 동시에 할 수 있다. (git add "file1" "file2" ...)
 2. 작업폴더의 모든 파일들을 동시에 staging할 경우 git add . 을 치면 된다.
 3. 현재 staging된 파일이나, 이전 파일에 비교되어 변경된 파일 등을 알고 싶으면 git status를 치면된다. (당연히 git init을 통해 추적이 시작된 파일에 한해서만 가능하다.)
 4. git restore을 통해 staging된 파일을 취소할 수 있다.(당연히 git restore . 도 가능하다.)
-5. git log --all --oneline을 통해 작업폴더가 여태 commit한 내용들을 확인 가능하다.
+5. git log --all --oneline을 통해 작업폴더가 여태 commit한 내용들과 commit ID를 확인 가능하다.
 
 즉 Add/Commit작업은 작업폴더의 현재 상태의 버전을 생성하여 git에 업로드하는 작업이다.
+
+# Git diff
+
+가장 최근에 commit한 버전과 현재 파일과의 차이점을 터미널에서 보여주는데, 터미널에서 텍스트로 모든 내용의 변경점, 차이점을 보여주는 것은 가독성도 떨어지고 매우 힘듦.
+
+따라서 git diff명령어에서 가독성을 추가하여 git difftool이라는 명령어가 만들어졌다.
+
+#### Git diff
+
+```git
+git diff //현재 작업폴더의 버전과 가장 최근에 commit한 버전과의 차이점을 터미널에서 문자열로 알려준다.
+```
+
+- h,j,a,k로 이동 가능하고, q키를 통해 종료한다.
+
+#### Git difftool
+
+```git
+git difftool //Vim에디터를 통해 가장 최근 버전과 현재 버전과의 차이점을 알려준다.
+git difftool "commit ID" // commit ID에 해당하는 버전과 현재 버전과의 차이점을 알려준다.
+```
+
+- Vim editor를 터미널에 구현하여 git diff보다 가독성이 뛰어난 텍스트로 비교해준다.
+
+최근에는 에디터에서 git을 지원하는 경우가 많고, 많은 기능 중 위처럼 git diff의 가독성을 그래프로 표현하는 기능 등을 지원하는 기능이 많다.
