@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/The Goals(1,2).md",
+                "file": "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Goals(1,2)"
+              "title": "EC2(Amazon Elastic Compute Cloud)"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#인터넷",
+                "query": "snapshot",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -190,6 +190,10 @@
   },
   "active": "22f02db8f0bb3ea3",
   "lastOpenFiles": [
+    "IDE/Unreal engine(c++).md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+    "Project/AWS/Create-EBS(Elastic Block Storage).md",
+    "Books/The Goals(1,2).md",
     "Books/Clean Architecture.md",
     "Books/Obtimized C++.md",
     "Books/Clean Code.md",
@@ -213,10 +217,6 @@
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
     "Project/Git.md",
     "Project/AWS/password.md",
-    "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Project/AWS/Transformer.md",
-    "Project/AWS/Sagemaker.md",
-    "Project/AWS/S3(Simple Storage Service).md",
     "Project/AWS",
     "Images/Pasted image 20250524130643.png",
     "Pasted image 20250524130603.png",
