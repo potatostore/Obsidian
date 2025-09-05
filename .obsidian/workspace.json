@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "개발자가 되기 위해 꼭 알아야 하는 IT 용어"
             }
+          },
+          {
+            "id": "a711ec06268294e4",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -175,6 +188,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
@@ -187,7 +201,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "22f02db8f0bb3ea3",
+  "active": "a711ec06268294e4",
   "lastOpenFiles": [
     "Books/처음부터 제대로 배우는 스프링 부트.md",
     "Books/Clean Architecture.md",
