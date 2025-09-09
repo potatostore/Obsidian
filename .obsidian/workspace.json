@@ -191,7 +191,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,7 +208,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c07766d06ffd56ff",
+  "active": "b3acfa5185ff1e12",
   "lastOpenFiles": [
     "Untitled.canvas",
     "Project/AWS/Sagemaker.md",
