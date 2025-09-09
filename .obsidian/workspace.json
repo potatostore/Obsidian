@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "808ff63f556ffef5",
+        "id": "86fbd8d7dc1f521d",
         "type": "tabs",
         "children": [
           {
-            "id": "b0c10a9323862e9c",
+            "id": "0632e2bdfd4af21e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "New tab"
             }
           }
         ]
@@ -208,7 +204,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b0c10a9323862e9c",
+  "active": "0632e2bdfd4af21e",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Project/Unreal Engine(HD-2D).md",
