@@ -96,11 +96,11 @@
               "state": {
                 "file": "Frameworks/Spring boot - java.md",
                 "collapseAll": false,
-                "extraContext": true,
+                "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "-Calendar-/2025/1st/2025-01-01.md",
+                "file": "Frameworks/Spring boot - java.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 2025-01-01"
+              "title": "Outgoing links from Spring boot - java"
             }
           },
           {
@@ -128,7 +128,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -166,7 +168,8 @@
               "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -187,7 +190,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2580008baf23b642",
+  "active": "308226a8f721011c",
   "lastOpenFiles": [
     "University/2-2/윈도우즈프로그래밍.md",
     "Untitled.canvas",
