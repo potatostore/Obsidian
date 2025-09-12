@@ -88,5 +88,58 @@ Spring은 Tomcat이라는 서버를 사용하였지만, Spring boot를 통해 �
 
 즉 내장된, 독립된 웹서버가 spring boot 내부에 존재하고, 인프라를 구성한다는 뜻이다.
 
-추가적으로 
+추가적으로 단일 주석을 통해 Spring application context를 수동으로 설정할 필요성을 대체한다.
 
+??
+
+이게 무슨 말일까?
+
+먼저 Spring application context에 대해 알아야한다.
+
+---
+#### Spring application context
+
+Spring API를 성공적으로 구축하고, APP을 실행시키기 위해서는, SPring application context가 필요하다.
+
+```java
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+// Spring 설정 클래스
+@Configuration
+@ComponentScan("com.example.app") // <-- 1. Bean을 찾을 패키지를 지정
+public class AppConfig {
+    // 필요한 경우, @Bean 메소드를 직접 작성하여 Bean을 등록
+    // @Bean
+    // public DataSource dataSource() { ... }
+}
+
+public class MySpringApp {
+    public static void main(String[] args) {
+        // <-- 2. 개발자가 직접 ApplicationContext를 생성
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        // <-- 3. 컨텍스트에서 Bean을 직접 가져와 사용
+        MyService myService = context.getBean(MyService.class);
+        myService.doSomething();
+    }
+}
+```
+
+위 또한 반복적이고, 번거로운 보일러플레이트 코드이다.
+
+*com.example.app*에서 Bean을 찾아 등록하고, 사용하는 것은 번거롭다.
+
+따라서 Spring boot에서 이를
+```java
+@springbootapplication //single annotation
+```
+위 단 한 문장으로 줄여버렸다.
+
+---
+
+근데 위 설명을 읽다가 모르는 점이 존재하지 않았는가?
+
+바로 *Bean*이다.
+
+이는 Spring boot의 꽃인 *의존성 주입*과 관련된 내용이기에 추후에 의존성 얘기와 함께 설명하겠다.
