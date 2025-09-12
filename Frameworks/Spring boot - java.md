@@ -99,7 +99,7 @@ Spring은 Tomcat이라는 서버를 사용하였지만, Spring boot를 통해 �
 ---
 #### Spring application context
 
-Spring API를 성공적으로 구축하고, APP을 실행시키기 위해서는, SPring application context가 필요하다.
+Spring API를 성공적으로 구축하고, App을 실행시키기 위해서는, Spring application context가 필요하다.
 
 ```java
 import org.springframework.context.ApplicationContext;
