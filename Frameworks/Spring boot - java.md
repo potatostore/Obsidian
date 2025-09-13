@@ -143,3 +143,6 @@ public class MySpringApp {
 바로 *Bean*이다.
 
 이는 Spring boot의 꽃인 *의존성 주입*과 관련된 내용이기에 추후에 의존성 얘기와 함께 설명하겠다.
+
+# 1. 종속성
+
