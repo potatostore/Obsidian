@@ -144,5 +144,22 @@ public class MySpringApp {
 
 이는 Spring boot의 꽃인 *의존성 주입*과 관련된 내용이기에 추후에 의존성 얘기와 함께 설명하겠다.
 
-# 1. 종속성
+---
+
+Spring boot란 것은 통상적으로 다양한 application dev tools를 제공하기 위해 여러가지의 Spring이 존재한다. Spring web, Spring JDBC 등 이러한 도구들을 통틀어서 Spring이라고 부르고, 이러한 Spring을 더욱 쉽게 설정하고, 보일러플레이트 코드를 줄이기 위해 Spring boot가 나온 것이다.
+
+# 1. Spring initializr
+
+Spring Application Project를 생성할 때, 수많은 설정을 수동적으로 설정하게 되면 프로젝트 생성부터 힘이 빠진다.
+
+그렇기에 Spring initializr가 존재하는데, 이는 웹사이트에서 Project compiler, Language, model등을 설정하고, 의존성 설정이 이루어진다.
+
+---
+#### 의존성
+
+Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이 간편하다는 것이다.
+
+그래서 포기를 많이 했던 것 같다.
+
+의존성이 무엇인지 정확히 인지를 못하기에 Spring boot의 장점이 크게 와닿지 못했기 때문이다.
 
