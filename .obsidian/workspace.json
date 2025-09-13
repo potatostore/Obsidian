@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks/Spring boot - java.md",
+                "file": "-Calendar-/2025/9th/2025-09-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot - java"
+              "title": "2025-09-14"
             }
           }
         ]
@@ -192,9 +192,10 @@
   },
   "active": "2580008baf23b642",
   "lastOpenFiles": [
+    "Frameworks/Spring boot - java.md",
+    "-Calendar-/2025/9th/2025-09-14.md",
     "-Calendar-/2025/9th/2025-09-13.md",
     "창업계획서 참고자료.md",
-    "Frameworks/Spring boot - java.md",
     "University/2-2/윈도우즈프로그래밍.md",
     "Untitled.canvas",
     "Books/처음부터 제대로 배우는 스프링 부트.md",
@@ -223,7 +224,6 @@
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "IDE/Unreal engine(c++).md",
     "Project/AWS/Create-EBS(Elastic Block Storage).md",
-    "Books/Clean Code(클린 코드) - 로버트 C 마틴.md",
     "University/2-2",
     "Project/AWS",
     "Images/Pasted image 20250524130643.png",
