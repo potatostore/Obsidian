@@ -163,6 +163,17 @@ Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이
 
 의존성이 무엇인지 정확히 인지를 못하기에 Spring boot의 장점이 크게 와닿지 못했기 때문이다.
 
+---
+#### 빌더
+
+소스 코드들을 실행 파일(jar, war)로 패키징하고, 패키지에 필요한 외부 라이브러리를 관리하는 역할이 빌더(빌드 도구)들이다.
+
+spring boot builder는 크게 3가지가 있다. maven, gradle-groovy, gradle-kotlin.
+
+maven은 쉬운 접근성과 낮은 난이도의 설정이 장점이지만, 느리고, 유연성이 낮다.
+
+하지만 뒤에 두 빌더는 groovy, kotlin의 스크립트 언어를 통해 이루어지기 때문에 사용자의 의도에 맞게 코드를 작성하는 것이 매우 쉽다.
+
 # 2. 시작
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
