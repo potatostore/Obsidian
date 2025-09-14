@@ -163,3 +163,60 @@ Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이
 
 의존성이 무엇인지 정확히 인지를 못하기에 Spring boot의 장점이 크게 와닿지 못했기 때문이다.
 
+# 2. 시작
+
+Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
+
+우선 initializr를 통해 만든 프로젝트를 수정 없이 열었을 경우 다음과 같다.
+
+```java
+package com.example.potatostoreapplication;  
+  
+import org.springframework.boot.SpringApplication;  
+import org.springframework.boot.autoconfigure.SpringBootApplication;  
+  
+@SpringBootApplication  
+public class PotatostoreapplicationApplication {  
+    public static void main(String[] args) {  
+        SpringApplication.run(PotatostoreapplicationApplication.class, args);  
+    }  
+}
+```
+
+중간에 @SpringBootApplication과 같이 주석처럼 처리된 명령어를 볼 수 있는데, 이거 java문법에서 @Override와 유사하다.
+
+java에서 @Override를 통해 컴파일러에게 오버라이딩을 한다는 것을 알려준다.
+
+비슷하게 spring boot에서는 주석처리를 통해 컴파일러에게 다음에 나올 명령문에 대해 *의존성을 주입한다(DI, Dependency injection)* 고 알려주는 것이다.
+
+---
+
+앞서 말한 바와 같이 spring boot는 기존의 tomcat서버에서 내장된 독립 서버로 바뀌였는데, 실제로 위 코드를 실행할 경우, PID(Process ID)와 tomcat server port등 다양한 정보들이 CLI를 통해 출력되는 것을 확인할 수 있다.
+
+즉 spring boot코드를 실행을 통해 나는 서버를 직접적으로 구성하고, 실행하고, 연결하지 않아도, 연결이 된다는 것을 알 수 있는데, 눈으로 확인하고 싶으면 직접 웹페이지를 통해 서버에 접속하면 된다.
+
+localhost:8080(tomcat server port에 따라 변동하면 된다.)에 접속하면 whitelabelerror page, 즉 서버는 살아있는데, 작동은 하지 않는 식물서버를 볼 수 있다.
+
+여기에 직접 API endpoint를 설정해서 웹페이지를 살려보자.
+
+아무 클래스 하나를 만들어서
+```java
+package com.example.potatostoreapplication;  
+  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.RestController;  
+  
+@RestController  
+public class EX01 {  
+    @GetMapping("ABC")  
+    public String sayHello(){  
+        return "Hello";  
+    }  
+}
+```
+
+위 코드를 넣고,
+
+@GetMapping에 넣은 문자열을 localhost:8080/(이곳)에 넣는다.
+
+그리고 찾아보면 @RestController를 설정한 public String sayHello method가 실행되서 page에 Hello가 찍히는 것을 확인할 수 있다.
