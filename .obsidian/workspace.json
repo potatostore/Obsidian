@@ -27,28 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks/Spring boot - java.md",
+                "file": "-Calendar-/2025/9th/2025-09-16.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot - java"
-            }
-          },
-          {
-            "id": "7c5762eafea079c8",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.12"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
+              "title": "2025-09-16"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,10 +205,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7c5762eafea079c8",
+  "active": "6bbb72b8ce275a3a",
   "lastOpenFiles": [
-    "-Calendar-/2025/9th/2025-09-14.md",
     "Frameworks/Spring boot - java.md",
+    "-Calendar-/2025/9th/2025-09-16.md",
+    "-Calendar-/2025/9th/2025-09-14.md",
     "-Calendar-/2025/9th/2025-09-13.md",
     "창업계획서 참고자료.md",
     "University/2-2/윈도우즈프로그래밍.md",
@@ -250,7 +239,6 @@
     "Knowledge/Backend Develop Structure.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "IDE/Unreal engine(c++).md",
-    "Project/AWS/Create-EBS(Elastic Block Storage).md",
     "University/2-2",
     "Project/AWS",
     "Images/Pasted image 20250524130643.png",
