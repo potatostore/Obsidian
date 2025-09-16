@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/Glue.md",
+                "file": "University/2-2/알고리즘.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Glue"
+              "title": "알고리즘"
             }
           }
         ]
@@ -165,8 +165,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3d034e6f9c41c97c",
+  "active": "64e386f16a4fe08f",
   "lastOpenFiles": [
+    "Project/AWS/Glue.md",
     "Books/세계문학전집/44. 데미안 - 헤르만 헤세.md",
     "Books/세계문학전집/5. 동물농장 - 조지 오웰.md",
     "Books/세계문학전집/77. 1984 - 조지오웰.md",
@@ -196,7 +197,6 @@
     "Project/AWS/IAM.md",
     "Project/AWS/EBS(Elastic Block Storage).md",
     "/Project/AWS/IAM.md",
-    "Project/AWS/Glue.md",
     "/Project/AWS",
     "/Project",
     "Project/AWS/EBS(Elastic Block Storage)1.md",
