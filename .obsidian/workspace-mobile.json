@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "a77829e686b3844b",
+    "id": "88ea4256e62e64e3",
     "type": "split",
     "children": [
       {
-        "id": "ff485495e4edf58d",
+        "id": "ebea0aa2d2f58f5b",
         "type": "tabs",
         "children": [
           {
-            "id": "b7406d3e18772749",
+            "id": "64e386f16a4fe08f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/AWS/Create-EBS(Elastic Block Storage).md",
+                "file": "University/2-2/알고리즘.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Create-EBS(Elastic Block Storage)"
+              "title": "알고리즘"
             }
           }
         ]
@@ -27,11 +27,11 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9763aeafa2630c8a",
+    "id": "ac9d8df996b4254e",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "f3c73919be7fd699",
+        "id": "3d034e6f9c41c97c",
         "type": "leaf",
         "state": {
           "type": "file-explorer",
@@ -44,7 +44,7 @@
         }
       },
       {
-        "id": "6822e90c5205afc7",
+        "id": "b09ff35fd2ef3401",
         "type": "leaf",
         "state": {
           "type": "search",
@@ -61,7 +61,7 @@
         }
       },
       {
-        "id": "07429775a98a379b",
+        "id": "7b7811229a09a068",
         "type": "leaf",
         "state": {
           "type": "tag",
@@ -76,7 +76,7 @@
         }
       },
       {
-        "id": "b254200a07e32dc9",
+        "id": "3436146f07c40fcc",
         "type": "leaf",
         "state": {
           "type": "bookmarks",
@@ -89,16 +89,15 @@
     "currentTab": 0
   },
   "right": {
-    "id": "5862301a8f118bd4",
+    "id": "b8b130b118902cec",
     "type": "mobile-drawer",
     "children": [
       {
-        "id": "0220144165ffbc73",
+        "id": "ac5c9f1312381da9",
         "type": "leaf",
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Project/AWS/Create-EBS(Elastic Block Storage).md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -112,12 +111,11 @@
         }
       },
       {
-        "id": "a4add4be29694b46",
+        "id": "4195795a3286579c",
         "type": "leaf",
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Project/AWS/Create-EBS(Elastic Block Storage).md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           },
@@ -126,12 +124,11 @@
         }
       },
       {
-        "id": "ba9abe8370415068",
+        "id": "f43032db261e12bf",
         "type": "leaf",
         "state": {
           "type": "outline",
           "state": {
-            "file": "Project/AWS/Create-EBS(Elastic Block Storage).md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -141,7 +138,7 @@
         }
       },
       {
-        "id": "a148136181b0b3d6",
+        "id": "0f85a387d2622589",
         "type": "leaf",
         "state": {
           "type": "calendar",
@@ -155,22 +152,63 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-book-search-plugin:Create new book note": false,
+      "mermaid-tools:Open Mermaid Toolbar": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "obsidian-book-search-plugin:Create new book note": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "b7406d3e18772749",
+  "active": "64e386f16a4fe08f",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "-Calendar-/2025/9th/2025-09-13.md",
+    "-Calendar-/2025/9th/2025-09-14.md",
+    "Project/AWS/Glue.md",
+    "Books/세계문학전집/44. 데미안 - 헤르만 헤세.md",
+    "Books/세계문학전집/5. 동물농장 - 조지 오웰.md",
+    "Books/세계문학전집/77. 1984 - 조지오웰.md",
+    "Books/세계문학전집/443. 가난한 사람들 - 표도르 도스토옙스키.md",
+    "Books/세계문학전집",
+    "-Calendar-/2025/9th/2025-09-05.md",
+    "-Calendar-/2025/9th",
+    "Untitled",
+    "Project/AWS/Transformer.md",
+    "Project/AWS/Sagemaker.md",
+    "Images/Pasted image 20250813143155.png",
+    "Project/AWS/ETL-partition key.md",
     "Project/AWS/Athena.md",
-    "Project/AWS/Create-EBS(Elastic Block Storage).md"
+    "Knowledge/Git & Github.md",
+    "Project/Unreal Engine/Unreal Engine(HD-2D).md",
+    "Project/Unreal Engine/Unreal Engine Main.md",
+    "Project/Unreal Engine",
+    "Project/scenario(게임 속 바바리안으로 살아남기).md",
+    "University/2-2/객체 지향 프로그래밍.md",
+    "University/2-2/리눅스 시스템 및 이용.md",
+    "University/2-2/파일구조론.md",
+    "University/2-2/운영체제.md",
+    "University/2-2/윈도우즈프로그래밍.md",
+    "University/2-2/알고리즘.md",
+    "University/2-2",
+    "창업계획서 참고자료.md",
+    "Project/AWS/IAM.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
+    "/Project/AWS/IAM.md",
+    "/Project/AWS",
+    "/Project",
+    "Computer Science/memory",
+    "Computer Science",
+    "IDE",
+    "Images/Pasted image 20250419214702.png",
+    "Images/Pasted image 20250524130643.png",
+    "Images/Pasted image 20250419182930.png",
+    "Images/Pasted image 20250405215344.png",
+    "Images/Pasted image 20250404211654.png",
+    "Images/Pasted image 20250405215130.png"
   ]
 }
