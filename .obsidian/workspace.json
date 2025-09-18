@@ -36,6 +36,18 @@
             }
           },
           {
+            "id": "0c73337679027372",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.10"
+            }
+          },
+          {
             "id": "b3acfa5185ff1e12",
             "type": "leaf",
             "state": {
@@ -50,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -205,6 +217,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
@@ -217,7 +230,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e0797bdb99f5ea4f",
+  "active": "0c73337679027372",
   "lastOpenFiles": [
     "Project/Unreal Engine/Unreal Engine(HD-2D).md",
     "Project/Unreal Engine/Unreal Engine Main.md",
