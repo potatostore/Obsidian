@@ -4,39 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "162cbf3938f34a42",
+        "id": "f26b658cdfd94e7b",
         "type": "tabs",
         "children": [
           {
-            "id": "2580008baf23b642",
+            "id": "cce9cae9703d7d96",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/9th/2025-09-14.md",
+                "file": "Project/AWS/Sagemaker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-09-14"
+              "title": "Sagemaker"
             }
           },
           {
-            "id": "6bbb72b8ce275a3a",
+            "id": "e0797bdb99f5ea4f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2025/9th/2025-09-16.md",
+                "file": "Project/Unreal Engine/Unreal Engine Main.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-09-16"
+              "title": "Unreal Engine Main"
+            }
+          },
+          {
+            "id": "dd0bfcbe40464eed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Frameworks/Spring boot - java.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Spring boot - java"
+            }
+          },
+          {
+            "id": "b3acfa5185ff1e12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/Unreal Engine(HD-2D).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Unreal Engine(HD-2D)"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "snapshot",
+                "query": "tag:#8-2",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,7 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200.5
+    "width": 200
   },
   "right": {
     "id": "a616419b5f754521",
@@ -109,17 +137,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Frameworks/Spring boot - java.md",
+                "file": "-Calendar-/2025/1st/2025-01-01.md",
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Spring boot - java"
+              "title": "Backlinks for 2025-01-01"
             }
           },
           {
@@ -128,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Frameworks/Spring boot - java.md",
+                "file": "-Calendar-/2025/1st/2025-01-01.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Spring boot - java"
+              "title": "Outgoing links from 2025-01-01"
             }
           },
           {
@@ -143,9 +171,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
+                "useHierarchy": true
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -188,7 +214,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +232,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6bbb72b8ce275a3a",
+  "active": "dd0bfcbe40464eed",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Project/Unreal Engine/Unreal Engine Main.md",
+    "Books/세계문학전집/77. 1984 - 조지오웰.md",
+    "Books/세계문학전집/5. 동물농장 - 조지 오웰.md",
+    "Books/세계문학전집/443. 가난한 사람들 - 표도르 도스토옙스키.md",
+    "Books/세계문학전집/44. 데미안 - 헤르만 헤세.md",
+    "Books/세계문학전집",
     "-Calendar-/2025/9th/2025-09-29.md",
     "-Calendar-/2025/9th/2025-09-28.md",
     "-Calendar-/2025/9th/2025-09-27.md",
@@ -214,46 +248,39 @@
     "-Calendar-/2025/9th/2025-09-25.md",
     "-Calendar-/2025/9th/2025-09-24.md",
     "-Calendar-/2025/9th/2025-09-23.md",
-    "-Calendar-/2025/9th/2025-09-22.md",
     "-Calendar-/2025/9th/2025-09-21.md",
+    "-Calendar-/2025/9th/2025-09-22.md",
     "-Calendar-/2025/9th/2025-09-20.md",
-    "-Calendar-/2025/9th/2025-09-19.md",
     "-Calendar-/2025/9th/2025-09-18.md",
-    "-Calendar-/2025/9th/2025-09-17.md",
+    "-Calendar-/2025/9th/2025-09-19.md",
     "-Calendar-/2025/9th/2025-09-16.md",
-    "Frameworks/Spring boot - java.md",
     "-Calendar-/2025/9th/2025-09-14.md",
+    "-Calendar-/2025/9th/2025-09-17.md",
     "-Calendar-/2025/9th/2025-09-13.md",
-    "창업계획서 참고자료.md",
-    "University/2-2/윈도우즈프로그래밍.md",
-    "Untitled.canvas",
-    "Books/처음부터 제대로 배우는 스프링 부트.md",
-    "-2025-W36.md",
-    "Books/Library.base",
-    "-Calendar-/2025/1st/2025-01-07.md",
-    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
-    "Books/Clean Architecture.md",
-    "Books/Clean Code.md",
-    "Books/Obtimized C++.md",
-    "Books/세계문학전집",
+    "-Calendar-/2025/9th/2025-09-05.md",
     "-Calendar-/2025/9th",
+    "Project/Unreal Engine/Unreal Engine(HD-2D).md",
+    "Project/Toy Project",
+    "Project/Untitled.md",
     "Project/Unreal Engine",
-    "Images/Pasted image 20250813143155.png",
+    "University/2-2/파일구조론.md",
     "University/2-2",
-    "Project/AWS",
+    "Images/Pasted image 20250813143155.png",
+    "창업계획서.hwp",
+    "Project/AWS/창업계획서.hwp",
     "Images/Pasted image 20250524130643.png",
-    "Pasted image 20250524130603.png",
-    "Pasted image 20250524130558 1.png",
-    "Pasted image 20250524130558.png",
-    "Project/Google Cloud Jam",
-    "Images/Pasted image 20250405215130.png",
-    "Images/Pasted image 20250404211654.png",
+    "Project/AWS",
+    "Images/Pasted image 20250419182930.png",
     "Images/Pasted image 20250419214702.png",
     "Images/Pasted image 20250405215344.png",
-    "Images/Pasted image 20250419182930.png",
-    "Images",
-    "-Calendar-/2025/4th",
+    "Images/Pasted image 20250405215130.png",
+    "Images/Pasted image 20250404211654.png",
     "University/2-1",
+    "Project/Google Cloud Jam",
+    "Pasted image 20250405215344.png",
+    "Pasted image 20250405215130.png",
+    "Pictures/스크린샷 2024-08-23 오후 11.05.14.png",
+    "Untitled.canvas",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas"
   ]
