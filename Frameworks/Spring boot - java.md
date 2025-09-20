@@ -203,15 +203,19 @@ maven은 쉬운 접근성과 낮은 난이도의 설정이 장점이지만, 느�
 # 2. 구성 요소
 
 spring initializr를 통해 spring boot project를 생성했을 경우, 폴더 내에 다양한 파일들이 존재하는 것을 확인할 수 있다.
-
 #### .idea
 .idea파일에는 spring boot에 사용되는 전반적인 파일들의 정보가 담겨 있으며, .gitignore과 같은 파일들도 존재한다.
-
 #### .mvn
 앞서 말했던 것처럼 spring boot는 builder를 통해 프로젝트를 관리하고, 유지하고, 자동화하는 시스템을 구축했다. 따라서 사용자는 목적과 편의성을 고려하여 빌더 중 하나를 고르게 되는데, 만약 maven을 선택했을 경우 위 .mvn파일과 같은 파일이 생성되어 있다.
-
 #### src
-src는 main폴더가 존재하고, main에는 java와 resource폴더가 존재한다. 아마 kotlin 언어를 선택할 경우 java 대신 kotlin이 존재할 것 같은데, 이곳에는 데이터의 4가지 영역 중 
+src는 main폴더가 존재하고, main에는 java와 resource폴더가 존재한다. 아마 kotlin 언어를 선택할 경우 java 대신 kotlin이 존재할 것 같은데, 코드를 작성하는 main파일이다.
+다른 resource파일은 static 변수들을 넣고 관리하는 폴더이다. 특히 db나 web과 연동을 하고, 데이터를 가져와 사용할 경우, resource파일에 코드를 작성하여 저장 및 관리가 가능하다.
+#### pom.xml
+sprinb boot는 의존성 주입이 장점이라고 앞서 설명했었다. 의존성을 코드 측면에서 주입하는 경우가 존재할 것이고, builder측면에서 제공하는 경우도 존재할 것이다. pom.xml을 살펴볼 경우. 플러그인의 버전, 아티펙트ID, 설명 등 다양한 라이브러리 연동을 위해 설정해 놓은 코드들의 집합으로, 외부의 라이브러리를 사용하게 될 경우를 대비하여 maven이 어떤 플러그인, 라이브러리 등을 어디서, 무슨 버전을 설치할 것인지, 무엇인지 등을 설명하고 있는 일종의 코드를 적어놓은 파일이다.
+#### etc
+이외의 다른 파일들은 전부 maven compiler, guide, maven CLI등의 파일이기에, 나중에 무엇인지 확인하고 싶을 때, 한 번씩 보는 것을 추천한다.
+
+
 # 3. 시작
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
