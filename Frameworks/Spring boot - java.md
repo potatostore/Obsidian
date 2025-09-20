@@ -200,7 +200,19 @@ maven은 쉬운 접근성과 낮은 난이도의 설정이 장점이지만, 느�
 
 하지만 뒤에 두 빌더는 groovy, kotlin의 스크립트 언어를 통해 이루어지기 때문에 사용자의 의도에 맞게 코드를 작성하는 것이 매우 쉽다.
 
-# 2. 시작
+# 2. 구성 요소
+
+spring initializr를 통해 spring boot project를 생성했을 경우, 폴더 내에 다양한 파일들이 존재하는 것을 확인할 수 있다.
+
+#### .idea
+.idea파일에는 spring boot에 사용되는 전반적인 파일들의 정보가 담겨 있으며, .gitignore과 같은 파일들도 존재한다.
+
+#### .mvn
+앞서 말했던 것처럼 spring boot는 builder를 통해 프로젝트를 관리하고, 유지하고, 자동화하는 시스템을 구축했다. 따라서 사용자는 목적과 편의성을 고려하여 빌더 중 하나를 고르게 되는데, 만약 maven을 선택했을 경우 위 .mvn파일과 같은 파일이 생성되어 있다.
+
+#### src
+src는 main폴더가 존재하고, main에는 java와 resource폴더가 존재한다. 아마 kotlin 언어를 선택할 경우 java 대신 kotlin이 존재할 것 같은데, 이곳에는 데이터의 4가지 영역 중 
+# 3. 시작
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
 
