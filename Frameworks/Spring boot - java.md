@@ -155,18 +155,18 @@ Spring Application Project를 생성할 때, 수많은 설정을 수동적으로
 그렇기에 Spring initializr가 존재하는데, 이는 웹사이트에서 Project compiler, Language, model등을 설정하고, 의존성 설정이 이루어진다.
 
 ---
-#### 의존성
+#### 의존성(종속성)
 
 Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이 간편하다는 것이다.
-
 그래서 포기를 많이 했던 것 같다.
-
 의존성이 무엇인지 정확히 인지를 못하기에 Spring boot의 장점이 크게 와닿지 못했기 때문이다.
+
+
 
 ---
 #### 빌더
 
-소스 코드들을 실행 파일(jar, war)로 패키징하고, 패키지에 필요한 외부 라이브러리를 관리하는 역할이 빌더(빌드 도구)들이다.
+소스 코드들을 실행 파일(jar, war)로 패키징하고, 패키지에 필요한 외부 라이브러리를 관리하고, 의존성 관리하는 역할이 빌더(빌드 도구)들이다.
 
 spring boot builder는 크게 3가지가 있다. maven, gradle-groovy, gradle-kotlin.
 
