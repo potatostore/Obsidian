@@ -300,4 +300,8 @@ public class MyComponent{
 }
 ```
 
-앞서 설명한 것처럼 IoC의 bean은 객체를 IoC에 할당하고, 이를 의존성 주입이 이루어지는 구간에 mapping하여 
+앞서 설명한 것처럼 IoC의 bean은 객체를 IoC에 할당하고, 이를 의존성 주입이 이루어지는 구간에 mapping하여 사용하도록 기능을 한다.
+
+그렇다면 IoC container에 bean이 존재해야 가능하다는 뜻이고, 이처럼 동작하는 어노테이션이 바로 @Component이다. 
+
+즉 @Component는 해당 클래스를 
