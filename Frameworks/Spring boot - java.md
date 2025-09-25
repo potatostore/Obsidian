@@ -289,7 +289,18 @@ public class EX01 {
 
 이처럼 spring boot에는 DI를 위한 다양한 어노테이션 뿐만 아니라, http method(GET, POST, PET/PATCH, DELETE)를 지원, Bean생성 등 다양한 작업을 위해 어노테이션이 붙을 수 있다.
 
-#### component
+#### @SpringbootApplication
+
+무조건 main method가 포함된 class 앞에 붙여줘야 한다.
+
+그 이유는 다음과 같다.
+1. IoC container 초기화
+2. 내장 웹서버(Tomcat) 구동
+3. Component scan 로직 포함
+
+위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있으며, 해당 어노테이션들은 추후에 다루어 보겠다.
+
+#### @Component
 
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
