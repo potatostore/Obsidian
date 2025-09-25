@@ -229,7 +229,7 @@ sprinb boot는 의존성 주입이 장점이라고 앞서 설명했었다. 의�
 이외의 다른 파일들은 전부 maven compiler, guide, maven CLI등의 파일이기에, 나중에 무엇인지 확인하고 싶을 때, 한 번씩 보는 것을 추천한다.
 
 
-# 3. 시작
+# 3. 어노테이션션
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
 
@@ -286,3 +286,18 @@ public class EX01 {
 @GetMapping에 넣은 문자열을 localhost:8080/(이곳)에 넣는다.
 
 그리고 찾아보면 @RestController를 설정한 public String sayHello method가 실행되서 page에 Hello가 찍히는 것을 확인할 수 있다.
+
+이처럼 spring boot에는 DI를 위한 다양한 어노테이션 뿐만 아니라, http method(GET, POST, PET/PATCH, DELETE)를 지원, Bean생성 등 다양한 작업을 위해 어노테이션이 붙을 수 있다.
+
+#### component
+
+가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
+
+```java
+@Component
+public class MyComponent{
+	// Class is automatically registered as a Spring bean
+}
+```
+
+앞서 설명한 것처럼 IoC의 bean은 객체를 IoC에 할당하고, 이를 의존성 주입이 이루어지는 구간에 mapping하여 
