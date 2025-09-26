@@ -308,6 +308,10 @@ public class EX01 {
 앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
 
 component scan의 가장 중요한 점은 위 SpringbootApplication annotation이 붙은 main method와 동일 패키지에 존재해야만 해당 IoC container에 종속될 수 있다.
+
+즉, A,B 두 패키지가 존재하고, 각각 @SpringbootApplication을 통해 IoC container을 할당한 상태에서 B 패키지의 @Bean을 통해 생성된 객체를 A의 IoC container에 속하게 하는 방법은 없다.
+
+따라서 Bean객체를 생성했는데, 해당 객체가 IoC container에 존재하지 않다면, Component Scan이 정상적으로 실행된건지, Bean객체가 다른 IoC container에 존재하지 않는지 확인을 통해 오류를 해결할 수 있다.  
 #### @Component
 
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
