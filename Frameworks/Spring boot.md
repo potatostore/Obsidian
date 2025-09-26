@@ -301,7 +301,11 @@ public class EX01 {
 
 #### @Configuration
 
+Spring boot api를 설정하는 기능이며, bea
+
 #### @EnableAutoCOnfiguration
+
+위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
 
 #### @ComponentScan
 
