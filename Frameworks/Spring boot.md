@@ -301,8 +301,7 @@ public class EX01 {
 
 #### @Configuration
 
-Spring boot api를 설정하는 기능이며, bea
-
+Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
 #### @EnableAutoCOnfiguration
 
 위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
