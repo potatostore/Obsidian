@@ -329,3 +329,26 @@ public class MyComponent{
 
 즉 @Component는 해당 클래스를 객체로 인스턴스화 시켜서 IoC container에 보관하는 기능을 구현한다.
 
+#### @Autowired
+
+DI(Dependency Injection)을 위한 어노테이션으로 앞선 방식으로 IoC container에 bean이 보관되어 있다면, 해당 bean을 가져와 사용하는 기능이다.
+
+```java
+@Component
+public class Dog{
+	public String fun(){
+		return "dog";
+	}
+}
+
+@RestControler
+public class Car{
+	@Autowired
+	private Dog dog;
+	
+	@GetMapping("\ok")
+	public String ok(){
+		return dog.fun();
+	}
+}
+```
