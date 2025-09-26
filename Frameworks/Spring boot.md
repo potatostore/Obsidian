@@ -288,7 +288,6 @@ public class EX01 {
 그리고 찾아보면 @RestController를 설정한 public String sayHello method가 실행되서 page에 Hello가 찍히는 것을 확인할 수 있다.
 
 이처럼 spring boot에는 DI를 위한 다양한 어노테이션 뿐만 아니라, http method(GET, POST, PET/PATCH, DELETE)를 지원, Bean생성 등 다양한 작업을 위해 어노테이션이 붙을 수 있다.
-
 #### @SpringbootApplication
 
 무조건 main method가 포함된 class 앞에 붙여줘야 한다.
@@ -298,8 +297,17 @@ public class EX01 {
 2. 내장 웹서버(Tomcat) 구동
 3. Component scan 로직 포함
 
-위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있으며, 해당 어노테이션들은 추후에 다루어 보겠다.
+위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있다.
 
+#### @Configuration
+
+#### @EnableAutoCOnfiguration
+
+#### @ComponentScan
+
+앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
+
+component scan의 가장 중요한 점은 위 SpringbootApplication annotation이 붙은 main method와 동일 패키지에 존재해야만 해당 IoC container에 종속될 수 있다.
 #### @Component
 
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
