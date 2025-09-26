@@ -344,7 +344,7 @@ public class Dog{
 @RestControler
 public class Car{
 	@Autowired
-	private Dog dog;
+	private Dog dog = new Dog(); // field DI
 	
 	@GetMapping("\ok")
 	public String ok(){
