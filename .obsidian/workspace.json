@@ -50,18 +50,6 @@
             }
           },
           {
-            "id": "ecb41da368b46655",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.12"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.9.12"
-            }
-          },
-          {
             "id": "b3acfa5185ff1e12",
             "type": "leaf",
             "state": {
@@ -76,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -244,7 +232,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ecb41da368b46655",
+  "active": "dd0bfcbe40464eed",
   "lastOpenFiles": [
     "conflict-files-obsidian-git.md",
     "Project/Unreal Engine/Unreal Engine Main.md",
