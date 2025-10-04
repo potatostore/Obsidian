@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -191,7 +190,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c3723e064a5e5ac3",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
     "Algorithm/Game Theory Algorithm/Minimax Algorith.md",
     "Algorithm/Game Theory Algorithm/Alpha-Beta Pruning.md",
