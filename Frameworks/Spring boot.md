@@ -340,7 +340,6 @@ public class EX01 {
 3. Component scan 로직 포함
 
 위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있다.
-
 #### @Configuration
 
 Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
@@ -398,7 +397,9 @@ public class Car{
 }
 ```
 
+#### @Bean
 
+앞서 IoC container에 저장된 객체를 스프링에서는 Bean이라고 설명하였다. @Bean 또한 해당 클래스를 IoC container에 객체로 등록하는 기능을 수행한다.
 #### @RestController
 
 RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션으로, 다음 두 가지의 어노테이션의 기능을 합쳐놓은 것이다.
@@ -407,6 +408,12 @@ RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션�
 #### @Controller
 
 어노테이션이 붙은 클래스가 HTTP Method(GET, POST, PUT/PATCH, DELETE), 즉 클라이언트의 요청을 처리하는 스프링에게 알려주고, 클래스를 bean 객체로 등록하여 IoC container에 저장하게 된다.
+
+그렇다면 @Bean의 기능에 포괄적으로 포함된 개념일까?
+
+결론적으로는 아니다.
+
+프로토콜을 설정할 때, HTTP는 반드시 endpoint를 설정하여 
 
 #### @ResponseBody
 
