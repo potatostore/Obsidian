@@ -222,9 +222,26 @@ REST API의 핵심 개념은 다음과 같다.
 
 위 개념들과 특징들을 잘 지켜진 API를 RESTful한 API다라고 표현을 한다.
 
-추가적으로 URI
+---
+#### URI / URL
 
+앞선 개념 중에 *URI(Uniform Resource Idenfier)* 와 *URL(Uniform Resource Locator)* 의 차이가 분명하지 않아 매우 헷갈렸다.
 
+Rest API의 핵심개념 중 하나인 모든 데이터를 하나의 자원으로 취급하는 것은 하나의 URI와 비슷하다. URI는 자원이 어떤 것이 존재하는지 확인하는 고유의 식별자로, 나타내는 방식은 종류별로 다르겠지만, 나타내는 방식을 통해 어떤 자원인지 확인하고, 가져올 수 있는 모든 식별자들을 의미한다.
+
+URI는 크게 두 가지의 종류로 나뉘는데, *URL*과 *URN*이다.
+
+*URN*은 urn:isbn:0451450523 과 같이 자원의 이름을 부여하고, 해당 자원의 식별 변호를 부여하게 된다. 앞선 예시는 책의 isbn 번호를 표현한 예시이다.
+
+*URL*은 자원이 존재하고 있는 위치 주소를 의미하게 된다.
+즉, URL을 통해 타고 들어가면 존재하는 자원을 어떤 프로토콜을 통해 접근이 가능한지 나타내는 식별자이다.
+
+---
+#### Endpoint
+
+URL방식을 통해 자원에 접근을 할 때, 서버의 주소와 해당 자원의 경로를 특정하여 URL을 완성하고, 해당 URL을 통해 자원에 접근하여 HTTP Method를 통해 자원을 얻어 온다.
+
+이때, 경로를 *Endpoint*라고 하며, https://github.com/potatostore/Obsidian.git 에서 서버의 주소를 제외한 뒤의 경로, 즉 potatostore/Obsidian.git이 *Endpoint*라고 설명할 수 있다.
 
 ---
 #### IoC container
