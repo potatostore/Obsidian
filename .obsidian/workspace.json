@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/C C++.md",
+                "file": "Computer Science/DB/MongoDB.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C C++"
+              "title": "MongoDB"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "a616419b5f754521",
@@ -193,6 +194,7 @@
   },
   "active": "ba459a86990c72c5",
   "lastOpenFiles": [
+    "Language/C C++.md",
     "Language/JAVA.md",
     "Computer Science/DB/DB(DataBase).md",
     "Computer Science/DB/MongoDB.md",
@@ -227,7 +229,6 @@
     "Data Structure/AVL Tree.md",
     "Data Structure/Array.md",
     "Data Structure/-Prologue-.md",
-    "Algorithm/Game Theory Algorithm/Minimax Algorith.md",
     "Untitled.canvas",
     "Books/Library.base",
     "Books/세계문학전집",
