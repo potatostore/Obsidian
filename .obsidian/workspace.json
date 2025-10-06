@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Backend Develop Structure.md",
+                "file": "Frameworks & services/Spring boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Backend Develop Structure"
+              "title": "Spring boot"
             }
           }
         ]
@@ -193,9 +193,10 @@
   },
   "active": "ba459a86990c72c5",
   "lastOpenFiles": [
+    "Frameworks & services/MongoDB.md",
+    "Computer Science/Backend Develop Structure.md",
     "Computer Science/OS(operate system).md",
     "Computer Science/ORM(Oriented Relational Mapping).md",
-    "Computer Science/Backend Develop Structure.md",
     "Computer Science/API(Application Programming Interface).md",
     "Computer Science/Memory.md",
     "Computer Science/Memory/Virtual Memory.md",
@@ -204,8 +205,6 @@
     "Computer Science/Memory/Cache memory.md",
     "Computer Science/Memory/Heap Memory.md",
     "Computer Science/Memory/Ram.md",
-    "Frameworks & services/MongoDB.md",
-    "Frameworks & services/MongoDB.md",
     "Untitled.base",
     "[SQL.md",
     "Language/C C++.md",
