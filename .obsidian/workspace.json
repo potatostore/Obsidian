@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/OS(operate system).md",
+                "file": "Computer Science/Backend Develop Structure.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OS(operate system)"
+              "title": "Backend Develop Structure"
             }
           }
         ]
@@ -193,6 +193,10 @@
   },
   "active": "ba459a86990c72c5",
   "lastOpenFiles": [
+    "Computer Science/OS(operate system).md",
+    "Computer Science/ORM(Oriented Relational Mapping).md",
+    "Computer Science/Backend Develop Structure.md",
+    "Computer Science/API(Application Programming Interface).md",
     "Computer Science/Memory.md",
     "Computer Science/Memory/Virtual Memory.md",
     "Computer Science/Memory/stack.md",
@@ -208,12 +212,9 @@
     "Language/JAVA.md",
     "Computer Science/DB(DataBase).md",
     "Language/SQL.md",
-    "Computer Science/OS(operate system).md",
-    "Computer Science/API(App Programming Interface).md",
     "Frameworks & services/Git & Github.md",
     "Computer Science/DB",
     "Project/Git.md",
-    "Computer Science/Backend Develop Structure.md",
     "Images/Pasted image 20250813143155.png",
     "Images/Pasted image 20250524130643.png",
     "Images/Pasted image 20250419214702.png",
@@ -227,7 +228,6 @@
     "Data Structure/Skip List.md",
     "Data Structure/Singly-Linked List.md",
     "Data Structure/Red-Black Tree.md",
-    "Data Structure/Queue.md",
     "Untitled.canvas",
     "Books/Library.base",
     "Books/세계문학전집",
