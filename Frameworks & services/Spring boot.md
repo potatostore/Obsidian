@@ -461,3 +461,10 @@ DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배�
 #### Mapping Springboot-MongoDB
 
 1. MongoDB에 종속성(의존성)을 부여한다.
+	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
+	2. MongoDB에 접근하는 객체를 생성하여 IoC Container에 bean으로 등록한다.
+	으로 이해할 수 있으며, MongoDB에 접근하여 쿼리문을 수행할 수 있는 객체를 만드는 모든 과정을 의존성 부여로 설명할 수 있다.
+
+#### DSL(Domain-Specific Language)
+- query method DSL
+- Criteria API 
