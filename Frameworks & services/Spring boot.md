@@ -445,8 +445,19 @@ RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션�
 HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라이언트가 URL에 경로를 붙여 특정 자원에 접근하거나, 이벤트를 요구할 경우, @GetMapping("PATH")를 통해 해당 Endpoint에 mapping해줄 수 있다.
 
 
+# 4. MongoDB
 
+Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
 
+그렇다면 spring boot로 만들어진 app들은 데이터들을 어떻게 저장할 것인가?
 
-ORM 
-JPA
+DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배우지 않았으므로, NoSQL 중 하나인 MongoDB를 통해 Springboot에 DB를 연결하고 핸들링하는 방식을 배울 것이다.
+
+#### JPA(Java Persistence API)
+[[ORM(Oriented Relational Mapping)]]을 Java에서 지원할 수 있도록 만든 라이브러리가 바로 JPA이다. 이는 관계형 데이터베이스와 같이 정형화된 스키마에 객체를 mapping할 수 있을 경우에 사용되는 방식으로, 관계형 데이터베이스에 비해 상대적으로 스키마가 적고, 유연한 비관계형 데이터베이스는 JPA를 통해 mapping하는 방식이 불가능하다.
+
+따라서 Spring boot에서는 다음과 같은 방식으로 MongoDB와 mapping을 한다.
+
+#### Mapping Springboot-MongoDB
+
+1. MongoDB에 종속성(의존성)을 부여한다.
