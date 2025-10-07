@@ -443,6 +443,10 @@ RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션�
 #### @GetMapping
 
 HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라이언트가 URL에 경로를 붙여 특정 자원에 접근하거나, 이벤트를 요구할 경우, @GetMapping("PATH")를 통해 해당 Endpoint에 mapping해줄 수 있다.
+#### @Document
+
+#### @id
+
 
 
 # 4. MongoDB
@@ -460,7 +464,7 @@ DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배�
 
 #### Mapping Springboot-MongoDB
 
-1. MongoDB에 종속성(의존성)을 부여한다.
+1. MongoDB에 종속성(의존성)을 부여한다. (pom.xml에 dependency주석을 통해 maven으로 주입)
 	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
 	2. MongoDB에 접근하는 객체를 생성하여 IoC Container에 bean으로 등록한다.
 	으로 이해할 수 있으며, MongoDB에 접근하여 쿼리문을 수행할 수 있는 객체를 만드는 모든 과정을 의존성 부여로 설명할 수 있다.
