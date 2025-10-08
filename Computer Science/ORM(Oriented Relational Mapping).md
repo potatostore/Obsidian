@@ -17,3 +17,55 @@ ORM은 객체와 관계형 DB의 스키마를 연결하여 저장할 수 있는 
 
 여기서 관계형 DB를 강조하게 되는 이유는 정확하고, 일관된 스키마가 존재해야 객체들을 저장할 때 문제가 발생하지 않게 된다.
 
+즉 다음과 같은 예시가 정상적인 ORM의 예시가 될 수 있다.
+```java
+@Document
+class ID{
+	private String id;
+	private String password;
+	private String name;
+}
+
+---
+DB schema : json
+<MemberInformation>
+	{
+		"id",
+		"password",
+		"Name"
+	}
+</MemberInformation>
+
+```
+
+이렇게 되면 DB의 id컬럼과 class의 id멤버변수가 1대1로 Mapping되어 데이터의 저장이 정상적으로 이루어진다.
+
+만약 멤버 변수에 해당되는 column이 존재하지 않을 경우 어떻게 될까?
+
+```java
+@Document
+class ID{
+	private String id;
+	private String password;
+	private String Name;
+	private String age;
+}
+
+---
+DB schema : json
+<MemberInformation>
+	{
+		"id",
+		"password",
+		"Name"
+	}
+</MemberInformation>
+```
+
+이렇게 될 경우 ORM의 규칙에 따라 다음과 같은 경우의 수가 발생할 수 있다.
+
+1. 매핑 무시 처리
+	age 멤버 변수에 대해 DB에 저장이 되는 것을 무시(영속화 x), 일시적인 데이터로 간주한다.
+2. 복합 객체 매핑
+	1
+3. 매핑 오류 발생 
