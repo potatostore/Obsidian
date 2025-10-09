@@ -25,7 +25,7 @@
   "showBranchStatusBar": true,
   "setLastSaveToLastCommit": false,
   "submoduleRecurseCheckout": false,
-  "gitDir": "Obsidian.git",
+  "gitDir": "",
   "showFileMenu": true,
   "authorInHistoryView": "hide",
   "dateInHistoryView": false,
