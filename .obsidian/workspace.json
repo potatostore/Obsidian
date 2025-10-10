@@ -173,8 +173,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 315,
-    "collapsed": true
+    "width": 315
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,6 +192,7 @@
   },
   "active": "ba459a86990c72c5",
   "lastOpenFiles": [
+    "-Calendar-/2025/10th",
     "University/2-2/파일구조론.md",
     "University/2-2/윈도우즈프로그래밍.md",
     "University/2-2/운영체제.md",
@@ -227,7 +227,6 @@
     "Images/Pasted image 20250404211654.png",
     "Data Structure/Stack.md",
     "Data Structure/Splay Tree.md",
-    "Data Structure/Skip List.md",
     "Untitled.canvas",
     "Books/Library.base",
     "Books/세계문학전집",
