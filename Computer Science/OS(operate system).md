@@ -32,3 +32,5 @@
 - Ready : Cpu에 올라가 실행될 준비가 끝난 상태로 OS의 scheduling을 통해 Running state로 변하며 실행됨
 - Terminated : 실행이 끝난 상태
 
+#### PCB
+- Process Control Block 
