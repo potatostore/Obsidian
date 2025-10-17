@@ -3,4 +3,4 @@
 # OS
 - User와 H/W의 상호작용을 위한 인터페이스
 - 기능 
-	1. UI : 
+	1. UI : shell에서 kernel(OS)에 접근하기 위해 
