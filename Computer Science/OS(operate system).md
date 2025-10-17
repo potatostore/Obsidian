@@ -14,4 +14,4 @@
 	9. Protection and security : 보안 
 	-> 모든 기능들은 shell의 system call을 통해 OS에 명령할 수 있다.
 
-- System call 
+- System call : OS의 기능들을 사용하기 위해 Program
