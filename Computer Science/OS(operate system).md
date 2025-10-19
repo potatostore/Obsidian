@@ -81,6 +81,8 @@ exit()을 통해 process를 종료한다.
 - Responsiveness : Block을 통해 한 Thread가 막혀도 다른 Thread가 실행됨 -> 반응성이 좋다.
 - Resource sharing : process내 모든 자원 공유
 - Economy : Process 생성 비용보다 싸고, context switching을 통해 다른 process를 실행하는 것보다 쌈
-- Scalability : 병렬성, 동시성이랑 다르고, 
+- Scalability : 병렬성, process단위로 한 코어에서 실행되는 것보다 process를 thread단위로 쪼개 여러 코어에서 실행시킬 수 있다.
+
+
 
 
