@@ -54,10 +54,14 @@ exit()을 통해 process를 종료한다.
 - Personal allocated memory : 독립 시행 process는 각자 할당받은 메모리를 사용
 - Shared Memory : 서로 협력하는 두 Process는 서로 접근 가능한 공유 메모리 사용
 
-- InterProcess Communication(IPC)
+- InterProcess Communication(IPC) : cooperation process의 모델
 	- Shared memory
-	- Message passing : 
+	- Message passing : send()와 receive()를 통해 중간 MailBox(buffer)에 데이터를 송수신
 
-각자 개인 메모리를 사용하는 경우, process별로 할당된 메모리를 사용하기에 동기화 문제가 발생하지 않지만, 공유 메모리를 사용하는 경우 문제가 발생할 수 있다.
+각자 개인 메모리를 사용하는 경우, process별로 할당된 메모리를 사용하기에 동기화 문제가 발생하지 않지만, 공유 메모리를 사용하는 경우 문제가 발생할 수 있다. -> Producer-Consumer Problem
+
+- Producer-Consumer Problem : 두 프로세스가 접근하는 동일 메모리에 발생하는 동기화 문제
+	- 협력 동기화 문제: 버퍼가 가득 찼을때, 송신을 기다리고, 버퍼가 비었을때, 수신을 기다림 -> 정해진 스케줄을 보장하지 않는다. (Message Passing)
+	- 경쟁 동기화 문제 : 
 
 
