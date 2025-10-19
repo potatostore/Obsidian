@@ -89,7 +89,9 @@ exit()을 통해 process를 종료한다.
 	- Task parallelsim : 실행 흐름을 쪼개 병렬 시행
 - Concurrency : 동시성, 한 코어에서 여러 작업 실행
 - Amdahl's Law : 직렬처리로직이 많을수록 처리시간 증가
-	- speed up <= $$ 1/(S+(1-S)/N)$$
-	- 
+	- speed up <= $$ \frac{1}{S+\frac{1-S}{N}}$$
+
+#### ULT vs KLT
+- ULT : User Level Thread, 
 
 
