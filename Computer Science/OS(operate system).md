@@ -83,6 +83,13 @@ exit()을 통해 process를 종료한다.
 - Economy : Process 생성 비용보다 싸고, context switching을 통해 다른 process를 실행하는 것보다 쌈
 - Scalability : 병렬성, process단위로 한 코어에서 실행되는 것보다 process를 thread단위로 쪼개 여러 코어에서 실행시킬 수 있다.
 
-
+#### Parallelism vs Concurrency
+- Parallelism : 병렬성, 여러 코어에서 작업 실행
+	- Data parallelism : 데이터를 쪼개 병렬 시행
+	- Task parallelsim : 실행 흐름을 쪼개 병렬 시행
+- Concurrency : 동시성, 한 코어에서 여러 작업 실행
+- Amdahl's Law : 직렬처리로직이 많을수록 처리시간 증가
+	- speed up <= $$ 1/(S+(1-S)/N)$$
+	- 
 
 
