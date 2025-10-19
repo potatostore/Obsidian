@@ -90,8 +90,13 @@ exit()을 통해 process를 종료한다.
 - Concurrency : 동시성, 한 코어에서 여러 작업 실행
 - Amdahl's Law : 직렬처리로직이 많을수록 처리시간 증가
 	- speed up <= $$ \frac{1}{S+\frac{1-S}{N}}$$
-
 #### ULT vs KLT
-- ULT : User Level Thread, 
+- ULT : User Level Thread, PCB를 통해 Context switching이 이루어지며, Thread단위가 아닌 Process단위로 mapping -> kernel층에서 확인이 불가능하지만, Blocking시에 OS에서 Process단위로 Blocking이 발생하기에 반응성이 떨어진다.
+- KLT : Kernel Level Thread, KLT는 TCB를 통해 Context switching이 이루어지며, Thread단위로 cpu에 실행된다. 
+- Mapping : CPU에서 실행되는 주체는 결국 KLT, 즉 운영체제가 직접 관리하는 Thread이므로, 프로그램에서 생성되는 ULT는 결국 KLT로 Mapping을 통해 CPU에 실행되어야 함.
+	- one-to-many : 여러 ULT가 KLT 하나로 Mapping이 발생하는데, 큰 의미가 없다 -> Mapping과정에서 하나의 KLT가 여러 ULT를 Mapping되는 것은 거의 불가능하여 One-to-One처럼 작동하기 때문.
+	- many-to-many : 여러 KLT - 여러 ULT
+	- one-to-ont : 한 KLT - 한 ULT
 
 
+# CPU scheduling
