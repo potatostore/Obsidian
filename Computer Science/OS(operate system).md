@@ -55,13 +55,32 @@ exit()을 통해 process를 종료한다.
 - Shared Memory : 서로 협력하는 두 Process는 서로 접근 가능한 공유 메모리 사용
 
 - InterProcess Communication(IPC) : cooperation process의 모델
-	- Shared memory
-	- Message passing : send()와 receive()를 통해 중간 MailBox(buffer)에 데이터를 송수신
+	- Shared memory : moduler를 통해 in/out을 설정, in == out의 경우 buffer가 가득찬 로직과 빈 로직이 같은 문제 발생 -> in/out대신 count변수를 통해 해결 -> producer-consumer problem 발생
+	- Message passing : send()와 receive()를 통해 중간 MailBox(buffer)에 데이터를 송수신 -> Mailbox에 동시 접근, producer-consumer problem 발생
 
 각자 개인 메모리를 사용하는 경우, process별로 할당된 메모리를 사용하기에 동기화 문제가 발생하지 않지만, 공유 메모리를 사용하는 경우 문제가 발생할 수 있다. -> Producer-Consumer Problem
 
 - Producer-Consumer Problem : 두 프로세스가 접근하는 동일 메모리에 발생하는 동기화 문제
 	- 협력 동기화 문제: 버퍼가 가득 찼을때, 송신을 기다리고, 버퍼가 비었을때, 수신을 기다림 -> 정해진 스케줄을 보장하지 않는다. (Message Passing)
-	- 경쟁 동기화 문제 : 
+	- 경쟁 동기화 문제 : 데이터의 일관성이 깨지는 *Race Condition*발생
+
+- 동기화 문제 해결방안 : Blocking 동기화
+	- Blocking : send(), receive()흐름을 막아 협력 동기화를 보장
+		- Blocking send : send()후 receive() 전까지 send()를 block.
+		- Blocking receive : 반대
+	- Non-Blocking : send(), receive()를 막지 않지만, 프로그래머에게 동기화를 위임
+		- Non-Blocking send : blocking x
+		- Non-Blocking receive : blocking x
+
+# Thread
+- Process 내 독립적인 흐름 단위
+- Process의 일부분을 cpu의 독립시행 단위로 쪼갠 명령어
+- Thread들이 Process내에서 공유 메모리(RS, PC)를 가지고 할당받은 작업 수행
+
+#### Benefit
+- Responsiveness : Block을 통해 한 Thread가 막혀도 다른 Thread가 실행됨 -> 반응성이 좋다.
+- Resource sharing : process내 모든 자원 공유
+- Economy : Process 생성 비용보다 싸고, context switching을 통해 다른 process를 실행하는 것보다 쌈
+- Scalability : 병렬성, 동시성이랑 다르고, 
 
 
