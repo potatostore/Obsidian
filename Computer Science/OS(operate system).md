@@ -33,5 +33,31 @@
 - Terminated : 실행이 끝난 상태
 
 #### PCB
-- Process Control Block : process를 관리하기 위한 명령어들이 담겨있는 메모리공간
+- Process Control Block : os가 process를 control하기 위해 필요한 모든 정보를 담고 있는 데이터 구조, process의 text section에 존재하는 명령어를 실행시킴, PC, RS와 같은 정보들도 담겨 이전 process context switching이 발생했을때 이전 process의 메모리 주소를 저장하거나, 다음 실행할 process의 정보를 담고있다.
+
+#### Process Scheduling
+- 많은 process를 관리하려는 목적
+- Ready Queue : 실행 준비가 끝난 process들 저장
+- Wait Queue : I/O event와 같은 이벤트들을 기다리는 process들 저장
+
+#### Context Switching ++
+- cpu core에서 다른 process를 실행하려고 할때, 이전 process를 저장하고, 새로운 process를 실행하는 작업
+
+#### Process의 생성
+1. fork() : 기존 process를 복제하여 자식 process를 생성.
+2. exec() : 자식 process에게 생성하려는 Process에 대한 데이터를 덮어 씌움
+exit()을 통해 process를 종료한다.
+
+- cascading termination : 부모 process가 없을 시 자식 process 모두 종료
+
+#### Process가 Memory를 사용하는 방식
+- Personal allocated memory : 독립 시행 process는 각자 할당받은 메모리를 사용
+- Shared Memory : 서로 협력하는 두 Process는 서로 접근 가능한 공유 메모리 사용
+
+- InterProcess Communication(IPC)
+	- Shared memory
+	- Message passing : 
+
+각자 개인 메모리를 사용하는 경우, process별로 할당된 메모리를 사용하기에 동기화 문제가 발생하지 않지만, 공유 메모리를 사용하는 경우 문제가 발생할 수 있다.
+
 
