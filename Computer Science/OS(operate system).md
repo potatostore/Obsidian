@@ -33,4 +33,5 @@
 - Terminated : 실행이 끝난 상태
 
 #### PCB
-- Process Control Block 
+- Process Control Block : process를 관리하기 위한 명령어들이 담겨있는 메모리공간
+
