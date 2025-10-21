@@ -1,7 +1,6 @@
 [
   "code-styler",
   "obsidian-minimal-settings",
-  "execute-code",
   "obsidian-style-settings",
   "obsidian-banners",
   "colored-text",
@@ -12,6 +11,5 @@
   "table-editor-obsidian",
   "obsidian-latex-suite",
   "global-search-and-replace",
-  "obsidian-scroll-to-top-plugin",
-  "obsidian-git"
+  "obsidian-scroll-to-top-plugin"
 ]
