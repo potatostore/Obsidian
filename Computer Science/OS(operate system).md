@@ -98,5 +98,4 @@ exit()을 통해 process를 종료한다.
 	- many-to-many : 여러 KLT - 여러 ULT
 	- one-to-ont : 한 KLT - 한 ULT
 
-
 # CPU scheduling
