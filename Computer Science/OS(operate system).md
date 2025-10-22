@@ -115,6 +115,6 @@ exit()을 통해 process를 종료한다.
 #### preemptive vs nonpreemptive
 - preemptive scheduling : 시분할 시스템을 통해 어떤 process가 정해진 시간 이상 사용한 경우, 해당 process대신 다른 process를 cpu에서 작업시키기 위해 interrupt를 발생하는 과정
 	- Race Condition
-		- 각 프로세스는 독립된 메모리를 갖지만, kernel level에서의 process들은 서로 공유하는 메모리를 보유하고 있다.
+		- 각 프로세스는 독립된 메모리를 갖지만, kernel level에서 실행되는 process들은 서로 공유하는 메모리를 보유하고 있다.
 		- 따라서 
 - nonpreemptive scheduling : I/O event, process exit과 같은 event가 발생했을 경우에 interrupt를 통해 다른 process를 cpu에서 작업시키는 과정 -> resposivity가 떨어짐
