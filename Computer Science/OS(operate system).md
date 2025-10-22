@@ -100,5 +100,16 @@ exit()을 통해 process를 종료한다.
 
 # CPU scheduling
 
+- cpu에 어떤 process를 실행시킬 것인지 결정하는 과정
 #### CPU scheduling이 필요한 이유
-- CPU burst : cpu 연산 처리 속도보다 입초
+- CPU burst : cpu 연산 처리 시간
+- I/O burst : I/O 처리 시간
+- 대부분의 process는 cpu burst, I/O burst를 통해 process 총 처리 시간을 갖게 됨.
+- 이때 I/O burst 동안 CPU가 놀게 된다 -> 비효율성을 CPU scheduling으로 커버
+
+#### CPU scheduling이 발생하는 경우
+1. running state -> waiting state : I/O event와 같은 상황
+2. running state -> ready state : time slice와 같은 주어진 시간을 전부 소진한 경우
+3. waiting state -> ready state : event가 끝나고, scheduling 기다릴 때.
+
+#### preemptive vs nonpreemptive
