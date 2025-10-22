@@ -99,3 +99,6 @@ exit()을 통해 process를 종료한다.
 	- one-to-ont : 한 KLT - 한 ULT
 
 # CPU scheduling
+
+#### CPU scheduling이 필요한 이유
+- CPU burst : cpu 연산 처리 속도보다 입초
