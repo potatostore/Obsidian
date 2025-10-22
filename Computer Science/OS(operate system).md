@@ -113,5 +113,7 @@ exit()을 통해 process를 종료한다.
 3. waiting state -> ready state : event가 끝나고, scheduling 기다릴 때.
 
 #### preemptive vs nonpreemptive
-- preemptive scheduling : 한 process가 cpu를 사용 중일 때, scheduling을 통해 다른 process가 cpu를 사용하기로 결정이 되었을 경우, interrupt를 통해 다른 process가 cpu에서 실행되도록 정하는 과정
-- nonpreemptive scheduling : 
+- preemptive scheduling : 시분할 시스템을 통해 어떤 process가 정해진 시간 이상 사용한 경우, 해당 process대신 다른 process를 cpu에서 작업시키기 위해 interrupt를 발생하는 과정
+- nonpreemptive scheduling : I/O event, process exit과 같은 event가 발생했을 경우에 interrupt를 통해 다른 process를 cpu에서 작업시키는 과정 -> resposivity가 떨어짐
+
+- Race Condition : 
