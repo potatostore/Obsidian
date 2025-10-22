@@ -155,6 +155,13 @@ exit()을 통해 process를 종료한다.
 - P3 waiting time : 27
 - AVG waiting time : 17
 
-- Convoy Effect : 
+- Convoy Effect : burst time이 긴 process를 먼저 배치하고, 짧은 process 배치하면 AVG waiting time이 길어짐
+
+#### Shortest-Job-Fisrt(SJF) Scheduling
+- Convoy-Effect 해결 목적
+- non-preemptive schedluing입장에서는 최적의 scheduling
+- cpu burst를 예측할 수 없기에 정확하지 않음
+
+
 
 
