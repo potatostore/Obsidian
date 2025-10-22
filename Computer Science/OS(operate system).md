@@ -111,10 +111,50 @@ exit()을 통해 process를 종료한다.
 1. running state -> waiting state : I/O event와 같은 상황
 2. running state -> ready state : time slice와 같은 주어진 시간을 전부 소진한 경우
 3. waiting state -> ready state : event가 끝나고, scheduling 기다릴 때.
+4. process terminated
 
 #### preemptive vs nonpreemptive
 - preemptive scheduling : 시분할 시스템을 통해 어떤 process가 정해진 시간 이상 사용한 경우, 해당 process대신 다른 process를 cpu에서 작업시키기 위해 interrupt를 발생하는 과정
 	- Race Condition
 		- 각 프로세스는 독립된 메모리를 갖지만, kernel level에서 실행되는 process들은 서로 공유하는 메모리를 보유하고 있다.
-		- 따라서 
+		- 두 프로세스의 공유메모리가 존재하는 경우, interrupt로 인한 race condition이 발생할 수 있다.
 - nonpreemptive scheduling : I/O event, process exit과 같은 event가 발생했을 경우에 interrupt를 통해 다른 process를 cpu에서 작업시키는 과정 -> resposivity가 떨어짐
+
+#### Dispatcher
+- dispatcher는 cpu의 제어권을 통해 process를 선택하고, cpu에 scheduling을 한다. -> context switching
+- Dispatch latency : dispatcher가 위 기능을 실행하고, 다른 process가 cpu에서 실행되기까지 걸리는 시간
+
+- 실행 단계
+	1. scheduling이 발생하는 경우 1~4의 상황 발생
+	2. 프로세스 끝에 다음과 같은 코드를 삽입
+		1. Timer interrupt
+		2. process yield
+		3. I/O Block
+		4. System call exit()
+	3. scheduler 호출, context를 PCB에 저장
+	4. 다음 Process 결정
+	5. 해당 Process context 복원 -> 실행
+
+#### scheduling 평가 척도
+- CPU utilization : 단위시간당 많은 일을 했는가
+- Throughtput : 처리량
+- turnaround time : process 한 개 처리 후 돌아와 다음 process Run할 때까지 시간
+- Waiting time : ready queue에서 기다린 시간
+- Response time : 만들고 첫 실행까지 시간
+
+## Scheduling Example
+
+- Gantt Chart : Process를 동시성 처리하는 것처럼 막대바에 Process의 CPU brust time만큼 표시하여 1열로 세운 차트
+#### Fist-Come, First-Served(FCFS) Scheduling
+- P1 = 24,
+- p2 = 3
+- p3 = 3
+만큼의 burst time이 발생할 때, 위 scheduling을 통해 
+- P1 waiting time : 0
+- P2 waiting time : 24
+- P3 waiting time : 27
+- AVG waiting time : 17
+
+- Convoy Effect : 
+
+
