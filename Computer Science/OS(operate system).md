@@ -182,7 +182,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 특정 process만 실행되고, 하위 우선순위 process는 실행이 안되는 starvation 발생 -> Aging을 통해 오래 기다린 process는 우선순위를 높여버려 문제 해결
 
 #### Multilevel Queue
-- 
+- 우선순위별로 queue를 분류하고, 각 우선순위에 맞는 queue에 ready state process를 inqueue.
 
 
 # Syncronization Tools
