@@ -162,6 +162,8 @@ exit()을 통해 process를 종료한다.
 - non-preemptive schedluing입장에서는 최적의 scheduling
 - cpu burst를 예측할 수 없기에 정확하지 않음
 
+####
+
 
 # Syncronization Tools
 - Syncronization Problem : Race condition, Producer-Consumer Problem
