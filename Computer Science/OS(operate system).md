@@ -165,6 +165,7 @@ exit()을 통해 process를 종료한다.
 #### Shortes-Job-Next(SJN) Scheduling
 - CPU burst를 CPU에서 Process를 실제로 실행하기 전까지는 알 수 없다. -> 예측치를 통해 CPU burst를 정함
 - EMA(Exponential Moving Average) : 최근 데이터에 가중치를 부여함으로서 cpu burst를 예측한다.
+$$ τ_{n+1}=αtn​+(1−α)τn​ $$
 
 
 # Syncronization Tools
