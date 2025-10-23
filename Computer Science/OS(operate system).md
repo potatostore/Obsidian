@@ -185,7 +185,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 우선순위별로 queue를 분류하고, 각 우선순위에 맞는 queue에 ready state process를 inqueue -> 여러 개의 priority queue에 inqueue.
 
 #### Multilevel Feedback Queue
-- Multilevel Queue를 구현하는데, 시간에 따라 우선순위가 증가하거나 감소하면서 다른 priority queue로 이동할 수 있음 -> 자주 queue이동이 발생할 경우 burst가 
+- Multilevel Queue를 구현하는데, 시간에 따라 우선순위가 증가하거나 감소하면서 다른 priority queue로 이동할 수 있음 -> starvation해결
 
 
 # Syncronization Tools
