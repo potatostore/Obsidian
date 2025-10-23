@@ -173,6 +173,14 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 즉 (예상 cpu burst time-cpu에서 작업한 시간)이 다음 process의 예측 cpu burst보다 클 경우, scheduling 발생.
 
 #### Round-Robin(RR)
+- quantum이라는 시간을 설정하여, 각 process별로 실행하는 시간을 정함.
+- quantum만큼 시간이 지나면 다음 process로 context switching -> time slice
+- Responsiveness를 높여주지만, 너무 작은 값을 quantum으로 설정할 경우, context switching 비용이 증가, scheduling overhead
+
+#### Priority Scheduling
+- 각 process별로 우선순위를 설정하고 우선순위 queue에 inqueue, 상위 우선순위의 process를 먼저, 동일 우선순위일경우 Round-Robin을 통해 scheduling
+- 특정 process만 실행되고, 하위 우선순위 process는 실행이 안되는 starvation 발생 -> Aging을 통해 오래 기다린 process는 우선순위를 높여버려 문제 해결
+
 
 # Syncronization Tools
 - Syncronization Problem : Race condition, Producer-Consumer Problem
