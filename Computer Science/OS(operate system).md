@@ -181,6 +181,9 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 각 process별로 우선순위를 설정하고 우선순위 queue에 inqueue, 상위 우선순위의 process를 먼저, 동일 우선순위일경우 Round-Robin을 통해 scheduling
 - 특정 process만 실행되고, 하위 우선순위 process는 실행이 안되는 starvation 발생 -> Aging을 통해 오래 기다린 process는 우선순위를 높여버려 문제 해결
 
+#### Multilevel Queue
+- 
+
 
 # Syncronization Tools
 - Syncronization Problem : Race condition, Producer-Consumer Problem
