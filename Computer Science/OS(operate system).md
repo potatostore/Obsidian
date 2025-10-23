@@ -23,33 +23,26 @@
 2. Stack section : program counter, 일시적인 데이터들, 즉 함수 내부 변수들이 저장된 영역
 3. Data section : 전역변수
 4. Heap section : 동적할당 변수
-5. 
-
 #### Process State(5 state)
 - NEW : 방금 생성된 상태
 - Running : cpu에 올라가 실행중인 Process
 - Wating : I/O입출력 buffer을 기다리거나, 어떤 이벤트를 기다리는 상태
 - Ready : Cpu에 올라가 실행될 준비가 끝난 상태로 OS의 scheduling을 통해 Running state로 변하며 실행됨
 - Terminated : 실행이 끝난 상태
-
 #### PCB
 - Process Control Block : os가 process를 control하기 위해 필요한 모든 정보를 담고 있는 데이터 구조, process의 text section에 존재하는 명령어를 실행시킴, PC, RS와 같은 정보들도 담겨 이전 process context switching이 발생했을때 이전 process의 메모리 주소를 저장하거나, 다음 실행할 process의 정보를 담고있다.
-
 #### Process Scheduling
 - 많은 process를 관리하려는 목적
 - Ready Queue : 실행 준비가 끝난 process들 저장
 - Wait Queue : I/O event와 같은 이벤트들을 기다리는 process들 저장
-
 #### Context Switching ++
 - cpu core에서 다른 process를 실행하려고 할때, 이전 process를 저장하고, 새로운 process를 실행하는 작업
-
 #### Process의 생성
 1. fork() : 기존 process를 복제하여 자식 process를 생성.
 2. exec() : 자식 process에게 생성하려는 Process에 대한 데이터를 덮어 씌움
 exit()을 통해 process를 종료한다.
 
 - cascading termination : 부모 process가 없을 시 자식 process 모두 종료
-
 #### Process가 Memory를 사용하는 방식
 - Personal allocated memory : 독립 시행 process는 각자 할당받은 메모리를 사용
 - Shared Memory : 서로 협력하는 두 Process는 서로 접근 가능한 공유 메모리 사용
@@ -188,7 +181,23 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - Multilevel Queue를 구현하는데, 시간에 따라 우선순위가 증가하거나 감소하면서 다른 priority queue로 이동할 수 있음 -> starvation해결
 - quantum을 다르게 설정한 RR queue 여러 개를 병렬로 연결하고, 마지막에 FCFS queue를 등록하여 starvation문제와 syncronization문제를 해결하는 등 다양한 방식으로 사용될 수 있음
 
-
 # Syncronization Tools
 - Syncronization Problem : Race condition, Producer-Consumer Problem
+- Process creation할 때, fork()와 exec()를 통해 발생하는데, fork()하면서 자식 process에게 PID를 부여하게 됨. -> 이때 PID는 kernel level에서 모든 process가 공용으로 사용하는 메모리에 할당되어 있기에 두개 이상의 프로세스가 동시에 fork()시에 Race condition 발생할 수 있음. -> PID를 critical section으로 분류
 
+#### Section
+- Critical Section : kernel층의 공유메모리처럼 다수가 동시에 접근가능한 영역
+- Entry Section : Critical Section에 진입하기 위해 순서를 정하는 영역
+- Exit Section : Critiacal Section을 탈출하는 영역
+- Remainder Section : 위 3개를 제외한 나머지 영역
+
+#### Critical Section Problem
+- 결국 다수의 Process가 Critical Section에 접근하는 동기화 문제가 발생 가능함.
+- 따라서 다음과 같은 조건으로 해결을 하려 시도
+	1. Mutual Exclusion : 한쪽 접근시 다른 한쪽 막기
+	2. Progress : process의 진행흐름 보장
+	3. Bounded Waiting : 무한히 Wait(starvation) 방지하기 위해 Bounded time 설정
+-> 위 3개의 조건 충족시 Critical Section Problem 해결
+
+#### Interrupt-based Solution
+- interrupt가 발생했을 경우 
