@@ -166,7 +166,13 @@ exit()을 통해 process를 종료한다.
 - CPU burst를 CPU에서 Process를 실제로 실행하기 전까지는 알 수 없다. -> 예측치를 통해 CPU burst를 정함
 - EMA(Exponential Moving Average) : 최근 데이터에 가중치를 부여함으로서 cpu burst를 예측한다.
 $$ τ_{n+1}=αtn​+(1−α)τn​ $$
+#### Shortest-Job-Time-First(SJT) Scheduling
+- 위 SJN을 preemptive scheduling에 적용한 방식
+- I/O event, exit()으로만 scheduling을 하던 non-preemptive와는 달리 timer와 같은 시분할 시스템으로도 프로세스간의 scheduling이 발생하므로, preemptive에 맞는 scheduling이 필요함.
+- 중간에 cpu burst가 더 짧은 process가 대기할 경우, scheduling.
+- 즉 (예상 cpu burst time-cpu에서 작업한 시간)이 다음 process의 예측 cpu burst보다 클 경우, scheduling 발생.
 
+#### Round-Robin(RR)
 
 # Syncronization Tools
 - Syncronization Problem : Race condition, Producer-Consumer Problem
