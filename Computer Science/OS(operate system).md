@@ -214,6 +214,12 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - Cache에 쓴 데이터를 Reorderring하지 않고 순서대로 진입할 수 있도록 대기 -> cpu avg wait time증가
 
 ## Synchronization H/W
+- 앞선 critical section condition 3개를 충족시키기 위해 소프트웨어적인 동기화를 제공하였지만, cpu avg wait time이 증가하는 등 다양한 추가적인 문제가 발생함 -> 이를 하드웨어 차원에서 막고자 시도
+
+### Hardware Instructions
+#### Test-and-Set instruction
+
+#### Compare-and-Swap instruction
 
 
 # Synchronization Problem and Solution
