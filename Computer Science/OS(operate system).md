@@ -199,6 +199,8 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 	3. Bounded Waiting : 무한히 Wait(starvation) 방지하기 위해 Bounded time 설정
 -> 위 3개의 조건 충족시 Critical Section Problem 해결
 
+#### Interrupt-based Solution 
+- Critical section problem의 해결방안으로 entry section에서 
 
 #### Peter's Solution
 
