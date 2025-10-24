@@ -206,7 +206,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - turn, flag변수를 통해 critical section에 진입할 process를 선택
 	- turn : 어떤 process가 critical section에 들어갈지 알려주는 변수
 	- flag : process가 critical section에 들어갈 준비가 되었는지 알려주는 변수
-- single-thread 상황에서는 turn, flag변수가 
+- single-thread 상황에서는 괜찮지만, multi-thread 상황에서 reorderring(cpu가 효율성을 위해 코드를 순서를 바꿔서 실행)으로 인하여 원하는 결과가 나오지 않을 가능성이 존재한다.
 
 
 # Syncronization Problem and Solution
