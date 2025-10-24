@@ -179,10 +179,10 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 
 #### Multilevel Feedback Queue
 - Multilevel Queue를 구현하는데, 시간에 따라 우선순위가 증가하거나 감소하면서 다른 priority queue로 이동할 수 있음 -> starvation해결
-- quantum을 다르게 설정한 RR queue 여러 개를 병렬로 연결하고, 마지막에 FCFS queue를 등록하여 starvation문제와 syncronization문제를 해결하는 등 다양한 방식으로 사용될 수 있음
+- quantum을 다르게 설정한 RR queue 여러 개를 병렬로 연결하고, 마지막에 FCFS queue를 등록하여 starvation문제와 Synchronization문제를 해결하는 등 다양한 방식으로 사용될 수 있음
 
-# Syncronization Tools
-- Syncronization Problem : Race condition, Producer-Consumer Problem
+# Synchronization Tools
+- Synchronization Problem : Race condition, Producer-Consumer Problem
 - Process creation할 때, fork()와 exec()를 통해 발생하는데, fork()하면서 자식 process에게 PID를 부여하게 됨. -> 이때 PID는 kernel level에서 모든 process가 공용으로 사용하는 메모리에 할당되어 있기에 두개 이상의 프로세스가 동시에 fork()시에 Race condition 발생할 수 있음. -> PID를 critical section으로 분류
 
 #### Section
@@ -213,8 +213,10 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - Reorderring을 막는 용도로 사용
 - Cache에 쓴 데이터를 Reorderring하지 않고 순서대로 진입할 수 있도록 대기 -> cpu avg wait time증가
 
+## Synchronization H/W
 
-# Syncronization Problem and Solution
+
+# Synchronization Problem and Solution
 
 #### Bounded-Buffer Problem
 
