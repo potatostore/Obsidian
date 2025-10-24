@@ -235,6 +235,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - Lock을 Control 하기 위한 자료구조
 - 구조체 내 lock bounded waiting을 위한 자료
 - Acquire(), Release()를 통해 공유자원인 lock을 가져와 사용하게 된다. -> 이때 하드웨어의 atomic으로 인하여 하나의 process에만 lock이 할당 가능.
+- Acquire()을 했을 때, lock을 획득하지 못한다면 무한 루프를 수행하는데, 이를 *busy waiting*
 
 
 # Synchronization Problem and Solution
