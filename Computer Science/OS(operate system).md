@@ -223,7 +223,13 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 위 설명대로라면 공유변수 lock에 멀티 프로세서로 인해 동시에 접근하게 될 경우, race condition이 무조건 발생할 것으로 보이는데, 이를 H/W차원에서 막는 Atomicity(원자성)을 제공 -> 즉 하드웨어적인 중재로 둘 중 하나의 process만 lock에 접근할 수 있는 권한을 부여하고, 나머지는 대기. -> Race condition 해결.
 - 하지만 3번 조건, Bounded Waiting을 막지는 못함 -> time slice가 따로 없어 한 process만 접근할 수 있다.(Starvation)
 #### Compare-and-Swap instruction
-- 
+- lock과 예측값을 비교하고, 같으면 새 값으로 덮어 씌우고, 참 반환, 다르면 거짓 반환하고 종료.
+- 예측값이 bool로 반환되는 것이 아닌, int로 반환되므로 상대적으로 매우 유연하다.
+- 그럼에도 bound wait을 해결하지 못하였다.
+->waiting queue를 도입하여 lock에 해당하는 process가 waiting queue에 존재할 경우, 실행해주도록 만들었다
+
+### Atomic Variables
+- 통상적으로 앞서 설명한 H/W instructions는 다른 코드 블럭과 함께 동기화 도구로 사용됨. -> 단일로 동기화를 이룰 수 없음
 
 # Synchronization Problem and Solution
 
