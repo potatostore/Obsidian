@@ -232,7 +232,8 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 반면 앞으로 설명할 Atomic Variables는 자료형으로 동작하여 동기화를 이룸
 
 #### Mutex Locks
-- 
+- Lock을 Control 하기 위한 자료구조
+- 구조체 내 lock bounded waiting을 위한 자료
 
 
 # Synchronization Problem and Solution
