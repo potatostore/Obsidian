@@ -202,11 +202,15 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 #### Interrupt-based Solution 
 - Critical section problem의 해결방안으로 entry section에서 critical section에 들어갈 process가 정해질 경우, 모든 process의 interrupt를 막음 -> 이후 들어간 process가 exit section으로 나올 때 다시 interrupt를 푼다.
 - 위 3개의 조건 중 1번은 만족하지만, 2,3번은 만족하지 않음 -> Timer interrupt와 같이 time slice를 통해 progress를 보장해주는 시스템을 막았고, exit section으로 나온 process가 다시 entry section에 들어가 계속 critical section에 진입할 경우, starvation도 해결하지 못하기 때문이다.
-#### Peter's Solution
+#### Peterson's Solution
 - turn, flag변수를 통해 critical section에 진입할 process를 선택
 	- turn : 어떤 process가 critical section에 들어갈지 알려주는 변수
 	- flag : process가 critical section에 들어갈 준비가 되었는지 알려주는 변수
 - single-thread 상황에서는 괜찮지만, multi-thread 상황에서 reorderring(cpu가 효율성을 위해 코드를 순서를 바꿔서 실행)으로 인하여 원하는 결과가 나오지 않을 가능성이 존재한다.
+
+#### Memory Barrier
+- Peterson's Solution이 Multi thread환경에서 정상적으로 작동하지 않을 가능성 때문에 Memory Barrier 개념 등장
+- Reorderring을 막는 용도로 사용
 
 
 # Syncronization Problem and Solution
