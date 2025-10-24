@@ -249,6 +249,9 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 #### Monitor
 - 동기화 도구를 감싸는 구조체 
 
+#### Condition Variables
+
+
 # Synchronization Problem and Solution
 
 #### Bounded-Buffer Problem
