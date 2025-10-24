@@ -229,7 +229,11 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 ->waiting queue를 도입하여 lock에 해당하는 process가 waiting queue에 존재할 경우, 실행해주도록 만들었다
 
 ### Atomic Variables
-- 통상적으로 앞서 설명한 H/W instructions는 다른 코드 블럭과 함께 동기화 도구로 사용됨. -> 단일로 동기화를 이룰 수 없음
+- 통상적으로 앞서 설명한 H/W instructions는 다른 코드 블럭과 함께 동기화 도구로 사용됨. -> 단일로 동기화를 이룰 수 없음.
+- 반면 앞으로 설명할 Atomic Variables는 자료형으로 동작하여 동기화를 이룸
+
+#### Mutex Locks
+
 
 # Synchronization Problem and Solution
 
