@@ -203,3 +203,12 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 
 #### Peter's Solution
 
+
+# Syncronization Problem and Solution
+
+#### Bounded-Buffer Problem
+
+#### Readers and Writers Problem
+
+#### Dining-Philosoper Probelm
+
