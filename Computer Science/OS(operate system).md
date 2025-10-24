@@ -211,4 +211,3 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 #### Readers and Writers Problem
 
 #### Dining-Philosoper Probelm
-
