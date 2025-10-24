@@ -184,7 +184,6 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 # Synchronization Tools
 - Synchronization Problem : Race condition, Producer-Consumer Problem
 - Process creation할 때, fork()와 exec()를 통해 발생하는데, fork()하면서 자식 process에게 PID를 부여하게 됨. -> 이때 PID는 kernel level에서 모든 process가 공용으로 사용하는 메모리에 할당되어 있기에 두개 이상의 프로세스가 동시에 fork()시에 Race condition 발생할 수 있음. -> PID를 critical section으로 분류
-
 #### Section
 - Critical Section : kernel층의 공유메모리처럼 다수가 동시에 접근가능한 영역
 - Entry Section : Critical Section에 진입하기 위해 순서를 정하는 영역
@@ -233,6 +232,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 반면 앞으로 설명할 Atomic Variables는 자료형으로 동작하여 동기화를 이룸
 
 #### Mutex Locks
+- 
 
 
 # Synchronization Problem and Solution
