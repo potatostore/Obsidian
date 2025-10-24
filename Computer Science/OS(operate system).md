@@ -218,7 +218,8 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 
 ### Hardware Instructions
 #### Test-and-Set instruction
-
+- critical section에 들어갈 수 있는지 판단하는 공유 변수 lock을 설정하고, test_and_set(&lock) == false인 경우, 해당 process가 critical section에 접근할 수 있도록 한다.
+- 위 설명대로라면 공유변수 lock에 멀티 프로세서로 인해 동시에 접근하게 될 경우, race condition이 무조건 발생할 것으로 보이는데, 이를 H/W차원에서 막는 Atomicity(원자성)을 제공 -> 
 #### Compare-and-Swap instruction
 
 
