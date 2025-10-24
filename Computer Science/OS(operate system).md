@@ -200,4 +200,6 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 -> 위 3개의 조건 충족시 Critical Section Problem 해결
 
 #### Interrupt-based Solution
-- 
+
+#### Peter's Solution
+
