@@ -231,15 +231,20 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 통상적으로 앞서 설명한 H/W instructions는 다른 코드 블럭과 함께 동기화 도구로 사용됨. -> 단일로 동기화를 이룰 수 없음.
 - 반면 앞으로 설명할 Atomic Variables는 자료형으로 동작하여 동기화를 이룸
 
-#### Mutex Locks
+#### Mutex Locks(Binary Semaphore)
 - Lock을 Control 하기 위한 자료구조
 - 구조체 내 lock bounded waiting을 위한 자료
 - Acquire(), Release()를 통해 공유자원인 lock을 가져와 사용하게 된다. -> 이때 하드웨어의 atomic으로 인하여 하나의 process에만 lock이 할당 가능.
 - Acquire()을 했을 때, lock을 획득하지 못한다면 무한 루프를 수행하는데, 이를 *busy waiting*이라고 하고, 이때 lock을 *spinlock*이라고 한다.
 
 #### Semaphore
-- Up(), Down()을 통해 lock값 조절
+- 세마포어는 특정 정수 값을 의미하며, 사용자 설정에 의해 값이 정해진다.
+- lock의 초기 값은 Critical Section에 한 번에 진입 가능한 Process의 수를 뜻한다.
+- 따라서 lock 값이 세마포어 이하일 경우, busy waiting을 실행하고, 이상일 경우 critical section에 진입하게 된다.
+- 이때 lock 값을 up(), down()을 하여 현재 critical section에 진입한 process의 양을 셈할 수 있다.
 
+- counting semaphore : n개 만큼 critical section에 진입 가능
+- binary semaphore : mutex lock
 
 # Synchronization Problem and Solution
 
