@@ -211,6 +211,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 #### Memory Barrier
 - Peterson's Solution이 Multi thread환경에서 정상적으로 작동하지 않을 가능성 때문에 Memory Barrier 개념 등장
 - Reorderring을 막는 용도로 사용
+- Cache에 쓴 데이터를 Reorderring하지 않고 순서대로 진입할 수 있도록 대기 -> cpu avg wait time증가
 
 
 # Syncronization Problem and Solution
