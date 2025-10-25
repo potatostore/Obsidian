@@ -307,3 +307,9 @@ t2.wait(s1)
 4. Circular wait : Dining-Philosoper problem
 
 ->Resource-Allocation Graph를 통해 어떤 Thread가 Resource에 접근하려는지, Resource는 몇 개의 thread에 동시 접근이 허용되고, 어떤 Thread에 자원이 할당되어 있는지 한 눈에 알려주는 그래프
+
+#### Deadlock Prevention
+- Mutual Exclusion : 
+- Hold and Wait
+- No Preemptive : 
+- Circular Wait
