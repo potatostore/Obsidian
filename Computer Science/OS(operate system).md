@@ -250,7 +250,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 동기화 도구를 감싸는 구조체 
 
 #### Condition Variables
-- condition x,y를 통해 
+- 
 
 
 # Synchronization Problem and Solution
