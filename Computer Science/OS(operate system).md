@@ -282,4 +282,26 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 코드의 흐름이 진행되지 않는 상태
 
 #### Deadlock with Semaphore
-- 
+- 두 thread t1, t2가 s1,s2라는 semaphore가 필요할 때, 다음과 같은 코드가 작성될 수 있다.
+```
+t1.wait(s1)
+t1.wait(s2)
+t2.wait(s1)
+t2.wait(s2)
+```
+
+그런데 reorderring을 통해 다음과 같은 코드로 바뀌였다고 생각해보자
+```
+t1.wait(s1)
+t2.wait(s2)
+t1.wait(s2)
+t2.wait(s1)
+```
+
+그러면 t1은 s1을 가진채로 s2를 무한대기, t2는 s2를 가진채로 무한대기하는 Deadlock이 발생한다.
+
+#### Deadlock conditions
+1. Mutual Exclusion : 오직 한 thread만 접근 가능함(semaphore이 한 개 일때) -> block spinlock,busy wait등으로 wait queue의 진입을 막음
+2. Hold and wait : lock을 가진 채로 wait
+3. No preemption : 한 Process가 다른 Process로부터 lock의 주도권을 못뺏어옴.
+4. Circular wait : Dining-Philosoper problem
