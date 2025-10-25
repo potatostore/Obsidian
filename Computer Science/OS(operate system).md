@@ -310,6 +310,6 @@ t2.wait(s1)
 
 #### Deadlock Prevention
 - Mutual Exclusion : 
-- Hold and Wait
+- Hold and Wait : 다른 resource를 요청할때, 아무 resource도 들지 않음.
 - No Preemptive : 
 - Circular Wait
