@@ -309,7 +309,7 @@ t2.wait(s1)
 ->Resource-Allocation Graph를 통해 어떤 Thread가 Resource에 접근하려는지, Resource는 몇 개의 thread에 동시 접근이 허용되고, 어떤 Thread에 자원이 할당되어 있는지 한 눈에 알려주는 그래프
 
 #### Deadlock Prevention
-- Mutual Exclusion : 
+- Mutual Exclusion
 - Hold and Wait : 다른 resource를 요청할때, 아무 resource도 들지 않음.
-- No Preemptive : 
+- No Preemptive : 필요한 경우, 바로 할당하지 않고 시간을 
 - Circular Wait
