@@ -250,7 +250,8 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 동기화 도구를 감싸는 구조체 
 
 #### Condition Variables
-- 
+- producer-consumer problem과 같은 동기화 문제에서 각 프로세스의 조건 변수 x,y를 설정하고, 이에 충족할 경우 process를 wait(), signal()상태로 만들어준다.
+- producer가 
 
 
 # Synchronization Problem and Solution
