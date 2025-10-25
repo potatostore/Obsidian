@@ -257,9 +257,17 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 # Synchronization Problem and Solution
 
 #### Bounded-Buffer Problem
-- n개의 buffer가 존재하고, semaphore mutex lock을 0,1로 설정, full을 
+- n개의 buffer가 존재하고
+	- semaphore mutex lock = 1
+	- semaphore full = 0
+	- semaphore empty = n
+	으로 설정 -> producer입장에서는 wait(lock && empty)로 기다리다가 cpu에 올라가 buffer에 데이터를 쓰기 시작 -> full == n일 경우, lock = 0으로 바꿔주고 signal(mutex), signal(full). (consumer은 반대)
 #### Readers and Writers Problem
-
+- Readers : buffer에 접근할 때, 수정권한 없이 읽기 권한만 존재.
+- Writers : 둘다 존재
+- 다수의 Readers가 동시에 접근해 읽기 권한만 할 경우 Race Condition X
+- 다수의 readers와 하나 이상의 Writers가 동시 접근시 문제 발생
+- 따라서 Writers가 접근시 다른 readers/writers가 접근하지 못하게 만들어 동기화 문제 해결(mutex lock_rw를 통해 writers접근 중인지 확인)
 #### Dining-Philosoper Probelm
 
 
