@@ -305,3 +305,5 @@ t2.wait(s1)
 2. Hold and wait : lock을 가진 채로 wait
 3. No preemption : 한 Process가 다른 Process로부터 lock의 주도권을 못뺏어옴.
 4. Circular wait : Dining-Philosoper problem
+
+->Resource-Allocation Graph를 통해 어떤 Thread가 Resource에 접근하려는지, Resource는 몇 개의 thread에 동시 접근이 허용되고, 어떤 Thread에 자원이 할당되어 있는지 한 눈에 알려주는 그래프
