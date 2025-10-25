@@ -269,8 +269,11 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 다수의 readers와 하나 이상의 Writers가 동시 접근시 문제 발생
 - 따라서 Writers가 접근시 다른 readers/writers가 접근하지 못하게 만들어 동기화 문제 해결(mutex lock_rw를 통해 writers접근 중인지 확인)
 
-- reader process starvation : 
+- reader process starvation : writer process가 buffer에 데이터를 쓰고, writer process ready queue에 존재하는 Process에게 제어권을 넘겨주는 작업이 반복될 경우
+- writer process starvation : 위와 반대로 발생
+-> 즉 우선권을 준 쪽 반대에서 starvation이 발생가능함. -> mutex lock처럼 kernel차원의 semaphore제공을 통해 해결
 #### Dining-Philosoper Probelm
+- 둥근 식탁에 밥을 먹기 위한(cpu에서 작업을 진행하기 위한) process들이 원형으로 앉아 있을때, 각 process들 사이에 chopstick이라는 semaphore이 존재.
 
 
 # Deadlocks
