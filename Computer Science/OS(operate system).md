@@ -276,8 +276,10 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 둥근 식탁에 밥을 먹기 위한(cpu에서 작업을 진행하기 위한) process들이 원형으로 앉아 있을때, 각 process들 사이에 chopstick이라는 semaphore이 존재.
 - 좌우 chopstick을 소유해야 process가 작업을 진행할 수 있음
 
-- 
-
-
+- 한 process가 한 쪽 semaphore을 획득한 채로 다른 semaphore을 무한 대기중. 이와 같은 현상이 모든 process에 나타날 경우 -> Deadlock : 코드의 흐름이 진행되지 않는 상태
 # Deadlocks
 
+- 코드의 흐름이 진행되지 않는 상태
+
+#### Deadlock with Semaphore
+- 
