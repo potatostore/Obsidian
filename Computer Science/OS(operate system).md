@@ -269,7 +269,7 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 - 다수의 readers와 하나 이상의 Writers가 동시 접근시 문제 발생
 - 따라서 Writers가 접근시 다른 readers/writers가 접근하지 못하게 만들어 동기화 문제 해결(mutex lock_rw를 통해 writers접근 중인지 확인)
 
-- 만약 reader process가 
+- reader process starvation : 
 #### Dining-Philosoper Probelm
 
 
