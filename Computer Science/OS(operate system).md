@@ -257,7 +257,11 @@ $$ τ_{n+1}=αtn​+(1−α)τn​ $$
 # Synchronization Problem and Solution
 
 #### Bounded-Buffer Problem
-
+- n개의 buffer가 존재하고, semaphore mutex lock을 0,1로 설정, full을 
 #### Readers and Writers Problem
 
 #### Dining-Philosoper Probelm
+
+
+# Deadlocks
+
