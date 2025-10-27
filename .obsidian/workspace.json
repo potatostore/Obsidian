@@ -35,7 +35,8 @@
               "title": "파일구조론"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -204,10 +205,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e503c170f841bfdd",
+  "active": "f2d7c31166535c6a",
   "lastOpenFiles": [
-    "University/2-2/파일구조론.md",
     "Computer Science/OS(operate system).md",
+    "University/2-2/파일구조론.md",
     "University/2-2/운영체제.md",
     "Project/Web Server(c++).md",
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
