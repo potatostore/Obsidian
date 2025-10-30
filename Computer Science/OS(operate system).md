@@ -371,10 +371,10 @@ t2.wait(s1)
 
 ### 3.3 Mutex와 Condition Variable
 
-|**도구**|**주 역할**|**Deadlock 조건 연관성**|
-|---|---|---|
-|**Mutex Lock**|**상호 배제** (Mutual Exclusion) 보장.|4가지 Deadlock 조건 중 **Mutual Exclusion**을 만족시킴.|
-|**Condition Variable**|**조건 만족 시 협력적 대기 및 신호** 제공.|Producer-Consumer 문제에서 **조건이 충족될 때까지 대기**하는 용도로 사용.|
+| **도구**                 | **주 역할**                         | **Deadlock 조건 연관성**                                 |
+| ---------------------- | -------------------------------- | --------------------------------------------------- |
+| **Mutex Lock**         | **상호 배제** (Mutual Exclusion) 보장. | 4가지 Deadlock 조건 중 **Mutual Exclusion**을 만족시킴.       |
+| **Condition Variable** | **조건 만족 시 협력적 대기 및 신호** 제공.      | Producer-Consumer 문제에서 **조건이 충족될 때까지 대기**하는 용도로 사용. |
 
 ---
 
