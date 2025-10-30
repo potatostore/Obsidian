@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/OS(operate system).md",
+                "file": "Books/세계문학전집/267.  페스트 - 알베르 까뮈.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OS(operate system)"
+              "title": "267.  페스트 - 알베르 까뮈"
             }
           }
         ]
@@ -192,8 +192,9 @@
   },
   "active": "e503c170f841bfdd",
   "lastOpenFiles": [
-    "University/2-2/파일구조론.md",
     "Computer Science/OS(operate system).md",
+    "Books/세계문학전집/267.  페스트 - 알베르 까뮈.md",
+    "University/2-2/파일구조론.md",
     "University/2-2/운영체제.md",
     "Project/Web Server(c++).md",
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
@@ -218,7 +219,6 @@
     "Computer Science/DB(DataBase).md",
     "Computer Science/Backend Develop Structure.md",
     "Computer Science/API(Application Programming Interface).md",
-    "Frameworks & services/MongoDB.md",
     "Untitled.base",
     "Computer Science/DB",
     "Images/Pasted image 20250813143155.png",
