@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
+                "file": "Frameworks & services/Spring boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DP(Dynamic Programming)"
+              "title": "Spring boot"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dynamic",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -208,6 +207,15 @@
   },
   "active": "f141d580f703ed76",
   "lastOpenFiles": [
+    "Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search).md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/BFS(Breath First Search).md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
+    "Algorithm/Graph Algorithm/Traversal Algorithm/Bellman-Ford Algorithm.md",
+    "Algorithm/Backtracking Algorithm/Subset Sum Problem.md",
+    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
+    "Algorithm/Backtracking Algorithm/Maze Solving.md",
+    "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
+    "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
     "University/2-1/빅데이터.md",
     "University/2-2/알고리즘.md",
     "NAS.md",
@@ -225,16 +233,7 @@
     "University/2-2/리눅스 프로그래밍.md",
     "-Calendar-/2025/10th/2025-10-17.md",
     "-Calendar-/2025/10th/2025-10-15.md",
-    "-Calendar-/2025/10th/2025-10-14.md",
-    "-Calendar-/2025/10th/2025-10-30.md",
-    "-Calendar-/2025/10th/2025-10-12.md",
-    "-Calendar-/2025/10th/2025-10-11.md",
-    "-Calendar-/2025/10th/2025-10-23.md",
     "-Calendar-/2025/10th",
-    "University/2-2/파일구조론.md",
-    "Computer Science/ORM(Oriented Relational Mapping).md",
-    "Computer Science/Memory.md",
-    "Computer Science/DB(DataBase).md",
     "Untitled.base",
     "Computer Science/DB",
     "Images/Pasted image 20250813143155.png",
