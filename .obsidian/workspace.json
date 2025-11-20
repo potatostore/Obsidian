@@ -8,31 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c974f9a968fb6ee0",
+            "id": "e503c170f841bfdd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-2/운영체제.md",
+                "file": "Books/Obtimized C++.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "운영체제"
+              "title": "Obtimized C++"
             }
           },
           {
-            "id": "f141d580f703ed76",
+            "id": "851e6fdf4df928dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "TODO"
             }
           }
         ],
@@ -205,24 +205,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f141d580f703ed76",
+  "active": "851e6fdf4df928dc",
   "lastOpenFiles": [
-    "Algorithm/Graph Algorithm/Traversal Algorithm/DFS(Depth FIrst Search).md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/BFS(Breath First Search).md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/Floyd-Warshall Algorithm.md",
-    "Algorithm/Graph Algorithm/Traversal Algorithm/Bellman-Ford Algorithm.md",
-    "Algorithm/Backtracking Algorithm/Subset Sum Problem.md",
-    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
-    "Algorithm/Backtracking Algorithm/Maze Solving.md",
-    "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
-    "Algorithm/Dynamic Programming Algorithm/DP(Dynamic Programming).md",
-    "University/2-1/빅데이터.md",
-    "University/2-2/알고리즘.md",
     "NAS.md",
+    "University/2-2/알고리즘.md",
+    "Books/Obtimized C++.md",
+    "Books/The Goals(1,2).md",
+    "Books/Clean Code.md",
+    "Books/Clean Architecture.md",
+    "Books/처음부터 제대로 배우는 스프링 부트.md",
+    "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Books/세계문학전집/267.  페스트 - 알베르 까뮈.md",
     "Computer Science/OS(operate system).md",
-    "TODO.md",
+    "University/2-2/파일구조론.md",
     "University/2-2/운영체제.md",
+    "Project/Web Server(c++).md",
+    "Project/scenario(게임 속 바바리안으로 살아남기).md",
     "University/2-2/윈도우즈 프로그래밍.md",
     "-Calendar-/2025/10th/2025-10-22.md",
     "University/2-2/리눅스.md",
@@ -233,6 +231,8 @@
     "University/2-2/리눅스 프로그래밍.md",
     "-Calendar-/2025/10th/2025-10-17.md",
     "-Calendar-/2025/10th/2025-10-15.md",
+    "-Calendar-/2025/10th/2025-10-14.md",
+    "-Calendar-/2025/10th/2025-10-30.md",
     "-Calendar-/2025/10th",
     "Untitled.base",
     "Computer Science/DB",
