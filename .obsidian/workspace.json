@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "TODO"
             }
+          },
+          {
+            "id": "a61b2a6a80ba9fbf",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.10.3"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.10.3"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -205,7 +217,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "851e6fdf4df928dc",
+  "active": "a61b2a6a80ba9fbf",
   "lastOpenFiles": [
     "NAS.md",
     "University/2-2/알고리즘.md",
