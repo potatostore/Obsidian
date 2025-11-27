@@ -316,3 +316,4 @@ t2.wait(s1)
 - No Preemptive : 필요한 경우, 바로 할당하지 않고 시간을 
 - Circular Wait
 
+#### Deadlock Avoidance : 

@@ -34,21 +34,9 @@
               "icon": "lucide-file",
               "title": "OS(operate system)"
             }
-          },
-          {
-            "id": "8778ebae92a5d4c5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.10.6"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.10.6"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,7 +205,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8778ebae92a5d4c5",
+  "active": "9b6d3ab49b3ab089",
   "lastOpenFiles": [
     "University/2-2/운영체제.md",
     "TODO.md",
