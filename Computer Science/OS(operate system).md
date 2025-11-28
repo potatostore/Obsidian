@@ -317,3 +317,5 @@ t2.wait(s1)
 - Circular Wait
 
 #### Deadlock Avoidance : 
+
+#### Deadlock Detection & Recovery : 
