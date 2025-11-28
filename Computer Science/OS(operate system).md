@@ -334,4 +334,6 @@ t2.wait(s1)
 	- finish : Thread가 끝날 수 있는 경우
 
 ##### Snapshot을 통해 circular wait 감지(Detection Algorithm)
+- Resource Allocation Graph를 통해 thread가 release(finish == true)가 되는지 확인
+
 1. 
