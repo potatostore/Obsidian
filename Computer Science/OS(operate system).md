@@ -329,4 +329,7 @@ t2.wait(s1)
 	- Available(m) : 각 resource type마다 가질 수 있는 Instance의 수
 	- Allocation(n) : 각 thread마다 할당된 Resource instance
 	- Request : 각 thread가 작업을 위해 추가적으로 할당되어야 할 Instance의 수 
-	- 위 3개를 snapshot을 
+	- 위 3개를 snapshot을 통해 circular wait이 발생하는지 확인
+	- work : 현재 남아 있는 resource의 양 + 작업이 가능한(request가 없는) thread의 resource 양을 통해 circular wait이 발생하는지 판단.
+	- finish : Thread가 끝날 수 있는 경우
+	- 
