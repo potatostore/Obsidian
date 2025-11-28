@@ -332,4 +332,6 @@ t2.wait(s1)
 	- 위 3개를 snapshot을 통해 circular wait이 발생하는지 확인
 	- work : 현재 남아 있는 resource의 양 + 작업이 가능한(request가 없는) thread의 resource 양을 통해 circular wait이 발생하는지 판단.
 	- finish : Thread가 끝날 수 있는 경우
-	- 
+
+##### Snapshot을 통해 circular wait 감지(Detection Algorithm)
+1. 
