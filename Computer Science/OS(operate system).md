@@ -321,6 +321,12 @@ t2.wait(s1)
 - 잘 사용 x
 
 #### Deadlock Detection & Recovery : Deadlock 감지 & 회복
+- circular wait을 찾고, recovery하여 deadlock 해결
 - 모든 thread/process들이 사용중인 resource에 대한 snapshot이 필요함.
 - 해당 snapshot을 통해 deadlock을 감지하고, 회복작업을 함.
 - 매번 snapshot을 찍을 경우 runtime이 길어져, 일정 시간마다 찍음.
+- Snapshot
+	- Available(m) : 각 resource type마다 가질 수 있는 Instance의 수
+	- Allocation(n) : 각 thread마다 할당된 Resource instance
+	- Request : 각 thread가 작업을 위해 추가적으로 할당되어야 할 Instance의 수 
+	- 위 3개를 snapshot을 
