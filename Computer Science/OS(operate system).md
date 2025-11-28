@@ -341,4 +341,11 @@ t2.wait(s1)
 3. work += Allocation[i] && finish = True : 현재 System에 남은 Resource의 양에 작업이 끝난 Thread에 할당되었었던 Resource를 더해주고, 종료. *(이후 다시 2번으로 돌아가기를 모든 thread가 끝날때까지 반복)*
 4. 만약 T[i] ~ T[j]가 2~3번의 반복으로도 해결되지 않는 경우 -> Hold and wait, circular wait이 발생 -> Deadlock
 
-##### Recovery 
+##### Recovery : thread를 종료시켜 Resource를 가져와 Deadlock 해결
+1. thread의 priority 판단
+2. 현재 thread가 얼마나 실행되었는가 && 종료까지 얼마나 남았는가
+3. 사용된 Resource 확인
+4. 실행 완료까지 필요한 Resource확인
+5. 실행 완료를 위해 얼마나 많은 thread가 종료되어야 하는가
+6. thread가 상호작용을 하는가
+등을 통해 Thread를 죽이는 기준을 판별
