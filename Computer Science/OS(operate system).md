@@ -316,6 +316,11 @@ t2.wait(s1)
 - No Preemptive : 필요한 경우, 바로 할당하지 않고 시간을 
 - Circular Wait
 
-#### Deadlock Avoidance : 
+#### Deadlock Avoidance : Deadlock이 발생할 수 있을 경우 회피
+- Resource Allocation graph를 통해 사전에 deadlock 감지
+- 잘 사용 x
 
-#### Deadlock Detection & Recovery : 
+#### Deadlock Detection & Recovery : Deadlock 감지 & 회복
+- 모든 thread/process들이 사용중인 resource에 대한 snapshot이 필요함.
+- 해당 snapshot을 통해 deadlock을 감지하고, 회복작업을 함.
+- 매번 snapshot을 찍을 경우 runtime이 길어져, 일정 시간마다 찍음.
