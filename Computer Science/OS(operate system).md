@@ -349,3 +349,7 @@ t2.wait(s1)
 5. 실행 완료를 위해 얼마나 많은 thread가 종료되어야 하는가
 6. thread가 상호작용을 하는가
 등을 통해 Thread를 죽이는 기준을 판별
+
+
+# Main Memory
+
