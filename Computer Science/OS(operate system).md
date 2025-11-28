@@ -336,4 +336,7 @@ t2.wait(s1)
 ##### Snapshot을 통해 circular wait 감지(Detection Algorithm)
 - Resource Allocation Graph를 통해 thread가 release(finish == true)가 되는지 확인
 
-1. 
+1. 모든 thread를 순회하면서 Allocation 확인 : Allocation == 0 -> finish = true, else opposite
+2. Find finish == false && Request[i] <= work : 작업을 끝내기 위해 필요한 resource의 양이 현재 System에 남은 resource양보다 작아 실행이 끝낼 수 있는 T[i] 찾기.
+3. work += Allocation[i] && finish = True : 현재 System에 남은 Resource의 양에 작업이 끝난 Thread에 할당되었었던 Resource를 더해주고, 종료. *(이후 다시 2번으로 돌아가기를 모든 thread가 끝날때까지 반복)*
+4. 만약 
