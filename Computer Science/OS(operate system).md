@@ -308,99 +308,52 @@ t2.wait(s1)
 
 ->Resource-Allocation Graph를 통해 어떤 Thread가 Resource에 접근하려는지, Resource는 몇 개의 thread에 동시 접근이 허용되고, 어떤 Thread에 자원이 할당되어 있는지 한 눈에 알려주는 그래프
 
-#### Deadlock Prevention
+---
+## Deadlock 해결방안
+#### Deadlock Prevention : 사전에 4개의 condition중 하나를 block
 - Mutual Exclusion
 - Hold and Wait : 다른 resource를 요청할때, 아무 resource도 들지 않음.
 - No Preemptive : 필요한 경우, 바로 할당하지 않고 시간을 
 - Circular Wait
 
-# 📚 OS 핵심 개념 정리 (시험 대비 요약)
+#### Deadlock Avoidance : Deadlock이 발생할 수 있을 경우 회피
+- Resource Allocation graph를 통해 사전에 deadlock 감지
+- 잘 사용 x
 
-## 1. 프로세스 및 스레드 (Process & Thread)
+#### Deadlock Detection & Recovery : Deadlock 감지 & 회복
+- circular wait을 찾고, recovery하여 deadlock 해결
+- 모든 thread/process들이 사용중인 resource에 대한 snapshot이 필요함.
+- 해당 snapshot을 통해 deadlock을 감지하고, 회복작업을 함.
+- 매번 snapshot을 찍을 경우 runtime이 길어져, 일정 시간마다 찍음.
+- Snapshot
+	- Available(m) : 각 resource type마다 가질 수 있는 Instance의 수
+	- Allocation(n) : 각 thread마다 할당된 Resource instance
+	- Request : 각 thread가 작업을 위해 추가적으로 할당되어야 할 Instance의 수 
+	- 위 3개를 snapshot을 통해 circular wait이 발생하는지 확인
+	- work : 현재 남아 있는 resource의 양 + 작업이 가능한(request가 없는) thread의 resource 양을 통해 circular wait이 발생하는지 판단.
+	- finish : Thread가 끝날 수 있는 경우
 
-### 1.1 Context Switching (CS)
+##### Snapshot을 통해 circular wait 감지(Detection Algorithm)
+- Resource Allocation Graph를 통해 thread가 release(finish == true)가 되는지 확인
 
-|**구분**|**내용**|**핵심 포인트**|
-|---|---|---|
-|**정의**|CPU 제어권을 잃을 때 현재 Context를 **PCB**에 저장하고, 다음 프로세스의 Context를 CPU에 로드하는 작업.|CS 비용에 가장 직접적 영향: **CPU Register Set**와 **Memory Management Information** (Page Table 등).|
-|**CS 2단계**|Process가 Waiting 상태로 전이될 때의 2단계: 1. **현재 CPU Context를 PCB에 저장** → 2. **PCB 내 Process State를 Waiting으로 변경**.||
+1. 모든 thread를 순회하면서 Allocation 확인 : Allocation == 0 -> finish = true, else opposite
+2. Find finish == false && Request[i] <= work : 작업을 끝내기 위해 필요한 resource의 양이 현재 System에 남은 resource양보다 작아 실행이 끝낼 수 있는 T[i] 찾기.
+3. work += Allocation[i] && finish = True : 현재 System에 남은 Resource의 양에 작업이 끝난 Thread에 할당되었었던 Resource를 더해주고, 종료. *(이후 다시 2번으로 돌아가기를 모든 thread가 끝날때까지 반복)*
+4. 만약 T[i] ~ T[j]가 2~3번의 반복으로도 해결되지 않는 경우 -> Hold and wait, circular wait이 발생 -> Deadlock
 
-### 1.2 ULT vs KLT 비용
+##### Recovery : thread를 종료시켜 Resource를 가져와 Deadlock 해결
+1. thread의 priority 판단
+2. 현재 thread가 얼마나 실행되었는가 && 종료까지 얼마나 남았는가
+3. 사용된 Resource 확인
+4. 실행 완료까지 필요한 Resource확인
+5. 실행 완료를 위해 얼마나 많은 thread가 종료되어야 하는가
+6. thread가 상호작용을 하는가
+등을 통해 Thread를 죽이는 기준을 판별
 
-|**구분**|**Context Switching 주체**|**비용 차이 이유**|
-|---|---|---|
-|**ULT** (User Level Thread)|**User Level** 자체 처리 (OS 무개입)|**저렴**: Kernel Mode 전환 **(System Call)**이 없어 오버헤드가 적음.|
-|**KLT** (Kernel Level Thread)|**Kernel Level** (OS 개입 필수)|**비쌈**: Kernel의 스케줄러 개입과 **User Mode ↔ Kernel Mode 전환**으로 오버헤드 발생.|
-|**ULT CS 자료**|**PCB 사용 안 함**. User Level에서 TCB 또는 사용자 정의 자료구조 사용.||
 
-## 2. CPU 스케줄링 (CPU Scheduling)
+# Main Memory
 
-### 2.1 역할 분담 및 지표
+- Process가 필요한 Memory를 할당할 때, 연속적인 Memory를 할당할 수 있고, 비연속적인 Memory를 할당할 수 있다.
+	- 연속적인 Memory를 할당한 경우 : 만약 Process가 종료되어서 할당이 해제되어 빈공간이 된 중간의 메모리가 존재할 경우, 해당 메모리보다 더 큰 메모리를 요구하는 Process에 할당해야 하는 경우 해당 메모리를 할당 불가 -> 메모리의 빈 공간이 늘어남
+	- 비연속적인 Memory를 할당한 경우 : 전체적인 메모리 효율성은 증가하지만 추가적인 알고리즘을 통해 메모리를 할당하는 방식을 구현해야 함 -> Paging 기법
 
-|**요소**|**역할**|**평가 척도**|
-|---|---|---|
-|**Scheduler**|**결정 (정책)**: 다음에 실행할 프로세스 선택 (SJF, RR 등 알고리즘).|**Response Time**: 프로세스 생성 후 **첫 실행**까지의 시간 (사용자 체감 반응성).|
-|**Dispatcher**|**실행 (메커니즘)**: 선택된 프로세스를 CPU에 로드하고 실행 상태로 전환 (Context Switching 수행).|**Throughput**: 단위 시간당 완료된 프로세스의 개수 (시스템 효율성).|
-
-### 2.2 SJF/SJT & Non-Preemptive
-
-|**알고리즘**|**특징**|**선점 조건 (SJT)**|
-|---|---|---|
-|**SJF** (비선점)|Non-Preemptive에서 가장 최적의 평균 대기 시간 보장.|-|
-|**SJT** (선점)|**새로 도착한 Process의 예측 Burst Time**이 **실행 중인 Process의 남은 Burst Time보다 짧을 때** 선점 발생.||
-|**Non-Preemptive**|**장점**: Timer Interrupt에 의한 Context Switching이 없어 **System Overhead**가 낮다.||
-|**Starvation 해결**|Priority Scheduling에서 **Aging** 기법 사용. SJT에 적용 시: 오래 대기한 프로세스의 **예측 CPU Burst를 감소**시켜 우선순위를 높이는 효과.||
-
----
-
-## 3. 동기화 (Synchronization)
-
-### 3.1 동기화 문제 유형
-
-|**문제**|**유형**|**해결 도구**|
-|---|---|---|
-|**Race Condition** (경쟁 동기화)|공유 자원에 대한 동시 접근으로 데이터 불일치 발생.|**Mutex Lock** 또는 **Semaphore** (상호 배제).|
-|**Producer-Consumer** (협력 동기화)|특정 조건(버퍼 상태)을 만족할 때까지 대기하며 흐름을 조율.|**Condition Variable** (조건 대기/신호).|
-
-### 3.2 H/W 동기화와 Busy Waiting
-
-|**구분**|**내용**|**비효율성 (단일 코어)**|
-|---|---|---|
-|**H/W 명령어**|Test-and-Set, CAS 등은 **원자성**을 보장하지만, Lock 획득 실패 시 **Busy Waiting**을 유발한다.|**락을 가진 스레드**에게 **CPU를 반납하지 않고** 무의미하게 $\text{Spinning}$하여 Progress를 방해하고 CPU 낭비를 야기한다.|
-|**CAS 실패**|**Deadlock이 아닌 Starvation** 문제로 간주됨. **(이유)** Lock 획득 실패 스레드는 자원을 **점유(Hold)**하지 않은 채 대기하기 때문.||
-
-### 3.3 Mutex와 Condition Variable
-
-| **도구**                 | **주 역할**                         | **Deadlock 조건 연관성**                                 |
-| ---------------------- | -------------------------------- | --------------------------------------------------- |
-| **Mutex Lock**         | **상호 배제** (Mutual Exclusion) 보장. | 4가지 Deadlock 조건 중 **Mutual Exclusion**을 만족시킴.       |
-| **Condition Variable** | **조건 만족 시 협력적 대기 및 신호** 제공.      | Producer-Consumer 문제에서 **조건이 충족될 때까지 대기**하는 용도로 사용. |
-
----
-
-## 4. 교착 상태 (Deadlock)
-
-### 4.1 Deadlock 4가지 필수 조건
-
-1. **Mutual Exclusion** (상호 배제)
-    
-2. **Hold and Wait** (**점유와 대기**)
-    
-3. **No Preemption** (비선점)
-    
-4. **Circular Wait** (순환 대기)
-    
-
-### 4.2 Deadlock Prevention (Hold and Wait 부정)
-
-|**방법**|**내용**|
-|---|---|
-|**1. 일괄 요청**|Process 시작 전 필요한 모든 자원을 **한 번에** 요청하고 획득.|
-|**2. 자원 반납**|새로운 자원 요청 시, 이미 점유하고 있는 자원을 모두 **반납**한 후 요청.|
-|**공통 문제점**|**자원 낭비** (Resource Utilization 저하) 및 **Starvation** 심화.|
-
-### 4.3 Amdahl's Law
-
-|**개념**|**공식**|**핵심 병목 지점**|
-|---|---|---|
-|**Amdahl's Law**|병렬 처리 시 얻을 수 있는 최대 성능 향상(Speedup)의 한계를 정의.|프로그램 내에서 **직렬(순차) 처리**되어야 하는 로직의 비율. (이는 **병렬성(Parallelism)**의 한계와 직결됨)|
