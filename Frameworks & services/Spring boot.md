@@ -308,7 +308,7 @@ sprinb boot는 의존성 주입이 장점이라고 앞서 설명했었다. 의�
 이외의 다른 파일들은 전부 maven compiler, guide, maven CLI등의 파일이기에, 나중에 무엇인지 확인하고 싶을 때, 한 번씩 보는 것을 추천한다.
 
 
-# 3. 어노테이션
+# 3. Annotation
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
 
@@ -377,6 +377,12 @@ public class EX01 {
 3. Component scan 로직 포함
 
 위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있다.
+
+## REST API
+
+#### @RestController
+
+
 #### @Configuration
 
 Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
@@ -437,11 +443,6 @@ public class Car{
 #### @Bean
 
 앞서 IoC container에 저장된 객체를 스프링에서는 Bean이라고 설명하였다. @Bean 또한 해당 클래스를 IoC container에 객체로 등록하는 기능을 수행한다.
-#### @RestController
-
-RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션으로, 다음 두 가지의 어노테이션의 기능을 합쳐놓은 것이다.
-- @Controller
-- @ResponseBody 
 #### @Controller
 
 어노테이션이 붙은 클래스가 HTTP Method(GET, POST, PUT/PATCH, DELETE), 즉 클라이언트의 요청을 처리하는 스프링에게 알려주고, 클래스를 bean 객체로 등록하여 IoC container에 저장하게 된다.
