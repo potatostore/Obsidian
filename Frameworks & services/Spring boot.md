@@ -455,7 +455,7 @@ Iterable<Coffee> getCoffees(){
 ##### @PathVariable
 만약 특정 커피에 대해 HTTP Method를 실행하고 싶으면 PathVariable annotation을 사용하면 된다.
 ```java
-@GetMappint("/coffee/{id}")
+@GetMappint("/coffees/{id}")
 Optional<Coffee> getCoffeeById(@PathVariable String id){
 	for(Coffee c : coffees){
 		if(c.getId().equals(id)){
@@ -467,13 +467,52 @@ Optional<Coffee> getCoffeeById(@PathVariable String id){
 
 URL내 URI형태의 변수가 입력되면 @PathVariable을 통해 해당 URI를 인식하고, 이를 id 매개변수로 넘겨주게 된다. 이후 id를 List에서 확인하여 일치하는 Option을 넘겨주게 된다.
 #### @PostMapping(HTTP Method : Post)
-post method annotation 
+post method annotation으로 리소스, 객체를 생성하는 기능을 수행하게 된다. 이때 객체를 JSON파일 형식으로 받아와 해당 객체로 만들고, 매개변수로 넘겨주어야 한다. 이를 수행해주는 어노테이션이 바로 @RequestBody이다.
+
+##### @RequestBody
+언마샬링을 하는 어노테이션으로 JSON 파일 형식의 리소스를 객체화하여 매개변수로 넘겨준다.
+
+```java
+@PostMapping("/coffees")
+Coffee postCoffee(@RequestBody Coffee coffee){
+	coffees.add(coffee);
+	return coffee;
+}
+```
 
 #### @PutMapping(HTTP Method : Put)
+알다시피 Put과 Patch의 가장 큰 차이점은 일부 업데이트인가 전체 업데이트인가 이다.
+```java
+@PutMapping("/coffees/{id}")
+Coffee putCoffee(@PathVariable String id, @RequestBody Coffee coffee){
+	int coffeeIndex = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getId().equals(id)){
+			coffeeIndex = coffees.indexof(c);
+			coffees.set(coffeeIndex, coffee);
+		}
+	}
+	
+	return (coffeeIndex == -1) ? postCoffee(coffee) : coffee;
+}
+```
 
+1. @PathVariable을 통해 업데이트 작업을 할 id를 찾기
+2. @RequestBody를 통해 업데이트할 내용을 받아
+3. id에 해당하는 내용을 update! (없으면 Post)
 #### @PatchMapping(HTTP Method : Patch)
 
 #### @DeleteMapping(HTTP Method : Delete)
+Delete Method 또한 작동방식을 떠올리기만 하면 구현하는 것은 쉽다.
+```java
+@DeleteMapping("coffees/{id}")
+void deleteCoffee(@PathVariable String id){
+	coffees.removeIf(c -> c.getID().equals(id));
+}
+```
+
+Collection의 removeIf와 람다를 통해 깔끔한 구현이 가능하다.
 
 ---
 
