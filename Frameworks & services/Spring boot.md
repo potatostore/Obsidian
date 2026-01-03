@@ -368,7 +368,6 @@ public class EX01 {
 
 이처럼 spring boot에는 DI를 위한 다양한 어노테이션 뿐만 아니라, http method(GET, POST, PET/PATCH, DELETE)를 지원, Bean생성 등 다양한 작업을 위해 어노테이션이 붙을 수 있다.
 #### @SpringbootApplication
-
 무조건 main method가 포함된 class 앞에 붙여줘야 한다.
 
 그 이유는 다음과 같다.
@@ -377,7 +376,21 @@ public class EX01 {
 3. Component scan 로직 포함
 
 위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있다.
+#### @Configuration
+Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
+#### @EnableAutoCOnfiguration
+위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
 
+#### @ComponentScan
+앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
+
+component scan의 가장 중요한 점은 위 SpringbootApplication annotation이 붙은 main method와 동일 패키지에 존재해야만 해당 IoC container에 종속될 수 있다.
+
+즉, A,B 두 패키지가 존재하고, 각각 @SpringbootApplication을 통해 IoC container을 할당한 상태에서 B 패키지의 @Bean을 통해 생성된 객체를 A의 IoC container에 속하게 하는 방법은 없다.
+
+따라서 Bean객체를 생성했는데, 해당 객체가 IoC container에 존재하지 않다면, Component Scan이 정상적으로 실행된건지, Bean객체가 다른 IoC container에 존재하지 않는지 확인을 통해 오류를 해결할 수 있다. 
+
+---
 ## REST API
 
 #### @RestController
@@ -390,26 +403,18 @@ public class EX01 {
 
 이때 위 M, V, C를 각각 만들고 연결을 도와주는 어노테이션이 바로 *@Controller*이다.
 ##### @Controller
+기존 MVC pattern처럼 Model을 controller을 통해 받고, spring에 존재하는 ViewResolver와 함께 작동하여 앱이 뷰 기술에 의해 렌더링도니 특정 뷰를 표시(html형식으로 model을 변환하여 시각화)
+
+##### @ResponseBody
+class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도록 @Controller 클래스에 지시 <span style="color:rgb(146, 208, 80)">(Controller 어노테이션 클래스과 같은 응답을 하는 방식에서 사용을 하지만, 이때 json, xml과 같은 파일 형식으로 보내는 방식이 필요한 클래스는 Controller어노테이션이 붙은 클래스가 99%이고, 예외처리 응답 클래스에서도 아주 드물게 사용된다.)</span>
+
+위 두 개의 어노테이션을 합쳐 현대의 MVC spring(REST API에 맞춰 설계된 클래스)에 맞춰지게 만드는 어노테이션이 바로 *@RestController*이다.
 
 
-#### @Configuration
 
-Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
-#### @EnableAutoCOnfiguration
 
-위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
 
-#### @ComponentScan
-
-앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
-
-component scan의 가장 중요한 점은 위 SpringbootApplication annotation이 붙은 main method와 동일 패키지에 존재해야만 해당 IoC container에 종속될 수 있다.
-
-즉, A,B 두 패키지가 존재하고, 각각 @SpringbootApplication을 통해 IoC container을 할당한 상태에서 B 패키지의 @Bean을 통해 생성된 객체를 A의 IoC container에 속하게 하는 방법은 없다.
-
-따라서 Bean객체를 생성했는데, 해당 객체가 IoC container에 존재하지 않다면, Component Scan이 정상적으로 실행된건지, Bean객체가 다른 IoC container에 존재하지 않는지 확인을 통해 오류를 해결할 수 있다.  
 #### @Component
-
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
 ```java
