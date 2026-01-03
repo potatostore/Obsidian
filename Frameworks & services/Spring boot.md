@@ -412,6 +412,23 @@ class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도�
 
 #### @RequestMapping(GET)
 
+당신이 Get method를 Controller을 통해 DB에서 가져와 하나의 Model을 만들고 있을 때, 해당 Model을 저장하는 객체가 존재할 것이다. 이때 보통 DB에서 데이터를 긁어오면 Iterable, List형태의 결과값을 받게 되는데, 이는 곧 Model을 저장할 때, 최상위 레벨 타입의 선택을 권장하게 된다(List, Iterable등). 
+
+```java
+@RestController
+class apidemo{
+	private List<Coffes> coffes = new ArrayList<coffee>;
+	
+	public apidemo(){
+		coffees.addAll(List.of(
+						new Coffee("starbucks"),
+						new Coffee("mega coffee"),
+						new Coffee(")
+		))
+	}
+}
+```
+
 
 
 #### @Component
