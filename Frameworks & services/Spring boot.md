@@ -393,8 +393,7 @@ component scan의 가장 중요한 점은 위 SpringbootApplication annotation�
 ---
 ## REST API
 
-#### @RestController(GET)
-
+#### @RestController
 우선 기존 서버가 데이터를 가져와 화면에 출력하는 과정을 이해하여야 한다. 
 
 *MVC pattern*은 Model, View, Controller을 뜻하며, 순수 데이터(객체)를 뜻하는 Model, 해당 데이터를 시각적인 요소로 보여주는 View, 데이터를 입력받거나 DB에서 가져와 Model로 만들어주는 Controller의 삼요소를 통해 서버를 구성하는 대표적인 디자인 패턴이다.
@@ -410,8 +409,7 @@ class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도�
 
 위 두 개의 어노테이션을 합쳐 현대의 MVC spring(REST API에 맞춰 설계된 클래스)에 맞춰지게 만드는 어노테이션이 바로 *@RestController*이다.
 
-#### @RequestMapping(GET)
-
+#### @RequestMapping
 당신이 Get method를 Controller을 통해 DB에서 가져와 하나의 Model을 만들고 있을 때, 해당 Model을 저장하는 객체가 존재할 것이다. 이때 보통 DB에서 데이터를 긁어오면 Iterable, List형태의 결과값을 받게 되는데, 이는 곧 Model을 저장할 때, 최상위 레벨 타입의 선택을 권장하게 된다(List, Iterable등). 
 
 ```java
@@ -435,6 +433,24 @@ class apidemo{
 ```
 
 RequestMapping을 통해 Model을 응답해줄때 API URL, HTTP Method type을 매개변수로 넣어준다.
+
+스프링부트를 처음 생성할때, 어떤 스프링의 의존성을 추가할 것인지 선택하는 부분이 있는데, 이때 spring web의존성을 추가하게 될 경우 spring web에 존재하는 *Jackson*이라는 라이브러리를 사용할 수 있다. 이는 Model을 JSON파일 형식으로, 혹은 반대로 변환해주는 라이브러리다.
+
+*Jackson*을 통해 객체를 JSON, XML파일 형식으로 바꿔주는 작업을 *마샬링*이라고 하고, 반대 작업을 *언마샬링*이라고 한다.
+
+<span style="color:rgb(146, 208, 80)">즉 Spring boot는 Jackson을 통해 MVC pattern에서 Model을 View로 전환하는 작업을 실행한다.</span>
+
+#### GetMapping(HTTP method : Get)
+@RestController을 통해 class를 REST API에 맞춰 작성할 때, 기본적으로 HTTP method를 구현하는 것이 매우 중요하다. 위 @RequestMapping을 통해 응답을 요구하는 URL을 Mapping하여 HTTP method에 맞춰 응답해주는 방식도 존재하지만, 이는 HTTP method, 총 5가지의 requestmapping이 필요하며, 보일러플레이트 코드를 증가하게 만들고, 가독성이 떨어지는 결과로 이어질 것이다. 따라서 직관적으로 Get 기능을 넣는 어노테이션이 바로 GetMapping이다.
+
+```java
+@GetMapping("/coffees")
+Iterable<Coffee> getCoffees(){
+	return coffees;
+}
+```
+
+앞선 RequestMapping은 URL, HTTP Method type의 매개변수를 요구하지만, 위 GetMapping은 두 번째 매개변수를 고정하므로, URL만 확인하면 된다. 또한 매개변수간 충돌 가능성이 존재하지 않아, 등호(=)를 통한 값 지정 방식도 불필요해진다.
 
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
