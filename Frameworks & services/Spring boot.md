@@ -393,7 +393,7 @@ component scan의 가장 중요한 점은 위 SpringbootApplication annotation�
 ---
 ## REST API
 
-#### @RestController
+#### @RestController(GET)
 
 우선 기존 서버가 데이터를 가져와 화면에 출력하는 과정을 이해하여야 한다. 
 
@@ -410,7 +410,7 @@ class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도�
 
 위 두 개의 어노테이션을 합쳐 현대의 MVC spring(REST API에 맞춰 설계된 클래스)에 맞춰지게 만드는 어노테이션이 바로 *@RestController*이다.
 
-
+#### @RequestMapping(GET)
 
 
 
