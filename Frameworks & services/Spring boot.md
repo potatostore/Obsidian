@@ -384,7 +384,7 @@ public class EX01 {
 
 우선 기존 서버가 데이터를 가져와 화면에 출력하는 과정을 이해하여야 한다. 
 
-*MVC pattern*은 Model, View, Controller을 뜻하며, 순수 데이터를 뜻하는 Model, 해당 데이터를 시각적인 요소로 보여주는 View, 데이터를 입력받거나 DB에서 가져와 Model로 만들어주는 Controller의 삼요소를 통해 서버를 구성하는 대표적인 디자인 패턴이다.
+*MVC pattern*은 Model, View, Controller을 뜻하며, 순수 데이터(객체)를 뜻하는 Model, 해당 데이터를 시각적인 요소로 보여주는 View, 데이터를 입력받거나 DB에서 가져와 Model로 만들어주는 Controller의 삼요소를 통해 서버를 구성하는 대표적인 디자인 패턴이다.
 
 <span style="color:rgb(146, 208, 80)">기존 서버 같은 경우 위 삼요소를 모두 서버에서 처리하였다. 하지만 현재 REST API를 사용하는 서버는 MC / V로 View를 React같은 웹에서 알아서 디자인하도록 설계하고, MC의 통제에 집중하게 되었다.</span>
 
