@@ -440,7 +440,7 @@ RequestMapping을 통해 Model을 응답해줄때 API URL, HTTP Method type을 �
 
 <span style="color:rgb(146, 208, 80)">즉 Spring boot는 Jackson을 통해 MVC pattern에서 Model을 View로 전환하는 작업을 실행한다.</span>
 
-#### GetMapping(HTTP method : Get)
+#### @GetMapping(HTTP method : Get)
 @RestController을 통해 class를 REST API에 맞춰 작성할 때, 기본적으로 HTTP method를 구현하는 것이 매우 중요하다. 위 @RequestMapping을 통해 응답을 요구하는 URL을 Mapping하여 HTTP method에 맞춰 응답해주는 방식도 존재하지만, 이는 HTTP method, 총 5가지의 requestmapping이 필요하며, 보일러플레이트 코드를 증가하게 만들고, 가독성이 떨어지는 결과로 이어질 것이다. 따라서 직관적으로 Get 기능을 넣는 어노테이션이 바로 GetMapping이다.
 
 ```java
@@ -451,6 +451,31 @@ Iterable<Coffee> getCoffees(){
 ```
 
 앞선 RequestMapping은 URL, HTTP Method type의 매개변수를 요구하지만, 위 GetMapping은 두 번째 매개변수를 고정하므로, URL만 확인하면 된다. 또한 매개변수간 충돌 가능성이 존재하지 않아, 등호(=)를 통한 값 지정 방식도 불필요해진다.
+
+##### @PathVariable
+만약 특정 커피에 대해 HTTP Method를 실행하고 싶으면 PathVariable annotation을 사용하면 된다.
+```java
+@GetMappint("/coffee/{id}")
+Optional<Coffee> getCoffeeById(@PathVariable String id){
+	for(Coffee c : coffees){
+		if(c.getId().equals(id)){
+			return Optional.of(c);
+		}
+	}
+}
+```
+
+URL내 URI형태의 변수가 입력되면 @PathVariable을 통해 해당 URI를 인식하고, 이를 id 매개변수로 넘겨주게 된다. 이후 id를 List에서 확인하여 일치하는 Option을 넘겨주게 된다.
+#### @PostMapping(HTTP Method : Post)
+post method annotation 
+
+#### @PutMapping(HTTP Method : Put)
+
+#### @PatchMapping(HTTP Method : Patch)
+
+#### @DeleteMapping(HTTP Method : Delete)
+
+---
 
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
