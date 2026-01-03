@@ -417,19 +417,24 @@ class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도�
 ```java
 @RestController
 class apidemo{
-	private List<Coffes> coffes = new ArrayList<coffee>;
+	private List<Coffes> coffees = new ArrayList<coffee>;
 	
 	public apidemo(){
 		coffees.addAll(List.of(
 						new Coffee("starbucks"),
 						new Coffee("mega coffee"),
-						new Coffee(")
+						new Coffee("compose coffee")
 		))
+	}
+	
+	@RequestMapping(value = "/coffees", method = RequestMethod.GET)
+	Iterable<Coffee> getCoffees(){
+		return coffees;
 	}
 }
 ```
 
-
+RequestMapping을 통해 Model을 응답해줄때 API URL, HTTP Method type을 매개변수로 넣어준다.
 
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
