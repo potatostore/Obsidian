@@ -502,7 +502,28 @@ Coffee putCoffee(@PathVariable String id, @RequestBody Coffee coffee){
 2. @RequestBody를 통해 업데이트할 내용을 받아
 3. id에 해당하는 내용을 update! (없으면 Post)
 #### @PatchMapping(HTTP Method : Patch)
-
+PatchMapping은 PUT과 달리 받은 데이터 일부를 수정하게 된다. 이때 @RequestBody로 받은 업데이트 될 매개변수의 수정될 부분이 아닌 경우 NULL값이 들어 있어, 위 PUT과 같은 방식으로 교체작업이 이뤄지면 안된다. 
+```java
+@PatchMapping("/coffees/{id}")
+Coffee patchCoffee(@PathVariable String id, @RequestBody Coffee coffee){
+	int patchIdx = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getID().equals(id)){
+			if(coffee.getID() != null){
+				coffees[patchIdx].setID(coffee.getID());
+			}
+			if(coffee.getName() != null){
+				coffees[patchIdx].setName(coffee.getName());
+			}
+			...
+		}
+	}
+	
+	return (patchIdx == -1) ? postCoffee(coffee) : coffee;
+}
+```
+coffee class내 모든 필드변수와 대조해가며 null값이 존재하는지 확인하는 작업을 통해 일부 교체만 이뤄져야 한다.
 #### @DeleteMapping(HTTP Method : Delete)
 Delete Method 또한 작동방식을 떠올리기만 하면 구현하는 것은 쉽다.
 ```java
