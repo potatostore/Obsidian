@@ -526,9 +526,17 @@ class apidomo{
 	@GetMapping("/{id}")
 	...
 	
-	@PostMapping(")
+	@PostMapping
+	...
+	
+	@PutMapping("/{id}")
+	...
+	
+	@DeleteMapping("/{id}")
+	...
 }
 ```
+class 맨 앞에 @RequestMapping을 넣음으로서 자동으로 HTTP method mapping에 URI를 반복적으로 넣는 작업을 제거해줄 수 있다.
 
 ---
 
