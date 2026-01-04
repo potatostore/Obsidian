@@ -515,7 +515,7 @@ void deleteCoffee(@PathVariable String id){
 Collection의 removeIf와 람다를 통해 깔끔한 구현이 가능하다.
 
 #### HTTP Method Mapping 최적화하기
-앞선 5가지의 method들 전부 "/coffees" 매핑 URI를 통해 쿼리를 보내오는 것을 확인할 수 있다. 이는 coffees라는 URI를 공통으로 묶는 것이 중요한데 이를 위해 다음과 같이 사용할 수 있다.
+1. 앞선 5가지의 method들 전부 "/coffees" 매핑 URI를 통해 쿼리를 보내오는 것을 확인할 수 있다. 이는 coffees라는 URI를 공통으로 묶는 것이 중요한데 이를 위해 다음과 같이 사용할 수 있다.
 ```java
 @RestController
 @RequestMapping("/coffees/")
@@ -537,6 +537,27 @@ class apidomo{
 }
 ```
 class 맨 앞에 @RequestMapping을 넣음으로서 자동으로 HTTP method mapping에 URI를 반복적으로 넣는 작업을 제거해줄 수 있다.
+
+2. POST, DELETE는 상태 코드를 권장하고, PUT은 상태 코드를 필수적으로 반환해주어야 한다. HTTP Method가 정상적으로 작동하였는지 확인할 수 있는 코드를 상태 코드라고 하며, GET은 정상적으로 작동시 원하는 데이터를 가져올 수 있기에 상태 코드가 자동적으로 반환되지만, 다른 Method들은 상태 코드를 반환해 주는 것이 쿼리를 요청하는 쪽에서 식별하기 쉬워진다.
+```java
+@PutMapping
+ResponseEntity<Coffee> putCoffee(@PathVariable String id, 
+	@RequestBody Coffee coffee){
+	int coffeeIdx = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getID().equals(coffee)){
+			coffeeIdx = coffees.indexof(c);
+			coffees.set(coffeeIdx, coffee);
+		}
+	}	
+	
+	return (coffeeIdx == -1) ? 
+			new ResponseEntity<>(postCoffee(coffee), HttpStatus.CREATEd):
+			new ResponseEntity<>(coffee, HttpStatus.OK);
+}
+```
+위 예제 코드처럼 ResponseEntity에 HttpStatus라는 HTTP Method 상태 코드를 생성하여 보내주는 것이 일반적이다.
 
 ---
 
