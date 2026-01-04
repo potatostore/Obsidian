@@ -506,13 +506,29 @@ Coffee putCoffee(@PathVariable String id, @RequestBody Coffee coffee){
 #### @DeleteMapping(HTTP Method : Delete)
 Delete Method 또한 작동방식을 떠올리기만 하면 구현하는 것은 쉽다.
 ```java
-@DeleteMapping("coffees/{id}")
+@DeleteMapping("/coffees/{id}")
 void deleteCoffee(@PathVariable String id){
 	coffees.removeIf(c -> c.getID().equals(id));
 }
 ```
 
 Collection의 removeIf와 람다를 통해 깔끔한 구현이 가능하다.
+
+#### HTTP Method Mapping 최적화하기
+앞선 5가지의 method들 전부 "/coffees" 매핑 URI를 통해 쿼리를 보내오는 것을 확인할 수 있다. 이는 coffees라는 URI를 공통으로 묶는 것이 중요한데 이를 위해 다음과 같이 사용할 수 있다.
+```java
+@RestController
+@RequestMapping("/coffees/")
+class apidomo{
+	@GetMapping
+	...
+	
+	@GetMapping("/{id}")
+	...
+	
+	@PostMapping(")
+}
+```
 
 ---
 
