@@ -189,6 +189,15 @@ Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이
 
 예를 들어 쇼핑물 웹 같은 경우, 회사의 DB내부에 존재하는 제품에 대한 데이터들을 웹으로 나타내고, 이를 사용자와 상호작용을 통해 어떤 이벤트가 발생된다. 예를 들어 제품이미지를 클릭할 경우, 확대가 되거나, 상세페이지로 넘어가 제품에 대한 자세한 설명을 볼 수 있는 것처럼.
 
+이처럼 각 서비스별로 어플리케이션을 구현하고, 이들을 통합하여 하나의 인터페이스를 만드는 것을 마이크로서비스 어플리케이션이라고 한다.(반대 개념으로 모놀로식 어플리케이션이 존재한다.)
+
+각 서비스별로 어플리케이션을 구현할 경우 다음과 같은 이점을 얻을 수 있다.
+1. 어떤 서비스에 대해 트래픽이 발생했을 경우, 해당 서비스에 대한 조치만으로 원활한 서비스를 유지 가능
+2. 추후 기능 구현을 통해 어플리케이션 재배포가 발생했을 때, 해당 서비스 어플리케이션만 재배포
+3. 하나의 서비스를 통해 앱, 웹 등의 다양한 UI에서 공통된 기능을 사용
+
+특히 3번과 같은 이점을 활용하기 위해서는 해당 서비스에 필요한 리소스, 혹은 기능이 담긴 데이터 코드들이 원활하게 동작을 하여야 한다.
+
 결국 데이터를 가져오는 작업이 필요한데, 이를 우린 *통신*이라고 한다.
 
 또한 상호 간에 통신에 대한 특별한 규칙이 없을 경우, 데이터가 난잡해지거나, 통신이 원활하지 않는 등 다양한 문제가 발생될 수 있고, 처리도 곤란할 것이다.
@@ -199,7 +208,7 @@ Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이
 
 - API(App Programing Interface) : API는 APP을 구축할 때, 개발자가 세우는 가이드를 의미한다. 즉 APP을 어떻게 사용하고, 관리할 것인지 알려주는 것이 바로 API이다. 어떤 기능을 요청해서, 어떤 형식으로 만들어 보내야 하고, 어떤 형식의 응답을 받게 되는지 등을 상세하고 명확하게 설명한다.
 
-즉 REST API는 어플리케이션에 구축된 통신들이 어떤 규칙을 갖고 통신을 갖게 될 것인가에 대한 프로토콜이라고 볼 수 있다.
+<span style="color:rgb(146, 208, 80)">즉 REST API는 어플리케이션에 구축된 통신들이 어떤 규칙을 갖고 통신을 갖게 될 것인가에 대한 규칙이라고 볼 수 있다.</span>
 
 REST API의 핵심 개념은 다음과 같다.
 1. 자원 : 모든 데이터를 자원으로 취급한다. (자원은 고유한 URI로 식별)
@@ -223,6 +232,11 @@ REST API의 핵심 개념은 다음과 같다.
 클라이언트는 서버에 직접 연결되었는지, 중간 서버(로드 밸런서, 프록시 등)를 통해 연결되었는지 알 필요가 없다.
 
 위 개념들과 특징들을 잘 지켜진 API를 RESTful한 API다라고 표현을 한다.
+
+<span style="color:rgb(146, 208, 80)">특히 마이크로 서비스 어플리케이션에서 가장 중요한 개념은 무상태성이다.
+</span>
+
+상대방이 이전 상태를 저장하지 않는다는 의미는 "A가 B에게 어떤 자원을 요청할 때, 이전에 입력한 정보(상태)가 존재하지 않는다." 는 의미이다.
 
 ---
 #### URI / URL
@@ -294,7 +308,7 @@ sprinb boot는 의존성 주입이 장점이라고 앞서 설명했었다. 의�
 이외의 다른 파일들은 전부 maven compiler, guide, maven CLI등의 파일이기에, 나중에 무엇인지 확인하고 싶을 때, 한 번씩 보는 것을 추천한다.
 
 
-# 3. 어노테이션
+# 3. Annotation
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
 
@@ -354,7 +368,6 @@ public class EX01 {
 
 이처럼 spring boot에는 DI를 위한 다양한 어노테이션 뿐만 아니라, http method(GET, POST, PET/PATCH, DELETE)를 지원, Bean생성 등 다양한 작업을 위해 어노테이션이 붙을 수 있다.
 #### @SpringbootApplication
-
 무조건 main method가 포함된 class 앞에 붙여줘야 한다.
 
 그 이유는 다음과 같다.
@@ -364,23 +377,212 @@ public class EX01 {
 
 위 이유는 각각 @Configuration, @EnableAutoConfiguration, @ComponentScan과 관련되어 있다.
 #### @Configuration
-
 Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
 #### @EnableAutoCOnfiguration
-
 위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
 
 #### @ComponentScan
-
 앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
 
 component scan의 가장 중요한 점은 위 SpringbootApplication annotation이 붙은 main method와 동일 패키지에 존재해야만 해당 IoC container에 종속될 수 있다.
 
 즉, A,B 두 패키지가 존재하고, 각각 @SpringbootApplication을 통해 IoC container을 할당한 상태에서 B 패키지의 @Bean을 통해 생성된 객체를 A의 IoC container에 속하게 하는 방법은 없다.
 
-따라서 Bean객체를 생성했는데, 해당 객체가 IoC container에 존재하지 않다면, Component Scan이 정상적으로 실행된건지, Bean객체가 다른 IoC container에 존재하지 않는지 확인을 통해 오류를 해결할 수 있다.  
-#### @Component
+따라서 Bean객체를 생성했는데, 해당 객체가 IoC container에 존재하지 않다면, Component Scan이 정상적으로 실행된건지, Bean객체가 다른 IoC container에 존재하지 않는지 확인을 통해 오류를 해결할 수 있다. 
 
+---
+## REST API
+
+#### @RestController
+우선 기존 서버가 데이터를 가져와 화면에 출력하는 과정을 이해하여야 한다. 
+
+*MVC pattern*은 Model, View, Controller을 뜻하며, 순수 데이터(객체)를 뜻하는 Model, 해당 데이터를 시각적인 요소로 보여주는 View, 데이터를 입력받거나 DB에서 가져와 Model로 만들어주는 Controller의 삼요소를 통해 서버를 구성하는 대표적인 디자인 패턴이다.
+
+<span style="color:rgb(146, 208, 80)">기존 MVC pattern같은 경우 Controller -> Model -> View를 통해 객체들을 html에 담아 시각화 하였지만, MVC spring같은 경우 View에서 html대신 json형식으로 전송하게 된다. 추후 웹/앱(react)에서 json파일을 html형식으로 개발자가 원하는 디자인에 맞춰 시각화한다.</span>
+
+이때 위 M, V, C를 각각 만들고 연결을 도와주는 어노테이션이 바로 *@Controller*이다.
+##### @Controller
+기존 MVC pattern처럼 Model을 controller을 통해 받고, spring에 존재하는 ViewResolver와 함께 작동하여 앱이 뷰 기술에 의해 렌더링도니 특정 뷰를 표시(html형식으로 model을 변환하여 시각화)
+
+##### @ResponseBody
+class, method에 추가하여 json, xml과 같은 파일 형식으로 보내도록 @Controller 클래스에 지시 <span style="color:rgb(146, 208, 80)">(Controller 어노테이션 클래스과 같은 응답을 하는 방식에서 사용을 하지만, 이때 json, xml과 같은 파일 형식으로 보내는 방식이 필요한 클래스는 Controller어노테이션이 붙은 클래스가 99%이고, 예외처리 응답 클래스에서도 아주 드물게 사용된다.)</span>
+
+위 두 개의 어노테이션을 합쳐 현대의 MVC spring(REST API에 맞춰 설계된 클래스)에 맞춰지게 만드는 어노테이션이 바로 *@RestController*이다.
+
+#### @RequestMapping
+당신이 Get method를 Controller을 통해 DB에서 가져와 하나의 Model을 만들고 있을 때, 해당 Model을 저장하는 객체가 존재할 것이다. 이때 보통 DB에서 데이터를 긁어오면 Iterable, List형태의 결과값을 받게 되는데, 이는 곧 Model을 저장할 때, 최상위 레벨 타입의 선택을 권장하게 된다(List, Iterable등). 
+
+```java
+@RestController
+class apidemo{
+	private List<Coffes> coffees = new ArrayList<coffee>;
+	
+	public apidemo(){
+		coffees.addAll(List.of(
+						new Coffee("starbucks"),
+						new Coffee("mega coffee"),
+						new Coffee("compose coffee")
+		))
+	}
+	
+	@RequestMapping(value = "/coffees", method = RequestMethod.GET)
+	Iterable<Coffee> getCoffees(){
+		return coffees;
+	}
+}
+```
+
+RequestMapping을 통해 Model을 응답해줄때 API URL, HTTP Method type을 매개변수로 넣어준다.
+
+스프링부트를 처음 생성할때, 어떤 스프링의 의존성을 추가할 것인지 선택하는 부분이 있는데, 이때 spring web의존성을 추가하게 될 경우 spring web에 존재하는 *Jackson*이라는 라이브러리를 사용할 수 있다. 이는 Model을 JSON파일 형식으로, 혹은 반대로 변환해주는 라이브러리다.
+
+*Jackson*을 통해 객체를 JSON, XML파일 형식으로 바꿔주는 작업을 *마샬링*이라고 하고, 반대 작업을 *언마샬링*이라고 한다.
+
+<span style="color:rgb(146, 208, 80)">즉 Spring boot는 Jackson을 통해 MVC pattern에서 Model을 View로 전환하는 작업을 실행한다.</span>
+
+#### @GetMapping(HTTP method : Get)
+@RestController을 통해 class를 REST API에 맞춰 작성할 때, 기본적으로 HTTP method를 구현하는 것이 매우 중요하다. 위 @RequestMapping을 통해 응답을 요구하는 URL을 Mapping하여 HTTP method에 맞춰 응답해주는 방식도 존재하지만, 이는 HTTP method, 총 5가지의 requestmapping이 필요하며, 보일러플레이트 코드를 증가하게 만들고, 가독성이 떨어지는 결과로 이어질 것이다. 따라서 직관적으로 Get 기능을 넣는 어노테이션이 바로 GetMapping이다.
+
+```java
+@GetMapping("/coffees")
+Iterable<Coffee> getCoffees(){
+	return coffees;
+}
+```
+
+앞선 RequestMapping은 URL, HTTP Method type의 매개변수를 요구하지만, 위 GetMapping은 두 번째 매개변수를 고정하므로, URL만 확인하면 된다. 또한 매개변수간 충돌 가능성이 존재하지 않아, 등호(=)를 통한 값 지정 방식도 불필요해진다.
+
+##### @PathVariable
+만약 특정 커피에 대해 HTTP Method를 실행하고 싶으면 PathVariable annotation을 사용하면 된다.
+```java
+@GetMappint("/coffees/{id}")
+Optional<Coffee> getCoffeeById(@PathVariable String id){
+	for(Coffee c : coffees){
+		if(c.getId().equals(id)){
+			return Optional.of(c);
+		}
+	}
+}
+```
+
+URL내 URI형태의 변수가 입력되면 @PathVariable을 통해 해당 URI를 인식하고, 이를 id 매개변수로 넘겨주게 된다. 이후 id를 List에서 확인하여 일치하는 Option을 넘겨주게 된다.
+#### @PostMapping(HTTP Method : Post)
+post method annotation으로 리소스, 객체를 생성하는 기능을 수행하게 된다. 이때 객체를 JSON파일 형식으로 받아와 해당 객체로 만들고, 매개변수로 넘겨주어야 한다. 이를 수행해주는 어노테이션이 바로 @RequestBody이다.
+
+##### @RequestBody
+언마샬링을 하는 어노테이션으로 JSON 파일 형식의 리소스를 객체화하여 매개변수로 넘겨준다.
+
+```java
+@PostMapping("/coffees")
+Coffee postCoffee(@RequestBody Coffee coffee){
+	coffees.add(coffee);
+	return coffee;
+}
+```
+
+#### @PutMapping(HTTP Method : Put)
+알다시피 Put과 Patch의 가장 큰 차이점은 일부 업데이트인가 전체 업데이트인가 이다.
+```java
+@PutMapping("/coffees/{id}")
+Coffee putCoffee(@PathVariable String id, @RequestBody Coffee coffee){
+	int coffeeIndex = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getId().equals(id)){
+			coffeeIndex = coffees.indexof(c);
+			coffees.set(coffeeIndex, coffee);
+		}
+	}
+	
+	return (coffeeIndex == -1) ? postCoffee(coffee) : coffee;
+}
+```
+
+1. @PathVariable을 통해 업데이트 작업을 할 id를 찾기
+2. @RequestBody를 통해 업데이트할 내용을 받아
+3. id에 해당하는 내용을 update! (없으면 Post)
+#### @PatchMapping(HTTP Method : Patch)
+PatchMapping은 PUT과 달리 받은 데이터 일부를 수정하게 된다. 이때 @RequestBody로 받은 업데이트 될 매개변수의 수정될 부분이 아닌 경우 NULL값이 들어 있어, 위 PUT과 같은 방식으로 교체작업이 이뤄지면 안된다. 
+```java
+@PatchMapping("/coffees/{id}")
+Coffee patchCoffee(@PathVariable String id, @RequestBody Coffee coffee){
+	int patchIdx = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getID().equals(id)){
+			if(coffee.getID() != null){
+				coffees[patchIdx].setID(coffee.getID());
+			}
+			if(coffee.getName() != null){
+				coffees[patchIdx].setName(coffee.getName());
+			}
+			...
+		}
+	}
+	
+	return (patchIdx == -1) ? postCoffee(coffee) : coffee;
+}
+```
+coffee class내 모든 필드변수와 대조해가며 null값이 존재하는지 확인하는 작업을 통해 일부 교체만 이뤄져야 한다.
+#### @DeleteMapping(HTTP Method : Delete)
+Delete Method 또한 작동방식을 떠올리기만 하면 구현하는 것은 쉽다.
+```java
+@DeleteMapping("/coffees/{id}")
+void deleteCoffee(@PathVariable String id){
+	coffees.removeIf(c -> c.getID().equals(id));
+}
+```
+
+Collection의 removeIf와 람다를 통해 깔끔한 구현이 가능하다.
+
+#### HTTP Method Mapping 최적화하기
+1. 앞선 5가지의 method들 전부 "/coffees" 매핑 URI를 통해 쿼리를 보내오는 것을 확인할 수 있다. 이는 coffees라는 URI를 공통으로 묶는 것이 중요한데 이를 위해 다음과 같이 사용할 수 있다.
+```java
+@RestController
+@RequestMapping("/coffees/")
+class apidomo{
+	@GetMapping
+	...
+	
+	@GetMapping("/{id}")
+	...
+	
+	@PostMapping
+	...
+	
+	@PutMapping("/{id}")
+	...
+	
+	@DeleteMapping("/{id}")
+	...
+}
+```
+class 맨 앞에 @RequestMapping을 넣음으로서 자동으로 HTTP method mapping에 URI를 반복적으로 넣는 작업을 제거해줄 수 있다.
+
+2. POST, DELETE는 상태 코드를 권장하고, PUT은 상태 코드를 필수적으로 반환해주어야 한다. HTTP Method가 정상적으로 작동하였는지 확인할 수 있는 코드를 상태 코드라고 하며, GET은 정상적으로 작동시 원하는 데이터를 가져올 수 있기에 상태 코드가 자동적으로 반환되지만, 다른 Method들은 상태 코드를 반환해 주는 것이 쿼리를 요청하는 쪽에서 식별하기 쉬워진다.
+```java
+@PutMapping
+ResponseEntity<Coffee> putCoffee(@PathVariable String id, 
+	@RequestBody Coffee coffee){
+	int coffeeIdx = -1;
+	
+	for(Coffee c : coffees){
+		if(c.getID().equals(coffee)){
+			coffeeIdx = coffees.indexof(c);
+			coffees.set(coffeeIdx, coffee);
+		}
+	}	
+	
+	return (coffeeIdx == -1) ? 
+			new ResponseEntity<>(postCoffee(coffee), HttpStatus.CREATEd):
+			new ResponseEntity<>(coffee, HttpStatus.OK);
+}
+```
+위 예제 코드처럼 ResponseEntity에 HttpStatus라는 HTTP Method 상태 코드를 생성하여 보내주는 것이 일반적이다.
+
+---
+
+#### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
 ```java
@@ -423,11 +625,6 @@ public class Car{
 #### @Bean
 
 앞서 IoC container에 저장된 객체를 스프링에서는 Bean이라고 설명하였다. @Bean 또한 해당 클래스를 IoC container에 객체로 등록하는 기능을 수행한다.
-#### @RestController
-
-RestController은 REST API 개발을 위해 사용되는 핵심 어노테이션으로, 다음 두 가지의 어노테이션의 기능을 합쳐놓은 것이다.
-- @Controller
-- @ResponseBody 
 #### @Controller
 
 어노테이션이 붙은 클래스가 HTTP Method(GET, POST, PUT/PATCH, DELETE), 즉 클라이언트의 요청을 처리하는 스프링에게 알려주고, 클래스를 bean 객체로 등록하여 IoC container에 저장하게 된다.
