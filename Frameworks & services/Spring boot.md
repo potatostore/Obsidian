@@ -647,8 +647,15 @@ HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라�
 #### @id
 
 
+# 4. HTTPie
 
-# 4. MongoDB
+HTTPie를 통해 Spring boot에서 작성한 api method를 실행시켜 볼 수 있다.
+
+이때 앞선 REST API설명에서 Spring web에 의존성이 존재하는 Jackson 라이브버리를 통해 마샬링, 언마샬링을 진행할 수 있다고 설명하였다. 
+
+Jackson의 작동방식은 기본생성자를 통해 객체를 만들고, 이를 
+
+# 5. MongoDB
 
 Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
 
