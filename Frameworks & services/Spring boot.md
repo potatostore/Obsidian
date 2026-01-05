@@ -761,7 +761,31 @@ pip install httpie
 ```
 
 #### Step 2 : Start SpringBoot
-#### Step 3 : 
+#### Step 3 : HTTP Method 확인
+intellij에서 spring boot를 실행했다면, 터미널을 하나 더 열어서 다음과 같은 명령어를 통해 확인을 해본다.
+
+1. POST 
+```
+http POST :8080/coffees/{id} id="{id}" name="Americano"
+```
+POST작업시 위 {id}란에 id를 입력하거나, id를 입력하지 않으면 자동적으로 -1이라는 id가 부여되도록 설정하였다.
+
+2. GET
+```
+http GET :8080/coffees/{id}
+```
+
+3. PUT
+```
+http PUT :8080/coffees/{id} name="Latte"
+```
+이후 GET을 통해 이름이 바꼈는지 확인해보기
+
+4. DELETE
+```
+http DELETE :8080/coffees/{id}
+```
+GET을 통해 삭제되었는지 확인해보기
 
 # 5. MongoDB
 
