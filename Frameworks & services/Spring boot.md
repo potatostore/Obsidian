@@ -651,9 +651,117 @@ HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라�
 
 HTTPie를 통해 Spring boot에서 작성한 api method를 실행시켜 볼 수 있다.
 
-이때 앞선 REST API설명에서 Spring web에 의존성이 존재하는 Jackson 라이브버리를 통해 마샬링, 언마샬링을 진행할 수 있다고 설명하였다. 
+앞선 REST API설명에서 Spring web에 의존성이 존재하는 Jackson 라이브버리를 통해 마샬링, 언마샬링을 진행할 수 있다고 설명하였다. 
 
-Jackson의 작동방식은 기본생성자를 통해 객체를 만들고, 이를 
+Jackson의 작동방식은 기본생성자를 통해 객체를 만들고, 터미널에서 HTTP Method를 실행하였을 떄, 입력되는 값에 맞게 Getter/Setter을 실행하여 해당 객체를 마치 입력값으로 생성한 것처럼 초기화하게 된다. 즉 Jackson을 사용하여 마샬링/언마샬링을 하게 될 경우 기본생성자만 존재하고, Getter/Setter을 통해 필드변수에 접근하도록 만드는 것이 훨씬 유용하다.
+
+```java
+package com.potatostore.ShoppingApplication.Items;  
+  
+public class Coffee {  
+    private String id;  
+    private String name;  
+  
+    public Coffee(){  
+        this.id = "-1";  
+        this.name = "null";  
+    }  
+  
+    public String getId() {  
+        return id;  
+    }  
+  
+    public void setId(String id) {  
+        this.id = id;  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+}
+```
+
+이후 테스트하고 싶은 HTTP Method가 존재하는 Controller/Service등을 설정해줘야 한다.
+```java
+package com.potatostore.ShoppingApplication.Controller;  
+  
+import com.potatostore.ShoppingApplication.Items.Coffee;  
+import org.springframework.http.HttpStatus;  
+import org.springframework.http.ResponseEntity;  
+import org.springframework.web.bind.annotation.*;  
+  
+import java.util.ArrayList;  
+import java.util.List;  
+  
+@RestController  
+@RequestMapping("/coffees")  
+public class CoffeeController {  
+    private List<Coffee> coffees = new ArrayList<Coffee>();  
+  
+    @PostMapping  
+    Coffee postCoffee(@RequestBody Coffee coffee){  
+        coffees.add(coffee);  
+        return coffee;  
+    }  
+  
+    @GetMapping("/{id}")  
+    Coffee getCoffee(@PathVariable String id){  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                return c;  
+            }  
+        }  
+  
+        return null;  
+    }  
+  
+    @PutMapping("/{id}")  
+    ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee){  
+        int putIdx = -1;  
+  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                putIdx = coffees.indexOf(c);  
+                break;  
+            }  
+        }  
+  
+        return (putIdx == -1) ?  
+                new ResponseEntity<Coffee>(postCoffee(coffee), HttpStatus.CREATED) :  
+                new ResponseEntity<Coffee>(coffee, HttpStatus.OK);  
+    }  
+  
+    @DeleteMapping("/{id}")  
+    Coffee deleteCoffee(@PathVariable String id){  
+        Coffee result = null;  
+  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                result = c;  
+                coffees.remove(c);  
+                break;  
+            }  
+        }  
+  
+        return result;  
+    }  
+}
+```
+
+이후 가장 중요한 점은 @SpringBootApplication이 붙은 main method와 같은 패키지에 Controller가 존재하거나, 보다 하위 패키지에 존재해야 한다.
+
+#### Step 1 : HTTPie install
+```
+pip install --upgrade pip
+pip install httpie
+```
+
+#### Step 2 : Start SpringBoot
+#### Step 3 : 
 
 # 5. MongoDB
 
