@@ -150,7 +150,7 @@ public class MySpringApp {
 
 Spring boot란 것은 통상적으로 다양한 application dev tools를 제공하기 위해 여러가지의 Spring이 존재한다. Spring web, Spring JDBC 등 이러한 도구들을 통틀어서 Spring이라고 부르고, 이러한 Spring을 더욱 쉽게 설정하고, 보일러플레이트 코드를 줄이기 위해 Spring boot가 나온 것이다.
 
-# 1. Spring initializr
+# 1. Spring
 
 Spring Application Project를 생성할 때, 수많은 설정을 수동적으로 설정하게 되면 프로젝트 생성부터 힘이 빠진다.
 
@@ -181,62 +181,6 @@ Spring boot를 입문할 때, 가장 많이 듣는 장점이 의존성 주입이
 
 즉 전반적인 내용으로 보면 의존성은 인터넷을 통해 가져와 사용하는 것이고, 이를 코드 관점에서 바라보았을 때, 주소 접근 방식으로 사용하는 점에서 매우 편리함을 제공한다고 볼 수 있다.
 *싱글톤(Singleton) : 의존성 객체 하나만 생성하여 다른 클래스에서도 접근하여 사용할 수 있도록 만드는 방식*
-
----
-#### REST API
-
-거의 대부분의 웹/앱은 데이터를 상호작용을 통해 가져와 가공/처리 과정을 거쳐 원하는 목적을 달성하게 된다.
-
-예를 들어 쇼핑물 웹 같은 경우, 회사의 DB내부에 존재하는 제품에 대한 데이터들을 웹으로 나타내고, 이를 사용자와 상호작용을 통해 어떤 이벤트가 발생된다. 예를 들어 제품이미지를 클릭할 경우, 확대가 되거나, 상세페이지로 넘어가 제품에 대한 자세한 설명을 볼 수 있는 것처럼.
-
-이처럼 각 서비스별로 어플리케이션을 구현하고, 이들을 통합하여 하나의 인터페이스를 만드는 것을 마이크로서비스 어플리케이션이라고 한다.(반대 개념으로 모놀로식 어플리케이션이 존재한다.)
-
-각 서비스별로 어플리케이션을 구현할 경우 다음과 같은 이점을 얻을 수 있다.
-1. 어떤 서비스에 대해 트래픽이 발생했을 경우, 해당 서비스에 대한 조치만으로 원활한 서비스를 유지 가능
-2. 추후 기능 구현을 통해 어플리케이션 재배포가 발생했을 때, 해당 서비스 어플리케이션만 재배포
-3. 하나의 서비스를 통해 앱, 웹 등의 다양한 UI에서 공통된 기능을 사용
-
-특히 3번과 같은 이점을 활용하기 위해서는 해당 서비스에 필요한 리소스, 혹은 기능이 담긴 데이터 코드들이 원활하게 동작을 하여야 한다.
-
-결국 데이터를 가져오는 작업이 필요한데, 이를 우린 *통신*이라고 한다.
-
-또한 상호 간에 통신에 대한 특별한 규칙이 없을 경우, 데이터가 난잡해지거나, 통신이 원활하지 않는 등 다양한 문제가 발생될 수 있고, 처리도 곤란할 것이다.
-
-따라서 인터넷 상에서 정보를 주고받기 위한 규칙을 세운 것이 *통신 규약*이다.
-
-이 중 REST API는 웹의 통신 규약(프로토콜)인 HTTP를 기반으로 API를 설정하는 것을 의미한다.
-
-- API(App Programing Interface) : API는 APP을 구축할 때, 개발자가 세우는 가이드를 의미한다. 즉 APP을 어떻게 사용하고, 관리할 것인지 알려주는 것이 바로 API이다. 어떤 기능을 요청해서, 어떤 형식으로 만들어 보내야 하고, 어떤 형식의 응답을 받게 되는지 등을 상세하고 명확하게 설명한다.
-
-<span style="color:rgb(146, 208, 80)">즉 REST API는 어플리케이션에 구축된 통신들이 어떤 규칙을 갖고 통신을 갖게 될 것인가에 대한 규칙이라고 볼 수 있다.</span>
-
-REST API의 핵심 개념은 다음과 같다.
-1. 자원 : 모든 데이터를 자원으로 취급한다. (자원은 고유한 URI로 식별)
-2. HTTP Method를 통해 자원을 표현한다. (GET, POST, PUT/PATCH, DELETE)
-3. 표현 : 모든 데이터를 통신할 때, 데이터의 형식을 통일한다.
-
-위 3가지의 개념을 통해 다음과 같은 특징이 생성된다.
-1. 클라이언트-서버 구조 (Client-Server Separation):
- 클라이언트(사용자)와 서버(데이터 및 서비스 제공)가 서로 독립적이어야 한다. 각각 독립적으로 개발 및 개선될 수 있다.
-2. 무상태성 (Stateless):
-서버는 클라이언트의 이전 요청에 대한 정보를 저장하지 않다. 모든 요청은 그 요청을 처리하는 데 필요한 모든 정보를 담고 있어야 한다. 이를 통해 서버 부하를 줄이고 확장성을 높일 수 있다.
-3. 캐싱 가능 (Cacheable):
-응답을 캐시(저장)할 수 있도록 하여, 동일한 요청에 대한 응답 시간을 줄이고 서버 부하를 줄일 수 있다.
-4. 균일한 인터페이스 (Uniform Interface):
-자원에 대한 요청 방식이 일관되고 통일되어야 한다.
-	- 자원 식별 (URI)
-	- 메시지를 통한 자원 조작 (HTTP 메서드)
-	- 자기-서술적 메시지 (Self-descriptive Message, 메시지 자체에 정보가 담겨있음)
-	- 하이퍼미디어(HATEOAS, 선택 사항이지만 이상적임
-5. 계층화 시스템 (Layered System):
-클라이언트는 서버에 직접 연결되었는지, 중간 서버(로드 밸런서, 프록시 등)를 통해 연결되었는지 알 필요가 없다.
-
-위 개념들과 특징들을 잘 지켜진 API를 RESTful한 API다라고 표현을 한다.
-
-<span style="color:rgb(146, 208, 80)">특히 마이크로 서비스 어플리케이션에서 가장 중요한 개념은 무상태성이다.
-</span>
-
-상대방이 이전 상태를 저장하지 않는다는 의미는 "A가 B에게 어떤 자원을 요청할 때, 이전에 입력한 정보(상태)가 존재하지 않는다." 는 의미이다.
 
 ---
 #### URI / URL
@@ -307,8 +251,227 @@ sprinb boot는 의존성 주입이 장점이라고 앞서 설명했었다. 의�
 #### etc
 이외의 다른 파일들은 전부 maven compiler, guide, maven CLI등의 파일이기에, 나중에 무엇인지 확인하고 싶을 때, 한 번씩 보는 것을 추천한다.
 
+# 3. REST API
 
-# 3. Annotation
+거의 대부분의 웹/앱은 데이터를 상호작용을 통해 가져와 가공/처리 과정을 거쳐 원하는 목적을 달성하게 된다.
+
+예를 들어 쇼핑물 웹 같은 경우, 회사의 DB내부에 존재하는 제품에 대한 데이터들을 웹으로 나타내고, 이를 사용자와 상호작용을 통해 어떤 이벤트가 발생된다. 예를 들어 제품이미지를 클릭할 경우, 확대가 되거나, 상세페이지로 넘어가 제품에 대한 자세한 설명을 볼 수 있는 것처럼.
+
+이처럼 각 서비스별로 어플리케이션을 구현하고, 이들을 통합하여 하나의 인터페이스를 만드는 것을 마이크로서비스 어플리케이션이라고 한다.(반대 개념으로 모놀로식 어플리케이션이 존재한다.)
+
+각 서비스별로 어플리케이션을 구현할 경우 다음과 같은 이점을 얻을 수 있다.
+1. 어떤 서비스에 대해 트래픽이 발생했을 경우, 해당 서비스에 대한 조치만으로 원활한 서비스를 유지 가능
+2. 추후 기능 구현을 통해 어플리케이션 재배포가 발생했을 때, 해당 서비스 어플리케이션만 재배포
+3. 하나의 서비스를 통해 앱, 웹 등의 다양한 UI에서 공통된 기능을 사용
+
+특히 3번과 같은 이점을 활용하기 위해서는 해당 서비스에 필요한 리소스, 혹은 기능이 담긴 데이터 코드들이 원활하게 동작을 하여야 한다.
+
+결국 데이터를 가져오는 작업이 필요한데, 이를 우린 *통신*이라고 한다.
+
+또한 상호 간에 통신에 대한 특별한 규칙이 없을 경우, 데이터가 난잡해지거나, 통신이 원활하지 않는 등 다양한 문제가 발생될 수 있고, 처리도 곤란할 것이다.
+
+따라서 인터넷 상에서 정보를 주고받기 위한 규칙을 세운 것이 *통신 규약*이다.
+
+이 중 REST API는 웹의 통신 규약(프로토콜)인 HTTP를 기반으로 API를 설정하는 것을 의미한다.
+
+- API(App Programing Interface) : API는 APP을 구축할 때, 개발자가 세우는 가이드를 의미한다. 즉 APP을 어떻게 사용하고, 관리할 것인지 알려주는 것이 바로 API이다. 어떤 기능을 요청해서, 어떤 형식으로 만들어 보내야 하고, 어떤 형식의 응답을 받게 되는지 등을 상세하고 명확하게 설명한다.
+
+<span style="color:rgb(146, 208, 80)">즉 REST API는 어플리케이션에 구축된 통신들이 어떤 규칙을 갖고 통신을 갖게 될 것인가에 대한 규칙이라고 볼 수 있다.</span>
+
+REST API의 핵심 개념은 다음과 같다.
+1. 자원 : 모든 데이터를 자원으로 취급한다. (자원은 고유한 URI로 식별)
+2. HTTP Method를 통해 자원을 표현한다. (GET, POST, PUT/PATCH, DELETE)
+3. 표현 : 모든 데이터를 통신할 때, 데이터의 형식을 통일한다.
+
+위 3가지의 개념을 통해 다음과 같은 특징이 생성된다.
+1. 클라이언트-서버 구조 (Client-Server Separation):
+ 클라이언트(사용자)와 서버(데이터 및 서비스 제공)가 서로 독립적이어야 한다. 각각 독립적으로 개발 및 개선될 수 있다.
+2. 무상태성 (Stateless):
+서버는 클라이언트의 이전 요청에 대한 정보를 저장하지 않다. 모든 요청은 그 요청을 처리하는 데 필요한 모든 정보를 담고 있어야 한다. 이를 통해 서버 부하를 줄이고 확장성을 높일 수 있다.
+3. 캐싱 가능 (Cacheable):
+응답을 캐시(저장)할 수 있도록 하여, 동일한 요청에 대한 응답 시간을 줄이고 서버 부하를 줄일 수 있다.
+4. 균일한 인터페이스 (Uniform Interface):
+자원에 대한 요청 방식이 일관되고 통일되어야 한다.
+	- 자원 식별 (URI)
+	- 메시지를 통한 자원 조작 (HTTP 메서드)
+	- 자기-서술적 메시지 (Self-descriptive Message, 메시지 자체에 정보가 담겨있음)
+	- 하이퍼미디어(HATEOAS, 선택 사항이지만 이상적임
+5. 계층화 시스템 (Layered System):
+클라이언트는 서버에 직접 연결되었는지, 중간 서버(로드 밸런서, 프록시 등)를 통해 연결되었는지 알 필요가 없다.
+
+위 개념들과 특징들을 잘 지켜진 API를 RESTful한 API다라고 표현을 한다.
+
+<span style="color:rgb(146, 208, 80)">특히 마이크로 서비스 어플리케이션에서 가장 중요한 개념은 무상태성이다.
+</span>
+
+상대방이 이전 상태를 저장하지 않는다는 의미는 "A가 B에게 어떤 자원을 요청할 때, 이전에 입력한 정보(상태)가 존재하지 않는다." 는 의미이다.
+
+
+# 4. HTTPie
+
+HTTPie를 통해 Spring boot에서 작성한 api method를 실행시켜 볼 수 있다.
+
+앞선 REST API설명에서 Spring web에 의존성이 존재하는 Jackson 라이브버리를 통해 마샬링, 언마샬링을 진행할 수 있다고 설명하였다. 
+
+Jackson의 작동방식은 기본생성자를 통해 객체를 만들고, 터미널에서 HTTP Method를 실행하였을 떄, 입력되는 값에 맞게 Getter/Setter을 실행하여 해당 객체를 마치 입력값으로 생성한 것처럼 초기화하게 된다. 즉 Jackson을 사용하여 마샬링/언마샬링을 하게 될 경우 기본생성자만 존재하고, Getter/Setter을 통해 필드변수에 접근하도록 만드는 것이 훨씬 유용하다.
+
+```java
+package com.potatostore.ShoppingApplication.Items;  
+  
+public class Coffee {  
+    private String id;  
+    private String name;  
+  
+    public Coffee(){  
+        this.id = "-1";  
+        this.name = "null";  
+    }  
+  
+    public String getId() {  
+        return id;  
+    }  
+  
+    public void setId(String id) {  
+        this.id = id;  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+}
+```
+
+이후 테스트하고 싶은 HTTP Method가 존재하는 Controller/Service등을 설정해줘야 한다.
+```java
+package com.potatostore.ShoppingApplication.Controller;  
+  
+import com.potatostore.ShoppingApplication.Items.Coffee;  
+import org.springframework.http.HttpStatus;  
+import org.springframework.http.ResponseEntity;  
+import org.springframework.web.bind.annotation.*;  
+  
+import java.util.ArrayList;  
+import java.util.List;  
+  
+@RestController  
+@RequestMapping("/coffees")  
+public class CoffeeController {  
+    private List<Coffee> coffees = new ArrayList<Coffee>();  
+  
+    @PostMapping  
+    Coffee postCoffee(@RequestBody Coffee coffee){  
+        coffees.add(coffee);  
+        return coffee;  
+    }  
+  
+    @GetMapping("/{id}")  
+    Coffee getCoffee(@PathVariable String id){  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                return c;  
+            }  
+        }  
+  
+        return null;  
+    }  
+  
+    @PutMapping("/{id}")  
+    ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee){  
+        int putIdx = -1;  
+  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                putIdx = coffees.indexOf(c);  
+                break;  
+            }  
+        }  
+  
+        return (putIdx == -1) ?  
+                new ResponseEntity<Coffee>(postCoffee(coffee), HttpStatus.CREATED) :  
+                new ResponseEntity<Coffee>(coffee, HttpStatus.OK);  
+    }  
+  
+    @DeleteMapping("/{id}")  
+    Coffee deleteCoffee(@PathVariable String id){  
+        Coffee result = null;  
+  
+        for(Coffee c : coffees){  
+            if(c.getId().equals(id)){  
+                result = c;  
+                coffees.remove(c);  
+                break;  
+            }  
+        }  
+  
+        return result;  
+    }  
+}
+```
+
+이후 가장 중요한 점은 @SpringBootApplication이 붙은 main method와 같은 패키지에 Controller가 존재하거나, 보다 하위 패키지에 존재해야 한다.
+
+#### Step 1 : HTTPie install
+```
+pip install --upgrade pip
+pip install httpie
+```
+
+#### Step 2 : Start SpringBoot
+#### Step 3 : HTTP Method 확인
+intellij에서 spring boot를 실행했다면, 터미널을 하나 더 열어서 다음과 같은 명령어를 통해 확인을 해본다.
+
+1. POST 
+```
+http POST :8080/coffees/{id} id="{id}" name="Americano"
+```
+POST작업시 위 {id}란에 id를 입력하거나, id를 입력하지 않으면 자동적으로 -1이라는 id가 부여되도록 설정하였다.
+
+2. GET
+```
+http GET :8080/coffees/{id}
+```
+
+3. PUT
+```
+http PUT :8080/coffees/{id} name="Latte"
+```
+이후 GET을 통해 이름이 바꼈는지 확인해보기
+
+4. DELETE
+```
+http DELETE :8080/coffees/{id}
+```
+GET을 통해 삭제되었는지 확인해보기
+
+# 5. DB Access
+
+Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
+
+그렇다면 spring boot로 만들어진 app들은 데이터들을 어떻게 저장할 것인가?
+
+DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배우지 않았으므로, NoSQL 중 하나인 MongoDB를 통해 Springboot에 DB를 연결하고 핸들링하는 방식을 배울 것이다.
+
+#### JPA(Java Persistence API)
+[[ORM(Oriented Relational Mapping)]]을 Java에서 지원할 수 있도록 만든 라이브러리가 바로 JPA이다. 이는 관계형 데이터베이스와 같이 정형화된 스키마에 객체를 mapping할 수 있을 경우에 사용되는 방식으로, 관계형 데이터베이스에 비해 상대적으로 스키마가 적고, 유연한 비관계형 데이터베이스는 JPA를 통해 mapping하는 방식이 불가능하다.
+
+따라서 Spring boot에서는 다음과 같은 방식으로 MongoDB와 mapping을 한다.
+
+#### Mapping Springboot-MongoDB
+1. MongoDB에 종속성(의존성)을 부여한다. (pom.xml에 dependency주석을 통해 maven으로 주입)
+	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
+	2. MongoDB에 접근하는 객체를 생성하여 IoC Container에 bean으로 등록한다.
+	으로 이해할 수 있으며, MongoDB에 접근하여 쿼리문을 수행할 수 있는 객체를 만드는 모든 과정을 의존성 부여로 설명할 수 있다.
+
+#### DSL(Domain-Specific Language)
+- query method DSL
+- Criteria API 
+
+
+# 6. Annotation
 
 Spring initializr를 통해 만든 project를 intellij와 같은 IDE에서 열었다면, src폴더 내부의 main폴더가 존재할 것이다. main폴더 내부에 쓰여진 java코드들을 통해 API를 구성하는 것이며, 이외의 폴더는 spring boot 환경 설정이라고 봐도 무방하다.
 
@@ -692,167 +855,3 @@ HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라�
 #### @Document
 
 #### @id
-
-
-# 4. HTTPie
-
-HTTPie를 통해 Spring boot에서 작성한 api method를 실행시켜 볼 수 있다.
-
-앞선 REST API설명에서 Spring web에 의존성이 존재하는 Jackson 라이브버리를 통해 마샬링, 언마샬링을 진행할 수 있다고 설명하였다. 
-
-Jackson의 작동방식은 기본생성자를 통해 객체를 만들고, 터미널에서 HTTP Method를 실행하였을 떄, 입력되는 값에 맞게 Getter/Setter을 실행하여 해당 객체를 마치 입력값으로 생성한 것처럼 초기화하게 된다. 즉 Jackson을 사용하여 마샬링/언마샬링을 하게 될 경우 기본생성자만 존재하고, Getter/Setter을 통해 필드변수에 접근하도록 만드는 것이 훨씬 유용하다.
-
-```java
-package com.potatostore.ShoppingApplication.Items;  
-  
-public class Coffee {  
-    private String id;  
-    private String name;  
-  
-    public Coffee(){  
-        this.id = "-1";  
-        this.name = "null";  
-    }  
-  
-    public String getId() {  
-        return id;  
-    }  
-  
-    public void setId(String id) {  
-        this.id = id;  
-    }  
-  
-    public String getName() {  
-        return name;  
-    }  
-  
-    public void setName(String name) {  
-        this.name = name;  
-    }  
-}
-```
-
-이후 테스트하고 싶은 HTTP Method가 존재하는 Controller/Service등을 설정해줘야 한다.
-```java
-package com.potatostore.ShoppingApplication.Controller;  
-  
-import com.potatostore.ShoppingApplication.Items.Coffee;  
-import org.springframework.http.HttpStatus;  
-import org.springframework.http.ResponseEntity;  
-import org.springframework.web.bind.annotation.*;  
-  
-import java.util.ArrayList;  
-import java.util.List;  
-  
-@RestController  
-@RequestMapping("/coffees")  
-public class CoffeeController {  
-    private List<Coffee> coffees = new ArrayList<Coffee>();  
-  
-    @PostMapping  
-    Coffee postCoffee(@RequestBody Coffee coffee){  
-        coffees.add(coffee);  
-        return coffee;  
-    }  
-  
-    @GetMapping("/{id}")  
-    Coffee getCoffee(@PathVariable String id){  
-        for(Coffee c : coffees){  
-            if(c.getId().equals(id)){  
-                return c;  
-            }  
-        }  
-  
-        return null;  
-    }  
-  
-    @PutMapping("/{id}")  
-    ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee){  
-        int putIdx = -1;  
-  
-        for(Coffee c : coffees){  
-            if(c.getId().equals(id)){  
-                putIdx = coffees.indexOf(c);  
-                break;  
-            }  
-        }  
-  
-        return (putIdx == -1) ?  
-                new ResponseEntity<Coffee>(postCoffee(coffee), HttpStatus.CREATED) :  
-                new ResponseEntity<Coffee>(coffee, HttpStatus.OK);  
-    }  
-  
-    @DeleteMapping("/{id}")  
-    Coffee deleteCoffee(@PathVariable String id){  
-        Coffee result = null;  
-  
-        for(Coffee c : coffees){  
-            if(c.getId().equals(id)){  
-                result = c;  
-                coffees.remove(c);  
-                break;  
-            }  
-        }  
-  
-        return result;  
-    }  
-}
-```
-
-이후 가장 중요한 점은 @SpringBootApplication이 붙은 main method와 같은 패키지에 Controller가 존재하거나, 보다 하위 패키지에 존재해야 한다.
-
-#### Step 1 : HTTPie install
-```
-pip install --upgrade pip
-pip install httpie
-```
-
-#### Step 2 : Start SpringBoot
-#### Step 3 : HTTP Method 확인
-intellij에서 spring boot를 실행했다면, 터미널을 하나 더 열어서 다음과 같은 명령어를 통해 확인을 해본다.
-
-1. POST 
-```
-http POST :8080/coffees/{id} id="{id}" name="Americano"
-```
-POST작업시 위 {id}란에 id를 입력하거나, id를 입력하지 않으면 자동적으로 -1이라는 id가 부여되도록 설정하였다.
-
-2. GET
-```
-http GET :8080/coffees/{id}
-```
-
-3. PUT
-```
-http PUT :8080/coffees/{id} name="Latte"
-```
-이후 GET을 통해 이름이 바꼈는지 확인해보기
-
-4. DELETE
-```
-http DELETE :8080/coffees/{id}
-```
-GET을 통해 삭제되었는지 확인해보기
-
-# 5. DB Access
-
-Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
-
-그렇다면 spring boot로 만들어진 app들은 데이터들을 어떻게 저장할 것인가?
-
-DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배우지 않았으므로, NoSQL 중 하나인 MongoDB를 통해 Springboot에 DB를 연결하고 핸들링하는 방식을 배울 것이다.
-
-#### JPA(Java Persistence API)
-[[ORM(Oriented Relational Mapping)]]을 Java에서 지원할 수 있도록 만든 라이브러리가 바로 JPA이다. 이는 관계형 데이터베이스와 같이 정형화된 스키마에 객체를 mapping할 수 있을 경우에 사용되는 방식으로, 관계형 데이터베이스에 비해 상대적으로 스키마가 적고, 유연한 비관계형 데이터베이스는 JPA를 통해 mapping하는 방식이 불가능하다.
-
-따라서 Spring boot에서는 다음과 같은 방식으로 MongoDB와 mapping을 한다.
-
-#### Mapping Springboot-MongoDB
-1. MongoDB에 종속성(의존성)을 부여한다. (pom.xml에 dependency주석을 통해 maven으로 주입)
-	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
-	2. MongoDB에 접근하는 객체를 생성하여 IoC Container에 bean으로 등록한다.
-	으로 이해할 수 있으며, MongoDB에 접근하여 쿼리문을 수행할 수 있는 객체를 만드는 모든 과정을 의존성 부여로 설명할 수 있다.
-
-#### DSL(Domain-Specific Language)
-- query method DSL
-- Criteria API 
