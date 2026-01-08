@@ -834,7 +834,7 @@ http DELETE :8080/coffees/{id}
 ```
 GET을 통해 삭제되었는지 확인해보기
 
-# 5. MongoDB
+# 5. DB Access
 
 Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
 
@@ -848,7 +848,6 @@ DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배�
 따라서 Spring boot에서는 다음과 같은 방식으로 MongoDB와 mapping을 한다.
 
 #### Mapping Springboot-MongoDB
-
 1. MongoDB에 종속성(의존성)을 부여한다. (pom.xml에 dependency주석을 통해 maven으로 주입)
 	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
 	2. MongoDB에 접근하는 객체를 생성하여 IoC Container에 bean으로 등록한다.
