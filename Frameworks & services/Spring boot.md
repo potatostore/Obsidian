@@ -626,7 +626,7 @@ public class Coffee {
 ```
 
 1. 기본 키(primary key)가 존재해야 한다 -> 각 row별로 구분을 위해
-2. 기본생성자가 존재해야 한다.
+2. 기본생성자가 존재해야 한다. -> JPA가 데이터를 읽고, 
 
 
 #### @Component
