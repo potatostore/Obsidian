@@ -460,6 +460,9 @@ DB를 사용할 것이고, 여러 종류의 DB가 있지만, 아직 SQL을 배�
 
 따라서 Spring boot에서는 다음과 같은 방식으로 MongoDB와 mapping을 한다.
 
+#### Repository
+DB의 의존성을 추가하고, 이를 연결하여 JPA를 통해 해당 데이터를 가져오는 작업을 하기 위해 PersistenceUnit, EntityManagerFactory, EntityManager API와 관련된 추가 단계를 수행하고, 이를 반복하는 작업이 발생한다. 이를 해결하기 위해 DB를 추상화한 *Repository*라는 개념을 도입하게 되었으며, 이는 VFS가 여러 OS마다 다른 FS를 추상화해놓은 개념처럼 추상화된 인터페이스이다.
+
 #### Mapping Springboot-MongoDB
 1. MongoDB에 종속성(의존성)을 부여한다. (pom.xml에 dependency주석을 통해 maven으로 주입)
 	1. 라이브러리/모듈과 같은 MongoDB에 필요한 드라이버들을 추가한다.
