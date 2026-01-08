@@ -581,6 +581,53 @@ ResponseEntity<Coffee> putCoffee(@PathVariable String id,
 위 예제 코드처럼 ResponseEntity에 HttpStatus라는 HTTP Method 상태 코드를 생성하여 보내주는 것이 일반적이다.
 
 ---
+## DB Access
+
+#### @Entity
+JPA(Java Persistent API)를 통해 객체에 영속성을 부여하여 DB에 저장하게 만들기 위해서 DB의 테이블과 객체의 Mapping이 되어야 한다. 이때 JPA를 통해 Mapping을 하고, 하기 위해 지원하는 어노테이션이 바로 Entity이다. 
+```java
+@Entity
+public class Coffee {  
+    @Id  
+    private String id;  
+    private String name;  
+  
+    public Coffee(){  
+        this.id = "-1";  
+        this.name = "null";  
+    }  
+  
+    public Coffee(String name){  
+        this.id = "-1";  
+        this.name = name;  
+    }  
+  
+    public Coffee(String id, String name){  
+        this.id = id;  
+        this.name = name;  
+    }  
+  
+    public String getId() {  
+        return id;  
+    }  
+  
+    public void setId(String id) {  
+        this.id = id;  
+    }  
+  
+    public String getName() {  
+        return name;  
+    }  
+  
+    public void setName(String name) {  
+        this.name = name;  
+    }  
+}
+```
+
+1. 기본 키(primary key)가 존재해야 한다 -> 각 row별로 구분을 위해
+2. 기본생성자가 존재해야 한다.
+
 
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
