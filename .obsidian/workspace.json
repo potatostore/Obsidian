@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "0105.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "0105"
             }
           },
           {
@@ -219,6 +219,8 @@
   },
   "active": "c974f9a968fb6ee0",
   "lastOpenFiles": [
+    "TODO.md",
+    "Frameworks & services/Spring boot.md",
     "-Calendar-/2026/1st/2026-01-05.md",
     "-Calendar-/2026/1st/2026-01-08.md",
     "-Calendar-/2026/1st/2026-01-07.md",
@@ -226,7 +228,6 @@
     "0105.md",
     "University/2-2/파일처리론.md",
     "Data Structure/Red-Black Tree.md",
-    "Frameworks & services/Spring boot.md",
     "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-14.md",
     "-Calendar-/2026/1st/2026-01-02.md",
@@ -244,7 +245,6 @@
     "University/2-2/운영체제.md",
     "-Calendar-/2024/11th/2024-11-18.md",
     "-Calendar-/2024/11th/2024-11-25.md",
-    "-Calendar-/2024/11th/2024-11-19.md",
     "-Calendar-/2026/Januery/Untitled",
     "-Calendar-/2026/2nd",
     "-Calendar-/2026/1st",
