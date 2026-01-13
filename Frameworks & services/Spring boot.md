@@ -815,7 +815,19 @@ public class Coffee {
 1. 기본 키(primary key)가 존재해야 한다 -> 각 row별로 구분을 위해
 2. 기본생성자가 존재해야 한다. -> JPA가 데이터를 읽고, 
 
+---
+## Application Setting
 
+#### @Value
+application.properties(설정 파일)나 환경 변수에 저장된 값을 자바 변수에 넣어주는 작업을 진행한다. 이때 
+
+
+
+
+
+
+
+---
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
