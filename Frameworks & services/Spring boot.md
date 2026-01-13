@@ -859,6 +859,8 @@ public class GreetingController {
 
 위 코드에서 19번째 코드를 확인해보면 application.properties에 존재하는 환경 변수를 읽어오는 것 뿐만 아니라 초기화를 진행하는 듯한 코드를 보여준다. 이는 초기화를 진행하는 코드가 아닌 greeting-name이라는 값이 존재하지 않는 경우 우항의 값으로 변수를 초기화한다 라는 뜻이다.
 
+위와 같은 코드에서 가장 중요한 점은 22번째 줄이다.
+22번째 줄을 보게 되면 greeting-name이라는 환경변수에 영향을 받아 greeting-coffee를 정의하게 된다. 이는 곧 greeting-name이라는 환경변수가 존재하지 않을 경우 greeting-coffee또한 compile erroe(BeanCreationException)이 발생할 수 있다.
 
 
 
