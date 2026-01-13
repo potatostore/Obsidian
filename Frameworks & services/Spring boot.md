@@ -488,7 +488,12 @@ Repository를 생성할 때, 생성자 내부에 초기화할 값들을 넣어 �
 
 위 기능들을 동적으로 처리하기 위해 Spring boot에서는 내장된 설정 기능, 자동 설정 리포트와 함께 Spring boot actuator을 통해 환경설정을 동적으로 설정할 수 있도록 하였다.
 
+동적으로 어플리케이션의 설정을 변경한다는 것은 어플리케이션이 실행되는 도중 세팅값을 원하는대로 재설정할 수 있음을 뜻한다. Spring boot에서 이와 같은 기능을 Spring Environment를 활용하여 관리하게 되는데 이는 https://docs.spring.io/spring-boot/reference/features/external-config.html (Spring boot 공식 문서 - PropertySources)를 통해 확인 가능하다.
 
+특히 다음과 같은 설정이 매우 유용하다.
+- 명령 줄 인수
+- OS 환경 변수
+- 패키징된 어플리케이션 jar 안에 있는 어플리케이션 속성
 
 # 6. Annotation
 
