@@ -819,9 +819,45 @@ public class Coffee {
 ## Application Setting
 
 #### @Value
-application.properties(설정 파일)나 환경 변수에 저장된 값을 자바 변수에 넣어주는 작업을 진행한다. 이때 
+application.properties(설정 파일)나 환경 변수에 저장된 값을 자바 변수에 넣어주는 작업을 진행한다. 위 어노테이션은 단순히 파일에 해당 변수 값을 읽어와 자바 변수에 넣어주는 기능만 작동을 하고, 환경 변수를 수정하는 작업 제공하지 않는다.
+```java, hl=19
+#application.properties
+spring.application.name=ShoppingApplication  
+greeting-name=Dakota  
+greeting-coffee=${greeting-name} is drinking ice americano
 
+---
 
+#GreetingController.java
+package com.potatostore.ShoppingApplication.Controller;  
+  
+import org.springframework.beans.factory.annotation.Value;  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+import org.springframework.web.bind.annotation.RestController;  
+  
+@RestController  
+@RequestMapping("/greeting")  
+public class GreetingController {  
+    @Value("${greeting-name: Mirage}")  
+    private String name;  
+  
+    @Value("${greeting-coffee: ${greeting-name} is drinking ice americano}")  
+    private String coffee;  
+  
+    @GetMapping  
+    String getGreeting(){  
+        return name;  
+    }  
+  
+    @GetMapping("/coffee")  
+    String getGreetingCoffee(){  
+        return coffee;  
+    }  
+}
+```
+
+위 코드에서 19번째 코드를 확인해보면 application.properties에 존재하는 환경 변수를 읽어오는 것 뿐만 아니라 초기화를 진행하는 듯한 코드를 보여준다. 이는 초기화를 진행하는 코드가 아닌 greeting-name이라는 값이 존재하지 않는 경우 우항의 값으로 변수를 초기화한다 라는 뜻이다.
 
 
 
