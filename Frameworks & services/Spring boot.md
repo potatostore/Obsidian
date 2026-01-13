@@ -476,6 +476,9 @@ Repository를 생성할 때, 생성자 내부에 초기화할 값들을 넣어 �
 - query method DSL
 - Criteria API 
 
+# 6. Application Setting
+
+
 
 # 6. Annotation
 
