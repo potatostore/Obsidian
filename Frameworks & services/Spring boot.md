@@ -862,6 +862,8 @@ public class GreetingController {
 위와 같은 코드에서 가장 중요한 점은 22번째 줄이다.
 22번째 줄을 보게 되면 greeting-name이라는 환경변수에 영향을 받아 greeting-coffee를 정의하게 된다. 이는 곧 greeting-name이라는 환경변수가 존재하지 않을 경우 greeting-coffee또한 compile erroe(BeanCreationException)이 발생할 수 있다.
 
+또한 
+
 
 
 
