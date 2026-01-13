@@ -862,9 +862,12 @@ public class GreetingController {
 위와 같은 코드에서 가장 중요한 점은 22번째 줄이다.
 22번째 줄을 보게 되면 greeting-name이라는 환경변수에 영향을 받아 greeting-coffee를 정의하게 된다. 이는 곧 greeting-name이라는 환경변수가 존재하지 않을 경우 greeting-coffee또한 compile erroe(BeanCreationException)이 발생할 수 있다.
 
-또한 
+또한 @Value에 입력값이 모두 문자열로 되어있는 것이 단점으로 작용한다. 이는 IDE 내부 컴파일러가 환경 변수를 어플리케이션이 사용한다고 인식하지 못한다. 
 
+이러한 단점으로 인하여 @ConfigurationProperties라는 어노테이션을 추가적으로 만들게 되었다.
 
+#### @ConfigurationProperties
+앞선 @Value의 단점을 보완하기 위해 만들어진 어노테이션으로 
 
 
 ---
