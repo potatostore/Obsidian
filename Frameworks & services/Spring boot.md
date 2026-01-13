@@ -867,7 +867,9 @@ public class GreetingController {
 이러한 단점으로 인하여 @ConfigurationProperties라는 어노테이션을 추가적으로 만들게 되었다.
 
 #### @ConfigurationProperties
-앞선 @Value의 단점을 보완하기 위해 만들어진 어노테이션으로 
+앞선 @Value의 단점을 보완하기 위해 만들어진 어노테이션으로 IDE가 환경변수 관련 속성을 파악하고, 연결하는 것을 확인하기 위해 다음과 같은 작업들로 행할 수 있다.
+1. main class(@SpringBootApplication이 붙은 class)에 @ConfigurationPropertiesScan 추가
+2. pom.xml에 의존성 추가
 
 
 ---
