@@ -36,15 +36,17 @@
             }
           },
           {
-            "id": "15c6aa5fb3dfc49b",
+            "id": "b71d7088c0dada0f",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.11.4"
+                "file": "0105.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.4"
+              "icon": "lucide-file",
+              "title": "0105"
             }
           }
         ],
@@ -230,11 +232,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "15c6aa5fb3dfc49b",
+  "active": "b71d7088c0dada0f",
   "lastOpenFiles": [
+    "Frameworks & services/Spring boot.md",
     "-Calendar-/2026/1st/2026-01-13.md",
     "-Calendar-/2026/1st/2026-01-14.md",
-    "Frameworks & services/Spring boot.md",
     "0105.md",
     "-Calendar-/2026/1st/2026-01-12.md",
     "-Calendar-/2026/1st/2026-01-26.md",
