@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Spring boot"
             }
+          },
+          {
+            "id": "15c6aa5fb3dfc49b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.4"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -218,7 +230,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1897ca4e33c25f03",
+  "active": "15c6aa5fb3dfc49b",
   "lastOpenFiles": [
     "-Calendar-/2026/1st/2026-01-13.md",
     "-Calendar-/2026/1st/2026-01-14.md",
