@@ -21,3 +21,7 @@ Anckor Element, 클릭시 다른 웹사이트로 연결해주는 하이퍼링크
 # CSS(Cascading Style Sheets)
 
 HTML Element의 외형을 바꾸게 됨
+
+- CSS Selector : target HTML Element를 설정
+- CSS Property : HTML Element의 어떤 부분을 수정할 것인지 지정
+- CSS Value : 위 지정된 부분을 설정하는 값
