@@ -18,4 +18,6 @@ Paragraph, 문단이란 뜻으로 문장을 나열해 주는 이벤트
 #### a
 Anckor Element, 클릭시 다른 웹사이트로 연결해주는 하이퍼링크와 같은 역할
 
-# CSS
+# CSS(Cascading Style Sheets)
+
+HTML Element의 외형을 바꾸게 됨
