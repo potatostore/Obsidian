@@ -8,6 +8,7 @@ html은 문자열을 웹페이지에 순차적으로 띄우는 도구이다.
 		- Open Tag :
 		- Close Tag:
 - HTML Attribute : 
+- Indent : 없으면 가독성이 떨어짐
 ## HTML Element
 
 #### button
