@@ -476,6 +476,24 @@ Repository를 생성할 때, 생성자 내부에 초기화할 값들을 넣어 �
 - query method DSL
 - Criteria API 
 
+# 6. Application Setting
+
+어플리케이션은 홀로 기능하지 못할 가능성이 매우 높다. 다른 서비스/어플리케이션과 상호작용을 통해 어플리케이션의 온전한 기능을 다할 것이다.
+
+이때 어플리케이션은 오류가 발생하거나, 일부 기능/설정 등을 재설정하여 원하는 기능을 실행할 수 있다. 이는 동적으로 어플리케이션이 실행되는 도중에 수행되어야하며, 이와 비슷한 기능들은 다음과 같다.
+- 어플리케이션의 동적 설정과 재설정
+- 현재 설정과 출처의 확인과 결정
+- 어플리케이션 환경과 헬스 지표의 검사와 모니터링
+- 실행 중인 어플리케이션의 로깅 수준을 일시적으로 조정해 오류 원인 식별
+
+위 기능들을 동적으로 처리하기 위해 Spring boot에서는 내장된 설정 기능, 자동 설정 리포트와 함께 Spring boot actuator을 통해 환경설정을 동적으로 설정할 수 있도록 하였다.
+
+동적으로 어플리케이션의 설정을 변경한다는 것은 어플리케이션이 실행되는 도중 세팅값을 원하는대로 재설정할 수 있음을 뜻한다. Spring boot에서 이와 같은 기능을 Spring Environment를 활용하여 관리하게 되는데 이는 https://docs.spring.io/spring-boot/reference/features/external-config.html (Spring boot 공식 문서 - PropertySources)를 통해 확인 가능하다.
+
+특히 다음과 같은 설정이 매우 유용하다.
+- 명령 줄 인수
+- OS 환경 변수
+- 패키징된 어플리케이션 jar 안에 있는 어플리케이션 속성
 
 # 6. Annotation
 
@@ -797,7 +815,64 @@ public class Coffee {
 1. 기본 키(primary key)가 존재해야 한다 -> 각 row별로 구분을 위해
 2. 기본생성자가 존재해야 한다. -> JPA가 데이터를 읽고, 
 
+---
+## Application Setting
 
+#### @Value
+application.properties(설정 파일)나 환경 변수에 저장된 값을 자바 변수에 넣어주는 작업을 진행한다. 위 어노테이션은 단순히 파일에 해당 변수 값을 읽어와 자바 변수에 넣어주는 기능만 작동을 하고, 환경 변수를 수정하는 작업 제공하지 않는다.
+```java, hl=19
+#application.properties
+spring.application.name=ShoppingApplication  
+greeting-name=Dakota  
+greeting-coffee=${greeting-name} is drinking ice americano
+
+---
+
+#GreetingController.java
+package com.potatostore.ShoppingApplication.Controller;  
+  
+import org.springframework.beans.factory.annotation.Value;  
+import org.springframework.web.bind.annotation.GetMapping;  
+import org.springframework.web.bind.annotation.RequestMapping;  
+import org.springframework.web.bind.annotation.RestController;  
+  
+@RestController  
+@RequestMapping("/greeting")  
+public class GreetingController {  
+    @Value("${greeting-name: Mirage}")  
+    private String name;  
+  
+    @Value("${greeting-coffee: ${greeting-name} is drinking ice americano}")  
+    private String coffee;  
+  
+    @GetMapping  
+    String getGreeting(){  
+        return name;  
+    }  
+  
+    @GetMapping("/coffee")  
+    String getGreetingCoffee(){  
+        return coffee;  
+    }  
+}
+```
+
+위 코드에서 19번째 코드를 확인해보면 application.properties에 존재하는 환경 변수를 읽어오는 것 뿐만 아니라 초기화를 진행하는 듯한 코드를 보여준다. 이는 초기화를 진행하는 코드가 아닌 greeting-name이라는 값이 존재하지 않는 경우 우항의 값으로 변수를 초기화한다 라는 뜻이다.
+
+위와 같은 코드에서 가장 중요한 점은 22번째 줄이다.
+22번째 줄을 보게 되면 greeting-name이라는 환경변수에 영향을 받아 greeting-coffee를 정의하게 된다. 이는 곧 greeting-name이라는 환경변수가 존재하지 않을 경우 greeting-coffee또한 compile erroe(BeanCreationException)이 발생할 수 있다.
+
+또한 @Value에 입력값이 모두 문자열로 되어있는 것이 단점으로 작용한다. 이는 IDE 내부 컴파일러가 환경 변수를 어플리케이션이 사용한다고 인식하지 못한다. 
+
+이러한 단점으로 인하여 @ConfigurationProperties라는 어노테이션을 추가적으로 만들게 되었다.
+
+#### @ConfigurationProperties
+앞선 @Value의 단점을 보완하기 위해 만들어진 어노테이션으로 IDE가 환경변수 관련 속성을 파악하고, 연결하는 것을 확인하기 위해 다음과 같은 작업들로 행할 수 있다.
+1. main class(@SpringBootApplication이 붙은 class)에 @ConfigurationPropertiesScan 추가
+2. pom.xml에 의존성 추가
+
+
+---
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
