@@ -28,6 +28,12 @@ HTML Element의 외형을 바꾸게 됨
 
 *HTML Element의 요소는 매우 많으므로, 필요한 부분을 검색을 통해 찾는 것을 권장*
 
+- Background-color
+- color
+- width
+- height
+등 다양한 HTML Element 내 요소를 수정가능함.
+
 #### Hover, Active
 HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣을 수 있다.
 
