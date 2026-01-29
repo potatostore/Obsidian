@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "2026-01-28"
             }
+          },
+          {
+            "id": "ee1864435b824497",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -190,7 +203,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "851e6fdf4df928dc",
+  "active": "ee1864435b824497",
   "lastOpenFiles": [
     "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-28.md",
