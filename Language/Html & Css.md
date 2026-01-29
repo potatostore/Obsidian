@@ -25,3 +25,13 @@ HTML Element의 외형을 바꾸게 됨
 - CSS Selector : target HTML Element를 설정
 - CSS Property : HTML Element의 어떤 부분을 수정할 것인지 지정
 - CSS Value : 위 지정된 부분을 설정하는 값
+
+*HTML Element의 요소는 매우 많으므로, 필요한 부분을 검색을 통해 찾는 것을 권장*
+
+#### Hover, Active
+HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣을 수 있다.
+
+- pseudo class :
+	- Hover : 
+	- Active :
+- 

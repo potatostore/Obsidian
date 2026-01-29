@@ -25,12 +25,14 @@
             "id": "ee1864435b824497",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.11.5"
+                "file": "Language/HTML & CSS.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.11.5"
+              "icon": "lucide-file",
+              "title": "HTML & CSS"
             }
           }
         ],
@@ -205,8 +207,9 @@
   },
   "active": "ee1864435b824497",
   "lastOpenFiles": [
-    "-Calendar-/2026/1st/2026-01-27.md",
+    "-Calendar-/2026/1st/2026-01-29.md",
     "-Calendar-/2026/1st/2026-01-28.md",
+    "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-26.md",
     "Language/HTML & CSS.md",
     "TODO.md",
@@ -214,7 +217,6 @@
     "NAS.md",
     "0105.md",
     "conflict-files-obsidian-git.md",
-    "-Calendar-/2026/1st/2026-01-29.md",
     "-Calendar-/2026/1st/2026-01-13.md",
     "-Calendar-/2026/1st/2026-01-12.md",
     "Frameworks & services/Spring boot.md",
