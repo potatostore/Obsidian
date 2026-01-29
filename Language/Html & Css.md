@@ -51,3 +51,4 @@ HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣�
 
 #### Transition
 IDLE -> Hover -> Active 상태로 넘어갈 때 Transition을 설정하므로 내가 원하는 동작을 프레임별로 끊어 자연스럽게 넘어갈 수 있도록 만들어준다. 앞선 opacity 뿐만 아니라 Background-color, color등 다양한 변화에도 자연스럽게 동작 가능
+
