@@ -32,7 +32,13 @@ HTML Element의 외형을 바꾸게 됨
 - color
 - width
 - height
-등 다양한 HTML Element 내 요소를 수정가능함.
+등 다양한 HTML Element 내 요소를 수정가능.
+
+이처럼 다양한 HTML Element 내 요소를 수정할 때, 어떤 부분을 수정해야 내가 원하는 방향으로 수정되는지 확인하기 힘든데, 이때 사용하면 좋은 도구가 *chrome devtools*이다.
+
+#### Chrome Devtools
+F11을 누르게 되면, 현재 화면에 출력된 페이지의 HTML, CSS 코드를 보여줄 것이다. 이때 마우스 포인팅 버튼을 누르게 되면 해당 HTML Element가 어떤 CSS코드로 이루어져 있는지 확인가능하다. 추가적으로 *CSS Box Model*또한 확인 가능하다.
+- CSS Box Model : HTML Element가 화면에 출력될 때, 몇 픽셀만큼 어떤 요소로 갖고 있는지 확인가능하도록 만든 모델로, margin, border, padding등을 통해 화면 내 특정 구간을 차지하는 픽셀단위를 확인 가능
 
 #### Hover, Active
 HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣을 수 있다.
