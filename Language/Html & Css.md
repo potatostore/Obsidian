@@ -32,6 +32,10 @@ HTML Element의 외형을 바꾸게 됨
 HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣을 수 있다.
 
 - pseudo class :
-	- Hover : 
-	- Active :
-- 
+	- Hover : cursor을 HTML Element에 포인팅 했을 때, HTML Element의 요소를 바꿈
+	- Active : cursor로 click했을 때, "
+
+위 Hover, Active 동작은 내가 의도한 바처럼 매우 자연스럽게 동작하지 않을 것이다. 커서를 가져다 댔을 때, Button의 투명도(opacity)를 자연스럽게, 천천히 낮춰지도록 설정하고 싶으면 Transition을 사용해야 한다.
+
+#### Transition
+IDLE -> Hover -> Active 상태로 넘어갈 때 Transition을 설정하므로 내가 원하는 동작을 프레임별로 끊어 자연스럽게 넘어갈 수 있도록 만들어준다. 앞선 opacity 뿐만 아니라 Background-color, color등 다양한 변화에도 자연스럽게 동작 가능
