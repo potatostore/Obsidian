@@ -69,3 +69,8 @@ body는 눈에 보이는 모든 HTML Element가 존재한다.
 
 즉 head는 title 혹은 css code들을 묶고, body는 눈에 직접적으로 보여지는 HTML Element를 묶음.
 #### Nesting
+
+#### link
+앞선 방식에 따르면 html코드 내부에 style tag를 통해 css코드를 html내 파일에 구현했다. 이는 가독성을 해치므로, 따로 css파일에 빼줄 것인데, 이때 필요한 tag가 link tag이다. 이는 void tag로 close tag가 필요 없는 tag이다. 또한 html파일 내부에서 css파일을 연결하여 사용가능 하도록 만들어 준다.
+
+- void tag : close tag가 필요 없는 tag
