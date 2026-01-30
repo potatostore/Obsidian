@@ -66,4 +66,6 @@ IDLE -> Hover -> Active 상태로 넘어갈 때 Transition을 설정하므로 �
 
 이때 head는 title과 같은 웹의 제목 등의 정보가 들어가고, 
 body는 눈에 보이는 모든 HTML Element가 존재한다.
+
+즉 head는 title 혹은 css code들을 묶고, body는 눈에 직접적으로 보여지는 HTML Element를 묶음.
 #### Nesting
