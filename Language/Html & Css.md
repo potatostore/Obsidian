@@ -1,3 +1,4 @@
+*vs code IDE와 "live server" market place를 사용하면 보다 편하게 구현가능함.*
 # HTML(Hiper Text Markup Language)
 
 html은 문자열을 웹페이지에 순차적으로 띄우는 도구이다.
