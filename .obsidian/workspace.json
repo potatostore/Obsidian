@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/HTML & CSS.md",
+                "file": "-Calendar-/2026/2nd/2026-02-07.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTML & CSS"
+              "title": "2026-02-07"
             }
           }
         ],
@@ -55,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -184,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -205,13 +205,28 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6f1e8dfdc9237f33",
+  "active": "ee1864435b824497",
   "lastOpenFiles": [
+    "-Calendar-/2026/2nd/2026-02-06.md",
+    "-Calendar-/2026/2nd/2026-02-07.md",
+    "-Calendar-/2026/2nd/2026-02-05.md",
+    "-Calendar-/2026/2nd/2026-02-04.md",
+    "-Calendar-/2026/2nd/2026-02-03.md",
+    "-Calendar-/2026/2nd/2026-02-02.md",
+    "-Calendar-/2026/2nd/2026-02-01.md",
+    "-Calendar-/2026/2nd/2026-02-08.md",
+    "Project/AWS/IAM.md",
+    "-Calendar-/2026/1a",
+    "-Calendar-/2026/1a",
+    "-Calendar-/2026/2nd",
+    "Project/AWS/RDS(Relational Database Service).md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+    "Project/AWS/EC2-volume 해결 방안.md",
+    "Language/HTML & CSS.md",
     "-Calendar-/2026/1st/2026-01-29.md",
     "-Calendar-/2026/1st/2026-01-28.md",
     "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-26.md",
-    "Language/HTML & CSS.md",
     "TODO.md",
     "창업계획서 참고자료.md",
     "NAS.md",
@@ -221,20 +236,8 @@
     "-Calendar-/2026/1st/2026-01-12.md",
     "Frameworks & services/Spring boot.md",
     "University/2-2/파일처리론.md",
-    "-Calendar-/2026/1st/2026-01-14.md",
-    "-Calendar-/2026/1st/2026-01-10.md",
-    "-Calendar-/2026/1st/2026-01-09.md",
-    "-Calendar-/2026/1st/2026-01-08.md",
-    "-Calendar-/2026/1st/2026-01-07.md",
-    "-Calendar-/2026/1st/2026-01-06.md",
-    "-Calendar-/2026/1st/2026-01-05.md",
-    "University/2-2/운영체제.md",
-    "-Calendar-/2025/12th/2025-12-05.md",
-    "-Calendar-/2026/1st/2026-01-02.md",
-    "-Calendar-/2026/1st/2026-01-01.md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
-    "Untitled.md",
     "-Calendar-/2025/12th",
     "-Calendar-/2025/10th",
     "Untitled.base",
@@ -248,9 +251,6 @@
     "Images/Pasted image 20250404211654.png",
     "Untitled.canvas",
     "Books/Library.base",
-    "Books/세계문학전집",
-    "-Calendar-/2025/9th",
-    "Project/Unreal Engine",
     "Pasted image 20250524130603.png",
     "Pasted image 20250524130558 1.png",
     "Pasted image 20250524130558.png",
