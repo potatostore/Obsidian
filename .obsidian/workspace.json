@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2026/2nd/2026-02-07.md",
+                "file": "-Calendar-/2026/2nd/2026-02-01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-07"
+              "title": "2026-02-01"
             }
           }
         ],
@@ -207,13 +207,15 @@
   },
   "active": "ee1864435b824497",
   "lastOpenFiles": [
-    "-Calendar-/2026/2nd/2026-02-06.md",
+    "-Calendar-/2026/1st/2026-01-29.md",
+    "-Calendar-/2026/2nd/2026-02-01.md",
+    "-Calendar-/2026/2nd/2026-01-31.md",
     "-Calendar-/2026/2nd/2026-02-07.md",
+    "-Calendar-/2026/2nd/2026-02-06.md",
     "-Calendar-/2026/2nd/2026-02-05.md",
     "-Calendar-/2026/2nd/2026-02-04.md",
     "-Calendar-/2026/2nd/2026-02-03.md",
     "-Calendar-/2026/2nd/2026-02-02.md",
-    "-Calendar-/2026/2nd/2026-02-01.md",
     "-Calendar-/2026/2nd/2026-02-08.md",
     "Project/AWS/IAM.md",
     "-Calendar-/2026/1a",
@@ -223,7 +225,6 @@
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/EC2-volume 해결 방안.md",
     "Language/HTML & CSS.md",
-    "-Calendar-/2026/1st/2026-01-29.md",
     "-Calendar-/2026/1st/2026-01-28.md",
     "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-26.md",
@@ -235,7 +236,6 @@
     "-Calendar-/2026/1st/2026-01-13.md",
     "-Calendar-/2026/1st/2026-01-12.md",
     "Frameworks & services/Spring boot.md",
-    "University/2-2/파일처리론.md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
     "-Calendar-/2025/12th",
