@@ -138,3 +138,21 @@ HTML Element - Button에 클릭 동작을 넣고 싶다면 Hover을 통해 넣�
 
 #### Transition
 IDLE -> Hover -> Active 상태로 넘어갈 때 Transition을 설정하므로 내가 원하는 동작을 프레임별로 끊어 자연스럽게 넘어갈 수 있도록 만들어준다. 앞선 opacity 뿐만 아니라 Background-color, color등 다양한 변화에도 자연스럽게 동작 가능
+
+#### Inline CSS
+앞선 방식에 따르면 css를 통해 HTML Element의 속성을 변경하기 위해 style tag 속에서 pseudo class를 부여하여 해당 속성을 변경하는 방식을 사용해 왔다. 
+
+하지만 HTML Element의 color만 변경할 때, 한 개의 속성만 변경하기 위해 따로 클래스를 빼는 방식은 매우 불편하다. 따라서 cpp inline function처럼 inline css를 통해 psuedo class를 통하지 않고 수정을 하도록 만들었다.
+```html
+<div sytle="
+	background-color: blue;
+	color: white;
+"></div>
+```
+
+위 예제처럼 두 개 이상을 넣어도 무방하지만, 두 개 이상을 넣게 되면 가독성이 떨어지므로 상황에 맞게 사용하는 것을 권장한다.
+
+#### Grid
+위에서 Element의 대부분의 요소들은 구글링을 통해 찾아 변경하는 방식이 좋다고 언급하였는데, grid는 nested layout에서 중요한 포인트인 것 같아 언급이 필요하다.
+
+Grid는 격자모양을 뜻하는 단어로 DB의 테이블처럼 열과 행이 나눠져 있다. display: grid를 통해 해당 Element를 grid로 만들기로 한다면, grid-template-column을 통해 열의 수를 정하고, block, inline-block처럼 딱딱한 방식으로 조정을 하는 것이 아닌, 열의 수만큼 해당 Element를 쪼개어 사용하게 만든다.
