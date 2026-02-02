@@ -116,3 +116,31 @@ WHERE 나이 BETWEEN 30 AND 40
 SELECT COUNT(*) as count_res %% count_res 컬럼을 만들고 값을 넣음 %%
 SELECT COUNT(DISTINCT 나이) as count_age_variation %% 나이 컬럼에 해당되는 레코드의 수 중 중복되는 수를 제외하고 count_age_variation 컬럼을 만들어서 넣음 %%
 ```
+
+# SUM
+
+집계함수로 합계를 도출.
+
+```SQL
+SELECT SUM(Height)
+FROM Students
+WHERE grade BETWEEN 3 AND 6
+```
+
+# AVG
+
+집계함수로 평균을 도출
+
+```SQL
+SELECT AVG(Height)
+FROM Students
+WHERE grade BETWEEN 1 AND 4
+```
+
+이때 Null값이 들어있는 record는 집계에 포함되지 않는다. 
+즉, AVG(hegith)와 SUM(height)/COUNT(* )의 값이 다를 수도 있다.
+
+# MIN, MAX
+
+집계함수로 최소, 최대 도출
+
