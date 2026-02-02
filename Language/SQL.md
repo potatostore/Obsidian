@@ -20,3 +20,8 @@ FROM Customers;
 
 조건문처럼 사용하는 WHERE문은 AND, OR, !=(<>), >, <, >=, <= 등을 통해 다양한 조건은 만들어낼 수 있다.
 
+```SQL
+SELECT CountryName
+FROM Countries
+WHERE CountryName in ('a)
+```
