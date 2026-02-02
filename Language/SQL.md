@@ -23,5 +23,9 @@ FROM Customers;
 ```SQL
 SELECT CountryName
 FROM Countries
-WHERE CountryName in ('a)
+WHERE CountryName in ('한국', '일본', '중국', '미국') %% in 을 통해 여러 or문을 하나로 묶을 수 있다. %%
+
+---
+
+WHERE CountryName NOT in ('한국', '일본', )
 ```
