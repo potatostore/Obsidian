@@ -110,4 +110,9 @@ FROM Koreans
 WHERE 나이 BETWEEN 30 AND 40
 ```
 
-이때 COUNT 뒤에 as를 붙여 새로운 행에 COUNT의 출력물을 저장해줄 수 있고, COUNT()안에 DISTINCT를 붙여 
+이때 COUNT 뒤에 as를 붙여 새로운 행에 COUNT의 출력물을 저장해줄 수 있고, COUNT()안에 DISTINCT를 붙여 유니크한 값들을 count할 수 있다.
+
+```SQL
+SELECT COUNT(*) as count_res %% count_res 컬럼을 만들고 값을 넣음 %%
+SELECT COUNT(DISTINCT 나이) as count_age_variation %% 나이 컬럼에 해당되는 레코드의 수 중 중복되는 수를 제외하고 count_age_variation 컬럼을 만들어서 넣음 %%
+```
