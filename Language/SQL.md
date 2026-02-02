@@ -101,3 +101,13 @@ DESC : 내림차순
 생략 시 : ASC
 
 # COUNT
+
+집계함수 중 하나로, 레코드의 수를 출력해준다.
+
+```SQL
+SELECT COUNT(*)
+FROM Koreans
+WHERE 나이 BETWEEN 30 AND 40
+```
+
+이때 COUNT 뒤에 as를 붙여 새로운 행에 COUNT의 출력물을 저장해줄 수 있고, COUNT()안에 DISTINCT를 붙여 
