@@ -10,20 +10,6 @@ html은 문자열을 웹페이지에 순차적으로 띄우는 도구이다.
 		- Close Tag:
 - HTML Attribute : 
 - Indent : 없으면 가독성이 떨어짐
-## HTML Element
-
-#### button
-버튼을 만들어 주는 이벤트
-#### p
-Paragraph, 문단이란 뜻으로 문장을 나열해 주는 이벤트
-#### a
-Anckor Element, 클릭시 다른 웹사이트로 연결해주는 하이퍼링크와 같은 역할
-
-#### input(type, placeholder)
-text와 같이 키보드 입력이 가능한 영역이다.
-
-type을 통해 박스, 
-placehorder을 통해 입력 칸에 글을 적어놓을 수도 있다. 
 
 ## HTML Structure
 
@@ -40,6 +26,48 @@ placehorder을 통해 입력 칸에 글을 적어놓을 수도 있다.
 body는 눈에 보이는 모든 HTML Element가 존재한다.
 
 즉 head는 title 혹은 css code들을 묶고, body는 눈에 직접적으로 보여지는 HTML Element를 묶음.
+
+## HTML Element
+
+#### button
+버튼을 만들어 주는 이벤트
+#### p
+Paragraph, 문단이란 뜻으로 문장을 나열해 주는 이벤트
+#### a
+Anckor Element, 클릭시 다른 웹사이트로 연결해주는 하이퍼링크와 같은 역할
+
+#### input(type, placeholder)
+text와 같이 키보드 입력이 가능한 영역이다.
+
+type을 통해 어떤 종류에 대한 입력을 받을 것인지, placehorder을 통해 입력 칸에 글을 적어놓을 수도 있다. 
+
+| type                                                                       | 설명                                                            |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [button](http://www.tcpschool.com/html-input-types/intro)                  | 클릭할 수 있는 버튼을 정의함.                                             |
+| [checkbox](http://www.tcpschool.com/html-input-types/checkbox)             | 체크박스(checkbox)를 정의함.                                          |
+| [color](http://www.tcpschool.com/html-input-types/color)                   | 색을 선택할 수 있는 입력 필드(color picker)를 정의함.                         |
+| [date](http://www.tcpschool.com/html-input-types/date)                     | 날짜를 선택할 수 있는 입력 필드를 정의함. (year, month, day)                   |
+| [datetime-local](http://www.tcpschool.com/html-input-types/datetime-local) | 날짜와 시간을 선택할 수 있는 입력 필드를 정의함. (year, month, day, hour, minute) |
+| [email](http://www.tcpschool.com/html-input-types/email)                   | 이메일 주소를 입력할 수 있는 입력 필드를 정의함.                                  |
+| [file](http://www.tcpschool.com/html-input-types/file)                     | 업로드할 파일을 선택할 수 있는 입력 필드와 “파일 선택” 버튼을 정의함.                     |
+| [hidden](http://www.tcpschool.com/html-input-types/hidden)                 | 사용자에게는 보이지 않는 숨겨진 입력 필드를 정의함.                                 |
+| [image](http://www.tcpschool.com/html-input-types/image)                   | 제출 버튼(submit button)으로 사용될 이미지를 정의함.                          |
+| [month](http://www.tcpschool.com/html-input-types/month)                   | 날짜를 선택할 수 있는 입력 필드를 정의함. (year, month)                        |
+| [number](http://www.tcpschool.com/html-input-types/number)                 | 숫자를 입력할 수 있는 입력 필드를 정의함.                                      |
+| [password](http://www.tcpschool.com/html-input-types/password)             | 비밀번호를 입력할 수 있는 입력 필드를 정의함.                                    |
+| [radio](http://www.tcpschool.com/html-input-types/radio)                   | 라디오 버튼(radio button)을 정의함.                                    |
+| [range](http://www.tcpschool.com/html-input-types/range)                   | 슬라이드 바를 조정하여 범위 내의 숫자를 선택할 수 있는 입력 필드를 정의함.                   |
+| [reset](http://www.tcpschool.com/html-input-types/reset)                   | 리셋 버튼(reset button)을 정의함.                                     |
+| [search](http://www.tcpschool.com/html-input-types/search)                 | 검색어를 입력할 수 있는 텍스트 필드를 정의함.                                    |
+| [submit](http://www.tcpschool.com/html-input-types/submit)                 | 제출 버튼(submit button)을 정의함.                                    |
+| [tel](http://www.tcpschool.com/html-input-types/tel)                       | 전화번호를 입력할 수 있는 입력 필드를 정의함.                                    |
+| [text](http://www.tcpschool.com/html-input-types/text)                     | type 속성의 기본값으로, 한 줄로 된 텍스트 필드를 정의함.                           |
+| [time](http://www.tcpschool.com/html-input-types/time)                     | 시간을 선택할 수 있는 입력 필드를 정의함. (hour, minute)                       |
+| [url](http://www.tcpschool.com/html-input-types/url)                       | URL 주소를 입력할 수 있는 입력 필드를 정의함.                                  |
+| [week](http://www.tcpschool.com/html-input-types/week)                     | 날짜를 선택할 수 있는 입력 필드를 정의함. (year, week)                         |
+
+#### Img
+img는 이미지를 정해진 프레임 안에 넣어 화면에 출력해주는 Element으로, src를 통해 target image의 파일 경로를 정해준다.
 
 #### link
 앞선 방식에 따르면 html코드 내부에 style tag를 통해 css코드를 html내 파일에 구현했다. 이는 가독성을 해치므로, 따로 css파일에 빼줄 것인데, 이때 필요한 tag가 link tag이다. 이는 void tag로 close tag가 필요 없는 tag이다. 또한 html파일 내부에서 css파일을 연결하여 사용가능 하도록 만들어 준다.
