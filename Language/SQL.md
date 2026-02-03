@@ -162,9 +162,23 @@ HAVING city_area >= 1000000
 
 # AS
 
+ALias, 별칭이라는 뜻으로 집계결과를 SELECT할 때, 해당 컬럼을 다른 이름으로 명명해야 할 경우 AS를 통해 다른 별칭을 붙여줄 수 있다.
 
 # CASE WHEN
 
+SWTICH CASE와 비슷한 맥락으로 CASE로 시작하고, WHEN으로 조건을 설정하여 새로운 열에 THEN으로 저장한다. 이때 맨 마지막은 ELSE와 같이 default로 사용할 수 있지만, 필수는 아니다.
+
+```SQL
+SELECT drink, snack, milk, shin-ramen AS ramen
+FROM Market_price
+ORDER BY price
+CASE
+	WHEN drink >= 4000 then 'Expensive'
+	WHEN snack >= 5000 then 'more Expensive'
+	ELSE 'normal'
+```
+
+위 예제처럼 특정 조건에 의해 레코드들을 구분하여 새로운 열에 저장하려고 할 때 유용하게 사용할 수 있다.
 
 # INNER JOIN
 
