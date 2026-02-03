@@ -233,7 +233,7 @@ LEFT JOIN과 방향만 반대, 실무에서 거의 사용하지 않는다. -> LE
 만약 B를 기준으로 A 테이블을 JOIN 해야 하는경우 B LEFT JOIN A 로 순서를 바꿔 일관성을 확보한다.
 # FULL JOIN
 
-
+LEFT JOIN, INNER JOIN 등은 특정 컬럼만 가져오는 반면 FULL JOIN은 모든 테이블의 레코드들을 가져와 매칭하려고할 때 FULL JOIN을 사용한다.
 # UNION
 
 
