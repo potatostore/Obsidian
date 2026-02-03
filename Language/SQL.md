@@ -236,5 +236,37 @@ LEFT JOIN과 방향만 반대, 실무에서 거의 사용하지 않는다. -> LE
 LEFT JOIN, INNER JOIN 등은 특정 컬럼만 가져오는 반면 FULL JOIN은 모든 테이블의 레코드들을 가져와 매칭하려고할 때 FULL JOIN을 사용한다.
 # UNION
 
+JOIN 처럼 두 테이블을 특정 컬럼에 매칭시켜 합치는 방식이 아닌 테이블 밑에 추가적으로 쌓는 방식으로 합치게 된다.
+
+| ID  | price | count | category |
+| --- | ----- | ----- | -------- |
+| 1   | 3000  | 5     | snack    |
+| 2   | 4000  | 6     | drink    |
+| 3   | 5000  | 7     | meat     |
+
+| ID  | NAME  | etc          |
+| --- | ----- | ------------ |
+| 2   | water | jeju samdasu |
+| 3   | beef  | 1++          |
+| 4   | wine  | 12 aged      |
+
+
+| ID  | price | count | category | NAME  | etc          |
+| --- | ----- | ----- | -------- | ----- | ------------ |
+| 1   | 3000  | 5     | snack    |       |              |
+| 2   | 4000  | 6     | drink    |       |              |
+| 3   | 5000  | 7     | meat     |       |              |
+| 2   |       |       |          | water | jeju samdasu |
+| 3   |       |       |          | beef  | 1++          |
+| 4   |       |       |          | wine  | 12 aged      |
+와 같은 방식이 UNION 이다.
+
+```SQL
+SELECT *
+FROM A
+UNION
+SELECT *
+FROM B
+```
 
 # SUBQUERY
