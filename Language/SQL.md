@@ -228,7 +228,9 @@ INNER JOIN을 제외한 JOIN 방식을 OUTER JOIN이라고 하는데, 이때 LEF
 앞선 INNER JOIN과 동일하게 사용하며, ON을 통해 매칭해주면 된다.
 # RIGHT JOIN
 
+LEFT JOIN과 방향만 반대, 실무에서 거의 사용하지 않는다. -> LEFT JOIN을 사용하는 편이 원리상 편함
 
+만약 B를 기준으로 A 테이블을 JOIN 해야 하는경우 B LEFT JOIN A 로 순서를 바꿔 일관성을 확보한다.
 # FULL JOIN
 
 
