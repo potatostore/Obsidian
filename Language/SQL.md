@@ -251,15 +251,21 @@ JOIN 처럼 두 테이블을 특정 컬럼에 매칭시켜 합치는 방식이 �
 | 4   | wine  | 12 aged      |
 
 
-| ID  | price | count | category | NAME  | etc          |
-| --- | ----- | ----- | -------- | ----- | ------------ |
-| 1   | 3000  | 5     | snack    |       |              |
-| 2   | 4000  | 6     | drink    |       |              |
-| 3   | 5000  | 7     | meat     |       |              |
-| 2   |       |       |          | water | jeju samdasu |
-| 3   |       |       |          | beef  | 1++          |
-| 4   |       |       |          | wine  | 12 aged      |
+| ID  | price | count        | category |
+| --- | ----- | ------------ | -------- |
+| 1   | 3000  | 5            | snack    |
+| 2   | 4000  | 6            | drink    |
+| 3   | 5000  | 7            | meat     |
+| 2   | water | jeju samdasu |          |
+| 3   | beef  | 1++          |          |
+| 4   | wine  | 12 aged      |          |
 와 같은 방식이 UNION 이다.
+
+하지만 위 방식은 ERROR가 발생할 것이다.
+1. price의 데이터 타입은 정수형인데, union을 통해 들어온 두 번째 테이블의 데이터 타입은 문자열이다.(count column도 마찬가지)
+2. 열의 개수가 동일하지 않다. 
+
+현장 결제 기록과 온라인 결제 기록을 합칠 때 처럼 동일한 컬럼을 가진 두 테이블을 합칠 때 유용하다.
 
 ```SQL
 SELECT *
