@@ -202,6 +202,9 @@ WHERE F.price >= 300 AND S.count >= 500
 # LEFT JOIN
 
 ![[Pasted image 20260203114002.png]]
+INNER JOIN을 제외한 JOIN 방식을 OUTER JOIN이라고 하는데, 이때 LEFT JOIN은 A, B의 합잡합을 포함하여 A 테이블 기준으로 데이터를 나타내게 된다. 이때 A테이블에 존재하는 데이터가 B테이블에 존재하지 않을 가능성이 있는데, 위 INNER JOIN에서는 그런 서로 존재하지 않은, 매칭되지 않은 데이터들은 전부 삭제를 하고 집계하는 반면, LEFT JOIN은 A 테이블에 존재하는 모든 레코드들을 집계하고, 이때 B 컬럼에 존재하지 않은 데이터들은 NULL로 표시되게 된다.
+
+
 # RIGHT JOIN
 
 
