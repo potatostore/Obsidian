@@ -205,6 +205,27 @@ WHERE F.price >= 300 AND S.count >= 500
 INNER JOIN을 제외한 JOIN 방식을 OUTER JOIN이라고 하는데, 이때 LEFT JOIN은 A, B의 합잡합을 포함하여 A 테이블 기준으로 데이터를 나타내게 된다. 이때 A테이블에 존재하는 데이터가 B테이블에 존재하지 않을 가능성이 있는데, 위 INNER JOIN에서는 그런 서로 존재하지 않은, 매칭되지 않은 데이터들은 전부 삭제를 하고 집계하는 반면, LEFT JOIN은 A 테이블에 존재하는 모든 레코드들을 집계하고, 이때 B 컬럼에 존재하지 않은 데이터들은 NULL로 표시되게 된다.
 
 
+| ID  | price | count | category |
+| --- | ----- | ----- | -------- |
+| 1   | 3000  | 5     | snack    |
+| 2   | 4000  | 6     | drink    |
+| 3   | 5000  | 7     | meat     |
+
+| ID  | NAME  | etc          |
+| --- | ----- | ------------ |
+| 2   | water | jeju samdasu |
+| 3   | beef  | 1++          |
+| 4   | wine  | 12 aged      |
+위 두 테이블을 위 테이블(A)를 기준으로 LEFT JOIN을 하게 될 경우
+
+| ID  | price | count | category | NAME  | etc          |
+| --- | ----- | ----- | -------- | ----- | ------------ |
+| 1   | 3000  | 5     | snack    | NULL  | NULL         |
+| 2   | 4000  | 6     | drink    | water | jeju samdasu |
+| 3   | 5000  | 7     | meat     | beef  | 1++          |
+이 된다는 것이다.
+
+앞선 INNER JOIN과 동일하게 사용하며, ON을 통해 매칭해주면 된다.
 # RIGHT JOIN
 
 
