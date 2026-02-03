@@ -146,7 +146,19 @@ WHERE grade BETWEEN 1 AND 4
 
 # HAVING
 
+앞선 WHERE와 사용법이 동일하지만, 집계 결과에 대한 조건문을 작성한다는 차이점이 존재한다.
 
+즉 WHERE는 조건문에 적합한 레코드들을 전체 레코드들에서 찾는다면, HAVING은 집계 결과가 필터링을 통해 걸려져 나온 상태에서 한 번 더 걸러주는 역할을 한다.
+
+```SQL
+SELECT city_name
+FROM Korea
+WHERE city_people >= 300,000
+ORDER BY city_people
+HAVING city_area >= 1000000
+```
+
+위와 같은 예제로 사용하게 될 경우 city_people 30만 명이 넘는 도시들 중 지역의 크기가 1,000,000 이상의 레코드들의 city_name이 출력된다.
 
 # AS
 
