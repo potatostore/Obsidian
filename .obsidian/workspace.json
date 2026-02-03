@@ -8,49 +8,49 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c974f9a968fb6ee0",
+            "id": "851e6fdf4df928dc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2026/1st/2026-01-13.md",
+                "file": "Language/SQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-01-13"
+              "title": "SQL"
             }
           },
           {
-            "id": "1897ca4e33c25f03",
+            "id": "cd867c14497f6b32",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "Language/HTML & CSS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "HTML & CSS"
             }
           },
           {
-            "id": "b71d7088c0dada0f",
+            "id": "ee1864435b824497",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "-Calendar-/2026/2nd/2026-02-01.md",
+                "file": "-Calendar-/2026/2nd/2026-02-03.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-01"
+              "title": "2026-02-03"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -171,13 +171,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "-Calendar-/2025/12th/2025-12-22.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "file": "-Calendar-/2025/1st/2025-01-09.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 2025-12-22"
+              "title": "Outline of 2025-01-09"
             }
           },
           {
@@ -186,8 +183,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
@@ -198,16 +195,6 @@
               "state": {},
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
-            }
-          },
-          {
-            "id": "0c447dcc26e056a5",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
             }
           }
         ],
@@ -223,45 +210,46 @@
       "bases:Create new base": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b71d7088c0dada0f",
+  "active": "cd867c14497f6b32",
   "lastOpenFiles": [
+    "-Calendar-/2026/2nd/2026-02-02.md",
+    "-Calendar-/2026/2nd/2026-02-01.md",
+    "-Calendar-/2026/2nd/2026-02-03.md",
+    "-Calendar-/2026/2nd/2026-02-04.md",
+    "Language/HTML & CSS.md",
+    "Language/SQL.md",
+    "-Calendar-/2026/1st/2026-01-28.md",
     "-Calendar-/2026/1st/2026-01-29.md",
-    "-Calendar-/2026/1st/2026-02-01.md",
-    "-Calendar-/2026/2nd/2026-02-08.md",
+    "-Calendar-/2026/2nd/2026-01-31.md",
     "-Calendar-/2026/2nd/2026-02-07.md",
     "-Calendar-/2026/2nd/2026-02-06.md",
     "-Calendar-/2026/2nd/2026-02-05.md",
-    "-Calendar-/2026/2nd/2026-02-04.md",
-    "-Calendar-/2026/2nd/2026-02-03.md",
-    "-Calendar-/2026/2nd/2026-02-02.md",
-    "-Calendar-/2026/2nd/2026-02-01.md",
-    "-Calendar-/2026/1st/2026-01-28.md",
+    "-Calendar-/2026/2nd/2026-02-08.md",
+    "Project/AWS/IAM.md",
+    "-Calendar-/2026/1a",
+    "-Calendar-/2026/1a",
+    "-Calendar-/2026/2nd",
+    "Project/AWS/RDS(Relational Database Service).md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+    "Project/AWS/EC2-volume 해결 방안.md",
     "-Calendar-/2026/1st/2026-01-27.md",
     "-Calendar-/2026/1st/2026-01-26.md",
-    "0105.md",
-    "Frameworks & services/Spring boot.md",
-    "-Calendar-/2026/1st/2026-01-13.md",
-    "-Calendar-/2026/1st/2026-01-14.md",
-    "-Calendar-/2026/1st/2026-01-12.md",
-    "-Calendar-/2026/1st/2026-01-10.md",
-    "-Calendar-/2026/1st/2026-01-09.md",
-    "-Calendar-/2026/1st/2026-01-08.md",
     "TODO.md",
-    "-Calendar-/2026/1st/2026-01-05.md",
-    "-Calendar-/2026/1st/2026-01-07.md",
-    "-Calendar-/2026/1st/2026-01-06.md",
-    "University/2-2/파일처리론.md",
-    "-Calendar-/2026/Januery/Untitled",
-    "-Calendar-/2026/2nd",
+    "창업계획서 참고자료.md",
+    "NAS.md",
+    "0105.md",
+    "conflict-files-obsidian-git.md",
+    "-Calendar-/2026/1st/2026-01-13.md",
+    "-Calendar-/2026/1st/2026-01-12.md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
     "-Calendar-/2025/12th",
@@ -277,7 +265,6 @@
     "Images/Pasted image 20250404211654.png",
     "Untitled.canvas",
     "Books/Library.base",
-    "Books/세계문학전집",
     "Pasted image 20250524130603.png",
     "Pasted image 20250524130558 1.png",
     "Pasted image 20250524130558.png",
