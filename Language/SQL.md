@@ -295,8 +295,14 @@ WHERE 뿐만 아니라 SELECT, FROM등 다양한 곳에서 사용할 수 있다.
 
 # CONCAT
 
-SELECT를 통해 얻은 데이터들 뒤에 특정 문자를 추가해주고 싶을 때, CONCAT을 붙이면 된다.
+SELECT를 통해 얻은 데이터들 뒤에 특정 문자를 추가해주고 싶을 때, CONCAT 을 붙이면 된다.
 
 ```SQL
 SELECT CONCAT(HEIGHT, 'cm')
 ```
+
+
+
+# DATE_FORMAT
+
+DATE_FORMAT은 
