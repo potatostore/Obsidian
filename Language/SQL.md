@@ -182,10 +182,26 @@ CASE
 
 # INNER JOIN
 
+테이블이 한 개라면 위 조건문과 집계함수로 복잡하지만 원하는 데이터를 뽑아낼 수 있다. 
+
+하지만 테이블이 2개가 된다면 불가능해질 것이다. 원하는 조건에 해당되는 컬럼이 어디 테이블에 존재하는지 식별할 수 없을 것이고, 식별한다고 해도 두 테이블 간 테이터의 불일치 문제도 발생할 것이다. 이를 해결하기 위한 문법이 JOIN이고, INNER JOIN은 그 중에서도 공통 합을 다루는 JOIN이다.
+
+![[Pasted image 20260203113615.png]]
+
+벤다이어그램의 두 집합이 교차하는 부분을 합집합이라고 한다. 합집합을 나타내는 INNER JOIN은 두 테이블에 공통적으로 존재하는 column을 일치하는 레코드들끼리 합쳐 하나의 테이블을 사용하는 것과 동일한 효과를 준다.
+
+```SQL
+SELECT F.name, S.ID
+FROM First-DB AS F
+INNER JOIN Second-DB AS S ON F.ID = S.ID
+WHERE F.price >= 300 AND S.count >= 500
+```
+
+위와 같이 class에 멤버 변수, 함수를 사용하는 것처럼 두 테이블의 명칭을 AS로 바꿔 사용하는 것이 일방적이다. 
 
 # LEFT JOIN
 
-
+![[Pasted image 20260203114002.png]]
 # RIGHT JOIN
 
 
