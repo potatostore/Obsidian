@@ -144,3 +144,29 @@ WHERE grade BETWEEN 1 AND 4
 
 집계함수로 최소, 최대 도출
 
+# HAVING
+
+
+
+# AS
+
+
+# CASE WHEN
+
+
+# INNER JOIN
+
+
+# LEFT JOIN
+
+
+# RIGHT JOIN
+
+
+# FULL JOIN
+
+
+# UNION
+
+
+# SUBQUERY
