@@ -276,3 +276,13 @@ FROM B
 ```
 
 # SUBQUERY
+
+SUBQUERY는 쿼리문 내부에 추가적인 쿼리문을 넣는 방식이다.
+
+```SQL
+SELECT *
+FROM DB
+WHERE ID NOT IN (SELECT ID FROM online-DB)
+```
+
+위 예제 처럼 쿼리문 내부에 ()로 추가적인 쿼리문을 넣어 다른 테이블에서 필요한 부분만 사용하는 방식으로도 사용할 수 있다.
