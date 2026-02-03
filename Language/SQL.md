@@ -216,6 +216,7 @@ INNER JOIN을 제외한 JOIN 방식을 OUTER JOIN이라고 하는데, 이때 LEF
 | 2   | water | jeju samdasu |
 | 3   | beef  | 1++          |
 | 4   | wine  | 12 aged      |
+
 위 두 테이블을 위 테이블(A)를 기준으로 LEFT JOIN을 하게 될 경우
 
 | ID  | price | count | category | NAME  | etc          |
@@ -223,6 +224,7 @@ INNER JOIN을 제외한 JOIN 방식을 OUTER JOIN이라고 하는데, 이때 LEF
 | 1   | 3000  | 5     | snack    | NULL  | NULL         |
 | 2   | 4000  | 6     | drink    | water | jeju samdasu |
 | 3   | 5000  | 7     | meat     | beef  | 1++          |
+
 이 된다는 것이다.
 
 앞선 INNER JOIN과 동일하게 사용하며, ON을 통해 매칭해주면 된다.
@@ -259,6 +261,7 @@ JOIN 처럼 두 테이블을 특정 컬럼에 매칭시켜 합치는 방식이 �
 | 2   | water | jeju samdasu |          |
 | 3   | beef  | 1++          |          |
 | 4   | wine  | 12 aged      |          |
+
 와 같은 방식이 UNION 이다.
 
 하지만 위 방식은 ERROR가 발생할 것이다.
