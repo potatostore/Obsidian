@@ -292,3 +292,11 @@ WHERE ID NOT IN (SELECT ID FROM online-DB)
 위 예제 처럼 쿼리문 내부에 ()로 추가적인 쿼리문을 넣어 다른 테이블에서 필요한 부분만 사용하는 방식으로도 사용할 수 있다.
 
 WHERE 뿐만 아니라 SELECT, FROM등 다양한 곳에서 사용할 수 있다.
+
+# CONCAT
+
+SELECT를 통해 얻은 데이터들 뒤에 특정 문자를 추가해주고 싶을 때, CONCAT을 붙이면 된다.
+
+```SQL
+SELECT CONCAT(HEIGHT, 'cm')
+```

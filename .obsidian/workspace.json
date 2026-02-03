@@ -49,7 +49,8 @@
               "title": "SQL"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -231,15 +232,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b71d7088c0dada0f",
+  "active": "f58b0f18c021d430",
   "lastOpenFiles": [
+    "-Calendar-/2026/2nd/2026-02-02.md",
     "-Calendar-/2026/2nd/2026-02-03.md",
     "Language/Html & Css.md",
     "Language/SQL.md",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "Frameworks & services/Spring boot.md",
-    "-Calendar-/2026/2nd/2026-02-02.md",
     "-Calendar-/2026/2nd/2026-02-01.md",
     "-Calendar-/2026/1st/2026-01-29.md",
     "-Calendar-/2026/1st/2026-02-01.md",
