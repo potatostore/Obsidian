@@ -1,3 +1,4 @@
+강의 : https://www.youtube.com/watch?v=G3e-cpL7ofc&list=PL3r6NYvHcxgVTIxCxTKP4O_dWF4ZnSm1q&index=1
 *vs code IDE와 "live server" market place를 사용하면 보다 편하게 구현가능함.*
 # HTML(Hiper Text Markup Language)
 
