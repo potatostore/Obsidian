@@ -2,3 +2,19 @@
 교재 : https://helloworldjavascript.net/
 
 
+# 0. JS basic
+
+
+
+# 1. Type
+
+#### number
+
+#### string
+
+#### undefined
+
+#### NaN(Not a Number)
+
+#### null
+

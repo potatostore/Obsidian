@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/Html & Css.md",
+                "file": "Language/Java Script.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Html & Css"
+              "title": "Java Script"
             }
           }
         ],
@@ -221,13 +221,19 @@
   },
   "active": "3eaa8590ee69da3b",
   "lastOpenFiles": [
+    "TODO.md",
+    "Project/Calculator(c++, spring boot).md",
+    "Project/Web Server(c++).md",
+    "Project/Unreal Engine/Unreal Engine Main.md",
+    "Project/Unreal Engine/Unreal Engine(HD-2D).md",
+    "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
+    "Language/Html & Css.md",
     "Frameworks & services/Spring boot.md",
     "-Calendar-/2026/2nd/2026-02-02.md",
     "-Calendar-/2026/2nd/2026-02-01.md",
     "-Calendar-/2026/2nd/2026-02-08.md",
     "-Calendar-/2026/2nd/2026-02-09.md",
     "-Calendar-/2026/2nd/2026-02-05.md",
-    "Language/Html & Css.md",
     "-Calendar-/2026/2nd/2026-02-06.md",
     "-Calendar-/2026/2nd/2026-02-03.md",
     "-Calendar-/2026/2nd/2026-02-04.md",
@@ -246,12 +252,6 @@
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/EC2-volume 해결 방안.md",
-    "-Calendar-/2026/1st/2026-01-27.md",
-    "-Calendar-/2026/1st/2026-01-26.md",
-    "TODO.md",
-    "창업계획서 참고자료.md",
-    "NAS.md",
-    "0105.md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
     "-Calendar-/2025/12th",
