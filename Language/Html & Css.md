@@ -153,7 +153,17 @@ IDLE -> Hover -> Active 상태로 넘어갈 때 Transition을 설정하므로 �
 
 위 예제처럼 두 개 이상을 넣어도 무방하지만, 두 개 이상을 넣게 되면 가독성이 떨어지므로 상황에 맞게 사용하는 것을 권장한다.
 
+
+## Display
+
+#### block
+
+#### inline
+
+#### inline-block
 #### Grid
 위에서 Element의 대부분의 요소들은 구글링을 통해 찾아 변경하는 방식이 좋다고 언급하였는데, grid는 nested layout에서 중요한 포인트인 것 같아 언급이 필요하다.
 
 Grid는 격자모양을 뜻하는 단어로 DB의 테이블처럼 열과 행이 나눠져 있다. display: grid를 통해 해당 Element를 grid로 만들기로 한다면, grid-template-column을 통해 열의 수를 정하고, block, inline-block처럼 딱딱한 방식으로 조정을 하는 것이 아닌, 열의 수만큼 해당 Element를 쪼개어 사용하게 만든다.
+
+#### Flex
