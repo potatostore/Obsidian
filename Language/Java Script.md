@@ -36,6 +36,27 @@ function exam(item1, item2){
 
 # 3. Object
 
-Object는 c언어의 구조체와 매우 유사하다. 
+Object는 OOP의 class와 매우 유사하다. 
 
-Union처럼 
+```js
+const product = {
+	name: 'socks',
+	price: 1000
+};
+
+console.log(product);
+
+product.newProperty = true;
+
+console.log(product);
+
+delete product.newProperty;
+
+console.log(product);
+```
+
+product Object는 마치 Map처럼 출력이 된다. 
+
+Object.{anything you want to create new property}를 통해 원하는 속성을 새로 만들어 낼 수 있다. (const로 선언된 Object는 새로운 속성을 부여할 때 반드시 값을 초기화 해줘야 한다.)
+
+delete를 통해 속성값을 삭제가능하다.
