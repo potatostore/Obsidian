@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/Java Script.md",
+                "file": "TODO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Java Script"
+              "title": "TODO"
             }
           }
         ],
@@ -221,6 +221,7 @@
   },
   "active": "3eaa8590ee69da3b",
   "lastOpenFiles": [
+    "Language/Java Script.md",
     "TODO.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/Web Server(c++).md",
@@ -251,7 +252,6 @@
     "-Calendar-/2026/2nd",
     "Project/AWS/RDS(Relational Database Service).md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
-    "Project/AWS/EC2-volume 해결 방안.md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
     "-Calendar-/2025/12th",
