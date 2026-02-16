@@ -872,6 +872,19 @@ public class GreetingController {
 이러한 단점으로 인하여 @ConfigurationProperties라는 어노테이션을 추가적으로 만들게 되었다.
 
 #### @ConfigurationProperties
+1. 가독성과 유지보수의 지옥 (Readability)
+방금 작성하신 중첩 문법은 값이 2~3개만 넘어가도 코드를 읽기가 매우 힘들어진다.
+- @Value: 문자열 안에 복잡한 로직이 섞여 있어 오타가 나기 쉽고, 나중에 설정을 바꿀 때 모든 컨트롤러를 뒤져야 한다.
+- @ConfigurationProperties : 자바 객체(POJO) 구조로 관리하므로,  greeting.getName() 처럼 메서드로 깔끔하게 가져올 수 있다.
+
+2. 느슨한 바인딩 (Relaxed Binding)
+@Value는 이름이 정확히 일치해야 하지만, @ConfigurationProperties는 훨씬 유연하다.
+- 예: 설정 파일에  greeting_name ,  GREETINGNAME ,  greeting-name  중 무엇으로 적어도 자바의  greetingName 필드에 똑똑하게 연결해 준다.
+
+3. 타입 안정성 (Type Safety)
+- @Value: 기본적으로 모든 것을 문자열로 처리하거나 간단한 타입 변환만 지원한다.
+- @ConfigurationProperties: 숫자, 리스트, Map, 심지어 중첩된 객체 구조까지 자바 타입에 맞춰서 자동으로 넣어주고 검증(Validation)까지 할 수 있다.
+
 앞선 @Value의 단점을 보완하기 위해 만들어진 어노테이션으로 IDE가 환경변수 관련 속성을 파악하고, 연결하는 것을 확인하기 위해 다음과 같은 작업들로 행할 수 있다.
 1. main class(@SpringBootApplication이 붙은 class)에 @ConfigurationPropertiesScan 추가
 2. pom.xml에 의존성 추가
