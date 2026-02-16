@@ -820,7 +820,7 @@ public class Coffee {
 
 #### @Value
 application.properties(설정 파일)나 환경 변수에 저장된 값을 자바 변수에 넣어주는 작업을 진행한다. 위 어노테이션은 단순히 파일에 해당 변수 값을 읽어와 자바 변수에 넣어주는 기능만 작동을 하고, 환경 변수를 수정하는 작업 제공하지 않는다. 
-```java, hl=19
+```java hl=19
 #application.properties
 spring.application.name=ShoppingApplication  
 greeting-name=Dakota  
@@ -862,7 +862,12 @@ public class GreetingController {
 위와 같은 코드에서 가장 중요한 점은 22번째 줄이다.
 22번째 줄을 보게 되면 greeting-name이라는 환경변수에 영향을 받아 greeting-coffee를 정의하게 된다. 이는 곧 greeting-name이라는 환경변수가 존재하지 않을 경우 greeting-coffee또한 compile error(BeanCreationException)가 발생할 수 있다.
 
-또한 @Value에 입력값이 모두 문자열로 되어있는 것이 단점으로 작용한다. 이는 IDE 내부 컴파일러가 환경 변수를 어플리케이션이 사용한다고 인식하지 못한다. 
+물론 다음과 같이 해결 가능하다.
+```java
+@Value("${greeting-coffee: ${greeting-name: Makao} is drinking ice americano}")
+```
+
+@Value에 입력값이 모두 문자열로 되어있는 것 또한 단점으로 작용한다. 이는 IDE 내부 컴파일러가 환경 변수를 어플리케이션이 사용한다고 인식하지 못한다. 
 
 이러한 단점으로 인하여 @ConfigurationProperties라는 어노테이션을 추가적으로 만들게 되었다.
 
