@@ -897,6 +897,12 @@ name : symbol
 1. main class(@SpringBootApplication이 붙은 class)에 @ConfigurationPropertiesScan 추가
 2. pom.xml에 의존성 추가
 
+#### @ConfigurationPropertiesScan
+앞선 설명대로 properties파일에 존재하는 값들을 읽기 위해 scan어노테이션이 선행되어야 하고, 보통 메인 어플리케이션 클래스에 추가한다.
+```java
+
+```
+
 
 ---
 #### @Component
