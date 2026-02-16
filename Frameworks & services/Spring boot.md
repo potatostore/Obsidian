@@ -900,9 +900,15 @@ name : symbol
 #### @ConfigurationPropertiesScan
 앞선 설명대로 properties파일에 존재하는 값들을 읽기 위해 scan어노테이션이 선행되어야 하고, 보통 메인 어플리케이션 클래스에 추가한다.
 ```java
-
+@SpringBootApplication  
+@ConfigurationPropertiesScan  
+public class ShoppingApplication {  
+    public static void main(String[] args) {  
+        SpringApplication.run(ShoppingApplication.class, args);  
+    }  
+}
 ```
-
+이렇게 하면 ConfigurationProperties를 사용할 때, 자동완성 기능을 지원하게 된다.
 
 ---
 #### @Component
