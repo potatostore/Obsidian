@@ -881,6 +881,14 @@ public class GreetingController {
 @Value는 이름이 정확히 일치해야 하지만, @ConfigurationProperties는 훨씬 유연하다.
 - 예: 설정 파일에  greeting_name ,  GREETINGNAME ,  greeting-name  중 무엇으로 적어도 자바의  greetingName 필드에 똑똑하게 연결해 준다.
 
+문자열과 변수명을 컴파일러는 다르게 받아들이는데, 이때 변수명을 심볼(symbol)이라고 한다.
+```java
+String name = "name";
+name : symbol
+"name" : String
+```
+이 때문에 문자열이 아닌 값을 사용하게 될 경우, 심볼을 컴파일러나 IDE가 자동완성을 지원하여 오류가 더 적어진다.
+
 3. 타입 안정성 (Type Safety)
 - @Value: 기본적으로 모든 것을 문자열로 처리하거나 간단한 타입 변환만 지원한다.
 - @ConfigurationProperties: 숫자, 리스트, Map, 심지어 중첩된 객체 구조까지 자바 타입에 맞춰서 자동으로 넣어주고 검증(Validation)까지 할 수 있다.
