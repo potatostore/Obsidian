@@ -785,7 +785,7 @@ ResponseEntity<Coffee> putCoffee(@PathVariable String id,
 	}	
 	
 	return (coffeeIdx == -1) ? 
-			new ResponseEntity<>(postCoffee(coffee), HttpStatus.CREATED):
+				new ResponseEntity<>(postCoffee(coffee), HttpStatus.CREATED):
 			new ResponseEntity<>(coffee, HttpStatus.OK);
 }
 ```
