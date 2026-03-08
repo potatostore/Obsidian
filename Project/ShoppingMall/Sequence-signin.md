@@ -1,3 +1,5 @@
+<div style="width: 100%; overflow-x: auto;">
+
 ```mermaid
 sequenceDiagram
     autonumber
@@ -35,3 +37,4 @@ sequenceDiagram
 ```
 
 
+</div>
