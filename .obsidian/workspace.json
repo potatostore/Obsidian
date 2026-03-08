@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/ShoppingMall/Sequence-signin.md",
+                "file": "Project/ShoppingMall/ShoppingMall Main System diagram.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sequence-signin"
+              "title": "ShoppingMall Main System diagram"
             }
           }
         ],
@@ -232,17 +232,19 @@
   },
   "active": "3eaa8590ee69da3b",
   "lastOpenFiles": [
-    "Language/Rust.md",
+    "Project/ShoppingMall/Sequence-signup.md",
+    "Project/ShoppingMall/ShoppingMall Main System diagram.md",
     "Project/ShoppingMall/Sequence-signin.md",
+    "Project/Unreal Engine/Unreal Engine Main.md",
+    "Frameworks & services/Spring boot.md",
+    "Language/Rust.md",
     "Language/Html & Css.md",
     "Project/ShoppingMall",
     "conflict-files-obsidian-git.md",
-    "Frameworks & services/Spring boot.md",
     "Language/Java Script.md",
     "TODO.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/Web Server(c++).md",
-    "Project/Unreal Engine/Unreal Engine Main.md",
     "Project/Unreal Engine/Unreal Engine(HD-2D).md",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
     "-Calendar-/2026/2nd/2026-02-02.md",
@@ -259,8 +261,6 @@
     "Images/Pasted image 20260203113615.png",
     "-Calendar-/2026/1st/2026-01-28.md",
     "-Calendar-/2026/1st/2026-01-29.md",
-    "-Calendar-/2026/2nd/2026-01-31.md",
-    "-Calendar-/2026/2nd/2026-02-07.md",
     "-Calendar-/2026/1a",
     "-Calendar-/2026/1a",
     "-Calendar-/2026/2nd",
