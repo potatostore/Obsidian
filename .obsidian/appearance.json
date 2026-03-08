@@ -1,7 +1,6 @@
 {
   "cssTheme": "AnuPpuccin",
   "enabledCssSnippets": [
-    "mermaid",
-    "Minimal Theme cards"
+    "mermaid"
   ]
 }
