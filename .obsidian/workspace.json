@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/Html & Css.md",
+                "file": "Project/ShoppingMall/Sequence-signin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Html & Css"
+              "title": "Sequence-signin"
             }
           }
         ],
@@ -196,9 +196,19 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "4f1ead78608591cc",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -219,12 +229,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3eaa8590ee69da3b",
+  "active": "4f1ead78608591cc",
   "lastOpenFiles": [
+    "Language/Html & Css.md",
+    "Project/ShoppingMall/Sequence-signin.md",
+    "Project/ShoppingMall",
     "conflict-files-obsidian-git.md",
     "Frameworks & services/Spring boot.md",
     "Language/Java Script.md",
-    "Language/Html & Css.md",
     "TODO.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/Web Server(c++).md",
@@ -251,7 +263,6 @@
     "-Calendar-/2026/1a",
     "-Calendar-/2026/1a",
     "-Calendar-/2026/2nd",
-    "Project/AWS/RDS(Relational Database Service).md",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
     "-Calendar-/2025/12th",
@@ -266,7 +277,6 @@
     "Images/Pasted image 20250405215130.png",
     "Images/Pasted image 20250404211654.png",
     "Untitled.canvas",
-    "Books/Library.base",
     "Pasted image 20250524130603.png",
     "Algorithm/Untitled.canvas",
     "Algorithm/Search Algorithm/Untitled.canvas"
