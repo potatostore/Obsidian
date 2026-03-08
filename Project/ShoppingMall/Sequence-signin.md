@@ -1,4 +1,4 @@
-<div style="width: 100%; overflow-x: auto;">
+
 
 ```mermaid
 sequenceDiagram
@@ -35,6 +35,3 @@ sequenceDiagram
         Next -->> User :  "아이디 또는 비밀번호를 확인하세요"
      end 
 ```
-
-
-</div>
