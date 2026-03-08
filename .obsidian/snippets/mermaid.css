@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     overflow-x: auto !important; /* 가로 스크롤 허용 */
-    padding-left: 0%;
+    margin-left: 0%;
 }
 
 .mermaid svg {
     max-width: none !important; /* 최대 너비 제한 해제 */
     height: auto !important;    /* 높이는 자동 조절 */
+    width: 100%;
 }
