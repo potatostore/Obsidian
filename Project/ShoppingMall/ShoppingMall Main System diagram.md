@@ -26,11 +26,12 @@ subgraph DB["Database / Repository"]
 	PreviousSearchtable[("Previous Search Table")]
 	CartTable[("Cart Table")]
 	ProblemOrderTable[("ProblemOrder Table")]
+	RecentWatchingTable[("RecentWatching Table")]
 end
 
 User(("고객")) -- signIn / signUp / findId / findPassword / editProfile / checkLikeProduct --> UC
 User -- viewProducts / SearchProduct / addCart --> PC
-User -- checkOrder / 
+User -- checkOrder / checkProblemOrder --> OC
 Admin(("관리자/Employee")) -- manageOrders --> EC
 Admin -- addProduct / removeProduct --> PC
 
@@ -40,5 +41,5 @@ PC --> PS
 US --> UserTable
 PS --> ProdTable
 
-UserTable --> LikeTable & PreviousSearchtable & CartTable
+UserTable --> LikeTable & PreviousSearchtable & CartTable & ProblemOrderTable & RecentWatchingTable
 ```
