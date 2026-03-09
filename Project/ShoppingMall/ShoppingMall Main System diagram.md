@@ -25,6 +25,7 @@ subgraph DB["Database / Repository"]
 	LikeTable[("Like Table")]
 	PreviousSearchtable[("Previous Search Table")]
 	CartTable[("Cart Table")]
+	ProblemOrderTable[("ProblemOrder Table")]
 end
 
 User(("고객")) -- signIn / signUp / findId / findPassword / editProfile / checkLikeProduct --> UC
