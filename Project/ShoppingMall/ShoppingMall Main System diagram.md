@@ -27,6 +27,8 @@ subgraph DB["Database / Repository"]
 	CartTable[("Cart Table")]
 	ProblemOrderTable[("ProblemOrder Table")]
 	RecentWatchingTable[("RecentWatching Table")]
+	SystemQATable[("System Q&A Table")]
+	ProductQATable[("Product Q&A Table")]
 end
 
 User(("고객")) -- signIn / signUp / findId / findPassword / editProfile / checkLikeProduct --> UC
@@ -42,5 +44,7 @@ US --> UserTable
 PS --> ProdTable
 
 UserTable --> LikeTable & PreviousSearchTable & CartTable & ProblemOrderTable & RecentWatchingTable
+ProdTable --> ProductQATable
+
 ```
   
