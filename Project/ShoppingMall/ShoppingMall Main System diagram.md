@@ -34,8 +34,9 @@ end
 User(("고객")) -- signIn / signUp / findId / findPassword / editProfile / checkLikeProduct --> UC
 User -- viewProducts / SearchProduct / addCart --> PC
 User -- checkOrder / checkProblemOrder --> OC
-Admin(("관리자/Manager")) -- manageOrders --> EC
-Admin -- addProduct / removeProduct --> PC
+SysManager(("시스템 관리자/System Manager")) -- manageOrders --> EC
+SysManager -- addProduct / removeProduct --> PC
+ProdManager -- editProduct --> PC
 
 UC --> US
 EC --> US
