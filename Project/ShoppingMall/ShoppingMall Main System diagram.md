@@ -41,5 +41,5 @@ PC --> PS
 US --> UserTable
 PS --> ProdTable
 
-UserTable --> LikeTable & PreviousSearchtable & CartTable & ProblemOrderTable & RecentWatchingTable
+UserTable --> LikeTable & PreviousSearchTable & CartTable & ProblemOrderTable & RecentWatchingTable
 ```
