@@ -36,7 +36,7 @@ User -- viewProducts / SearchProduct / addCart --> PC
 User -- checkOrder / checkProblemOrder --> OC
 SysManager(("시스템 관리자/System Manager")) -- manageOrders --> EC
 SysManager -- addProduct / removeProduct --> PC
-ProdManager -- editProduct --> PC
+ProdManager(("상품 관리자/Product Manager")) -- addProduct / removeProduct / editProduct --> PC
 
 UC --> US
 EC --> US
