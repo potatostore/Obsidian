@@ -1,1 +1,0 @@
-RT sys -> hard RT Sys / soft RT Sys -> periodic / Aperiodic -> preemptive / Non-Preemptive -> Uni-Processor / Parallel Processors
