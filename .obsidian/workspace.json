@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/ShoppingMall/Sequence-signin.md",
+                "file": "Project/ShoppingMall/Sequence-signup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sequence-signin"
+              "title": "Sequence-signup"
             }
           }
         ],
@@ -232,6 +232,7 @@
   },
   "active": "3eaa8590ee69da3b",
   "lastOpenFiles": [
+    "Project/ShoppingMall/Sequence-signin.md",
     "Project/ShoppingMall/Sequence-signup.md",
     "University/3-1/Real-Time System.md",
     "Project/ShoppingMall/ShoppingMall Main System diagram.md",
@@ -239,7 +240,6 @@
     "Language/SQL.md",
     "Language/Rust.md",
     "Language/JAVA.md",
-    "Project/ShoppingMall/Sequence-signin.md",
     "Project/Unreal Engine/Unreal Engine Main.md",
     "Frameworks & services/Spring boot.md",
     "Language/Html & Css.md",
