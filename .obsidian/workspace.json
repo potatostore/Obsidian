@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/Calculator(c++, spring boot).md",
+                "file": "창업계획서 참고자료.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Calculator(c++, spring boot)"
+              "title": "창업계획서 참고자료"
             }
           }
         ],
@@ -206,6 +206,9 @@
   },
   "active": "e0797bdb99f5ea4f",
   "lastOpenFiles": [
+    "Project/Web Server(c++).md",
+    "Project/scenario(게임 속 바바리안으로 살아남기).md",
+    "Project/Calculator(c++, spring boot).md",
     "Project/ShoppingMall/Sequence-signin.md",
     "conflict-files-obsidian-git.md",
     "창업계획서 참고자료.md",
@@ -229,9 +232,6 @@
     "-Calendar-/2026/1st/2026-01-09.md",
     "-Calendar-/2026/1st/2026-01-06.md",
     "-Calendar-/2026/1st/2026-01-08.md",
-    "-Calendar-/2026/1st/2026-01-05.md",
-    "-Calendar-/2026/1st/2026-01-07.md",
-    "-Calendar-/2026/1st/2026-01-02.md",
     "-Calendar-/2026/2nd",
     "-Calendar-/2026/1st",
     "-Calendar-/2026",
