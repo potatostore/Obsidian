@@ -955,6 +955,43 @@ public class MyService{
 @Bean을 통해 현재 자바파일에 존재하지 않은, 서드파티에만 존재하는 클래스의 객체를 IoC 컨테이너에 등록하고, 사용하게 됨
 
 ---
+## Delv into data
+
+#### @Data
+클래스 내 모든 필드변수의 setter, getter, tostring, equals와 같은 기본 함수를 자동제공
+```java
+import lombok.java;
+import org.springframework.data.annotation.id;
+
+@Data
+public class coffee{
+	@Id
+	private String id;
+	private String name;
+	private int price;
+}
+//자동으로 getter,setter,toString,equals가 생성됨
+```
+
+#### @NoArgsConstrucor
+아무 매개변수가 없는 생성자 생성
+
+#### @AllArgsConstructor
+모든 필드변수에 대한 생성자 생성
+
+#### @JsonProperty("string")
+ 한 필드 변수에 string 이름과 동일한 JSON 내 key의 value를 매칭
+```Java
+@Jsonproperty("total_price")
+private int price;
+
+// total_price:value일 경우, price에 value 매핑
+```
+
+#### @JsonIgnoreProperties(ignoreUnkown = true)
+JSON과 상응되는 클래스 내 멤버 변수가 없을 경우, Jackson의 역직렬화 메커니즘이 이를 무시한다.
+
+---
 #### @Component
 가장 기본적으로 component scan을 통해 bean 객체를 만들고, 이를 IoC container에 저장하려고 할 때, 사용되는 어노테이션 @component가 있다.
 
