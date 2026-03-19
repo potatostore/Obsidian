@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/The Goals(1,2).md",
+                "file": "University/2-2/운영체제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Goals(1,2)"
+              "title": "운영체제"
             }
           },
           {
@@ -230,11 +230,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "ee1864435b824497",
   "lastOpenFiles": [
+    "Project/ShoppingMall/Sequence-signup.md",
+    "University/2-1/컴퓨터구조.md",
+    "University/2-2/파일처리론.md",
+    "Computer Science/OS(operate system).md",
+    "University/2-2/운영체제.md",
+    "Books/The Goals(1,2).md",
     "Frameworks & services/Spring boot.md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
-    "Project/ShoppingMall/Sequence-signup.md",
     "Project/ShoppingMall/Sequence-signin.md",
     "University/3-1/Real-Time System.md",
     "Project/ShoppingMall/ShoppingMall Main System diagram.md",
@@ -255,11 +260,6 @@
     "-Calendar-/2026/2nd/2026-02-02.md",
     "-Calendar-/2026/2nd/2026-02-01.md",
     "-Calendar-/2026/2nd/2026-02-08.md",
-    "-Calendar-/2026/2nd/2026-02-09.md",
-    "-Calendar-/2026/2nd/2026-02-05.md",
-    "-Calendar-/2026/2nd/2026-02-06.md",
-    "-Calendar-/2026/2nd/2026-02-03.md",
-    "-Calendar-/2026/2nd/2026-02-04.md",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "-Calendar-/2026/1a",
