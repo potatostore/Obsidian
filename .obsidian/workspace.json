@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "창업계획서 참고자료.md",
+                "file": "University/3-1/유비쿼터스.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "창업계획서 참고자료"
+              "title": "유비쿼터스"
             }
           },
           {
@@ -232,6 +232,8 @@
   },
   "active": "ee1864435b824497",
   "lastOpenFiles": [
+    "창업계획서 참고자료.md",
+    "University/3-1/유비쿼터스.md",
     "University/2-2/운영체제.md",
     "Project/ShoppingMall/Sequence-signup.md",
     "University/2-1/컴퓨터구조.md",
@@ -258,8 +260,6 @@
     "Project/Unreal Engine/Unreal Engine(HD-2D).md",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
     "-Calendar-/2026/2nd/2026-02-02.md",
-    "-Calendar-/2026/2nd/2026-02-01.md",
-    "-Calendar-/2026/2nd/2026-02-08.md",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "-Calendar-/2026/1a",
