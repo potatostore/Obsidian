@@ -30,7 +30,7 @@
                 "file": "Books/Untitled.base",
                 "viewName": "Table"
               },
-              "icon": "lucide-table",
+              "icon": "lucide-layout-grid",
               "title": "Untitled"
             }
           }
@@ -207,19 +207,20 @@
   },
   "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
+    "Books/Resources/Books_Info",
     "University/3-1/Real-Time System.md",
     "Books/Untitled.base",
     "Books/-Library-.md",
     "Untitled 1.base",
-    "Books/Resources/Books/5. 동물농장 - 조지 오웰.md",
+    "Books/Resources/Books_Review/5. 동물농장 - 조지 오웰.md",
     "Books/Resources/ZImages",
     "Books/Resources/무제.md",
-    "Books/Resources/Books",
+    "Books/Resources/Books_Review",
     "Books/Resources/Media",
     "Books/Resources",
     "Frameworks & services/Spring boot.md",
     "Books/싯다르타 (세계문학전집173) - 헤르만 헤세.md",
-    "Books/Resources/Books/77. 1984 - 조지오웰.md",
+    "Books/Resources/Books_Review/77. 1984 - 조지오웰.md",
     "Project/ShoppingMall/Sequence-signup.md",
     "University/3-1/유비쿼터스.md",
     "창업계획서 참고자료.md",
@@ -227,7 +228,7 @@
     "University/2-1/컴퓨터구조.md",
     "University/2-2/파일처리론.md",
     "Computer Science/OS(operate system).md",
-    "Books/Resources/Books/The Goals(1,2).md",
+    "Books/Resources/Books_Review/The Goals(1,2).md",
     "Books/개발자가 되기 위해 꼭 알아야 하는 IT 용어.md",
     "Project/ShoppingMall/Sequence-signin.md",
     "Project/ShoppingMall/ShoppingMall Main System diagram.md",
