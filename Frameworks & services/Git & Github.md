@@ -93,3 +93,32 @@ git difftool "commit ID" // commit ID에 해당하는 버전과 현재 버전과
 - Vim editor를 터미널에 구현하여 git diff보다 가독성이 뛰어난 텍스트로 비교해준다.
 
 최근에는 에디터에서 git을 지원하는 경우가 많고, 많은 기능 중 위처럼 git diff의 가독성을 그래프로 표현하는 기능 등을 지원하는 기능이 많다.
+
+# Git Log (과거 commit 보기)
+
+과거에 저장된 commit들의 목록과 내용을 확인하고 싶은 경우 git log 명령어를 사용한다.
+
+#### Git log
+
+```git
+git log //저장된 모든 commit 내역과 commit ID(해시값)를 보여준다.
+git log --all --oneline //모든 commit 내역을 한 줄로 간략하게 보여준다.
+git log --oneline --graph //commit 내역을 그래프 형태로 보여준다.
+```
+
+- j/k 혹은 방향키로 이동 가능하고, q키를 통해 종료한다.
+- git log를 통해 확인한 commit ID(해시값)를 사용하여 해당 시점의 코드를 확인하거나 되돌릴 수 있다.
+
+#### 과거 commit으로 이동하기
+
+특정 과거 commit 시점의 코드를 확인하고 싶은 경우 git checkout 명령어를 사용한다.
+
+```git
+git checkout "commit ID" //특정 commit ID 시점의 상태로 파일들이 변경된다.
+git checkout - //이전 branch 혹은 commit 상태로 돌아간다.
+git checkout "branch name" //특정 branch로 이동한다. (예: git checkout main)
+```
+
+- checkout 후 HEAD가 특정 commit을 직접 가리키는 상태(detached HEAD)가 되며, 이 상태에서는 새로운 commit 생성을 권장하지 않는다.
+- 원래 작업 중이던 branch로 돌아오려면 git checkout "branch name"(예: git checkout main)을 사용한다.
+- git log --all --oneline으로 확인한 commit ID를 통해 원하는 과거 시점의 코드를 열람할 수 있다.
