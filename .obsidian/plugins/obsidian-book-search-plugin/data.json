@@ -1,5 +1,5 @@
 {
-  "folder": "Books",
+  "folder": "Books/Resources/Books_Info",
   "fileNameFormat": "",
   "frontmatter": "",
   "content": "",
@@ -12,8 +12,9 @@
   "localePreference": "default",
   "apiKey": "",
   "openPageOnCompletion": true,
-  "showCoverImageInSearch": false,
-  "enableCoverImageSave": false,
+  "showCoverImageInSearch": true,
+  "enableCoverImageSave": true,
+  "enableCoverImageEdgeCurl": true,
   "coverImagePath": "",
   "askForLocale": true
 }
