@@ -187,8 +187,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 277
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,7 +204,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "98284c89d43ad2aa",
+  "active": "ee1864435b824497",
   "lastOpenFiles": [
     "창업계획서 참고자료.md",
     "Books/Resources/Books_Info/Images/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
