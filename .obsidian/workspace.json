@@ -33,21 +33,9 @@
               "icon": "lucide-layout-grid",
               "title": "Library"
             }
-          },
-          {
-            "id": "e596d05b9422e4c3",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.12.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "릴리즈 노트 1.12.7"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -216,7 +204,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e596d05b9422e4c3",
+  "active": "ee1864435b824497",
   "lastOpenFiles": [
     "창업계획서 참고자료.md",
     "Books/Resources/Books_Info/Images/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
