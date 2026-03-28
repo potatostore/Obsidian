@@ -4,6 +4,9 @@ views:
     filters:
       and:
         - file.folder == "Books/Resources/Books_Info"
+    order:
+      - file.name
+      - author
     image: note.coverUrl
     imageFit: contain
     imageAspectRatio: 1.4

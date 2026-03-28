@@ -11,13 +11,14 @@
             "id": "b38b894068523ff2",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Books/Library.base",
-                "viewName": "Table"
+                "file": "Books/Resources/Books_Info/싯다르타(세계문학전집 58) - 헤르만헤세.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Library"
+              "icon": "lucide-file",
+              "title": "싯다르타(세계문학전집 58) - 헤르만헤세"
             }
           }
         ]
@@ -191,8 +192,8 @@
   },
   "active": "b38b894068523ff2",
   "lastOpenFiles": [
-    "Books/Resources/Books_Info/싯다르타(세계문학전집 58) - 헤르만헤세.md",
     "Books/Library.base",
+    "Books/Resources/Books_Info/싯다르타(세계문학전집 58) - 헤르만헤세.md",
     "-Calendar-/2026/2nd/2026-02-09.md",
     "Books/Resources/Books_Review/58. 싯다르타 - 헤르만 헤세.md",
     "Books/Resources/Books_Review/44. 데미안 - 헤르만 헤세.md",
