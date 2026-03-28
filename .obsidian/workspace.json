@@ -25,13 +25,14 @@
             "id": "ee1864435b824497",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Books/Library.base",
-                "viewName": "Table"
+                "file": "Books/Resources/Books_Info/싯다르타(세계문학전집 58) - 헤르만헤세.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Library"
+              "icon": "lucide-file",
+              "title": "싯다르타(세계문학전집 58) - 헤르만헤세"
             }
           }
         ],
@@ -206,12 +207,12 @@
   },
   "active": "ee1864435b824497",
   "lastOpenFiles": [
+    "Books/Library.base",
     "창업계획서 참고자료.md",
     "Books/Resources/Books_Info/Images/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
     "Books/Resources/Books_Info/Images",
     "Books/Resources/Books_Info/Info",
     "싯다르타 (세계문학전집173) - 헤르만 헤세.jpg",
-    "Books/Library.base",
     "Books/Resources/Books_Info/싯다르타(세계문학전집 58) - 헤르만헤세.md",
     "Books/Resources/Books_Info/싯다르타 (세계문학전집173) - 헤르만 헤세.md",
     "/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
