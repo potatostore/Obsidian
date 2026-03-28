@@ -7,3 +7,5 @@ views:
     image: note.coverUrl
     imageFit: contain
     imageAspectRatio: 1.4
+  - type: cards
+    name: 뷰
