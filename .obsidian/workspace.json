@@ -11,13 +11,14 @@
             "id": "b38b894068523ff2",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Books/Library.base",
-                "viewName": "Table"
+                "file": "TODO.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Library"
+              "icon": "lucide-file",
+              "title": "TODO"
             }
           }
         ]
@@ -191,12 +192,12 @@
   },
   "active": "b38b894068523ff2",
   "lastOpenFiles": [
-    "Books/Books_Review/자바 최적화 - 벤저민 J 에번스 제임스 고프 크리스 뉴랜드.md",
     "Books/Library.base",
+    "Books/Books_Review/싯다르타(세계문학전집 58) - 헤르만 헤세.md",
+    "Books/Books_Review/자바 최적화 - 벤저민 J 에번스 제임스 고프 크리스 뉴랜드.md",
     "Books/Books_Review/데미안(세계문학전집 44) - 헤르만 헤세.md",
     "Books/Books_Review/페스트(세계문학전집 267) - 알베르 카뮈.md",
     "Books/Books_Review/가난한 사람들(세계문학전집 443) - 표도르 도스토옙스키.md",
-    "Books/Books_Review/싯다르타(세계문학전집 58) - 헤르만 헤세.md",
     "Books/Books_Review/생각의 도약 - 도야마 시게히코.md",
     "Books/Books_Review/Clean Architecture - Robert C Martin.md",
     "Books/Books_Review/싯다르타 - 헤르만 헤세.md",
