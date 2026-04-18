@@ -8,15 +8,17 @@
 
 #### DIKW 계층구조
 ```mermaid
-flowchart
-	autonumber
-	participant Data
-	participant Info
-	participant knowledge
-	participant wisdom
+graph BT
+	A[Data: 단순한 사실/수치] -- 맥락과 상황 부여 --> B[Information: 상황에 대한 이해] 
+	B -- 연결 및 원리 파악 --> C[Knowledge: 의미와 지식] 
+	C -- 가치 판단 및 적용 --> D[Wisdom: 통찰력과 지혜]
 	
-	Data -- "상황에 대한 이해" --> Info
-	Info -- "의미" --> knowledge
-	knowledge -- "통찰력" --> wisdom
-
+	
 ```
+
+#### 데이터베이스 활용
+- 데이터베이스 시스템은 데이터의 검색과 변경 작업을 주로 수행
+- 변경이란 시간에 따라 변하는 데이터 값을 데이터베이스에 반영하기 위해 수행하는 작업
+
+#### 데이터베이스 개념 및 특징
+- 데이터베이스 : 여러 사람이 공용으로 사용하기 위해 통합하고 저장한 운영 데이터의 집합
