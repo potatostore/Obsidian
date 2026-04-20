@@ -35,8 +35,7 @@
               "title": "Real-Time System"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,15 +204,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ab3c0a5197f2d2a6",
+  "active": "7417b3e71eb5001b",
   "lastOpenFiles": [
+    "University/3-1/Real-Time System.md",
     "University/3-1/DB.md",
     "스크린샷 2026-04-20 10.04.38.png",
     "스크린샷 2026-04-20 10.04.38 1.png",
     "TODO.md",
     "University/3-1/유비쿼터스.md",
     "University/3-1/컴퓨터 네트워크.md",
-    "University/3-1/Real-Time System.md",
     "Session & JWT.md",
     "창업계획서 참고자료.md",
     "Project/ShoppingMall/Sequence-signin.md",
