@@ -15,12 +15,10 @@
 
 
 #### 데이터베이스 활용
-
 - 데이터베이스 시스템은 데이터의 검색과 변경 작업을 주로 수행
 - 변경이란 시간에 따라 변하는 데이터 값을 데이터베이스에 반영하기 위해 수행하는 작업
 
 #### 데이터베이스 개념 및 특징
-
 - 데이터베이스 : 여러 사람이 공용으로 사용하기 위해 통합하고 저장한 운영 데이터의 집합
 - DB
     1. 통합된 데이터 : 데이터를 통합하여 하나로 저장된 데이터, 중복을 최소화하여 데이터 불일치 현상 제거
@@ -34,21 +32,15 @@
     4. 내용 참조 : 물리적인 위치가 아닌 데이터 값을 통해 데이터 검색
 
 #### 데이터베이스 시스템의 구성
-
 - DB System : 각 조직에서 사용하던 데이터를 통합하고, 공유할 때 생기는 장점을 이용하는 시스템
 - DBMS
 - DB
 - Data Model : 데이터가 저장되는 기법에 대한 내용
 
 ## 데이터베이스 시스템 발전
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EB%B0%9C%EC%A0%84)
-
 - 저장할 정보 증가 + 컴퓨터 기술의 발전으로 더 많은 양의 데이터 저장 가능 + 고객에게 더 많고, 다양한 기능 제공 -> DB 탄생
 
 #### 정보 시스템의 발전
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EC%A0%95%EB%B3%B4-%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98-%EB%B0%9C%EC%A0%84)
 
 1. 파일 시스템 : 각 응용프로그램이 독립적으로 파일을 다루기에 데이터 중복 저장 가능성 존재 및 데이터 일관성 훼손
 2. 데이터베이스 시스템 : 일관성 유지, 복구, 동시접근 제어 등의 기능 수행, 데이터 중복을 줄이고 데이터 표준화하여 무결성 유지
@@ -61,23 +53,10 @@
 4. 분산 데이터베이스 시스템 : 데이터가 여러곳에서 발생 시 각각 DB운영, 이들 간에 상호 연동
 
 ## 파일시스템, DBMS
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C-dbms)
-
 1. 데이터를 프로그램 내부에 저장 시 : 새로운 데이터가 발생할 때마다 컴파일을 다시 하고, 프로그램을 그동안 중단
-2. ```
-         "    파일시스템에 저장 시 : 새로운 데이터가 추가되어도 프로그램 수정 x, 위 문제는 해결되지만, 데이터의 구조가 바뀌거나 둘 이상의 프로그램에서의 동시접근이 제한됨
-    ```
-    
-3. ```
-         "    DBMS를 통해 저장 시 : 데이터 변경, 조회를 DBMS를 통해 작동
-    ```
-    
-
-#### DBMS의 장정
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#dbms%EC%9D%98-%EC%9E%A5%EC%A0%95)
-
+2.         "    파일시스템에 저장 시 : 새로운 데이터가 추가되어도 프로그램 수정 x, 위 문제는 해결되지만, 데이터의 구조가 바뀌거나 둘 이상의 프로그램에서의 동시접근이 제한됨
+3.         "    DBMS를 통해 저장 시 : 데이터 변경, 조회를 DBMS를 통해 작동
+#### DBMS의 장점
 1. 데이터 중복 최소화
 2. 데이터 일관성 유지
 3. 데이터 독립성 유지
@@ -87,139 +66,83 @@
 
 ## 데이터베이스 시스템 구성
 
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%84%B1)
-
 #### 데이터베이스 언어
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%96%B8%EC%96%B4)
-
 - SQL
     - 데이터 정의어 : DBMS에 저장된 테이블 구조를 정의
     - 데이터 조작어 : 데이터 조회 및 변경
     - 데이터 제어어 : 데이터 사용 권한 관리
 
 #### 데이터베이스 사용자
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%AC%EC%9A%A9%EC%9E%90)
-
 - 일반 사용자 : 프로그래머가 개발한 프로그램을 이용해 DB접근
 - 응용 프로그래머 : 일반 사용자가 사용할 수 있도록 프로그램 개발
 - SQL 사용자 : 응용프로그램으로 구현되지 않은 업무를 SQL을 사용해 업무 처리
 - 데이터베이스 관리자 : DB system 총괄자
 
 #### DBMS
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#dbms)
-
 - 데이터 정의
 - 데이터 조작
 - 데이터 추출
 - 데이터 제어 : 동시성 제어 및 백업
 
 #### 데이터 모델
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8)
-
 - 데이터베이스 시스템에서 데이터를 저장하는 이론적인 방법
 - 어떻게 구조화되어 저장하는지 결정
 - 데이터 간 관계를 표현하는 방법
 
 #### 3단계 DB 구조
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#3%EB%8B%A8%EA%B3%84-db-%EA%B5%AC%EC%A1%B0)
-
 - 외부 스키마 : 개별 사용자나 응용 프로그램에 필요한 데이터 일부를 바라보는 관점으로 서브 스키마, 뷰라고 지칭
 - 개념 스키마 : 전체 데이터베이스를 정의한 것으로, 조직내에 하나 존재하고, 데이터의 관계, 무결성 등을 정의
 - 내부 스키마 : 실제 물리적인 저장 공간에 어떻게 저장할 것인가를 기술
 
 #### 데이터 독립성
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%8F%85%EB%A6%BD%EC%84%B1)
-
 - 위 3단계 DB 구조에서 하위 단계를 추상화 하여 상위 단계에 세부사항을 숨김 -> 상호 간섭이 없어짐
 - 논리적 데이터 독립성 : 외부-개념 스키마 사이의 독립성, 개념스키마의 변경이 외부스키마에 영향 x
 - 물리적 데이터 독립성 : 개념-내부 저장 장치 구조 변경과 같이 내부 스키마의 변경이 개념 스키마에 영향 x
 
 # 관계 데이터 모델
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EA%B4%80%EA%B3%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8)
-
 - 관계 데이터 모델의 개념 이해
 - 관계 데이터 모델의 제약 조건
 - 관계 데이터 모델의 연산인 관계 대수의 종류 / 작성법
 
 ## 관계 데이터 모델의 개념
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EA%B4%80%EA%B3%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8%EC%9D%98-%EA%B0%9C%EB%85%90)
-
 #### 관계
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EA%B4%80%EA%B3%84)
-
 - 관계
-    
     - 릴레이션(테이블)내의 관계 : 릴레이션 내 데이터들의 집합으로 표현
     - 릴레이션 간의 관계 : 릴레이션을 식별 가능한 값을 이용해 표현
 - 스키마 : 관계 데이터베이스의 릴레이션의 구성, 어떤 정보를 담고 있는지에 대한 기본적인 구조 정의
-    
 - 속성 : 릴레이션 스키마의 열
-    
 - 도메인 : 속성이 가질 수 있는 값의 집합
-    
 - 차수 : 속성의 개수
-    
 - 카디날리티 : 릴레이션에 저장된 튜플의 수
-    
 - 특징
-    
     1. 속성은 단일 값을 갖는다
     2. 속성은 서로 다른 이름을 갖는다
     3. 한 속성의 값은 모두 같은 도메인 값을 가진다
     4. 속성의 순서는 상관없다
     5. 릴레이션 내의 중복된 튜플은 허용되지 않는다
     6. 튜플의 순서는 상관없다.
-
 #### 관계 데이터 모델
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EA%B4%80%EA%B3%84-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%AA%A8%EB%8D%B8-1)
-
 - 데이터를 2차원 테이블 형태인 릴레이션으로 표현
 - 제약조건(데이터 값이 갖는 제약), 관계연산(릴레이션을 다루는 연산)을 통해 정의
 
 ## 무결성 제약 조건
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD-%EC%A1%B0%EA%B1%B4)
-
 - 결함을 없애고, 질의 시 신뢰성 있는 데이터를 제공한다.
 
 #### key
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#key)
-
 - 릴레이션에서 특정 튜플을 식별할 때 사용하는 속성 혹은 속성의 집합
 - 키는 반드시 값이 달라서 튜플들을 서로 구별 가능
-
 #### 슈퍼키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EC%8A%88%ED%8D%BC%ED%82%A4)
-
 - 튜플을 유일하게 식별할 수 있는 하나의 속성 혹은 속성의 집합
 - 튜플을 유일하게 식별가능할 경우 모두 슈퍼키 가능
 
 -> 주민번호, 이름이 식별가능한 속성일 경우 (주민번호), (이름), (주민번호, 이름)이 슈퍼키
 
 #### 후보키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%ED%9B%84%EB%B3%B4%ED%82%A4)
-
 - 튜플을 유일하게 식별할 수 있는 속성의 최소 집합
 
 -> 주민번호, 이름이 식별가능한 속성일 경우 (주민번호, 이름)이 후보키
 
 #### 기본키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EA%B8%B0%EB%B3%B8%ED%82%A4)
-
 - 여러 후보키 중 하나를 선택하여 대표로 삼는 키
 - 고려사항
     1. 릴레이션 내 튜플을 식별할 수 있는 고유한 값
@@ -229,21 +152,12 @@
     5. 향후 키를 사용하는데 문제소지 x
 
 #### 대리키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8C%80%EB%A6%AC%ED%82%A4)
-
 - 보안이 필요하거나, 여러 개의 속성으로 구성되어 복잡하거나, 마땅한 기본키가 없을 경우 일련번호같은 가상의 속성을 만들어 기본키로 삼는 키
 
 #### 대체키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%8C%80%EC%B2%B4%ED%82%A4)
-
 - 기본키로 선정되지 않은 후보키
 
 #### 외래키
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EC%99%B8%EB%9E%98%ED%82%A4)
-
 - 다른 릴레이션의 기본키를 참조하는 속성 -> 릴레이션 간의 관계를 표현
 - 참조하고 참조되는 양쪽 릴레이션의 도메인은 서로 같아야 함
 - 참조되는 값이 변경되면 외래키도 변경
@@ -252,9 +166,6 @@
 - 외래키는 기본키의 일부 가능
 
 #### 무결성 제약조건
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4)
-
 - 데이터 무결성 : 데이터베이스에 저장된 데이터의 일관성과 정확성을 지키는 것
 
 1. 도메인 무결성 제약조건 : 릴레이션 내의 튜플들이 각 속성의 도메인에 지정된 값만 가져야 함
@@ -262,9 +173,6 @@
 3. 참조 무결성 제약조건 : 릴레이션 간의 참조 관계를 선언 -> 부모 릴레이션의 기본키 수정 및 삭제 시 자식 릴레이션의 외래키가 제약에 의해 변경(무결성 유지)
 
 #### 무결성 제약조건의 수행
-
- (https://github.com/potatostore/Obsidian/blob/6def3f53f565ba896e6c279ee680ea895a96a759/University/3-1/DB.md#%EB%AC%B4%EA%B2%B0%EC%84%B1-%EC%A0%9C%EC%95%BD%EC%A1%B0%EA%B1%B4%EC%9D%98-%EC%88%98%ED%96%89)
-
 - 데이터 변경할 때마다 확인
 - 개체 무결성 제약조건 : 기복키 값이 유일한지, NULL이 아닌지 변경할 때마다 확인
     - 삽입 : 새로 삽입된 튜플의 기본키 도메인이 NULL 혹은 이미 존재하는 값일 경우, 거부
