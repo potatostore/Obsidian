@@ -7,4 +7,4 @@ $D_i$와 $p_i$가 같을 경우, 생략가능 / 시작시간이 0일 경우(매 
 3-tuple ($p_i, e_i, D_i$)
 2-tuple ($p_i, e_i$)
 
-frame : floor($p_i$/f) = $p_i$/f인 f찾기 (f >= max($e_i$))
+frame : floor($p_i$/f) = $p_i$/f인 f찾기 (f >= max($e_i$)), 2f - gcd($p_i$, f) <= $d_i$
