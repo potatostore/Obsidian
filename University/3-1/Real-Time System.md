@@ -17,10 +17,11 @@
 - **Hyperperiod ($H$)**: 모든 주기적 태스크의 주기의 최소공배수($\text{LCM}$)로, 전체 스케줄링 패턴이 반복되는 단위 시간.
 - **Laxity (Slack Time)**: 여유 시간. (남은 마감 시간 - 남은 실행 시간). 이 값이 0이면 즉시 실행해야 함.
 ## 4. 스케줄링 알고리즘 (Scheduling Algorithms)
-- **EDF (Earliest Deadline First)**: 마감 시간이 가장 가까운 작업에 가장 높은 우선순위를 부여하는 동적 우선순위 방식.
 - **SJF (Shortest Job First)**: 실행 시간이 가장 짧은 작업 우선.
 - **SRTF (Shortest Remaining Time First)**: 선점형 SJF. 남은 실행 시간이 가장 짧은 작업 우선.
+- **EDF (Earliest Deadline First)**: 마감 시간이 가장 가까운 작업에 가장 높은 우선순위를 부여하는 동적 우선순위 방식.
 - **LRT (Latest Release Time)**: 작업을 마감 시간부터 역방향(Backward)으로 배치하여 실행을 최대한 뒤로 미루는 방식.
+- **LST (Least Slack Time)** : Laxity(여유 시간)을 통해 태스크의 여유시간이 가장 적은 태스크부터 실행
 - **Effective Release Time / Deadline**: 선후 관계(Precedence)가 있을 때 이를 고려하여 조정한 실제 유효 시간.
 ## 5. 클록 기반 스케줄링 (Clock-Driven Scheduling)
 - **Cyclic Schedule**: 정해진 시간표에 따라 반복적으로 실행되는 정적 스케줄링.
