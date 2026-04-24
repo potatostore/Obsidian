@@ -3,7 +3,18 @@ views:
     name: Table
     filters:
       and:
-        - file.folder == "Books/Resources/Books_Info"
+        - file.folder == "Books/Books_Review"
+    groupBy:
+      property: tags
+      direction: ASC
+    order:
+      - file.name
+      - author
+    sort:
+      - property: nums
+        direction: ASC
     image: note.coverUrl
     imageFit: contain
-    imageAspectRatio: 1.4
+    imageAspectRatio: 1.45
+  - type: cards
+    name: 뷰

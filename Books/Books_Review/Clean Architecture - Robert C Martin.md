@@ -1,3 +1,24 @@
+---
+title: Clean Architecture
+subtitle: A Craftsman's Guide to Software Structure and Design
+author: Robert C. Martin
+authors: Robert C. Martin
+category: Computers
+categories: Computers
+publisher: Pearson Professional
+publishDate: 2018
+totalPage: 404
+coverUrl: http://books.google.com/books/content?id=8ngAkAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
+coverSmallUrl: http://books.google.com/books/content?id=8ngAkAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api
+description: "Building upon the success of best-sellers The Clean Coder and Clean Code, legendary software craftsman Robert C. &quot;Uncle Bob&quot; Martin shows how to bring greater professionalism and discipline to application architecture and design. As with his other books, Martin's Clean Architecture doesn't merely present multiple choices and options, and say &quot;use your best judgment&quot;: it tells you what choices to make, and why those choices are critical to your success. Martin offers direct, is essential reading for every software architect, systems analyst, system designer, and software manager-- and for any programmer who aspires to these roles or is impacted by their work."
+link: https://books.google.com/books/about/Clean_Architecture.html?hl=&id=8ngAkAEACAAJ
+previewLink: http://books.google.co.kr/books?id=8ngAkAEACAAJ&dq=Clean+Architecture&hl=&as_pt=BOOKS&cd=1&source=gbs_api
+isbn10: 134494164
+isbn13: 9780134494166
+tags:
+  - CS
+---
+---
 Clean Architecture이란 Clean Code로 만들어진 벽돌은 무지성으로 쌓아올리는 것이 아닌 가장 효율적이고 정갈하게 쌓는 것이다.
 
 특히 책에서 밝히는 목표는 유지보수가 가능한 코드를 작성하므로서 추후에 발생하는 비용을 절감하는데 의의를 둔다.
