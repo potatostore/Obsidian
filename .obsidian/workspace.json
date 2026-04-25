@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "유비쿼터스"
             }
-          },
-          {
-            "id": "af50ad3b7b2f9269",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -205,10 +190,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "af50ad3b7b2f9269",
+  "active": "851e6fdf4df928dc",
   "lastOpenFiles": [
-    "University/3-1/유비쿼터스.md",
     "conflict-files-obsidian-git.md",
+    "University/3-1/유비쿼터스.md",
     "University/3-1/컴퓨터 네트워크.md",
     "University/3-1/DB.md",
     "-Calendar-/2026/2nd/2026-02-09.md",
