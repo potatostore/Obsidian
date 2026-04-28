@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Session & JWT.md",
+                "file": "Language/SWIFT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Session & JWT"
+              "title": "SWIFT"
             }
           }
         ]
@@ -197,9 +197,10 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "f9c18d2897427f90",
+  "active": "b744e40bcb35458d",
   "lastOpenFiles": [
     "Session & JWT.md",
+    "Language/SWIFT.md",
     "TODO.md",
     "창업계획서 참고자료.md",
     "Welcome.md",
@@ -228,7 +229,6 @@
     "University",
     "Project/Unreal Engine/Unreal Engine(HD-2D).md",
     "Project/Unreal Engine/Unreal Engine Main.md",
-    "Project/ShoppingMall/ShoppingMall Main System diagram.md",
     "Project/Unreal Engine",
     "Project/ShoppingMall",
     "Project/Google Cloud Jam",
