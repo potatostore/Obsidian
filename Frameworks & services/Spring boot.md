@@ -602,7 +602,7 @@ import org.springframework.web.bind.annotation.RestController;
   
 @RestController  
 public class EX01 {  
-    @GetMapping("ABC")  
+    @GetMapping("/ABC")  
     public String sayHello(){  
         return "Hello";  
     }  
@@ -629,7 +629,6 @@ public class EX01 {
 Spring boot api를 설정하는 기능이며, Bean을 수동으로 등록할 수 있게 알려주는 역할을 한다. 즉, @Bean이나 @Component, @RestControler등을 사용하기 위해 @Configuration을 통해 작동해야 한다.
 #### @EnableAutoConfiguration
 위 @Configuration을 Spring boot application 실행 시 자동으로 실행하게 만들어주는 기능이다.
-
 #### @ComponentScan
 앞서 배운 내용인 IoC container에 Bean이라는 객체를 생성하고, 보관할 경우에 필수적으로 진행해야 하는 작업이 존재한다. 이를 componentScan이라고 부르며, 이는 구성요소 살펴보기 정도의 기능으로 생각하면 된다. 즉 Bean으로 만들고자 하는 클래스를 살펴 해당 component가 이미 IoC container에 존재하는지, 적합한지 등을 따지고, Bean객체로 만들어 IoC container에 보관까지 하는 작업을 진행한다.
 
