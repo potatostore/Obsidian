@@ -25,6 +25,17 @@ let 64basicBit: UInt = 50;
 
 #### Character 
 - 영어나 한글 뿐만 아니라 이모티콘 한 글자도 사용 가능하다.
-- 유니코드 9 문자를 사용하므로 2byte의 기본 타입 같지만, 영어를 사용할 때에는 1byte를 사용하다가, 이모지와 같이 2byte가 필요한 경우, 동적으로 할당해준다.
+- 작은 따옴표가 아닌 큰 따옴표로 표시한다.
+- 유니코드 9 문자를 사용하므로 2byte의 기본 타입 같지만, Grapheme Cluster을 통해 글자의 복잡함에 따라 메모리를 할당하는 방식이고, 이는 한 글자 단위로 적용되기 때문에, 항상 할당되는 메모리가 다를 수 있다.
+
+#### String
+- 문자열은 다양한 메서드 및 오퍼레이터를 지원한다.
+- variable.hasPreffix(p: String) : p가 variable에 접두어로 존재하는지 확인 후, bool return
+- variable.hasSuffix(p: String) : p가 variable에 접미어로 존재하는지 확인 후 , bool return 
+- 이외에도 uppercased(), lowercased(), isEmpty, count 등의 메서드와 +=, +, == 등 다양한 오퍼레이터도 지원한다.
+
+#### Any, AnyObject, nil
+- Any type은 c++ auto처럼 변수의 타입을 전적으로 컴파일러가 지정한다.(타입 지정자를 선언하지 않는 것과 동일한 결과를 가져온다)
+- 
 
 # 4. Advanced Data Type
