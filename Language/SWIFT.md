@@ -35,7 +35,8 @@ let 64basicBit: UInt = 50;
 - 이외에도 uppercased(), lowercased(), isEmpty, count 등의 메서드와 +=, +, == 등 다양한 오퍼레이터도 지원한다.
 
 #### Any, AnyObject, nil
-- Any type은 c++ auto처럼 변수의 타입을 전적으로 컴파일러가 지정한다.(타입 지정자를 선언하지 않는 것과 동일한 결과를 가져온다)
-- 
+- Any type은 c++ auto처럼 변수의 타입을 전적으로 컴파일러가 지정하는 것이 아닌 Any Type으로 값을 지정하는 것으로, 어떤 Type도 초기화 가능
+- AnyObject는 클래스의 인스턴스(객체화할 때)에만 할당 가능하다.
+- nil은 null과 동일하다.
 
 # 4. Advanced Data Type
