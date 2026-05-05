@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/SWIFT.md",
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SWIFT"
+              "title": "conflict-files-obsidian-git"
             }
           }
         ]
@@ -199,10 +199,11 @@
   },
   "active": "b744e40bcb35458d",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Language/SWIFT.md",
     "University/3-1/유비쿼터스.md",
     "University/3-1/DB.md",
     "University/3-1/Real-Time System.md",
-    "Language/SWIFT.md",
     "Session & JWT.md",
     "TODO.md",
     "창업계획서 참고자료.md",
@@ -228,7 +229,6 @@
     "University/2-1",
     "University",
     "Project/Unreal Engine/Unreal Engine(HD-2D).md",
-    "Project/Unreal Engine/Unreal Engine Main.md",
     "Project/Unreal Engine",
     "Project/ShoppingMall",
     "Project/Google Cloud Jam",
