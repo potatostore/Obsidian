@@ -128,3 +128,6 @@ names.last;
 names[1 ... 3] // python처럼 여러 배열을 for문 없이 조회 가능
 ```
 위와 같이 빈 배열 및 배열 초기화를 다양한 방식으로 초기화 가능하고, isempty, count와 같은 기본 메서드도 지원한다.
+
+2. Dictionary
+3. Set
