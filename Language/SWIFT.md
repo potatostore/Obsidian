@@ -86,4 +86,16 @@ let 64basicBit: UInt = 50;
 
 #### 타입 추론
 - 앞선 상수 및 변수 부분에서 언급된 타입 추론은 swift언어의 안정성을 더해주는 문법으로 컴파일러가 자동으로 변수의 타입을 추론하여 정해주는 역할이다.
-- auto와 
+- auto와 차이점은 auto는 우항의 값을 복사하여 값에 해당하는 타입을 할당해주는 반면, 타입 추론은 문맥을 고려한다.
+```
+//cpp
+pair<int, int> v = (10,10);
+auto first = 10;
+auto second = v;
+cout << first == second; // IDE 차원에서 컴파일 에러 : Duck Typing
+
+//swift
+var name = "name";
+var age = 10;
+print(\(name == age)); // IDE가 없어도 컴파일러 차원에서 해당 타입 자체를 검열하고, 컴파일이 불가능하도록 만들어줌.
+```
