@@ -99,3 +99,32 @@ var name = "name";
 var age = 10;
 print(\(name == age)); // IDE가 없어도 컴파일러 차원에서 해당 타입 자체를 검열하고, 컴파일이 불가능하도록 만들어줌.
 ```
+전자는 IDE가 사전 연산을 통해 검사를 해서 컴파일 오류를 발생시키지만, 후자는 사전 연산 없이도 타입 불일치로 인해 오류를 던진다.
+
+#### 튜플
+```swift
+var person: (name: String, age: int, height: Double) = ("name", 20, 182.5);
+print(person.0, person.1, person.2);
+print(person.name, person.age, person.height);
+```
+위처럼 다양한 타입을 하나의 튜플로 묶을 수 있고, 인덱싱을 통해 원하는 값을 가져올 수 있다.
+
+#### 컬렉션
+튜플 이외에도 많은 데이터를 묶어서 관리하는 방식들을 뜻함.
+1. Array 
+```swift
+var names: Array<String> = ["kim", "Lee"];
+var names: [String] = ["kim", "Lee];
+var names: [String] = [String]();
+var names: [String] = Array<Any>();
+
+names.isempty
+names.count
+names.insert("park", at: 2);
+names.append("choi");
+names.firstIndex(of: "Lee");
+names.first;
+names.last;
+names[1 ... 3] // python처럼 여러 배열을 for문 없이 조회 가능
+```
+위와 같이 빈 배열 및 배열 초기화를 다양한 방식으로 초기화 가능하고, isempty, count와 같은 기본 메서드도 지원한다.
