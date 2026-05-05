@@ -11,10 +11,14 @@
             "id": "bb22b5d9f56c3a36",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Language/SWIFT.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "SWIFT"
             }
           }
         ]
@@ -195,6 +199,7 @@
   },
   "active": "bb22b5d9f56c3a36",
   "lastOpenFiles": [
+    "Language/SWIFT.md",
     "conflict-files-obsidian-git.md",
     "Language/SWIFT.md",
     "University/3-1/유비쿼터스.md",
@@ -224,7 +229,6 @@
     "University/2-2",
     "University/2-1",
     "University",
-    "Project/Unreal Engine/Unreal Engine(HD-2D).md",
     "Project/Unreal Engine",
     "Project/ShoppingMall",
     "Project/Google Cloud Jam",
