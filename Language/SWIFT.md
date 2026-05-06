@@ -155,3 +155,27 @@ highestEducationLevel.rawValue // "중학교"
 ```
 원시값(rawValue) 프로퍼티 설정을 통해 원시값으로 설정가능함.
 
+- 연관 값 설정을 통해 rawValue를 각 케이스에 초기화 하는 것이 아닌, 변수에 맞게 설정 가능하다.
+```swift
+enum PastaTaste{
+	case cream, tomato
+}
+
+enum PizzaDough{
+	case cheeseCrust, thin, original
+}
+
+enum PizzaTopping{
+	case pepperoni, cheese, bacon
+}
+
+enum MainDish{
+	case pasta(taste: PastaTaste)
+	case pizza(dough: PizzaDough, topping: PizzaTopping)
+	case chicken(withSauce: Bool)
+	case rice
+}
+
+var dinner: MainDish = MainDish.pasta(taste: PastaTaste.tomato)
+dinner = MainDish.pizza(dough: PizzaDough.cheeseCrust, topping:PizzaTopping.bacon)
+```

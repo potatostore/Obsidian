@@ -11,13 +11,14 @@
             "id": "bb22b5d9f56c3a36",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Books/Library.base",
-                "viewName": "Table"
+                "file": "Language/SWIFT.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-grid",
-              "title": "Library"
+              "icon": "lucide-file",
+              "title": "SWIFT"
             }
           }
         ]
@@ -210,6 +211,7 @@
   },
   "active": "bb22b5d9f56c3a36",
   "lastOpenFiles": [
+    "Books/Library.base",
     "Language/SQL.md",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
@@ -246,7 +248,6 @@
     "copilot/copilot-custom-prompts/Emojify.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
-    "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
     "copilot/copilot-custom-prompts",
     "University/3-1",
     "University/2-2",
