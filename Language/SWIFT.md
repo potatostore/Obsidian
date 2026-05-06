@@ -179,3 +179,19 @@ enum MainDish{
 var dinner: MainDish = MainDish.pasta(taste: PastaTaste.tomato)
 dinner = MainDish.pizza(dough: PizzaDough.cheeseCrust, topping:PizzaTopping.bacon)
 ```
+
+#### 항목 순회
+- 이처럼 열거형을 세분화해서 의존성을 주입하게 될 경우, 가장 큰 문제는 추후 열거형이 어떤 타입들로 구성되어 있는지 판단하기 어렵다는 것이다. 이때 CaseIterable Protocol을 통해 열거형에 타입 프로퍼티를 추가해준다.
+```swift
+//만약 열거형 내 모든 case에 원시값을 추가하고 싶으면 이처럼 {원시값}, {프로토콜}식으로 작성하면 된다.
+enum School: String, CaseIterable {
+	case primary = "유치원"
+	case elementary = "초등학교"
+	case middle = "중학교"
+	case high = "고등학교"
+}
+
+let allCases: [School] = School.allCases
+print(allCases) // 모든 열거형 내 case조회 가능
+```
+
