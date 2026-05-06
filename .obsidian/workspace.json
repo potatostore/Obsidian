@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "copilot/copilot-custom-prompts/Translate to Chinese.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "Translate to Chinese"
             }
           }
         ]
@@ -190,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 337
+    "width": 634
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,26 +208,29 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "edad268b2f229b95",
+  "active": "bb22b5d9f56c3a36",
   "lastOpenFiles": [
-    "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
-    "copilot/copilot-conversations",
-    "Language/SWIFT.md",
-    "copilot/copilot-custom-prompts/Clip Web Page.md",
-    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Summarize.md",
+    "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
-    "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
     "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Translate to Chinese.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-custom-prompts/Generate table of contents.md",
+    "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
+    "copilot/copilot-custom-prompts/Explain like I am 5.md",
+    "copilot/copilot-custom-prompts/Emojify.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
+    "Virtual Memory.md",
+    "Frameworks & services/Git & Github.md",
+    "Frameworks & services/Spring boot.md",
+    "copilot/copilot-conversations",
+    "Language/SWIFT.md",
+    "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "Graphos.md",
@@ -236,9 +239,6 @@
     "University/3-1/DB.md",
     "University/3-1/Real-Time System.md",
     "Session & JWT.md",
-    "TODO.md",
-    "창업계획서 참고자료.md",
-    "Welcome.md",
     "University/3-1",
     "University/2-2",
     "University/2-1",
