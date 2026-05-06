@@ -12,5 +12,6 @@
   "obsidian-latex-suite",
   "global-search-and-replace",
   "obsidian-scroll-to-top-plugin",
-  "obsidian-git"
+  "obsidian-git",
+  "copilot"
 ]
