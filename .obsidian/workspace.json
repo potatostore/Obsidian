@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/SWIFT.md",
+                "file": "Frameworks & services/Spring boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SWIFT"
+              "title": "Spring boot"
             }
           }
         ]
@@ -174,13 +174,23 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "edad268b2f229b95",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 337
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,8 +208,11 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "bb22b5d9f56c3a36",
+  "active": "edad268b2f229b95",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
+    "copilot/copilot-conversations",
+    "Language/SWIFT.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
@@ -218,9 +231,7 @@
     "copilot/copilot-custom-prompts",
     "copilot",
     "Graphos.md",
-    "Language/SWIFT.md",
     "conflict-files-obsidian-git.md",
-    "Language/SWIFT.md",
     "University/3-1/유비쿼터스.md",
     "University/3-1/DB.md",
     "University/3-1/Real-Time System.md",
@@ -235,7 +246,6 @@
     "Project/Unreal Engine",
     "Project/ShoppingMall",
     "Project/Google Cloud Jam",
-    "Project/AWS",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "Images/Pasted image 20250813143155.png",
