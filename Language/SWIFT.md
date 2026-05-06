@@ -195,3 +195,7 @@ let allCases: [School] = School.allCases
 print(allCases) // 모든 열거형 내 case조회 가능
 ```
 
+위 항목 순회 프로토콜을 제외하고도 순환 열거형(indirect), 비교 가능한 열거형(Comparable)을 통해 비교하거나, 이진 탐색을 위한 순환 알고리즘을 작성하는 등 다양한 열거형 형식을 추가가능하다.
+
+# 5. Operator
+
