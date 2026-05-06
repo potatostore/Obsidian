@@ -4,67 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "d4c6f29c44d24423",
+        "id": "231d099215474336",
         "type": "tabs",
         "children": [
           {
-            "id": "7417b3e71eb5001b",
+            "id": "94fd8d5bfb7a8924",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Science/Memory.md",
+                "file": "Language/SWIFT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Memory"
-            }
-          },
-          {
-            "id": "3b6fd7dfc144da29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TODO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "TODO"
-            }
-          },
-          {
-            "id": "61c20d9a7e65e169",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Frameworks & services/Spring boot.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Spring boot"
-            }
-          },
-          {
-            "id": "ce3a514542f7ac55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "SWIFT"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -241,42 +198,44 @@
       "obsidian-git:Open Git source control": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "ce3a514542f7ac55",
+  "active": "94fd8d5bfb7a8924",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot/copilot-custom-prompts/Remove URLs.md",
+    "copilot/copilot-custom-prompts/Generate glossary.md",
+    "copilot/copilot-custom-prompts/Generate table of contents.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-custom-prompts/Make shorter.md",
+    "copilot/copilot-custom-prompts/Emojify.md",
+    "copilot/copilot-custom-prompts/Explain like I am 5.md",
+    "copilot/copilot-custom-prompts/Simplify.md",
+    "copilot/copilot-custom-prompts/Summarize.md",
+    "copilot/copilot-custom-prompts/Translate to Chinese.md",
+    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
+    "copilot/copilot-custom-prompts",
+    "Computer Science/Memory.md",
+    "TODO.md",
     "Frameworks & services/Spring boot.md",
+    "conflict-files-obsidian-git.md",
     "copilot/copilot-conversations/Spring_Web_의존성_기능_추가@20260506_202222.md",
     "copilot/copilot-conversations/대화_및_노트_숨기기_설정@20260506_202821.md",
     "copilot/copilot-conversations",
     "copilot",
     "Graphos.md",
     "Language/SWIFT.md",
-    "TODO.md",
-    "Computer Science/Memory.md",
     "Data Structure/Array.md",
     "-Calendar-/2025/1st/2025-01-08.md",
     "Project/Graphos.md",
-    "University/3-1/유비쿼터스.md",
-    "-.md",
     "스크린샷 2026-04-20 10.04.38.png",
     "스크린샷 2026-04-20 10.04.38 1.png",
-    "Session & JWT.md",
-    "University/3-1/컴퓨터 네트워크.md",
-    "University/3-1/DB.md",
-    "창업계획서 참고자료.md",
-    "University/3-1/Real-Time System.md",
     "Images/Pasted image 20260423154049.png",
-    "University/2-1/빅데이터.md",
-    "University/2-1/빅데이터 처리.md",
-    "University/2-1/선형대수학.md",
-    "University/2-1/컴퓨터구조.md",
-    "University/2-1/컴퓨터실험2.md",
-    "University/2-2/파일처리론.md",
-    "University/2-2/윈도우즈 프로그래밍.md",
-    "University/2-2/운영체제.md",
     "Books/Library.base",
     "Books/Resources/Books_Info/Images/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
     "Books/Resources/Books_Info/Images",
@@ -288,7 +247,6 @@
     "Untitled 1.base",
     "Books/Resources/ZImages",
     "Books/Books_Review",
-    "Books/Resources/Media",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "Images/Pasted image 20250813143155.png",
