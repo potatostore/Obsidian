@@ -1,4 +1,9 @@
 {
   "theme": "moonstone",
-  "cssTheme": "AnuPpuccin"
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "mermaid",
+    "Minimal Theme cards"
+  ],
+  "accentColor": ""
 }
