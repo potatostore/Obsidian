@@ -208,3 +208,4 @@ let usignedInteger: Int = 0;
 let underflowedValue: Uint8 = unsignedInteger &- 1; // 255
 ```
 
+- 오버플로가 발생할 것 같아서 연산을 사용하는 목적이 아닌, 일부러 오버플로우를 발생시키고, 오류 없이 값을 순환시키는 알고리즘 등을 작성할 때, 이와 같은 연산자를 통해 훨씬 간편하게 진행 가능하다.
