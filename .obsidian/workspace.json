@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "Language/SQL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "SQL"
             }
           }
         ]
@@ -205,11 +205,22 @@
       "obsidian-book-search-plugin:Create new book note": false,
       "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "copilot:Open Copilot Chat": false
+      "copilot:Open Copilot Chat": false,
+      "hide-folders:Show hidden folders": false
     }
   },
-  "active": "edad268b2f229b95",
+  "active": "bb22b5d9f56c3a36",
   "lastOpenFiles": [
+    "Images/Pasted image 20260203114002.png",
+    "Images/Pasted image 20260203113615.png",
+    "Images/Pasted image 20250813143155.png",
+    "Images/Pasted image 20250524130643.png",
+    "Images/Pasted image 20250419214702.png",
+    "Images/Pasted image 20250419182930.png",
+    "Images/Pasted image 20250405215344.png",
+    "Images/Pasted image 20250405215130.png",
+    "Images/Pasted image 20250404211654.png",
+    "Frameworks & services/Spring boot.md",
     "copilot/copilot-conversations/대화_및_노트_숨기기_설정@20260506_202821.md",
     "copilot/copilot-conversations/Spring_Web_의존성_기능_추가@20260506_202222.md",
     "copilot/copilot-conversations",
@@ -218,7 +229,6 @@
     "copilot/copilot-conversations/Spring_Boot_개념_브레인스토밍@20260506_200119.md",
     "copilot/copilot-conversations/Spring_Boot_개념_브레인스토밍@20260506_200119.md",
     "Virtual Memory.md",
-    "Frameworks & services/Spring boot.md",
     "Frameworks & services/MongoDB.md",
     "Frameworks & services/Git & Github.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
@@ -237,7 +247,6 @@
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
-    "Language/SWIFT.md",
     "copilot/copilot-custom-prompts",
     "University/3-1",
     "University/2-2",
@@ -245,15 +254,6 @@
     "University",
     "Project/Unreal Engine",
     "Project/ShoppingMall",
-    "Project/Google Cloud Jam",
-    "Images/Pasted image 20260203114002.png",
-    "Images/Pasted image 20260203113615.png",
-    "Images/Pasted image 20250813143155.png",
-    "Images/Pasted image 20250524130643.png",
-    "Images/Pasted image 20250419214702.png",
-    "Images/Pasted image 20250419182930.png",
-    "Images/Pasted image 20250405215344.png",
-    "Images/Pasted image 20250405215130.png",
-    "Images/Pasted image 20250404211654.png"
+    "Project/Google Cloud Jam"
   ]
 }
