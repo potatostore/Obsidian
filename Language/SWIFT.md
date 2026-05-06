@@ -199,3 +199,12 @@ print(allCases) // 모든 열거형 내 case조회 가능
 
 # 5. Operator
 
+- 기본적인 연산자들(<<, ++ ...)은 다른 언어와 동일하므로 서술하지 않는다.
+
+#### Overflow Operator
+- 프로그래밍을 하다가 오버플로우가 발생할 수 있는데, 이때 오버플로우 연산자를 통해 오버플로우가 되는 것을 막는다.
+```swift
+let usignedInteger: Int = 0;
+let underflowedValue: Uint8 = unsignedInteger &- 1; // 255
+```
+
