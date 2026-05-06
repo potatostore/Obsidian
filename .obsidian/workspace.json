@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "copilot/copilot-custom-prompts/Translate to Chinese.md",
+                "file": "Frameworks & services/Spring boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Translate to Chinese"
+              "title": "Spring boot"
             }
           }
         ]
@@ -210,6 +210,11 @@
   },
   "active": "bb22b5d9f56c3a36",
   "lastOpenFiles": [
+    "Virtual Memory.md",
+    "Frameworks & services/Spring boot.md",
+    "Frameworks & services/MongoDB.md",
+    "Frameworks & services/Git & Github.md",
+    "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts/Summarize.md",
     "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
@@ -225,12 +230,8 @@
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-conversations/스프링_부트_개념_브레인스토밍@20260506_200119.md",
-    "Virtual Memory.md",
-    "Frameworks & services/Git & Github.md",
-    "Frameworks & services/Spring boot.md",
     "copilot/copilot-conversations",
     "Language/SWIFT.md",
-    "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts",
     "copilot",
     "Graphos.md",
@@ -238,7 +239,6 @@
     "University/3-1/유비쿼터스.md",
     "University/3-1/DB.md",
     "University/3-1/Real-Time System.md",
-    "Session & JWT.md",
     "University/3-1",
     "University/2-2",
     "University/2-1",
