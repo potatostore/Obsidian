@@ -155,3 +155,57 @@ highestEducationLevel.rawValue // "중학교"
 ```
 원시값(rawValue) 프로퍼티 설정을 통해 원시값으로 설정가능함.
 
+- 연관 값 설정을 통해 rawValue를 각 케이스에 초기화 하는 것이 아닌, 변수에 맞게 설정 가능하다.
+```swift
+enum PastaTaste{
+	case cream, tomato
+}
+
+enum PizzaDough{
+	case cheeseCrust, thin, original
+}
+
+enum PizzaTopping{
+	case pepperoni, cheese, bacon
+}
+
+enum MainDish{
+	case pasta(taste: PastaTaste)
+	case pizza(dough: PizzaDough, topping: PizzaTopping)
+	case chicken(withSauce: Bool)
+	case rice
+}
+
+var dinner: MainDish = MainDish.pasta(taste: PastaTaste.tomato)
+dinner = MainDish.pizza(dough: PizzaDough.cheeseCrust, topping:PizzaTopping.bacon)
+```
+
+#### 항목 순회
+- 이처럼 열거형을 세분화해서 의존성을 주입하게 될 경우, 가장 큰 문제는 추후 열거형이 어떤 타입들로 구성되어 있는지 판단하기 어렵다는 것이다. 이때 CaseIterable Protocol을 통해 열거형에 타입 프로퍼티를 추가해준다.
+```swift
+//만약 열거형 내 모든 case에 원시값을 추가하고 싶으면 이처럼 {원시값}, {프로토콜}식으로 작성하면 된다.
+enum School: String, CaseIterable {
+	case primary = "유치원"
+	case elementary = "초등학교"
+	case middle = "중학교"
+	case high = "고등학교"
+}
+
+let allCases: [School] = School.allCases
+print(allCases) // 모든 열거형 내 case조회 가능
+```
+
+위 항목 순회 프로토콜을 제외하고도 순환 열거형(indirect), 비교 가능한 열거형(Comparable)을 통해 비교하거나, 이진 탐색을 위한 순환 알고리즘을 작성하는 등 다양한 열거형 형식을 추가가능하다.
+
+# 5. Operator
+
+- 기본적인 연산자들(<<, ++ ...)은 다른 언어와 동일하므로 서술하지 않는다.
+
+#### Overflow Operator
+- 프로그래밍을 하다가 오버플로우가 발생할 수 있는데, 이때 오버플로우 연산자를 통해 오버플로우가 되는 것을 막는다.
+```swift
+let usignedInteger: Int = 0;
+let underflowedValue: Uint8 = unsignedInteger &- 1; // 255
+```
+
+- 오버플로가 발생할 것 같아서 연산을 사용하는 목적이 아닌, 일부러 오버플로우를 발생시키고, 오류 없이 값을 순환시키는 알고리즘 등을 작성할 때, 이와 같은 연산자를 통해 훨씬 간편하게 진행 가능하다.
