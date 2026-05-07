@@ -211,4 +211,32 @@ let underflowedValue: Uint8 = unsignedInteger &- 1; // 255
 - 오버플로가 발생할 것 같아서 연산을 사용하는 목적이 아닌, 일부러 오버플로우를 발생시키고, 오류 없이 값을 순환시키는 알고리즘 등을 작성할 때, 이와 같은 연산자를 통해 훨씬 간편하게 진행 가능하다.
 
 #### Customizing Operator
-- 전위 / 후위 연산자를 
+- 전위 / 중위 / 후위 연산자를 사용자의 원하는 기능대로 편집하는 방식으로, 새로운 연산자를 통해 연산처리를 간편하게 지원하는 방법
+
+- 전위 연산자
+```swift
+prefix operator **
+
+prefix func ** (value: int) -> int{
+	return value * value;
+}
+
+let minusFive: UInt8 = -5;
+
+print(**minusFive);
+```
+
+- 후위 연산자
+```swift
+postfix operator **
+
+postfix func ** (value: int) -> int{
+	return value * value;
+}
+
+let minusFive: UInt8 = -5;
+print(minusFive**);
+```
+
+- 중위 연산자 
+	- 
