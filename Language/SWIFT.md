@@ -311,3 +311,18 @@ switch(str){
 
 #### repeat-while
 - do-while문과 동일
+
+#### 구문 이름표
+- 반복문이 중첩되거나, 반복문 내부에서 특정 반복문으로 이동하는 등 복잡한 반복문을 구현할 때, 이름표를 통해 해당 반복문의 break / continue 작성 타이밍 및 가독성을 높일 수 있다.
+```swift
+numberLoop: for num in numbers{
+	printLoop: while true{
+		~
+	}
+	
+	removeLoop: while true{
+		~
+	}
+}
+```
+
