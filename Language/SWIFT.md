@@ -327,3 +327,27 @@ numberLoop: for num in numbers{
 ```
 
 # 7. 함수
+
+```swift 
+//기본적으로 다음과 같은 형식을 유지
+func "function name"(parameter ...) -> "return type"{
+	codes...
+	return "return value";
+}
+```
+
+- 파라미터를 넣는 소괄호는 생략 불가(파라미터가 없는 것은 가능)
+
+#### 전달인자 레이블
+```swift
+func "function name"(from myName: String, to name: String = "") -> "return type"{ // "전달인자" "파라미터":"파라미터명", default value설정 가능
+	codes...
+	return "return value";
+}
+
+function name(from: "kim", to: "park")
+```
+
+- 전달인자 레이블을 통해 함수의 파라미터를 정확하게 매핑하여 전달 가능
+- 재정의 및 다중정의 시 전달인자 레이블만 다르게 해도 다중정의(오버로드)로 인식한다.
+
