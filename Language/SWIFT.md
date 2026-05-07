@@ -261,7 +261,7 @@ let minusFive: UInt8 = -5;
 print(minusFive**3);
 ```
 
-# 흐름 제어
+# 6. 흐름 제어
 
 ## 조건문
 #### if / if ~ else
@@ -326,3 +326,4 @@ numberLoop: for num in numbers{
 }
 ```
 
+# 7. 함수
