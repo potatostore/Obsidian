@@ -372,3 +372,37 @@ c++처럼 메모리에 접근하는 방식이 아닌, 메모리를 추가로 할
 
 #### 반환이 없는 함수
 - 반환타입을 정해주지 않거나, Void로 선언시 반환이 없는 함수로 간주.
+
+#### 중첩 함수
+- 열거형 내부에 열거형을 추가하거나, 클래스 내부에 클래스를 추가하는 등 다양한 중첩을 지원함.
+- 이때 일급 객체의 특징을 살려 함수의 반환형으로 다른 함수를 반환해주는 것이 가능함.
+```swift
+typealias MoveFunc = (int) -> int;
+
+func goRight(_ currentPosition: int) -> int{
+	return currentPosition + 1;
+}
+
+func goleft(_ currentPosition: int) -> int{
+	return currentPosition - 1;
+}
+
+func functionForMove(_ shouldGoLeft: Bool) -> MoveFunc{//반환으로 (int) -> int형을 지원하고, 이는 위 goRight/Left함수와 타입이 일치
+	return shouldGoLeft ? goLeft : goRight; //함수명 자체를 반환 -> 함수를 함수 내부에서 실행하는 것이 아닌 반환형으로 하여 함수호출이 종료된 후 호출되어 사용
+}
+
+let moveToZero: MoveFunc = funtionForMove(position>0);
+
+while position != 0{
+	position = moveToZero(position);
+}
+
+//모듈화를 통해 각 함수가 단일 기능 모듈로 존재 가능
+```
+
+
+#### 종료되지 않는 함수
+- 반환 타입을 Never로 지정하여 끝나지 않는 함수로 fetalError 등 에러 탐색 및 던지는 용도로 사용된다.
+
+#### 반환 값을 무시할 수 있는 함수
+- 함수 맨 앞에 @discardableResult를 통해 반환 값을 사용하지 않는다고 선언할 수 있다. (원래 반환값을 받는 변수가 존재하지 않을 경우 컴파일러가 오류를 던진다.)
