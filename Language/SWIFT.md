@@ -266,3 +266,35 @@ print(minusFive**3);
 ## 조건문
 #### if / if ~ else
 - 조건문 괄호는 선택
+
+#### Switch
+- case를 통해 표현하는데, 이때 범위 연산자를 사용하여 표현 가능함.
+- 문자열 경우, 여러 개의 문자열을 하나의 case에 묶어서 사용 가능.
+- throughfall을 통해 밑에 case의 코드로 넘어가게 만들 수 있다.
+- case 내부에 아무런 코드가 존재하지 않을 경우, 오류
+```swift
+switch(total){
+	case 0 :
+		~
+		break;
+	case 1...10:
+		~
+		break;
+	default:
+		break;
+}
+
+
+switch(str){
+	case "kim", "park":
+		~
+		break;
+		
+	case "kim":
+		fallthrough;
+	case "park":
+		~
+		break;
+}
+//위 1개의 케이스와 아래 2개의 케이스는 같은 표현식
+```
