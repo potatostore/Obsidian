@@ -251,7 +251,7 @@ infix operator ** : MultiplicationPrecedence
 
 func ** (value: Int, count: Int) -> Int {
 	var result = 1;
-	for i in count:
+	for i in 1...count:
 		result *= value;
 		
 	return result;
@@ -298,3 +298,16 @@ switch(str){
 }
 //위 1개의 케이스와 아래 2개의 케이스는 같은 표현식
 ```
+
+
+## 반복문
+
+#### for-in
+- for (임시 상수) in (범위 | 시퀀스 아이템)을 통해 실행코드를 반복하게 됨.
+- 이때 범위에 범위 연산자 및 Collection등 다양한 자료구조를 반복할 수 있다.
+
+#### while
+- 다른 언어와 동일
+
+#### repeat-while
+- do-while문과 동일
