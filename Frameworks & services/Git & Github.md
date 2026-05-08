@@ -122,3 +122,5 @@ git checkout "branch name" //특정 branch로 이동한다. (예: git checkout m
 - checkout 후 HEAD가 특정 commit을 직접 가리키는 상태(detached HEAD)가 되며, 이 상태에서는 새로운 commit 생성을 권장하지 않는다.
 - 원래 작업 중이던 branch로 돌아오려면 git checkout "branch name"(예: git checkout main)을 사용한다.
 - git log --all --oneline으로 확인한 commit ID를 통해 원하는 과거 시점의 코드를 열람할 수 있다.
+
+#

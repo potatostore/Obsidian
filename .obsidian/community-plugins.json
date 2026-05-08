@@ -1,17 +1,17 @@
 [
-  "table-editor-obsidian",
+  "code-styler",
+  "obsidian-minimal-settings",
+  "obsidian-style-settings",
   "obsidian-banners",
+  "colored-text",
   "obsidian-book-search-plugin",
   "calendar",
-  "code-styler",
-  "colored-text",
-  "obsidian-git",
-  "execute-code",
-  "global-search-and-replace",
-  "obsidian-latex-suite",
   "mermaid-tools",
-  "obsidian-minimal-settings",
-  "obsidian-scroll-to-top-plugin",
   "sheets",
-  "obsidian-style-settings"
+  "table-editor-obsidian",
+  "obsidian-latex-suite",
+  "global-search-and-replace",
+  "obsidian-scroll-to-top-plugin",
+  "obsidian-git",
+  "hide-folders"
 ]

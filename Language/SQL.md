@@ -300,9 +300,3 @@ SELECT를 통해 얻은 데이터들 뒤에 특정 문자를 추가해주고 싶
 ```SQL
 SELECT CONCAT(HEIGHT, 'cm')
 ```
-
-
-
-# DATE_FORMAT
-
-DATE_FORMAT은 
