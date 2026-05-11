@@ -193,8 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 401
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,7 +212,7 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "94fd8d5bfb7a8924",
+  "active": "ee0691943f86e2da",
   "lastOpenFiles": [
     "Untitled.md",
     "TODO.md",
