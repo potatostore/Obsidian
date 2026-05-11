@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TODO.md",
+                "file": "-Calendar-/2026/2nd/2026-05-12.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TODO"
+              "title": "2026-05-12"
             }
           }
         ]
@@ -211,14 +211,15 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "308226a8f721011c",
+  "active": "94fd8d5bfb7a8924",
   "lastOpenFiles": [
+    "TODO.md",
+    "-Calendar-/2026/2nd/2026-05-12.md",
     "University/3-1/유비쿼터스.md",
     "copilot/copilot-conversations/시험_문제_예측@20260511_141709.md",
     "conflict-files-obsidian-git.md",
     "Project/Graphos.md",
     "Untitled.md",
-    "TODO.md",
     "copilot/copilot-conversations/반복문_구문_이름표_이득@20260507_201449.md",
     "Language/SWIFT.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
@@ -239,7 +240,6 @@
     "copilot/copilot-custom-prompts",
     "Computer Science/Memory.md",
     "Frameworks & services/Spring boot.md",
-    "copilot/copilot-conversations/Spring_Web_의존성_기능_추가@20260506_202222.md",
     "copilot/copilot-conversations",
     "copilot",
     "스크린샷 2026-04-20 10.04.38.png",
