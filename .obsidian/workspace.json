@@ -191,8 +191,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 429
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,8 +210,9 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "bb22b5d9f56c3a36",
+  "active": "edad268b2f229b95",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/온디바이스_AI_시스템_디자인_검토@20260511_201548.md",
     "Language/SWIFT.md",
     "copilot/copilot-conversations/시험_문제_예측@20260511_141709.md",
     "Project/Graphos.md",
@@ -250,7 +250,6 @@
     "copilot/copilot-conversations/Spring_Web_의존성_기능_추가@20260506_202222.md",
     "copilot/copilot-conversations",
     "copilot",
-    "copilot/copilot-conversations/Spring_Boot_개념_브레인스토밍@20260506_200119.md",
     "copilot/copilot-conversations/Spring_Boot_개념_브레인스토밍@20260506_200119.md",
     "University/3-1",
     "University/2-2",
