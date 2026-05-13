@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "Graphos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "Graphos"
             }
           }
         ]
@@ -213,8 +213,8 @@
   },
   "active": "94fd8d5bfb7a8924",
   "lastOpenFiles": [
-    "git commit and sync.md",
     "Frameworks & services/Spring boot.md",
+    "git commit and sync.md",
     "Graphos.md",
     "-Calendar-/2026/2nd/2026-05-12.md",
     "copilot/copilot-conversations/온디바이스_AI_시스템_디자인_검토@20260511_201548.md",
