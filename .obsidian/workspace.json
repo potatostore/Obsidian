@@ -182,8 +182,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
+              "icon": "lucide-ghost",
+              "title": "copilot-chat-view"
             }
           }
         ],
@@ -206,7 +206,6 @@
       "obsidian-book-search-plugin:Create new book note": false,
       "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "copilot:Open Copilot Chat": false,
       "hide-folders:Show hidden folders": false
     }
   },
