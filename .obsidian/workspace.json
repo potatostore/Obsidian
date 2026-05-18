@@ -160,13 +160,23 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "90e29560bb5b4ffc",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 429
+    "width": 733
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,11 +191,13 @@
       "obsidian-book-search-plugin:Create new book note": false,
       "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "hide-folders:Show hidden folders": false
+      "hide-folders:Show hidden folders": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "6225fa0d45f87057",
+  "active": "90e29560bb5b4ffc",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/Swift와_SwiftUI_학습@20260518_205830.md",
     "Language/SWIFT.md",
     "Graphos.md",
     "conflict-files-obsidian-git.md",
@@ -222,7 +234,6 @@
     "Images/Pasted image 20250405215130.png",
     "Images/Pasted image 20250404211654.png",
     "Frameworks & services/Spring boot.md",
-    "copilot/copilot-conversations/대화_및_노트_숨기기_설정@20260506_202821.md",
     "copilot/copilot-conversations",
     "copilot",
     "University/3-1",
