@@ -447,6 +447,44 @@ http DELETE :8080/coffees/{id}
 ```
 GET을 통해 삭제되었는지 확인해보기
 
+#### Swagger-ui
+- swagger-ui도 Jackson 라이브러리를 통해 사용되는 RestApi를 확인가능한데, 이때 Getter을 통해 response, request의 전체적인 타입에 대한 접근을 열어놓지 않으면 실패한다. 따라서 Jackson 라이브러리를 통해 SpringDOC를 사용하던, 위처럼 Httpie를 통해 직접적인 url을 넣던, getter/setter설정을 통해 접근할 경로를 열어 놔야 확인이 가능해진다.
+- 특히 ApiResponse 등 공동 응답 클래스를 규정할 때, Getter을 꼭 써야한다.
+```java
+package likelion.backend.ecommerce.global.api;  
+  
+import lombok.Getter;  
+import lombok.NoArgsConstructor;  
+  
+import java.time.LocalDateTime;  
+  
+@NoArgsConstructor  
+@Getter  
+public class ApiResponse<T> {  
+    private final boolean success = true;  
+    private final LocalDateTime time = LocalDateTime.now();  
+    private Integer status;  
+    private String message;  
+    private T data;  
+  
+    public ApiResponse(Integer status, String message, T data){  
+        this.status = status;  
+        this.message = message;  
+        this.data = data;  
+    }  
+  
+    public static <T> ApiResponse<T> success(String message, T data){  
+        return new ApiResponse<>(200, message, data);  
+    }  
+  
+    public static <T> ApiResponse<T> error(Integer status, String message, T data){  
+        return new ApiResponse<>(status, message, data);  
+    }  
+}
+```
+
+ResponseEntity에 http 상태 코드 + 메시지 + 응답 데이터를 넣으려고 할때, ResponseEntity는 http 상태 코드 + 데이터만을 지원하기 때문에 data부분에 위 ApiResponse 공통 응답 클래스를 만들어 메시지 + 응답 데이터를 표준화해서 묶고, 이를 다시 ResponseEntity에 감싸 넣는 방식을 보여줄 수 있다.
+
 # 5. DB Access
 
 Spring boot는 Tomcat이라는 내장 서버가 존재하고, 이는 독립적으로 작동하는 서버이다.
