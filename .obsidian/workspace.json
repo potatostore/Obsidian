@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "9d733325e94e368e",
+    "id": "6f89798aa12d3298",
     "type": "split",
     "children": [
       {
-        "id": "3ff8f2dc0a024e12",
+        "id": "231d099215474336",
         "type": "tabs",
         "children": [
           {
-            "id": "bb22b5d9f56c3a36",
+            "id": "94fd8d5bfb7a8924",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/SWIFT.md",
+                "file": "Graphos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SWIFT"
+              "title": "Graphos"
             }
           }
         ]
@@ -27,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "8144520b152c7ae1",
+    "id": "214d65e0f2fc7046",
     "type": "split",
     "children": [
       {
-        "id": "54d4c835e1fd1094",
+        "id": "5472cc93141a3b97",
         "type": "tabs",
         "children": [
           {
-            "id": "f9c18d2897427f90",
+            "id": "98284c89d43ad2aa",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +48,7 @@
             }
           },
           {
-            "id": "e7411067b58863d6",
+            "id": "c3723e064a5e5ac3",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,17 +61,17 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "검색"
             }
           },
           {
-            "id": "131a8c7bf7322559",
+            "id": "127d8b0d1741fc26",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "북마크"
             }
           }
         ]
@@ -81,48 +81,48 @@
     "width": 200
   },
   "right": {
-    "id": "b822096852a7546f",
+    "id": "a616419b5f754521",
     "type": "split",
     "children": [
       {
-        "id": "b996793324bcaf79",
+        "id": "de9cf6bb38fbb1cc",
         "type": "tabs",
         "children": [
           {
-            "id": "dd95aae08ed1beb2",
+            "id": "8ba99811058a4105",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Session & JWT.md",
+                "file": "Frameworks/Spring boot - java.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Session & JWT"
+              "title": "Backlinks for Spring boot - java"
             }
           },
           {
-            "id": "c6d52fdcc43529db",
+            "id": "5df65e0c6c45fb91",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Session & JWT.md",
+                "file": "Frameworks/Spring boot - java.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Session & JWT"
+              "title": "Outgoing links from Spring boot - java"
             }
           },
           {
-            "id": "6225fa0d45f87057",
+            "id": "1b20f94ab1214c46",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,22 +137,29 @@
             }
           },
           {
-            "id": "e7290c76959876cb",
+            "id": "154bcd5172849db2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Language/SWIFT.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "file": "-Calendar-/2025/1st/2025-01-09.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of SWIFT"
+              "title": "Outline of 2025-01-09"
             }
           },
           {
-            "id": "c2ca0d15a5f5cc03",
+            "id": "6f1e8dfdc9237f33",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          },
+          {
+            "id": "308226a8f721011c",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -162,13 +169,23 @@
             }
           },
           {
-            "id": "90e29560bb5b4ffc",
+            "id": "6edd7e6889aaa404",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
+          },
+          {
+            "id": "ee0691943f86e2da",
             "type": "leaf",
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "message-square",
-              "title": "Copilot"
+              "icon": "lucide-ghost",
+              "title": "copilot-chat-view"
             }
           }
         ],
@@ -176,10 +193,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 733
+    "width": 276
   },
   "left-ribbon": {
     "hiddenItems": {
+      "copilot:Open Copilot Chat": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -187,60 +205,63 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-book-search-plugin:Create new book note": false,
       "obsidian-git:Open Git source control": false,
+      "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "hide-folders:Show hidden folders": false,
-      "copilot:Open Copilot Chat": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "hide-folders:Show hidden folders": false
     }
   },
-  "active": "90e29560bb5b4ffc",
+  "active": "98284c89d43ad2aa",
   "lastOpenFiles": [
     "copilot/copilot-conversations/Swift와_SwiftUI_학습@20260518_205830.md",
-    "Language/SWIFT.md",
+    "Frameworks & services/Spring boot.md",
+    "git commit and sync.md",
     "Graphos.md",
-    "conflict-files-obsidian-git.md",
-    "copilot/copilot-conversations/온디바이스_AI_시스템_디자인_검토@20260511_201548.md",
-    "copilot/copilot-conversations/시험_문제_예측@20260511_141709.md",
-    "Project/Graphos.md",
     "-Calendar-/2026/2nd/2026-05-12.md",
+    "copilot/copilot-conversations/온디바이스_AI_시스템_디자인_검토@20260511_201548.md",
+    "TODO.md",
+    "University/3-1/유비쿼터스.md",
+    "copilot/copilot-conversations/시험_문제_예측@20260511_141709.md",
+    "conflict-files-obsidian-git.md",
+    "Project/Graphos.md",
+    "Untitled.md",
     "copilot/copilot-conversations/반복문_구문_이름표_이득@20260507_201449.md",
-    "copilot/copilot-custom-prompts/Translate to Chinese.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
-    "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
-    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "Language/SWIFT.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
+    "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
+    "copilot/copilot-custom-prompts/Remove URLs.md",
+    "copilot/copilot-custom-prompts/Generate glossary.md",
+    "copilot/copilot-custom-prompts/Generate table of contents.md",
+    "copilot/copilot-custom-prompts/Make longer.md",
+    "copilot/copilot-custom-prompts/Make shorter.md",
+    "copilot/copilot-custom-prompts/Emojify.md",
+    "copilot/copilot-custom-prompts/Explain like I am 5.md",
+    "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts",
+    "copilot/copilot-conversations",
+    "copilot",
+    "스크린샷 2026-04-20 10.04.38.png",
+    "스크린샷 2026-04-20 10.04.38 1.png",
+    "Images/Pasted image 20260423154049.png",
     "Books/Library.base",
-    "Language/SQL.md",
+    "Books/Resources/Books_Info/Images/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
+    "Books/Resources/Books_Info/Images",
+    "Books/Resources/Books_Info/Info",
+    "싯다르타 (세계문학전집173) - 헤르만 헤세.jpg",
+    "/싯다르타(세계문학전집 58) - 헤르만헤세.jpg",
+    "/싯다르타 (세계문학전집173) - 헤르만 헤세.jpg",
+    "Books/Resources/Books_Info",
+    "Untitled 1.base",
+    "Books/Resources/ZImages",
+    "Books/Books_Review",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "Images/Pasted image 20250813143155.png",
-    "Images/Pasted image 20250524130643.png",
-    "Images/Pasted image 20250419214702.png",
-    "Images/Pasted image 20250419182930.png",
-    "Images/Pasted image 20250405215344.png",
-    "Images/Pasted image 20250405215130.png",
-    "Images/Pasted image 20250404211654.png",
-    "Frameworks & services/Spring boot.md",
-    "copilot/copilot-conversations",
-    "copilot",
-    "University/3-1",
-    "University/2-2",
-    "University/2-1",
-    "University",
-    "Project/Unreal Engine",
-    "Project/ShoppingMall"
+    "Untitled.canvas",
+    "Algorithm/Untitled.canvas",
+    "Algorithm/Search Algorithm/Untitled.canvas"
   ]
 }
