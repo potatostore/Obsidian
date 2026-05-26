@@ -135,6 +135,72 @@ class VaultOrganizer:
         self.dry_run = dry_run
         self.notes = {} # title -> ObsidianNote
         
+        # Load formatting rules
+        self.rules_path = os.path.join(self.vault_path, ".obsidian-agent", "formatting_rules.md")
+        self.rules = self.load_rules()
+        
+    def load_rules(self):
+        """Parses the formatting_rules.md file inside .obsidian-agent/ to read status."""
+        enabled_rules = {
+            "RULE_HEADING_SPACE": True,
+            "RULE_REQUIRED_FRONTMATTER": True,
+            "RULE_HIGHLIGHT_SPACES": True
+        }
+        
+        if not os.path.exists(self.rules_path):
+            return enabled_rules
+            
+        try:
+            with open(self.rules_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+                
+            for rule in enabled_rules:
+                # Find RULE_ID and check status (Enabled vs Disabled)
+                pattern = rf'{rule}.*?(?:Status|상태):\s*`\[(Enabled|Disabled)\]`'
+                match = re.search(pattern, content, re.DOTALL | re.IGNORECASE)
+                if match:
+                    status = match.group(1).strip().lower()
+                    enabled_rules[rule] = (status == "enabled")
+        except Exception as e:
+            print(f"⚠ Error loading rules from formatting_rules.md: {e}")
+            
+        return enabled_rules
+
+    def format_body_text(self, body):
+        """Applies formatting rules to the body text line-by-line, respecting code blocks."""
+        rule_heading = self.rules.get("RULE_HEADING_SPACE", True)
+        rule_highlight = self.rules.get("RULE_HIGHLIGHT_SPACES", True)
+        
+        if not rule_heading and not rule_highlight:
+            return body
+            
+        lines = body.split('\n')
+        new_lines = []
+        in_code_block = False
+        
+        for line in lines:
+            if line.strip().startswith('```'):
+                in_code_block = not in_code_block
+                new_lines.append(line)
+                continue
+                
+            if not in_code_block:
+                # 1. Heading Space Correction: e.g. '#대제목' -> '# 대제목'
+                if rule_heading:
+                    # Match heading symbols (1 to 6 #) followed directly by non-space, non-hash character
+                    match = re.match(r'^(#{1,6})([^#\s])(.*)$', line)
+                    if match:
+                        line = f"{match.group(1)} {match.group(2)}{match.group(3)}"
+                
+                # 2. Highlight Spaces Correction: e.g. '== 하이라이트 ==' -> '==하이라이트=='
+                if rule_highlight:
+                    # Strip leading/trailing spaces inside highlights
+                    line = re.sub(r'==\s*([^\s=][^=]*[^\s=])\s*==', r'==\1==', line)
+                    
+            new_lines.append(line)
+            
+        return '\n'.join(new_lines)
+        
     def scan_vault(self):
         print(f"🔍 Scanning vault in: {self.vault_path}")
         note_count = 0
@@ -202,65 +268,83 @@ class VaultOrganizer:
         }
 
     def standardize_metadata(self):
-        """Standardizes frontmatter in all notes (safety-first, dry-run by default)."""
-        print("\n🧹 Standardizing Note Metadata...")
+        """Standardizes frontmatter and body format in all notes based on rules (dry-run by default)."""
+        print(f"\n🧹 Enforcing Formatting Rules (Dry-Run: {self.dry_run})...")
+        print(f"  • Heading space formatting: {'[ON]' if self.rules.get('RULE_HEADING_SPACE') else '[OFF]'}")
+        print(f"  • YAML metadata validation: {'[ON]' if self.rules.get('RULE_REQUIRED_FRONTMATTER') else '[OFF]'}")
+        print(f"  • Highlight text formatting: {'[ON]' if self.rules.get('RULE_HIGHLIGHT_SPACES') else '[OFF]'}")
+        
         modified_count = 0
         
         for title, note in self.notes.items():
             needs_update = False
             new_fm = dict(note.frontmatter)
             
-            # Ensure 'tags' exists
-            if 'tags' not in new_fm:
-                new_fm['tags'] = sorted(list(note.tags)) if note.tags else ['seed']
-                needs_update = True
-            else:
-                # Merge current frontmatter tags and body tags
-                current_fm_tags = set()
-                if isinstance(new_fm['tags'], list):
-                    current_fm_tags = set(new_fm['tags'])
-                elif isinstance(new_fm['tags'], str):
-                    current_fm_tags = set([t.strip() for t in new_fm['tags'].split(',') if t.strip()])
-                
-                merged_tags = sorted(list(current_fm_tags.union(note.tags)))
-                if not merged_tags:
-                    merged_tags = ['seed']
-                if merged_tags != new_fm['tags']:
-                    new_fm['tags'] = merged_tags
+            # 1. Apply Metadata Frontmatter Rules
+            if self.rules.get("RULE_REQUIRED_FRONTMATTER", True):
+                # Ensure 'tags' exists
+                if 'tags' not in new_fm:
+                    new_fm['tags'] = sorted(list(note.tags)) if note.tags else ['seed']
                     needs_update = True
-            
-            # Ensure 'aliases' list exists
-            if 'aliases' not in new_fm:
-                new_fm['aliases'] = []
-                needs_update = True
+                else:
+                    current_fm_tags = set()
+                    if isinstance(new_fm['tags'], list):
+                        current_fm_tags = set(new_fm['tags'])
+                    elif isinstance(new_fm['tags'], str):
+                        current_fm_tags = set([t.strip() for t in new_fm['tags'].split(',') if t.strip()])
+                    
+                    merged_tags = sorted(list(current_fm_tags.union(note.tags)))
+                    if not merged_tags:
+                        merged_tags = ['seed']
+                    if merged_tags != new_fm['tags']:
+                        new_fm['tags'] = merged_tags
+                        needs_update = True
                 
-            # Ensure 'created' date exists
-            if 'created' not in new_fm:
-                # Get file creation time
-                ctime = os.path.getctime(note.filepath)
-                date_str = datetime.fromtimestamp(ctime).strftime('%Y-%m-%d')
-                new_fm['created'] = date_str
+                # Ensure 'aliases' list exists
+                if 'aliases' not in new_fm:
+                    new_fm['aliases'] = []
+                    needs_update = True
+                    
+                # Ensure 'created' date exists
+                if 'created' not in new_fm:
+                    ctime = os.path.getctime(note.filepath)
+                    date_str = datetime.fromtimestamp(ctime).strftime('%Y-%m-%d')
+                    new_fm['created'] = date_str
+                    needs_update = True
+
+            # 2. Apply Body Formatting Rules (Headings, Highlights)
+            formatted_body = self.format_body_text(note.body_content)
+            # Remove leading whitespace from body content
+            formatted_body_cleaned = formatted_body.lstrip()
+            orig_body_cleaned = note.body_content.lstrip()
+            
+            if formatted_body_cleaned != orig_body_cleaned:
                 needs_update = True
 
             if needs_update:
                 modified_count += 1
-                fm_block = dump_simple_yaml(new_fm)
-                new_content = f"{fm_block}\n{note.body_content.lstrip()}"
+                
+                # Reconstruct content
+                if self.rules.get("RULE_REQUIRED_FRONTMATTER", True) or note.has_frontmatter:
+                    fm_block = dump_simple_yaml(new_fm)
+                    new_content = f"{fm_block}\n{formatted_body_cleaned}"
+                else:
+                    new_content = formatted_body_cleaned
                 
                 if self.dry_run:
-                    print(f"  [DRY RUN] Would update frontmatter for [[{title}]]")
+                    print(f"  [DRY RUN] Would format note: [[{title}]]")
                 else:
                     try:
                         with open(note.filepath, 'w', encoding='utf-8') as f:
                             f.write(new_content)
-                        print(f"  ✔ Updated [[{title}]]")
+                        print(f"  ✔ Formatted [[{title}]]")
                     except Exception as e:
-                        print(f"  ❌ Error updating [[{title}]]: {e}")
+                        print(f"  ❌ Error formatting [[{title}]]: {e}")
                         
         if self.dry_run:
-            print(f"  [DRY RUN] Proposed updates for {modified_count} notes.")
+            print(f"  [DRY RUN] Proposed formatting for {modified_count} notes.")
         else:
-            print(f"  ✔ Finished updating {modified_count} notes.")
+            print(f"  ✔ Finished formatting {modified_count} notes.")
 
 def main():
     parser = argparse.ArgumentParser(description="Obsidian Vault Organizer Tool")
@@ -286,3 +370,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
