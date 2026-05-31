@@ -172,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -194,7 +194,7 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "90e29560bb5b4ffc",
+  "active": "c2ca0d15a5f5cc03",
   "lastOpenFiles": [
     "copilot/copilot-conversations/Jackson_Library_&_Setup@20260527_085621.md",
     "TODO.md",
