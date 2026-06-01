@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os
 import re
-import yaml # Wait, let's avoid requiring 'yaml' to keep it ZERO dependency! Let's write a simple YAML parser/writer using basic string operations, which is incredibly safe for standard frontmatter.
 import json
 import argparse
 from datetime import datetime
