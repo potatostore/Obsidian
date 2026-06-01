@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-10-09
+---
 초창기 웹 개발에서 진화된 업무로서 구조는 controller(요청분기), service(요청처리), repository(데이터 처리)있다.
 
 ``` mermaid

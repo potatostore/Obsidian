@@ -1,4 +1,9 @@
-
+---
+tags:
+  - seed
+aliases: []
+created: 2025-07-10
+---
 # Working with EFS
 
 ## Launch instances in multiple AZs

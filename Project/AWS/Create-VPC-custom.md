@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-07-10
+---
 _vpc setting mark down file_
 # Create VPC
 Name: MyVPC

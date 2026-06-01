@@ -1,3 +1,9 @@
+---
+tags:
+  - include
+aliases: []
+created: 2025-06-15
+---
 - 힙 트리 구조(Heap Tree Structure)을 이용하여 정렬하는 방법
 
 

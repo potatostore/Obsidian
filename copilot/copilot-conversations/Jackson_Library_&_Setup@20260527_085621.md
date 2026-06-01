@@ -1,14 +1,12 @@
 ---
 epoch: 1779839781402
-modelKey: "gemini-2.5-flash|google"
-topic: "Jackson Library & Setup"
-
-
-
+modelKey: gemini-2.5-flash|google
+topic: Jackson Library & Setup
 tags:
   - copilot-conversation
+aliases: []
+created: 2026-05-27
 ---
-
 **user**: chapter 4. Httpie부분을 보면 Jackson라이브러리를 통해 클래스 내 필드의 타입을 확인하고, 이를 json파일로 변환한다라는 설명이 존재해. Jackson 라이브러리가 어떤식으로 동작하고, 마샬,언마샬링을 하기 위해 어떤 준비과정이 필요한지 알려줘. 그리고 의존성을 어떤식으로 추가하는지도 알려줘
 [Context: Notes: Frameworks & services/Spring boot.md]
 [Timestamp: 2026/05/27 08:56:21]

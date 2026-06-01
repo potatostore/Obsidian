@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2026-04-23
+---
 # DB System
 
 - DB 유형을 알아보고, 개념 및 특징 이해

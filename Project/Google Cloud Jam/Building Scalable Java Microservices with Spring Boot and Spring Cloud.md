@@ -1,4 +1,9 @@
-
+---
+tags:
+  - seed
+aliases: []
+created: 2025-06-15
+---
 Google cloud servieces provide options to developers for solution architecture.
 
 1.  Cloud Function : compute and hosting services that completely serverless execution environment(Faas)

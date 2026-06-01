@@ -1,4 +1,11 @@
-
+---
+tags:
+  - Google
+  - Machine
+  - info
+aliases: []
+created: 2025-07-21
+---
 AI 작업을 위한 툴, machine learning을 위한 jupyter부터 Rstudio, code Editor등 다양한 AI Editor application을 실행하고 다룰 수 있다.
 
 EFS를 통해 데이터를 저장하고, 불러오기에 비용이 매우 비쌈

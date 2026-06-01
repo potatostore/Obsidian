@@ -1,3 +1,9 @@
+---
+tags:
+  - include
+aliases: []
+created: 2025-06-15
+---
 - 가장 작은(큰) 것을 맨 앞으로 보낸다
 
 ```cpp title='오름차순'

@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-07-17
+---
 ETL을 통해 partition key를 지정하는 순간, partition key가 된 컬럼은 중복하여 존재할경우 중복제거에 의해 통째로 날라갈 수 있다. 따라서 이를 방지하기 위해 aws에서는 partition키로 지정한 컬럼은 자동으로 삭제한다.
 
 그렇기에 이를 복제하여 새로운 컬럼을 만들어 partition key year column과 normal year column으로 같은 정보를 담는 두 column을 생성하는게 목적이다.

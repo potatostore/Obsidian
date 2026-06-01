@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-07-10
+---
 #### OSI(Open Systems Interfaces)
 - 네트워크를 나누는 L7(OSI 7계층)
 	1. Physical layer : 물리적인 단계로, port를 통해 전자적 신호로 2진법으로 바꾸어 송수신

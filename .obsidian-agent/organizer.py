@@ -155,7 +155,7 @@ class VaultOrganizer:
                 
             for rule in enabled_rules:
                 # Find RULE_ID and check status (Enabled vs Disabled)
-                pattern = rf'{rule}.*?(?:Status|상태):\s*`\[(Enabled|Disabled)\]`'
+                pattern = rf'{rule}.*?`\[(Enabled|Disabled)\]`'
                 match = re.search(pattern, content, re.DOTALL | re.IGNORECASE)
                 if match:
                     status = match.group(1).strip().lower()

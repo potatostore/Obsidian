@@ -1,3 +1,11 @@
+---
+tags:
+  - GreetingController
+  - RestAPI
+  - application
+aliases: []
+created: 2026-05-27
+---
 # 0. Spring boot
 
 Spring boot를 자바를 통해 앱 백엔드를 구성하는 도구로 생각하는 것이 일반적이다.

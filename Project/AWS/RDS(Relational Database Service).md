@@ -1,4 +1,9 @@
-
+---
+tags:
+  - seed
+aliases: []
+created: 2025-07-10
+---
 # 관계형 데이터베이스
 
 #### 수직확작성(Scale-Up)

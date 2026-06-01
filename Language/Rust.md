@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-10-09
+---
 # Types
 ## Types
 

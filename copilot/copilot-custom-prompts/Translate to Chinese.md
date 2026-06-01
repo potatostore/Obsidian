@@ -4,6 +4,10 @@ copilot-command-slash-enabled: true
 copilot-command-context-menu-order: 1010
 copilot-command-model-key: ""
 copilot-command-last-used: 0
+tags:
+  - seed
+aliases: []
+created: 2026-05-06
 ---
 Translate {} into Chinese:
     1. Preserve the meaning and tone

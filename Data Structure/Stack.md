@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2025-06-15
+---
 LIFO(Last In First Out)방식으로 나중에 입력된 데이터가 먼저 출려되는 방식
 
 명령어 : 

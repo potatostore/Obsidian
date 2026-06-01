@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2026-04-21
+---
 ## 1. 실시간 시스템의 기초 (Basic Concepts)
 - **Real-Time System**: 작업의 결과물뿐만 아니라 그 결과가 도출되는 **시간(Timing)**이 시스템의 정식성(Correctness)에 영향을 주는 시스템.
 - **Hard Real-Time**: 마감 시간(Deadline) 위반 시 시스템에 치명적인 실패(Catastrophic failure)가 발생하는 시스템.

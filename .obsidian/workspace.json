@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Spring boot.md",
+                "file": "University/3-1/컴퓨터 네트워크.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring boot"
+              "title": "컴퓨터 네트워크"
             }
           }
         ]
@@ -176,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 485
+    "width": 470
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,9 +196,13 @@
   },
   "active": "90e29560bb5b4ffc",
   "lastOpenFiles": [
+    "copilot/copilot-conversations/이도현과_옵시디언@20260601_110153.md",
+    "Language/C C++.md",
+    "Frameworks & services/Git & Github.md",
+    "Frameworks & services/MongoDB.md",
+    "Frameworks & services/Spring boot.md",
     "copilot/copilot-conversations/Jackson_Library_&_Setup@20260527_085621.md",
     "TODO.md",
-    "Frameworks & services/Spring boot.md",
     "Books/Books_Review/생각의 도약 - 도야마 시게히코.md",
     "Algorithm/Cryptographic Algorithms/SHA-256 Hashing Algorithm.md",
     "Algorithm/Cryptographic Algorithms/RSA Algorithm.md",
@@ -218,10 +222,6 @@
     "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
     "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
     "Algorithm/Machine Learning Algorithm/Random Forests.md",
-    "Algorithm/Machine Learning Algorithm/Logistic Regression.md",
-    "Algorithm/Machine Learning Algorithm/Linear Regression.md",
-    "Algorithm/Machine Learning Algorithm/K-means Clustering.md",
-    "Algorithm/Machine Learning Algorithm/Decision Trees.md",
     "copilot/copilot-custom-prompts",
     "Books/Library.base",
     "Images/Pasted image 20260203114002.png",

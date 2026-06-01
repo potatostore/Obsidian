@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2026-03-13
+---
 ```mermaid
 sequenceDiagram
     autonumber

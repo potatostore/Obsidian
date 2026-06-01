@@ -4,6 +4,10 @@ copilot-command-slash-enabled: true
 copilot-command-context-menu-order: 1040
 copilot-command-model-key: ""
 copilot-command-last-used: 0
+tags:
+  - seed
+aliases: []
+created: 2026-05-06
 ---
 Explain {} in simple terms that a 5-year-old would understand:
     1. Use basic vocabulary

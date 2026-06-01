@@ -4,8 +4,11 @@ copilot-command-slash-enabled: true
 copilot-command-context-menu-order: 1140
 copilot-command-model-key: ""
 copilot-command-last-used: 0
+tags:
+  - seed
+aliases: []
+created: 2026-05-06
 ---
-
 Based on the web page content provided in the context (from Obsidian Web Clipper or Web Viewer), generate a complete Obsidian note.
 
 IMPORTANT: If no web page context is found, remind the user to:

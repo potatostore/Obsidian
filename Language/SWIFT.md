@@ -1,3 +1,9 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2026-05-08
+---
 # 1. swift
 
 #### 언어적 특성
