@@ -1,4 +1,7 @@
 {
   "cssTheme": "AnuPpuccin",
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "enabledCssSnippets": [
+    "Minimal Theme cards"
+  ]
 }

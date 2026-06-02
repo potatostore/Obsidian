@@ -176,7 +176,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 470
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,13 +195,16 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "90e29560bb5b4ffc",
+  "active": "2541e471883523e5",
   "lastOpenFiles": [
+    "1 IPv6 프로토콜.md",
+    "University/3-1/컴퓨터 네트워크.md",
+    "Frameworks & services/Spring boot.md",
+    "University/3-1/DB.md",
     "copilot/copilot-conversations/이도현과_옵시디언@20260601_110153.md",
     "Language/C C++.md",
     "Frameworks & services/Git & Github.md",
     "Frameworks & services/MongoDB.md",
-    "Frameworks & services/Spring boot.md",
     "copilot/copilot-conversations/Jackson_Library_&_Setup@20260527_085621.md",
     "TODO.md",
     "Books/Books_Review/생각의 도약 - 도야마 시게히코.md",
@@ -219,9 +223,6 @@
     "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
     "Algorithm/Union-Find.md",
     "Algorithm/Search and Sort Algorithm/Search Algorithm/Binary Search.md",
-    "Algorithm/Search and Sort Algorithm/Search Algorithm/BFS(Breath First Search).md",
-    "Algorithm/Machine Learning Algorithm/Support Vector Machines.md",
-    "Algorithm/Machine Learning Algorithm/Random Forests.md",
     "copilot/copilot-custom-prompts",
     "Books/Library.base",
     "Images/Pasted image 20260203114002.png",
