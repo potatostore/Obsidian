@@ -157,8 +157,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -167,8 +167,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "copilot-chat-view"
+              "icon": "message-square",
+              "title": "Copilot"
             }
           }
         ],
@@ -189,9 +189,11 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "hide-folders:Show hidden folders": false,
+      "copilot:Open Copilot Chat": false
     }
   },
   "active": "2541e471883523e5",
