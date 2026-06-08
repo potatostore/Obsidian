@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2541e471883523e5",
+            "id": "e66e473d0728880a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -157,8 +157,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "calendar"
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -167,8 +167,8 @@
             "state": {
               "type": "copilot-chat-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "copilot-chat-view"
+              "icon": "message-square",
+              "title": "Copilot"
             }
           }
         ],
@@ -181,7 +181,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -189,57 +188,60 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "hide-folders:Show hidden folders": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "2541e471883523e5",
+  "active": "e66e473d0728880a",
   "lastOpenFiles": [
-    "4 웹 서비스.md",
-    "University/3-1/컴퓨터 네트워크.md",
-    "1 IPv6 프로토콜.md",
-    "Frameworks & services/Spring boot.md",
+    "University/2-1/논리회로설계.md",
+    "University/2-1/컴퓨터실험2.md",
     "University/3-1/DB.md",
-    "copilot/copilot-conversations/이도현과_옵시디언@20260601_110153.md",
-    "Language/C C++.md",
-    "Frameworks & services/Git & Github.md",
-    "Frameworks & services/MongoDB.md",
-    "copilot/copilot-conversations/Jackson_Library_&_Setup@20260527_085621.md",
-    "TODO.md",
-    "Books/Books_Review/생각의 도약 - 도야마 시게히코.md",
-    "Algorithm/Cryptographic Algorithms/SHA-256 Hashing Algorithm.md",
-    "Algorithm/Cryptographic Algorithms/RSA Algorithm.md",
-    "Algorithm/Cryptographic Algorithms/Diffie-Hellman Key Exchange.md",
-    "Algorithm/Cryptographic Algorithms/Advanced Encryption Standard.md",
-    "Algorithm/Branch and Bound Algorithm/Travelling Salesman Problem.md",
-    "Algorithm/Branch and Bound Algorithm/0-1 Knapsack Problem.md",
-    "Algorithm/Backtracking Algorithm/Hamiltonian Problem.md",
-    "Algorithm/Backtracking Algorithm/Maze Solving.md",
-    "Algorithm/Backtracking Algorithm/N-Queens Problem.md",
-    "Algorithm/Backtracking Algorithm/-Backtracking Explain-.md",
-    "Algorithm/String Algorithms/Rabin-Karp Algorithm.md",
-    "Algorithm/String Algorithms/Knuth-Morris-Pratt.md",
-    "Algorithm/String Algorithms/Boyer-Moore Algorithm.md",
-    "Algorithm/Union-Find.md",
-    "copilot/copilot-custom-prompts",
-    "Books/Library.base",
+    "University/3-1/컴퓨터 네트워크.md",
+    "University/2-2/파일처리론.md",
+    "University/2-2/윈도우즈 프로그래밍.md",
+    "University/2-2/알고리즘.md",
+    "University/2-2/운영체제.md",
+    "기말/1 IP 프로토콜/1 IP 프로토콜.md",
+    "기말/3 전송 계층/1 전송 계층.md",
+    "기말/3 전송 계층/2 TCP.md",
+    "기말/1 IP 프로토콜/IP 계층 문제 및 개념 정리.pdf",
+    "기말/3 전송 계층/4 RTP.md",
+    "Project/AWS/Create-EFS(CLI version).md",
+    "Project/AWS/Create-VPC-custom.md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
+    "기말/3 전송 계층/전송 계층 연습문제 및 해설집.pdf",
+    "기말/3 전송 계층/5 OSI TP.md",
+    "기말/3 전송 계층/KakaoTalk_20260603_170936901.jpg",
+    "기말/1 IP 프로토콜/2 라우팅 프로토콜.md",
+    "1 IPv6 프로토콜.md",
+    "기말/3 전송 계층/KakaoTalk_20260603_170936901_03.jpg",
+    "기말/3 전송 계층/KakaoTalk_20260603_170936901_02.jpg",
+    "기말/3 전송 계층/KakaoTalk_20260603_170936901_01.jpg",
+    "기말/3 전송 계층/3 UDP.md",
+    "기말/3 전송 계층",
+    "기말/4 상위 계층/4 웹 서비스.md",
+    "기말/4 상위 계층/4 DNS.txt",
+    "기말/4 상위 계층/3 웹.txt",
+    "기말/4 상위 계층/3 소켓 프로그래밍 요약.md",
+    "기말/4 상위 계층/2 응용 계층.md",
+    "기말/4 상위 계층/1 표현 계층.md",
+    "기말/4 상위 계층/0 세션 계층.md",
+    "기말/4 상위 계층",
+    "기말/1 IP 프로토콜/3 IP 프로토콜.md",
+    "기말/1 IP 프로토콜",
+    "기말/2 네트워크 계층/네트워크_계층_연습문제_및_해설집.pdf",
+    "기말/2 네트워크 계층/3 기타 네트워크 계층 프로토콜.md",
+    "기말/2 네트워크 계층",
+    "기말",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
     "Images/Pasted image 20250813143155.png",
     "Images/Pasted image 20250524130643.png",
     "Images/Pasted image 20250419214702.png",
-    "Images/Pasted image 20250419182930.png",
-    "Images/Pasted image 20250405215344.png",
-    "Images/Pasted image 20250405215130.png",
-    "Images/Pasted image 20250404211654.png",
-    "copilot/copilot-conversations",
-    "copilot",
-    "University/3-1",
-    "University/2-2",
-    "University/2-1",
-    "University",
-    "Project/Unreal Engine",
-    "Project/ShoppingMall"
+    "Images/Pasted image 20250419182930.png"
   ]
 }
