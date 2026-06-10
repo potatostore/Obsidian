@@ -3,5 +3,6 @@
   "theme": "moonstone",
   "enabledCssSnippets": [
     "Minimal Theme cards"
-  ]
+  ],
+  "accentColor": ""
 }
