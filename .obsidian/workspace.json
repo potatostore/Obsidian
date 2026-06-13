@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/3-1/컴퓨터 네트워크.md",
+                "file": "University/3-1/유비쿼터스.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컴퓨터 네트워크"
+              "title": "유비쿼터스"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "b822096852a7546f",
@@ -181,7 +182,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "obsidian-git:Open Git source control": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -196,8 +196,8 @@
   },
   "active": "2541e471883523e5",
   "lastOpenFiles": [
-    "4 웹 서비스.md",
     "University/3-1/컴퓨터 네트워크.md",
+    "4 웹 서비스.md",
     "1 IPv6 프로토콜.md",
     "Frameworks & services/Spring boot.md",
     "University/3-1/DB.md",
