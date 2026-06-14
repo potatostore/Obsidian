@@ -1,28 +1,14 @@
 {
   "main": {
-    "id": "9d733325e94e368e",
+    "id": "418163eaeb59f7b0",
     "type": "split",
     "children": [
       {
-        "id": "61b18ad0cb24a349",
+        "id": "d911d79c740ff9e3",
         "type": "tabs",
         "children": [
           {
-            "id": "e66e473d0728880a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "University/3-1/유비쿼터스.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "유비쿼터스"
-            }
-          },
-          {
-            "id": "2de640faaf6e2309",
+            "id": "8d97e1657f5fe22e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,22 +21,21 @@
               "title": "유비쿼터스"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "8144520b152c7ae1",
+    "id": "1f11a90ec17cbafe",
     "type": "split",
     "children": [
       {
-        "id": "54d4c835e1fd1094",
+        "id": "1b7cd6bb15df0fcf",
         "type": "tabs",
         "children": [
           {
-            "id": "f9c18d2897427f90",
+            "id": "793a95c914e2c08d",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -63,7 +48,7 @@
             }
           },
           {
-            "id": "e7411067b58863d6",
+            "id": "3c74e7b7cc88e9a2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -80,7 +65,7 @@
             }
           },
           {
-            "id": "131a8c7bf7322559",
+            "id": "28f2f38e89568171",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -97,20 +82,20 @@
     "collapsed": true
   },
   "right": {
-    "id": "b822096852a7546f",
+    "id": "b2a89565b773c5a8",
     "type": "split",
     "children": [
       {
-        "id": "b996793324bcaf79",
+        "id": "129d9af73c2f2f8b",
         "type": "tabs",
         "children": [
           {
-            "id": "dd95aae08ed1beb2",
+            "id": "f8b07c54e92fb79c",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "University/3-1/컴퓨터 네트워크.md",
+                "file": "University/3-1/유비쿼터스.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,25 +105,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 컴퓨터 네트워크"
+              "title": "Backlinks for 유비쿼터스"
             }
           },
           {
-            "id": "c6d52fdcc43529db",
+            "id": "4bfa676eb4ca8b69",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Session & JWT.md",
+                "file": "University/3-1/유비쿼터스.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Session & JWT"
+              "title": "Outgoing links from 유비쿼터스"
             }
           },
           {
-            "id": "6225fa0d45f87057",
+            "id": "7d5c9c0aede9f0b1",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -153,32 +138,22 @@
             }
           },
           {
-            "id": "e7290c76959876cb",
+            "id": "8fb3e353b64bed35",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Language/SWIFT.md",
+                "file": "University/3-1/유비쿼터스.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SWIFT"
+              "title": "Outline of 유비쿼터스"
             }
           },
           {
-            "id": "90e29560bb5b4ffc",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "copilot-chat-view"
-            }
-          },
-          {
-            "id": "7d70c1335a1967de",
+            "id": "5216d3d9d9411be4",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -191,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -205,69 +180,9 @@
       "bases:Create new base": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "hide-folders:Show hidden folders": false,
-      "copilot:Open Copilot Chat": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2de640faaf6e2309",
-  "lastOpenFiles": [
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "University/3-1/컴퓨터 네트워크.md",
-    "4 웹 서비스.md",
-    "1 IPv6 프로토콜.md",
-    "Frameworks & services/Spring boot.md",
-=======
-    "n개.md",
-=======
->>>>>>> 123f454 (chore(sync): auto-sync on close from potatostoreMacbook [2026-06-13 11:37:25])
-    "University/3-1/컴퓨터 네트워크.md",
-    "n개.md",
-    "University/3-1/유비쿼터스.md",
-    "기말/3 전송 계층/4 RTP.md",
-    "기말/3 전송 계층/KakaoTalk_20260603_170936901.jpg",
-    "기말/2 네트워크 계층/3 기타 네트워크 계층 프로토콜.md",
-    "University/2-1/논리회로설계.md",
-    "University/2-1/컴퓨터실험2.md",
->>>>>>> 2b8d784c73b7094bb67e3666a68339b5756356c8
-    "University/3-1/DB.md",
-    "University/2-2/파일처리론.md",
-    "University/2-2/윈도우즈 프로그래밍.md",
-    "University/2-2/알고리즘.md",
-    "University/2-2/운영체제.md",
-    "기말/1 IP 프로토콜/1 IP 프로토콜.md",
-    "기말/3 전송 계층/1 전송 계층.md",
-    "기말/3 전송 계층/2 TCP.md",
-    "기말/1 IP 프로토콜/IP 계층 문제 및 개념 정리.pdf",
-    "Project/AWS/Create-EFS(CLI version).md",
-    "Project/AWS/Create-VPC-custom.md",
-    "Project/AWS/VPC(Virtual Private Cloud).md",
-    "기말/3 전송 계층/전송 계층 연습문제 및 해설집.pdf",
-    "기말/3 전송 계층/5 OSI TP.md",
-    "기말/1 IP 프로토콜/2 라우팅 프로토콜.md",
-    "1 IPv6 프로토콜.md",
-    "기말/3 전송 계층/KakaoTalk_20260603_170936901_03.jpg",
-    "기말/3 전송 계층/KakaoTalk_20260603_170936901_02.jpg",
-    "기말/3 전송 계층/KakaoTalk_20260603_170936901_01.jpg",
-    "기말/3 전송 계층/3 UDP.md",
-    "기말/3 전송 계층",
-    "기말/4 상위 계층/4 웹 서비스.md",
-    "기말/4 상위 계층/4 DNS.txt",
-    "기말/4 상위 계층/3 웹.txt",
-    "기말/4 상위 계층/3 소켓 프로그래밍 요약.md",
-    "기말/4 상위 계층/2 응용 계층.md",
-    "기말/4 상위 계층/1 표현 계층.md",
-    "기말/4 상위 계층",
-    "기말/1 IP 프로토콜",
-    "기말/2 네트워크 계층/네트워크_계층_연습문제_및_해설집.pdf",
-    "기말/2 네트워크 계층",
-    "기말",
-    "Images/Pasted image 20260203114002.png",
-    "Images/Pasted image 20260203113615.png",
-    "Images/Pasted image 20250813143155.png",
-    "Images/Pasted image 20250524130643.png",
-    "Images/Pasted image 20250419214702.png",
-    "Images/Pasted image 20250419182930.png"
-  ]
+  "active": "8d97e1657f5fe22e",
+  "lastOpenFiles": []
 }
