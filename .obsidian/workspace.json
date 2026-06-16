@@ -1,16 +1,5 @@
 {
   "main": {
-<<<<<<< HEAD
-    "id": "418163eaeb59f7b0",
-    "type": "split",
-    "children": [
-      {
-        "id": "d911d79c740ff9e3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "8d97e1657f5fe22e",
-=======
     "id": "03fe663c9ed1471a",
     "type": "split",
     "children": [
@@ -20,17 +9,16 @@
         "children": [
           {
             "id": "c01bce3cbf2310ae",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/3-1/유비쿼터스.md",
+                "file": "University/3-1/Real-Time System.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "유비쿼터스"
+              "title": "Real-Time System"
             }
           }
         ]
@@ -39,17 +27,6 @@
     "direction": "vertical"
   },
   "left": {
-<<<<<<< HEAD
-    "id": "1f11a90ec17cbafe",
-    "type": "split",
-    "children": [
-      {
-        "id": "1b7cd6bb15df0fcf",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "793a95c914e2c08d",
-=======
     "id": "03f5f366f3590b00",
     "type": "split",
     "children": [
@@ -59,7 +36,6 @@
         "children": [
           {
             "id": "b42e113187ef4a95",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -72,11 +48,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "3c74e7b7cc88e9a2",
-=======
             "id": "415f95d3c2f069b3",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "search",
@@ -93,11 +65,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "28f2f38e89568171",
-=======
             "id": "f0051ca4ab102e45",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -113,17 +81,6 @@
     "width": 200
   },
   "right": {
-<<<<<<< HEAD
-    "id": "b2a89565b773c5a8",
-    "type": "split",
-    "children": [
-      {
-        "id": "129d9af73c2f2f8b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f8b07c54e92fb79c",
-=======
     "id": "ce37ce0e6f219a8d",
     "type": "split",
     "children": [
@@ -133,7 +90,6 @@
         "children": [
           {
             "id": "8970725e527872a9",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -152,11 +108,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "4bfa676eb4ca8b69",
-=======
             "id": "7f87642568045831",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -170,11 +122,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "7d5c9c0aede9f0b1",
-=======
             "id": "93137837ef03a5e9",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -189,11 +137,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "8fb3e353b64bed35",
-=======
             "id": "b4cddb1caa45915d",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -208,11 +152,7 @@
             }
           },
           {
-<<<<<<< HEAD
-            "id": "5216d3d9d9411be4",
-=======
             "id": "0bf31c2b932c489a",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -239,13 +179,13 @@
       "bases:Create new base": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "hide-folders:Show hidden folders": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-<<<<<<< HEAD
-  "active": "8d97e1657f5fe22e",
-=======
   "active": "c01bce3cbf2310ae",
->>>>>>> 9d403ffce10b14e04d8baac9f83960fe231a37b7
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "University/3-1/유비쿼터스.md"
+  ]
 }
