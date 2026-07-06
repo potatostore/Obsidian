@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/3-1/Real-Time System.md",
+                "file": "Language/SWIFT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Real-Time System"
+              "title": "SWIFT"
             }
           }
         ]
@@ -186,6 +186,7 @@
   },
   "active": "c01bce3cbf2310ae",
   "lastOpenFiles": [
+    "University/3-1/Real-Time System.md",
     "University/3-1/유비쿼터스.md"
   ]
 }
