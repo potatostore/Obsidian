@@ -682,6 +682,80 @@ class Acount{
 
 #### 키 경로
 - 일급 객체처럼 변수에 함수의 참조를 할당하여 사용 가능했음
+```
+class Person{
+	var name: String
+	
+	init(name: String){
+		self.name = name
+	}
+}
+
+print(type(of: \Person.name)) // ReferenceWritableKeyPath<Person, String>
+```
+
+위처럼 키 경로가 KeyPath에 맵 형식으로 존재하고, 포인터처럼 키 경로를 통해 프로퍼티에 접근 가능하다.
+
+``` 
+let keyPath = \Person
+let nameKeyPath = keyPath.appending(path: \.name) // 이처럼 키패스 뒤에 하위 경로를 덧붙이기 가능
+```
+
+#### 인스턴스 메서드
+- 프로퍼티의 값이 변경될 때마다 호출되는 메서드를 설정 가능함
+```
+class LevelClass{
+	var level: Int{
+		didset{
+			print("level : \(level)")
+		}
+	}
+	
+	func levelUp(){
+		print("Level UP!")
+		level+=1
+	}
+	
+	func levelDown(){
+		print("Level Down")
+		level-=1
+	}
+	
+	func reset(){
+		print("Reset!")
+		level = 0;
+	}
+}
+```
+클래스는 프로퍼티 값 수정시 별도의 키워드가 필요 없지만, 구조체/열거형은 mutating을 통해 인스턴스 내부 값을 변경함을 명시해야 한다.
+
+```
+struct LevelClass{
+	var level: Int{
+		didset{
+			print("level : \(level)")
+		}
+	}
+	
+	mutating func levelUp(){
+		print("Level UP!")
+		level+=1
+	}
+	
+	mutating func levelDown(){
+		print("Level Down")
+		level-=1
+	}
+	
+	mutating func reset(){
+		print("Reset!")
+		level = 0;
+	}
+}
+```
+
+#### Self 프로퍼티
+- this처럼 자기 자신(본인 인스턴스)를 가르키는 키워드
 
 # 11. 인스턴스 생성 및 소멸
 - 앞선 방식에 따라 이니셜라이저/디이니셜라이저를 통해 인스턴스의 생성 및 소멸을 관리함
@@ -891,3 +965,126 @@ https://docs.swift.org/swift-book/documentation/the-swift-programming-language/c
 스위프트에서 c언어의 포인터처럼 악명이 높은 문법으로, 자바의 람다형 함수처럼 스트림을 간편하게 넘겨주고, 기능하는 함수를 일급 객체에 저장하는 등의 행위를 하기 위해 만든 문법이다.
 
 - 일정 기능을 하는 코드를 하나의 블록으로 모아놓은 것을 의미하며, 
+
+**
+# 14. 옵셔널 체이닝과 빠른 종료
+- 구조체나 클래스의 프로퍼티에 옵셔널 값을 넣고, 이를 인스턴스로 갖는 프로퍼티를 멤버로 갖는 클래스/구조체를 다중으로 설계하게 될 경우, 최상위 인스턴스의 옵셔널 값에 따라 프로퍼티가 갖는 값이 nil이 될 수도 있고, 아닐 수도 있기에, 모든 값을 옵셔널로 갖게 하는 구조를 옵셔널 체이닝이라고 한다.
+```
+class Room{
+	var number: Int
+	
+	init(number: Int){
+		self.number = number
+	}
+}
+
+class Building{
+	var name: String
+	var room: Room?
+	
+	init(name: String){
+		self.name = name
+	}
+}
+
+struct Address{
+	var province: String
+	var city: String
+	var street: String
+	var building: Building?
+	var detailAddress: String
+}
+
+clss Person{
+	var name: String
+	var address: Address?
+	
+	init(name: String){
+		self.name = name
+	}
+}
+
+let yagomRoomViaOptionalChaining: Int? = yagom.address?.building?.room?.number // !와 같은 강제추출이 이때 매우 위험
+```
+
+이때 옵셔널 체이닝에서 강제추출시 하나의 옵셔널이 nil값을 갖는 경우, 이후의 하위 인스턴스에 대해 nil값을 리턴하기에 강제추출이 매우 위험
+
+#### 빠른 종료
+- throw-catch문처럼 특정 조건 하에 예외처리를 하거나, 코드 블럭을 종료시켜야 하는 구문에서 guard-else문을 통해 간단하게 표현 가능함
+```
+for i in 0...3{
+	if i == 2{
+		print(i)
+	} else{
+		continue
+	}
+}
+
+->
+
+for i in 0...3{
+	guard i == 2 else{
+		continue
+	}
+	print(i)
+}
+```
+
+특히 위 옵셔널 체이닝과 관련되어 다음과 같이 표현 가능하다.
+
+```
+let person: [String: String] = {
+	"name" : "minjun"
+	"location" : "library"
+}
+
+guard let location: String = person["location"] else{
+	print("nil")
+	return
+} // person에 location에 해당되는 내용이 없을 경우 return
+```
+
+가장 큰 특징은 return, break, continue, throw등의 제어문 전환 명령어가 없으면 사용이 불가능하다는 점이다.
+
+# 15. 맵, 필터, 리듀스
+- 일반적으로 함수를 입급 객체 취급하는 스위프트에서는 다른 함수의 파라미터로 함수를 보낼 수 있고, 이러한 함수를 고차 함수라고 지칭함.
+
+#### 맵
+- 맵은 두가지의 관점에서 바라볼 수 있다.
+	1. 자료에서의 맵 : 자료에서의 맵은 일대일 대응이 되는 key-value형식의 자료형이다.
+	2. 기능에서의 맵 : 위 일대일 대응에서 결론적으로 집합 A의 원소를 집합 B의 원소로 일대일 대응시키는 방식으로 이때 해시함수처럼 함수라는 과정을 거쳐 집합 B에 매핑을 시키게 된다.
+
+- 스위프트에서 맵은 컨테이너(집합 A)와 클로저(함수)를 통해 집합 B를 얻어내는 고차 함수를 의미함
+```
+// container.map(f(x)) -> return의 형식을 띔
+
+let numbers: [Int] = [0,1,2,3]
+
+doubledNumbers = numbers.map{$0 * 2} // (numbers: [Int]) -> ([Int]){}처럼 사용해도 됨
+```
+
+#### 필터
+- 컨테이너 내부의 값을 걸러서 추출하는 고차함수
+- Bool return 형식의 클로저를 사용
+```
+let evenNumbers: [Int] = numbers.filter {(number: Int) -> Bool in
+	return number % 2 = 0
+}
+
+
+// 맵과 이어서 사용가능함
+let oddNumbers: [Int] = numbers.map{$0 + 3}.filter{$0 % 2 == 1}
+```
+
+#### 리듀스
+- 컨테이너 값들을 클로저 함수를 통해 하나의 값으로 결합하는 경우 사용
+```
+let sumFromThree: Int = numbers.reduce(3){//초기값 3
+	return $0 + $1
+}
+```
+
+초기값이 포함된 컨테이너를 클로저의 인자로 넘겨주기에 초기값 설정 필요
+
+# 16. 모나드
+
