@@ -1254,4 +1254,99 @@ print(coffee is Coffee) // T
 print(coffee is Americano) // F
 print(americano is Coffee) // T
 ```
+- 메타 타입 타입을 통해 타입의 타입을 확인가능함. 이때 타입의 값을 변수처럼 저장하거나, 표현 가능하고, self를 통해 타입을 값처럼 표현 가능함
+```
+let intType: Int.Type = Int.self
+
+print(intType) // Int
+```
+- 실행 중 인스턴스의 타입 값을 확인하고 싶으면 type 메서드를 사용 가능함
+```
+// type(of: SomeInstance)
+
+print(type(of: coffee)) // Coffee
+```
+
+#### 다운캐스팅
+- 상속관계에서 자식 클래스는 상위클래스의 인스턴스인양 타입을 제공할 수 있다.
+- 즉, 자식 클래스의 type(of: childInstance) ?= type(of: parentInstance)를 하게 될 경우, True 반환
+- 이때 자식 클래스가 부모클래스의 타입으로 선언되었지만, 자식클래스의 파라미터나 메서드 등을 사용하고 싶은 경우, 다운캐스팅을 사용함
+```
+var latte: Coffee = Latte("latte", 3900)
+
+if latte as? Latte{
+	print("This is latte")
+} else {
+	print(coffee.description)
+} // 1 shot(s) coffee
+```
+- as?와 as!로 나뉘는데, 전자는 옵셔널을 반환하고, 이는 실패 가능한 다운캐스팅을 의미함(as!를 통해 실패한 경우 런타임 오류)
+- 이때 as!를 통해 강제 변환을 진행하는데, 이외에도 as를 사용하여 항상 성공하는 것을 아는 경우 사용 가능함
+
+
+# 20. 프로토콜
+
+#### 프로토콜
+- 특정 역할을 하기 위한 메서드, 프로퍼티, 기타 요구사항 등의 청사진 정의
+- 즉 구조체, 클래스, 열거형은 프로토콜을 채택하여 특정 기능을 실현하기 위한 요구사항을 인터페이스처럼 구현가능함.
+- 이때 프로토콜은 정의를 제공할 뿐, 기능을 구현하지는 않음
+
+#### 선언 및 채택
+- 선언
+```
+protocol <protocolName> {
+	 // protocol defination
+}
+```
+
+앞선 설명대로 프로토콜은 기능을 제공하지 않고, 정의를 제공함
+
+- 채택
+```
+struct SomeStruct: AProtocol, BProtocol{
+	//properties
+	//methods
+}
+```
+
+상속처럼 콜론을 통해 프로토콜 채택을 명시
+
+#### 프로퍼티 접근 권한
+- get/set을 통해 프로퍼티의 읽기, 쓰기 권한을 부여한바가 있는데, 이처럼 프로토콜 프로퍼티에 get/set을 명시하여 채택한 클래스, 구조체에서 이를 따르게 만들 수 있음
+```
+protocol AProtocol{
+	var from: String { get } // 읽기 전용
+	var to: String{ get set } // 읽기 쓰기 전용
+}
+```
+
+이를 채택한 구조체, 클래스 등에서는 프로토콜에서 지정한 권한에 맞춰 작성하여도 되지만, 더 많은 권한을 부여하는 것도 가능함
+- 프로토콜 프로퍼티에서 제어한 권한보다 더 많은 권한은 가능함
+- 하지만 더 적은 권한으로 축소시키는 것은 절대 불가능
+
+#### 메서드 
+- 반환값, argument label등을 정확하게 명시하여 넘겨줘야 함.
+- 이때 채택한 구조체, 클래스 등에서는 이를 와일드카드로 대체하는 것은 불가능
+- 가변 메서드의 경우 mutating을 통해 프로퍼티가 메서드를 통해 변경될 수 있음을 명시해야 함 -> mutating을 명시하지 않은 메서드는 채택된 클래스 내부 메서드에서 프로퍼티 변경 코드를 작성한 경우 런타임 오류가 발생한다. (mutating을 사용하지 않은 메서드를 채택한 입장에서는 mutating키워드를 붙이는 것이 불가능)
+
+#### 이니셜라이져
+- 매개변수는 매개변수를 지정만 할 뿐, 이를 구현하는 것은 전적으로 채택하는 입장에서 이뤄져야 함.
+- 이때 상속과 채택이 동시에 이뤄지고, 이니셜라이져가 겹치는 경우, required와 override 키워드 모두 명시해야 함
+```
+class School{
+	var name: String
+	
+	init(name: String){
+		self.name = name
+	}
+}
+
+class MiddleSchool: School, Named{
+	required override init(name: String){
+		super.init(name: name)
+	}
+}
+```
+
+이때 프로토콜은 실패 가능한 이니셜라이져를 구현하도록 요구가능하고, 이를 채택한 입장에서는 굳이 실패 가능한 이니셜라이져를 구현하지 않아도 됨
 

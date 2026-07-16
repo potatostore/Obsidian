@@ -36,19 +36,20 @@
             }
           },
           {
-            "id": "5eb34f6db0cbec51",
+            "id": "e37b26969de5ff7c",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/Pasted image 20260203114002.png"
+                "file": "충남대 해커톤 - 공공데이터 조사.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260203114002"
+              "icon": "lucide-file",
+              "title": "충남대 해커톤 - 공공데이터 조사"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -206,17 +207,18 @@
       "bases:Create new base": false,
       "obsidian-book-search-plugin:Create new book note": false,
       "mermaid-tools:Open Mermaid Toolbar": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "hide-folders:Show hidden folders": false,
+      "copilot:Open Copilot Chat": false
     }
   },
-  "active": "5eb34f6db0cbec51",
+  "active": "c01bce3cbf2310ae",
   "lastOpenFiles": [
-    "Images/Pasted image 20250404211654.png",
     "충남대 해커톤 - 공공데이터 조사.md",
-    "창업계획서 참고자료.md",
-    "Images/Pasted image 20250405215130.png",
     "Images/충남대 해커톤 시각 자료/지역 맛집.png",
     "Images/충남대 해커톤 시각 자료/인기관광지.png",
+    "스크린샷 2026-07-14 20.53.30.png",
+    "스크린샷 2026-07-14 20.52.55.png",
     "Images/충남대 해커톤 시각 자료/202301-202406 소비금액 차트.png",
     "Images/Pasted image 20260203114002.png",
     "Images/Pasted image 20260203113615.png",
