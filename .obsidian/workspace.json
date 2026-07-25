@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c01bce3cbf2310ae",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "충남대 해커톤 - 공공데이터 조사.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "충남대 해커톤 - 공공데이터 조사"
-            }
-          },
-          {
             "id": "160008c95c1911f2",
             "type": "leaf",
             "state": {
@@ -36,20 +22,21 @@
             }
           },
           {
-            "id": "e37b26969de5ff7c",
+            "id": "c5dea71f5f0eb7c1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "충남대 해커톤 - 공공데이터 조사.md",
+                "file": "Language/SWIFT.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "충남대 해커톤 - 공공데이터 조사"
+              "title": "SWIFT"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -212,12 +199,12 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "c01bce3cbf2310ae",
+  "active": "c5dea71f5f0eb7c1",
   "lastOpenFiles": [
     "Frameworks & services/Spring boot.md",
+    "충남대 해커톤 - 공공데이터 조사.md",
     "Graphos.md",
     "Language/SWIFT.md",
-    "충남대 해커톤 - 공공데이터 조사.md",
     "Images/충남대 해커톤 시각 자료/지역 맛집.png",
     "Images/충남대 해커톤 시각 자료/인기관광지.png",
     "스크린샷 2026-07-14 20.53.30.png",

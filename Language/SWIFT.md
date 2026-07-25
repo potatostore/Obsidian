@@ -1350,3 +1350,188 @@ class MiddleSchool: School, Named{
 
 이때 프로토콜은 실패 가능한 이니셜라이져를 구현하도록 요구가능하고, 이를 채택한 입장에서는 굳이 실패 가능한 이니셜라이져를 구현하지 않아도 됨
 
+#### 프로토콜 상속
+- 클래스 상속처럼 프로토콜의 상속을 지원할 수 있고, 부모프로토콜과 자식 프로토콜의 모든 메서드를 프로토콜을 채택한 클래스에서는 구현해야됨
+
+#### 클래스 전용 프로토콜
+- 프로토콜 상속 리스트에 class 키워드를 넣어 클래스 타입에만 채택이 가능하도록 구현 가능
+
+#### 선택적 요구
+- 프로토콜의 구현사항 중 일부를 선택적인 요소로 채택될 수 있도록 만들 수 있다.
+- 이때 @objc 속성을 통해 objective-c 코드 기반에서 사용 가능하도록 만들어 주는데, 때문에 클래스에만 채택가능함
+```
+import Foundation
+
+@objc protocol Moveable {
+	func walk()
+	@objc optional func fly()
+}
+
+class Tiger: NSObject, Moveable{
+	func walk() {
+		print("Tiger walks")
+	}
+}
+
+class Bird: NSObject, Moveable{
+	func walk(){
+		print("Bird walks")
+	}
+	
+	func fly(){
+		print("Bird Fly")
+	}
+}
+
+
+```
+- 이때 NSObject는 Foundation 라이브러리에서 지원하는, 클래스를 obejective-c런타임 환경으로 바꿔주는 최상위 클래스이다.
+- 구조체와 열거형은 objective-c에서는 참조 타입을 지원하고, 값 타입에 대한 런타임 환경은 지원하지 않기 때문에 선택적 요구를 사용할 수 없음
+
+#### 위임
+- 프로토콜의 기능 구현을 일부 다른 클래스에 책임을 위임하여 해당 클래스에서 구현한다고 약속한다.
+- 프로토콜에 구현을 약속한 메서드를 채택한 클래스는 메서드에 대한 구현을 부모클래스에 위임하고, 이를 상속받아, 이벤트 호출시 사용 가능함.
+```
+protocol CustomInputViewDelegate: AnyObject {
+    // "입력이 완료되면 이 메서드를 실행해서 결과를 전달할게!"라는 약속
+    func inputView(_ view: CustomInputView, didSubmitText text: String)
+}
+
+class CustomInputView {
+    // ⚠️ 순환 참조(메모리 누수)를 막기 위해 weak 키워드를 붙여줍니다!
+    weak var delegate: CustomInputViewDelegate?
+    
+    func userTappedSubmitButton(inputText: String) {
+        // "비서님, 사용자 입력 끝났으니까 약속된 메서드 실행해 주세요!"
+        delegate?.inputView(self, didSubmitText: inputText)
+    }
+}
+
+class MainViewController: CustomInputViewDelegate {
+    
+    // 프로토콜의 약속(메서드)을 진짜로 구현!
+    func inputView(_ view: CustomInputView, didSubmitText text: String) {
+        print("전달받은 텍스트로 화면 업데이트: \(text)")
+    }
+}
+```
+
+
+# 21. 익스텐션
+- 상속처럼 기능을 확장가능하지만, 재정의는 불가능하며, 이때문에 수평 확작이라고 함(상속은 수직 확장)
+- 클래스, 구조체, 프로토콜 등 모든 타입에서 사용 가능함
+- 원본 소스 코드를 수정하지 못함
+- 따라서 외부에서 가져온 타입에 내가 원하는 기능을 추가하고 싶을 경우, 익스텐션을 사용
+- 특히 타입에 추가적으로 프로토콜을 채택하거나, 클래스를 상속하는 경우(클래스 한해서) 익스텐션 사용
+
+#### 익스텐션
+- extension 문법 사용
+```
+extension <typeName> : <protocol1> ... {
+	// details
+}
+```
+
+- 익스텐션을 통해 다음과 같은 기능을 확장 가능함
+	1. 연산 프로퍼티
+	2. 메서드
+	3. 이니셜라이저(지정 이니셜라이저 및 디이니셜라이저는 무조건 클래스 타입의 구현부에 위치해야 하므로 불가능)
+	4. 서브스크립트
+	5. 중첩 데이터 타입
+
+# 22. 제네릭
+- 타입을 하나의 매개변수로 받아 작동하는 문법
+- 제네릭을 통해 Any처럼 어떤 타입이든 변수에 저장 가능함을 명시 가능하다
+```
+// 제네릭 함수/변수 이름 <타입>형식으로 구현
+
+func swapTwoValues<T>(_ a: inout T, _ b: inout T){
+	// details
+}
+```
+
+이때 제네릭이 아닌 Any를 통해 구현하면 되지 않을까? 라는 의문이 들 수 있음. -> String, int값이 파라미터로 넘겨질때, inout으로 직접 값을 참조하여 변경하게 될 경우, String -> Any로 바꾸기 위해 값 복사가 이뤄지고, 의도되는 코드 흐름으로 흘러가지 않음. 
+
+- 위 T는 플레이스 홀더로 어떤 타입이라는 것은 알려줌
+
+#### 타입 제약
+- 타입을 매개변수처럼 사용하고, 모든 타입에 대해 해당 기능을 구현하는 제네릭에서는 특정 타입에 대한 기능을 구현할 수 있기 때문에 타입 제약이 필요함
+```
+public struct Dictionary<Key : Hashable, Value> : collections, ExpressibleByDictionaryLiteral{
+	// details
+}
+```
+
+위처럼 Key값에 Hashable을 통해 아무 타입이 아닌, 스위프트 표준 라이브러리에 정의된 Hashable 프로토콜에 만족하는 타입만 가능함을 명시한다.
+이외에도 BinaryInteger을 통해 산수 연산을 위한 기능만을 지원하는 메서드를 만들거나, Comparable등의 프로토콜을 타입 제약으로 지정 가능함
+
+#### 연관 타입
+- T와 같은 플레이스 홀더 네임을 사용하게 될 경우, 정의 내부에 사용될 타입이 어떤 역할인지 알 수 없기에 명시 목적
+```
+struct IntStack: Container {
+    typealias Element = Int 
+    
+    var items: [Element] = [] // 결국 [Int]가 됨
+    
+    mutating func append(_ item: Element) { // 결국 (item: Int)가 됨
+        items.append(item)
+    }
+}
+
+struct IntStack<Element>: Container {
+    var items: [Element] = [] // 결국 [Int]가 됨
+    
+    mutating func append(_ item: Element) { // 결국 (item: Int)가 됨
+        items.append(item)
+    }
+}
+
+//같은 기능, 다른 표현식
+
+```
+
+#### 제네릭 서브스크립트
+- 서브스크립트도 제네릭을 활용하여 구현 가능
+```
+extension Stack{
+	subscript<Indices: Sequence>(indices: Indices) -> [Element]
+		where Indices.Iterator.Element == Int { // indices라는 인덱스 값이 Int타입이여야 함을 제약으로 추가
+			var result = [ItemType]()
+			for index in indices{
+				result.append(self[index])
+			}
+			return result
+		}
+}
+```
+
+
+# 23. 프로토콜 지향 프로그래밍
+- 일반적으로 objective-c, java등의 객체지향 프로그래밍 언어는 클래스를 상속하여 타입의 재사용성을 높임
+- swift는 프로토콜 지향 프로그래밍으로 객체 지향 프로그래밍 언어의 기능을 완벽히 지원하고, 프로토콜을 통해 구조체, 열거형의 재사용성도 높이도록 만듦
+- 이때 동일 프로토콜을 여러 클래스, 구조체, 열거형이 채택하여 구현하게 될 경우, 중복 코드가 무한히 복제되므로, 이를 막기 위해 앞선 익스텐션과 제네릭을 통해 재사용성을 높임
+
+#### 프로토콜 초기구현
+```
+protocol Receiveable{
+	func received(data: Any, from: Sendable)
+}
+
+extension Receiveable{
+	func received(data: Any, from: Sendable){
+		print("\(self) received \(data) from \(from)")
+	} // 익스텐션으로 중복 기능 구현
+}
+
+class Message: Receiveable{
+	var to: Receiveable?
+}
+
+class Mail: Receivealbe{
+	var to: Receiveable?
+}
+
+//Mail, Message의 received 메서드 중복 구현을 익스텐션으로 사전 구현하여 중복 코드를 막음
+```
+- 만약 익스텐션으로 구현한 기능을 사용하지 않고, 타입에 따른 변경된 구현을 요구할 경우, 재정의
+- swift에서는 다중 상속을 지원하지 않고(다이아몬드 문제), 이때문에 프로토콜 사전 정의를 통해 채택을 하거나, 재정의를 하는 다형성을 지원한다.
