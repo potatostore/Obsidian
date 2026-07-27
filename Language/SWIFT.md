@@ -4,7 +4,7 @@ tags:
 aliases: []
 created: 2026-05-08
 ---
-**클로저, 모나드, 상속 - 이니셜라이저 재정의**
+**클로저, 모나드, 상속 - 이니셜라이저 재정의, ARC-미소유 옵셔널 참조**
 # 1. swift
 
 #### 언어적 특성
@@ -1535,3 +1535,271 @@ class Mail: Receivealbe{
 ```
 - 만약 익스텐션으로 구현한 기능을 사용하지 않고, 타입에 따른 변경된 구현을 요구할 경우, 재정의
 - swift에서는 다중 상속을 지원하지 않고(다이아몬드 문제), 이때문에 프로토콜 사전 정의를 통해 채택을 하거나, 재정의를 하는 다형성을 지원한다.
+
+# 24. 타입 중첩
+- 클래스나 구조체, 열거형 등 내부에 추가적인 열거형을 정의하여 해당 타입 내부에서만 사용할 수 있도록 만드는 방식
+- 각 클래스나 구조체의 타입의 목적성을 명확하게 하거나, 타입에서만 사용가능한 열거형을 선언하므로서 재사용성을 높임
+
+```
+class Person{
+	enum Job{
+		case jobless, programmer, student
+	}
+	
+	var job: Job = .jobless
+}
+
+class Student: Person {
+	enum School{
+		case elementary, middle, high
+	}
+	
+	var school: School
+	
+	init(school: School){
+		self.school = school
+		super.init()
+		self.job = .student
+	}
+}
+```
+
+# 25. 패턴
+- 패턴 : 단독 또는 복합 값의 구조를 나타내는 것
+- 패턴 매칭 : 코드에서 어떤 패턴의 형태를 찾아내는 행위
+
+- 스위프트의 패턴은 크게 두 종류로 나뉨
+	- 값을 해체(추출)하거나 무시하는 패턴 : 와일드카드 패턴, 식별자 패턴, 값 바인딩 패턴, 튜플 패턴
+	- 패턴 매칭을 위한 패턴 : 열거형 케이스 패턴, 옵셔널 패턴, 표현 패턴, 타입캐스팅 패턴
+
+#### 와일드카드 패턴
+- 값이 무엇이 와도 상관없는 패턴
+```
+var str: String = "ABC"
+
+switch str{
+	case _: print(str)
+}
+```
+
+
+#### 식별자 패턴
+- 변수 또는 상수의 이름에 알맞는 값을 어떤 값과 매치시키는 패턴
+```
+let somValue: Int = 42
+```
+위와 같이 값 대입도 식별자 패턴의 일종임
+
+#### 값 바인딩 패턴
+- 변수 또는 상수의 이름에 매치된 값을 바인딩
+- 식별자 패턴은 값 바인딩 패턴의 일종이며, 매칭 값을 새로운 이름의 변수/상수에 바인딩한다.
+```
+let yagom = ("yagom", 99, "Male")
+
+switch yagom{
+	case let(name, age, gender) : print ... // let(name,age,_)을 통해 gender이 필요 없는 경우 사용하지 않을 수도 있음
+}
+```
+
+#### 튜플 패턴
+- 소괄호 내에 쉼표로 분리하는 리스트
+- 위 값 바인딩 패턴 예제처럼 와일드 카드 패턴을 함께 사용하거나, 식별자 패턴, 옵셔널 패턴 등을 함께 사용 가능
+
+#### 열거형 케이스 패턴
+- 기본적으로 열거형 프로퍼티에 case별 switch조건문을 통해 기능을 실행하는 패턴이지만, case에 추가 조건이나 기능을 넣어 좀 더 명확하고, 복잡한 기능을 실행할 수 있도록 만든 패턴
+```
+enum Result {
+    case success(String)       // 성공 시 메시지 데이터
+    case failure(Int, String) // 실패 시 에러코드와 메시지 데이터
+}
+
+let response: Result = .failure(404, "Not Found")
+
+switch response {
+case .success(let message):
+    print("성공: \(message)")
+    
+case let .failure(code, message) where code == 404: 
+    print("404 에러 발생: \(message)")
+    
+case let .failure(code, message):
+    print("기타 에러(\(code)): \(message)")
+}
+```
+
+#### 옵셔널 패턴
+- 앞선 옵셔널 체이닝이나 옵셔널에서 nil이 아닌 값을 찾을 때, guard-else의 빠른 종료 문을 통해 nil인 경우 예외처리를 하였는데, 이때 if-case, switch, guard-case등에 붙은 ?가 옵셔널 패턴임
+```
+let optionalValue: Int? = 42
+
+// ⭕️ 이것이 바로 '옵셔널 패턴'!
+if case let x? = optionalValue {
+    print(x) // 42
+}
+
+// ⭕️ for문에서 nil을 걸러내는 '옵셔널 패턴'!
+for case let score? in [100, nil, 80] {
+    print(score) // 100, 80
+}
+```
+
+#### 타입캐스팅 패턴
+- is와 as를 통해 case에서 해당 값의 타입 확인 및 상속 클래스 매칭 등을 확인 가능함
+
+#### 표현 패턴
+- switch-case에서만 사용 가능하며, 표현식의 값을 평가한 결과를 이용하는 것
+- ~=연산자를 사용하며, 이는 두 인스턴스의 타입 값이 같은 경우 == 연산자를 통해 비교한다.
+- 특히 연산자 재정의와 제네릭을 통해 case에 더 정확한 비교 조건을 넣을 수 있음
+
+```
+func ~= <T: Numeric & Comparable>(pattern: (target: T, tolerance: T), value: T) -> Bool {
+    let diff = abs(value - pattern.target)
+    return diff <= pattern.tolerance
+}
+
+let currentTemperature = 36.8 // Double 타입
+
+switch currentTemperature {
+case (target: 36.5, tolerance: 0.5):
+    print("정상 체온입니다. (36.0 ~ 37.0℃)")
+default:
+    print("비정상 체온입니다.")
+}
+```
+
+- 위처럼 ~= 연산자는 자동으로 switch-case에서 값과 case조건을 피교할때, case에 pattern, 값이 value로 매핑되어 호출됨
+- 특히 ~=를 재정의 가능한 점에서 제네릭과 프로토콜을 사용하여 조건을 마음대로 바꿀 수 있음
+
+# 26. Where
+- 특정 패턴과 결합하여 조건을 추가하거나 타입에 대한 제약을 추가하는 역할
+
+```
+let arrayOfOptionalInts: [Int?] = [nil,2,3,nil,5]
+
+for case let number? in arrayOfOptionalInts where number > 2 {
+	print("Found a \(number)")
+}
+```
+
+- 이처럼 옵셔널에 사용하거나, 프로토콜 익스텐션에 사용하여 추가적인 제약을 줄 수도 있다.
+```
+extension SelfPrintable where Self: FixedWidthInteger, Self: SignedInteger{
+	func printfSelf(){
+		print(...)
+	}
+} // FIxedWidthInteger, SignedInteger을 준수하는 프로토콜만 채택하도록 where작성
+```
+
+# 27. ARC
+- ARC는 swift에서 메모리를 관리해주는 기법으로 자바의 GC와 비교할 수 있다.
+- 둘의 가장 큰 차이점은 참조를 계산하는 시점이다. 컴파일과 동시에 메모리 해제 시점을 정하는 ARC와는 달리, GC는 동작 중에 해제 시점을 내부에서 판단한다.
+
+| 메모리 관리 기법 | ARC                                                                                   | GC                                                                            |
+| --------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 참조 카운팅 시점 | 컴파일 시                                                                                 | 프로그램 작동 중                                                                     |
+| 장점        | - 컴파일 당시 이미 인스턴스 해제 시점이 정해져 예측이 용이함<br>- 메모리 해제 시점이 정해져 메모리 관리를 위한 시스템 자원을 추가할 필요가 없음 | - 상호 참조 상황 등 복잡한 상황에서 유동적으로 인스턴스 해제 가능<br>- 특별한 규칙 신경 x                       |
+| 단점        | - ARC의 작동 규칙을 모를 경우 인스턴스가 영원히 해제되지 않을 가능성 존재                                          | - 한정적인 자원에서 추가 메모리 감시를 위한 추가 자원이 필요하므로 성능 저하 발생<br>- 명확한 규칙이 없어 언제 해제될지 예측 불가 |
+
+- 이때문에 ARC를 통한 메모리 해제 시, 규칙들을 인지하고, 인스턴스의 해제를 유도하면 성능의 저하를 막고, 메모리 관리가 원하는 방향으로 이뤄짐
+
+#### 강한 참조
+- swift에서는 인스턴스 참조 횟수를 통해 0이 되는 순간 메모리에서 해제를 하는데, 강한 참조는 참조 횟수를 1 증가시키게 됨.(반대로 nil을 할당하면 1 감소)
+- 별도의 식별자를 사용하지 않으면 모두 강한참조로 인스턴스를 참조하게 됨.
+```
+class Person{
+	//detail
+}
+
+var refer1: Person? = Person(name: "Yagom") //참조 1
+var refer2 = refer1 //참조 2
+var refer3 = refer1 //참조 3
+
+refer3 = nil //참조 2
+refer2 = nil //참조 1
+refer1 = nil //참조 0 -> 디이니셜라이져 호출 -> 인스턴스 메모리 해제
+```
+
+이때 강한참조 순환 문제가 발생가능함.
+```
+class Person{
+	let name: string
+	var room: Room
+}
+
+class Room{
+	let number: String
+	var host: person
+}
+
+var yagom: Person? = Person(name: "yagom") // Person 1
+var room: Room? = Room(number: "505") //Room 1
+
+room?.host = yagom //Person 2
+yagom?.room = room //Room 2
+
+room = nil // Room 1
+yagom = nil // Person 1
+
+//Person, Room 인스턴스 참조할 방법이 사라졌지만, 메모리에 잔존함
+```
+
+- 위 강한참조 순환 문제는 디이니셜라이져가 영원히 호출되지 않은 문제도 존재
+- 이를 코드의 순서를 바꾸는 등 내부 구현으로 해결 가능하지만, 약한참조와 미소유참조를 통해 해결 가능함
+
+#### 약한참조
+- 참조 시 인스턴스의 참조 횟수를 증가시키지 않음
+- 약한참조는 상수에 쓰일 수 없음 -> 인스턴스의 참조 횟수가 0이 될 경우, 약한 참조에 값이 nil로 할당되기 위해 변수가 되어야 함
+- 약한참조는 nil값이 될 수 있기 때문에 항상 옵셔널이어야 함.
+
+```
+class Person{
+	let name: string
+	weak let room?: Room // 약한 참조
+}
+
+class Room{
+	let number: String
+	weak let host?: person // 약한 참조
+}
+
+var yagom: Person? = Person(name: "yagom") // Person 1
+var room: Room? = Room(number: "505") //Room 1
+
+room?.host = yagom //Person 1
+yagom?.room = room //Room 1
+
+room = nil // Room 0
+yagom = nil // Person 0
+// 강한참조 순환 문제 해결
+```
+
+#### 미소유참조
+- 이 또한 인스턴스의 참조 횟수를 증가시키지 않음
+- 자신이 참조하는 인스턴스가 항상 메모리에 존재함을 기반으로 동작하기에 상수 및 옵셔널이 아니여도 가능 -> 때문에 인스턴스 메모리가 해제되었을때, 잘못된 메모리 접근으로 런타임 오류가 발생할 수 있음
+```
+class Person{
+	let name: string
+	unowned var room: Room // 약한 참조
+}
+
+class Room{
+	let number: String
+	unowned var host: person // 약한 참조
+}
+
+var yagom: Person? = Person(name: "yagom") // Person 1
+var room: Room? = Room(number: "505") //Room 1
+
+room?.host = yagom //Person 1
+yagom?.room = room //Room 1
+
+room = nil // Room 0
+print(yagom.room) // 런타임 오류 -> 잘못된 메모리 참조
+```
+
+#### 미소유 옵셔널 참조
+- 앞선 미소유참조의 문제(옵셔널이 아니기 때문에 잘못된 메모리를 참조하여 컴파일 오류 발생)을 해결하기 위해 옵셔널로 할당
+
+
+
+# 28. 오류 처리
