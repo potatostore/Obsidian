@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Language/SWIFT.md",
+                "file": "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SWIFT"
+              "title": "ShoppingMall - Backend 메모"
             }
           }
         ]
@@ -196,9 +196,14 @@
   },
   "active": "e9a1fe94cba95c90",
   "lastOpenFiles": [
+    "Project/ShoppingMall/Sequence-signin.md",
+    "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
+    "Project/ShoppingMall/ShoppingMall Main System diagram.md",
+    "Project/ShoppingMall/Sequence-signup.md",
     "Frameworks & services/Spring boot.md",
-    "copilot/copilot-conversations/Swift와_SwiftUI_학습@20260518_205830.md",
+    "TODO.md",
     "Language/SWIFT.md",
+    "copilot/copilot-conversations/Swift와_SwiftUI_학습@20260518_205830.md",
     "충남대 해커톤 - 공공데이터 조사.md",
     "Graphos.md",
     "Images/충남대 해커톤 시각 자료/지역 맛집.png",
@@ -212,7 +217,6 @@
     "Images/Pasted image 20250524130643.png",
     "Images/Pasted image 20250419214702.png",
     "Images/충남대 해커톤 시각 자료",
-    "TODO.md",
     "Language/JAVA.md",
     "Language/Html & Css.md",
     "Language/SQL.md",

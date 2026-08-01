@@ -978,6 +978,9 @@ public class Coffee {
 1. 기본 키(primary key)가 존재해야 한다 -> 각 row별로 구분을 위해
 2. 기본생성자가 존재해야 한다. -> JPA가 데이터를 읽고, 
 
+#### @Column
+- name, nullable을 통해 필드와 매핑될 컬럼의 이름을 정하거나, null 허용 제약등을 걸 수 있다.
+
 ---
 ## Application Setting
 
@@ -1195,3 +1198,6 @@ HTTP Method의 GET 요청을 지정한 EndPoint에 연결해준다. 즉, 클라�
 #### @Document
 
 #### @id
+
+#### @NotNull
+- 해당 필드가 null값이 될 수 없음을 spring boot compiler차원에서 막아준다.
