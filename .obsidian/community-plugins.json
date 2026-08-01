@@ -14,5 +14,6 @@
   "obsidian-scroll-to-top-plugin",
   "hide-folders",
   "copilot",
-  "typewriter-mode"
+  "typewriter-mode",
+  "obsidian-local-rest-api"
 ]

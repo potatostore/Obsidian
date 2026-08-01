@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -196,6 +198,7 @@
   },
   "active": "e9a1fe94cba95c90",
   "lastOpenFiles": [
+    "-Calendar-/2026/2nd/2026-08-01.md",
     "Project/ShoppingMall/Sequence-signin.md",
     "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
     "Project/ShoppingMall/ShoppingMall Main System diagram.md",
