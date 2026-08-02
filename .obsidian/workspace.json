@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
+                "file": "Project/ShoppingMall/copilot-addendum.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ShoppingMall - Backend 메모"
+              "title": "copilot-addendum"
             }
           }
         ]
@@ -198,9 +198,10 @@
   },
   "active": "e9a1fe94cba95c90",
   "lastOpenFiles": [
+    "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
+    "Project/ShoppingMall/copilot-addendum.md",
     "-Calendar-/2026/2nd/2026-08-01.md",
     "Project/ShoppingMall/Sequence-signin.md",
-    "Project/ShoppingMall/ShoppingMall - Backend 메모.md",
     "Project/ShoppingMall/ShoppingMall Main System diagram.md",
     "Project/ShoppingMall/Sequence-signup.md",
     "Frameworks & services/Spring boot.md",
