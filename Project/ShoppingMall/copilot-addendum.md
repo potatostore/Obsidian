@@ -1,7 +1,7 @@
 [20260729 ~ 20260805]
 ### 컴파일 및 디버깅 관련 문제
-- [x] **치명**   CartItem   컴파일 실패:   CartItemResponseDTO   import 누락으로   cannot find symbol   발생 → DTO import 추가 필요.
-- [x] **중간** 장바구니 합계 계산 NPE 위험:   isEmpty()  가 null 체크보다 먼저 실행됨 → null 체크를 앞에 두도록 조건 순서 변경 필요.
+- [ ] **치명**   CartItem   컴파일 실패:   CartItemResponseDTO   import 누락으로   cannot find symbol   발생 → DTO import 추가 필요.
+- [ ] **중간** 장바구니 합계 계산 NPE 위험:   isEmpty()  가 null 체크보다 먼저 실행됨 → null 체크를 앞에 두도록 조건 순서 변경 필요.
 - [ ] **중간** 전역 예외/응답 포맷 미적용 상태에서 디버깅 비효율: 예외 타입별 응답 형식 불일치로 원인 추적 비용 증가 →   @RestControllerAdvice   + 공통 에러 포맷 매핑 필요.
 - [ ] **경미** Validation 실패 응답 비표준 가능성: 필드 에러 구조가 엔드포인트마다 달라질 수 있음 →   field/reason/rejectedValue   고정 포맷 필요.
 - [ ] **경미** 주문/재고 로직 사전 테스트 포인트 부재: 동시성/재고 차감 오류 발견이 늦어질 위험 → 주문 생성/재고 차감/취소 복구 테스트를 초기부터 포함 필요.
@@ -34,20 +34,25 @@
 19. **미달성** 최근 본 상품 정규화 미완성:   recent_watching   이력 엔티티/테이블 및 조회 정렬 기반 컬럼(  viewedAt  )이 없음.
 20. **범위 조정 필요** 운영 표준 설정: 글로벌 CORS/Jackson/traceId는 애플리케이션 레이어 성격이 강하므로 스키마 작업 이후 우선순위 재배치 권장.
 
+[20260811 ~ 20260818]
+
+### 이번주 구현 목표
+- [x] 1. 주문 모델 기본 구조(`Order - OrderItem` 관계, 주문 시점 가격/수량 스냅샷) 반영 상태 확인.
+- [ ] 2. 서비스/컨트롤러 구현 완료(주문/장바구니/재고/결제) 목표는 미달성으로 체크.
+- [ ] 3. TossPayments 연동 방식 학습 및 설계 착수 목표는 미달성으로 체크.
+
+### 컴파일 및 디버깅 관련 문제
+- [ ] 1. 미구현 서비스/컨트롤러 경로에서 요청 처리 시점 예외(NPE/미지원 동작) 위험이 남아 있음.
+- [ ] 2. 결제 승인 전후 주문 상태 전이 검증 로직이 없어 디버깅 시 결제-주문 정합성 추적이 어려움.
+
+### 구현 기능 관련 문제점
+- [ ] 1. 주문 관련 핵심 유스케이스(`placeOrder`, `cancelOrder`, 결제 승인 후 상태 반영)가 서비스 계층에 완결되지 않음.
+- [ ] 2. TossPayments 승인/취소 API와 내부 `OrderStatus` 매핑 규칙이 정의되지 않아 구현 방향이 불명확함.
+- [ ] 3. 결제 성공/실패 콜백(리다이렉트 또는 웹훅) 처리와 멱등성 기준(orderId 중복 승인 방지)이 미정의 상태임.
+
 ### 다음 한 주 동안 개발할 기능
-1. **Global Config 최소 골격 구현**:   ApiResponse<T>  ,   ErrorResponse  ,   ErrorCode  ,   GlobalExceptionHandler  , Validation 에러 매핑을 먼저 고정.
-2.  **주문 코어 도메인 구현** :   Order  -  OrderDetail   관계, 주문 상태, 주문 시점 가격/수량 스냅샷 컬럼 도입.
-3. **장바구니→주문 전환 API 구현**: CartItem 다건 주문 생성, 총액 검증, 주문 저장 처리.
-4. **재고 처리 구현**: 결제 시 재고 차감/취소 시 복구, 동시성 충돌 대응(락/버전 전략).
-5. **찜/최근본 정규화 구현**:   Like(userId, productId)   유니크 제약 및   recent_watching(userId, productId, viewedAt)   이력 테이블 추가.
-6. **1주차 목표 1(기반 완성)** Global Config(  ApiResponse  ,   ErrorResponse  ,   ErrorCode  ,   GlobalExceptionHandler  )와 Validation 에러 매핑을 먼저 고정.
-7. **1주차 목표 2(주문 코어 완성)**   Order  /  OrderDetail   리팩터링과 장바구니→주문 전환 API를 연결하고, 총액 검증 규칙을 명시.
-8. **1주차 목표 3(재고 정합성 확보)** 결제/취소 재고 처리와 동시성 대응을 구현해 주문 라이프사이클 무결성을 확보.
-9. **1주차 목표 4(사용자 기능 정규화)** 찜/최근본 모델을 정규화하고 제약조건(유니크/FK/인덱스)을 적용.
-10. **1주차 목표 5(안정화 점검)** 주문 생성·재고 차감·취소 복구·예외 응답 형식까지 포함한 통합 점검 시나리오를 완료.
-11. **트랜잭션 경계 적용 5단계**: 1) placeOrder/cancelOrder를 유스케이스 단위 @Transactional 메서드로 고정, 2) 재고 조회 시   PESSIMISTIC_WRITE   또는   SELECT ... FOR UPDATE  로 행 잠금, 3)   qty >= 요청수량   조건부 차감/복구 쿼리로 원자성 보장, 4) 주문 상태 전이(  PENDING→PAID  ,   PAID→CANCELED  )를 화이트리스트 검증, 5) 중간 실패 시 예외 전파로 전체 롤백 보장.
-12.   OrderDetailController   라우팅 상수 오타(  orderDetailTableName  )를   orderItemTableName  로 즉시 수정해 컴파일을 먼저 복구.
-13.   ErrorResponse   구조를 도입하고   GlobalExceptionHandler  에서   ErrorCode  /Validation 상세 필드를 공통 포맷으로 반환.
-14.   OrderService  에   placeOrder  /  cancelOrder   유스케이스를 구현하고 유스케이스 단위   @Transactional   경계를 고정.
-15. 재고 차감/복구를 조건부 업데이트 + 락 전략으로 구현해 동시성 충돌 시 음수 재고를 방지.
-16.   Like(userId, productId)   유니크 제약 및   recent_watching(userId, productId, viewedAt)   이력 모델을 추가해 사용자 기능 정규화를 완료.
+- [ ] 1. TossPayments 연동 목표 1: 결제 요청 파라미터(`orderId`, `amount`, `orderName`, 고객 식별자) 생성 규칙과 성공/실패 URL 엔드포인트를 확정.
+- [ ] 2. TossPayments 연동 목표 2: 서버 결제 승인 API(`paymentKey`, `orderId`, `amount` 검증 → Toss 승인 호출) 구현.
+- [ ] 3. TossPayments 연동 목표 3: 승인 결과를 주문 상태 전이(`PAY_PENDING → PAID / PAY_FAILED`)와 재고 처리 트랜잭션에 연결.
+- [ ] 4. TossPayments 연동 목표 4: 중복 승인 방지를 위한 멱등 키/중복 요청 차단 로직 및 실패 재시도 정책 정의.
+- [ ] 5. 서비스/컨트롤러 마감 목표: 주문·결제 관련 미구현 Service/Controller 메서드를 우선 완성하고 통합 시나리오로 점검.

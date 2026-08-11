@@ -31,8 +31,56 @@
 이번주의 전반적인 목표는 기본적인 Controller + Service를 통해 기본적인 CRUD를 추가하고, 이 과정에서 API URL을 Swagger-ui의존성을 추가하여 설정하는 것이 목표
 
 #### 금주 할일
-- [ ] Controller & service 구현 : 야그니 원칙에 따라 시나리오를 구상하고, 이에 필요한 4개의 엔티티에 대한 CRUD 기능과 Http method 구현
-- [ ] Api 명세서 & url 설정 : swagger-ui 의존성 추가와 swagger-ui를 통한 api명세서 확인
+- [/] Controller & service 구현 : 야그니 원칙에 따라 시나리오를 구상하고, 이에 필요한 4개의 엔티티에 대한 CRUD 기능과 Http method 구현
+-> user, product에 대한 구현은 마무리 하였지만, cart/product는 미흡
+- [x] Api 명세서 & url 설정 : swagger-ui 의존성 추가와 swagger-ui를 통한 api명세서 확인
 
 #### 트러블
 1. 데이터 유효성 : 전 주에 데이터 유효성을 한 클래스에 메서드로 구현하여 보일러 플레이트 코드를 줄이려고 노력했는데, 이전에 구현된 Entity & dto에 적용안된 코드들이 다수 존재했고, 이를 수정함. 따라서 앞으로는 중간에 특정 기능을 대체하는 코드를 구현하게 될 경우, 이전 코드들을 즉각적으로 리펙토링하는 습관이 필요
+2. cart 정보 조회 문제 : cart정보를 조회하여 장바구니 확인 -> 주문 생성 + 결제의 흐름으로 시나리오를 설계하였지만, 이 과정에서 문제가 발생함. cart정보를 조회하는 과정에서 cartItem의 curProductPrice와 같은 값들을 productId와 매핑하여 갱신하도록 할 계획이였지만, 이는 큰 딜레이를 가져오게됨. 따라서 redis와 같은 인메모리에 curProductPrice를 직접적으로 저장하는 방식이 아닌, product정보를 올리고, 이를 productId로 조회만 할 수 있도록 하여 CUD의 작업을 최소화하는 방식으로 구현할 수 있도록 목표를 새로 잡았고, redis를 사용해본 경험이 전무하기 때문에, 이를 이해하고, 구현할 수 있도록 다음 주에 진행할 예정(설계의 중요성을 다시 한번 파악함)
+3. 결제 방식 : kakaopay, tosspay 등의 PG사의 api를 통한 결제를 진행하도록 목표를 잡았는데, 요청과 받는 응답을 처리하는 기능 등을 구현하는게 너무 복잡함. 따라서 다음 주에는 tosspay를 기준으로 결제를 진행하도록 목표를 잡음.
+4. api url 설계 : url은 접근할 자원의 경로를 적어주는 것이기에 create나 get 등의 기능적인 단어를 넣지 않음.
+-> 다음주 개발 목표에 redis + tosspay를 추가하고, 기본적인 쇼핑몰의 틀이 잡히게 되면, next.js를 통한 webserver 구현 + ui기본적인 틀을 짜는 방향으로 진행. 이후에는 CI/CD와 docker + kubernetes를 추가하여 백엔드의 추가되는 기능과 이에 대한 ui를 github action으로 배포하는 것을 연습할 계획
+
+# 20260812 ~ 20260818
+
+이번주는 저번주 트러블 슈팅에서 알 수 있듯이 redis 적용 + cartItem 수정, tosspay 결제 방식 추가가 주된 내용이다. 추가적으로 Session방식과 JWT방식을 고민했었는데, 무상태성을 통해 DB의 부담을 줄일 수 있는 JWT를 선택하였다. (물론 추후에 블랙리스트 기능을 추가하게 되면 이는 무상태성에서 벗어난다고 생각은 하지만, 현재 상태성을 구현하는 방식은 JWT로 해결할 수 있을 것 같아 JWT를 선택하게 됨.)
+
+#### 금주 할일
+- [ ] redis 공부 + 적용하여 cart controller & service 구현 완료하기
+- [ ] tosspay 결제 방식 도입하여 order controller & service 구현 끝내기
+- [ ] 모든 controller의 http method 요청 방식을 JWT로 통일시키기
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Client as 클라이언트
+    participant Server as Spring Boot 서버
+    participant Toss as 토스 페이먼츠
+
+    Client->>Server: 주문 생성 요청 (상품 ID, 수량)
+    activate Server
+    Note over Server: DB 금액 계산 & Order 저장<br/>(상태: PENDING)
+    Server-->>Client: orderId, amount 반환
+    deactivate Server
+
+    Client->>Toss: 토스 SDK 결제창 호출 (orderId, amount 전달)
+    activate Toss
+    Note over Toss: 유저 비밀번호 입력 및 인증
+    Toss-->>Client: paymentKey 발급 및 승인 URL 리다이렉트
+    deactivate Toss
+
+    Client->>Server: 최종 결제 승인 요청 (paymentKey, orderId, amount)
+    activate Server
+    Server->>Server: DB의 orderId 실제 금액 검증
+    Server->>Toss: 토스 승인 API 호출 (/v1/payments/confirm)
+    activate Toss
+    Toss-->>Server: 결제 승인 완료 응답
+    deactivate Toss
+    Server->>Server: Order 상태 변경 (PAID) & Payment 레코드 저장
+    Server-->>Client: 결제 완료 응답
+    deactivate Server
+```
+
+#### 트러블
+1. 
