@@ -35,8 +35,7 @@
               "title": "ShoppingMall - 트러블 슈팅 기록"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,8 +210,9 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "3ba59ce3e0ca9608",
+  "active": "e9a1fe94cba95c90",
   "lastOpenFiles": [
+    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
     "Algorithm/코드트리 - 코테 집중 교육.md",
     "Project/Google Cloud Jam/Building Scalable Java Microservices with Spring Boot and Spring Cloud.md",
     "Graphos.md",
@@ -224,7 +224,6 @@
     "Project/AWS/Create-EFS(CLI version).md",
     "Project/AWS/Create-EBS(Elastic Block Storage).md",
     "Project/AWS/Create-DynamoDB.md",
-    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
     "Project/ShoppingMall/copilot-addendum.md",
     "-Calendar-/2026/2nd/2026-08-01.md",
     "Project/ShoppingMall/Sequence-signin.md",
