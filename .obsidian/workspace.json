@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "3771453aeeab1ba5",
+            "id": "2488dcebf6374b17",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/3-1/컴퓨터 네트워크.md",
+                "file": "Frameworks & services/Spring boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "컴퓨터 네트워크"
+              "title": "Spring boot"
             }
           }
         ]
@@ -230,10 +230,12 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "452f3c74a686b3d8",
+  "active": "d279ded7b2f917e0",
   "lastOpenFiles": [
-    "University/3-1/컴퓨터 네트워크.md",
+    "Frameworks & services/Spring boot.md",
     "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+    "Frameworks & services/Redis.md",
+    "University/3-1/컴퓨터 네트워크.md",
     "Project/Graphos.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
@@ -249,7 +251,6 @@
     "Project/AWS/EC2-volume 해결 방안.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/AWS/ETL-partition key.md",
-    "Frameworks & services/Redis.md",
     "University/3-1/유비쿼터스.md",
     "Project/ShoppingMall/copilot-addendum.md",
     "Algorithm/코드트리 - 코테 집중 교육.md"

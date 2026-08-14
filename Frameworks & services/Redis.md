@@ -1,3 +1,10 @@
+---
+tags:
+  - seed
+aliases: []
+created: 2026-08-11
+---
+
 Redis는 인메모리 dbms로 디스크가 아닌 ram에 데이터를 저장하고, 처리하는 NoSQL 데이터 저장소이다.
 
 # 0. 실무 사용
