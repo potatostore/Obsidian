@@ -82,5 +82,30 @@ sequenceDiagram
     deactivate Server
 ```
 
+
+``` title="tomcat실행 및 spring security를 통한 servlet filter chain 실행 흐름"
+[1. 클라이언트 요청] 
+  │ (HTTP Request / Port 8080)
+  ▼
+[2. Tomcat (서블릿 컨테이너)]
+  │ - TCP/IP 소켓으로 요청 수신
+  │ - Worker Thread 할당 및 HttpServletRequest 객체 생성
+  ▼
+[3. Tomcat의 서블릿 필터 체인 실행]
+  │ - DelegatingFilterProxy 실행
+  ▼
+[4. Spring Container (Spring Security 영역)]
+  │ - DelegatingFilterProxy가 FilterChainProxy(Bean)에게 위임
+  │ - SecurityFilterChain 내의 필터들 실행 (JwtAuthenticationFilter, AuthorizationFilter 등)
+  │ - 검증 실패 시: 즉시 401/403 예외 응답 반환 및 종료
+  ▼ (모든 보안 필터 통과 시)
+[5. DispatcherServlet (Spring Front Controller)]
+  │ - URL 매핑 확인 후 적절한 @RestController 메서드 호출
+  ▼
+[6. Controller -> Service -> DB 비즈니스 로직 수행]
+  │
+  ▼ (응답 생성 후 역순으로 복귀)
+[7. DispatcherServlet -> Security Filter (후처리) -> Tomcat -> 클라이언트]
+```
 #### 트러블
 1. 
