@@ -45,11 +45,11 @@ created: 2026-08-02
 
 ### 이번주 구현 목표
 - [x] 1. 주문 모델 기본 구조(`Order - OrderItem` 관계, 주문 시점 가격/수량 스냅샷) 반영 상태 확인.
-- [ ] 2. 서비스/컨트롤러 구현 완료(주문/장바구니/재고/결제) 목표는 미달성으로 체크.
-- [ ] 3. TossPayments 연동 방식 학습 및 설계 착수 목표는 미달성으로 체크.
-- [ ] 4. JWT 발급/검증 인프라(`JwtProvider`) 및 Spring Security Servlet Filter(`JwtAuthenticationFilter`) 구현 진행 중.
-- [ ] 5. Redis 기반 access/refresh token 관리(블랙리스트 등) 설계 및 적용은 착수 예정.
-- [ ] 6. 이번주 주요 목표: TossPayments 연동 + JWT 구현 + 컨트롤러 엔드포인트의 JWT 연동(`@AuthenticationPrincipal` 적용)을 함께 진행.
+- [ ] 2. 서비스/컨트롤러 구현 완료(주문/장바구니/재고/결제): Cart는 완료(`CartService` 전체 구현). Order는 `createOrder`/`authTossPayment`만 구현되고 `getOrders`/`getOrdersWithUserId`/`getOrderWithUserId`/`patchOrder`/`putOrder`/`deleteOrder`는 스텁으로 남아 부분 완료. 재고 차감 로직은 미구현.
+- [x] 3. TossPayments 연동 방식 학습 및 설계 착수: `TossClient`/`TossPaymentConfig`/`OrderService.authTossPayment()`/결제 승인 엔드포인트까지 실구현되어 목표 초과 달성.
+- [x] 4. JWT 발급/검증 인프라(`JwtProvider`) 및 Spring Security Servlet Filter(`JwtAuthenticationFilter`) 구현 완료(헤더+쿠키 토큰 추출, AuthenticationEntryPoint 연결까지 확인됨).
+- [ ] 5. Redis 기반 refresh token 저장/조회/대조(`RefreshTokenRepository`)는 완료. 블랙리스트는 애초에 이번 주 범위가 아니었음(CI/CD 이후 추가 기능 단계로 재확인, 아래 다음 주 계획에서 제외 처리).
+- [ ] 6. 이번주 주요 목표: TossPayments 연동 + JWT 구현은 완료. 컨트롤러 엔드포인트의 JWT 연동(`@AuthenticationPrincipal`, role 기반 인가)까지 완료됐으나 2번의 Order 잔여 작업 때문에 전체 완료로는 미체크.
 
 ### 컴파일 및 디버깅 관련 문제
 - [ ] 1. 미구현 서비스/컨트롤러 경로에서 요청 처리 시점 예외(NPE/미지원 동작) 위험이 남아 있음.
@@ -67,9 +67,29 @@ created: 2026-08-02
 - [ ] 3. TossPayments 연동 목표 3: 승인 결과를 주문 상태 전이(`PAY_PENDING → PAID / PAY_FAILED`)와 재고 처리 트랜잭션에 연결.
 - [ ] 4. TossPayments 연동 목표 4: 중복 승인 방지를 위한 멱등 키/중복 요청 차단 로직 및 실패 재시도 정책 정의.
 - [ ] 5. 서비스/컨트롤러 마감 목표: 주문·결제 관련 미구현 Service/Controller 메서드를 우선 완성하고 통합 시나리오로 점검.
-- [ ] 6. (필수, 8/19) `OrderService`의 스텁 메서드(`getOrderWithUserId` 등) 실제 구현 착수.
-- [ ] 7. (필수, 8/20) `OrderService` 마무리(본인 소유 주문인지 검증 로직 포함) + 결제-재고 트랜잭션 경계 설계 착수.
-- [ ] 8. (필수, 8/21) Toss 결제 승인 성공 시 재고 차감, 실패/취소 시 재고 복구를 하나의 트랜잭션 경계로 묶는 로직 마무리.
-- [ ] 9. (필수, 8/22) 인증 보강 1건만 우선 구현: access token 블랙리스트(로그아웃 시 즉시 무효화). refresh token rotation 탈취 감지, 로그인 rate limiting은 가용일 부족으로 이번 주 범위에서 제외하고 이후로 이월.
+- [ ] 6. (필수, 사용자 직접 구현) `OrderService`의 스텁 메서드(`getOrderWithUserId` 등)를 본인 소유 주문 검증 로직 포함해서 완전하게 구현 — 담당자가 직접 진행하기로 확정.
+- [ ] 7. ~~(필수, 8/20) 결제-재고 트랜잭션 경계 설계~~ → 범위 조정: 재고 처리 로직은 CI/CD 이후 추가 기능 단계 목표로 재확인됨. 이번 5일(8/19~8/23) 계획에서 제외.
+- [ ] 8. ~~(필수, 8/21) Toss 결제 승인 성공 시 재고 차감/복구 트랜잭션~~ → 7번과 동일하게 CI/CD 이후로 이월.
+- [ ] 9. ~~(필수, 8/22) access token 블랙리스트~~ → 범위 조정: 블랙리스트 관리는 CI/CD 이후 추가 기능 단계 목표로 재확인됨. 이번 5일 계획에서 제외.
 - [ ] 10. (필수, 8/23 · 해커톤 전날) 회원가입 → 로그인 → JWT 발급 → 인증된 cart/order API 호출 → Toss 결제 → 주문 상태 반영까지 수동 E2E 시나리오 점검. 새 기능 착수보다 확인/마무리 위주로 진행.
 - [ ] 11. (스트레치, 우선순위 최하위) Next.js 웹서버 프로젝트 뼈대 착수 — 해커톤으로 가용일이 5일로 줄어 이번 주 필수 범위에서 제외, 8/19~8/23 중 시간이 남는 경우에만 시도.
+
+[20260819 ~ 20260825]
+
+### 이번주 구현 목표
+- [ ] 1. E2E 시나리오 점검: 회원가입 → 로그인 → JWT 발급 → 인증된 cart/order API → Toss 결제 → 주문 상태 반영까지 전체 흐름 확인.
+- [ ] 2. Next.js를 통한 웹서버 뼈대 구축: 기존 뼈대 기준으로 구현된 기능을 노출할 UI/UX 및 URL 엔드포인트 기획·구현. (지난주엔 스트레치로 분류했으나, 트러블 슈팅 기록에서 이번 주 핵심 목표로 격상 확정됨)
+- [ ] 3. (스트레치) 1, 2번 우선 완료 후 시간이 남는 경우에만 JS/TS 학습 보강 — 정식 구현 목표가 아닌 개인 학습 목적, 이번 주(8/19~8/23, 해커톤으로 5일) 범위 내 조건부 항목.
+
+### 컴파일 및 디버깅 관련 문제
+- [ ] 1. (해당 없음 — 주 시작 시점, 진행하며 추가 예정)
+
+### 구현 기능 관련 문제점
+- [ ] 1. (해당 없음 — 주 시작 시점, 진행하며 추가 예정)
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. Next.js 웹서버 구현 계속 진행 — 전체 웹서버 구현은 약 2~3주 소요 예정이라, 바로 다음 주(20260826~)도 CI/CD가 아니라 웹서버 작업의 연장일 가능성이 높음.
+
+### 장기 로드맵 참고 (특정 주차에 배정된 항목 아님, 순서만 확정)
+- 웹서버(Next.js) 구현 완료 → GitHub Actions + CI/CD + Docker/Kubernetes → SQL 튜닝 → 상품 재고 처리 트랜잭션 / access token 블랙리스트("추가 기능" 단계)
+- 각 단계는 이전 단계 완료가 전제 조건이며, 웹서버 구현 자체가 다주(2~3주) 소요되는 작업이므로 이 항목들을 특정 "다음 한 주" 목표로 앞당겨 배정하지 않음.

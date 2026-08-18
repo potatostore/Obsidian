@@ -54,11 +54,11 @@ created: 2026-08-07
 이번주는 저번주 트러블 슈팅에서 알 수 있듯이 redis 적용 + cartItem 수정, tosspay 결제 방식 추가가 주된 내용이다. 추가적으로 Session방식과 JWT방식을 고민했었는데, 무상태성을 통해 DB의 부담을 줄일 수 있는 JWT를 선택하였다. (물론 추후에 블랙리스트 기능을 추가하게 되면 이는 무상태성에서 벗어난다고 생각은 하지만, 현재 상태성을 구현하는 방식은 JWT로 해결할 수 있을 것 같아 JWT를 선택하게 됨.)
 
 #### 금주 할일
-- [ ] redis 공부 + 적용하여 cart controller & service 구현 완료하기
-- [ ] tosspay 결제 방식 도입하여 order controller & service 구현 끝내기
-- [ ] 모든 controller의 http method 요청 방식을 JWT로 통일시키기
+- [x] redis 공부 + 적용하여 cart controller & service 구현 완료하기
+- [x] tosspay 결제 방식 도입하여 order controller & service 구현 끝내기
+- [x] 모든 controller의 http method 요청 방식을 JWT로 통일시키기
 
-```mermaid
+```mermaid title="TossPayment sequence"
 sequenceDiagram
     autonumber
     actor Client as 클라이언트
@@ -115,4 +115,44 @@ sequenceDiagram
 [7. DispatcherServlet -> Security Filter (후처리) -> Tomcat -> 클라이언트]
 ```
 #### 트러블
-1. 
+1. redis : redis는 인메모리 dbms로 mysql과 달리 디스크가 아닌 ram에 데이터를 저장, 이때 적은 용량으로 인해 조회를 많이 요구하게 되는 데이터를 주로 넣게 된다. 주로 다음과 같은 패턴을 많이 사용함
+	1. cache-asside : 조회 작업에 대해 캐시 메모리(redis)를 우선 조회 후 캐시 미스인 경우 디스크(mysql)를 조회하게 됨.
+	2. write-around : CUD작업은 바로 디스크(mysql)에서 작업하고, 캐시에 존재하는 데이터의 수정은 바로 반영되지 않음(patch로 인해 발생하는 비용이 커질수도 있기 때문) -> 데이터의 일관성을 해칠 수 있는데 이는 redis의 TTL설정을 통해 어느정도 보완(TTL이 만료되기 전에 UD작업이 발생한 데이터에 대해 조회가 발생한 경우, 일관되지 않은 데이터를 가져올 수 있기 때문에, redis에서는 어느정도 일관성을 해쳐도 기능에 지장이 생기지 않는 데이터를 보관하는 것을 추천함)
+	- 위 두 규칙을 적용하여 product같은 정보를 올려서 보관하려고 했지만, 다음과 같은 문제가 발생할 가능성이 높음 
+		1. 수량 관리가 매우 힘듬 : 수량에 민감한 쇼핑몰의 특성상 UD작업을 진행하고 이를 write-around에 따라 저장할 경우, 존재하지 않는 수량에 대한 주문 정보가 생성될 수도 있음
+		2. 1.의 이유로 데이터의 일관성이 매우 민감하게 작용
+		따라서 현재 단계에서는 jwt-refreshToken만 저장하고, 인증 시에만 조회하도록 설정. 추후에 redis에 올릴 데이터를 고민하고, sql튜닝 이후에 적용할 수 있도록 계획해야함.
+2. JWT : jwt를 설정하면서 http 통신에 어떤 정보들이 존재하는지 파악, 이때 통신 방식에 따라 헤더 내 authorization 방식을 달리할 수 있음을 파악함. 현재는 bearer방식(authorization에 "Bearer " + jwt를 보내도록 약속하는 규칙)을 통해 구현.
+	- http request는 다음과 같은 구조를 가짐
+		- http method : post / get / patch / put / delete
+		- url : 접근할 자원의 주소
+		- header : 요청을 보내는 주체의 마이데이터를 담은 정보로, 주로 host / authorization / content-type이 존재
+		- body : 기능에 필요한 데이터들을 담은 정보
+3. Spring Security : 가장 어려운 부분이였는데, 서블렛이라는 개념과 서블렛 필터, 서블렛 필터 체인을 통해 spring security의 동작 방식, HTTP Request가 WAS에 도착했을 때, 전처리/후처리 작업이 어떤식으로 이뤄지는지 파악. 특히 인증의 필요 유무에 따라 public/private method api url을 설정하는 과정이 매우 어려웠음(원리도 어렵고 url을 어떤식으로 설정해야 인증이 필요한 요청만 인증을 요구하도록 필터를 설정하도록 구현하는 것이 어려웠음). 
+	- 서블렛 필터 체인 : 서블렛 컨테이너(http request를 받아 http response를 만들어주는 클래스 : 서블렛을 보관해놓은 컨테이너, spring boot에서는 tomcat을 의미)가 http request를 받을 때, 전처리작업과 후처리 작업을 진행하는 것을 서블렛 필터라고 하고, 이를 재귀 함수 형식으로 여러 필터를 연쇄적으로 호출하는데, 이때 후처리는 전처리의 역순으로 이뤄지는 일련의 작업을 서블렛 필터 체인이라고 함.
+4. Authorization : 위에서 필터를 통해 토큰의 유효를 전처리로 확인했었는데, 이때 jwtprovider를 통해 토큰의 유효를 secret key와 대조하여 확인하게 함. 중요한 것은 추후에 http 요청방식을 사용하지 않은 곳에서도 jwtprovider을 통해 token의 인증을 요구할 수도 있기 때문에 전적으로 httpservletrequest에서 뽑은 access token을 문자열로 받아 판별 및 예외처리만 하는 로직을 작성
+5. Cookie : 매번 jwt를 보관 및 인증이 필요한 요청 시 보내주는 것은 때때로 오류를 일으킬 수도 있기 때문에, 자동으로 jwt를 보내도록 웹 브라우저 측에서 관리하는 방식이 cookie이고, 이는 자동으로 보내준다는 이점이 존재함. 필터의 입장에서는 쿠키로 받는 경우도 존재하지만, 쿠키 설정 허용을 하지 않은 사용자는 jwt를 수동으로 보내주게 되고, 따라서 쿠키로 토큰을 뽑는 방식과 header에서 바로 토큰을 뽑는 두 가지의 방식을 모두 지원해야됨. 따라서 extractToken에서 cookie에서 추출 방식 + Bearer에서 추출하는 방식을 모두 지원하도록 변경
+6. 권한 부여 : 권한(현재는 관리자 / 사용자로만 분류)을 통해 접근가능한 기능들을 분류해야만 하고, 이는 securityconfig에서 url별 필터적용이 필요하다고 생각함(추후에 권한이 추가되거나, 권한별 기능을 세세하게 분류하게 되어야 할 경우, 주의해서 설정해야 함)
+7. Repository : 현재 모든 repository는 Jparepository를 상속하여 기본적인 crud기능을 jpa가 자동으로 매핑할 수 있도록 설정하였는데, return type에 optional로 감쌀 것인지 판단하는 방식을 배움. -> 기본적으로 단일 Entity 객체를 반환하는 경우 찾지 못한 경우 null값처럼 없음을 표현하는 값을 반환해야하고, 이때 java에서는 기본 타입에 Null이 적용되지 않고, 기본값이 적용됨. 만약 Entity의 기본생성자를 통해 모든 필드를 null로 채웠을 경우(물론 개발자가 noargsconstructor 어노테이션이나 기본생성자를 구현했다는 가정이 필요), column 어노테이션 nullable 속성을 통해 null값을 허용하지 않으므로 오류가 발생, 허용한다고 해도 추후에 getter을 통해 조회할 경우 npe problem이 발생할 수 있기 때문에 optional에 감싸 개발자가 orelsethrow를 통한 예외 던지기를 강제구현하게 함. 하지만 findall과 같이 list 래퍼 객체는 빈 리스트라는 null을 표현가능한 대체재가 존재하기 때문에 optional로 감쌀 필요가 존재하지 않고, 감싸더라도 jpa가 자동으로 db 조회 쿼리 결과로 null을 받으면 빈 리스트를 만들기 때문에 orelsethrow가 실행되지 않음.
+-> 0/1개의 반환타입만 존재하면(단일 entity 객체 반환형) Optional로 감싸고, 0...n개의 반환타입(List T 반환형)인 경우 optional 불필요.(실제로 findAll()은 jparepository내부에서 List T 반환형으로 구현).
+8. servlet container prefix url : application.yml 설정 파일에 prefix url을 설정(/api/v1과 같이 웹서버와 분류하는 url을 prefix로 구현하여 서버를 나누기 위함). 추가적으로 context-path를 통해 WAS에 들어오는 prefix url을 설정했는데 이는 requestmapping시 prefix url을 제거하고 뒤에 url을 제공한다는 의미이다. sercurityconfig에서 request machers를 사용할 때, prefix url을 제거해야 실질적으로 api url을 매핑시킬 수 있기 때문에 (제거하지 않은 경우 prefix url + prefix url + api url로 들어온다고 machers는 간주하는 것이다.) 이를 제거.
+9. payment : 가장 어려운 것은 Toss api를 통해 결제를 진행해야 하는데 어떻게 흘러가는지 파악하는 것이였다. 특히 결제 성공 후 product 수량을 컨트롤하거나, 결제 이전에 수량이 존재하는지 등을 체크하고, 결제 내역과 결제 금액등을 api url로 어떻게 요청해야하는지 자세히 몰라 한참을 toss dev 사이트 내 게시된 결제 관련 api 글을 읽어야 했다. 경험으로 느낀 바를 말하자면, 대부분의 PG사 결제 방식은 위 시퀀스 다이어그램의 방식대로 흘러갈 것이고, WAS를 개발하는 입장에서는 다음과 같은 주의사항을 바탕으로 구현 순서를 정하는 것이 중요하다고 생각한다.
+	1. 처음 주문을 생성해서 결제 이전의 상태로 orderId + amount(결제 금액)을 반환할 때, 제품의 수량을 확인하는 로직을 작성해야함(이때문에 product 조회가 많아 redis에 올리는 것을 고민하게 되었다.)
+	2. 이후 웹서버 측에서 paymentkey + 승인 url을 받아오게 되면(실제로는 사용자 입장에서 인증 + 결제까지 끝난 상태이다.) WAS에서는 결제를 확정짓기 전에, 결제 금액이 일치하는지 확인을 진행해야함. 이때 받아온 paymentkey를 통해 toss에 결제 정보 조회 api 요청을 날림. 
+	3. 결제를 확정(상태를 결제 확정 상태로 변경)한 후 저장
+	위 주의사항을 바탕으로 다음과 같은 순서로 개발하는 것이 매우 편했다.
+	- dto 구현 : toss dev api guide에 따르면 결제가 성공했을때에는 payment, 실패한 경우는 error 객체를 반환하니까, 가이드에 따라 record를 만들어 관리
+	- api key 발급 및 url 적용 : api key를 발급받아 환경변수에 적용하고, 가이드에 따른 url을 설정한다.
+	- 기능 개발 : 결제 과정에서 WAS가 진행해야 하는 기능들을 기능별로 service 레이어에 구현. 현재 수량 차감 기능이 구현되지 않았는데, 추후에 리펙토링하면서 수량 차감 기능을 트랜잭션으로 구현해야 함.
+	payment과정을 진행하면서 흐름을 알더라도 암호화나 각 흐름별 기능들을 어떤식으로 구현해야 하는지 막막했고, 이는 LLM의 도움을 적극적으로 받음. 추후에 다른 PG사와의 결제 연동을 구현할 때(kakaopay, naverpay 등), 카피코드를 통해 얻은 경험으로 적은 LLM의 도움으로 구현할 수 있을거라고 판단했기 때문이다.
+10. Service 레이어 구현 : service레이어에서 다른 service를 참조했는데, 서로를 참조하는 경우가 발생했고, 이때 순환 참조 문제가 발생하며 오류(BeanCurrentlyInCreationException)가 발생했었음. 따라서 service레이어에서 해당 Entity가 아닌 다른 Entity를 건드려야 하는 경우, service를 참조하는것과 repository를 참조하는 것이 BeanCurrentlyInCreationException오류를 유발하고, 성능차이가 발생하지 않는 것을 인지하고, repository를 참조할 수 있도록 구현함.
+11. 기타 버그 : patch/delete order에서 소유권 검증(권한 검증 + 사용자 권한이여도 해당 주문내역에 대한 소유권이 존재하는지 판단) 로직이나 securityconfig의 /users/** 추가(모든 개인 정보를 조회하거나 변경하는 작업에 jwt를 통한 인증이 필요하기에 추가), hasRole 규칙 순서를 후순위에 두어 규칙이 무효화된 점을 규칙 순서 교체로 고침 등이 존재함.
+→ 굉장히 어려운 한 주였고, 이는 이전에 구현해보지 못한 점들을 구현하고, 그 과정에서 원리는 이해해도 코드로 옮기는 과정도 꽤나 어려웠다고 생각함. 특히 security나 filter, encoding등 알지 못했던 spring security api들을 적용해서 구현하고, http request의 원리를 파악하며 jwt/cookie 세팅하는 것이 어려웠음. 현재 인증이 필요함에도 jwt / cookie가 적용되지 않은 부분들이 존재할 수도 있지만, 다음 주 일정 E2E시나리오 점검(전체적으로 사용자가 쇼핑몰에 적용할 수 있는 주요 기능들의 시나리오를 순서대로 따라가며 구현이 정확하게 되어있는지 확인) + 웹 서버 뼈대 세우기를 진행하고, CI/CD 구현 및 docker/kubernetes를 구현하게 되면, CI/CD로 리펙토링과 추가 기능구현을 할 예정인데, 이때 미뤘던 상품 재고 처리 로직이나 인증 로직 점검을 우선적으로 진행할 계획이다.
+
+# 20260819 ~ 20260825
+
+해커톤 일정이 2일 잡혀있기 때문에 5일의 시간을 기준으로 스케줄을 짰고, 이번주는 웹서버의 본격적이 구현 이전에 뼈대를 세우고, WAS의 현재 구현된 기능들을 전체적인 시나리오를 통해 점검하며 리펙토링을 갖는 기간이 됨. 추가적인 기능은 위에서 언급한 바와 같이 추후에 CI/CD구현 후 구현할 계획.
+
+#### 금주 할 일
+- [ ] E2E 시나리오 점검 : 회원가입 → 로그인 → JWT 발급 → 인증된 cart/order API → Toss 결제 → 주문 상태 반영 까지의 전반적인 흐름을 파악
+- [ ] Next.js를 통한 웹서버 뼈대 구축 : 이미 존재하는 뼈대를 기준으로 구현된 기능들을 출력할 ui/ux를 구현하고, url 엔드포인트 등을 설정할 수 있도록 기획할 예정
