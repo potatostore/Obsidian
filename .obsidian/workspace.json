@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+                "file": "Language/Java Script.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ShoppingMall - 트러블 슈팅 기록"
+              "title": "Java Script"
             }
           },
           {
@@ -232,8 +232,8 @@
   },
   "active": "d279ded7b2f917e0",
   "lastOpenFiles": [
-    "Frameworks & services/Spring boot.md",
     "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+    "Frameworks & services/Spring boot.md",
     "Frameworks & services/Redis.md",
     "University/3-1/컴퓨터 네트워크.md",
     "Project/Graphos.md",
