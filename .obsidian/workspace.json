@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "d279ded7b2f917e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Language/Java Script.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Java Script"
-            }
-          },
-          {
             "id": "28ffef7d215880c6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/Redis.md",
+                "file": "Frameworks & services/CI-CD(GitHub Actions).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Redis"
+              "title": "CI-CD(GitHub Actions)"
             }
           },
           {
@@ -48,8 +34,37 @@
               "icon": "lucide-file",
               "title": "Spring boot"
             }
+          },
+          {
+            "id": "0a1c2c14604aef8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EC2(Amazon Elastic Compute Cloud)"
+            }
+          },
+          {
+            "id": "ef00566aff12c4e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ShoppingMall - 트러블 슈팅 기록"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -230,29 +245,33 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "d279ded7b2f917e0",
+  "active": "ef00566aff12c4e8",
   "lastOpenFiles": [
-    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
     "Frameworks & services/Spring boot.md",
+    "Frameworks & services/CI-CD(GitHub Actions).md",
+    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
+    "Project/AWS/EC2-volume 해결 방안.md",
+    "Project/AWS/DynamoDB.md",
+    "Frameworks & services/Git & Github.md",
+    "Project/AWS/IAM.md",
+    "Frameworks & services/Grafana & Loki & Prometheus.md",
     "Frameworks & services/Redis.md",
+    "Project/AWS/EBS(Elastic Block Storage).md",
+    "Project/AWS/Create-EBS(Elastic Block Storage).md",
+    "Project/AWS/Create-VPC-custom.md",
+    "Project/AWS/Create-EFS(CLI version).md",
+    "Frameworks & services/nGrinder.md",
+    "Project/AWS/VPC(Virtual Private Cloud).md",
+    "Frameworks & services/Kubernetes.md",
+    "Frameworks & services/Docker.md",
+    "Language/Java Script.md",
     "University/3-1/컴퓨터 네트워크.md",
     "Project/Graphos.md",
     "Project/Calculator(c++, spring boot).md",
     "Project/scenario(게임 속 바바리안으로 살아남기).md",
     "Project/충남대 해커톤 - 공공데이터 조사.md",
     "Project/Unreal Engine/Unreal Engine Main.md",
-    "Project/Unreal Engine/Unreal Engine(HD-2D).md",
-    "Project/AWS/Create-DynamoDB.md",
-    "Project/AWS/Create-EBS(Elastic Block Storage).md",
-    "Project/AWS/Create-EFS(CLI version).md",
-    "Project/AWS/Create-VPC-custom.md",
-    "Project/AWS/EBS(Elastic Block Storage).md",
-    "Project/AWS/DynamoDB.md",
-    "Project/AWS/EC2-volume 해결 방안.md",
-    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
-    "Project/AWS/ETL-partition key.md",
-    "University/3-1/유비쿼터스.md",
-    "Project/ShoppingMall/copilot-addendum.md",
-    "Algorithm/코드트리 - 코테 집중 교육.md"
+    "Project/Unreal Engine/Unreal Engine(HD-2D).md"
   ]
 }

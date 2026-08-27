@@ -102,9 +102,39 @@ created: 2026-08-02
 - [ ] 2. 메인페이지 상품 클릭 → 상품 상세 페이지(동적 라우트 `products/[productId]`)
 - [ ] 3. 장바구니 담기 / 장바구니 페이지 이동
 - [ ] 4. 장바구니 → 결제(Toss) 흐름 프론트 연동
-- [ ] 5. 위 1~4번으로 E2E 프론트 기능 완성, 목표 마감 20260826 전후. 완료되는 대로 바로 CI/CD + Docker/Kubernetes 착수(다음 항목이 아니라 그 다음 사이클로 이월 가능).
+- [ ] 5. 위 1~4번으로 E2E 프론트 기능 완성, 목표 마감 20260825(화, 수요일 시작 기준 이번 주 마지막날). 완료되는 대로 바로 CI/CD + Docker/Kubernetes 착수(다음 항목이 아니라 그 다음 사이클로 이월 가능).
 - [ ] 6. UI/UX 스타일링은 1~4번 기능이 다 완성된 뒤로 의도적으로 미룸(사용자 확정, 20260821).
 
 ### 장기 로드맵 참고 (특정 주차에 배정된 항목 아님, 순서만 확정 — 20260821 순서 정정: SQL 튜닝이 재고 로직 이전→이후로 이동)
-- 웹서버(Next.js) E2E 기능 완료(목표 ~20260826) → GitHub Actions + CI/CD + Docker/Kubernetes → access token 블랙리스트 + 주문 무결성 묶음("추가 기능" 단계, 사용자는 "상품 수량 로직"으로 지칭): (a) 상품 재고 차감/복구 트랜잭션, (b) `OrderService.createOrder` 서버 측 가격 재조회(`productRepository`, 클라이언트 `curOrderItemPrice` 미신뢰), (c) (b) 완료 후 `OrderItemCreateDTO.curOrderItemPrice` 필드 제거 → **그다음 SQL 튜닝** (20260821 기준 최종 순서, 이전엔 SQL 튜닝이 이 묶음보다 앞이었으나 사용자가 언급을 빠뜨렸던 것으로 확인되어 정정)
+- 웹서버(Next.js) E2E 기능 완료(목표 20260825, 화요일 마감) → GitHub Actions + CI/CD + Docker/Kubernetes → access token 블랙리스트 + 주문 무결성 묶음("추가 기능" 단계, 사용자는 "상품 수량 로직"으로 지칭): (a) 상품 재고 차감/복구 트랜잭션, (b) `OrderService.createOrder` 서버 측 가격 재조회(`productRepository`, 클라이언트 `curOrderItemPrice` 미신뢰), (c) (b) 완료 후 `OrderItemCreateDTO.curOrderItemPrice` 필드 제거 → **그다음 SQL 튜닝** (20260821 기준 최종 순서, 이전엔 SQL 튜닝이 이 묶음보다 앞이었으나 사용자가 언급을 빠뜨렸던 것으로 확인되어 정정)
 - 각 단계는 이전 단계 완료가 전제 조건.
+
+[20260826 ~ 20260901]
+
+### 이번주 구현 목표
+- [x] 1. GitHub Actions 워크플로우 파일 정상화: `.github/workflow/` → `.github/workflows/` 경로 수정, `workflow_dispatch: "Run WorkFlow"` 문법 오류 수정. **20260827 완료** — 이후에도 `name`/`run`/`uses` 분리 오타, `cache: gradle` 위치 오류(스텝 최상위가 아니라 `with:` 안에 있어야 함) 등 추가로 여러 차례 발견·수정을 거쳐 최종적으로 `build-and-test` job이 GitHub Actions에서 실제로 초록불(성공)까지 확인됨.
+- [ ] 2. GitHub Actions 파이프라인 구현: checkout → 백엔드 빌드/테스트(gradle) → 프론트 빌드(npm) → Docker build & push(Docker Hub) → EC2 배포까지 최소 1회 성공 실행 확인. **20260827 진행 상황**: checkout → JDK 셋업(`actions/setup-java`) → `docker compose up -d db` → `mysqladmin ping` 대기 → `./gradlew test`(working-directory 지정)까지의 "빌드/테스트" 구간만 완성 및 성공 확인. Docker build & push(Docker Hub), EC2 배포 job은 아직 미착수 — 다음 작업 대상.
+- [ ] 3. 백엔드 테스트 코드 작성(2번 build-and-test 단계에서 실제로 실행될 대상 확보, 저널 20260826 기록 기준). **20260827 진행 상황**: `UserServiceTest` 완료(createUser/getUser/patchUserInfo/putUserInfo/deleteUser 각각 성공·not-found 케이스, 총 9개 테스트, 전부 통과 확인). 나머지 서비스(`CartService`, `CartItemService`, `OrderService`, `ProductService`, `TossPaymentService`, `AuthService`)는 다음 작업일(20260828 예정)로 이월.
+- [x] 4. GitHub Actions 동작 원리 학습 보강(트리거 종류/러너/시크릿 관리 등) — 지난주 자기평가("대충 파악만 함") 기반 보완 목표. **20260827 완료로 판단** — 웹훅 트리거, 러너(VM) 프로비저닝, job 간 격리(파일시스템 미공유, 매 job마다 checkout 필요 이유), `services:` vs `docker compose up` vs Testcontainers 트레이드오프, 멀티스테이지 Docker 빌드에서 테스트 실행이 불가능한 이유, GitHub Secrets, 새 Rulesets UI(Bypass list, Enforcement status) 개념까지 실습 기반으로 학습 완료.
+- [ ] 5. (스트레치, 시간 남는 경우) Docker/Kubernetes 학습 착수 — 사용자가 이번 주 일정 여유에 따라 조건부로 명시(저널 20260826 기록). 20260827 기준 미착수.
+
+### 컴파일 및 디버깅 관련 문제
+- [x] 1. `.github/workflow/ci-cd.yml` 경로 오타로 워크플로우 자체가 트리거되지 않음(20260827 발견) → `workflows`(복수형)로 수정 완료.
+- [x] 2. `workflow_dispatch: "Run WorkFlow"` — 값이 없어야 할 위치에 문자열이 들어가 있어 워크플로우 파싱 실패(invalid workflow) 위험(20260827 발견) → 값 제거로 수정 완료.
+- [x] 3. **20260827 발견** `cache: gradle`이 step 최상위 키로 들어가 있어(`with:` 블록 밖) 워크플로우 파싱 실패, 실제 Actions 실행 로그(`This run likely failed because of a workflow file issue`)로 확인 → `with:` 내부로 이동해 해결.
+- [x] 4. **20260827 발견** `TOSS_SECRET_KEY`/`JWT_SECRET_KEY`가 GitHub Secrets에 미등록 상태로 워크플로우가 빈 문자열을 주입 → `contextLoads()` 테스트가 `io.jsonwebtoken.security.WeakKeyException`으로 실패(JWT 서명 키가 빈 문자열이라 발생). 두 시크릿을 실제로 등록해 해결.
+- [x] 5. **20260827 발견** branch protection을 "Rulesets"으로 새로 설정했는데 `enforcement` 기본값이 `disabled`였음 — 나머지 규칙(PR 필수, status check 필수, bypass list 비움)은 다 맞게 설정했지만 이 스위치를 안 켜서 처음엔 무효 상태였음. `active`로 변경해 해결.
+- [x] 6. **20260827 발견 (UserServiceTest 작성 중 실제 버그 3건, `./gradlew test` 직접 실행으로 확인)**: ① `userCreateTest`에서 입력 이메일(`qwer1324@...`)과 검증 이메일(`qwer1234@...`) 오타 불일치로 실패, ② `patchUserNotFoundExceptionTest`에서 `UserUpdateDTO`에 `null`을 넘겨 `CheckConfig.npeCheck`가 `NullPointerException`을 먼저 던져서 의도한 `NotFoundException` 검증 전에 실패, ③ `putUserNotFountTest`가 `userService.putUserInfo(...)` 대신 `userService.deleteUser(...)`를 호출하고 있어 우연히 통과는 하지만 `putUserInfo`의 not-found 경로는 실제로 미검증 상태였음 — 셋 다 수정 후 9개 테스트 전부 통과 확인.
+
+### 구현 기능 관련 문제점
+- [ ] 1. 일정 리스크: 토요일(8/29) 결혼식 방문, 월요일(8/31) 기숙사 이사로 실질 가용 개발일이 7일 중 5일로 축소됨(저널 20260826 기록 기준) → 목표 범위를 5일 기준으로 재조정 필요.
+- [x] 2. `jobs.build-and-test.steps:` 이하 전체 미구현 상태 — 이번 주 핵심 작업 대상. **20260827 완료**: checkout/JDK/db/wait/test 5개 step 구현 및 실제 성공 실행 확인.
+- [ ] 3. Docker Hub 자격증명 등 GitHub Actions 시크릿 관리 방식이 아직 워크플로우에 반영되지 않음 — steps 작성 시 `secrets.*` 참조 설계 필요. (`build-and-test`에는 미해당 없음, `build & push`/`deploy` job 추가 시 여전히 필요)
+- [ ] 4. **20260827 신규** branch protection(Rulesets)을 `main`에 설정 완료 — `Require a pull request before merging`(승인 0명), `Require status checks to pass before merging`(`build-and-test` 필수), bypass list 비움(관리자 포함 전원 우회 불가). 단, GitGuardian Security Checks는 별도 GitHub App 체크로 표시만 되고 required 목록엔 없어 현재 병합을 막지는 않음 — 필요시 추후 required로 추가할지 검토.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. (이번 주 내 CI/CD를 다 못 끝낼 경우 이월) Docker/Kubernetes 학습 및 적용.
+- [ ] 2. CI/CD 파이프라인 안정화 후 EC2 배포 자동화 반복 검증(재현성 확인).
+- [ ] 3. 장기 로드맵상 다음 단계인 "상품 수량 로직"(재고 차감/복구 트랜잭션 + 주문 가격 서버 재조회) 착수 준비.
+- [ ] 4. **20260828 예정**: `CartService`/`CartItemService`/`OrderService`/`ProductService`/`TossPaymentService`/`AuthService` 나머지 서비스 테스트 코드 작성 + 추가로 어떤 종류의 테스트(Controller 계층, Repository/`@DataJpaTest` 등)가 더 필요할지 탐색.
+- [ ] 5. **트러블 슈팅 일지 기록 리마인더**: 20260827 세션에서 다룬 CI/CD 설정·원리(위 컴파일/디버깅 6건 + GitHub Actions 개념 학습 4번 항목)는 아직 `ShoppingMall - 트러블 슈팅 기록.md`에 상세히 기록되지 않음. 다음 작업 시작 전에 오늘 다룬 내용(워크플로우 문법 함정들, job/step 격리, Rulesets 개념, Mockito 테스트에서 발견한 버그 3종 등)을 자세히 정리해서 남기는 것을 권장.

@@ -42,6 +42,8 @@ IAM의 목적성을 생각해보면 결국 보완과 직결된다고 본다. 그
 		"Resource": "arn:aws:iam::Your-ID:role/ec2-role" 
 	} 
 }
+
+// id : 376375612733
 //resource 칸에 역할 arn 붙여넣기
 ```
 
