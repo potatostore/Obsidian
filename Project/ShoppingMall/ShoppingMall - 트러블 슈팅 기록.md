@@ -178,11 +178,23 @@ sequenceDiagram
 
 #### 금주 할 일
 - [x] ci/cd 설정 마무리 
-- [ ] 테스트 코드 작성
-- [ ] github actions 원리 파악
+- [/] 테스트 코드 작성
+- [x] github actions 원리 파악
 
 #### 트러블 슈팅
-1. github actions workflow 이해
-2. ci/cd setting file 작성
-3. spring boot test code 구현
-4. 
+1. github actions workflow 이해(내용에 대해서는 [[CI-CD(GitHub Actions)]]참고) : github actions yml을 통해 러너에 올릴 VM에 대한 os image, github webhook trigger을 설정하고, 이는 main 브랜치에 pr을 통해 merge하기 전에 test code를 실행할 수 있도록 트리거를 설정함. 이때 기존에 설정한 docker 설정 파일들을 github에서 가져와 docker container을 띄우게 되는데, spring server같은 경우 db가 존재하지 않은 상태에서 빌드하게 될 경우 런타임 오류가 발생할 수 있기 때문에 db -> backend/frontend의 순서로 실행될 수 있도록 유도하였다. 추가적으로 db를 docker 에서 build한다고 하여도, 실행되지 않은 시점에서 backend서버가 돌아갈 수 있기 때문에, linux 명령어를 통해 지속적으로 db의 상태를 추적 후 실행중일때만 다음 과정(backend 실행)을 할 수 있도록 하였다. 이때 docker에 mysql db만 띄우게 하여 실행하였는데, 이는 db 서버 자체가 backend의 의존성으로 필요하였지만, backend는 단위 테스트를 진행하기 때문에 서버 실행이 필요하지 않아, jdk를 설치한 후 직접 빌드하여 단위 테스트를 실행하였다(추후에 단위 테스트가 아닌 연동 테스트를 검증하게 되는 코드를 작성하게 될 경우, docker을 통해 backend, frontend 서버를 띄울 필요가 있다). 또한 merge직전에 test + gitguardian을 통과해야지 merge할 수 있도록 github repository자체에 제약을 걸었다.
+2. ci/cd setting file 작성 : CI-CD 설정 파일은 branch의 웹훅 이벤트를 트리거 형태로 감지하고, 어느 os에서 어떤 흐름으로 파일들을 테스트할 것인지 일일이 설정해주는 파일이다. 특히 VM에서 돌아가는 CI는 테스트의 시간을 길게 가져도 큰 문제가 발생하지는 않지만, 짧을 수록 편의성이 올라가기 때문에 최대한 효율적으로 작성하여 테스트가 원활하게 돌아갈 수 있도록 설정 파일을 작성하였다. 위 github actions workflow에서 언급한 것처럼 docker을 전체적으로 띄우는 것이 아닌, 의존성이 강제되는 부분만 따로 띄우고, 다른 부분들은 단위 테스트가 가능한 경우, 단위 테스트를 최대한 지향하는 방식으로 테스트 코드를 작성하도록 구현할 것이다. 또한 중간에 db가 완전히 실행되어야 backend 단위 테스트를 빌드할 수 있도록 linux kernel 명령어를 작성하였는데, 이러한 부분들은 ai의 도움으로 작성하게 되었다.
+3. spring boot test code 구현 : given-when-then의 과정을 통해 mock데이터 설정, repository와 같이 외부에 의존성을 둔 기능들에 해당 목데이터를 반환하는 이벤트 코드의 형식으로 테스트 코드를 작성하였다. 전반적인 test code구현을 목표로 잡았지만, 이번 주차에서는 service 레이어에 대한 테스트 코드들만 작성하였다. 이유는 테스트 코드를 작성할때, 예외 처리에 대한 단위 테스트도 작성을 하여야하고, 이때문에 전반적인 코드의 길이가 실제 구현 코드보다 훨씬 길게 작성되기 때문이였다. 또한 userId와 같은 PK를 ReflectionTestUtils와 같이 직접적으로 필드를 설정해주는 코드를 통해 id 비교 로직들을 서비스에서 원활하게 실행되게 만들거나, jwt secret key, 비밀번호 암호화 등 서비스에 구현된 기능들을 상세하게 테스트하는 코드를 작성하는데 주 목적을 두었기에 꽤나 오랜 시간이 걸렸고, 따라서 다음주에도 test code를 마저 구현하는데 중점을 둘 것이다.
+
+# 20260902 ~ 20260908
+
+이번 주는 지난 주 트러블 슈팅 일지에서 언급하였던 테스트 코드 나머지 작성과 더불어 docker + kubernetes를 공부하는데 최대한 중점을 둘 것이다.
+
+#### 금주 할 일
+- [ ] 테스트 코드 마저 작성
+- [ ] docker & kubernetes 공부 + 구현
+
+#### 트러블 슈팅 일지
+- [ ] 예외처리 (method에 throws를 붙이는 것과 throw new를 통해 예외를 던지는 것의 차이) : 
+- [ ] authController의 userId 주입 : 쿠키를 통해 서블릿 컨테이너에서 userId를 @AuthenticationPrincipal을 통해 주입을 하게 됨(이는 cookie에서 accessToken을 복호화하여 얻음). 이때 authController에서 Mock Cookie를 제작해서 넣는 행위는 controller의 단위테스트가 아닌 필터의 영역까지 건들기 때문에, authentication을 직접 만들어서 이를 필터의 결과물로서 Spring web mvc에 보내고, mockmvc는 이를 통해 정해진 httpmethod를 실행.
+- [ ] service레이어를 mock이 아닌 mockbean으로 주입하는 이유 : 

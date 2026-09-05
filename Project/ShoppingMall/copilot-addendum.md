@@ -117,6 +117,8 @@ created: 2026-08-02
 - [ ] 3. 백엔드 테스트 코드 작성(2번 build-and-test 단계에서 실제로 실행될 대상 확보, 저널 20260826 기록 기준). **20260827 진행 상황**: `UserServiceTest` 완료(createUser/getUser/patchUserInfo/putUserInfo/deleteUser 각각 성공·not-found 케이스, 총 9개 테스트, 전부 통과 확인). 나머지 서비스(`CartService`, `CartItemService`, `OrderService`, `ProductService`, `TossPaymentService`, `AuthService`)는 다음 작업일(20260828 예정)로 이월.
 - [x] 4. GitHub Actions 동작 원리 학습 보강(트리거 종류/러너/시크릿 관리 등) — 지난주 자기평가("대충 파악만 함") 기반 보완 목표. **20260827 완료로 판단** — 웹훅 트리거, 러너(VM) 프로비저닝, job 간 격리(파일시스템 미공유, 매 job마다 checkout 필요 이유), `services:` vs `docker compose up` vs Testcontainers 트레이드오프, 멀티스테이지 Docker 빌드에서 테스트 실행이 불가능한 이유, GitHub Secrets, 새 Rulesets UI(Bypass list, Enforcement status) 개념까지 실습 기반으로 학습 완료.
 - [ ] 5. (스트레치, 시간 남는 경우) Docker/Kubernetes 학습 착수 — 사용자가 이번 주 일정 여유에 따라 조건부로 명시(저널 20260826 기록). 20260827 기준 미착수.
+- [x] 6. **20260901 Copilot 검토 결과**: 3번(백엔드 테스트 코드 작성) 상향 완료 확인 — `CartServiceTest`(13개)·`ProductServiceTest`(10개)·`OrderServiceTest`(14개) 전부 작성 및 실행 통과 확인(`UserServiceTest` 9개는 기존 완료분과 함께 회귀 확인). `CartItemService`/`TossPaymentService`는 실제 메서드가 없는 빈 클래스라 테스트 대상 자체가 없고, `AuthService`(`logIn`/`logOut`)만 테스트 미작성 상태로 남음.
+- [x] 7. **20260901** `contextLoads()`가 로컬에서 실패하던 문제(`JWT_SECRET_KEY` placeholder 미해결 → 이후 MySQL dialect 조회 실패로 원인이 바뀌며 재현)를 `src/test/resources/application.yml`(H2 인메모리 DB + 테스트 전용 Base64 JWT 더미키)로 해결. 해당 더미 시크릿이 GitGuardian에 false positive로 걸려 예외 처리(allow)까지 진행 — 실제 운영 시크릿과 무관한 값이라 값을 앞으로도 그대로 고정 유지 권장(바뀌면 재탐지 가능성 있음).
 
 ### 컴파일 및 디버깅 관련 문제
 - [x] 1. `.github/workflow/ci-cd.yml` 경로 오타로 워크플로우 자체가 트리거되지 않음(20260827 발견) → `workflows`(복수형)로 수정 완료.
@@ -125,12 +127,15 @@ created: 2026-08-02
 - [x] 4. **20260827 발견** `TOSS_SECRET_KEY`/`JWT_SECRET_KEY`가 GitHub Secrets에 미등록 상태로 워크플로우가 빈 문자열을 주입 → `contextLoads()` 테스트가 `io.jsonwebtoken.security.WeakKeyException`으로 실패(JWT 서명 키가 빈 문자열이라 발생). 두 시크릿을 실제로 등록해 해결.
 - [x] 5. **20260827 발견** branch protection을 "Rulesets"으로 새로 설정했는데 `enforcement` 기본값이 `disabled`였음 — 나머지 규칙(PR 필수, status check 필수, bypass list 비움)은 다 맞게 설정했지만 이 스위치를 안 켜서 처음엔 무효 상태였음. `active`로 변경해 해결.
 - [x] 6. **20260827 발견 (UserServiceTest 작성 중 실제 버그 3건, `./gradlew test` 직접 실행으로 확인)**: ① `userCreateTest`에서 입력 이메일(`qwer1324@...`)과 검증 이메일(`qwer1234@...`) 오타 불일치로 실패, ② `patchUserNotFoundExceptionTest`에서 `UserUpdateDTO`에 `null`을 넘겨 `CheckConfig.npeCheck`가 `NullPointerException`을 먼저 던져서 의도한 `NotFoundException` 검증 전에 실패, ③ `putUserNotFountTest`가 `userService.putUserInfo(...)` 대신 `userService.deleteUser(...)`를 호출하고 있어 우연히 통과는 하지만 `putUserInfo`의 not-found 경로는 실제로 미검증 상태였음 — 셋 다 수정 후 9개 테스트 전부 통과 확인.
+- [x] 7. **20260901 (Copilot 리뷰 세션에서 실제 실행 확인)** `CartServiceTest`/`OrderServiceTest` 작성 과정에서 다수의 Mockito 실사용 버그를 실행 기반으로 발견·수정: ① `Product.builder()`의 `productDetailCreateDTOList(List.of())` 빈 리스트 검증 위반(`IllegalArgumentException`), ② `invocation.getArgument(1)`/`getArgument(2)` 인덱스 오류(단일 인자 메서드인데 잘못된 인덱스 참조 → `ArrayIndexOutOfBoundsException`), ③ 실제 객체(mock 아님)에 `when(...)`을 건 Mockito 오용(`MissingMethodInvocationException`), ④ 서로 다른 인스턴스를 대상으로 한 stub과 실제 호출 인자 불일치(`PotentialStubbingProblem`), ⑤ 코드 경로상 도달 못 하는 stub 다수(`UnnecessaryStubbingException`, not-found 시나리오 두 개를 한 메서드에 몰아넣은 경우 포함). 이 과정에서 `Cart.patchCart()`/`Order.patchOrder()`가 quantity만 갱신하고 `updateTotalCartPrice()`/`updateTotalOrderPrice()`를 안 불러서 총액이 갱신 안 되던 **실제 서비스 로직 버그**도 발견·수정됨(테스트 버그가 아니라 프로덕션 버그였음).
 
 ### 구현 기능 관련 문제점
 - [ ] 1. 일정 리스크: 토요일(8/29) 결혼식 방문, 월요일(8/31) 기숙사 이사로 실질 가용 개발일이 7일 중 5일로 축소됨(저널 20260826 기록 기준) → 목표 범위를 5일 기준으로 재조정 필요.
 - [x] 2. `jobs.build-and-test.steps:` 이하 전체 미구현 상태 — 이번 주 핵심 작업 대상. **20260827 완료**: checkout/JDK/db/wait/test 5개 step 구현 및 실제 성공 실행 확인.
 - [ ] 3. Docker Hub 자격증명 등 GitHub Actions 시크릿 관리 방식이 아직 워크플로우에 반영되지 않음 — steps 작성 시 `secrets.*` 참조 설계 필요. (`build-and-test`에는 미해당 없음, `build & push`/`deploy` job 추가 시 여전히 필요)
 - [ ] 4. **20260827 신규** branch protection(Rulesets)을 `main`에 설정 완료 — `Require a pull request before merging`(승인 0명), `Require status checks to pass before merging`(`build-and-test` 필수), bypass list 비움(관리자 포함 전원 우회 불가). 단, GitGuardian Security Checks는 별도 GitHub App 체크로 표시만 되고 required 목록엔 없어 현재 병합을 막지는 않음 — 필요시 추후 required로 추가할지 검토.
+- [ ] 5. **20260901 (신규, 중간)** `AuthService.logIn`/`logOut`(비밀번호 대조, JWT 발급, Redis refresh token 저장까지 포함하는 인증 핵심 로직)에 테스트 코드가 아직 없음 — 다음 주 테스트 작성 시 최우선 대상으로 권장.
+- [ ] 6. **20260901 (신규, 치명)** `SecurityConfig`의 `authorizeHttpRequests` 규칙에 `/products/**`가 아예 매칭되지 않아 `anyRequest().permitAll()`로 빠짐 → 로그인 없이 누구나 상품 생성/수정/삭제(`POST`/`PATCH`/`DELETE /products/**`) 가능한 상태. 같은 이유로 `GET /users`(전체 유저 조회, 컨트롤러 주석엔 "관리자 권한만" 예정이라 적혀있으나 실제 규칙 없음)도 인증 없이 열려있음. Controller 레이어 테스트 계획 수립 중 `SecurityConfig` 재검토로 발견 — 상품 CUD는 `hasRole("ADMIN")`, 유저 전체 조회도 관리자 전용으로 규칙 추가 필요.
 
 ### 다음 한 주 동안 개발할 기능
 - [ ] 1. (이번 주 내 CI/CD를 다 못 끝낼 경우 이월) Docker/Kubernetes 학습 및 적용.
@@ -138,3 +143,14 @@ created: 2026-08-02
 - [ ] 3. 장기 로드맵상 다음 단계인 "상품 수량 로직"(재고 차감/복구 트랜잭션 + 주문 가격 서버 재조회) 착수 준비.
 - [ ] 4. **20260828 예정**: `CartService`/`CartItemService`/`OrderService`/`ProductService`/`TossPaymentService`/`AuthService` 나머지 서비스 테스트 코드 작성 + 추가로 어떤 종류의 테스트(Controller 계층, Repository/`@DataJpaTest` 등)가 더 필요할지 탐색.
 - [ ] 5. **트러블 슈팅 일지 기록 리마인더**: 20260827 세션에서 다룬 CI/CD 설정·원리(위 컴파일/디버깅 6건 + GitHub Actions 개념 학습 4번 항목)는 아직 `ShoppingMall - 트러블 슈팅 기록.md`에 상세히 기록되지 않음. 다음 작업 시작 전에 오늘 다룬 내용(워크플로우 문법 함정들, job/step 격리, Rulesets 개념, Mockito 테스트에서 발견한 버그 3종 등)을 자세히 정리해서 남기는 것을 권장.
+- [x] 6. **(확정, 20260901) 다음 주(20260902~20260908) 목표: 테스트 코드 + Docker/Kubernetes.** 단, Docker/K8s는 이론 학습에서 그치지 않고 이번 주 미완성으로 남은 CI/CD 파이프라인의 "Docker build & push(Docker Hub) → EC2 배포" 단계를 실제로 완성하는 데 바로 적용하는 방향으로 진행(사용자 확정).
+- [ ] 7. 테스트 코드 세부 계획(Controller 레이어 신규 착수 — 5개 컨트롤러 전부 테스트 없음 확인됨, `AuthController`/`CartController`/`OrderController`/`ProductController`/`UserController`):
+	1. 공통 준비: `@AuthenticationPrincipal Long userId`가 `UsernamePasswordAuthenticationToken(Long, ...)` 커스텀 구조라 `@WithMockUser`가 안 맞음 — `SecurityMockMvcRequestPostProcessors.authentication(...)` 사용 필요. `@WebMvcTest`는 `SecurityConfig`를 자동 로드하지 않으므로 `@Import(SecurityConfig.class)` 명시 필요(안 하면 인가 규칙 자체가 검증 안 됨).
+	2. `AuthController`: 로그인 성공(쿠키 2종 확인)/실패, DTO 검증 실패, 로그아웃 인증 여부.
+	3. `UserController`: 회원가입 성공/검증 실패, `GET /users` 전체 조회 인증 갭(위 구현 기능 문제점 6번) 재현, 본인 조회/수정/삭제 인증 필요 확인.
+	4. `ProductController`: CRUD 성공/not-found, **CUD 미인증 접근 갭(위 6번) 재현 후 `SecurityConfig` 수정으로 막기**.
+	5. `CartController`: 전 엔드포인트 미인증 401 확인, `patchCart` 검증 실패 케이스.
+	6. `OrderController`: 전 엔드포인트 미인증 401 확인(단 `authTossPaymentOrder`는 트러블 슈팅 기록상 의도적으로 인증 제외 — 미인증이어도 정상 동작해야 정상). `deleteOrder`에 `userId` 파라미터가 없어 소유권 검증 없이 ADMIN 권한만으로 삭제되는 구조가 의도한 설계인지 재확인 필요.
+	7. `AuthService`(`logIn`/`logOut`) 단위 테스트 — 우선순위 상위(위 구현 기능 문제점 5번).
+	8. (선택, 우선순위 낮음) `@DataJpaTest` 기반 Repository 테스트 — `orphanRemoval` 실제 DELETE 발생 여부 등 Mockito로는 검증 불가능한 부분에 한정.
+- [x] 8. **(일정 조정, 사용자 확정 20260901)** 웹서버 E2E 시나리오 점검은 "테스트 코드 + CI/CD + 트래픽 테스트 도구 의존성 확립"이 전부 끝나고 기능을 하나씩 추가하는 시점으로 후순위 조정. (정정: 지난 리뷰에서 "웹서버 E2E 완료가 CI/CD보다 선행"이라고 로드맵 순서를 언급했었는데, 이는 Copilot이 `[20260819~20260825]` 리뷰 시점에 재정리하며 만든 순서였고 사용자 원본 트러블 슈팅 일지엔 CI/CD가 이미 같은 주에 병행되고 있었음 — 확인 없이 단정적으로 전달했던 부분에 대해 정정함.)
