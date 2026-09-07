@@ -195,6 +195,9 @@ sequenceDiagram
 - [ ] docker & kubernetes 공부 + 구현
 
 #### 트러블 슈팅 일지
-- [ ] 예외처리 (method에 throws를 붙이는 것과 throw new를 통해 예외를 던지는 것의 차이) : 
-- [ ] authController의 userId 주입 : 쿠키를 통해 서블릿 컨테이너에서 userId를 @AuthenticationPrincipal을 통해 주입을 하게 됨(이는 cookie에서 accessToken을 복호화하여 얻음). 이때 authController에서 Mock Cookie를 제작해서 넣는 행위는 controller의 단위테스트가 아닌 필터의 영역까지 건들기 때문에, authentication을 직접 만들어서 이를 필터의 결과물로서 Spring web mvc에 보내고, mockmvc는 이를 통해 정해진 httpmethod를 실행.
-- [ ] service레이어를 mock이 아닌 mockbean으로 주입하는 이유 : 
+1. 예외처리 (method에 throws를 붙이는 것과 throw new를 통해 예외를 던지는 것의 차이) : 
+2. authController의 userId 주입 : 쿠키를 통해 서블릿 컨테이너에서 userId를 @AuthenticationPrincipal을 통해 주입을 하게 됨(이는 cookie에서 accessToken을 복호화하여 얻음). 이때 authController에서 Mock Cookie를 제작해서 넣는 행위는 controller의 단위테스트가 아닌 필터의 영역까지 건들기 때문에, authentication을 직접 만들어서 이를 필터의 결과물로서 Spring web mvc에 보내고, mockmvc는 이를 통해 정해진 httpmethod를 실행.
+3. service레이어를 mock이 아닌 mockbean으로 주입하는 이유 : 
+4. 서블릿 필터의 자세한 이해 : http method + session이 서블릿 컨테이너의 소켓을 통해 도착한 이후로부터 filter을 거쳐 컨트롤러에 도착하기까지의 과정을 세세하게 알 필요가 존재함.
+5. securityContextHolder에 mock session을 세팅한 후에 처리 후 clear하는 이유 : 기본 저장 방식인 MODE_THREAD를 통해 mock session이 context에 저장되는 것이 아닌, local thread에 context를 세팅하는 것이기 때문에, 단위테스트를 여러개 돌리는 github actions에서 해당 mock session이 스레드에 남아 다른 단위 테스를 실행하는 문제가 발생할 수 있기 때문 -> 이때문에 항상 try-finally문을 통해 context clear을 실행할 수 있도록 작성
+6. 

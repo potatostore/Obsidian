@@ -8,6 +8,20 @@
         "type": "tabs",
         "children": [
           {
+            "id": "a93a90243a0c2e82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ShoppingMall - 트러블 슈팅 기록"
+            }
+          },
+          {
             "id": "28ffef7d215880c6",
             "type": "leaf",
             "state": {
@@ -76,23 +90,8 @@
               "icon": "lucide-file",
               "title": "DB Migration (Flyway)"
             }
-          },
-          {
-            "id": "70db374566fd014d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Project/NIMDA/Question.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Question"
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -273,13 +272,13 @@
       "hide-folders:Show hidden folders": false
     }
   },
-  "active": "70db374566fd014d",
+  "active": "a93a90243a0c2e82",
   "lastOpenFiles": [
-    "Project/NIMDA/NIMDA - 트러블 슈팅 일지.md",
     "Project/NIMDA/Question.md",
-    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
-    "Frameworks & services/DB Migration (Flyway).md",
     "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+    "Frameworks & services/DB Migration (Flyway).md",
+    "Project/NIMDA/NIMDA - 트러블 슈팅 일지.md",
+    "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/NIMDA",
     "Frameworks & services/CI-CD(GitHub Actions).md",
     "Frameworks & services/nGrinder.md",
