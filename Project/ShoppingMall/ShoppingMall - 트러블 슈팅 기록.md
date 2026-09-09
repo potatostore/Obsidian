@@ -191,13 +191,31 @@ sequenceDiagram
 이번 주는 지난 주 트러블 슈팅 일지에서 언급하였던 테스트 코드 나머지 작성과 더불어 docker + kubernetes를 공부하는데 최대한 중점을 둘 것이다.
 
 #### 금주 할 일
-- [ ] 테스트 코드 마저 작성
-- [ ] docker & kubernetes 공부 + 구현
+- [x] 테스트 코드 마저 작성
+- [/] docker & kubernetes 공부 + 구현
 
 #### 트러블 슈팅 일지
-1. 예외처리 (method에 throws를 붙이는 것과 throw new를 통해 예외를 던지는 것의 차이) : 
-2. authController의 userId 주입 : 쿠키를 통해 서블릿 컨테이너에서 userId를 @AuthenticationPrincipal을 통해 주입을 하게 됨(이는 cookie에서 accessToken을 복호화하여 얻음). 이때 authController에서 Mock Cookie를 제작해서 넣는 행위는 controller의 단위테스트가 아닌 필터의 영역까지 건들기 때문에, authentication을 직접 만들어서 이를 필터의 결과물로서 Spring web mvc에 보내고, mockmvc는 이를 통해 정해진 httpmethod를 실행.
-3. service레이어를 mock이 아닌 mockbean으로 주입하는 이유 : 
+1. 예외처리 (method에 throws를 붙이는 것과 throw new를 통해 예외를 던지는 것의 차이) : 이전에 new throw를 통해 예외를 서비스 레이어에서 던지도록 구현을 하였었는데, 이때 예외를 던지는 메서드에 throws Exception을 붙이지 않았다. controller test code를 작성하면서 post와 같은 http method를 서블릿 컨테이너에 request형식으로 주입할 때, 예외처리의 주체를 해당 메서드가 아닌 호출한 상위 메서드로 전가하기 때문에 이와 같은 차이를 발생한다고 볼 수 있다.
+	- method 선언부에 throws Exception과 같이 정의할 경우, 메서드를 호출한 상위 메서드로 예외의 책임이 전가된다.
+	- 만약 메서드 내부에서 고의로 예외 객체를 생성하게 될 경우, 예외 처리의 책임이 메서드 내부에 존재하여 선언부에 작성하지 않아도 된다.
+2. authController의 userId 주입 : 쿠키를 통해 서블릿 컨테이너에서 userId를 @AuthenticationPrincipal을 통해 주입을 하게 됨(이는 cookie에서 accessToken을 복호화하여 얻음). 이때 authController에서 Mock Cookie를 제작해서 넣는 행위는 controller의 단위테스트가 아닌 필터의 영역까지 건들기 때문에, authentication을 직접 만들어서 이를 필터의 결과물로서 Spring web mvc에 보내고, mockmvc는 이를 통해 정해진 httpmethod를 실행. 즉, 서블릿 필터를 꺼놨지만, 마치 서블릿 필터를 통해 userId가 주입된 것처럼 보이기 위해 SecurityContextHolder을 통해 Authentication을 mock형식으로 넘겨 컨텍스트를 마치 필터에서 나온 것처럼 유도할 수 있다.(예외로 url을 통해 orderId와 같이 @PathVariable을 주입받는 경우, 이는 http method url을 설정할 때, 넘겨주는 방식이 바람직하다.)
+3. service레이어를 mock이 아닌 mockbean으로 주입하는 이유 : 가장 큰 차이는 Spring Context를 통해 의존성을 주입하는가에 따라 달라진다. Service test code에서는 @ExtentWith(MockitoExtension.class)를 통해 Spring Context에서 의존성을 주입하는 것이 아닌, mockito를 통해 mock형식으로 의존성을 주입하도록 설정하여 @Mock 어노테이션으로 의존성을 주입하였다. 하지만 Controller test code에서는 HttpRequest를 Spring Context에 설정하여 실질적으로 Controller에 요청이 들어가 기능을 실행하는지 확인하기 때문에, Controller에 한해서만 Mockito로 설정하고, 나머지 요인들을 Spring Context로 주입을 하게 되고, 따라서 Service를 주입할 때, Spring Context를 통해 주입되기 때문에 @MockBean을 통해 IoC 컨테이너에 존재하는 bean을 주입할 수 있도록 함.
 4. 서블릿 필터의 자세한 이해 : http method + session이 서블릿 컨테이너의 소켓을 통해 도착한 이후로부터 filter을 거쳐 컨트롤러에 도착하기까지의 과정을 세세하게 알 필요가 존재함.
+	1. http request를 서블릿 컨테이너의 소켓을 통해 받아온다.
+	2. 서블릿 컨테이너는 관리하고 있는 thread pool 중 하나를 해당 요청에 할당한다. (이때 context라는 상자를 동시에 할당하여 관련 정보를 저장할 수 있도록 관리함.)
+	3. 필터의 전처리 / 후처리를 거치면서 인증이 필요한 요청일 경우, cookie에서 userId와 같은 정보들을 뽑아내어 context로 관리한다.(이때 userId와 같은 정보는 SecurityContextHolder가 관리하고, 다양한 context holder가 존재함)
+	4. 필터를 거친 후, MappingHandler을 통해 url에 매핑되는 controller을 호출하게 되는데, controller에서 @AuthenticationPrincipal과 같이 컨텍스트에서 값을 뽑아 주입해주는 어노테이션을 감지하면 Context에서 값을 가져와 할당해준다.
+	5. 기능 실행 (기능은 스레드 하나에 할당됨)
+	이와 같은 과정을 거치며 filter은 요청의 정당성을 확인하거나, 필요한 정보를 context로 관리하여 추후에 기능에 사용될 수 있도록 스레드에 할당된 메모리(ThreadLocal이라고 함)에 값을 저장한다.
 5. securityContextHolder에 mock session을 세팅한 후에 처리 후 clear하는 이유 : 기본 저장 방식인 MODE_THREAD를 통해 mock session이 context에 저장되는 것이 아닌, local thread에 context를 세팅하는 것이기 때문에, 단위테스트를 여러개 돌리는 github actions에서 해당 mock session이 스레드에 남아 다른 단위 테스를 실행하는 문제가 발생할 수 있기 때문 -> 이때문에 항상 try-finally문을 통해 context clear을 실행할 수 있도록 작성
-6. 
+6. 마샬링 / 언마샬링 : 마샬링은 자바의 객체를 json 파일로 매핑하여 응답으로 보내는 등의 용도로 사용되는 과정을 의미한다. 이때 마샬링을 Spring MVC에서 진행하게 되는데, 필요한 과정이 존재한다.
+	- 마샬링 : 객체를 json으로 매핑하기 위해서 필드명과 data값을 알아야 하는데, 이때 필요한게 getter 메서드다. getter메서드를 통해 Spring MVC는 data값을 읽고, Json파일 형식으로 매핑해준다.
+	- 언마샬링 : json을 다시 객체로 매핑할 때, 기본 생성자가 있어야 객체를 생성하고, 필드를 주입해줄 수 있다. 필드에 값을 주입할때 필드가 존재하는지 확인하기 위해서는 getter, private 필드에 값을 주입하기 위해서는 setter가 필요하다고 이해하고 있었지만, 알고보니 reflection을 통해 java의 private 접근 검사를 끈 후, 값을 주입하고, 원상태로 복구하는 방식을 통해 값을 주입하는 방법이 있어, 여전히 setter의 사용을 지양하는 편이 좋다.
+	다만 record와 같이 필드가 final로 선언되는 경우, 필드를 주입하는 것이 아닌, 마샬링/언마샬링의 주체인 Spring MVC Jackson이 생성자를 통해 처음에 값을 전부 넘기기에 getter / noargsconstructor 없이 동작 가능하다.
+
+# 20260909 ~ 20260915
+controller test code가 생각보다 길어지고, 특히 저번주까지 구현했던 controller test code가 happy-path(전적으로 성공에만 의존되는 코드)를 작성했기 때문에 400 / 401 / 404와 같은 Exception에 대응되는 테스트 코드를 작성하고, docker & k8s의 공부를 조금이라도 무조건 해나가는 것이 이번주 목표이다.
+
+#### 금주 할 일
+- [ ] controller 예외 테스트 코드 작성
+- [ ] docker & k8s 공부 조금이라도 하기

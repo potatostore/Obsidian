@@ -108,6 +108,13 @@ created: 2026-08-02
 ### 장기 로드맵 참고 (특정 주차에 배정된 항목 아님, 순서만 확정 — 20260821 순서 정정: SQL 튜닝이 재고 로직 이전→이후로 이동)
 - 웹서버(Next.js) E2E 기능 완료(목표 20260825, 화요일 마감) → GitHub Actions + CI/CD + Docker/Kubernetes → access token 블랙리스트 + 주문 무결성 묶음("추가 기능" 단계, 사용자는 "상품 수량 로직"으로 지칭): (a) 상품 재고 차감/복구 트랜잭션, (b) `OrderService.createOrder` 서버 측 가격 재조회(`productRepository`, 클라이언트 `curOrderItemPrice` 미신뢰), (c) (b) 완료 후 `OrderItemCreateDTO.curOrderItemPrice` 필드 제거 → **그다음 SQL 튜닝** (20260821 기준 최종 순서, 이전엔 SQL 튜닝이 이 묶음보다 앞이었으나 사용자가 언급을 빠뜨렸던 것으로 확인되어 정정)
 - 각 단계는 이전 단계 완료가 전제 조건.
+- (20260908 추가) **빌더 컨벤션 정립 + 리팩터링** — "테스트 코드 + CI/CD + 트래픽 테스트 도구 의존성 확립"이 전부 끝나고 본격 리팩터링 후 기능을 하나씩 추가하는 시점의 항목(특정 주차 미배정, `[20260826~20260901]` 다음 한 주 8번 후순위 조정 지점과 동일 페이즈). 진행 순서: 컨벤션 문서화 → 기존 `@Builder` 배치 전수 점검(엔티티/DTO 전부) → "최소 변경" 원칙 리팩터링. 20260908 세션 확정 방침:
+	1. 동일 클래스에 `@Builder` 2개 금지 — 애노테이션마다 `builder()` + `XxxBuilder`를 생성하므로 2개면 컴파일 충돌. `builderMethodName`/`builderClassName`을 따로 주면 컴파일은 되나 엔티티에선 책임 과다 신호로 보고 지양.
+	2. 엔티티: `@Builder`는 "생성 시점에 허용할 필드만 받는 생성자" 하나에만. `@NoArgsConstructor(access = PROTECTED)` 동반(JPA 프록시용 기본 생성자 확보 + 무분별한 all-args 차단).
+	3. 응답 DTO(예: `OrderResponseDTO`): `@Builder`는 `private`(or package-private) all-args 생성자에. 엔티티→DTO 매핑은 `static from(Entity)` 팩토리 한 곳에 모으고 내부에서 `builder()` 호출. 운영 변환 코드와 테스트가 이 빌더 하나를 공유 — 테스트 전용 생성자를 따로 만들지 않는다(생성 경로 중복 방지).
+	4. DTO 필드가 단순하고 테스트에서 부분 조립 빈도가 낮으면 `record DTO(...)` + `from()`만으로 충분, 빌더 미도입 검토.
+	5. 점검 근거: `@Builder` 사용 패턴이 이미 제각각 — `Product.builder()`가 `productDetailCreateDTOList(List.of())`에서 검증 위반(위 `[20260826~20260901]` 컴파일/디버깅 7번 ①). 전수 점검 필요.
+	6. (20260908 추가) 요청 DTO는 `@NoArgsConstructor` 필수 — Jackson 역직렬화 경로 확보용. `@AllArgsConstructor` 단독은 부족(필드 1개면 인자 1개 생성자가 되어 Jackson이 delegating creator로 오인, JSON object 바인딩 실패). `@Builder`는 테스트 편의용이며 Jackson은 사용하지 않음. 근거: `OrderUpdateDTO` 누락으로 `@RequestBody` 역직렬화가 `InvalidDefinitionException`("no Creators")·HTTP 500 (상세 `[20260902~20260908]` 컴파일/디버깅 1번).
 
 [20260826 ~ 20260901]
 
@@ -154,3 +161,61 @@ created: 2026-08-02
 	7. `AuthService`(`logIn`/`logOut`) 단위 테스트 — 우선순위 상위(위 구현 기능 문제점 5번).
 	8. (선택, 우선순위 낮음) `@DataJpaTest` 기반 Repository 테스트 — `orphanRemoval` 실제 DELETE 발생 여부 등 Mockito로는 검증 불가능한 부분에 한정.
 - [x] 8. **(일정 조정, 사용자 확정 20260901)** 웹서버 E2E 시나리오 점검은 "테스트 코드 + CI/CD + 트래픽 테스트 도구 의존성 확립"이 전부 끝나고 기능을 하나씩 추가하는 시점으로 후순위 조정. (정정: 지난 리뷰에서 "웹서버 E2E 완료가 CI/CD보다 선행"이라고 로드맵 순서를 언급했었는데, 이는 Copilot이 `[20260819~20260825]` 리뷰 시점에 재정리하며 만든 순서였고 사용자 원본 트러블 슈팅 일지엔 CI/CD가 이미 같은 주에 병행되고 있었음 — 확인 없이 단정적으로 전달했던 부분에 대해 정정함.)
+
+[20260902 ~ 20260908]
+
+### 이번주 구현 목표
+- [/] 1. 백엔드 테스트 코드 마저 작성 — **부분 완료(20260909 Copilot 검토)**. 완료: 5개 컨트롤러 happy-path 테스트 25개(`AuthControllerTest` 2, `CartControllerTest` 6, `OrderControllerTest` 7, `ProductControllerTest` 5, `UserControllerTest` 5) 전부 통과 + `AuthServiceTest` 5개 존재(`[20260826~20260901]` 구현 기능 문제점 5번 해소). 미완: 예외 매핑 테스트(서비스가 `NotFoundException` 등 throw → `GlobalExceptionHandler` → status/body), `@Valid` 실패(400) 테스트, 인가 테스트(미인증 401 / non-ADMIN 403), `@DataJpaTest` repository 테스트(선택) — 전부 미작성. 저널엔 `[x]`로 표기됐으나 happy-path 한정이라 `[/]`가 정확.
+- [/] 2. Docker & Kubernetes 학습 + 구현 — **사실상 미착수(20260909 Copilot 검토)**. 트러블 슈팅 일지 `[20260902~20260908]` 블록에 Docker/K8s 관련 항목이 0개. 다음 주로 이월 필요.
+
+### 컴파일 및 디버깅 관련 문제
+- [ ] 1. **20260908 발견 (`OrderControllerTest.patchOrder_successTest` 작성 중, `./gradlew test`로 재현)** `OrderUpdateDTO`에 `@NoArgsConstructor`가 없어 `@RequestBody` 역직렬화가 실패, HTTP 500 반환 → `andExpect(status().isOk())`(테스트 275행)에서 실패. 실제 예외: `HttpMessageConversionException: Type definition error [OrderUpdateDTO]` → `Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of OrderUpdateDTO (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)`.
+	1. 원인: 필드가 1개라 `@AllArgsConstructor`가 만드는 유일한 생성자가 "인자 1개짜리" → Jackson이 이를 delegating creator로 간주(요청 바디를 통째로 `List<OrderItemUpdateDTO>` 한 값으로 바인딩 시도)하는데, 실제 바디는 JSON object(`{"orderItemResponseDTOList":[...]}`)라 불일치. 기본 생성자도 없어 사용 가능한 creator가 전무. `@Builder`는 Jackson이 사용하지 않음.
+	2. 대조: `OrderCreateDTO`는 `@NoArgsConstructor` 보유 → `createOrder_successTest` 통과. 프로젝트의 다른 order DTO(`OrderItemUpdateDTO`/`OrderResponseDTO`/`OrderItemResponseDTO`)도 전부 `@NoArgsConstructor` 보유 — `OrderUpdateDTO`만 누락.
+	3. `OrderServiceTest.patchOrder_successTest`(서비스 단위 테스트)가 통과했던 이유: 거기선 `new OrderUpdateDTO(List.of(...))`로 직접 생성해 Jackson 미개입. 이 버그는 컨트롤러 테스트의 JSON→DTO 역직렬화 경로에서만 드러남.
+	4. 수정: `OrderUpdateDTO`에 `@NoArgsConstructor` 추가(다른 DTO와 동일 패턴). 사용자가 직접 반영 예정.
+- [x] 2. **20260909 확인** 위 1번 수정(`OrderUpdateDTO`에 `@NoArgsConstructor` 추가) 반영 완료. `./gradlew test --tests "com.shopping_mall_api.controller.*"` 재실행해 컨트롤러 테스트 25개 전부 통과 확인.
+
+### 구현 기능 관련 문제점
+- [ ] 1. **20260908 (컨벤션 확정)** 위 디버깅 1번을 근거로, 빌더/생성자 컨벤션에 "요청 DTO는 `@NoArgsConstructor` 필수(Jackson 역직렬화 경로 확보), `@Builder`는 테스트 편의용" 규칙을 추가. 전체 컨벤션 정립 + `@Builder` 배치 전수 점검은 본격 리팩터링 페이즈(테스트 코드 + CI/CD + 트래픽 테스트 도구 의존성 확립 이후)로 유지 — 상세는 `[20260819~20260825]` "장기 로드맵 참고"의 빌더 컨벤션 항목(20260908 갱신) 참조.
+- [ ] 2. **20260909 컨트롤러 테스트 리뷰 — happy-path 편향 (중대)** 25개 테스트가 전부 `*_successTest`. 부재: (a) 서비스가 `NotFoundException`/`PaymentException` throw 시 `@RestControllerAdvice`(`GlobalExceptionHandler`)가 `errorCode.getHttpStatus()`+에러 바디로 매핑하는지 — 컨트롤러 레이어에서 가장 가치 있는 검증인데 0개, (b) `@Valid` 위반 → `MethodArgumentNotValidException` 핸들러 → 400, (c) 미인증 401 / non-ADMIN 403. 컨트롤러당 최소 (a) 1개씩은 추가 권장.
+- [ ] 3. **20260909 컨트롤러 테스트 리뷰 — 인가 검증 전무** 5개 테스트 클래스 전부 `@AutoConfigureMockMvc(addFilters = false)` + `@Import(SecurityConfig.class)` 없음. `[20260826~20260901]` 7.1 계획(`@Import(SecurityConfig.class)` + `SecurityMockMvcRequestPostProcessors`)이 미이행 → 알려진 `SecurityConfig` 갭(`/products/**` CUD 무인증, `GET /users` 무인증 — `[20260826~20260901]` 구현 기능 문제점 6번)에 실행 가능한 회귀 테스트가 없음. `UserController`에 `// 관리자 권한만` 주석이 달린 `getUsers`/`deleteUser`도 미검증.
+- [ ] 4. **20260909 컨트롤러 테스트 리뷰 — 자잘한 결함**
+	1. `ProductControllerTest.getProduct_successTest`: `getProduct`는 `@PathVariable`만 받는데 `UsernamePasswordAuthenticationToken(productId, null, null)`(authorities `null`)을 만들어 `SecurityContextHolder`에 세팅. 읽히지 않는 죽은 코드 + `getAuthorities()` null로 NPE 소지. 제거.
+	2. `any(Long.class)`/`any(XxxDTO.class)` 남발 → `@AuthenticationPrincipal userId`·`@PathVariable`가 서비스에 제대로 전달되는지 미검증(컨트롤러가 `null`을 넘기거나 path var를 바꿔도 통과). `verify(service).method(eq(1L), eq(2L), ...)`로 바꾸고 userId≠orderId≠productId처럼 **서로 다른 값** 사용. `CartControllerTest`는 일부에서 `eq(userId)`를 이미 씀(일관성 없음).
+	3. `SecurityContext` 셋업 방식이 파일마다 3가지 혼재: 원시 `setAuthentication`만(`Order`/`Product`), 원시+try-finally clear(`Cart`/`Auth`/`User` 일부), 원시+`.with(authentication())` 중복(`UserControllerTest.deleteUser`). 격리는 `WithSecurityContextTestExecutionListener`가 이미 보장하므로(20260908 확인) 정합성 문제. `.with(authentication(auth))` 하나로 통일 권장.
+	4. `UserControllerTest.getUser_successTest`: `.andExpect(status().isOk())` 누락(다른 테스트엔 전부 있음).
+	5. 매직값이 오독 유발: `AuthControllerTest`의 `maxAge(Duration.ofMillis(2026090301L))`(날짜꼴 숫자 + `maxAge` 미단언), `CartControllerTest`의 `.productId(userId)`/`.quantity(20260907L)`, `.build();;`(더블 세미콜론).
+- [ ] 5. **20260909 컨트롤러 코드 자체 이슈 (테스트 아님, 사용자 직접 수정)**
+	1. `CartController.addCartItemInCart`의 `@RequestBody CartItemCreateDTO`에 `@Valid` 없음(같은 컨트롤러 `patchCart`엔 있음). 장바구니 담기 요청의 Bean Validation이 조용히 스킵됨.
+	2. `SecurityConfig` 갭(`/products/**` CUD → `hasRole("ADMIN")`, `GET /users` → ADMIN) 여전히 미수정. `OrderController.deleteOrder`는 `userId` 파라미터 자체가 없어 소유권 검증 불가(`[20260826~20260901]` 7.6에서 이미 지적).
+- [ ] 6. **20260909 주간 리뷰 — 트러블 슈팅 일지 학습 내용 정정** (`[20260902~20260908]` 블록)
+	1. item 1 (`throws` vs `throw new`): "메서드 내부에서 고의로 예외 객체를 생성하면 선언부에 `throws`를 안 써도 된다"는 **틀림**. `throws` 필요 여부는 **checked/unchecked**만으로 결정. `throw new NotFoundException(...)`에 `throws`가 불필요한 건 `RuntimeException` 하위(unchecked)라서지 "고의 생성" 때문이 아님. `throw new IOException(...)`은 메서드 안에서 만들어도 `throws`가 강제됨. `throws`와 `throw`는 대체재가 아니라 별개(선언 절 vs 발생 문). 테스트 메서드의 `throws Exception`은 `mockMvc.perform(...)`가 checked `Exception`을 선언하기 때문이고 서비스의 `throw new`와 무관. 실제 메커니즘은 커스텀 예외가 전부 `RuntimeException`이라 콜스택을 타고 올라가 `@RestControllerAdvice`가 잡는 것.
+	2. item 3: 오타 `@ExtentWith` → `@ExtendWith`. "Controller에 한해서만 Mockito로 설정"은 부정확 — 컨트롤러는 실제 빈으로 스프링이 생성, 목이 되는 건 그 아래 `Service`뿐.
+	3. item 4: "스레드 배정 시점에 context 상자를 동시에 할당"은 부정확. `SecurityContext`는 필터가 만들고 채움(`SecurityContextHolderFilter` → `JwtAuthenticationFilter`), `ThreadLocal` 저장소는 항상 존재하며 "요청마다 할당"되는 게 아님. "MappingHandler" → `HandlerMapping`. "5. 기능이 스레드 하나에 할당됨" → business logic만 별도 배정이 아니라 필터~디스패처~컨트롤러~서비스 전체가 워커 스레드 하나의 콜 스택.
+	4. item 5: "MODE_THREAD" → `MODE_THREADLOCAL`. "clear 안 하면 CI에서 다른 테스트로 샌다"는 `@WebMvcTest`에선 성립 안 함 — `spring-security-test`의 `WithSecurityContextTestExecutionListener.afterTestMethod`가 모든 테스트 메서드 뒤에 무조건 `clearContext()` 호출(바이트코드 확인). 수동 clear는 격리 목적으론 중복. 실제 누수는 TestContext 없는 순수 단위테스트에서 `SecurityContextHolder` 직접 조작 시로 한정. CI 특정 문제 아님(원인=Gradle 워커 스레드 재사용). "mock session" 용어도 부정확(세션 아님, `SecurityContext`/`Authentication`).
+	5. item 2·6은 대체로 정확. item 6에 이번 `OrderUpdateDTO` 실패(단일 인자 `@AllArgsConstructor` → delegating creator → `InvalidDefinitionException`)를 사례로 넣으면 완결.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. **(최우선, 이월)** Docker & Kubernetes 학습 + `[20260826~20260901]` 미완성 CI/CD job("Docker build & push(Docker Hub) → EC2 배포") 실제 완성. 이번 주(`[20260902~20260908]`) 목표였으나 미착수 → 이월.
+- [ ] 2. 컨트롤러 테스트 보강(1번과 병행 가능): 예외 매핑 테스트(컨트롤러당 1+), `@Valid` 실패 400 테스트, `@Import(SecurityConfig.class)`+`addFilters=true`로 미인증 401·non-ADMIN 403 테스트(알려진 `SecurityConfig` 갭 회귀), `SecurityContext` 셋업 `.with(authentication(...))`로 통일, `any()` → `eq()`/`ArgumentCaptor`+`verify`. 상세 위 구현 기능 문제점 2~4번.
+- [ ] 3. `SecurityConfig` 갭 수정(사용자 직접): `/products/**` CUD·`GET /users` → ADMIN, `CartController.addCartItemInCart`에 `@Valid` 추가. 상세 위 구현 기능 문제점 5번.
+- [ ] 4. 위 1번(CI/CD 파이프라인) 완료 후 로드맵 다음 단계인 "상품 수량 로직"(재고 차감/복구 트랜잭션 + 주문 가격 서버 재조회) 착수 준비.
+
+[20260909 ~ 20260915]
+
+### 이번주 구현 목표
+- [ ] 1. 컨트롤러 예외 테스트 절반 분량 작성(대략 2~3개 컨트롤러) — 서비스가 `NotFoundException` 등 throw 시 `GlobalExceptionHandler` 매핑 검증(status/에러 바디) + `@Valid` 위반 → 400 테스트. 나머지 절반은 다음 주. 근거: `[20260902~20260908]` 구현 기능 문제점 2번.
+- [ ] 2. **(확정, 20260909)** Docker & Kubernetes 공부 착수 — 학기 시작으로 주당 가용 시간이 방학 대비 축소된 점을 반영해, "구현 완성"이 아니라 "이번 주 안에 반드시 학습을 시작"하는 것으로 목표를 하향 조정(사용자 확정). CI/CD job 실제 완성(Docker build & push → EC2 배포)은 학습이 어느 정도 된 이후로 이월.
+
+### 컴파일 및 디버깅 관련 문제
+- 없음 (이번 주 진행하며 갱신).
+
+### 구현 기능 관련 문제점
+- [ ] 1. **20260909 스케줄 조정(사용자 확정)** 학기 시작으로 주당 가용 개발 시간이 방학 대비 축소됨(사용자 언급). 이에 맞춰 이번 주 범위를 "컨트롤러 예외 테스트 절반 + Docker/K8s 학습 착수"로 축소. 무리한 범위보다 완주 가능한 범위를 우선. 로드맵 순서(테스트 → CI/CD 완성 → 상품 수량 로직 → SQL 튜닝)는 유지하되 각 단계 소요 기간을 늘려 잡음.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. 컨트롤러 예외 테스트 나머지 절반 + 인가 테스트(미인증 401 / non-ADMIN 403, `@Import(SecurityConfig.class)` + `addFilters=true`), `SecurityContext` 셋업 `.with(authentication(...))` 통일, `any()` → `eq()`/`verify`.
+- [ ] 2. `SecurityConfig` 갭 수정(사용자 직접): `/products/**` CUD·`GET /users` → ADMIN, `CartController.addCartItemInCart`에 `@Valid` 추가.
+- [ ] 3. Docker/K8s 학습 진척에 따라 CI/CD job "Docker build & push(Docker Hub) → EC2 배포" 완성.
+- [ ] 4. 그 뒤 로드맵: "상품 수량 로직"(재고 차감/복구 트랜잭션 + 주문 가격 서버 재조회).
