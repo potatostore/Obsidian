@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Frameworks & services/DB Migration (Flyway).md",
+                "file": "University/2-1/선형대수학.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DB Migration (Flyway)"
+              "title": "선형대수학"
             }
           }
         ],
@@ -112,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "기저",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,7 +136,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -261,6 +262,7 @@
   },
   "active": "cb4c2bc5886bad00",
   "lastOpenFiles": [
+    "Frameworks & services/DB Migration (Flyway).md",
     "Project/NIMDA/Error code 찾기.md",
     "Frameworks & services/Docker.md",
     "Project/NIMDA/Question.md",
@@ -268,7 +270,6 @@
     "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
     "University/2-1/컴퓨터구조.md",
     "Computer Science/OS(operate system).md",
-    "Frameworks & services/DB Migration (Flyway).md",
     "Project/NIMDA/NIMDA - 트러블 슈팅 일지.md",
     "Project/AWS/EC2(Amazon Elastic Compute Cloud).md",
     "Project/NIMDA",
