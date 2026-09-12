@@ -7,3 +7,8 @@
 .obsidian-agent/venv/
 .obsidian-agent/*.html
 .obsidian-agent/graph.json
+
+# Obsidian - working copy(mobile - iphone) Ignore
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace.json.bak
