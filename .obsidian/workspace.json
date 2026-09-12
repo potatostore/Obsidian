@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "University/2-1/선형대수학.md",
+                "file": "Project/NIMDA/Question.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "선형대수학"
+              "title": "Question"
             }
           }
         ],
@@ -112,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "기저",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,8 +136,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -262,12 +261,13 @@
   },
   "active": "cb4c2bc5886bad00",
   "lastOpenFiles": [
+    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
+    "University/2-1/선형대수학.md",
     "Frameworks & services/DB Migration (Flyway).md",
     "Project/NIMDA/Error code 찾기.md",
     "Frameworks & services/Docker.md",
     "Project/NIMDA/Question.md",
     "Frameworks & services/Kubernetes.md",
-    "Project/ShoppingMall/ShoppingMall - 트러블 슈팅 기록.md",
     "University/2-1/컴퓨터구조.md",
     "Computer Science/OS(operate system).md",
     "Project/NIMDA/NIMDA - 트러블 슈팅 일지.md",
@@ -287,7 +287,6 @@
     "Project/AWS/Create-EBS(Elastic Block Storage).md",
     "Project/AWS/Create-VPC-custom.md",
     "Project/AWS/Create-EFS(CLI version).md",
-    "Project/AWS/VPC(Virtual Private Cloud).md",
-    "Language/Java Script.md"
+    "Project/AWS/VPC(Virtual Private Cloud).md"
   ]
 }
