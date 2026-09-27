@@ -1,6 +1,9 @@
 ---
 tags:
   - seed
+  - type/concept
+  - domain/database
+  - domain/backend
 aliases: []
 created: 2026-08-11
 ---
@@ -188,3 +191,10 @@ Redis는 캐싱으로 DB 조회 성능을 높이는 방법인데, DB 성능을 �
 - 지금은 JWT refresh token 저장/조회/대조 용도로만 Redis를 쓰고 있다(RefreshTokenRepository).
 - Product 데이터를 Redis에 올려서 조회 성능을 높이는 것도 초기에 고려했으나, 수량(재고) 정보처럼 정합성이 민감한 데이터는 Cache-Aside + Write-Around 조합의 일관성 훼손 위험(5번)이 기능에 지장을 줄 수 있다고 판단해서 보류하고, 대신 조회만 하는 안정적인 데이터부터 캐싱하는 방향으로 다시 설계하기로 한 상태다.
 - docker-compose.yml에는 아직 redis 서비스가 명시적으로 추가되지 않았고, 현재는 로컬에 Homebrew로 띄운 Redis가 우연히 실행 중이라 동작하는 상태다 — [[Docker]] 노트의 Compose 예시에 있는 redis 서비스 블록을 실제로 추가하면 이 부분이 해결된다.
+
+> [!info]- 🔗 위키 연결
+> - 상위: [[데이터베이스 지도]]
+> - 수업: [[컴퓨터구조]] (메모리 계층, 0번) · [[운영체제]] (LRU·LFU 페이지 교체, 7번) · [[DB]]
+> - 개념: [[DB(DataBase)]] · [[트랜잭션]] (AOF와 WAL, 8번) · [[Skip List]] (Sorted Set, 3번) · [[Docker]] · [[Kubernetes]]
+> - 프로젝트: [[ShoppingMall - 트러블 슈팅 기록]]
+> - 경험: [[설계 단계에서 조회 흐름과 데이터 정합성을 먼저 따지기]]

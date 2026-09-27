@@ -1,6 +1,7 @@
 ---
 tags:
   - seed
+  - type/project
 aliases: []
 created: 2026-08-02
 ---

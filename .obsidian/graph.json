@@ -5,8 +5,58 @@
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"Hub\"",
+      "color": {
+        "a": 1,
+        "rgb": 15227148
+      }
+    },
+    {
+      "query": "path:\"University\"",
+      "color": {
+        "a": 1,
+        "rgb": 1867478
+      }
+    },
+    {
+      "query": "path:\"Algorithm\" OR path:\"Data Structure\" OR path:\"Computer Science\" OR path:\"Language\" OR path:\"Frameworks & services\" OR path:\"Project/AWS\"",
+      "color": {
+        "a": 1,
+        "rgb": 3120708
+      }
+    },
+    {
+      "query": "path:\"Project\"",
+      "color": {
+        "a": 1,
+        "rgb": 7358696
+      }
+    },
+    {
+      "query": "path:\"Experience\"",
+      "color": {
+        "a": 1,
+        "rgb": 16097024
+      }
+    },
+    {
+      "query": "path:\"-Calendar-\"",
+      "color": {
+        "a": 1,
+        "rgb": 8818326
+      }
+    },
+    {
+      "query": "path:\"Books\"",
+      "color": {
+        "a": 1,
+        "rgb": 12723548
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": 0,
@@ -17,6 +67,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.45618091016374474,
+  "scale": 1.5643094514648384,
   "close": true
 }

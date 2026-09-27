@@ -1,6 +1,7 @@
 ---
 tags:
   - seed
+  - type/project
 aliases: []
 created: 2026-08-07
 ---
@@ -8,7 +9,7 @@ created: 2026-08-07
 # 20260729 ~ 20260804
 전체적인 흐름을 잡았다.
 
-기본적으로 backend 구현은 spring boot를 통해 직접구현을, frontend구현은 추후에 claude와 같은 ai agent를 통해 구현을 할 계획이다.
+기본적으로 backend 구현은 [[Spring boot|spring boot]]를 통해 직접구현을, frontend구현은 추후에 claude와 같은 ai agent를 통해 구현을 할 계획이다.
 
 따라서 6개월의 기간을 목표로 잡고, backend -> frontend -> test -> 배포의 과정을 거칠 계획이다.
 
@@ -30,7 +31,7 @@ created: 2026-08-07
 	3. 외부 PG사와의 결제 기능을 추후에 넣을 예정인데, 이때 Long/BigInt를 기준으로 삼는 시스템이 많다.
 	4. MySQL의 BIGINT타입과 Long타입이 1:1로 대응된다.
 4. 데이터 체크 : 데이터를 체크할 때, string의 경우 npe + isblank의 조합으로 유효성 검증, 수량과 같은 정수는 npe + negative 조건문으로 확인 등 데이터 유효성 검증에 코드가 겹치는 경우가 발생하였고, 이를 Exception Handler처럼 따로 데이터 검증 클래스에 메서드로 구현하여 보일러 플레이트 코드를 최소화함.
-5. 단방향 / 양방향 매핑 엔티티 : JPA(Hibernate)를 통해 User는 user_id에 1:1매핑되는 카트를 객체로 갖게 하거나, cart는 cartitem을 1:N관계로 양방향 매핑하는 등의 관계를 구현하는 과정에서 필요한 어노테이션(Joincolumn, onetomany, onetoone 등)을 이해하고, orphanremoval과 같은 고아 객체 삭제, cascade 설정을 통한 영속성 전이(cartitem의 수정시 cartitemlist에 영향을 미치도록 설정), fetchtype.lazy를 통한 지연설정 등을 설정하고, 해당 설정 과정에서 totalprice와 같이 product의 업데이트에 따라 cartitem의 curproductitem 필드에 영향을 미쳐 totalprice가 변하는 방식등을 어느 부분에서 이뤄지도록 할 것인지 설정하였다.
+5. 단방향 / 양방향 매핑 엔티티 : [[ORM(Oriented Relational Mapping)|JPA(Hibernate)]]를 통해 User는 user_id에 1:1매핑되는 카트를 객체로 갖게 하거나, cart는 cartitem을 1:N관계로 양방향 매핑하는 등의 관계를 구현하는 과정에서 필요한 어노테이션(Joincolumn, onetomany, onetoone 등)을 이해하고, orphanremoval과 같은 고아 객체 삭제, cascade 설정을 통한 영속성 전이(cartitem의 수정시 cartitemlist에 영향을 미치도록 설정), fetchtype.lazy를 통한 지연설정 등을 설정하고, 해당 설정 과정에서 totalprice와 같이 product의 업데이트에 따라 cartitem의 curproductitem 필드에 영향을 미쳐 totalprice가 변하는 방식등을 어느 부분에서 이뤄지도록 할 것인지 설정하였다.
 
 
 # 20260805 ~ 20260811
@@ -44,7 +45,7 @@ created: 2026-08-07
 
 #### 트러블
 1. 데이터 유효성 : 전 주에 데이터 유효성을 한 클래스에 메서드로 구현하여 보일러 플레이트 코드를 줄이려고 노력했는데, 이전에 구현된 Entity & dto에 적용안된 코드들이 다수 존재했고, 이를 수정함. 따라서 앞으로는 중간에 특정 기능을 대체하는 코드를 구현하게 될 경우, 이전 코드들을 즉각적으로 리펙토링하는 습관이 필요
-2. cart 정보 조회 문제 : cart정보를 조회하여 장바구니 확인 -> 주문 생성 + 결제의 흐름으로 시나리오를 설계하였지만, 이 과정에서 문제가 발생함. cart정보를 조회하는 과정에서 cartItem의 curProductPrice와 같은 값들을 productId와 매핑하여 갱신하도록 할 계획이였지만, 이는 큰 딜레이를 가져오게됨. 따라서 redis와 같은 인메모리에 curProductPrice를 직접적으로 저장하는 방식이 아닌, product정보를 올리고, 이를 productId로 조회만 할 수 있도록 하여 CUD의 작업을 최소화하는 방식으로 구현할 수 있도록 목표를 새로 잡았고, redis를 사용해본 경험이 전무하기 때문에, 이를 이해하고, 구현할 수 있도록 다음 주에 진행할 예정(설계의 중요성을 다시 한번 파악함)
+2. cart 정보 조회 문제 : cart정보를 조회하여 장바구니 확인 -> 주문 생성 + 결제의 흐름으로 시나리오를 설계하였지만, 이 과정에서 문제가 발생함. cart정보를 조회하는 과정에서 cartItem의 curProductPrice와 같은 값들을 productId와 매핑하여 갱신하도록 할 계획이였지만, 이는 큰 딜레이를 가져오게됨. 따라서 [[Redis|redis]]와 같은 인메모리에 curProductPrice를 직접적으로 저장하는 방식이 아닌, product정보를 올리고, 이를 productId로 조회만 할 수 있도록 하여 CUD의 작업을 최소화하는 방식으로 구현할 수 있도록 목표를 새로 잡았고, redis를 사용해본 경험이 전무하기 때문에, 이를 이해하고, 구현할 수 있도록 다음 주에 진행할 예정(설계의 중요성을 다시 한번 파악함)
 3. 결제 방식 : kakaopay, tosspay 등의 PG사의 api를 통한 결제를 진행하도록 목표를 잡았는데, 요청과 받는 응답을 처리하는 기능 등을 구현하는게 너무 복잡함. 따라서 다음 주에는 tosspay를 기준으로 결제를 진행하도록 목표를 잡음.
 4. api url 설계 : url은 접근할 자원의 경로를 적어주는 것이기에 create나 get 등의 기능적인 단어를 넣지 않음.
 -> 다음주 개발 목표에 redis + tosspay를 추가하고, 기본적인 쇼핑몰의 틀이 잡히게 되면, next.js를 통한 webserver 구현 + ui기본적인 틀을 짜는 방향으로 진행. 이후에는 CI/CD와 docker + kubernetes를 추가하여 백엔드의 추가되는 기능과 이에 대한 ui를 github action으로 배포하는 것을 연습할 계획
@@ -147,7 +148,7 @@ sequenceDiagram
 	위 주의사항을 바탕으로 다음과 같은 순서로 개발하는 것이 매우 편했다.
 	- dto 구현 : toss dev api guide에 따르면 결제가 성공했을때에는 payment, 실패한 경우는 error 객체를 반환하니까, 가이드에 따라 record를 만들어 관리
 	- api key 발급 및 url 적용 : api key를 발급받아 환경변수에 적용하고, 가이드에 따른 url을 설정한다.
-	- 기능 개발 : 결제 과정에서 WAS가 진행해야 하는 기능들을 기능별로 service 레이어에 구현. 현재 수량 차감 기능이 구현되지 않았는데, 추후에 리펙토링하면서 수량 차감 기능을 트랜잭션으로 구현해야 함.
+	- 기능 개발 : 결제 과정에서 WAS가 진행해야 하는 기능들을 기능별로 service 레이어에 구현. 현재 수량 차감 기능이 구현되지 않았는데, 추후에 리펙토링하면서 수량 차감 기능을 [[트랜잭션]]으로 구현해야 함.
 	payment과정을 진행하면서 흐름을 알더라도 암호화나 각 흐름별 기능들을 어떤식으로 구현해야 하는지 막막했고, 이는 LLM의 도움을 적극적으로 받음. 추후에 다른 PG사와의 결제 연동을 구현할 때(kakaopay, naverpay 등), 카피코드를 통해 얻은 경험으로 적은 LLM의 도움으로 구현할 수 있을거라고 판단했기 때문이다.
 10. Service 레이어 구현 : service레이어에서 다른 service를 참조했는데, 서로를 참조하는 경우가 발생했고, 이때 순환 참조 문제가 발생하며 오류(BeanCurrentlyInCreationException)가 발생했었음. 따라서 service레이어에서 해당 Entity가 아닌 다른 Entity를 건드려야 하는 경우, service를 참조하는것과 repository를 참조하는 것이 BeanCurrentlyInCreationException오류를 유발하고, 성능차이가 발생하지 않는 것을 인지하고, repository를 참조할 수 있도록 구현함.
 11. 기타 버그 : patch/delete order에서 소유권 검증(권한 검증 + 사용자 권한이여도 해당 주문내역에 대한 소유권이 존재하는지 판단) 로직이나 securityconfig의 /users/** 추가(모든 개인 정보를 조회하거나 변경하는 작업에 jwt를 통한 인증이 필요하기에 추가), hasRole 규칙 순서를 후순위에 두어 규칙이 무효화된 점을 규칙 순서 교체로 고침 등이 존재함.
@@ -168,10 +169,10 @@ sequenceDiagram
 	2. 상품 재고 관리 : 상품 엔티티 컬럼에 재고항목이 존재하지 않고, 특히 결제 진행시 트랜젝션을 통해 재고 처리의 원자성을 보장할 수 있어야 하는데, 트랜잭션 어노테이션을 부여했음에도 재고처리를 하는 로직 자체를 구현하지 않음
 	3. jwt : 초반에는 url을 통해 userId를 제공받아 로직을 처리하다가, jwt를 도입한 후, userId를 서블렛 컨테이너 필터 체인을 통해 디코딩하여 얻는 방식으로 바꿨는데, 일부분에서 jwt를 통해 userId를 받는 방식이 아닌 구방식을 유지하는 것을 보임, 따라서 이를 서블릿 컨테이너 체인 필터(spring security의 전처리 부분)을 통해 userId를 얻는 방식으로 통일
 	4. user password : 프로필 수정 시 비밀번호도 동시에 수정가능하도록 구현하였는데, 이는 프로필 변경 시 매번 비밀번호를 보내는 행위이므로, 보안상의 이유로 제외하였고, 따라서 비밀번호만 변경 가능한 페이지(혹은 프로필 변경 밑에 칸을 구현할 예정)를 통해 수정할 수 있도록 변경해야 한다.
-2. docker : docker 공부를 ci/cd 후순위로 밀어놓고, docker-compose 설정파일을 통해 mysql과 webserver을 간단하게 띄우기만 하는 정도로 작성을 하였다. 이 과정에서 mysql의 dbms의 작동방식(pid를 통한 백그라운드에서 포트를 열고 있어서 초기화를 하지 못해 응답을 받지 못하는 상태가 유지됨)으로 인한 문제가 발생해 어려움을 겪고, docker 설정파일을 LLM의 도움 없이 수동으로 작성하는 방법을 몰라 어려움을 겪음. (추후에 docker와 kubernetes를 학습한 후 설정 파일을 건드리는 작업도 진행할 예정)
+2. [[Docker|docker]] : docker 공부를 ci/cd 후순위로 밀어놓고, docker-compose 설정파일을 통해 mysql과 webserver을 간단하게 띄우기만 하는 정도로 작성을 하였다. 이 과정에서 mysql의 dbms의 작동방식(pid를 통한 백그라운드에서 포트를 열고 있어서 초기화를 하지 못해 응답을 받지 못하는 상태가 유지됨)으로 인한 문제가 발생해 어려움을 겪고, docker 설정파일을 LLM의 도움 없이 수동으로 작성하는 방법을 몰라 어려움을 겪음. (추후에 docker와 kubernetes를 학습한 후 설정 파일을 건드리는 작업도 진행할 예정)
 3. web-server(Next.js)구축 : 사실 js를 알고, html&css를 알고 있어도, 이걸 직접 코드로 구현하고, 테스트용 쇼핑몰 ui를 만든다는 것은 굉장히 시간이 오래 걸릴 것으로 판단하였다. 특히 ui를 제작하는데 경험이 많지도 않으면서 단순 반복작업이 요구되는 부분들은 claude를 통해 ui(html&css)를 작성할 수 있도록 요구하였고, js코드를 작성할때에도 많은 부분에서 claude의 도움을 받았다. ui는 전적으로 claude에게 맡길 것이며, webserver의 구현 자체는 되도록 꼼꼼히 읽으며 어떤 부분들이 어떤식으로 백엔드와 작동해서 어떤 결과를 만들어 내는지 등을 확인할 계획이다.(ci/cd 및 docker, kubernetes, kafka, redis, prometheus/loki, ngrinder 등 현재 계획된 로드맵과 쇼핑몰의 기능 수정은 손수 코드 구현할 계획)
 4. AWS : 간단하게 IAM으로 역할 및 사용자를 설정하고, EC2FullAccess를 줘서 EC2관리용 사용자 계정을 만드려고 했는데, 배운지 1년이 넘도록 한번도 사용하지 않으니 매우 어려웠고, obsidian으로 정리한 [[IAM]]과 claude에게 질문하면서 해결할 수 있었음. 정리 습관을 들인것은 좋은데 좀 더 꼼꼼하게 할 필요가 있다고 느꼈다. 
-5. AWS-EC2 속도 : 현재 t4g.small + 20GB volume의 인스턴스에 3개의 서버(webserver + spring server + db server)을 올리려니 속도가 매우 느려지는 것을 확인할 수 있었고, 특히나 사용자 체감시간으로 1초가 넘어가면 큰 불편함으로 다가온다는데, 트래픽을 분당 1000건으로 넣기 시작하면 매우매우 불편할 것으로 판단함. 따라서 로드맵을 일부 수정하여 다음과 같은 로드맵을 거칠 것 같다.
+5. AWS-[[EC2(Amazon Elastic Compute Cloud)|EC2]] 속도 : 현재 t4g.small + 20GB volume의 인스턴스에 3개의 서버(webserver + spring server + db server)을 올리려니 속도가 매우 느려지는 것을 확인할 수 있었고, 특히나 사용자 체감시간으로 1초가 넘어가면 큰 불편함으로 다가온다는데, 트래픽을 분당 1000건으로 넣기 시작하면 매우매우 불편할 것으로 판단함. 따라서 로드맵을 일부 수정하여 다음과 같은 로드맵을 거칠 것 같다.
 	1. 매주 한 개 이상의 기능에 대한 리펙토링 혹은 개선이 추가됨(다음주는 ci/cd + docker/kubernetes로 인해 다담주부터 진행 될 예정)
 	2. (CI/CD -> docker/kubernetes) -> redis -> prometheus/loke -> ngrinder -> sql tuning의 순서를 거치는 것이 좋아보인다. 특히 트래픽이 과부화되었을 경우 aws 오토스케일링 및 로드밸런서 설정을 통해 트래픽 분산 서버를 동적으로 생성하거나, 서버 자체의 로직을 리펙토링(sql 튜닝을 거치거나 등)하여 속도나 서버가 감당할 수 있도록 제작하는 것에 초점을 최대한 두면서 기능을 추가하려고 한다.
 6. github actions : ci/cd에서 github actions를 통해 어떤 방식으로 테스트가 이뤄지고, 검증이 이뤄지는지 대충 파악은 하였지만, 좀 더 자세하게 파악할 필요가 있다고 느낌.
@@ -223,3 +224,10 @@ controller test code가 생각보다 길어지고, 특히 저번주까지 구현
 #### 금주 할 일
 - [ ] controller 예외 테스트 코드 작성
 - [ ] docker & k8s 공부 조금이라도 하기
+
+> [!info]- 🔗 위키 연결
+> - 상위: [[프로젝트]]
+> - 수업: [[DB]] (3-1)
+> - 개념: [[Spring boot]] · [[ORM(Oriented Relational Mapping)|ORM(JPA)]] · [[Redis]] · [[트랜잭션]] · [[무결성 제약조건]] · [[Docker]] · [[CI-CD(GitHub Actions)]] · [[IAM]] · [[EC2(Amazon Elastic Compute Cloud)|EC2]]
+> - 경험: [[설계 단계에서 조회 흐름과 데이터 정합성을 먼저 따지기]] · [[대체 코드를 만들면 기존 코드도 바로 리팩터링하기]] · [[AI 에이전트 지시문은 충돌을 점검하고 시험 실행하기]] · [[LLM에 맡길 부분과 직접 구현할 부분을 나누기]] · [[컨테이너가 떴다고 DB가 준비된 것은 아니다]] · [[배운 내용은 나중에 다시 꺼내 쓸 수 있게 꼼꼼히 정리하기]]
+> - 관련: [[copilot-addendum]] (AI 에이전트의 주간 점검 기록)

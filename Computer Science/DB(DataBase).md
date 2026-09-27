@@ -1,6 +1,8 @@
 ---
 tags:
   - seed
+  - type/concept
+  - domain/database
 aliases: []
 created: 2025-10-09
 ---
@@ -51,3 +53,8 @@ RDB의 핵심 요소는 바로 키(Key)이다. key가 중요한 이유는 동일
 - NoSQL - MongoDB
 
 이정도?
+
+> [!info]- 🔗 위키 연결
+> - 상위: [[데이터베이스 지도]]
+> - 수업: [[DB]] (3-1)
+> - 개념: [[SQL]] · [[트랜잭션]] · [[무결성 제약조건]] · [[ORM(Oriented Relational Mapping)|ORM]] · [[Redis]] · [[MongoDB]]

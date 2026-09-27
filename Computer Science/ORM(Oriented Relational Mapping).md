@@ -1,6 +1,8 @@
 ---
 tags:
   - seed
+  - type/concept
+  - domain/database
 aliases: []
 created: 2025-10-09
 ---
@@ -77,3 +79,8 @@ DB schema : json
 	일반 컴파일러처럼 mapping에 오류가 존재한다고 알린다, 예외처리 혹은 위 2개의 방식으로 유도.
 
 객체 지향 프로그래밍이 점점 많아지고, 사용되는 추세에 ORM은 필수 개념이다. class의 객체와 DB가 어떤 방식으로 Mapping되어 저장되는지 확인하면, 추후에 DB를 연결하여 사용할 때, 발생하는 Mapping오류들을 보다 쉽게 처리할 수 있다.
+
+> [!info]- 🔗 위키 연결
+> - 상위: [[데이터베이스 지도]]
+> - 개념: [[DB(DataBase)]] · [[무결성 제약조건]]
+> - 프로젝트: [[ShoppingMall - 트러블 슈팅 기록]] (JPA/Hibernate로 엔티티 매핑)
