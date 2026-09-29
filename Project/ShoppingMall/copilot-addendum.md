@@ -221,6 +221,8 @@ created: 2026-08-02
 - [ ] 3. Docker/K8s 학습 진척에 따라 CI/CD job "Docker build & push(Docker Hub) → EC2 배포" 완성.
 - [ ] 4. 그 뒤 로드맵: "상품 수량 로직"(재고 차감/복구 트랜잭션 + 주문 가격 서버 재조회).
 
+---
+
 [20260916 ~ 20260922]
 
 ### 이번주 구현 목표
@@ -239,3 +241,58 @@ created: 2026-08-02
 - [ ] 1. 컨트롤러 예외/인가 테스트 마무리(이월).
 - [ ] 2. 테스트 코드 마무리 후 JWT 로그인/로그아웃 인증 방식 심화 착수 — 구체 범위(access token 블랙리스트·로그아웃 쿠키 삭제 버그 포함 여부 등)는 착수 시점에 사용자와 재확정.
 - [ ] 3. Docker/Kubernetes 학습 및 CI/CD 배포 자동화는 보류 — 추후 "Deploy" 단계에서 재도입.
+---
+
+[20260923 ~ 20260929]
+
+### 이번주 구현 목표
+- [/] 1. 컨트롤러 예외/인가 테스트 마무리(`[20260916~20260922]` 이월) — **20260929 확인**: 맥미니 저장소 기준 모든 브랜치(GitHub 원격과 동일)에서 `*ControllerTest.java`가 4줄짜리 빈 클래스. `[20260902~20260908]`에서 통과 확인한 컨트롤러 테스트 25개와 `OrderUpdateDTO` `@NoArgsConstructor` 수정이 **다른 컴퓨터에 커밋/푸시되지 않은 채 남아 있음**(사용자 확인). 이번 주 신규 진척은 확인 불가 → `[20260930~20261006]` Phase 0에서 회수 후 Phase 2에서 마무리.
+- [x] 2. **(신규, 20260929)** 맥미니 로컬 개발 환경 구성: Colima 0.10.3 + Docker Compose 5.5.1 설치, `docker-compose.yml`에 `redis` 서비스 추가(`backend`에 `depends_on: redis`, `SPRING_DATA_REDIS_HOST=redis`), `docker compose up -d db redis` 후 MySQL(`mysqld is alive`, `mall_db` 생성)·Redis(`PONG`) 동작 확인, 프론트 `npm ci` 완료. 사용자 요청으로 Copilot이 직접 적용(브랜치 `fix/env`, 미커밋).
+- [x] 3. **(신규, 20260929)** 전체 작업 백로그 정리 및 주 단위 페이즈 플랜 확정(사용자 승인) — 상세는 `[20260930~20261006]` 블록.
+
+### 컴파일 및 디버깅 관련 문제
+- [x] 1. **20260929** `docker compose up -d db redis` → `unknown shorthand flag: 'd' in -d`. 원인: Homebrew `docker` formula는 CLI만 설치됨. compose 플러그인이 없어 `compose`를 하위 명령으로 인식하지 못하고 `-d`가 docker 본체 옵션으로 파싱됨. 컨테이너 엔진(daemon)도 없음(`/var/run/docker.sock` 연결 실패). 해결: `brew install colima docker-compose` → `~/.docker/config.json`에 `cliPluginsExtraDirs: ["/opt/homebrew/lib/docker/cli-plugins"]` 등록 → `colima start --cpu 2 --memory 4`. 재부팅 후에는 `colima start`를 다시 실행해야 함(자동 시작은 `brew services start colima`, 미적용).
+- [x] 2. **20260929** `npm run dev` → `ENOENT ... /Users/potatostore/ShoppingMall/package.json`. 원인: 저장소 루트에서 실행함(`package.json`은 `frontend/shopping-mall-web/`에 있음) + `node_modules` 미설치. 해결: 해당 디렉터리에서 `npm ci`. 참고: npm 11 `allowScripts` 정책으로 `sharp`/`unrs-resolver` install script가 스킵됨(arm64 `sharp` 바이너리는 설치돼 있어 현재 영향 없음).
+- [ ] 3. **20260929** `Port 3000 is in use` + `Unable to acquire lock at .next/dev/lock`. 원인: 이전 `npm run dev`를 Ctrl+C가 아니라 **Ctrl+Z(일시정지)**로 멈춤 → `npm`/`next dev`/`next-server` 3개 프로세스가 `STAT T`(Stopped) 상태로 포트와 lock 파일을 계속 점유. 해결: 원래 터미널에서 `fg` 후 Ctrl+C(권장), 또는 `pkill -9 -f "next dev|next-server"`(lock이 남으면 `rm .next/dev/lock`). 3001번으로 뜨면 백엔드 `@CrossOrigin("http://localhost:3000")` 때문에 CORS 실패하므로 반드시 3000번 사용.
+- [ ] 4. **20260929 (빌드 실패 예정)** `build.gradle`(fix/env, 미커밋)의 `org.flywaydb:flyway-database-mysql`는 Spring Boot 3.3.11 BOM(`spring-boot-dependencies`)에 없는 아티팩트 → 버전 미지정으로 의존성 해석 실패. 올바른 아티팩트는 `org.flywaydb:flyway-mysql`(Flyway 10부터 MySQL 지원이 `flyway-core`에서 분리됨).
+- [ ] 5. **20260929 (기동 실패 예정)** Flyway를 classpath에 올린 채 V1 스크립트 없이 Hibernate가 이미 테이블을 만든 DB에 붙으면 "non-empty schema without schema history table"로 앱 기동 실패. V1 작성 전까지 `spring.flyway.enabled: false` 필요.
+
+### 구현 기능 관련 문제점
+- [ ] 1. **(치명, 20260929)** 위 이번주 구현 목표 1번 — 컨트롤러 테스트 25개와 `OrderUpdateDTO` 수정이 다른 컴퓨터에만 존재. 방치 시 유실 위험. Phase 0 최우선.
+- [ ] 2. **(20260929) 컴퓨터마다 DB가 달라 목데이터 공유 불가** — 결론: 공유 DB(클라우드·Tailscale)가 아니라 seed as code. Flyway로 스키마를 `db/migration/V__`에서 버전 관리하고, 목데이터는 `db/seed/R__`(반복 실행 파일, idempotent)로 분리해 local 프로파일에서만 실행. 근거: ① 목데이터를 `V__`에 넣으면 운영 DB에도 적용됨, ② `V__`는 적용 후 수정하면 checksum 불일치로 기동 실패, ③ `ddl-auto: update` 상태에서 여러 컴퓨터가 DB 하나를 공유하면 브랜치별 스키마 충돌 발생. MySQL `docker-entrypoint-initdb.d`는 Hibernate가 테이블을 만들기 전에 실행되므로 현 구조에서 사용 불가.
+- [ ] 3. **(20260929) Redis 캐싱 대상 결정** — P0: `ProductService.getProduct(id)`(`@Cacheable` + patch/put/delete 시 `@CacheEvict`, TTL 30분). P1: 페이지네이션 도입 후 상품 목록, access token 블랙리스트. P2: 최근 본 상품(List), 최근 검색어·랭킹(Sorted Set). 캐싱 제외: Order/Payment/Cart/User. 적용 시 주의: ① 기본 JDK 직렬화는 DTO에 `Serializable` 필요, `GenericJackson2JsonRedisSerializer`는 `.toList()` 결과(`ImmutableCollections$ListN`) 역직렬화 불가 → 캐시별 `Jackson2JsonRedisSerializer` 사용, ② `transactionAware()`로 evict를 커밋 이후로, ③ `LoggingCacheErrorHandler` + `spring.data.redis.timeout: 500ms`(기본 60초) 없으면 Redis 장애 시 API 전체 장애, ④ `@CachePut` 대신 `@CacheEvict`(아래 4번 버그 때문에 반환 DTO를 신뢰할 수 없음).
+- [ ] 4. **(20260929) `Product.patchProduct`/`putProduct` 상세 목록 교체 버그** — 새 `ProductDetail`에 `assignProduct(this)` 미호출로 `product_id`가 null로 저장될 수 있음. `putProduct`는 `orphanRemoval = true` 컬렉션을 불변 `toList()`로 통째로 교체해 Hibernate 예외 가능.
+- [ ] 5. **(20260929) Refresh Token 저장 이유 정리 + 관련 결함** — 저장 목적은 무효화(로그아웃, 탈취 대응, 비밀번호 변경 시 전체 세션 종료, rotation 재사용 탐지). stateless refresh면 7일짜리 access token과 보안상 동일. 현재 결함: ① **재발급 API 부재** — `RefreshTokenRepository.matches()` 호출처 0개, 저장만 하고 미사용, 그래서 access token 만료를 7일로 늘려 버티는 구조, ② `logOut`이 쿠키를 만료시키지 않음(기존 지적 재확인), ③ 키가 `refresh-token:{userId}` 하나라 단일 디바이스 정책(의도 여부 결정 필요).
+- [ ] 6. **(20260929)** `frontend/shopping-mall-web/src/lib/api.ts`의 `process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api/v1"` — compose가 미설정 변수를 빈 문자열로 주입하는데 `??`는 빈 문자열이면 기본값으로 대체하지 않음 → `CLIENT_API_URL = ""` → 요청이 `:3000`으로 가서 404. `||`로 변경 필요. (참고: EC2 IP는 코드에 없고 git 미추적 `.env`에만 있었음 → 로컬 전환에 코드 변경 불필요)
+- [ ] 7. **(20260929)** 테스트 소스 `src/test/.../controller/ProductController.java`가 main의 `ProductController`와 FQN이 동일 → `ProductControllerTest`로 이름 변경 필요.
+- [ ] 8. **(스케줄 조정, 사용자 확정 20260929)** ① `[20260916~20260922]`에서 확정한 "테스트 → JWT 심화" 순서를 **"테스트 → Flyway 스키마 → 목데이터 → JWT 심화"**로 변경(근거: 로드맵 현재 단계가 "데이터 스키마 작성"이고, JWT 심화는 스키마 변경이 없어 뒤로 가도 충돌 없음). ② 컨트롤러 테스트(예외 매핑·`@Valid` 400·인가 401/403·품질 정리)는 **전부 완료 후** 다음 단계로 진행. ③ 주당 가용 시간 5~10시간 → 1주 = 1페이즈. ④ CD(Docker/K8s)는 계속 Deploy 단계로 보류.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. `[20260930~20261006]` 블록의 Phase 0 참조.
+
+---
+
+[20260930 ~ 20261006]
+
+### 이번주 구현 목표
+- [ ] 1. **(Phase 0, 최우선)** 다른 컴퓨터에서 `git status`/`git stash list` 확인 → 컨트롤러 테스트 25개 + `OrderUpdateDTO` 수정을 브랜치로 커밋·푸시 → 맥미니에서 `./gradlew test` 전체 통과 확인(Copilot 검증).
+- [ ] 2. `build.gradle`의 `flyway-database-mysql` → `flyway-mysql`, `application.yml`에 `spring.flyway.enabled: false`(Phase 3에서 켬).
+- [ ] 3. `api.ts`의 `??` → `||`, 테스트 파일명 `ProductController` → `ProductControllerTest`.
+- [ ] 4. `fix/env` 커밋(redis compose + 위 2·3번) → PR → CI `build-and-test` 통과 → main 머지.
+- [ ] 5. 로컬 E2E 완주: IntelliJ Run Configuration에 `JWT_SECRET_KEY`(`openssl rand -base64 32`)·`TOSS_SECRET_KEY`(프론트 `test_ck_...`와 같은 상점의 `test_sk_...`) 설정 → `npm run dev`(3000번) → Chrome `http://localhost:3000`에서 회원가입 → 로그인 → 상품 등록·수정 → 장바구니 → 주문 → 토스 결제. 실패 지점을 목록으로 남김(Phase 1 입력값).
+- 종료 조건: 맥미니에서 `./gradlew test` 전체 통과(컨트롤러 25개 포함) + E2E 결과 목록 확보.
+
+### 컴파일 및 디버깅 관련 문제
+- 없음 (이번 주 진행하며 갱신).
+
+### 구현 기능 관련 문제점
+- 없음 (이번 주 진행하며 갱신).
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. **Phase 1 (20261007~20261013) 버그 수정 + 회귀 테스트**: ① `SecurityConfig` 갭(`/products/**` CUD·`GET /users` → ADMIN, 중복 matcher 줄 제거) — 인가 테스트(401/403, `@Import(SecurityConfig.class)`, `addFilters=true`)를 먼저 작성해 실패 재현 후 수정, ② `Product` 상세 목록 교체 버그 — `@DataJpaTest` 회귀 테스트, ③ `CartController.addCartItemInCart`에 `@Valid`, ④ `OrderUpdateDTO`(회수 안 된 경우만), ⑤ Phase 0 E2E 실패 항목. 종료 조건: E2E 상품 수정 단계까지 통과.
+- [ ] 2. 이후 확정 로드맵(주차는 진행에 따라 재조정, 순서는 사용자 확정):
+	1. **Phase 2 (20261014~20261020)** 컨트롤러 테스트 마무리: 예외 매핑(`thenThrow` → `GlobalExceptionHandler`) 컨트롤러별 1개 이상 + `@Valid` 400, `.with(authentication(...))` 통일, `any()` → `eq()`/`verify`, 매직값 정리. 종료 조건: `[20260902~]`부터 이월된 테스트 항목 전부 `[x]`.
+	2. **Phase 3 (20261021~20261027)** Flyway 스키마: V/R·checksum·baseline·validate 학습(트러블 슈팅 일지 → Copilot 정확성 검토) → `db/migration/V1__init_schema.sql`(Phase 1 엔티티 수정 이후 기준) + `ddl-auto: validate` + Flyway 활성화, 테스트 프로파일은 `spring.flyway.enabled: false` 유지(H2 + `create-drop`), 로컬 DB 초기화 후 기동 확인.
+	3. **Phase 4 (20261028~20261103)** 목데이터: `db/seed/R__seed_mock_data.sql`(고정 ID + `ON DUPLICATE KEY UPDATE`, 테스트 계정은 미리 만든 bcrypt 해시) + `application-local.yml`의 `spring.flyway.locations`에 seed 포함 + `SPRING_PROFILES_ACTIVE=local`. 종료 조건: 맥미니와 다른 컴퓨터 양쪽에서 같은 데이터로 E2E 통과.
+	4. **Phase 5 (20261104~20261117, 2주)** JWT 심화: `POST /auth/reissue` + rotation → access token 30분 원복 → 로그아웃 쿠키 만료 → Redis access token 블랙리스트 → 멀티 디바이스 정책 결정. 각 항목에 테스트 추가.
+	5. **Phase 6 이후** Redis `getProduct` 캐시 → 상품 목록 페이지네이션 → 상품 수량 로직 + `deleteOrder` 소유권 → Redis 자료구조 기능 → (Deploy 단계) CD / 모니터링 + 대량 목데이터.
