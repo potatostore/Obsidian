@@ -225,9 +225,26 @@ controller test code가 생각보다 길어지고, 특히 저번주까지 구현
 - [ ] controller 예외 테스트 코드 작성
 - [ ] docker & k8s 공부 조금이라도 하기
 
-> [!info]- 🔗 위키 연결
-> - 상위: [[프로젝트]]
-> - 수업: [[DB]] (3-1)
-> - 개념: [[Spring boot]] · [[ORM(Oriented Relational Mapping)|ORM(JPA)]] · [[Redis]] · [[트랜잭션]] · [[무결성 제약조건]] · [[Docker]] · [[CI-CD(GitHub Actions)]] · [[IAM]] · [[EC2(Amazon Elastic Compute Cloud)|EC2]]
-> - 경험: [[설계 단계에서 조회 흐름과 데이터 정합성을 먼저 따지기]] · [[대체 코드를 만들면 기존 코드도 바로 리팩터링하기]] · [[AI 에이전트 지시문은 충돌을 점검하고 시험 실행하기]] · [[LLM에 맡길 부분과 직접 구현할 부분을 나누기]] · [[컨테이너가 떴다고 DB가 준비된 것은 아니다]] · [[배운 내용은 나중에 다시 꺼내 쓸 수 있게 꼼꼼히 정리하기]]
-> - 관련: [[copilot-addendum]] (AI 에이전트의 주간 점검 기록)
+``` title='controller 테스트 코드 케이스'
+요청
+ │
+ ├─ ① 필터 체인 (Spring Security: JwtAuthenticationFilter → 인가 검사)
+ │     └─ 401/403은 여기서 끝남 → SecurityConfig의 entry point가 응답
+ │        (DispatcherServlet까지 가지 않음 → GlobalExceptionHandler와 무관)
+ ▼
+DispatcherServlet
+ ├─ HandlerMapping: URL + HTTP 메서드로 컨트롤러 메서드 찾기
+ ├─ HandlerAdapter: 컨트롤러에 넘길 파라미터 만들기
+ │     ├─ JSON → DTO 변환 실패 → HttpMessageNotReadableException   ②
+ │     └─ @Valid 검증 실패    → MethodArgumentNotValidException    ②
+ │        (②는 컨트롤러 본문이 실행되기 전이라 서비스가 호출조차 안 됨)
+ ├─ 컨트롤러 메서드 실행 → 서비스 호출
+ │     └─ 서비스가 NotFoundException 등을 throw                    ③
+ │        컨트롤러에는 try-catch가 없으니 예외가 그대로 위로 올라감
+ ▼
+DispatcherServlet이 예외를 받아 HandlerExceptionResolver에 넘김
+ └─ GlobalExceptionHandler(@RestControllerAdvice)에서 맞는 메서드 선택
+      → ResponseEntity(상태코드 + ApiResponse.error(...)) → JSON 응답
+```
+
+# 20260930 ~ 20261006
