@@ -324,3 +324,33 @@ created: 2026-08-02
 	3. **Phase 4 (20261028~20261103)** 목데이터: `db/seed/R__seed_mock_data.sql`(고정 ID + `ON DUPLICATE KEY UPDATE`, 테스트 계정은 미리 만든 bcrypt 해시) + `application-local.yml`의 `spring.flyway.locations`에 seed 포함 + `SPRING_PROFILES_ACTIVE=local`. 종료 조건: 맥미니와 다른 컴퓨터 양쪽에서 같은 데이터로 E2E 통과.
 	4. **Phase 5 (20261104~20261117, 2주)** JWT 심화: `POST /auth/reissue` + rotation → access token 30분 원복 → 로그아웃 쿠키 만료 → Redis access token 블랙리스트 → 멀티 디바이스 정책 결정. 각 항목에 테스트 추가.
 	5. **Phase 6 이후** Redis `getProduct` 캐시 → 상품 목록 페이지네이션 → 상품 수량 로직 + `deleteOrder` 소유권 → Redis 자료구조 기능 → (Deploy 단계) CD / 모니터링 + 대량 목데이터.
+---
+
+[20261007 ~ 20261013]
+
+### 이번주 구현 목표
+- [ ] 1. (Phase 0 이월) main application.yml에 spring.flyway.enabled: false 추가 — 20261007 사용자 로컬 반영 확인(fix/env, 미커밋). 아래 컴파일 및 디버깅 관련 문제 1번 정리 후 커밋 → PR → CI 통과 → main 머지.
+- [ ] 2. (Phase 0 이월) 로컬 E2E 완주 및 실패 지점 목록 작성 — 트러블 슈팅 기록 [20260930 ~ 20261006] 블록이 비어 있어 미확인. 아래 구현 기능 관련 문제점 5번(find-id, find-password)은 실패 예상 항목.
+- [ ] 3. (Phase 1, 20261007 사용자 확정) SecurityConfig 인가 규칙 재구성을 먼저 진행하고 인가 테스트(401/403)는 후순위로 미룸. 수정 목록은 아래 구현 기능 관련 문제점 2번.
+- [ ] 4. (Phase 1, 3번과 같은 PR 권장) 회원가입 role 서버 고정 — 아래 구현 기능 관련 문제점 1번. 3번의 ADMIN 규칙은 이 수정이 있어야 의미가 생김.
+- [ ] 5. (Phase 1) Product 상세 목록 교체 버그 수정 + @DataJpaTest 회귀 테스트([20260923 ~ 20260929] 구현 기능 관련 문제점 4번).
+- [ ] 6. (Phase 1) @Valid 누락 수정: CartController.addCartItemInCart(CartItemCreateDTO 제약 3개), ProductController.createProduct(ProductCreateDTO 제약 4개).
+- [ ] 7. (Phase 1) OrderUpdateDTO @NoArgsConstructor — origin/config/test에는 반영됨, origin/main에는 아직 @AllArgsConstructor만 있음. config/test 머지 시 함께 들어오는지 확인.
+- [ ] 8. (학습, 20261007) SecurityConfig 동작 원리(필터 체인 순서, 인증 = JwtAuthenticationFilter / 인가 = authorizeHttpRequests 분리, 처음 매칭된 규칙만 적용, 익명이면 401 / 권한 부족이면 403) 및 SOP·CORS 설명 진행. 사용자 CORS 정리본 검토 완료, 정정 사항: ① 브라우저가 기억하는 출처는 JS 파일이 아니라 JS가 실행되는 페이지(문서)의 출처, ② CORS 허용 단위는 포트가 아니라 출처(스킴+호스트+포트), ③ 허용 주체는 서버(응답 헤더 선언)이고 집행은 브라우저, ④ JSON 전송·PATCH·DELETE는 응답 읽기 이전에 preflight 허락 필요, ⑤ SOP의 목적(사용자 쿠키로 다른 출처 데이터를 읽어 가는 것 방지) 추가. 수정본을 트러블 슈팅 기록에 정리하면 주간 리뷰 때 재검토.
+- 종료 조건: E2E 상품 수정 단계까지 통과 + SecurityConfig 수정 PR 머지.
+
+### 컴파일 및 디버깅 관련 문제
+- [ ] 1. 20261007 맥미니 로컬 fix/env가 fbdc1d1에 머물러 origin/main의 PR #19(flyway-mysql), PR #20(GlobalExceptionHandler) 미반영. fbdc1d1이 origin/main의 조상이므로 git merge origin/main으로 fast-forward 가능. 확정한 Git 규칙(병합 후 git reset --hard origin/main로 브랜치 초기화)대로 맞춘 뒤 작업 시작. 같은 작업 트리의 ShoppingMallApiApplication.java diff는 파일 끝 개행만 삭제된 의도치 않은 변경이므로 되돌릴 것.
+
+### 구현 기능 관련 문제점
+- [ ] 1. (높음, 20261007) 회원가입 시 클라이언트가 role을 직접 지정. UserCreateDTO.signUpRole(@NotBlank만 있음) → UserService 38행에서 그대로 User.role 저장 → AuthService 42행 JWT role 클레임 → JwtAuthenticationFilter 42행 "ROLE_" + role 권한. {"signUpRole":"ADMIN"}으로 가입하면 ADMIN 권한 획득. 프론트 signup/page.tsx에도 Role 입력칸 존재(입력칸을 없애도 curl로 직접 보낼 수 있으므로 서버에서 막아야 함). 소문자 "admin" 입력 시 ROLE_admin이 되어 hasRole("ADMIN")에 매칭 안 됨. 수정 제안(최소 변경): 서버에서 role을 "USER"로 고정, DTO signUpRole 필드와 프론트 입력칸 삭제, ADMIN 계정은 DB 직접 생성 또는 Phase 4 seed. role 타입을 enum으로 바꿀지는 Phase 3 스키마 작업 때 결정.
+- [ ] 2. (20261007) SecurityConfig 수정 목록. 원칙: 기본은 닫고(anyRequest().authenticated()), 열 곳만 HTTP 메서드까지 지정, 좁은 규칙을 넓은 규칙보다 위에 배치(처음 매칭된 규칙만 적용, "/users/**"는 "/users" 자체에도 매칭), 본인 데이터 여부는 URL이 아니라 서비스에서 판단. ① anyRequest().permitAll() → authenticated() 변경(현재 규칙에 없는 /products 전체와 전체 조회 API가 공개로 빠짐). ② GET /products, GET /products/** 공개, POST·PATCH·DELETE /products/** ADMIN. ③ GET /users, GET /carts, GET /orders(전체 조회, 정확한 경로) ADMIN — 각 /** 규칙보다 위에. ④ 54행 중복 matcher 삭제(53행에 이미 포함, 실행되지 않는 줄). ⑤ /auth/** permitAll 삭제(해당 엔드포인트 없음, Phase 5에서 /auth/reissue 만들 때 추가). ⑥ /error permitAll 추가(anyRequest를 닫으면 비로그인 요청의 404·500 응답이 ERROR dispatch에서 401로 가려짐). ⑦ POST /orders/toss/payment/auth permitAll 추가([20260826 ~ 20260901] 결정 미반영, 현재 /orders/** authenticated에 걸려 401). ⑧ exceptionHandling에 accessDeniedHandler 추가(현재 401만 ApiResponse JSON, 403은 기본 sendError → Boot 기본 형식). ⑨ signup·login·toss 승인은 POST로 메서드 지정, 경로에 context-path(/api/v1)는 넣지 않음. 결과적으로 규칙은 엔드포인트 수가 아니라 등급(공개 / ADMIN / 로그인 필요) 기준 7~8줄.
+- [ ] 3. (정정, 20261007) [20260930 ~ 20261006] 구현 기능 관련 문제점 3번의 "기존 main 값(/users/{userId} 등)도 프론트의 me를 Long으로 변환하지 못해 400"은 틀린 내용. 근거: origin/main 컨트롤러 중 userId를 @PathVariable로 받는 메서드가 없음(@PathVariable은 productId, orderId에만 사용). userId는 전부 @AuthenticationPrincipal, 즉 JwtAuthenticationFilter가 쿠키(없으면 Bearer 헤더)의 JWT 서명을 검증한 뒤 꺼낸 값. 따라서 /users/me, /carts/me, /orders/user/me는 패턴에 매칭만 되고 "me"는 변환되지 않아 현재 main에서도 정상 동작. 경로의 {userId}는 실제로 쓰이지 않는 장식이며, /carts/999를 호출해도 토큰의 userId로 조회되므로 소유권이 보장됨(SecurityConfig에서는 로그인 필요 등급으로 충분). /me 경로 정리는 버그 수정이 아니라 URL과 실제 동작을 일치시키는 정리로 우선순위 낮음. 주의: 맥북 쪽 /orders/user/me → /orders/me 변경은 GET /orders/{orderId}(@PathVariable Long orderId)와 겹치므로 /orders/me 전용 매핑이 없으면 "me" → Long 변환 실패로 실제 400 발생.
+- [ ] 4. (정정, 20261007) [20260930 ~ 20261006] 구현 기능 관련 문제점 9번 2번 하위 항목의 "CartUpdateDTO·OrderUpdateDTO 제약 0개라 400 테스트 작성 불가" 보완. 두 DTO 자체 필드에는 제약이 없지만 리스트 원소 DTO에는 제약이 있음(CartItemUpdateDTO 3개, OrderItemUpdateDTO 5개). 리스트 필드에 @Valid가 없어 중첩 검증이 실행되지 않는 것이므로, OrderCreateDTO 17행처럼 리스트 필드에 @Valid 1개를 붙이면 활성화됨. ProductUpdateDTO, ProductDetailUpdateDTO, UserUpdateDTO는 실제로 제약 0개. 경미: OrderUpdateDTO 리스트 필드명이 orderItemResponseDTOList(Update DTO인데 Response 이름).
+- [ ] 5. (20261007) 프론트가 호출하는 GET /users/find-id(find-id/page.tsx), POST /users/find-password(find-password/page.tsx)가 백엔드에 없음(FindIdStatus 등 enum만 존재). 현재는 /users/** authenticated에 걸려 비로그인 사용자에게 401, 로그인 상태면 매핑 없음으로 404. E2E 실패 예상 항목. 기능 구현 또는 프론트 페이지 제거 결정 필요(구현 시 공개 경로로 등록).
+- [ ] 6. (경미, 20261007, 이번 범위 아님) OrderService.getOrderWithUserId가 본인 주문 전체를 조회한 뒤 메모리에서 orderId로 거름. 소유권은 보장되지만 주문 수에 비례해 비효율. findByOrderIdAndUser_UserId 같은 단건 조회로 변경 권장.
+- [ ] 7. (Phase 5 입력, 20261007) DELETE /users/logout이 로그인 필요 등급이라 access token이 만료된 상태에서는 401로 로그아웃(refresh token 삭제, 쿠키 만료) 불가. Phase 5 로그아웃 쿠키 만료 작업 때 함께 결정.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. Phase 2 (20261014~20261020) 컨트롤러 테스트 마무리 + 이번 주 후순위로 미룬 SecurityConfig 인가 테스트(별도 클래스, @Import(SecurityConfig.class) + 필터 활성화, JwtProvider @MockBean, 권한 문자열 ROLE_USER / ROLE_ADMIN). 이번 주 바뀐 인가 규칙을 공개 200 / 비로그인 401 / USER 403 / ADMIN 200으로 고정.
+- [ ] 2. Phase 3 이후 로드맵은 [20260930 ~ 20261006] 블록 다음 한 주 동안 개발할 기능 2번 참조.

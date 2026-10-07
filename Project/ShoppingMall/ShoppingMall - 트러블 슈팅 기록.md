@@ -247,4 +247,26 @@ DispatcherServlet이 예외를 받아 HandlerExceptionResolver에 넘김
       → ResponseEntity(상태코드 + ApiResponse.error(...)) → JSON 응답
 ```
 
-# 20260930 ~ 20261006
+# 20261007 ~ 20261013
+
+전반적으로 spring security에 대한 이해 없이 넘어가, url 별로 권한설정하는데 큰 어려움을 겪고 있다. 따라서 이번주의 목표는 spring security에 대한 전반적인 이해와 security config를 마무리하는 작업을 진행할 것이다.
+
+- [ ] spring security 이해
+- [ ] security config refactoring
+
+``` title='Spring Security Filter Chain'
+브라우저 ──HTTP──▶ Tomcat
+                    │
+                    ▼
+          ┌─────── Spring Security 필터 체인 (SecurityConfig가 조립) ───────┐
+          │ ① CorsFilter              : 다른 출처 요청 허용 여부 (preflight 응답)  │
+          │ ② JwtAuthenticationFilter : 토큰을 읽고 "이 사람이 누구인지" 기록     │ ← 인증
+          │ ③ AnonymousAuthFilter     : 아무도 기록 안 됐으면 "익명"으로 기록     │
+          │ ④ ExceptionTranslation    : ⑤에서 거절되면 401 / 403 응답으로 바꿈    │
+          │ ⑤ AuthorizationFilter     : 기록된 사람이 이 URL에 들어가도 되는지    │ ← 인가
+          └─────────────────────────────────────────────────────────────┘
+                    │ 통과
+                    ▼
+            DispatcherServlet ──▶ Controller (@AuthenticationPrincipal Long userId
+```
+

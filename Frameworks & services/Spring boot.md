@@ -640,12 +640,146 @@ RT System에서 동적으로 업데이트가 진행될 경우, 대규모의 트�
 
 # 10.  Application Test
 
-
-
+``` title='controller 테스트 코드 케이스'
+요청
+ │
+ ├─ ① 필터 체인 (Spring Security: JwtAuthenticationFilter → 인가 검사)
+ │     └─ 401/403은 여기서 끝남 → SecurityConfig의 entry point가 응답
+ │        (DispatcherServlet까지 가지 않음 → GlobalExceptionHandler와 무관)
+ ▼
+DispatcherServlet
+ ├─ HandlerMapping: URL + HTTP 메서드로 컨트롤러 메서드 찾기
+ ├─ HandlerAdapter: 컨트롤러에 넘길 파라미터 만들기
+ │     ├─ JSON → DTO 변환 실패 → HttpMessageNotReadableException   ②
+ │     └─ @Valid 검증 실패    → MethodArgumentNotValidException    ②
+ │        (②는 컨트롤러 본문이 실행되기 전이라 서비스가 호출조차 안 됨)
+ ├─ 컨트롤러 메서드 실행 → 서비스 호출
+ │     └─ 서비스가 NotFoundException 등을 throw                    ③
+ │        컨트롤러에는 try-catch가 없으니 예외가 그대로 위로 올라감
+ ▼
+DispatcherServlet이 예외를 받아 HandlerExceptionResolver에 넘김
+ └─ GlobalExceptionHandler(@RestControllerAdvice)에서 맞는 메서드 선택
+      → ResponseEntity(상태코드 + ApiResponse.error(...)) → JSON 응답
+```
 
 
 # 11. Spring Security
 
+``` title='Spring Security Filter Chain'
+브라우저 ──HTTP──▶ Tomcat
+                    │
+                    ▼
+          ┌─────── Spring Security 필터 체인 (SecurityConfig가 조립) ───────┐
+          │ ① CorsFilter              : 다른 출처 요청 허용 여부 (preflight 응답)  │
+          │ ② JwtAuthenticationFilter : 토큰을 읽고 "이 사람이 누구인지" 기록     │ ← 인증
+          │ ③ AnonymousAuthFilter     : 아무도 기록 안 됐으면 "익명"으로 기록     │
+          │ ④ ExceptionTranslation    : ⑤에서 거절되면 401 / 403 응답으로 바꿈    │
+          │ ⑤ AuthorizationFilter     : 기록된 사람이 이 URL에 들어가도 되는지    │ ← 인가
+          └─────────────────────────────────────────────────────────────┘
+                    │ 통과
+                    ▼
+            DispatcherServlet ──▶ Controller (@AuthenticationPrincipal Long userId
+```
+
+``` title='Security Config Example'
+package com.shopping_mall_api.global.security;  
+  
+import com.fasterxml.jackson.databind.ObjectMapper;  
+import com.shopping_mall_api.global.api.ApiResponse;  
+import com.shopping_mall_api.global.security.filter.JwtAuthenticationFilter;  
+import jakarta.servlet.http.HttpServletRequest;  
+import jakarta.servlet.http.HttpServletResponse;  
+import lombok.RequiredArgsConstructor;  
+import org.springframework.context.annotation.Bean;  
+import org.springframework.context.annotation.Configuration;  
+import org.springframework.http.HttpHeaders;  
+import org.springframework.http.HttpMethod;  
+import org.springframework.http.MediaType;  
+import org.springframework.security.config.Customizer;  
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;  
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;  
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;  
+import org.springframework.security.config.http.SessionCreationPolicy;  
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;  
+import org.springframework.security.crypto.password.PasswordEncoder;  
+import org.springframework.security.web.SecurityFilterChain;  
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;  
+  
+import org.springframework.security.core.AuthenticationException;  
+import java.io.IOException;  
+  
+@Configuration  
+@EnableWebSecurity  
+@RequiredArgsConstructor  
+public class SecurityConfig {  
+    private final JwtProvider jwtProvider;  
+    private final ObjectMapper objectMapper;  
+  
+    @Bean  
+    public PasswordEncoder passwordEncoder(){  
+        return new BCryptPasswordEncoder();  
+    }  
+  
+    @Bean  
+    public SecurityFilterChain filterChain(HttpSecurity httpSec) throws Exception {  
+        httpSec  
+                .csrf(AbstractHttpConfigurer::disable)  
+                .cors(Customizer.withDefaults())  
+                .formLogin(AbstractHttpConfigurer::disable)  
+                .httpBasic(AbstractHttpConfigurer::disable)  
+  
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))  
+  
+                // Authorization filter  
+                .authorizeHttpRequests(auth -> auth  
+                        .requestMatchers("/auth/**", "/users/signup", "/users/login").permitAll()  
+                        .requestMatchers(HttpMethod.DELETE, "/orders/**").hasRole("ADMIN")  
+                        .requestMatchers("/orders/**", "/carts/**", "/users/**").authenticated()  
+                        .requestMatchers("/orders/**", "/carts/**").authenticated()  
+                        .anyRequest().permitAll()  
+                )  
+  
+                .exceptionHandling(exception ->  
+                        exception.authenticationEntryPoint(this::handleAuthenticationFailure))  
+  
+                .addFilterBefore(new JwtAuthenticationFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class);  
+        return httpSec.build();  
+    }  
+  
+    private void handleAuthenticationFailure(  
+            HttpServletRequest request,  
+            HttpServletResponse response,  
+            AuthenticationException authException  
+    ) throws IOException {  
+        response.setHeader(HttpHeaders.WWW_AUTHENTICATE, "Bearer");  
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);  
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);  
+  
+        ApiResponse<Object> errorBody = ApiResponse.error("Invalid or missing access token");  
+        response.getWriter().write(objectMapper.writeValueAsString(errorBody));  
+    }  
+}
+```
+
+#### CSRF
+- Cross Site Request Forgery, 사이트 간 요청 위조는 인증된 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동을 특정 웹사이트에 요청하게 만드는 웹 취약점 공격이다.
+- 쿠키를 세팅하는 경우, 보통 브라우저가 쿠키를 자동으로 붙여서 보내는데, 이때 사용자의 쿠키를 붙여서 공격을 할 경우, 서버에서는 인증된 사용자가 보내는 요청으로 착각하고, 허용하게 된다.
+
+#### CORS
+- Cross-Origin Resource Sharing, 교차 출처 리소스 공유는 서로 다른 출처의 리소스를 공유할 수 있도록 허용하는 HTTP 헤더 기반 매커니즘이다.
+- 프로토콜, 호스트, 포트의 조합이 일치할 경우, 같은 출처로 인식
+- SOP(same origin policy) : 
+
+1. 다른 출처(스킴+호스트+포트)의 응답을 JS가 읽지 못하도록 브라우저가 막는 규칙이 SOP(Same-Origin Policy)이다. img, script 같은 단순 삽입은 허용되고, JS가 내용을 읽는 것이 차단된다.
+2. 막는 이유: 브라우저는 사용자의 쿠키를 자동으로 붙이면서 아무 사이트의 JS나 실행하므로, SOP가 없으면 악성 사이트의 JS가 사용자 쿠키로 다른 서버의 데이터를 읽어 갈 수 있다. 즉 SOP는 사용자의 데이터를 보호하는 장치다.
+3. SOP는 브라우저에만 적용된다. 서버끼리의 통신(Next.js 서버 컴포넌트 → Spring, Spring → 토스 API)에는 적용되지 않는다.
+4. Next.js 서버(3000)는 페이지 요청이 오면 HTML을 렌더링해 JS 파일과 함께 보내고, 브라우저는 그 JS를 실행해 이벤트 핸들러를 연결한다(하이드레이션).
+5. 브라우저는 JS가 실행되는 페이지의 출처(localhost:3000)를 기억하고, 그 페이지에서 나가는 요청에 Origin 헤더로 붙인다.
+6. 클릭·제출 같은 이벤트가 발생하면 연결된 핸들러가 실행되고, 백엔드 데이터가 필요한 핸들러는 fetch로 요청을 보낸다. 이 요청은 3000을 거치지 않고 브라우저에서 백엔드(8080)로 직접 간다.
+7. 응답 JSON을 UI에 반영하려면 JS가 응답을 읽어야 하는데, 페이지 출처(3000)와 데이터 출처(8080)가 달라 SOP에 막힌다. JSON 전송이나 PATCH·DELETE 요청은 보내기 전에 preflight(OPTIONS)로 허락부터 받아야 한다.
+8. 그래서 백엔드가 응답 헤더(Access-Control-Allow-Origin 등)로 "이 출처는 허용한다"고 선언하고, 브라우저가 이를 확인해 요청 전송과 응답 읽기를 허용한다. 우리 프로젝트에서는 @CrossOrigin이 이 헤더를 만든다.
+
+→ CORS(Cross-Origin Resource Sharing)는 SOP로 막힌 다른 출처 간 리소스 공유를, 서버가 허용할 출처를 선언하고 브라우저가 이를 집행하는 방식으로 열어 주는 메커니즘이다.
 
 
 # 12.  Distribute Application
