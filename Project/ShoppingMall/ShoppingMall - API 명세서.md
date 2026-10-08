@@ -36,30 +36,38 @@
 
 ## 1. 엔드포인트 요약
 
-### User (회원·인증)
+### Auth (인증)
 
-| # | 메서드 | 경로 | 설명 | 권한 | 프론트 호출 |
-|---|---|---|---|---|---|
-| 1 | GET | /users | 전체 유저 조회 | ADMIN | 없음 |
-| 2 | POST | /users/login | 로그인 | x | login/page.tsx (브라우저) |
-| 3 | DELETE | /users/logout | 로그아웃 (refresh token 삭제) | 인증요구 | ProfileMenu.tsx (브라우저) |
-| 4 | GET | /users/me | 내 정보 조회 | 인증요구 | profile/page.tsx (서버 컴포넌트) |
-| 5 | PATCH | /users/me | 내 정보 수정 | 인증요구 | ProfileEditor.tsx (브라우저) |
-| 6 | DELETE | /users/me | 회원 탈퇴 | 인증요구 | 없음 |
-| 7 | POST | /users/signup | 회원가입 (장바구니 동시 생성) | x | signup/page.tsx (브라우저) |
+| #   | 메서드    | 경로            | 설명                      | 권한    | 프론트 호출                     |
+| --- | ------ | ------------- | ----------------------- | ----- | -------------------------- |
+| 1   | POST   | /users/login  | 로그인 (accessToken·refreshToken 쿠키 발급) | x     | login/page.tsx (브라우저)      |
+| 2   | DELETE | /users/logout | 로그아웃 (refresh token 삭제) | 인증요구  | ProfileMenu.tsx (브라우저)     |
+
+- 컨트롤러는 AuthController지만 경로는 /users 하위 (ApiURLNames.loginURL, logOutURL)
+- 토큰 재발급(refresh) API 없음 → access token 만료 시 재로그인 필요 (Phase 5)
+
+### User (회원)
+
+| #   | 메서드    | 경로            | 설명                      | 권한    | 프론트 호출                     |
+| --- | ------ | ------------- | ----------------------- | ----- | -------------------------- |
+| 3   | GET    | /users        | 전체 유저 조회                | ADMIN | 없음                         |
+| 4   | GET    | /users/me     | 내 정보 조회                 | 인증요구  | profile/page.tsx (서버 컴포넌트) |
+| 5   | PATCH  | /users/me     | 내 정보 수정                 | 인증요구  | ProfileEditor.tsx (브라우저)   |
+| 6   | DELETE | /users/me     | 회원 탈퇴                   | 인증요구  | 없음                         |
+| 7   | POST   | /users/signup | 회원가입 (장바구니 동시 생성)       | x     | signup/page.tsx (브라우저)     |
 
 미구현: 프론트가 호출하는 GET /users/find-id (find-id/page.tsx), POST /users/find-password (find-password/page.tsx)는 백엔드에 없음 → 현재 비로그인 401, 로그인 시 404.
 
 ### Cart (장바구니)
 
-| # | 메서드 | 경로 | 설명 | 권한 | 프론트 호출 |
-|---|---|---|---|---|---|
-| 8 | GET | /carts | 전체 장바구니 조회 | ADMIN | 없음 |
-| 9 | POST | /carts | 장바구니에 상품 담기 | 인증요구 | AddToCartForm.tsx (브라우저) |
-| 10 | DELETE | /carts/items/{productId} | 장바구니에서 상품 하나 제거 | 인증요구 | cart/page.tsx (브라우저) |
-| 11 | GET | /carts/me | 내 장바구니 조회 | 인증요구 | cart/page.tsx (브라우저) |
-| 12 | PATCH | /carts/me | 내 장바구니 수정 | 인증요구 | cart/page.tsx (브라우저) |
-| 13 | DELETE | /carts/me | 내 장바구니 삭제 | 인증요구 | 없음 |
+| #   | 메서드    | 경로                       | 설명              | 권한    | 프론트 호출                   |
+| --- | ------ | ------------------------ | --------------- | ----- | ------------------------ |
+| 8   | GET    | /carts                   | 전체 장바구니 조회      | ADMIN | 없음                       |
+| 9   | POST   | /carts                   | 장바구니에 상품 담기     | 인증요구  | AddToCartForm.tsx (브라우저) |
+| 10  | DELETE | /carts/items/{productId} | 장바구니에서 상품 하나 제거 | 인증요구  | cart/page.tsx (브라우저)     |
+| 11  | GET    | /carts/me                | 내 장바구니 조회       | 인증요구  | cart/page.tsx (브라우저)     |
+| 12  | PATCH  | /carts/me                | 내 장바구니 수정       | 인증요구  | cart/page.tsx (브라우저)     |
+| 13  | DELETE | /carts/me                | 내 장바구니 삭제       | 인증요구  | 없음                       |
 
 ### Product (상품)
 
@@ -73,31 +81,19 @@
 
 ### Order (주문·결제)
 
-| # | 메서드 | 경로 | 설명 | 권한 | 프론트 호출 |
-|---|---|---|---|---|---|
-| 19 | GET | /orders | 전체 주문 조회 | ADMIN | 없음 |
-| 20 | POST | /orders | 주문 생성 | 인증요구 | order/page.tsx (브라우저) |
-| 21 | GET | /orders/me | 내 주문 목록 조회 | 인증요구 | orders/page.tsx (서버 컴포넌트, Cookie 직접 전달) |
-| 22 | POST | /orders/toss/payment/auth | 토스 결제 승인 | x | order/result/page.tsx (브라우저) |
-| 23 | GET | /orders/{orderId} | 내 주문 단건 조회 | 인증요구 | 없음 |
-| 24 | PATCH | /orders/{orderId} | 내 주문 수정 | 인증요구 | 없음 |
-| 25 | DELETE | /orders/{orderId} | 주문 삭제 | ADMIN | 없음 |
+| #   | 메서드    | 경로                        | 설명         | 권한    | 프론트 호출                                  |
+| --- | ------ | ------------------------- | ---------- | ----- | --------------------------------------- |
+| 19  | GET    | /orders                   | 전체 주문 조회   | ADMIN | 없음                                      |
+| 20  | POST   | /orders                   | 주문 생성      | 인증요구  | order/page.tsx (브라우저)                   |
+| 21  | GET    | /orders/me                | 내 주문 목록 조회 | 인증요구  | orders/page.tsx (서버 컴포넌트, Cookie 직접 전달) |
+| 22  | POST   | /orders/toss/payment/auth | 토스 결제 승인   | 인증요구  | order/result/page.tsx (브라우저)            |
+| 23  | GET    | /orders/{orderId}         | 내 주문 단건 조회 | 인증요구  | 없음                                      |
+| 24  | PATCH  | /orders/{orderId}         | 내 주문 수정    | 인증요구  | 없음                                      |
+| 25  | DELETE | /orders/{orderId}         | 주문 삭제      | ADMIN | 없음                                      |
 
 ## 2. 엔드포인트 상세
 
-### User (회원·인증)
-
-#### GET /users
-
-| 항목 | 내용 |
-|---|---|
-| 설명 | 전체 유저 조회 |
-| 컨트롤러 | UserController.getUsers |
-| 권한 | ADMIN |
-| 응답 200 | ApiResponse, data = List<UserResponseDTO> |
-| 에러 | 401 미인증 |
-| 프론트 호출 | 없음 |
-| 비고 | 현재 로그인만 하면 누구나 조회 가능 |
+### Auth (인증)
 
 #### POST /users/login
 
@@ -124,6 +120,20 @@
 | 에러 | 401 미인증<br>400 REFRESH_TOKEN_NOT_FOUND "Cannot found refresh token" |
 | 프론트 호출 | ProfileMenu.tsx (브라우저) |
 | 비고 | 응답 바디 없음, 쿠키 만료 처리 없음<br>access token 만료 시 401로 로그아웃 불가 (Phase 5) |
+
+### User (회원)
+
+#### GET /users
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 전체 유저 조회 |
+| 컨트롤러 | UserController.getUsers |
+| 권한 | ADMIN |
+| 응답 200 | ApiResponse, data = List<UserResponseDTO> |
+| 에러 | 401 미인증 |
+| 프론트 호출 | 없음 |
+| 비고 | 현재 로그인만 하면 누구나 조회 가능 |
 
 #### GET /users/me
 
@@ -366,13 +376,13 @@
 |---|---|
 | 설명 | 토스 결제 승인 |
 | 컨트롤러 | OrderController.authTossPaymentOrder |
-| 권한 | x |
+| 권한 | 인증요구 |
 | 요청 바디 | TossPaymentRequestDTO (아래 스키마) |
 | 검증 | 작동 (@Valid) |
 | 응답 200 | ApiResponse, data = OrderResponseDTO |
-| 에러 | 404 ORDER_NOT_FOUND<br>400 ORDER_PRICE_UNMATCHED "Unmatched Price Info"<br>400 PAYMENT_FAILED "Payment Failed" |
+| 에러 | 401 미인증<br>404 ORDER_NOT_FOUND<br>400 ORDER_PRICE_UNMATCHED "Unmatched Price Info"<br>400 PAYMENT_FAILED "Payment Failed" |
 | 프론트 호출 | order/result/page.tsx (브라우저) |
-| 비고 | 요청의 orderId는 주문 PK가 아니라 orderUid<br>결제 금액을 주문 totalOrderPrice와 대조하지만, 그 가격 자체가 클라이언트 입력값<br>8/26 결정(공개)이 SecurityConfig에 미반영 |
+| 비고 | 요청의 orderId는 주문 PK가 아니라 orderUid<br>결제 금액을 주문 totalOrderPrice와 대조하지만, 그 가격 자체가 클라이언트 입력값<br>8/26 공개 결정을 20261008 인증요구로 변경 (주문 생성부터 로그인 필요, 프론트는 credentials: "include"로 쿠키 전송)<br>주문 상태(PENDING) 확인 없음 → 이미 결제된 주문 재승인 시 FAILED로 덮어씀 |
 
 #### GET /orders/{orderId}
 
@@ -635,7 +645,7 @@
 | 높음 | POST /products, PATCH·DELETE /products/{productId} | 인증 없이 상품 등록·수정·삭제 가능 | Phase 1 |
 | 높음 | POST /orders, PATCH /orders/{orderId} | 상품 가격을 클라이언트 값으로 저장·수정 → 토스 승인은 이 가격과 대조하므로 낮은 금액으로 결제 가능 | Phase 6 (주문 가격 서버 재조회) |
 | 중간 | GET /users, GET /carts, GET /orders | 로그인만 하면 전체 데이터 조회 가능 | Phase 1 |
-| 중간 | POST /orders/toss/payment/auth | 공개 결정이 SecurityConfig에 미반영 → 비로그인 결제 승인 401 | Phase 1 |
+| 높음 | POST /orders/toss/payment/auth | 주문 상태 확인 없음 → PAID 주문에 승인 재요청 시 토스 중복 승인 에러로 FAILED 저장 | Phase 1 |
 | 중간 | POST /carts, POST /products | @Valid 없음 → 음수 수량·빈 상품명 등이 그대로 저장 | Phase 1 |
 | 중간 | PATCH /carts/me, PATCH /orders/{orderId} | 리스트 필드에 @Valid 없음 → 원소 제약 무시 | Phase 1~2 |
 | 중간 | POST /users/signup | 이메일 중복 시 400이 아니라 500 | 미정 |
