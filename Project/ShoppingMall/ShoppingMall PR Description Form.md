@@ -50,9 +50,6 @@
 ## 개요
 Spring MVC 표준 예외가 500으로 바뀌던 문제를 고치고, 모든 에러 응답 바디를 ApiResponse 형식으로 통일한다.
 
-## 관련 기록
-- copilot-addendum.md [20260930 ~ 20261006] 구현 기능 관련 문제점 7번
-
 ## 변경 사항
 - [수정] GlobalExceptionHandler가 ResponseEntityExceptionHandler를 상속
 - [수정] handleExceptionInternal 오버라이드: 표준 예외 응답 바디를 ApiResponse로 변환, 4xx warn / 5xx error 로그
@@ -76,13 +73,4 @@ Spring MVC 표준 예외가 500으로 바뀌던 문제를 고치고, 모든 에�
 - [ ] 추가/수정한 테스트: 깨진 JSON 400, @Valid 400, 미지원 메서드 405
 - [x] 수동 확인: MockMvc로 위 3건 + 타입 불일치 400, PathVariable 누락 500 응답이 ApiResponse 형식인지 확인
 
-## 영향 범위
-- API 계약: 표준 예외 상태코드가 500에서 실제 코드(400/405 등)로 변경, 바디 형식은 기존 ApiResponse 유지
-- DB 스키마(Flyway): 없음
-- 환경변수/설정: 없음
-- 프론트엔드 수정 필요: 없음(에러 시 message 필드 사용 방식 동일)
-
-## 남은 작업
-- @Valid 실패 응답에 field/reason 목록 추가
-- 컨트롤러 예외 매핑 테스트(Phase 2)
 ```
