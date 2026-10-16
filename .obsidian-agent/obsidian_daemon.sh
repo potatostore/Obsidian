@@ -35,6 +35,25 @@ is_git_op_in_progress() {
     return 1
 }
 
+# Single-instance lock: two daemons polling at once run `git fetch`/`git pull`
+# concurrently, which corrupts FETCH_HEAD ("Cannot rebase onto multiple
+# branches"), races ref updates ("cannot lock ref") and can wipe a rebase's
+# working tree. Refuse to start if another live instance holds the lock.
+LOCK_DIR="$CDIR/cache/daemon.lock"
+if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+    OTHER_PID=$(cat "$LOCK_DIR/pid" 2>/dev/null)
+    if [ -n "$OTHER_PID" ] && kill -0 "$OTHER_PID" 2>/dev/null; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Another daemon (pid $OTHER_PID) is already running. Exiting."
+        exit 0
+    fi
+    # stale lock from a crashed instance
+    rm -rf "$LOCK_DIR"
+    mkdir "$LOCK_DIR" || exit 1
+fi
+echo $$ > "$LOCK_DIR/pid"
+trap 'rm -rf "$LOCK_DIR"' EXIT
+trap 'exit 0' TERM INT HUP
+
 WAS_RUNNING=0
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Obsidian Daemon Started. Monitoring process..."
@@ -75,7 +94,11 @@ while true; do
                 if git pull --rebase; then
                     notify "✔ 자동 병합 성공! 최신 메모가 로드되었습니다."
                 else
-                    notify "❌ 동기화 충돌 발생! Working Copy 앱에서 직접 열어 충돌을 수동으로 해결해야 합니다. 해결 전까지 자동 동기화는 건너뜁니다." "Basso"
+                    # Don't leave the vault mid-rebase (half-applied notes, conflict
+                    # markers) while Obsidian is open: go back to the local version.
+                    git rebase --abort 2>/dev/null
+                    echo "[$(date '+%Y-%m-%d %H:%M:%S')] Pull conflict: rebase aborted, local version kept."
+                    notify "❌ 동기화 충돌! 이 Mac의 버전을 유지했습니다. 업로드는 충돌을 해결할 때까지 실패합니다." "Basso"
                 fi
             fi
 
