@@ -37,3 +37,8 @@ created: 2026-09-25
 - 사용자 요청: `_wiki/` → `.wiki/`, `CLAUDE.md` → `.claude/CLAUDE.md`로 이동 (Obsidian은 점 폴더를 무시함)
 - 스키마 안의 경로 갱신, 그래프 필터(`-path:"_wiki" -file:"CLAUDE"`) 제거
 - 이동 전 원본은 `.obsidian-agent/cache/wiki-backup/2026-09-27/`에 백업
+
+## [2026-10-16] ingest | 웹프로그래밍 중간고사 범위 강의자료
+- 새 과목 페이지: [[웹프로그래밍]] (type/course), 사용자가 만든 빈 파일을 채움. 출처는 강의자료 PDF 3~5장(97쪽)
+- 슬라이드 밖 내용은 (보충) 표시. organizer 태그 오인을 피하려고 # 바로 뒤 글자는 &#35; 엔티티로 씀
+- [[학업]] 3-2에 링크 추가, index에 3-2 과목 섹션 추가
