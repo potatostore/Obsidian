@@ -47,3 +47,7 @@ created: 2026-09-25
 - 사용자 요청으로 Project/ShoppingMall/ShoppingMall - TODO.md 생성 (type/project). 근거는 ShoppingMall 저장소 main 1e1e7f3과 docs/claude-work-log/ 기록
 - [[프로젝트]] 허브의 ShoppingMall 섹션과 index 프로젝트 섹션에 링크 추가
 - 클라우드 세션(Linux)에서 커밋: 새 파일명이 ASCII라 NFC/NFD 중복 위험 없음, 기존 파일은 내용만 수정. 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/에 백업
+
+## [2026-11-02] ingest | ShoppingMall - TODO 재구성
+- 사용자 요청: 섹션을 작업 성격별(바로 할 일 / 결정 필요 / 테스트 / 기능 개발 / 인프라·데이터 / 정리)로 다시 나눔. 항목 내용은 유지, 정책 결정이 필요한 항목(멀티 디바이스, 탈퇴·삭제, 비밀번호 찾기)은 결정 필요로 이동
+- 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/Project/ShoppingMall/에 백업
