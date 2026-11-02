@@ -42,3 +42,8 @@ created: 2026-09-25
 - 새 과목 페이지: [[웹프로그래밍]] (type/course), 사용자가 만든 빈 파일을 채움. 출처는 강의자료 PDF 3~5장(97쪽)
 - 슬라이드 밖 내용은 (보충) 표시. organizer 태그 오인을 피하려고 # 바로 뒤 글자는 &#35; 엔티티로 씀
 - [[학업]] 3-2에 링크 추가, index에 3-2 과목 섹션 추가
+
+## [2026-11-02] ingest | ShoppingMall - TODO 새 페이지
+- 사용자 요청으로 Project/ShoppingMall/ShoppingMall - TODO.md 생성 (type/project). 근거는 ShoppingMall 저장소 main 1e1e7f3과 docs/claude-work-log/ 기록
+- [[프로젝트]] 허브의 ShoppingMall 섹션과 index 프로젝트 섹션에 링크 추가
+- 클라우드 세션(Linux)에서 커밋: 새 파일명이 ASCII라 NFC/NFD 중복 위험 없음, 기존 파일은 내용만 수정. 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/에 백업
