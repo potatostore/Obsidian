@@ -8,11 +8,12 @@ created: 2026-11-02
 # ShoppingMall - TODO
 
 - 기준: main 1e1e7f3 (PR 23 머지, 2026-11-02). 백엔드 테스트 133개 통과 (로컬 clean test, GitHub Actions 모두 성공)
+- 갱신: 4번 기능 개발 전체를 PR 25(claude/hopeful-mccarthy-6y31xt)로 구현, 테스트 191개 통과. PR 25 머지 후 할 일을 1번에 추가
 - 로드맵: Spring Boot + MySQL → CI(테스트 코드) + Web Server → JWT 인증 심화(로그인/로그아웃) → Grafana/Prometheus + Mock Data → Deploy(CD 포함)
 - 현재 단계: 컨트롤러 예외/인가 테스트 마무리 → 끝나면 JWT 인증 심화로 전환
 - 구성: 작업 성격별로 나눔. 1 바로 할 일(운영·문서) / 2 결정 필요(정해야 진행 가능) / 3 테스트 / 4 기능 개발(바로 구현 가능) / 5 인프라·데이터 / 6 정리
 - 우선순위: 높음(돈·데이터 문제) / 중간(기능 결함·사용성) / 낮음(정리). "미확인"은 코드로 추론했고 실행해서 확인하지 않은 항목
-- 자세한 근거: ShoppingMall 저장소 docs/claude-work-log/ 의 20261102_work-log.md(변경 내역·API 변경 목록), 20261102_unimplemented.md(미구현 상세)
+- 자세한 근거: ShoppingMall 저장소 docs/claude-work-log/ 의 20261102_work-log.md(PR 23 변경 내역·API 변경 목록), 20261102_feature-work-log.md(PR 25 변경 내역·API 변경 목록·로컬 조치), 20261102_unimplemented.md(미구현 상세)
 
 ## 1. 바로 할 일 (운영·문서)
 
@@ -24,6 +25,19 @@ created: 2026-11-02
 - [ ] 수동 E2E: 가입 → 로그인 → 같은 상품 두 번 담기 → 장바구니 수정 → 주문 → 토스 결제 → 승인 → 장바구니에서 결제 상품만 빠졌는지, 재고가 줄었는지 → 결과 페이지 새로고침해도 PAID 유지되는지
 - [ ] [[ShoppingMall - API 명세서]] 갱신: POST /auth/reissue, GET /users/find-id 추가, signup·orders·products 요청/응답 변경, 403 바디, 새 ErrorCode(O003, A001)
 - [ ] [[copilot-addendum]] 에 20261102 블록 반영 (저장소 docs/claude-work-log/20261102_copilot-addendum-block.md 그대로 붙여넣기)
+
+### PR 25 머지 후
+- [ ] PR 25 리뷰·머지
+- [ ] 로컬 DB: ALTER TABLE orders MODIFY order_status VARCHAR(20) NOT NULL; (PR 23 이후 새로 만든 orders 테이블은 MySQL enum 타입이라 CANCELED·EXPIRED 저장이 실패함)
+- [ ] 로컬 DB: likes 테이블이 비어 있는지 확인 (user_id·product_id NOT NULL 컬럼 추가가 기존 행이 있으면 실패)
+- [ ] 수동 E2E
+	- 로그아웃 후 같은 access token으로 GET /users/me → 401
+	- access token 만료 상태로 /profile, /orders 진입 → 자동 재발급 후 정상 표시
+	- 결제 후 주문 내역에서 취소·환불 → 토스 테스트 결제 내역에서 취소 확인, 재고 복구 확인
+	- 주문만 만들고 결제창 닫기 → 만료(EXPIRED)·재고 복구 확인 (테스트 시 order.pending-expiration-minutes=1)
+	- 상품 검색·정렬·페이지 이동, 찜하기·찜 목록
+- [ ] [[ShoppingMall - API 명세서]] 에 PR 25 변경 반영: GET /products 페이지 응답, 주문 취소, 찜 API 4개, 로그인 401 통일, 주문 응답 orderStatus·productName, 장바구니 productName·productPrice, ErrorCode U006·PA002, TOSS_SERVER_ERROR 502
+- [ ] PR 25 이전에 결제된 주문은 paymentKey가 없어 API 환불 불가(400) → 필요하면 토스 개발자센터에서 수동 환불
 
 ## 2. 결정 필요 (정해야 진행 가능)
 
@@ -46,23 +60,23 @@ created: 2026-11-02
 - [ ] (중간) 컨트롤러 예외 매핑 테스트: 서비스가 던진 예외(thenThrow)가 GlobalExceptionHandler를 거쳐 올바른 상태코드·메시지로 나가는지. 현재 AuthControllerTest에만 있고 Cart·Order·Product·User 컨트롤러는 400 검증 테스트만 있음 (404 NOT_FOUND, 400 OUT_OF_STOCK, 400 ORDER_STATUS_INVALID 등)
 - [ ] (낮음) 기존 테스트 정리: any() → eq()와 verify, SecurityContextHolder 직접 설정 → .with(authentication(...)) 통일, 매직값 상수화
 
-## 4. 기능 개발 (바로 구현 가능)
+## 4. 기능 개발 (PR 25에서 전부 구현)
 
 ### JWT 인증 심화 (Phase 5)
 - [x] refresh token 재발급 API(POST /auth/reissue) + rotation, 로그아웃 시 쿠키 만료 (PR 23)
-- [ ] (중간) 로그아웃 후에도 access token이 만료 전까지 유효 → Redis 블랙리스트(jti, 남은 만료 시간만큼 TTL)
-- [ ] (중간) 서버 컴포넌트(profile, orders 페이지)는 access token 만료 시 재발급하지 못함 → 재발급 후 원래 페이지로 돌아오는 흐름
-- [ ] (중간) 로그인 실패 메시지가 "Email not found" / "User password unmatched"로 갈려 가입 여부가 드러남 → 하나로 통일
+- [x] (중간) 로그아웃 후에도 access token이 만료 전까지 유효 → Redis 블랙리스트(jti, 남은 만료 시간만큼 TTL, Redis 장애 시 401) (PR 25)
+- [x] (중간) 서버 컴포넌트(profile, orders 페이지)는 access token 만료 시 재발급하지 못함 → /auth/refresh 페이지로 재발급 후 원래 페이지로 복귀 (PR 25)
+- [x] (중간) 로그인 실패 메시지가 "Email not found" / "User password unmatched"로 갈려 가입 여부가 드러남 → 401 "Invalid email or password"로 통일, 응답 시간 차이도 제거 (PR 25)
 
 ### 주문·결제
-- [ ] (높음) PENDING 주문 만료 처리: 재고를 주문 생성 시점에 잡으므로 결제창에서 이탈하면 재고가 계속 묶임 → 일정 시간(예: 30분) 지난 PENDING을 정리하고 재고 복구 (주문 행 잠금 사용)
-- [ ] (높음) 토스 호출 타임아웃·네트워크 오류: RestClient에 타임아웃이 없고 오류 시 500 + 주문 PENDING 유지. 토스는 승인했는데 응답만 유실되면 결제·주문 불일치 → 타임아웃 설정 + 토스 결제 조회 API로 실제 상태 확인. RestClientConfig와 TossPaymentConfig의 RestClient 빈 중복도 정리
-- [ ] (중간) 주문 취소·환불: CANCELED 상태, 승인 시 paymentKey 저장, PENDING은 바로 취소, PAID는 토스 결제 취소 API 호출, 둘 다 재고 복구
-- [ ] (낮음) orderUid 난수 충돌 시 unique 위반 500 → 재시도
+- [x] (높음) PENDING 주문 만료 처리: 30분 지난 PENDING을 1분마다 정리, 토스 조회 후 DONE이면 결제 완료로 복구 / 미결제면 EXPIRED + 재고 복구 (PR 25)
+- [x] (높음) 토스 호출 타임아웃·네트워크 오류: 타임아웃 5초/30초, 승인 중 오류 시 결제 조회로 확정, 확정 불가면 PENDING 유지 + 502. 중복 RestClient 빈 삭제 (PR 25)
+- [x] (중간) 주문 취소·환불: POST /orders/{orderId}/cancel, PAID는 토스 결제 취소(Idempotency-Key로 재시도 안전), 재고 복구, 주문 내역 화면 취소 버튼 (PR 25)
+- [x] (낮음) orderUid 난수 충돌 시 unique 위반 500 → 저장 전 확인 후 최대 5회 재생성 (PR 25)
 
 ### 회원·상품
-- [ ] (중간) 상품 목록 페이지네이션 + 목록 API N+1(상세·주문 항목 지연 로딩) 해결
-- [ ] (낮음) 찜하기: Likes 엔티티에 id만 있음
+- [x] (중간) 상품 목록 페이지네이션(서버 검색·가격 범위·정렬) + @BatchSize로 N+1 해결 (PR 25)
+- [x] (낮음) 찜하기: 찜·취소·내 찜 여부·찜 목록 API, 상품 상세 버튼, /likes 페이지 (PR 25)
 
 ## 5. 인프라·데이터 (의존성·설정은 사용자 담당)
 
@@ -71,6 +85,7 @@ created: 2026-11-02
 - [ ] (중간) Redis getProduct 캐시: @EnableCaching + RedisCacheManager 직렬화 설정 필요
 - [ ] (낮음) Actuator + Prometheus + Grafana, 대량 목데이터로 부하 확인
 - [ ] (낮음) Deploy: CD, Nginx 리버스 프록시, CORS 설정을 컨트롤러별 @CrossOrigin(localhost:3000) 대신 한 곳으로, 프론트·API 도메인에 맞춘 쿠키 Secure·SameSite
+- [ ] (낮음) 서버를 여러 대 띄울 때 PENDING 만료 스케줄러가 서버마다 돎 → 행 잠금으로 중복 처리는 막히지만 ShedLock 등 단일 실행 장치 검토
 
 ## 6. 정리 (낮음)
 

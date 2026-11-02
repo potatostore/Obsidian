@@ -51,3 +51,7 @@ created: 2026-09-25
 ## [2026-11-02] ingest | ShoppingMall - TODO 재구성
 - 사용자 요청: 섹션을 작업 성격별(바로 할 일 / 결정 필요 / 테스트 / 기능 개발 / 인프라·데이터 / 정리)로 다시 나눔. 항목 내용은 유지, 정책 결정이 필요한 항목(멀티 디바이스, 탈퇴·삭제, 비밀번호 찾기)은 결정 필요로 이동
 - 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/Project/ShoppingMall/에 백업
+
+## [2026-11-02] ingest | ShoppingMall - TODO 갱신 (PR 25)
+- 4번 기능 개발 9개 항목을 PR 25 구현 완료로 체크, 1번에 "PR 25 머지 후" 할 일(로컬 DB 조치, E2E, API 명세서 반영) 추가, 5번에 다중 서버 스케줄러 항목 추가
+- 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/Project/ShoppingMall/ShoppingMall - TODO.before-PR25.md
