@@ -55,3 +55,8 @@ created: 2026-09-25
 ## [2026-11-02] ingest | ShoppingMall - TODO 갱신 (PR 25)
 - 4번 기능 개발 9개 항목을 PR 25 구현 완료로 체크, 1번에 "PR 25 머지 후" 할 일(로컬 DB 조치, E2E, API 명세서 반영) 추가, 5번에 다중 서버 스케줄러 항목 추가
 - 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-02/Project/ShoppingMall/ShoppingMall - TODO.before-PR25.md
+
+## [2026-11-03] ingest | ShoppingMall - TODO 7번 추가
+- PR 25 머지 반영(1번 체크), 타사 쇼핑몰 비교로 7번 "기능 개발 2차" 추가(배송지·배송 상태 → 비밀번호 변경 → 쿠폰 → 포인트 → 리뷰 순서, 그다음·의존성 필요 항목), 1~5 뼈대 PR 26 기록
+- 저장소 docs/claude-work-log 삭제(PR 26)에 맞춰 근거 링크를 PR 설명·git 이력으로 변경
+- 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-03/Project/ShoppingMall/에 백업
