@@ -371,3 +371,62 @@ created: 2026-08-02
 - [ ] 1. Phase 2 (20261014~20261020) 컨트롤러 테스트 마무리 + 이번 주 후순위로 미룬 SecurityConfig 인가 테스트(별도 클래스, @Import(SecurityConfig.class) + 필터 활성화, JwtProvider @MockBean, 권한 문자열 ROLE_USER / ROLE_ADMIN). 이번 주 바뀐 인가 규칙을 공개 200 / 비로그인 401 / USER 403 / ADMIN 200으로 고정.
 	1. (20261008 추가) 이번 주에서 이월: accessDeniedHandler 추가(USER의 ADMIN API 호출 시 403 바디를 Spring Boot 기본 JSON이 아니라 ApiResponse로 통일, USER 403 테스트에서 바디 형식까지 확인). 이번 주에 처리하지 못하면 이월: 회원가입 role 서버 고정(이번주 구현 목표 4번), authTossPayment 주문 상태(PENDING) 확인(구현 기능 관련 문제점 12번).
 - [ ] 2. Phase 3 이후 로드맵은 [20260930 ~ 20261006] 블록 다음 한 주 동안 개발할 기능 2번 참조.
+
+---
+[20261102 ~ 20261109]
+### 이번주 구현 목표
+- [x] 1. (20261102 사용자 요청, claude/hopeful-mccarthy-6y31xt) origin/config/test를 작업 브랜치에 먼저 머지하고 그 위에서 작업. config/test가 main에 머지되면 PR diff는 이번 작업분만 남음. UserControllerTest 94행 컴파일 오류(createUser_inValidTest 미완성)는 @Valid 400 테스트로 완성.
+- [x] 2. (Phase 1 이월) 회원가입 role 서버 고정: UserCreateDTO.signUpRole과 가입 화면 Role 입력칸 삭제, UserService가 RoleNames.USER로 저장. ADMIN 계정은 DB 직접 수정 또는 Phase 4 seed.
+- [x] 3. (Phase 1 이월) Product 상세 목록 교체 버그: patchProduct·putProduct를 replaceProductDetails(clear → assignProduct → add)로 통일, @DataJpaTest 회귀 테스트(수정 전 실패 확인).
+- [x] 4. (Phase 1 이월) @Valid 누락: POST /carts, POST /products에 @Valid, CartUpdateDTO·OrderUpdateDTO 리스트에 @Valid + @NotEmpty, ProductCreateDTO 상세 목록 @NotEmpty·상세 @NotBlank, UserUpdateDTO @Email.
+- [x] 5. (20261008 구현 기능 관련 문제점 12번) authTossPayment 주문 상태 확인: 주문 행 비관적 잠금(findByOrderUidForUpdate) 후 PAID면 토스 미호출·현재 주문 반환(멱등), PENDING만 진행, 그 외 400 ORDER_STATUS_INVALID. OrderStatus는 @Enumerated(STRING).
+- [x] 6. (명세서 5번 표 높음) 주문 가격 서버 조회: OrderItemCreateDTO·OrderItemUpdateDTO에서 curOrderItemPrice 삭제, createOrder가 Product.price로 OrderItem 생성, 주문 수정은 PENDING 주문의 수량만.
+- [x] 7. (Phase 2 이월) accessDeniedHandler 추가: 403 바디를 ApiResponse로 통일, SecurityErrorResponseTest로 401·403 바디 확인.
+- [x] 8. 새 기능(20261102 결정: 기본 범위): GET /users/find-id(마스킹 이메일), POST /auth/reissue(refresh token rotation, type 클레임·jti) + 로그아웃 쿠키 만료, 상품 재고(조건부 UPDATE 차감, 실패·PENDING 삭제 시 복구, 동시성 테스트), 결제 승인 후 장바구니에서 결제 상품 제거, 프론트 authFetch(401 → 재발급 → 재시도).
+- [x] 9. 기타 수정: 이메일 중복 500 → 400, deleteCart readOnly 트랜잭션으로 삭제 미반영, 내 주문 단건 조회 단건 쿼리, 장바구니 같은 상품 중복 행.
+- 종료 조건: ./gradlew test 133개 통과(config/test 1차 머지 직후 82개 → 128개 → 사용자 테스트 2차 머지 후 133개), 프론트 tsc 통과, PR 생성 후 사용자 리뷰·머지. 상세 기록은 저장소 docs/claude-work-log/20261102_work-log.md, 미구현은 20261102_unimplemented.md.
+- [x] 10. (20261103, PR 25 머지 db7ba07) PENDING 만료·토스 타임아웃·주문 취소 및 환불·로그아웃 블랙리스트·서버 컴포넌트 재발급·로그인 실패 메시지 통일·상품 페이지네이션·찜하기 구현, 테스트 191개·CI 통과. PR 26(1cb7a0a)으로 기능 2차 뼈대(배송·비밀번호 변경·쿠폰·포인트·리뷰) 추가, copilot.md를 CLAUDE.md로 이름 변경.
+- [ ] 11. (20261104, 사용자 요청) 프론트 잡지형 메인 화면. PR 22(로그인·회원가입·상품 상세 리디자인) 머지 완료. PR 28(1차)은 사용자 요구와 달라 PR 29(dev/ui-cntwa2)로 다시 구현. PR 29 머지 시 [x], PR 28은 닫기.
+	1. (20261104 사용자 확정 요구 8개) 한 화면에 두 쪽, 좌우 모델 사진 한 장씩, 옷과 메모를 실금으로 연결, 메모는 제품명과 가격만, 실금은 옷을 보는 데 거슬리지 않을 것, 제목 전부 삭제, 메모 글자 축소, 세로가 긴 화면은 한 쪽씩 넘김. 전부 반영, tsc·next build 통과, 1440x900·900x900·iPhone 13 화면 확인.
+- [x] 12. (20261104) Obsidian 문서 최신화: API 명세서를 main 1cb7a0a 기준으로 전체 갱신(엔드포인트 25개 → 32개, 찜·취소·재발급·아이디 찾기 추가, 에러 코드 사용처 재대조), TODO 8번 프론트 UI 섹션 추가, 이 블록 반영.
+
+### 컴파일 및 디버깅 관련 문제
+- [x] 1. config/test 5ef71ff의 UserControllerTest 94행 String body = "" 뒤 세미콜론 누락으로 compileTestJava 실패 → 테스트 전체 실행 불가. 테스트 완성으로 해결.
+- [x] 2. JwtProvider.checkValidationToken의 catch(SecurityException)이 import io.jsonwebtoken.* 상황에서 java.lang.SecurityException으로 해석됨(io.jsonwebtoken 패키지에는 SecurityException이 없음). 다른 키로 서명한 토큰이 오면 io.jsonwebtoken.security.SignatureException이 필터 밖으로 던져져 공개 API까지 모든 요청 500. jjwt SecurityException, JwtException, IllegalArgumentException을 잡도록 수정, JwtProviderTest로 재현 후 수정.
+- [x] 3. CartService.deleteCart에 @Transactional이 없어 클래스 레벨 readOnly를 따름 → flush가 일어나지 않아 DELETE /carts/me가 200인데 행이 남음. 테스트 트랜잭션을 끈 CartServiceTransactionTest로 재현 후 수정.
+- [x] 4. 같은 상품을 장바구니에 두 번 담으면 CartItem 2행 → patchCart의 Collectors.toMap에서 IllegalStateException(Duplicate key) → 500. 기존 항목 수량 증가로 수정, CartTest로 재현 후 수정.
+- [ ] 5. (로컬 조치) ddl-auto: update는 기존 orders.order_status 컬럼(숫자)을 문자열로 바꾸지 않음 → 로컬 DB의 orders, order_item 테이블 drop 필요. product.stock 컬럼이 추가되면 기존 상품 재고는 0이므로 PATCH /products/{id}로 stock 지정 필요.
+- [x] 6. (20261102 사용자 push 92bde40) config/test 단독 상태에서 테스트 90개 중 2개 실패: patchOrder_InvalidQuantityTest가 PATCH /orders/{id}가 아니라 POST 토스 승인 URL로 요청, patchProduct_InvalidNameTest가 POST /products/{id}로 요청해 405. 2차 머지(53339cd)에서 HTTP 메서드·URL 수정, 가격 필드 삭제·stock 필수화에 맞춰 테스트 조정.
+- [ ] 7. 클라우드 세션에서 Maven Central이 429를 반환해 Gradle 의존성 다운로드 실패 → 세션 로컬 init 스크립트(~/.gradle/init.d, 커밋 안 함)로 미러를 써서 빌드. 저장소 설정 변경 없음, 로컬·CI에는 영향 없음.
+- [ ] 8. (20261104) 프론트 eslint 에러 2건(order/page.tsx, toss-test/page.tsx의 useEffect 안 setState, react-hooks/set-state-in-effect) 그대로 남음. 9번 항목의 login 컴포넌트 이름 rules-of-hooks 3건은 PR 22 리디자인으로 사라지고 경고 4건(미사용 변수)만 남음.
+- [ ] 9. (20261104) 데스크톱에서 클라우드로 넘어온 세션의 WIP 커밋(AGENTS.md)이 이미 원격에 올라가 있어 강제 푸시 없이 위에 커밋을 쌓음. AGENTS.md는 @copilot.md를 가리키는데 PR 26에서 copilot.md가 CLAUDE.md로 이름이 바뀌어 참조 대상이 없음 → @CLAUDE.md로 수정 필요(사용자 확인).
+
+### 구현 기능 관련 문제점
+- [x] 1. (높음) PENDING 주문 만료 처리 없음: 재고를 주문 생성 시 잡으므로 결제 이탈 시 재고가 계속 묶임. @Scheduled로 일정 시간 지난 PENDING을 FAILED 처리 + 재고 복구 필요(행 잠금 사용).
+	1. (20261103 PR 25로 해결) 1분마다 30분 지난 PENDING 정리, 토스 조회 후 DONE이면 PAID 복구 / 미결제면 EXPIRED + 재고 복구.
+- [x] 2. (높음) 토스 RestClient 타임아웃 없음, 네트워크 오류 시 500 + 주문 PENDING 유지. 토스는 승인했는데 응답만 유실되면 결제·주문 불일치 → 타임아웃 설정 + 토스 조회 API로 상태 확인 필요. RestClientConfig와 TossPaymentConfig에 RestClient 빈이 중복.
+	1. (20261103 PR 25로 해결) 연결 5초·응답 30초 타임아웃, 승인 중 오류 시 결제 조회로 확정, 확정 불가면 PENDING 유지 + 502 TOSS_SERVER_ERROR. 중복 RestClient 빈 삭제.
+- [ ] 3. (높음, 미확인) 회원 탈퇴 시 orders.user_id FK, 상품 삭제 시 cart_item.product_id FK 위반으로 500 예상. soft delete 정책 결정 필요.
+- [ ] 4. (중간) 비밀번호 찾기는 20261102 결정으로 미구현. 현재 프론트 설계(이메일+이름+전화번호로 즉시 변경)는 계정 탈취 위험 → 메일 인증 + Redis 재설정 토큰 방식 권장. 그 전까지 로그인 화면 링크 숨김 권장.
+- [ ] 5. (중간) refresh token이 사용자당 1개라 다른 기기 로그인 시 이전 기기는 다음 재발급에서 401. 재사용 감지(세션 강제 종료)는 이 구조에서 다른 기기 세션까지 끊어 적용하지 않음. 기기별 키로 바꾼 뒤 Phase 5에서 결정.
+- [x] 6. (중간) 서버 컴포넌트(profile, orders 페이지)는 access token 만료 시 재발급하지 못함 → middleware 또는 클라이언트 authFetch로 이전 필요.
+	1. (20261103 PR 25로 해결) /auth/refresh 페이지로 재발급 후 원래 페이지로 복귀.
+- [ ] 7. (중간) 토스 승인 소유권 확인, orderUid 난수 충돌, 로그인 실패 메시지로 가입 여부 노출은 미처리(각각 20260826 결정, 낮은 확률, Phase 5).
+	1. (20261103 PR 25) orderUid 충돌은 최대 5회 재생성, 로그인 실패 메시지는 401 Invalid email or password로 통일(응답 시간 차이도 제거). 토스 승인 소유권 확인만 보류 유지.
+- [ ] 8. (중간, 사용자 결정 필요) 92bde40 검증 규칙: 회원 이름 ^[가-힣]{3,5}는 2글자·6글자 이상·외국인 이름 가입 불가, 상품 이름 [a-z]{3,20}|[가-힣]{3,20}은 대문자·숫자·공백 불가이고 수정 DTO에만 있어 등록은 되는데 수정은 안 되는 불일치. ProductCreateDTO 가격 메시지가 제약과 어긋나 2차 머지에서 제약에 맞는 메시지로 정리.
+- [ ] 9. (낮음) 프론트 eslint 기존 에러 5건(login 컴포넌트 이름 소문자 rules-of-hooks 3건, set-state-in-effect 2건), toss-test 페이지 잔존, 목록 API N+1.
+- [ ] 10. (20261104) 잡지 메인의 내용(LOOKS)은 코드 상수이고 productId·이름·가격이 예시 값. 실제 상품과 어긋나면 메모의 가격이 상세 화면과 다르게 보임 → 상품 이미지 필드와 함께 API 또는 관리자 등록 데이터로 이동 필요.
+- [ ] 11. (20261104) 주문 내역 화면에 주문 날짜를 표시할 수 없음: OrderResponseDTO에 createdAt 없음. 상품명은 PR 25에서 OrderItemResponseDTO.productName으로 해결.
+- [ ] 12. (정정, 20261104) 직전 세션 요약의 "USER 권한이 /orders/user/me에 접근 불가(SecurityConfig 경로 오류)"는 틀린 내용. 근거: 프론트 orders/page.tsx는 GET /orders/me를 호출하고, SecurityConfig도 GET /orders/me를 authenticated로 등록(20261008 구현 기능 관련 문제점 9번에서 이미 수정). 경로 불일치 없음.
+
+### 다음 한 주 동안 개발할 기능
+- [ ] 1. PR 리뷰 후 머지 순서: config/test PR 먼저 main 머지 → 이 브랜치 PR 머지. 머지 후 로컬 DB orders·order_item drop, 기존 상품 stock 지정, application.yml access token 30분(1800000) 원복 후 E2E(가입 → 로그인 → 담기 → 주문 → 결제 → 승인 → 장바구니·재고 확인 → 결과 페이지 새로고침 시 PAID 유지).
+- [x] 2. Obsidian API 명세서 갱신: POST /auth/reissue, GET /users/find-id 추가, signup·orders·products 요청/응답 변경, 403 바디, 새 ErrorCode(O003, A001). 목록은 docs/claude-work-log/20261102_work-log.md 3번.
+	1. (20261104 완료) main 1cb7a0a 기준 전체 갱신.
+- [ ] 3. Phase 2 마무리: SecurityConfig 인가 테스트 전체(공개 200 / 비로그인 401 / USER 403 / ADMIN 200), 이번에 추가된 /auth/reissue·/users/find-id 공개 경로 포함.
+- [ ] 4. Phase 3 Flyway: V1 스키마는 이번 변경(product.stock, orders.order_status 문자열) 반영 후 작성.
+- [x] 5. 구현 기능 관련 문제점 1·2번(PENDING 만료, 토스 타임아웃·상태 조회)을 주문 취소·환불 기능과 함께 설계.
+	1. (20261103 PR 25로 완료)
+- [ ] 6. (20261104) PR 29 리뷰·머지 → PR 28 닫기. 실제 모델 사진이 준비되면 content.ts의 점 위치·메모 방향·모델 범위 조정.
+- [ ] 7. (20261104, 로드맵 복귀) 현재 단계인 Phase 2 컨트롤러 예외·인가 테스트 마무리(3번) → JWT 심화. JWT 심화의 남은 결정은 멀티 디바이스 정책(기기별 refresh token, 재사용 감지).
+- [ ] 8. (20261104) TODO 7번 기능 개발 2차 1번(배송지·배송 상태)과 2번(비밀번호 변경)은 PR 26 뼈대가 있어 바로 착수 가능. 로드맵상 Phase 2 테스트가 끝난 뒤 진행 권장.

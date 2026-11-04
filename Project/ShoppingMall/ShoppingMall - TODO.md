@@ -10,11 +10,12 @@ created: 2026-11-02
 - 기준: main 1e1e7f3 (PR 23 머지, 2026-11-02). 백엔드 테스트 133개 통과 (로컬 clean test, GitHub Actions 모두 성공)
 - 갱신: 4번 기능 개발 전체를 PR 25(claude/hopeful-mccarthy-6y31xt)로 구현, 테스트 191개 통과. PR 25 머지 후 할 일을 1번에 추가
 - 갱신(2026-11-03): PR 25 머지(main db7ba07, 테스트 191개·CI 통과 확인). 타사 쇼핑몰 비교로 7번 "기능 개발 2차" 추가, 1~5번 기능 뼈대를 PR 26으로 올림
+- 갱신(2026-11-04): API 명세서를 main 1cb7a0a 기준으로 전체 갱신(1번 항목 2개 완료), copilot-addendum에 20261102 블록 반영. 프론트 잡지형 메인 화면을 PR 29(dev/ui-cntwa2)로 올림, 8번 "프론트 UI" 추가
 - 로드맵: Spring Boot + MySQL → CI(테스트 코드) + Web Server → JWT 인증 심화(로그인/로그아웃) → Grafana/Prometheus + Mock Data → Deploy(CD 포함)
 - 현재 단계: 컨트롤러 예외/인가 테스트 마무리 → 끝나면 JWT 인증 심화로 전환
-- 구성: 작업 성격별로 나눔. 1 바로 할 일(운영·문서) / 2 결정 필요(정해야 진행 가능) / 3 테스트 / 4 기능 개발(완료) / 5 인프라·데이터 / 6 정리 / 7 기능 개발 2차(다음 구현 대상)
+- 구성: 작업 성격별로 나눔. 1 바로 할 일(운영·문서) / 2 결정 필요(정해야 진행 가능) / 3 테스트 / 4 기능 개발(완료) / 5 인프라·데이터 / 6 정리 / 7 기능 개발 2차(다음 구현 대상) / 8 프론트 UI
 - 우선순위: 높음(돈·데이터 문제) / 중간(기능 결함·사용성) / 낮음(정리). "미확인"은 코드로 추론했고 실행해서 확인하지 않은 항목
-- 자세한 근거: GitHub PR 23·25 설명(변경 사항·변경 이유·검증). 저장소의 docs/claude-work-log/는 PR 26에서 삭제했으므로, 문서 원문이 필요하면 PR 25 머지 커밋(db7ba07) 시점의 파일을 git 이력에서 확인
+- 자세한 근거: GitHub PR 22·23·25·29 설명(변경 사항·변경 이유·검증). 저장소의 docs/claude-work-log/는 PR 26에서 삭제했으므로, 문서 원문이 필요하면 PR 25 머지 커밋(db7ba07) 시점의 파일을 git 이력에서 확인
 
 ## 1. 바로 할 일 (운영·문서)
 
@@ -24,8 +25,8 @@ created: 2026-11-02
 - [ ] application.yml access-token-expiration-ms 를 1800000(30분)으로 원복 (현재 7일)
 - [ ] access token 만료를 짧게(60000) 바꿔 재발급(POST /auth/reissue) 흐름 확인 후 30분으로 원복
 - [ ] 수동 E2E: 가입 → 로그인 → 같은 상품 두 번 담기 → 장바구니 수정 → 주문 → 토스 결제 → 승인 → 장바구니에서 결제 상품만 빠졌는지, 재고가 줄었는지 → 결과 페이지 새로고침해도 PAID 유지되는지
-- [ ] [[ShoppingMall - API 명세서]] 갱신: POST /auth/reissue, GET /users/find-id 추가, signup·orders·products 요청/응답 변경, 403 바디, 새 ErrorCode(O003, A001)
-- [ ] [[copilot-addendum]] 에 20261102 블록 반영 (블록 원문: 저장소 git 이력 db7ba07의 docs/claude-work-log/20261102_copilot-addendum-block.md, PR 26에서 파일 삭제)
+- [x] [[ShoppingMall - API 명세서]] 갱신 (2026-11-04 완료): POST /auth/reissue, GET /users/find-id 추가, signup·orders·products 요청/응답 변경, 403 바디, 새 ErrorCode(O003, A001)
+- [x] [[copilot-addendum]] 에 20261102 블록 반영 (2026-11-04 완료) (블록 원문: 저장소 git 이력 db7ba07의 docs/claude-work-log/20261102_copilot-addendum-block.md, PR 26에서 파일 삭제)
 
 ### PR 25 머지 후
 - [x] PR 25 리뷰·머지 (2026-11-02, main db7ba07에서 테스트 191개·CI 통과 확인)
@@ -37,7 +38,7 @@ created: 2026-11-02
 	- 결제 후 주문 내역에서 취소·환불 → 토스 테스트 결제 내역에서 취소 확인, 재고 복구 확인
 	- 주문만 만들고 결제창 닫기 → 만료(EXPIRED)·재고 복구 확인 (테스트 시 order.pending-expiration-minutes=1)
 	- 상품 검색·정렬·페이지 이동, 찜하기·찜 목록
-- [ ] [[ShoppingMall - API 명세서]] 에 PR 25 변경 반영: GET /products 페이지 응답, 주문 취소, 찜 API 4개, 로그인 401 통일, 주문 응답 orderStatus·productName, 장바구니 productName·productPrice, ErrorCode U006·PA002, TOSS_SERVER_ERROR 502
+- [x] [[ShoppingMall - API 명세서]] 에 PR 25 변경 반영 (2026-11-04 완료): GET /products 페이지 응답, 주문 취소, 찜 API 4개, 로그인 401 통일, 주문 응답 orderStatus·productName, 장바구니 productName·productPrice, ErrorCode U006·PA002, TOSS_SERVER_ERROR 502
 - [ ] PR 25 이전에 결제된 주문은 paymentKey가 없어 API 환불 불가(400) → 필요하면 토스 개발자센터에서 수동 환불
 
 ## 2. 결정 필요 (정해야 진행 가능)
@@ -90,7 +91,8 @@ created: 2026-11-02
 
 ## 6. 정리 (낮음)
 
-- [ ] 프론트 eslint 에러 2건: order/page.tsx, toss-test/page.tsx의 useEffect 안 setState (set-state-in-effect)
+- [ ] 프론트 eslint 에러 2건: order/page.tsx, toss-test/page.tsx의 useEffect 안 setState (set-state-in-effect). 2026-11-04 재확인 시에도 남아 있음
+- [ ] ErrorCode 미사용 8개 정리 (CM000, CM001, U003, U004, U005, P002, C002, C003). 로그인 실패를 U006으로 통일하면서 U004·U005도 미사용
 - [ ] toss-test 페이지 삭제 또는 개발 환경 전용
 - [ ] CheckConfig의 IllegalArgumentException이 500으로 나감. 사용자 입력은 DTO 검증으로 막는 원칙 유지
 
@@ -124,6 +126,25 @@ created: 2026-11-02
 - [ ] 소셜 로그인(카카오·구글): OAuth2 client 의존성, 플랫폼 앱 등록 필요. 화면에는 "준비 중" 버튼만 있음
 - [ ] 메일·알림: 비밀번호 찾기(2번 결정 필요 항목), 주문·배송 알림, 재입고 알림
 - [ ] 관리자 화면: 상품 등록·주문 처리·배송 상태 변경·매출 통계. 지금은 API만 있음 (Manager 엔티티는 비어 있음)
+
+## 8. 프론트 UI (잡지형 화면)
+
+- 방향: 흰색·검정 톤의 "잡지 같은 웹". 메인은 모델 사진을 넘겨 보는 잡지, 사진 속 옷에서 상품 상세로 이동
+- PR 22(머지): 로그인·회원가입·상품 상세 리디자인, FormField 공통 컴포넌트, 비밀번호 마스킹, Enter 제출, 인라인 에러
+- PR 28(dev/ui, 미머지): 잡지 메인 1차(표지·뒤표지, 책장 넘김, = 토글 메뉴, 고객센터 /support)
+- PR 29(dev/ui-cntwa2, 미머지, PR 28 포함): 사용자 요구 8개 반영한 최종 레이아웃
+	- 가로가 세로 이상이면 펼침면 두 쪽(왼쪽·오른쪽 모델 사진 한 장씩), 세로가 긴 화면은 한 쪽씩 넘김
+	- 옷마다 제품명·가격 메모를 모델 옆 배경에 두고 0.6px 실금으로 옷의 점과 연결, 공간이 없으면 메모를 옷 아래에 배치
+	- 표지·제목·쪽 번호 모두 삭제, 회사 연락처는 고객센터 화면에만 표시
+
+- [ ] PR 29 리뷰·머지 후 PR 28 닫기 (29가 28의 커밋을 모두 포함)
+- [ ] (높음) 실제 모델 사진 준비 후 content.ts 교체: 사진은 8:5 비율(가운데 4:5 영역에 모델), 옷마다 점 위치 x·y와 메모 방향 side, 사진별 모델 범위 span 조정
+- [ ] (높음) 상품 이미지 필드 + 업로드 (7번 의존성 항목과 같음). 잡지 사진·상품 목록·상세 모두 지금은 임시 그림 또는 상품명 첫 글자
+- [ ] (중간) 잡지 내용(LOOKS)을 코드 상수에서 API 또는 관리자 등록 데이터로 이동. 지금은 productId·이름·가격이 예시 값이라 실제 상품과 다를 수 있음
+- [ ] (중간) 주문 내역 화면에 주문 날짜 표시: OrderResponseDTO에 createdAt 없음
+- [ ] (중간) 비밀번호 찾기 화면: 백엔드 API 없음(2번 결정 필요). 결정 전까지 링크 숨김 권장
+- [ ] (낮음) 카테고리·브랜드·사이즈·색상 옵션 화면 (7번 카테고리·상품 옵션 구현 후)
+- [ ] (낮음) 소셜 로그인 버튼은 "준비 중" 상태 유지 (7번 의존성 항목)
 
 > [!info]- 🔗 위키 연결
 > - 상위: [[프로젝트]]
