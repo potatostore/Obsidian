@@ -399,7 +399,8 @@ created: 2026-08-02
 - [x] 6. (20261102 사용자 push 92bde40) config/test 단독 상태에서 테스트 90개 중 2개 실패: patchOrder_InvalidQuantityTest가 PATCH /orders/{id}가 아니라 POST 토스 승인 URL로 요청, patchProduct_InvalidNameTest가 POST /products/{id}로 요청해 405. 2차 머지(53339cd)에서 HTTP 메서드·URL 수정, 가격 필드 삭제·stock 필수화에 맞춰 테스트 조정.
 - [ ] 7. 클라우드 세션에서 Maven Central이 429를 반환해 Gradle 의존성 다운로드 실패 → 세션 로컬 init 스크립트(~/.gradle/init.d, 커밋 안 함)로 미러를 써서 빌드. 저장소 설정 변경 없음, 로컬·CI에는 영향 없음.
 - [ ] 8. (20261104) 프론트 eslint 에러 2건(order/page.tsx, toss-test/page.tsx의 useEffect 안 setState, react-hooks/set-state-in-effect) 그대로 남음. 9번 항목의 login 컴포넌트 이름 rules-of-hooks 3건은 PR 22 리디자인으로 사라지고 경고 4건(미사용 변수)만 남음.
-- [ ] 9. (20261104) 데스크톱에서 클라우드로 넘어온 세션의 WIP 커밋(AGENTS.md)이 이미 원격에 올라가 있어 강제 푸시 없이 위에 커밋을 쌓음. AGENTS.md는 @copilot.md를 가리키는데 PR 26에서 copilot.md가 CLAUDE.md로 이름이 바뀌어 참조 대상이 없음 → @CLAUDE.md로 수정 필요(사용자 확인).
+- [x] 9. (20261104) 데스크톱에서 클라우드로 넘어온 세션의 WIP 커밋(AGENTS.md)이 이미 원격에 올라가 있어 강제 푸시 없이 위에 커밋을 쌓음. AGENTS.md는 @copilot.md를 가리키는데 PR 26에서 copilot.md가 CLAUDE.md로 이름이 바뀌어 참조 대상이 없음 → @CLAUDE.md로 수정 필요(사용자 확인).
+	1. (20261104 사용자 결정) AGENTS.md 삭제, 하네스 규칙은 CLAUDE.md 한 파일에서만 관리하도록 CLAUDE.md 맨 위에 명시. PR 29에 포함.
 
 ### 구현 기능 관련 문제점
 - [x] 1. (높음) PENDING 주문 만료 처리 없음: 재고를 주문 생성 시 잡으므로 결제 이탈 시 재고가 계속 묶임. @Scheduled로 일정 시간 지난 PENDING을 FAILED 처리 + 재고 복구 필요(행 잠금 사용).
