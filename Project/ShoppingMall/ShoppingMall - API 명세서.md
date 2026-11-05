@@ -4,6 +4,7 @@
 - 생성: 2026-10-07, springdoc-openapi 2.6.0이 만든 /v3/api-docs를 변환 + 코드 확인으로 권한·에러·비고 보강
 - 갱신: 2026-11-04, 컨트롤러·DTO·SecurityConfig·서비스 예외를 main 코드에서 다시 대조해 전체 갱신
 - 갱신: 2026-11-05, 소셜 로그인 API(Auth 4번) 추가. 프론트(PR 30)가 정한 계약이며 백엔드는 미구현 ("예정" 표시)
+- 갱신: 2026-11-05, 문의 게시판 API(Inquiry 33~36번) 추가. 프론트(PR 31)가 정한 계약이며 백엔드는 미구현 ("예정" 표시)
 - Base URL: http://localhost:8080/api/v1
 - Swagger UI (앱 실행 후, ADMIN 전용): http://localhost:8080/api/v1/swagger-ui.html
 - 코드가 바뀌면 이 노트는 자동으로 갱신되지 않음. 최신 명세는 Swagger UI 기준
@@ -117,6 +118,18 @@
 | 32  | DELETE | /orders/{orderId}         | 주문 삭제      | ADMIN | 없음                                      |
 
 - 서버 내부 작업: OrderExpirationScheduler가 1분마다 30분(order.pending-expiration-minutes) 지난 PENDING 주문을 정리. 토스 조회 결과 DONE이면 PAID로 복구, 미결제면 EXPIRED + 재고 복구
+
+### Inquiry (문의, 예정)
+
+| #   | 메서드  | 경로                         | 설명                      | 권한        | 프론트 호출                                   |
+| --- | ---- | -------------------------- | ----------------------- | --------- | ---------------------------------------- |
+| 33  | GET  | /inquiries                 | 문의 목록 (제목, 가린 작성자, 날짜, 답변 상태) | x         | support/page.tsx (서버 컴포넌트)                |
+| 34  | POST | /inquiries                 | 문의 작성                   | 인증요구      | support/inquiries/new/page.tsx (브라우저, authFetch) |
+| 35  | GET  | /inquiries/{inquiryId}     | 문의 상세 + 답변              | 인증요구 (작성자·ADMIN) | support/inquiries/[inquiryId]/page.tsx (브라우저, authFetch) |
+| 36  | POST | /inquiries/{inquiryId}/answer | 답변 등록                 | ADMIN     | 없음 (관리자 화면 예정)                          |
+
+- 공개 범위 (20261105 사용자 결정): 목록은 누구나, 본문과 답변은 작성자와 관리자만
+- 전부 백엔드 미구현. 지금은 기본 닫기 규칙(anyRequest ADMIN)에 걸려 목록 401 → 화면은 "문의 목록을 불러오지 못했습니다" 표시
 
 ## 2. 엔드포인트 상세
 
@@ -556,6 +569,50 @@
 | 프론트 호출 | 없음 |
 | 비고 | PENDING 주문이면 잡아 둔 재고를 복구한 뒤 삭제 |
 
+### Inquiry (문의, 예정)
+
+#### GET /inquiries (예정)
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 문의 목록, 최신순 |
+| 권한 | x (SecurityConfig permitAll 추가 필요) |
+| 쿼리 파라미터 | page (0부터, 기본 0), size (기본 10) |
+| 응답 200 | ApiResponse, data = InquiryPageResponseDTO (예정) |
+| 프론트 호출 | support/page.tsx (서버 컴포넌트, cache no-store) |
+| 비고 | 본문은 목록에 넣지 않음. 작성자 이름은 서버가 가려서 보냄 (예: 김*자, po***) |
+
+#### POST /inquiries (예정)
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 문의 작성 |
+| 권한 | 인증요구 |
+| 요청 바디 | InquiryCreateDTO (예정) |
+| 응답 200 | ApiResponse, data = InquiryResponseDTO (예정, inquiryId 필수: 프론트가 작성 후 상세로 이동) |
+| 에러 (제안) | 401 미인증 (프론트가 로그인 안내)<br>400 @Valid 실패 |
+| 프론트 호출 | support/inquiries/new/page.tsx (브라우저, authFetch) |
+
+#### GET /inquiries/{inquiryId} (예정)
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 문의 상세와 답변 |
+| 권한 | 인증요구. 작성자 본인 또는 ADMIN만 |
+| 응답 200 | ApiResponse, data = InquiryResponseDTO (예정) |
+| 에러 (제안) | 401 미인증<br>403 남의 문의 (프론트가 "작성자 본인만 볼 수 있는 문의입니다" 표시)<br>404 없는 문의 |
+| 프론트 호출 | support/inquiries/[inquiryId]/page.tsx (브라우저, authFetch) |
+| 비고 | 남의 문의를 404로 숨기는 방식(주문 단건 조회와 같은 방식)도 가능. 프론트는 둘 다 처리함 |
+
+#### POST /inquiries/{inquiryId}/answer (예정)
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 관리자 답변 등록 |
+| 권한 | ADMIN |
+| 요청 바디 | { content } |
+| 프론트 호출 | 없음 (관리자 화면과 함께 예정) |
+
 ## 3. 스키마
 
 제약은 DTO 어노테이션 기준. 현재 모든 요청 DTO에 @Valid가 붙어 있고 리스트 필드도 중첩 검증됨.
@@ -693,6 +750,14 @@
 | orderId | Long | 필수 (주문의 orderUid) |
 | amount | Long | 필수, 최소 0 |
 
+#### InquiryCreateDTO (예정)
+
+| 필드 | 타입 | 제약 |
+|---|---|---|
+| category | String | 필수, ORDER / DELIVERY / PRODUCT / ACCOUNT / ETC |
+| title | String | 필수, 100자 이하 |
+| content | String | 필수, 2000자 이하 |
+
 ### 응답 DTO
 
 #### UserResponseDTO
@@ -796,6 +861,29 @@
 | totalOrderItemPrice | Long |
 | productName | String |
 
+#### InquirySummaryDTO (예정, 목록 항목)
+
+| 필드 | 타입 |
+|---|---|
+| inquiryId | Long |
+| category | String (ORDER, DELIVERY, PRODUCT, ACCOUNT, ETC) |
+| title | String |
+| writerName | String (서버에서 마스킹) |
+| createdAt | LocalDateTime |
+| answered | boolean |
+
+#### InquiryPageResponseDTO (예정)
+
+ProductPageResponseDTO와 같은 형식: content (List<InquirySummaryDTO>), page, size, totalElements, totalPages, hasNext
+
+#### InquiryResponseDTO (예정, 상세)
+
+| 필드 | 타입 |
+|---|---|
+| (InquirySummaryDTO 필드 전부) | |
+| content | String |
+| answer | { content: String, answeredAt: LocalDateTime } 또는 null |
+
 ## 4. 에러 코드
 
 | ErrorCode | HTTP | 코드 | 기본 메시지 | 사용처 |
@@ -836,6 +924,7 @@
 | 높음, 미확인 | DELETE /users/me, DELETE /products/{productId} | 주문·장바구니가 FK로 참조하면 500 예상 | soft delete 정책 결정 (TODO 2번) |
 | 높음 | POST /auth/oauth/{provider} | 프론트(PR 30)는 호출하지만 백엔드 미구현 → 소셜 로그인 불가 | JWT 심화 단계에서 구현 |
 | 중간 | POST /auth/oauth/{provider} | 소셜 사용자는 전화번호가 없고 이름이 영문·2글자일 수 있어 지금 회원 규칙으로 저장 불가 | 추가 정보 입력 또는 규칙 완화 결정 |
+| 중간 | /inquiries 4개 | 프론트(PR 31)는 호출하지만 백엔드 미구현 → 고객센터 목록 실패 안내, 작성 불가 | Inquiry 엔티티·API 구현 |
 | 중간 | POST /users/find-password | 프론트는 호출하지만 백엔드 미구현 (401) | 메일 인증 + Redis 재설정 토큰 방식 결정 (TODO 2번) |
 | 중간 | POST /auth/reissue | refresh token이 사용자당 1개라 다른 기기 로그인 시 이전 기기 세션 종료 | 멀티 디바이스 정책 결정 (TODO 2번) |
 | 중간 | POST /users/signup, PATCH /products/{productId} | 이름 규칙이 2글자·외국인 이름, 대문자·숫자·공백 상품명을 거부. 상품명 규칙이 등록·수정에서 다름 | 검증 규칙 결정 (TODO 2번) |

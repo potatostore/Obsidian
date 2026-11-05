@@ -390,13 +390,19 @@ created: 2026-08-02
 	1. (20261104 사용자 확정 요구 8개) 한 화면에 두 쪽, 좌우 모델 사진 한 장씩, 옷과 메모를 실금으로 연결, 메모는 제품명과 가격만, 실금은 옷을 보는 데 거슬리지 않을 것, 제목 전부 삭제, 메모 글자 축소, 세로가 긴 화면은 한 쪽씩 넘김. 전부 반영, tsc·next build 통과, 1440x900·900x900·iPhone 13 화면 확인.
 	2. (20261105 확인) PR 29 머지(main 766e26c). PR 28도 닫지 않고 머지됨(6dd06c7). 29가 28의 커밋을 모두 포함하므로 결과 코드는 같음.
 - [x] 12. (20261104) Obsidian 문서 최신화: API 명세서를 main 1cb7a0a 기준으로 전체 갱신(엔드포인트 25개 → 32개, 찜·취소·재발급·아이디 찾기 추가, 에러 코드 사용처 재대조), TODO 8번 프론트 UI 섹션 추가, 이 블록 반영.
-- [ ] 13. (20261105, 사용자 요청) 소셜 로그인(카카오·네이버·구글) 프론트 구현, PR 30(dev/ui-cntwa2, main 766e26c에서 다시 시작). 머지 시 [x].
+- [x] 13. (20261105, 사용자 요청) 소셜 로그인(카카오·네이버·구글) 프론트 구현, PR 30(dev/ui-cntwa2, main 766e26c에서 다시 시작). 머지 시 [x].
 	1. 세 곳 모두 authorization code 방식. 카카오는 공식 JS SDK 2.7.4(Kakao.Auth.authorize), 구글은 Google Identity Services 코드 클라이언트(ux_mode redirect, scope openid email profile), 네이버는 공식 인가 URL(nid.naver.com/oauth2.0/authorize, response_type=code).
 	2. 네이버만 SDK를 쓰지 않은 근거: 네이버 JS SDK는 implicit 방식(토큰을 브라우저로 바로 받음)만 지원하고, 네이버에는 토큰이 어느 앱에서 발급됐는지 확인하는 API가 없어 서버가 안전하게 검증할 수 없음.
 	3. 흐름: 버튼 클릭 → 무작위 state를 sessionStorage에 저장(10분, 1회용) → 회사 로그인 화면 → /auth/callback/{provider}?code&state → state 대조(CSRF 방지) → POST /auth/oauth/{provider}에 code·state·redirectUri 전송 → 성공 시 원래 화면으로 이동하고 헤더 갱신. 회사 토큰은 브라우저에 남기지 않음.
 	4. 회원가입 화면 탭을 이메일·카카오·구글에서 이메일·간편 가입으로 변경. 소셜 계정은 첫 로그인 때 가입되는 것으로 가정(구현 기능 관련 문제점 14번).
 	5. 검증: tsc·next build·eslint 통과. 가짜 SDK와 가짜 백엔드로 브라우저 시험 11개 통과(세 회사 로그인 완료, 전송값 일치, 네이버 인가 URL 파라미터, state 위조·동의 취소·지원 안 하는 회사·백엔드 401 안내, 개발 모드에서 code 1회 전송). 실제 회사 서버 연동은 키와 백엔드 API가 없어 미확인.
 	6. 로드맵 위치: 현재 단계(Phase 2 테스트) 다음인 JWT 인증 심화 단계의 항목을 프론트만 먼저 진행한 것. 백엔드는 Phase 2 마무리 후 진행 권장.
+	7. (20261105) PR 30 머지(main 75f887d).
+- [ ] 14. (20261105, 사용자 요청) 고객센터를 문의 게시판으로 변경, PR 31(dev/ui-cntwa2). 머지 시 [x].
+	1. 사용자 결정: 프론트 + API 계약만 작성(백엔드는 사용자 구현), 공개 범위는 목록 공개·본문과 답변은 작성자와 관리자만.
+	2. 화면: /support 목록(번호, 분류, 제목, 가린 작성자, 작성일, 답변 상태, 10개씩 페이지), /support/inquiries/new 글쓰기(분류 5개, 제목 100자, 내용 2000자), /support/inquiries/{id} 상세(본문, 감자몰 답변, 401·403·404 안내).
+	3. API 계약(예정): GET /inquiries(공개), POST /inquiries(로그인), GET /inquiries/{id}(작성자·ADMIN), POST /inquiries/{id}/answer(ADMIN). 상세는 API 명세서 Inquiry 33~36번.
+	4. 검증: tsc·next build·eslint 통과, 가짜 백엔드로 브라우저 시험 11개 통과(목록·페이지, 비로그인 안내, 401·403·404, 작성 후 상세 이동, 휴대폰 가로 넘침 없음). 처음 1건 실패는 시험 코드의 기대값 오류(답변 없는 문의로 답변 표시를 확인)였고 답변 있는 문의로 재확인.
 
 ### 컴파일 및 디버깅 관련 문제
 - [x] 1. config/test 5ef71ff의 UserControllerTest 94행 String body = "" 뒤 세미콜론 누락으로 compileTestJava 실패 → 테스트 전체 실행 불가. 테스트 완성으로 해결.
@@ -412,6 +418,7 @@ created: 2026-08-02
 - [x] 10. (20261105) 콜백 화면에서 개발 모드(React StrictMode)의 effect 두 번 실행으로 1회용 code가 두 번 전송될 위험 → useRef로 한 번만 시작하고, 같은 code의 요청은 진행 중인 Promise를 공유하도록 해 방지. 브라우저 시험에서 회사별 1회 전송 확인.
 - [x] 11. (20261105) 콜백 화면의 effect 안 setState로 react-hooks/set-state-in-effect lint 에러 → state 확인과 전송을 하나의 비동기 함수로 묶고 결과만 받아 화면 상태를 바꾸도록 수정.
 - [ ] 12. (20261105) 클라우드 환경에서 카카오 CDN·네이버에 접속할 수 없어 카카오 SDK 무결성 해시(integrity)를 넣지 못함. 카카오 developers 다운로드 페이지의 해시로 고정 필요.
+- [x] 13. (20261105) .claude/settings.json(Miro 도구 권한 허용) 커밋이 PR 30 머지 직후에 올라가 main에서 빠짐. 강제 푸시가 거부되어 브랜치에 main을 병합(63b742a)하고 PR 31에 포함. 이 설정은 저장소가 하나만 연결된 클라우드 세션에서만 읽히므로, Obsidian 저장소도 연결된 이번 세션에는 적용되지 않음.
 
 ### 구현 기능 관련 문제점
 - [x] 1. (높음) PENDING 주문 만료 처리 없음: 재고를 주문 생성 시 잡으므로 결제 이탈 시 재고가 계속 묶임. @Scheduled로 일정 시간 지난 PENDING을 FAILED 처리 + 재고 복구 필요(행 잠금 사용).
@@ -433,6 +440,9 @@ created: 2026-08-02
 - [ ] 13. (20261105, 높음) 소셜 로그인 백엔드 API 없음: POST /auth/oauth/{provider}가 없어 현재 콜백에서 로그인 실패 안내로 끝남. 계약은 명세서 Auth 4번(요청 code·state·redirectUri, 공개 경로, 성공 시 기존 로그인과 같은 쿠키 발급, 실패 4xx).
 - [ ] 14. (20261105, 사용자 결정 필요) 소셜 사용자 저장 불가: UserCreateDTO는 전화번호 필수, 이름 한글 3~5자 규칙. 카카오·구글은 전화번호를 기본 제공하지 않고 이름이 영문이거나 2글자일 수 있음. 선택지: 첫 로그인 후 추가 정보 입력 화면 / 소셜 사용자는 전화번호 선택 항목. 같은 이메일의 기존 계정과 자동 연결은 계정 탈취 경로가 될 수 있어 비권장(로그인 상태에서 직접 연결).
 - [ ] 15. (20261105) 회원 식별 기준: 회사별 사용자 고유 ID(카카오 id, 네이버 id, 구글 sub)를 provider와 묶어 저장해야 함. 이메일은 바뀌거나 비공개일 수 있어 식별자로 쓰지 않음. users에 컬럼 추가 또는 별도 social_account 테이블(사용자 1명에 여러 회사 연결 가능) 결정 필요.
+- [ ] 16. (20261105, 중간) 문의 API 백엔드 없음: 지금은 기본 닫기 규칙에 걸려 고객센터 목록이 "불러오지 못했습니다"로 표시되고 작성 불가. GET /inquiries는 공개 경로로 등록 필요.
+- [ ] 17. (20261105) 문의 답변을 쓸 관리자 화면이 없음(TODO 7번 관리자 화면). 그 전까지는 관리자 계정으로 API 직접 호출.
+- [ ] 18. (20261105) 문의 작성자 이름 마스킹 규칙을 서버에서 정해야 함. 아이디 찾기의 이메일 마스킹(UserService.maskEmail)과 같은 위치에 이름 마스킹을 두는 방식 권장.
 
 ### 다음 한 주 동안 개발할 기능
 - [ ] 1. PR 리뷰 후 머지 순서: config/test PR 먼저 main 머지 → 이 브랜치 PR 머지. 머지 후 로컬 DB orders·order_item drop, 기존 상품 stock 지정, application.yml access token 30분(1800000) 원복 후 E2E(가입 → 로그인 → 담기 → 주문 → 결제 → 승인 → 장바구니·재고 확인 → 결과 페이지 새로고침 시 PAID 유지).
@@ -448,3 +458,4 @@ created: 2026-08-02
 - [ ] 8. (20261104) TODO 7번 기능 개발 2차 1번(배송지·배송 상태)과 2번(비밀번호 변경)은 PR 26 뼈대가 있어 바로 착수 가능. 로드맵상 Phase 2 테스트가 끝난 뒤 진행 권장.
 - [ ] 9. (20261105) PR 30 리뷰·머지 후, 세 회사 콘솔에서 앱 등록과 공개 키 발급 → .env.local 설정(.env.example 참고) → Redirect URI {사이트 주소}/auth/callback/{kakao|naver|google} 등록. 카카오는 사이트 도메인도 등록.
 - [ ] 10. (20261105, JWT 심화 단계) 소셜 로그인 백엔드 구현: POST /auth/oauth/{provider}를 SecurityConfig 공개 경로에 추가 → 회사별 토큰 교환(카카오는 REST API 키와 client secret, 네이버는 state 필수, 구글은 redirect_uri 일치 또는 id_token 서명 검증) → 사용자 정보 조회 → 회원 조회 또는 생성(구현 기능 관련 문제점 14·15번 결정 필요) → 기존 issueTokens로 쿠키 발급. 회사 API 호출에는 토스와 같은 타임아웃 적용.
+- [ ] 11. (20261105) PR 31 리뷰·머지 후 문의 백엔드 구현: Inquiry 엔티티(user FK, category enum 문자열 저장, title, content, createdAt, answer 내용·답변 시각) → InquiryController 4개 → SecurityConfig(GET /inquiries 공개, 상세는 작성자·ADMIN 확인은 서비스에서) → 목록은 본문 없이 페이지 조회 → 컨트롤러 예외·인가 테스트(Phase 2 방식과 같게 공개 200 / 비로그인 401 / 남의 글 403 / ADMIN 200).
