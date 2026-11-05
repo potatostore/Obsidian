@@ -80,18 +80,18 @@ fix/all(7fc2d80) 기준 cite·judgeServer 컨트롤러의 전체 API 135개.
 
 ## 관리자 — 사용자
 
-| Method | URL | 기능 | 권한 | 요청 |
-|---|---|---|---|---|
-| GET | /api/admin/users | 전체 사용자 목록 | 관리자 | – |
-| GET | /api/admin/users/pending | 승인 대기 사용자 목록 + 인원 수 | 관리자 | – |
-| GET | /api/admin/users/{id} | 사용자 상세 조회 (권한 목록 포함) | 관리자 | – |
-| PUT | /api/admin/users/{id}/approve | 가입 승인. APPROVED로 변경하고 ROLE_USER 부여 | 관리자 | – |
-| PUT | /api/admin/users/{id}/reject | 가입 거부. REJECTED로 변경 | 관리자 | – |
-| GET | /api/admin/users/roles | 서버에 등록된 전체 권한 목록 | 관리자 | – |
-| PUT | /api/admin/users/{id}/role | 사용자에게 권한 1개 추가 | 관리자 | body: role |
-| PUT | /api/admin/users/{id}/role/remove | 사용자 권한 1개 제거 | 관리자 | body: role |
-| GET | /api/admin/users/suggestions | 마일리지 지급용 학생 목록 (학번·이름) | 관리자 | – |
-| POST | /api/admin/users/tag-delete/{tag} | 구현 없음. 받은 tag 문자열을 그대로 반환 | 관리자 | – |
+| Method | URL                               | 기능                                 | 권한  | 요청         |
+| ------ | --------------------------------- | ---------------------------------- | --- | ---------- |
+| GET    | /api/admin/users                  | 전체 사용자 목록                          | 관리자 | –          |
+| GET    | /api/admin/users/pending          | 승인 대기 사용자 목록 + 인원 수                | 관리자 | –          |
+| GET    | /api/admin/users/{id}             | 사용자 상세 조회 (권한 목록 포함)               | 관리자 | –          |
+| PUT    | /api/admin/users/{id}/approve     | 가입 승인. APPROVED로 변경하고 ROLE_USER 부여 | 관리자 | –          |
+| PUT    | /api/admin/users/{id}/reject      | 가입 거부. REJECTED로 변경                | 관리자 | –          |
+| GET    | /api/admin/users/roles            | 서버에 등록된 전체 권한 목록                   | 관리자 | –          |
+| PUT    | /api/admin/users/{id}/role        | 사용자에게 권한 1개 추가                     | 관리자 | body: role |
+| PUT    | /api/admin/users/{id}/role/remove | 사용자 권한 1개 제거                       | 관리자 | body: role |
+| GET    | /api/admin/users/suggestions      | 마일리지 지급용 학생 목록 (학번·이름)             | 관리자 | –          |
+| POST   | /api/admin/users/tag-delete/{tag} | 구현 없음. 받은 tag 문자열을 그대로 반환          | 관리자 | –          |
 
 ## 게시판
 
