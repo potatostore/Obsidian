@@ -386,9 +386,17 @@ created: 2026-08-02
 - [x] 9. 기타 수정: 이메일 중복 500 → 400, deleteCart readOnly 트랜잭션으로 삭제 미반영, 내 주문 단건 조회 단건 쿼리, 장바구니 같은 상품 중복 행.
 - 종료 조건: ./gradlew test 133개 통과(config/test 1차 머지 직후 82개 → 128개 → 사용자 테스트 2차 머지 후 133개), 프론트 tsc 통과, PR 생성 후 사용자 리뷰·머지. 상세 기록은 저장소 docs/claude-work-log/20261102_work-log.md, 미구현은 20261102_unimplemented.md.
 - [x] 10. (20261103, PR 25 머지 db7ba07) PENDING 만료·토스 타임아웃·주문 취소 및 환불·로그아웃 블랙리스트·서버 컴포넌트 재발급·로그인 실패 메시지 통일·상품 페이지네이션·찜하기 구현, 테스트 191개·CI 통과. PR 26(1cb7a0a)으로 기능 2차 뼈대(배송·비밀번호 변경·쿠폰·포인트·리뷰) 추가, copilot.md를 CLAUDE.md로 이름 변경.
-- [ ] 11. (20261104, 사용자 요청) 프론트 잡지형 메인 화면. PR 22(로그인·회원가입·상품 상세 리디자인) 머지 완료. PR 28(1차)은 사용자 요구와 달라 PR 29(dev/ui-cntwa2)로 다시 구현. PR 29 머지 시 [x], PR 28은 닫기.
+- [x] 11. (20261104, 사용자 요청) 프론트 잡지형 메인 화면. PR 22(로그인·회원가입·상품 상세 리디자인) 머지 완료. PR 28(1차)은 사용자 요구와 달라 PR 29(dev/ui-cntwa2)로 다시 구현. PR 29 머지 시 [x], PR 28은 닫기.
 	1. (20261104 사용자 확정 요구 8개) 한 화면에 두 쪽, 좌우 모델 사진 한 장씩, 옷과 메모를 실금으로 연결, 메모는 제품명과 가격만, 실금은 옷을 보는 데 거슬리지 않을 것, 제목 전부 삭제, 메모 글자 축소, 세로가 긴 화면은 한 쪽씩 넘김. 전부 반영, tsc·next build 통과, 1440x900·900x900·iPhone 13 화면 확인.
+	2. (20261105 확인) PR 29 머지(main 766e26c). PR 28도 닫지 않고 머지됨(6dd06c7). 29가 28의 커밋을 모두 포함하므로 결과 코드는 같음.
 - [x] 12. (20261104) Obsidian 문서 최신화: API 명세서를 main 1cb7a0a 기준으로 전체 갱신(엔드포인트 25개 → 32개, 찜·취소·재발급·아이디 찾기 추가, 에러 코드 사용처 재대조), TODO 8번 프론트 UI 섹션 추가, 이 블록 반영.
+- [ ] 13. (20261105, 사용자 요청) 소셜 로그인(카카오·네이버·구글) 프론트 구현, PR 30(dev/ui-cntwa2, main 766e26c에서 다시 시작). 머지 시 [x].
+	1. 세 곳 모두 authorization code 방식. 카카오는 공식 JS SDK 2.7.4(Kakao.Auth.authorize), 구글은 Google Identity Services 코드 클라이언트(ux_mode redirect, scope openid email profile), 네이버는 공식 인가 URL(nid.naver.com/oauth2.0/authorize, response_type=code).
+	2. 네이버만 SDK를 쓰지 않은 근거: 네이버 JS SDK는 implicit 방식(토큰을 브라우저로 바로 받음)만 지원하고, 네이버에는 토큰이 어느 앱에서 발급됐는지 확인하는 API가 없어 서버가 안전하게 검증할 수 없음.
+	3. 흐름: 버튼 클릭 → 무작위 state를 sessionStorage에 저장(10분, 1회용) → 회사 로그인 화면 → /auth/callback/{provider}?code&state → state 대조(CSRF 방지) → POST /auth/oauth/{provider}에 code·state·redirectUri 전송 → 성공 시 원래 화면으로 이동하고 헤더 갱신. 회사 토큰은 브라우저에 남기지 않음.
+	4. 회원가입 화면 탭을 이메일·카카오·구글에서 이메일·간편 가입으로 변경. 소셜 계정은 첫 로그인 때 가입되는 것으로 가정(구현 기능 관련 문제점 14번).
+	5. 검증: tsc·next build·eslint 통과. 가짜 SDK와 가짜 백엔드로 브라우저 시험 11개 통과(세 회사 로그인 완료, 전송값 일치, 네이버 인가 URL 파라미터, state 위조·동의 취소·지원 안 하는 회사·백엔드 401 안내, 개발 모드에서 code 1회 전송). 실제 회사 서버 연동은 키와 백엔드 API가 없어 미확인.
+	6. 로드맵 위치: 현재 단계(Phase 2 테스트) 다음인 JWT 인증 심화 단계의 항목을 프론트만 먼저 진행한 것. 백엔드는 Phase 2 마무리 후 진행 권장.
 
 ### 컴파일 및 디버깅 관련 문제
 - [x] 1. config/test 5ef71ff의 UserControllerTest 94행 String body = "" 뒤 세미콜론 누락으로 compileTestJava 실패 → 테스트 전체 실행 불가. 테스트 완성으로 해결.
@@ -401,6 +409,9 @@ created: 2026-08-02
 - [ ] 8. (20261104) 프론트 eslint 에러 2건(order/page.tsx, toss-test/page.tsx의 useEffect 안 setState, react-hooks/set-state-in-effect) 그대로 남음. 9번 항목의 login 컴포넌트 이름 rules-of-hooks 3건은 PR 22 리디자인으로 사라지고 경고 4건(미사용 변수)만 남음.
 - [x] 9. (20261104) 데스크톱에서 클라우드로 넘어온 세션의 WIP 커밋(AGENTS.md)이 이미 원격에 올라가 있어 강제 푸시 없이 위에 커밋을 쌓음. AGENTS.md는 @copilot.md를 가리키는데 PR 26에서 copilot.md가 CLAUDE.md로 이름이 바뀌어 참조 대상이 없음 → @CLAUDE.md로 수정 필요(사용자 확인).
 	1. (20261104 사용자 결정) AGENTS.md 삭제, 하네스 규칙은 CLAUDE.md 한 파일에서만 관리하도록 CLAUDE.md 맨 위에 명시. PR 29에 포함.
+- [x] 10. (20261105) 콜백 화면에서 개발 모드(React StrictMode)의 effect 두 번 실행으로 1회용 code가 두 번 전송될 위험 → useRef로 한 번만 시작하고, 같은 code의 요청은 진행 중인 Promise를 공유하도록 해 방지. 브라우저 시험에서 회사별 1회 전송 확인.
+- [x] 11. (20261105) 콜백 화면의 effect 안 setState로 react-hooks/set-state-in-effect lint 에러 → state 확인과 전송을 하나의 비동기 함수로 묶고 결과만 받아 화면 상태를 바꾸도록 수정.
+- [ ] 12. (20261105) 클라우드 환경에서 카카오 CDN·네이버에 접속할 수 없어 카카오 SDK 무결성 해시(integrity)를 넣지 못함. 카카오 developers 다운로드 페이지의 해시로 고정 필요.
 
 ### 구현 기능 관련 문제점
 - [x] 1. (높음) PENDING 주문 만료 처리 없음: 재고를 주문 생성 시 잡으므로 결제 이탈 시 재고가 계속 묶임. @Scheduled로 일정 시간 지난 PENDING을 FAILED 처리 + 재고 복구 필요(행 잠금 사용).
@@ -419,6 +430,9 @@ created: 2026-08-02
 - [ ] 10. (20261104) 잡지 메인의 내용(LOOKS)은 코드 상수이고 productId·이름·가격이 예시 값. 실제 상품과 어긋나면 메모의 가격이 상세 화면과 다르게 보임 → 상품 이미지 필드와 함께 API 또는 관리자 등록 데이터로 이동 필요.
 - [ ] 11. (20261104) 주문 내역 화면에 주문 날짜를 표시할 수 없음: OrderResponseDTO에 createdAt 없음. 상품명은 PR 25에서 OrderItemResponseDTO.productName으로 해결.
 - [ ] 12. (정정, 20261104) 직전 세션 요약의 "USER 권한이 /orders/user/me에 접근 불가(SecurityConfig 경로 오류)"는 틀린 내용. 근거: 프론트 orders/page.tsx는 GET /orders/me를 호출하고, SecurityConfig도 GET /orders/me를 authenticated로 등록(20261008 구현 기능 관련 문제점 9번에서 이미 수정). 경로 불일치 없음.
+- [ ] 13. (20261105, 높음) 소셜 로그인 백엔드 API 없음: POST /auth/oauth/{provider}가 없어 현재 콜백에서 로그인 실패 안내로 끝남. 계약은 명세서 Auth 4번(요청 code·state·redirectUri, 공개 경로, 성공 시 기존 로그인과 같은 쿠키 발급, 실패 4xx).
+- [ ] 14. (20261105, 사용자 결정 필요) 소셜 사용자 저장 불가: UserCreateDTO는 전화번호 필수, 이름 한글 3~5자 규칙. 카카오·구글은 전화번호를 기본 제공하지 않고 이름이 영문이거나 2글자일 수 있음. 선택지: 첫 로그인 후 추가 정보 입력 화면 / 소셜 사용자는 전화번호 선택 항목. 같은 이메일의 기존 계정과 자동 연결은 계정 탈취 경로가 될 수 있어 비권장(로그인 상태에서 직접 연결).
+- [ ] 15. (20261105) 회원 식별 기준: 회사별 사용자 고유 ID(카카오 id, 네이버 id, 구글 sub)를 provider와 묶어 저장해야 함. 이메일은 바뀌거나 비공개일 수 있어 식별자로 쓰지 않음. users에 컬럼 추가 또는 별도 social_account 테이블(사용자 1명에 여러 회사 연결 가능) 결정 필요.
 
 ### 다음 한 주 동안 개발할 기능
 - [ ] 1. PR 리뷰 후 머지 순서: config/test PR 먼저 main 머지 → 이 브랜치 PR 머지. 머지 후 로컬 DB orders·order_item drop, 기존 상품 stock 지정, application.yml access token 30분(1800000) 원복 후 E2E(가입 → 로그인 → 담기 → 주문 → 결제 → 승인 → 장바구니·재고 확인 → 결과 페이지 새로고침 시 PAID 유지).
@@ -428,6 +442,9 @@ created: 2026-08-02
 - [ ] 4. Phase 3 Flyway: V1 스키마는 이번 변경(product.stock, orders.order_status 문자열) 반영 후 작성.
 - [x] 5. 구현 기능 관련 문제점 1·2번(PENDING 만료, 토스 타임아웃·상태 조회)을 주문 취소·환불 기능과 함께 설계.
 	1. (20261103 PR 25로 완료)
-- [ ] 6. (20261104) PR 29 리뷰·머지 → PR 28 닫기. 실제 모델 사진이 준비되면 content.ts의 점 위치·메모 방향·모델 범위 조정.
+- [x] 6. (20261104) PR 29 리뷰·머지 → PR 28 닫기. 실제 모델 사진이 준비되면 content.ts의 점 위치·메모 방향·모델 범위 조정.
+	1. (20261105) PR 29 머지 완료(766e26c). 실제 모델 사진 교체는 남음(TODO 8번).
 - [ ] 7. (20261104, 로드맵 복귀) 현재 단계인 Phase 2 컨트롤러 예외·인가 테스트 마무리(3번) → JWT 심화. JWT 심화의 남은 결정은 멀티 디바이스 정책(기기별 refresh token, 재사용 감지).
 - [ ] 8. (20261104) TODO 7번 기능 개발 2차 1번(배송지·배송 상태)과 2번(비밀번호 변경)은 PR 26 뼈대가 있어 바로 착수 가능. 로드맵상 Phase 2 테스트가 끝난 뒤 진행 권장.
+- [ ] 9. (20261105) PR 30 리뷰·머지 후, 세 회사 콘솔에서 앱 등록과 공개 키 발급 → .env.local 설정(.env.example 참고) → Redirect URI {사이트 주소}/auth/callback/{kakao|naver|google} 등록. 카카오는 사이트 도메인도 등록.
+- [ ] 10. (20261105, JWT 심화 단계) 소셜 로그인 백엔드 구현: POST /auth/oauth/{provider}를 SecurityConfig 공개 경로에 추가 → 회사별 토큰 교환(카카오는 REST API 키와 client secret, 네이버는 state 필수, 구글은 redirect_uri 일치 또는 id_token 서명 검증) → 사용자 정보 조회 → 회원 조회 또는 생성(구현 기능 관련 문제점 14·15번 결정 필요) → 기존 issueTokens로 쿠키 발급. 회사 API 호출에는 토스와 같은 타임아웃 적용.

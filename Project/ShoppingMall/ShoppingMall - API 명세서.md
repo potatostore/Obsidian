@@ -3,6 +3,7 @@
 - 기준: main 1cb7a0a (PR 26 머지, 2026-11-03). PR 23(재발급·아이디 찾기·재고)과 PR 25(취소·환불·만료·찜·페이지네이션) 반영
 - 생성: 2026-10-07, springdoc-openapi 2.6.0이 만든 /v3/api-docs를 변환 + 코드 확인으로 권한·에러·비고 보강
 - 갱신: 2026-11-04, 컨트롤러·DTO·SecurityConfig·서비스 예외를 main 코드에서 다시 대조해 전체 갱신
+- 갱신: 2026-11-05, 소셜 로그인 API(Auth 4번) 추가. 프론트(PR 30)가 정한 계약이며 백엔드는 미구현 ("예정" 표시)
 - Base URL: http://localhost:8080/api/v1
 - Swagger UI (앱 실행 후, ADMIN 전용): http://localhost:8080/api/v1/swagger-ui.html
 - 코드가 바뀌면 이 노트는 자동으로 갱신되지 않음. 최신 명세는 Swagger UI 기준
@@ -52,8 +53,10 @@
 | 1   | POST   | /users/login  | 로그인 (accessToken·refreshToken 쿠키 발급) | x     | login/page.tsx (브라우저)      |
 | 2   | POST   | /auth/reissue | 토큰 재발급 (refresh token rotation) | x | lib/api.ts authFetch, auth/refresh/page.tsx |
 | 3   | DELETE | /users/logout | 로그아웃 (refresh 삭제, access 블랙리스트, 쿠키 만료) | 인증요구  | ProfileMenu.tsx (브라우저)     |
+| 4   | POST   | /auth/oauth/{provider} | 소셜 로그인 (카카오·네이버·구글), 예정 | x | auth/callback/[provider]/page.tsx (브라우저) |
 
 - 컨트롤러는 AuthController. 로그인·로그아웃 경로는 /users 하위 (ApiURLNames.loginURL, logOutURL)
+- 4번은 백엔드 미구현. 지금은 기본 닫기 규칙(anyRequest ADMIN)에 걸려 401이고, 프론트 콜백 화면은 "OO 로그인에 실패했습니다"를 표시
 
 ### User (회원)
 
@@ -157,6 +160,20 @@
 | 에러 | 401 미인증 |
 | 프론트 호출 | ProfileMenu.tsx (브라우저, authFetch) |
 | 비고 | Redis의 refresh token 삭제, 현재 access token의 jti를 블랙리스트에 등록<br>access token이 만료된 상태면 authFetch가 먼저 재발급한 뒤 로그아웃 |
+
+#### POST /auth/oauth/{provider} (예정, 백엔드 미구현)
+
+| 항목 | 내용 |
+|---|---|
+| 설명 | 소셜 로그인. 프론트가 회사 로그인 화면에서 받은 authorization code를 넘기면, 백엔드가 회사 서버와 토큰을 교환해 사용자를 확인하고 우리 토큰 쿠키를 발급 |
+| 컨트롤러 | 미정 (AuthController 권장) |
+| 권한 | x (로그인 전 호출이므로 SecurityConfig permitAll에 추가 필요) |
+| 경로 변수 | provider: kakao / naver / google (그 외 400) |
+| 요청 바디 | SocialLoginRequestDTO (아래 스키마, 예정) |
+| 응답 200 | ApiResponse, data = null + Set-Cookie 2개 (POST /users/login과 같은 accessToken·refreshToken) |
+| 에러 (제안) | 400 지원하지 않는 provider, @Valid 실패<br>401 회사가 code를 거절 (만료, 재사용, redirectUri 불일치)<br>502 회사 서버 응답 없음 (토스와 같은 타임아웃 정책) |
+| 프론트 호출 | auth/callback/[provider]/page.tsx (브라우저, credentials include). 응답이 4xx·5xx면 "OO 로그인에 실패했습니다" 표시 |
+| 비고 | 프론트는 state를 이미 대조한 뒤 호출함 (CSRF 방지는 프론트 담당, 서버는 회사 요청에만 사용)<br>카카오: 토큰 교환에 REST API 키와 client secret 사용 (프론트의 JS 키 아님)<br>네이버: 토큰 교환 요청에 state 필수<br>구글: redirect_uri가 인가 요청과 정확히 같아야 함. 받은 id_token의 서명·aud 검증으로 사용자 확인 가능<br>회원 식별은 회사별 고유 ID(카카오 id, 네이버 id, 구글 sub)로 하고 이메일로 하지 않음<br>첫 로그인 시 가입 처리 가정. 전화번호 필수·이름 규칙 때문에 지금 UserCreateDTO로는 저장 불가 (결정 필요) |
 
 ### User (회원)
 
@@ -660,6 +677,14 @@
 |---|---|---|
 | cancelReason | String | 선택, 200자 이하 |
 
+#### SocialLoginRequestDTO (예정)
+
+| 필드 | 타입 | 제약 |
+|---|---|---|
+| code | String | 필수 (회사가 발급한 authorization code, 1회용) |
+| state | String | 필수 (네이버 토큰 교환에 사용) |
+| redirectUri | String | 필수 ({사이트 주소}/auth/callback/{provider}, 회사 콘솔 등록값과 같아야 함) |
+
 #### TossPaymentRequestDTO
 
 | 필드 | 타입 | 제약 |
@@ -809,6 +834,8 @@
 | 심각도 | 대상 | 문제 | 계획 |
 |---|---|---|---|
 | 높음, 미확인 | DELETE /users/me, DELETE /products/{productId} | 주문·장바구니가 FK로 참조하면 500 예상 | soft delete 정책 결정 (TODO 2번) |
+| 높음 | POST /auth/oauth/{provider} | 프론트(PR 30)는 호출하지만 백엔드 미구현 → 소셜 로그인 불가 | JWT 심화 단계에서 구현 |
+| 중간 | POST /auth/oauth/{provider} | 소셜 사용자는 전화번호가 없고 이름이 영문·2글자일 수 있어 지금 회원 규칙으로 저장 불가 | 추가 정보 입력 또는 규칙 완화 결정 |
 | 중간 | POST /users/find-password | 프론트는 호출하지만 백엔드 미구현 (401) | 메일 인증 + Redis 재설정 토큰 방식 결정 (TODO 2번) |
 | 중간 | POST /auth/reissue | refresh token이 사용자당 1개라 다른 기기 로그인 시 이전 기기 세션 종료 | 멀티 디바이스 정책 결정 (TODO 2번) |
 | 중간 | POST /users/signup, PATCH /products/{productId} | 이름 규칙이 2글자·외국인 이름, 대문자·숫자·공백 상품명을 거부. 상품명 규칙이 등록·수정에서 다름 | 검증 규칙 결정 (TODO 2번) |
