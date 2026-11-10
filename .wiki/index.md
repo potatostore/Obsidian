@@ -44,6 +44,9 @@ LLM이 관리하는 위키 목록. 질문에 답할 때 여기서 시작한다. 
 - [[ShoppingMall - 트러블 슈팅 기록]] — Spring Boot 쇼핑몰 주간 트러블슈팅 (2026-07-29 ~ 09-15): JPA, JWT·Security, Redis, 토스 결제, CI/CD, 테스트
 - [[ShoppingMall - TODO]] — PR 23 머지(2026-11-02) 기준 남은 기능·후속 작업 체크리스트 (머지 후 조치, Phase 2 테스트, JWT 심화, 주문·결제, DB·배포)
 - [[copilot-addendum]] — copilot-cli가 매주 적는 ShoppingMall 점검 기록 (AI 작성)
+- [[Drawthon - API 명세서]] — drawthon_t1_backend API 17개 (인증·공고·지도), 회원 role 기반 권한 실측, DTO 필드, 테이블
+- [[Drawthon - MVP 시나리오]] — 관리자 공고 등록 → 봉사자 신청·철회 → 관리자 수정·삭제 흐름과 분기, 예외 흐름, 아직 없는 기능
+- [[Drawthon - TODO]] — 미착수 작업을 도메인별(공통·공고·팀·지도·문서)로 정리: 리워드 2종, 공고 좌표·카카오맵, 팀 브랜치 merge·QR 제거, 결정 필요 항목
 
 ## 경험
 ### 개발·협업

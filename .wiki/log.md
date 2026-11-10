@@ -60,3 +60,22 @@ created: 2026-09-25
 - PR 25 머지 반영(1번 체크), 타사 쇼핑몰 비교로 7번 "기능 개발 2차" 추가(배송지·배송 상태 → 비밀번호 변경 → 쿠폰 → 포인트 → 리뷰 순서, 그다음·의존성 필요 항목), 1~5 뼈대 PR 26 기록
 - 저장소 docs/claude-work-log 삭제(PR 26)에 맞춰 근거 링크를 PR 설명·git 이력으로 변경
 - 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-03/Project/ShoppingMall/에 백업
+
+## [2026-11-10] ingest | Drawthon - API 명세서 새 페이지
+- 사용자 요청으로 Project/Drawthon/Drawthon - API 명세서.md 생성 (type/project). 근거는 drawthon_t1_backend main 4e958e6 + SecurityConfig 수정 상태에서 서버를 띄워 받은 /v3/api-docs와 curl 권한 실측
+- [[프로젝트]] 허브에 Drawthon 섹션, index 프로젝트 섹션에 링크 추가
+- 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-10/에 백업
+- 같은 날 갱신: 사용자 요청으로 API별 요청·응답 DTO 열과 DTO 필드 표(타입·필수·제약·설명) 추가
+- 같은 날 갱신: 백엔드 구조 변경(회원 role 도입, User 도메인 삭제, 공고 컬럼 축소) 반영. API 22개 → 17개, 알려진 문제 섹션을 테이블 섹션으로 교체. 이전 본문은 .obsidian-agent/cache/wiki-backup/2026-11-10/Project/Drawthon/에 백업
+- 같은 날 갱신: 사용자 요청으로 백틱(인라인 코드, 코드 블록) 전부 제거. JSON 예시는 한 줄 문단으로 바꿈
+
+## [2026-11-10] ingest | Drawthon - MVP 시나리오 새 페이지
+- 사용자 요청으로 Project/Drawthon/Drawthon - MVP 시나리오.md 생성 (type/project). 근거는 같은 날 백엔드 테스트·실제 호출 결과와 [[Drawthon - API 명세서]]
+- 전체 흐름을 시나리오 0~5로 묶고 갈라지는 지점은 분기 표로 나눔. 사용자 요청에 맞춰 백틱 없이 작성
+- [[프로젝트]] 허브와 index 프로젝트 섹션에 링크 추가. 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-10/에 백업
+
+## [2026-11-10] ingest | Drawthon - TODO 새 페이지
+- 사용자 요청으로 Project/Drawthon/Drawthon - TODO.md 생성 (type/project). 같은 날 대화에서 나온 미착수 작업을 도메인별로 정리 (ShoppingMall - TODO 형식 참고, 백틱 없음)
+- 근거: drawthon_t1_backend 코드와 feature/teammaker 브랜치(0a42ad7) 확인 결과, 리워드 2종 결정(2026-11-09)
+- [[프로젝트]] 허브와 index 프로젝트 섹션에 링크 추가. 편집 전 원본은 .obsidian-agent/cache/wiki-backup/2026-11-10/에 백업
+- 같은 날 갱신: 리워드는 표시만 하기로 결정(회원별 임금·봉사시간 저장 없음). 봉사시간 적립 결정 항목 완료 처리, 임금 컬럼 할 일을 금액 표시 여부 결정으로 바꿈
